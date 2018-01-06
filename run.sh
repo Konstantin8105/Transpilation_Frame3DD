@@ -7,6 +7,9 @@ c2go -v > c2go_version.txt
 echo "Transpilation"
 c2go transpile -o="main.go" "$CODE_PATH/main.c" "$CODE_PATH/frame3dd.c" "$CODE_PATH/frame3dd_io.c" "$CODE_PATH/coordtrans.c" "$CODE_PATH/eig.c" "$CODE_PATH/HPGmatrix.c" "$CODE_PATH/HPGutil.c" "$CODE_PATH/NRutil.c"
 
+echo "Go build"
+go build main.go > go_build_result.txt 2>&1
+
 echo "Write warnings into file"
 cat ./main.go | grep "// Warning" > warning.txt
 
