@@ -1,12 +1,12 @@
 # command-line-arguments
-./main.go:3356:18: undefined: getopt
-./main.go:3383:28: undefined: optarg
-./main.go:3385:29: undefined: optarg
-./main.go:3406:8: undefined: strcmp
-./main.go:3406:15: undefined: optarg
-./main.go:3409:9: undefined: strcmp
-./main.go:3409:16: undefined: optarg
-./main.go:3417:8: undefined: strcmp
-./main.go:3417:15: undefined: optarg
-./main.go:3420:9: undefined: strcmp
-./main.go:3420:9: too many errors
+./main.go:3359:18: undefined: getopt
+./main.go:3365:29: undefined: optarg
+./main.go:3371:30: undefined: optarg
+./main.go:3425:9: undefined: strcmp
+./main.go:3425:16: undefined: optarg
+./main.go:3428:10: undefined: strcmp
+./main.go:3428:17: undefined: optarg
+./main.go:3440:9: undefined: strcmp
+./main.go:3440:16: undefined: optarg
+./main.go:3443:10: undefined: strcmp
+./main.go:3443:10: too many errors
