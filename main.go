@@ -1,13 +1,31 @@
+/* Package main - transpiled by c2go
+
+	If you have found any issues, please raise an issue at:
+	https://github.com/elliotchance/c2go/
+*/
+
 // Warning (FloatingLiteral): 369: could not read exact floating literal: cannot get exact value exact value
 // Warning (FloatingLiteral): 492: could not read exact floating literal: cannot get exact value exact value
 // Warning (EnumDecl): 347: Add support of continues counter for type : *ast.UnaryExpr
+// Warning (TypedefDecl): 358: Cannot resolve type '__io_read_fn' : Cannot resolve type '__ssize_t (void *, char *, size_t)' : function pointers are not supported [2] : '__ssize_t (void *, char *, size_t)'
+// Warning (TypedefDecl): 359: Cannot resolve type '__io_write_fn' : Cannot resolve type '__ssize_t (void *, char *, size_t)' : function pointers are not supported [2] : '__ssize_t (void *, char *, size_t)'
+// Warning (TypedefDecl): 360: Cannot resolve type '__io_seek_fn' : Cannot resolve type 'int (void *, __off64_t *, int)' : function pointers are not supported [2] : 'int (void *, __off64_t *, int)'
+// Warning (TypedefDecl): 361: Cannot resolve type '__io_close_fn' : Cannot resolve type 'int (void *)' : function pointers are not supported [2] : 'int (void *)'
+// Warning (FieldDecl): 366: Cannot resolve type '__io_read_fn *' : Cannot resolve type '__io_read_fn' : Cannot resolve type '__ssize_t (void *, char *, size_t)' : function pointers are not supported [2] : '__ssize_t (void *, char *, size_t)'
+// Warning (FieldDecl): 367: Cannot resolve type '__io_write_fn *' : Cannot resolve type '__io_write_fn' : Cannot resolve type '__ssize_t (void *, char *, size_t)' : function pointers are not supported [2] : '__ssize_t (void *, char *, size_t)'
+// Warning (FieldDecl): 368: Cannot resolve type '__io_seek_fn *' : Cannot resolve type '__io_seek_fn' : Cannot resolve type 'int (void *, __off64_t *, int)' : function pointers are not supported [2] : 'int (void *, __off64_t *, int)'
+// Warning (FieldDecl): 369: Cannot resolve type '__io_close_fn *' : Cannot resolve type '__io_close_fn' : Cannot resolve type 'int (void *)' : function pointers are not supported [2] : 'int (void *)'
 // Warning (FieldDecl): 69: Cannot resolve type 'BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSwaitstatusPhD69D5E' : Cannot resolve type 'BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSwaitstatusPhD69D5E' : I couldn't find an appropriate Go type for the C type 'BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSwaitstatusPhD69D5E'.
 // Warning (FieldDecl): 84: Cannot resolve type 'BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSwaitstatusPhD84D5E' : Cannot resolve type 'BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSwaitstatusPhD84D5E' : I couldn't find an appropriate Go type for the C type 'BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSwaitstatusPhD84D5E'.
 // Warning (RecordDecl): 66: could not determine the size of type `union wait` for that reason: Cannot determine sizeof : |union wait|. err = Cannot determine sizeof : ||. err = error in array size
-// Warning (TransparentUnionAttr): 71: could not parse &{44723648 {/usr/include/stdlib.h 71 0 35 0 } []}
+// Warning (TransparentUnionAttr): 71: could not parse &{55840160 {/usr/include/stdlib.h 71 0 35 0 } []}
 // Warning (FieldDecl): 69: Avoid struct `union wait *` in FieldDecl
 // Warning (FieldDecl): 141: Cannot resolve type 'BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSpthreadtypesPhD141D3E' : Cannot resolve type 'BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSpthreadtypesPhD141D3E' : I couldn't find an appropriate Go type for the C type 'BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSpthreadtypesPhD141D3E'.
 // Warning (FieldDecl): 177: Cannot resolve type 'BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSpthreadtypesPhD177D3E' : Cannot resolve type 'BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSpthreadtypesPhD177D3E' : I couldn't find an appropriate Go type for the C type 'BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSpthreadtypesPhD177D3E'.
+// Warning (TypedefDecl): 744: Cannot resolve type '__compar_fn_t' : Cannot resolve type 'int (*)( void *, void *)' : function pointers are not supported [1] : 'int (*)( void *, void *)'
+// Warning (FieldDecl): 50: Error : name of FieldDecl is empty
+// Warning (FieldDecl): 51: Error : name of FieldDecl is empty
+// Warning (FieldDecl): 52: Error : name of FieldDecl is empty
 // Warning (EnumDecl): 71: Add support of continues counter for type : *ast.BinaryExpr
 // Warning (ParenExpr): 0: Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 // Warning (UnaryOperator): 0: Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
@@ -263,16 +281,48 @@ type __io_read_fn func(interface{}, []byte, uint32) int32
 type __io_write_fn func(interface{}, []byte, uint32) int32
 type __io_seek_fn func(interface{}, []int32, int) int
 type __io_close_fn func(interface{}) int
+type cookie_read_function_t interface {
+}
+type cookie_write_function_t interface {
+}
+type cookie_seek_function_t interface {
+}
+type cookie_close_function_t interface {
+}
+type _IO_cookie_io_functions_t struct {
+	read []interface {
+	}
+	write []interface {
+	}
+	seek []interface {
+	}
+	close []interface {
+	}
+}
+type cookie_io_functions_t _IO_cookie_io_functions_t
+type _IO_cookie_file struct {
+}
 type off_t int32
+type off64_t int32
 type ssize_t int32
 type fpos_t _G_fpos_t
-
+type fpos64_t _G_fpos64_t
+// Warning (TypedefDecl): 358: Cannot resolve type '__io_read_fn' : Cannot resolve type '__ssize_t (void *, char *, size_t)' : function pointers are not supported [2] : '__ssize_t (void *, char *, size_t)'
+// Warning (TypedefDecl): 359: Cannot resolve type '__io_write_fn' : Cannot resolve type '__ssize_t (void *, char *, size_t)' : function pointers are not supported [2] : '__ssize_t (void *, char *, size_t)'
+// Warning (TypedefDecl): 360: Cannot resolve type '__io_seek_fn' : Cannot resolve type 'int (void *, __off64_t *, int)' : function pointers are not supported [2] : 'int (void *, __off64_t *, int)'
+// Warning (TypedefDecl): 361: Cannot resolve type '__io_close_fn' : Cannot resolve type 'int (void *)' : function pointers are not supported [2] : 'int (void *)'
+// Warning (FieldDecl): 366: Cannot resolve type '__io_read_fn *' : Cannot resolve type '__io_read_fn' : Cannot resolve type '__ssize_t (void *, char *, size_t)' : function pointers are not supported [2] : '__ssize_t (void *, char *, size_t)'
+// Warning (FieldDecl): 367: Cannot resolve type '__io_write_fn *' : Cannot resolve type '__io_write_fn' : Cannot resolve type '__ssize_t (void *, char *, size_t)' : function pointers are not supported [2] : '__ssize_t (void *, char *, size_t)'
+// Warning (FieldDecl): 368: Cannot resolve type '__io_seek_fn *' : Cannot resolve type '__io_seek_fn' : Cannot resolve type 'int (void *, __off64_t *, int)' : function pointers are not supported [2] : 'int (void *, __off64_t *, int)'
+// Warning (FieldDecl): 369: Cannot resolve type '__io_close_fn *' : Cannot resolve type '__io_close_fn' : Cannot resolve type 'int (void *)' : function pointers are not supported [2] : 'int (void *)'
 var stdin *noarch.File
 
 var stdout *noarch.File
 
 var stderr *noarch.File
 
+type obstack struct {
+}
 type wchar_t int
 
 const P_ALL int = 0
@@ -295,6 +345,16 @@ type lldiv_t struct {
 	quot int64
 	rem  int64
 }
+type __locale_data struct {
+}
+type __locale_t struct {
+	__locales       [][]__locale_data
+	__ctype_b       []uint16
+	__ctype_tolower []int
+	__ctype_toupper []int
+	__names         [][]byte
+}
+type locale_t __locale_t
 type u_char uint8
 type u_short uint16
 type u_int uint32
@@ -304,6 +364,7 @@ type u_quad_t uint32
 type fsid_t __fsid_t
 type loff_t int32
 type ino_t uint32
+type ino64_t uint32
 type dev_t uint32
 type gid_t uint32
 type mode_t uint32
@@ -319,6 +380,8 @@ type time_t int32
 type clockid_t int
 type timer_t interface {
 }
+type useconds_t uint32
+type suseconds_t int32
 type ulong uint32
 type ushort uint16
 type uint uint32
@@ -344,19 +407,21 @@ type timeval struct {
 	tv_sec  int32
 	tv_usec int32
 }
-type suseconds_t struct {
+type __fd_mask struct {
 	tv_sec  int32
 	tv_usec int32
 }
-type __fd_mask int32
 type fd_set struct {
-	__fds_bits []int32
+	fds_bits []__fd_mask
 }
-type fd_mask int32
+type fd_mask __fd_mask
 type blksize_t int32
 type blkcnt_t int32
 type fsblkcnt_t uint32
 type fsfilcnt_t uint32
+type blkcnt64_t int32
+type fsblkcnt64_t uint32
+type fsfilcnt64_t uint32
 type pthread_t uint32
 type pthread_attr_t [56]byte
 
@@ -465,16 +530,9 @@ type drand48_data struct {
 	__a     uint64
 }
 type __compar_fn_t func(interface{}, interface{}) int
-type __locale_data struct {
+type comparison_fn_t interface {
 }
-type __locale_t struct {
-	__locales       [][]__locale_data
-	__ctype_b       []uint16
-	__ctype_tolower []int
-	__ctype_toupper []int
-	__names         [][]byte
-}
-type locale_t __locale_t
+type __compar_d_fn_t func(interface{}, interface{}, interface{}) int
 type vec3_struct struct {
 	x float64
 	y float64
@@ -484,6 +542,28 @@ type vec3 struct {
 	x float64
 	y float64
 	z float64
+}
+type timex struct {
+	modes     uint32
+	offset    int32
+	freq      int32
+	maxerror  int32
+	esterror  int32
+	status    int
+	constant  int32
+	precision int32
+	tolerance int32
+	time      timeval
+	tick      int32
+	ppsfreq   int32
+	jitter    int32
+	shift     int
+	stabil    int32
+	jitcnt    int32
+	calcnt    int32
+	errcnt    int32
+	stbcnt    int32
+	tai       int
 }
 type tm struct {
 	tm_sec    int
@@ -504,7 +584,6 @@ type itimerspec struct {
 }
 type sigevent struct {
 }
-type useconds_t uint32
 type intptr_t int32
 type socklen_t uint32
 
