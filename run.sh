@@ -16,8 +16,11 @@ go vet > govet.txt 2>&1
 echo "Golint"
 golint > golint.txt 2>&1
 
-echo "Gometalinter"
-gometalinter  --concurrency=1 --deadline=100s > gometalinter.txt 2>&1
+echo "Deadcode"
+deadcode > deadcode.txt 2>&1
+
+echo "Gosimple"
+gosimple > gosimple.txt 2>&1
 
 echo "Write warnings into file"
 cat ./main.go | grep "// Warning" > warning.txt

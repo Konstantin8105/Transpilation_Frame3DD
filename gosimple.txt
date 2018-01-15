@@ -1,0 +1,144 @@
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:2124:6: res declared but not used
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:3095:6: res declared but not used
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4171:18: undeclared name: getopt
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4177:29: undeclared name: optarg
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4183:30: undeclared name: optarg
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4237:23: undeclared name: optarg
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4240:24: undeclared name: optarg
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4252:23: undeclared name: optarg
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4255:24: undeclared name: optarg
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4267:34: undeclared name: optarg
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4279:23: undeclared name: optarg
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4282:24: undeclared name: optarg
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4294:23: undeclared name: optarg
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4297:24: undeclared name: optarg
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4309:32: undeclared name: optarg
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4319:34: undeclared name: optarg
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4329:40: undeclared name: optarg
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4339:37: undeclared name: optarg
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4905:15: cannot convert (-1) (untyped int constant -1) to byte
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:7211:6: u7 declared but not used
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:7212:6: u8 declared but not used
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:7216:6: u12 declared but not used
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:7213:6: u9 declared but not used
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:7215:6: u11 declared but not used
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:7214:6: u10 declared but not used
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:9481:6: u4 declared but not used
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:9487:6: u10 declared but not used
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13559:52: IntToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13561:51: IntToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13562:52: IntToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13563:52: IntToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13564:51: IntToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13565:51: IntToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13567:11: undeclared name: mktime
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13648:13: Int32ToFloat32Slice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13648:46: IntToFloat32Slice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13659:13: Int32ToIntSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13659:42: IntToIntSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13670:13: Int32ToUint8Slice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13670:44: IntToUint8Slice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13681:13: Int32ToUint32Slice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13681:45: IntToUint32Slice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13692:13: Int32ToFloat64Slice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13692:46: IntToFloat64Slice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13706:7: cannot convert 1 (untyped int constant) to [][]float32
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13707:2: invalid operation: mismatched types [][]float32 and int32
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13712:12: cannot convert 1 (untyped int constant) to []float32
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13713:2: invalid operation: mismatched types []float32 and int32
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13719:27: Int32ToFloat32Slice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13736:7: cannot convert 1 (untyped int constant) to [][]float64
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13737:2: invalid operation: mismatched types [][]float64 and int32
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13742:12: cannot convert 1 (untyped int constant) to []float64
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13743:2: invalid operation: mismatched types []float64 and int32
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13749:27: Int32ToFloat64Slice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13766:7: cannot convert 1 (untyped int constant) to [][]int
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13767:2: invalid operation: mismatched types [][]int and int32
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13772:12: cannot convert 1 (untyped int constant) to []int
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13773:2: invalid operation: mismatched types []int and int32
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13779:27: Int32ToIntSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13797:7: cannot convert 1 (untyped int constant) to [][]float32
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13798:2: invalid operation: mismatched types [][]float32 and int32
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13803:18: Int32ToFloat32Slice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13832:7: cannot convert 1 (untyped int constant) to [][]float32
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13833:2: invalid operation: mismatched types [][]float32 and int32
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13834:15: Int32ToFloat32Slice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13839:27: Int32ToFloat32Slice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13866:7: cannot convert 1 (untyped int constant) to [][][]float32
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13867:2: invalid operation: mismatched types [][][]float32 and int32
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13872:12: cannot convert 1 (untyped int constant) to [][]float32
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13873:2: invalid operation: mismatched types [][]float32 and int32
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13878:17: cannot convert 1 (untyped int constant) to []float32
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13879:2: invalid operation: mismatched types []float32 and int32
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13885:37: Int32ToFloat32Slice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13893:27: Int32ToFloat32SliceSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13894:37: Int32ToFloat32Slice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13900:35: Int32ToFloat32Slice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13911:6: Float32SliceToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13911:42: Int32ToFloat32Slice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13911:75: IntToFloat32Slice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13917:6: IntSliceToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13917:38: Int32ToIntSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13917:67: IntToIntSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13923:6: Uint8SliceToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13923:40: Int32ToUint8Slice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13923:71: IntToUint8Slice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13929:6: Uint32SliceToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13929:41: Int32ToUint32Slice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13929:73: IntToUint32Slice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13935:6: Float64SliceToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13935:42: Int32ToFloat64Slice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13935:75: IntToFloat64Slice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13941:6: Float32SliceToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13941:47: Int32ToFloat32Slice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13941:81: IntToFloat32Slice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13942:6: Float32SliceSliceToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13942:47: Int32ToFloat32SliceSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13942:86: IntToFloat32SliceSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13948:6: Float64SliceToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13948:47: Int32ToFloat64Slice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13948:81: IntToFloat64Slice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13949:6: Float64SliceSliceToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13949:47: Int32ToFloat64SliceSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13949:86: IntToFloat64SliceSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13955:6: IntSliceToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13955:43: Int32ToIntSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13955:73: IntToIntSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13956:6: IntSliceSliceToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13956:43: Int32ToIntSliceSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13956:78: IntToIntSliceSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13962:6: Float32SliceSliceToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13962:47: Int32ToFloat32SliceSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13962:86: IntToFloat32SliceSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13968:6: Float32SliceSliceToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13968:47: Int32ToFloat32SliceSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13968:86: IntToFloat32SliceSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13974:6: Float32SliceToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13974:52: Int32ToFloat32Slice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13974:86: IntToFloat32Slice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13975:6: Float32SliceSliceToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13975:52: Int32ToFloat32SliceSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13975:91: IntToFloat32SliceSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13976:6: Float32SliceSliceSliceToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13976:52: Int32ToFloat32SliceSliceSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13976:96: IntToFloat32SliceSliceSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13987:13: IntToFcomplexSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13999:2: invalid operation: mismatched types [][]fcomplex and int
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:14009:4: invalid operation: mismatched types []fcomplex and int
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:14025:2: invalid operation: mismatched types [][][]float32 and int
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:14035:4: invalid operation: mismatched types [][]float32 and int
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:14045:6: invalid operation: mismatched types []float32 and int
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:14063:2: invalid operation: mismatched types [][][]float64 and int
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:14073:4: invalid operation: mismatched types [][]float64 and int
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:14083:6: invalid operation: mismatched types []float64 and int
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:14093:6: FcomplexSliceToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:14093:43: IntToFcomplexSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:14104:8: FcomplexSliceToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:14104:48: IntToFcomplexSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:14107:6: FcomplexSliceSliceToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:14107:48: IntToFcomplexSliceSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:14124:10: Float32SliceToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:14124:52: IntToFloat32Slice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:14145:10: Float64SliceToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:14145:52: IntToFloat64Slice not declared by package noarch
+couldn't load packages due to errors: github.com/Konstantin8105/Transpilation_Frame3DD
