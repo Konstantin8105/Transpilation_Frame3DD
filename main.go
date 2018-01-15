@@ -15,16 +15,16 @@ https://github.com/elliotchance/c2go/
 // Warning (FieldDecl): 369: Cannot resolve type '__io_close_fn *' : Cannot resolve type '__io_close_fn' : Cannot resolve type 'int (void *)' : function pointers are not supported [2] : 'int (void *)'
 // Warning (FieldDecl): 75: Error : name of FieldDecl is empty
 // Warning (FieldDecl): 89: Error : name of FieldDecl is empty
-// Warning (TransparentUnionAttr): 71: could not parse &{38828176 {/usr/include/stdlib.h 71 0 35 0 } []}
+// Warning (TransparentUnionAttr): 71: could not parse &{42408080 {/usr/include/stdlib.h 71 0 35 0 } []}
 // Warning (FieldDecl): 69: Avoid struct `union wait *` in FieldDecl
 // Warning (RecordDecl): 0: could not determine the size of type `union __WAIT_STATUS` for that reason: Cannot determine sizeof : |union __WAIT_STATUS|. err = Cannot determine sizeof : |union wait *|. err = error in union
 // Warning (TypedefDecl): 744: Cannot resolve type '__compar_fn_t' : Cannot resolve type 'int (*)( void *, void *)' : function pointers are not supported [1] : 'int (*)( void *, void *)'
-// Warning (FullComment): 31: could not parse &{42355600 {/home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/microstran/vec3.h 31 0 1 45 } [0xc42077fd40]}
+// Warning (FullComment): 31: could not parse &{45935504 {/home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/microstran/vec3.h 31 0 1 45 } [0xc421042f60]}
 // Warning (FieldDecl): 50: Error : name of FieldDecl is empty
 // Warning (FieldDecl): 51: Error : name of FieldDecl is empty
 // Warning (FieldDecl): 52: Error : name of FieldDecl is empty
 // Warning (EnumDecl): 71: Add support of continues counter for type : *ast.BinaryExpr
-// Warning (FullComment): 1: could not parse &{42364992 {/home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.h 1 4 4 37 } [0xc420c5dda0]}
+// Warning (FullComment): 1: could not parse &{45944896 {/home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.h 1 4 4 37 } [0xc421e30000]}
 // Warning (ParenExpr): 0: Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 // Warning (UnaryOperator): 0: Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 // Error (IfStmt): 0: Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
@@ -1426,7 +1426,7 @@ func main() {
 	for _, argvSingle := range os.Args {
 		argv = append(argv, []byte(argvSingle))
 	}
-	var // Warning (FullComment): 1: could not parse &{42364992 {/home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.h 1 4 4 37 } [0xc420c5dda0]}
+	var // Warning (FullComment): 1: could not parse &{45944896 {/home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.h 1 4 4 37 } [0xc421e30000]}
 	IN_file []byte = make([]byte, 128, 128)
 	var OUT_file []byte = make([]byte, 128, 128)
 	var title []byte = make([]byte, 512, 512)
