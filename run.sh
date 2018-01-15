@@ -13,8 +13,11 @@ go build main.go > go_build_result.txt 2>&1
 echo "Go vet"
 go vet > govet.txt 2>&1
 
+echo "Golint"
+golint > golint.txt 2>&1
+
 echo "Gometalinter"
-gometalinter > gometalinter.txt 2>&1
+gometalinter  --concurrency=1 --deadline=100s > gometalinter.txt 2>&1
 
 echo "Write warnings into file"
 cat ./main.go | grep "// Warning" > warning.txt
