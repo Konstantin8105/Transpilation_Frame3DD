@@ -16,7 +16,7 @@
 // Warning (FieldDecl):  /usr/include/libio.h:369 : Cannot resolve type '__io_close_fn *' : Cannot resolve type '__io_close_fn' : Cannot resolve type 'int (void *)' : function pointers are not supported [2] : 'int (void *)'
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/waitstatus.h:75 : Error : name of FieldDecl is empty
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/waitstatus.h:89 : Error : name of FieldDecl is empty
-// Warning (TransparentUnionAttr):  /usr/include/stdlib.h:71 : could not parse &{56621200 {/usr/include/stdlib.h 71 0 35 0 } []}
+// Warning (TransparentUnionAttr):  /usr/include/stdlib.h:71 : could not parse &{37062800 {/usr/include/stdlib.h 71 0 35 0 } []}
 // Warning (FieldDecl):  /usr/include/stdlib.h:69 : Avoid struct `union wait *` in FieldDecl
 // Warning (RecordDecl):  :0 : could not determine the size of type `union __WAIT_STATUS` for that reason: Cannot determine sizeof : |union __WAIT_STATUS|. err = Cannot determine sizeof : |union wait *|. err = error in union
 // Warning (TypedefDecl):  /usr/include/stdlib.h:744 : Cannot resolve type '__compar_fn_t' : Cannot resolve type 'int (*)( void *, void *)' : function pointers are not supported [1] : 'int (*)( void *, void *)'
@@ -28,11 +28,6 @@
 // Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 // Error (IfStmt):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 // Warning (EnumDecl):  /usr/include/ctype.h:46 : Add support of continues counter for type : *ast.ParenExpr
-// Warning (ParenExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:3988 : Cannot transpile ParenExpr. err = Cannot casting { -> int}. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:3988 : Cannot transpile BinaryOperator with type 'int' : result type = {unknown52}. Error: Cannot transpile ParenExpr. err = Cannot casting { -> int}. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (ParenExpr):  :0 : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'int' : result type = {unknown52}. Error: Cannot transpile ParenExpr. err = Cannot casting { -> int}. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'int' : result type = {unknown52}. Error: Cannot transpile ParenExpr. err = Cannot casting { -> int}. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Error (IfStmt):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'int' : result type = {unknown52}. Error: Cannot transpile ParenExpr. err = Cannot casting { -> int}. err = Cannot resolve type '' : probably an incorrect type translation 1
 // Warning (ParenExpr):  :0 : Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 // Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 // Error (IfStmt):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
@@ -52,121 +47,6 @@
 // Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 // Error (IfStmt):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 // Warning (SwitchStmt):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:126 : Unsupport case
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:36 : Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:36 : Cannot transpile BinaryOperator with type 'float *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (ReturnStmt):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:36 : Cannot transpileReturnStmt. err = Cannot transpile BinaryOperator with type 'float *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:46 : Cannot transpile BinaryOperator with type 'int *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:46 : Cannot transpile BinaryOperator with type 'int *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'int *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (ReturnStmt):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:46 : Cannot transpileReturnStmt. err = Cannot transpile BinaryOperator with type 'int *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'int *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:56 : Cannot transpile BinaryOperator with type 'unsigned char *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:56 : Cannot transpile BinaryOperator with type 'unsigned char *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'unsigned char *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (ReturnStmt):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:56 : Cannot transpileReturnStmt. err = Cannot transpile BinaryOperator with type 'unsigned char *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'unsigned char *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:66 : Cannot transpile BinaryOperator with type 'unsigned long *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:66 : Cannot transpile BinaryOperator with type 'unsigned long *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'unsigned long *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (ReturnStmt):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:66 : Cannot transpileReturnStmt. err = Cannot transpile BinaryOperator with type 'unsigned long *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'unsigned long *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:76 : Cannot transpile BinaryOperator with type 'double *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:76 : Cannot transpile BinaryOperator with type 'double *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'double *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (ReturnStmt):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:76 : Cannot transpileReturnStmt. err = Cannot transpile BinaryOperator with type 'double *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'double *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (CompoundAssignOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:89 : Cannot transpileCompoundAssignOperator. err = Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (CompoundAssignOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:95 : Cannot transpileCompoundAssignOperator. err = Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:97 : Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:97 : Cannot transpile BinaryOperator with type 'float *' : result type = {unknown53}. Error: Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (ForStmt):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:97 : Cannot tranpile ForStmt: err = Stmts inside Block cannot be nil
-// Error (CompoundAssignOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:113 : Cannot transpileCompoundAssignOperator. err = Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (CompoundAssignOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:119 : Cannot transpileCompoundAssignOperator. err = Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:121 : Cannot transpile BinaryOperator with type 'double *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:121 : Cannot transpile BinaryOperator with type 'double *' : result type = {unknown53}. Error: Cannot transpile BinaryOperator with type 'double *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (ForStmt):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:121 : Cannot tranpile ForStmt: err = Stmts inside Block cannot be nil
-// Error (CompoundAssignOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:137 : Cannot transpileCompoundAssignOperator. err = Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (CompoundAssignOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:144 : Cannot transpileCompoundAssignOperator. err = Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:146 : Cannot transpile BinaryOperator with type 'int *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:146 : Cannot transpile BinaryOperator with type 'int *' : result type = {unknown53}. Error: Cannot transpile BinaryOperator with type 'int *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (ForStmt):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:146 : Cannot tranpile ForStmt: err = Stmts inside Block cannot be nil
-// Error (CompoundAssignOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:163 : Cannot transpileCompoundAssignOperator. err = Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:166 : Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:166 : Cannot transpile BinaryOperator with type 'float *' : result type = {unknown53}. Error: Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (CompoundAssignOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:185 : Cannot transpileCompoundAssignOperator. err = Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:188 : Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:188 : Cannot transpile BinaryOperator with type 'float *' : result type = {unknown53}. Error: Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:189 : Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:189 : Cannot transpile BinaryOperator with type 'float *' : result type = {unknown53}. Error: Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (CompoundAssignOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:204 : Cannot transpileCompoundAssignOperator. err = Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (CompoundAssignOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:210 : Cannot transpileCompoundAssignOperator. err = Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (CompoundAssignOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:216 : Cannot transpileCompoundAssignOperator. err = Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:218 : Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:218 : Cannot transpile BinaryOperator with type 'float *' : result type = {unknown53}. Error: Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (ForStmt):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:218 : Cannot tranpile ForStmt: err = Stmts inside Block cannot be nil
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:220 : Cannot transpile BinaryOperator with type 'float **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:220 : Cannot transpile BinaryOperator with type 'float **' : result type = {unknown53}. Error: Cannot transpile BinaryOperator with type 'float **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:221 : Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:221 : Cannot transpile BinaryOperator with type 'float *' : result type = {unknown53}. Error: Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:222 : Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:222 : Cannot transpile BinaryOperator with type 'float *' : result type = {unknown53}. Error: Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (ForStmt):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:222 : Cannot tranpile ForStmt: err = Stmts inside Block cannot be nil
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:232 : Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:232 : Cannot transpile BinaryOperator with type 'float *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (ParenExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:232 : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'float *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (CallExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:232 : Error in transpileCallExpr : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'float *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:238 : Cannot transpile BinaryOperator with type 'int *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:238 : Cannot transpile BinaryOperator with type 'int *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'int *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (ParenExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:238 : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'int *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'int *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (CallExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:238 : Error in transpileCallExpr : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'int *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'int *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:244 : Cannot transpile BinaryOperator with type 'unsigned char *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:244 : Cannot transpile BinaryOperator with type 'unsigned char *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'unsigned char *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (ParenExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:244 : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'unsigned char *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'unsigned char *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (CallExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:244 : Error in transpileCallExpr : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'unsigned char *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'unsigned char *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:250 : Cannot transpile BinaryOperator with type 'unsigned long *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:250 : Cannot transpile BinaryOperator with type 'unsigned long *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'unsigned long *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (ParenExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:250 : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'unsigned long *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'unsigned long *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (CallExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:250 : Error in transpileCallExpr : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'unsigned long *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'unsigned long *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:256 : Cannot transpile BinaryOperator with type 'double *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:256 : Cannot transpile BinaryOperator with type 'double *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'double *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (ParenExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:256 : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'double *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'double *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (CallExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:256 : Error in transpileCallExpr : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'double *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'double *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:262 : Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:262 : Cannot transpile BinaryOperator with type 'float *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (ParenExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:262 : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'float *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (CallExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:262 : Error in transpileCallExpr : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'float *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:263 : Cannot transpile BinaryOperator with type 'float **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:263 : Cannot transpile BinaryOperator with type 'float **' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (ParenExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:263 : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'float **' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (CallExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:263 : Error in transpileCallExpr : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'float **' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:269 : Cannot transpile BinaryOperator with type 'double *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:269 : Cannot transpile BinaryOperator with type 'double *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'double *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (ParenExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:269 : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'double *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'double *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (CallExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:269 : Error in transpileCallExpr : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'double *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'double *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:270 : Cannot transpile BinaryOperator with type 'double **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:270 : Cannot transpile BinaryOperator with type 'double **' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'double **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (ParenExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:270 : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'double **' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'double **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (CallExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:270 : Error in transpileCallExpr : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'double **' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'double **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:276 : Cannot transpile BinaryOperator with type 'int *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:276 : Cannot transpile BinaryOperator with type 'int *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'int *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (ParenExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:276 : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'int *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'int *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (CallExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:276 : Error in transpileCallExpr : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'int *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'int *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:277 : Cannot transpile BinaryOperator with type 'int **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:277 : Cannot transpile BinaryOperator with type 'int **' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'int **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (ParenExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:277 : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'int **' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'int **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (CallExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:277 : Error in transpileCallExpr : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'int **' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'int **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:283 : Cannot transpile BinaryOperator with type 'float **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:283 : Cannot transpile BinaryOperator with type 'float **' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (ParenExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:283 : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'float **' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (CallExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:283 : Error in transpileCallExpr : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'float **' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:289 : Cannot transpile BinaryOperator with type 'float **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:289 : Cannot transpile BinaryOperator with type 'float **' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (ParenExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:289 : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'float **' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (CallExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:289 : Error in transpileCallExpr : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'float **' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:296 : Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:296 : Cannot transpile BinaryOperator with type 'float *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (ParenExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:296 : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'float *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (CallExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:296 : Error in transpileCallExpr : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'float *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:297 : Cannot transpile BinaryOperator with type 'float **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:297 : Cannot transpile BinaryOperator with type 'float **' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (ParenExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:297 : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'float **' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (CallExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:297 : Error in transpileCallExpr : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'float **' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:298 : Cannot transpile BinaryOperator with type 'float ***' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:298 : Cannot transpile BinaryOperator with type 'float ***' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float ***' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (ParenExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:298 : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'float ***' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float ***' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (CallExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:298 : Error in transpileCallExpr : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'float ***' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float ***' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
 
 package main
 
@@ -9735,11 +9615,6 @@ func force_bent_beam(fpm *noarch.File, fpif *noarch.File, fnif []byte, nx int, n
 }
 
 // my_itoa - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:3980
-// Warning (ParenExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:3988 : Cannot transpile ParenExpr. err = Cannot casting { -> int}. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:3988 : Cannot transpile BinaryOperator with type 'int' : result type = {unknown52}. Error: Cannot transpile ParenExpr. err = Cannot casting { -> int}. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (ParenExpr):  :0 : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'int' : result type = {unknown52}. Error: Cannot transpile ParenExpr. err = Cannot casting { -> int}. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'int' : result type = {unknown52}. Error: Cannot transpile ParenExpr. err = Cannot casting { -> int}. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Error (IfStmt):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'int' : result type = {unknown52}. Error: Cannot transpile ParenExpr. err = Cannot casting { -> int}. err = Cannot resolve type '' : probably an incorrect type translation 1
 /*
  * SFERR  -  Display error message upon an erronous *scanf operation
  *
@@ -9771,6 +9646,12 @@ func my_itoa(n int, s []byte, k int) {
 				i += 1
 				return i
 			}()] = byte(n%10 + int('0'))
+			if noarch.NotInt((map[bool]int{false: 0, true: 1}[(func() int {
+				n /= 10
+				return n
+			}()) > 0])) != 0 {
+				break
+			}
 		}
 	}
 	{
@@ -13669,13 +13550,13 @@ func getTime(s []byte, y int, m int, d int, hr int, mn int, sc int, os int) noar
 	var temp []byte = make([]byte, 16, 16)
 	var t_tm tm
 	var t_time noarch.TimeT
-	t_tm.tm_year = noarch.Atoi(noarch.Strncpy(temp, (*(*[1]byte)(unsafe.Pointer(uintptr(unsafe.Pointer(&s[0])) + (y)*unsafe.Sizeof(s[0]))))[:], int(uint32(4)))) - 1900
+	t_tm.tm_year = noarch.Atoi(noarch.Strncpy(temp, (*(*[1]byte)(unsafe.Pointer(uintptr(unsafe.Pointer(&s[0])) + (uintptr)(y)*unsafe.Sizeof(s[0]))))[:], int(uint32(4)))) - 1900
 	temp[2] = '\x00'
-	t_tm.tm_mon = noarch.Atoi(noarch.Strncpy(temp, (*(*[1]byte)(unsafe.Pointer(uintptr(unsafe.Pointer(&s[0])) + (m)*unsafe.Sizeof(s[0]))))[:], int(uint32(2)))) - 1
-	t_tm.tm_mday = noarch.Atoi(noarch.Strncpy(temp, (*(*[1]byte)(unsafe.Pointer(uintptr(unsafe.Pointer(&s[0])) + (d)*unsafe.Sizeof(s[0]))))[:], int(uint32(2))))
-	t_tm.tm_hour = noarch.Atoi(noarch.Strncpy(temp, (*(*[1]byte)(unsafe.Pointer(uintptr(unsafe.Pointer(&s[0])) + (hr)*unsafe.Sizeof(s[0]))))[:], int(uint32(2))))
-	t_tm.tm_min = noarch.Atoi(noarch.Strncpy(temp, (*(*[1]byte)(unsafe.Pointer(uintptr(unsafe.Pointer(&s[0])) + (mn)*unsafe.Sizeof(s[0]))))[:], int(uint32(2))))
-	t_tm.tm_sec = noarch.Atoi(noarch.Strncpy(temp, (*(*[1]byte)(unsafe.Pointer(uintptr(unsafe.Pointer(&s[0])) + (sc)*unsafe.Sizeof(s[0]))))[:], int(uint32(2)))) + os
+	t_tm.tm_mon = noarch.Atoi(noarch.Strncpy(temp, (*(*[1]byte)(unsafe.Pointer(uintptr(unsafe.Pointer(&s[0])) + (uintptr)(m)*unsafe.Sizeof(s[0]))))[:], int(uint32(2)))) - 1
+	t_tm.tm_mday = noarch.Atoi(noarch.Strncpy(temp, (*(*[1]byte)(unsafe.Pointer(uintptr(unsafe.Pointer(&s[0])) + (uintptr)(d)*unsafe.Sizeof(s[0]))))[:], int(uint32(2))))
+	t_tm.tm_hour = noarch.Atoi(noarch.Strncpy(temp, (*(*[1]byte)(unsafe.Pointer(uintptr(unsafe.Pointer(&s[0])) + (uintptr)(hr)*unsafe.Sizeof(s[0]))))[:], int(uint32(2))))
+	t_tm.tm_min = noarch.Atoi(noarch.Strncpy(temp, (*(*[1]byte)(unsafe.Pointer(uintptr(unsafe.Pointer(&s[0])) + (uintptr)(mn)*unsafe.Sizeof(s[0]))))[:], int(uint32(2))))
+	t_tm.tm_sec = noarch.Atoi(noarch.Strncpy(temp, (*(*[1]byte)(unsafe.Pointer(uintptr(unsafe.Pointer(&s[0])) + (uintptr)(sc)*unsafe.Sizeof(s[0]))))[:], int(uint32(2)))) + os
 	t_tm.tm_isdst = -1
 	t_time = mktime((*[1]tm)(unsafe.Pointer(&t_tm))[:])
 	return t_time
@@ -13751,81 +13632,61 @@ func NRerror(error_text []byte) {
 }
 
 // vector - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:29
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:36 : Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:36 : Cannot transpile BinaryOperator with type 'float *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (ReturnStmt):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:36 : Cannot transpileReturnStmt. err = Cannot transpile BinaryOperator with type 'float *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
 /* allocate a float vector with subscript range v[nl..nh] */
-func vector(nl int32, nh int32) (c2goDefaultReturn []float32) {
+func vector(nl int32, nh int32) []float32 {
 	var v []float32
 	v = make([]float32, uint32((uint32((nh-nl+int32(1)+int32(1)))*4))/4)
 	if v == nil {
 		NRerror([]byte("allocation failure in vector()\x00"))
 	}
-	return
+	return (*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) - (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0])) + (uintptr)(1)*unsafe.Sizeof((*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) - (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0]))))[:]
 }
 
 // ivector - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:39
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:46 : Cannot transpile BinaryOperator with type 'int *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:46 : Cannot transpile BinaryOperator with type 'int *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'int *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (ReturnStmt):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:46 : Cannot transpileReturnStmt. err = Cannot transpile BinaryOperator with type 'int *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'int *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
 /* allocate an int vector with subscript range v[nl..nh] */
-func ivector(nl int32, nh int32) (c2goDefaultReturn []int) {
+func ivector(nl int32, nh int32) []int {
 	var v []int
 	v = make([]int, uint32((uint32((nh-nl+int32(1)+int32(1)))*4))/4)
 	if v == nil {
 		NRerror([]byte("allocation failure in ivector()\x00"))
 	}
-	return
+	return (*(*[1]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) - (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0])) + (uintptr)(1)*unsafe.Sizeof((*(*[1]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) - (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0]))))[:]
 }
 
 // cvector - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:49
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:56 : Cannot transpile BinaryOperator with type 'unsigned char *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:56 : Cannot transpile BinaryOperator with type 'unsigned char *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'unsigned char *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (ReturnStmt):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:56 : Cannot transpileReturnStmt. err = Cannot transpile BinaryOperator with type 'unsigned char *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'unsigned char *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
 /* allocate an unsigned char vector with subscript range v[nl..nh] */
-func cvector(nl int32, nh int32) (c2goDefaultReturn []uint8) {
+func cvector(nl int32, nh int32) []uint8 {
 	var v []uint8
 	v = make([]uint8, uint32((uint32((nh-nl+int32(1)+int32(1)))*1))/1)
 	if v == nil {
 		NRerror([]byte("allocation failure in cvector()\x00"))
 	}
-	return
+	return (*(*[1]uint8)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1]uint8)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) - (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0])) + (uintptr)(1)*unsafe.Sizeof((*(*[1]uint8)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) - (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0]))))[:]
 }
 
 // lvector - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:59
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:66 : Cannot transpile BinaryOperator with type 'unsigned long *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:66 : Cannot transpile BinaryOperator with type 'unsigned long *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'unsigned long *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (ReturnStmt):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:66 : Cannot transpileReturnStmt. err = Cannot transpile BinaryOperator with type 'unsigned long *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'unsigned long *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
 /* allocate an unsigned long vector with subscript range v[nl..nh] */
-func lvector(nl int32, nh int32) (c2goDefaultReturn []uint32) {
+func lvector(nl int32, nh int32) []uint32 {
 	var v []uint32
 	v = make([]uint32, uint32((uint32((nh-nl+int32(1)+int32(1)))*8))/8)
 	if v == nil {
 		NRerror([]byte("allocation failure in lvector()\x00"))
 	}
-	return
+	return (*(*[1]uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1]uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) - (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0])) + (uintptr)(1)*unsafe.Sizeof((*(*[1]uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) - (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0]))))[:]
 }
 
 // dvector - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:69
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:76 : Cannot transpile BinaryOperator with type 'double *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:76 : Cannot transpile BinaryOperator with type 'double *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'double *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (ReturnStmt):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:76 : Cannot transpileReturnStmt. err = Cannot transpile BinaryOperator with type 'double *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'double *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
 /* allocate a double vector with subscript range v[nl..nh] */
-func dvector(nl int32, nh int32) (c2goDefaultReturn []float64) {
+func dvector(nl int32, nh int32) []float64 {
 	var v []float64
 	v = make([]float64, uint32((uint32((nh-nl+int32(1)+int32(1)))*8))/8)
 	if v == nil {
 		NRerror([]byte("allocation failure in dvector()\x00"))
 	}
-	return
+	return (*(*[1]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) - (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0])) + (uintptr)(1)*unsafe.Sizeof((*(*[1]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) - (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0]))))[:]
 }
 
 // matrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:79
-// Error (CompoundAssignOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:89 : Cannot transpileCompoundAssignOperator. err = Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (CompoundAssignOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:95 : Cannot transpileCompoundAssignOperator. err = Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:97 : Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:97 : Cannot transpile BinaryOperator with type 'float *' : result type = {unknown53}. Error: Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (ForStmt):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:97 : Cannot tranpile ForStmt: err = Stmts inside Block cannot be nil
 /* allocate a float matrix with subscript range m[nrl..nrh][ncl..nch] */ /* allocate pointers to rows */ /* allocate rows and set pointers to them */ /* return pointer to array of pointers to rows */
 func matrix(nrl int32, nrh int32, ncl int32, nch int32) [][]float32 {
 	var i int32
@@ -13836,21 +13697,26 @@ func matrix(nrl int32, nrh int32, ncl int32, nch int32) [][]float32 {
 	if m == nil {
 		NRerror([]byte("allocation failure 1 in matrix()\x00"))
 	}
-	m = (*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (1)*unsafe.Sizeof(m[0]))))[:]
+	m = (*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(1)*unsafe.Sizeof(m[0]))))[:]
+	m = (*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) - (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:]
 	m[nrl] = make([]float32, uint32((uint32((nrow*ncol+int32(1)))*4))/4)
 	if m[nrl] == nil {
 		NRerror([]byte("allocation failure 2 in matrix()\x00"))
 	}
-	m[nrl] = (*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (1)*unsafe.Sizeof(m[nrl][0]))))[:]
+	m[nrl] = (*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (uintptr)(1)*unsafe.Sizeof(m[nrl][0]))))[:]
+	m[nrl] = (*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) - (uintptr)(ncl)*unsafe.Sizeof(m[nrl][0]))))[:]
+	{
+		for i = nrl + int32(1); i <= nrh; func() int32 {
+			i += 1
+			return i
+		}() {
+			m[i] = (*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i-int32(1)][0])) + (uintptr)(ncol)*unsafe.Sizeof(m[i-int32(1)][0]))))[:]
+		}
+	}
 	return m
 }
 
 // dmatrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:103
-// Error (CompoundAssignOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:113 : Cannot transpileCompoundAssignOperator. err = Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (CompoundAssignOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:119 : Cannot transpileCompoundAssignOperator. err = Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:121 : Cannot transpile BinaryOperator with type 'double *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:121 : Cannot transpile BinaryOperator with type 'double *' : result type = {unknown53}. Error: Cannot transpile BinaryOperator with type 'double *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (ForStmt):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:121 : Cannot tranpile ForStmt: err = Stmts inside Block cannot be nil
 /* allocate a double matrix with subscript range m[nrl..nrh][ncl..nch] */ /* allocate pointers to rows */ /* allocate rows and set pointers to them */ /* return pointer to array of pointers to rows */
 func dmatrix(nrl int32, nrh int32, ncl int32, nch int32) [][]float64 {
 	var i int32
@@ -13861,21 +13727,26 @@ func dmatrix(nrl int32, nrh int32, ncl int32, nch int32) [][]float64 {
 	if m == nil {
 		NRerror([]byte("allocation failure 1 in matrix()\x00"))
 	}
-	m = (*(*[1][]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (1)*unsafe.Sizeof(m[0]))))[:]
+	m = (*(*[1][]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(1)*unsafe.Sizeof(m[0]))))[:]
+	m = (*(*[1][]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) - (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:]
 	m[nrl] = make([]float64, uint32((uint32((nrow*ncol+int32(1)))*8))/8)
 	if m[nrl] == nil {
 		NRerror([]byte("allocation failure 2 in matrix()\x00"))
 	}
-	m[nrl] = (*(*[1]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (1)*unsafe.Sizeof(m[nrl][0]))))[:]
+	m[nrl] = (*(*[1]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (uintptr)(1)*unsafe.Sizeof(m[nrl][0]))))[:]
+	m[nrl] = (*(*[1]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) - (uintptr)(ncl)*unsafe.Sizeof(m[nrl][0]))))[:]
+	{
+		for i = nrl + int32(1); i <= nrh; func() int32 {
+			i += 1
+			return i
+		}() {
+			m[i] = (*(*[1]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i-int32(1)][0])) + (uintptr)(ncol)*unsafe.Sizeof(m[i-int32(1)][0]))))[:]
+		}
+	}
 	return m
 }
 
 // imatrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:127
-// Error (CompoundAssignOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:137 : Cannot transpileCompoundAssignOperator. err = Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (CompoundAssignOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:144 : Cannot transpileCompoundAssignOperator. err = Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:146 : Cannot transpile BinaryOperator with type 'int *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:146 : Cannot transpile BinaryOperator with type 'int *' : result type = {unknown53}. Error: Cannot transpile BinaryOperator with type 'int *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (ForStmt):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:146 : Cannot tranpile ForStmt: err = Stmts inside Block cannot be nil
 /* allocate a int matrix with subscript range m[nrl..nrh][ncl..nch] */ /* allocate pointers to rows */ /* allocate rows and set pointers to them */ /* return pointer to array of pointers to rows */
 func imatrix(nrl int32, nrh int32, ncl int32, nch int32) [][]int {
 	var i int32
@@ -13886,19 +13757,26 @@ func imatrix(nrl int32, nrh int32, ncl int32, nch int32) [][]int {
 	if m == nil {
 		NRerror([]byte("allocation failure 1 in matrix()\x00"))
 	}
-	m = (*(*[1][]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (1)*unsafe.Sizeof(m[0]))))[:]
+	m = (*(*[1][]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(1)*unsafe.Sizeof(m[0]))))[:]
+	m = (*(*[1][]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) - (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:]
 	m[nrl] = make([]int, uint32((uint32((nrow*ncol+int32(1)))*4))/4)
 	if m[nrl] == nil {
 		NRerror([]byte("allocation failure 2 in matrix()\x00"))
 	}
-	m[nrl] = (*(*[1]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (1)*unsafe.Sizeof(m[nrl][0]))))[:]
+	m[nrl] = (*(*[1]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (uintptr)(1)*unsafe.Sizeof(m[nrl][0]))))[:]
+	m[nrl] = (*(*[1]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) - (uintptr)(ncl)*unsafe.Sizeof(m[nrl][0]))))[:]
+	{
+		for i = nrl + int32(1); i <= nrh; func() int32 {
+			i += 1
+			return i
+		}() {
+			m[i] = (*(*[1]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i-int32(1)][0])) + (uintptr)(ncol)*unsafe.Sizeof(m[i-int32(1)][0]))))[:]
+		}
+	}
 	return m
 }
 
 // subMatrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:152
-// Error (CompoundAssignOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:163 : Cannot transpileCompoundAssignOperator. err = Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:166 : Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:166 : Cannot transpile BinaryOperator with type 'float *' : result type = {unknown53}. Error: Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
 /* point a subMatrix [newrl..][newcl..] to a[oldrl..oldrh][oldcl..oldch] */ /* allocate array of pointers to rows */ /* set pointers to rows */ /* return pointer to array of pointers to rows */
 func subMatrix(a [][]float32, oldrl int32, oldrh int32, oldcl int32, oldch int32, newrl int32, newcl int32) [][]float32 {
 	var i int32
@@ -13910,11 +13788,13 @@ func subMatrix(a [][]float32, oldrl int32, oldrh int32, oldcl int32, oldch int32
 	if m == nil {
 		NRerror([]byte("allocation failure in subMatrix()\x00"))
 	}
-	m = (*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (1)*unsafe.Sizeof(m[0]))))[:]
+	m = (*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(1)*unsafe.Sizeof(m[0]))))[:]
+	m = (*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) - (uintptr)(newrl)*unsafe.Sizeof(m[0]))))[:]
 	{
 		i = oldrl
 		j = newrl
 		for j = newrl; i <= oldrh; {
+			m[j] = (*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&a[i][0])) + (uintptr)(ncol)*unsafe.Sizeof(a[i][0]))))[:]
 			func() int32 {
 				i += 1
 				return i
@@ -13929,11 +13809,6 @@ func subMatrix(a [][]float32, oldrl int32, oldrh int32, oldcl int32, oldch int32
 }
 
 // convert_matrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:172
-// Error (CompoundAssignOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:185 : Cannot transpileCompoundAssignOperator. err = Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:188 : Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:188 : Cannot transpile BinaryOperator with type 'float *' : result type = {unknown53}. Error: Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:189 : Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:189 : Cannot transpile BinaryOperator with type 'float *' : result type = {unknown53}. Error: Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
 /* allocate a float matrix m[nrl..nrh][ncl..nch] that points to the matrix
 declared in the standard C manner as a[nrow][ncol], where nrow=nrh-nrl+1
 and ncol=nch-ncl+1. The routine should be called with the address
@@ -13948,11 +13823,14 @@ func convert_matrix(a []float32, nrl int32, nrh int32, ncl int32, nch int32) [][
 	if m == nil {
 		NRerror([]byte("allocation failure in convert_matrix()\x00"))
 	}
-	m = (*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (1)*unsafe.Sizeof(m[0]))))[:]
+	m = (*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(1)*unsafe.Sizeof(m[0]))))[:]
+	m = (*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) - (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:]
+	m[nrl] = (*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&a[0])) - (uintptr)(ncl)*unsafe.Sizeof(a[0]))))[:]
 	{
 		i = int32(1)
 		j = nrl + int32(1)
 		for j = nrl + int32(1); i < nrow; {
+			m[j] = (*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[j-int32(1)][0])) + (uintptr)(ncol)*unsafe.Sizeof(m[j-int32(1)][0]))))[:]
 			func() int32 {
 				i += 1
 				return i
@@ -13967,19 +13845,6 @@ func convert_matrix(a []float32, nrl int32, nrh int32, ncl int32, nch int32) [][
 }
 
 // f3tensor - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:194
-// Error (CompoundAssignOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:204 : Cannot transpileCompoundAssignOperator. err = Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (CompoundAssignOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:210 : Cannot transpileCompoundAssignOperator. err = Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (CompoundAssignOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:216 : Cannot transpileCompoundAssignOperator. err = Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:218 : Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:218 : Cannot transpile BinaryOperator with type 'float *' : result type = {unknown53}. Error: Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (ForStmt):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:218 : Cannot tranpile ForStmt: err = Stmts inside Block cannot be nil
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:220 : Cannot transpile BinaryOperator with type 'float **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:220 : Cannot transpile BinaryOperator with type 'float **' : result type = {unknown53}. Error: Cannot transpile BinaryOperator with type 'float **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:221 : Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:221 : Cannot transpile BinaryOperator with type 'float *' : result type = {unknown53}. Error: Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:222 : Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:222 : Cannot transpile BinaryOperator with type 'float *' : result type = {unknown53}. Error: Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (ForStmt):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:222 : Cannot tranpile ForStmt: err = Stmts inside Block cannot be nil
 /* allocate a float 3tensor with range t[nrl..nrh][ncl..nch][ndl..ndh] */ /* allocate pointers to pointers to rows */ /* allocate pointers to rows and set pointers to them */ /* allocate rows and set pointers to them */ /* return pointer to array of pointers to rows */
 func f3tensor(nrl int32, nrh int32, ncl int32, nch int32, ndl int32, ndh int32) [][][]float32 {
 	var i int32
@@ -13992,144 +13857,117 @@ func f3tensor(nrl int32, nrh int32, ncl int32, nch int32, ndl int32, ndh int32) 
 	if t == nil {
 		NRerror([]byte("allocation failure 1 in f3tensor()\x00"))
 	}
-	t = (*(*[1][][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[0])) + (1)*unsafe.Sizeof(t[0]))))[:]
+	t = (*(*[1][][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[0])) + (uintptr)(1)*unsafe.Sizeof(t[0]))))[:]
+	t = (*(*[1][][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[0])) - (uintptr)(nrl)*unsafe.Sizeof(t[0]))))[:]
 	t[nrl] = make([][]float32, uint32((uint32((nrow*ncol+int32(1)))*8))/8)
 	if t[nrl] == nil {
 		NRerror([]byte("allocation failure 2 in f3tensor()\x00"))
 	}
-	t[nrl] = (*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][0])) + (1)*unsafe.Sizeof(t[nrl][0]))))[:]
+	t[nrl] = (*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][0])) + (uintptr)(1)*unsafe.Sizeof(t[nrl][0]))))[:]
+	t[nrl] = (*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][0])) - (uintptr)(ncl)*unsafe.Sizeof(t[nrl][0]))))[:]
 	t[nrl][ncl] = make([]float32, uint32((uint32((nrow*ncol*ndep+int32(1)))*4))/4)
 	if t[nrl][ncl] == nil {
 		NRerror([]byte("allocation failure 3 in f3tensor()\x00"))
 	}
-	t[nrl][ncl] = (*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][ncl][0])) + (1)*unsafe.Sizeof(t[nrl][ncl][0]))))[:]
+	t[nrl][ncl] = (*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][ncl][0])) + (uintptr)(1)*unsafe.Sizeof(t[nrl][ncl][0]))))[:]
+	t[nrl][ncl] = (*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][ncl][0])) - (uintptr)(ndl)*unsafe.Sizeof(t[nrl][ncl][0]))))[:]
+	{
+		for j = ncl + int32(1); j <= nch; func() int32 {
+			j += 1
+			return j
+		}() {
+			t[nrl][j] = (*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][j-int32(1)][0])) + (uintptr)(ndep)*unsafe.Sizeof(t[nrl][j-int32(1)][0]))))[:]
+		}
+	}
 	{
 		for i = nrl + int32(1); i <= nrh; func() int32 {
 			i += 1
 			return i
 		}() {
+			t[i] = (*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[i-int32(1)][0])) + (uintptr)(ncol)*unsafe.Sizeof(t[i-int32(1)][0]))))[:]
+			t[i][ncl] = (*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[i-int32(1)][ncl][0])) + (uintptr)(ncol*ndep)*unsafe.Sizeof(t[i-int32(1)][ncl][0]))))[:]
+			{
+				for j = ncl + int32(1); j <= nch; func() int32 {
+					j += 1
+					return j
+				}() {
+					t[i][j] = (*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[i][j-int32(1)][0])) + (uintptr)(ndep)*unsafe.Sizeof(t[i][j-int32(1)][0]))))[:]
+				}
+			}
 		}
 	}
 	return t
 }
 
 // free_vector - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:229
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:232 : Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:232 : Cannot transpile BinaryOperator with type 'float *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (ParenExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:232 : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'float *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (CallExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:232 : Error in transpileCallExpr : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'float *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
 /* free a float vector allocated with vector() */
 func free_vector(v []float32, nl int32, nh int32) {
+	_ = noarch.Float32SliceToByteSlice(((*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0]))))[:]))
 }
 
 // free_ivector - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:235
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:238 : Cannot transpile BinaryOperator with type 'int *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:238 : Cannot transpile BinaryOperator with type 'int *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'int *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (ParenExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:238 : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'int *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'int *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (CallExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:238 : Error in transpileCallExpr : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'int *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'int *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
 /* free an int vector allocated with ivector() */
 func free_ivector(v []int, nl int32, nh int32) {
+	_ = noarch.IntSliceToByteSlice(((*(*[1]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0]))))[:]))
 }
 
 // free_cvector - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:241
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:244 : Cannot transpile BinaryOperator with type 'unsigned char *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:244 : Cannot transpile BinaryOperator with type 'unsigned char *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'unsigned char *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (ParenExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:244 : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'unsigned char *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'unsigned char *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (CallExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:244 : Error in transpileCallExpr : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'unsigned char *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'unsigned char *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
 /* free an unsigned char vector allocated with cvector() */
 func free_cvector(v []uint8, nl int32, nh int32) {
+	_ = noarch.Uint8SliceToByteSlice(((*(*[1]uint8)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1]uint8)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1]uint8)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0]))))[:]))
 }
 
 // free_lvector - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:247
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:250 : Cannot transpile BinaryOperator with type 'unsigned long *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:250 : Cannot transpile BinaryOperator with type 'unsigned long *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'unsigned long *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (ParenExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:250 : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'unsigned long *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'unsigned long *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (CallExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:250 : Error in transpileCallExpr : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'unsigned long *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'unsigned long *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
 /* free an unsigned long vector allocated with lvector() */
 func free_lvector(v []uint32, nl int32, nh int32) {
+	_ = noarch.Uint32SliceToByteSlice(((*(*[1]uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1]uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1]uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0]))))[:]))
 }
 
 // free_dvector - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:253
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:256 : Cannot transpile BinaryOperator with type 'double *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:256 : Cannot transpile BinaryOperator with type 'double *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'double *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (ParenExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:256 : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'double *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'double *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (CallExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:256 : Error in transpileCallExpr : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'double *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'double *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
 /* free a double vector allocated with dvector() */
 func free_dvector(v []float64, nl int32, nh int32) {
+	_ = noarch.Float64SliceToByteSlice(((*(*[1]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0]))))[:]))
 }
 
 // free_matrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:259
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:262 : Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:262 : Cannot transpile BinaryOperator with type 'float *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (ParenExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:262 : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'float *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (CallExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:262 : Error in transpileCallExpr : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'float *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:263 : Cannot transpile BinaryOperator with type 'float **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:263 : Cannot transpile BinaryOperator with type 'float **' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (ParenExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:263 : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'float **' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (CallExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:263 : Error in transpileCallExpr : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'float **' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
 /* free a float matrix allocated by matrix() */
 func free_matrix(m [][]float32, nrl int32, nrh int32, ncl int32, nch int32) {
+	_ = noarch.Float32SliceToByteSlice(((*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (uintptr)(ncl)*unsafe.Sizeof(m[nrl][0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (uintptr)(ncl)*unsafe.Sizeof(m[nrl][0]))))[:][0]))))[:]))
+	_ = noarch.Float32SliceSliceToByteSlice(((*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:][0]))))[:]))
 }
 
 // free_dmatrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:266
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:269 : Cannot transpile BinaryOperator with type 'double *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:269 : Cannot transpile BinaryOperator with type 'double *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'double *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (ParenExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:269 : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'double *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'double *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (CallExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:269 : Error in transpileCallExpr : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'double *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'double *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:270 : Cannot transpile BinaryOperator with type 'double **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:270 : Cannot transpile BinaryOperator with type 'double **' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'double **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (ParenExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:270 : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'double **' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'double **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (CallExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:270 : Error in transpileCallExpr : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'double **' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'double **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
 /* free a double matrix allocated by dmatrix() */
 func free_dmatrix(m [][]float64, nrl int32, nrh int32, ncl int32, nch int32) {
+	_ = noarch.Float64SliceToByteSlice(((*(*[1]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (uintptr)(ncl)*unsafe.Sizeof(m[nrl][0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (uintptr)(ncl)*unsafe.Sizeof(m[nrl][0]))))[:][0]))))[:]))
+	_ = noarch.Float64SliceSliceToByteSlice(((*(*[1][]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1][]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1][]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:][0]))))[:]))
 }
 
 // free_imatrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:273
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:276 : Cannot transpile BinaryOperator with type 'int *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:276 : Cannot transpile BinaryOperator with type 'int *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'int *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (ParenExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:276 : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'int *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'int *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (CallExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:276 : Error in transpileCallExpr : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'int *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'int *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:277 : Cannot transpile BinaryOperator with type 'int **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:277 : Cannot transpile BinaryOperator with type 'int **' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'int **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (ParenExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:277 : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'int **' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'int **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (CallExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:277 : Error in transpileCallExpr : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'int **' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'int **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
 /* free an int matrix allocated by imatrix() */
 func free_imatrix(m [][]int, nrl int32, nrh int32, ncl int32, nch int32) {
+	_ = noarch.IntSliceToByteSlice(((*(*[1]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (uintptr)(ncl)*unsafe.Sizeof(m[nrl][0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (uintptr)(ncl)*unsafe.Sizeof(m[nrl][0]))))[:][0]))))[:]))
+	_ = noarch.IntSliceSliceToByteSlice(((*(*[1][]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1][]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1][]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:][0]))))[:]))
 }
 
 // free_subMatrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:280
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:283 : Cannot transpile BinaryOperator with type 'float **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:283 : Cannot transpile BinaryOperator with type 'float **' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (ParenExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:283 : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'float **' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (CallExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:283 : Error in transpileCallExpr : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'float **' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
 /* free a subMatrix allocated by subMatrix() */
 func free_subMatrix(b [][]float32, nrl int32, nrh int32, ncl int32, nch int32) {
+	_ = noarch.Float32SliceSliceToByteSlice(((*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&b[0])) + (uintptr)(nrl)*unsafe.Sizeof(b[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&b[0])) + (uintptr)(nrl)*unsafe.Sizeof(b[0]))))[:][0]))))[:]))
 }
 
 // free_convert_matrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:286
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:289 : Cannot transpile BinaryOperator with type 'float **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:289 : Cannot transpile BinaryOperator with type 'float **' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (ParenExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:289 : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'float **' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (CallExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:289 : Error in transpileCallExpr : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'float **' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
 /* free a matrix allocated by convert_matrix() */
 func free_convert_matrix(b [][]float32, nrl int32, nrh int32, ncl int32, nch int32) {
+	_ = noarch.Float32SliceSliceToByteSlice(((*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&b[0])) + (uintptr)(nrl)*unsafe.Sizeof(b[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&b[0])) + (uintptr)(nrl)*unsafe.Sizeof(b[0]))))[:][0]))))[:]))
 }
 
 // free_f3tensor - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:292
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:296 : Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:296 : Cannot transpile BinaryOperator with type 'float *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (ParenExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:296 : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'float *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (CallExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:296 : Error in transpileCallExpr : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'float *' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float *' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:297 : Cannot transpile BinaryOperator with type 'float **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:297 : Cannot transpile BinaryOperator with type 'float **' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (ParenExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:297 : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'float **' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (CallExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:297 : Error in transpileCallExpr : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'float **' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float **' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:298 : Cannot transpile BinaryOperator with type 'float ***' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (BinaryOperator):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:298 : Cannot transpile BinaryOperator with type 'float ***' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float ***' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Warning (ParenExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:298 : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'float ***' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float ***' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
-// Error (CallExpr):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:298 : Error in transpileCallExpr : Cannot transpile ParenExpr. err = Cannot transpile BinaryOperator with type 'float ***' : result type = {unknown52}. Error: Cannot transpile BinaryOperator with type 'float ***' : result type = {}. Error: Cannot transpile pointerArithmetic. err = right type is not 'int' : 'long'
 /* free a float f3tensor allocated by f3tensor() */
 func free_f3tensor(t [][][]float32, nrl int32, nrh int32, ncl int32, nch int32, ndl int32, ndh int32) {
+	_ = noarch.Float32SliceToByteSlice(((*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][ncl][0])) + (uintptr)(ndl)*unsafe.Sizeof(t[nrl][ncl][0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][ncl][0])) + (uintptr)(ndl)*unsafe.Sizeof(t[nrl][ncl][0]))))[:][0]))))[:]))
+	_ = noarch.Float32SliceSliceToByteSlice(((*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][0])) + (uintptr)(ncl)*unsafe.Sizeof(t[nrl][0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][0])) + (uintptr)(ncl)*unsafe.Sizeof(t[nrl][0]))))[:][0]))))[:]))
+	_ = noarch.Float32SliceSliceSliceToByteSlice(((*(*[1][][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1][][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[0])) + (uintptr)(nrl)*unsafe.Sizeof(t[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1][][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[0])) + (uintptr)(nrl)*unsafe.Sizeof(t[0]))))[:][0]))))[:]))
 }
 
 // Cvector - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:300
@@ -14140,7 +13978,7 @@ func Cvector(nl int, nh int) []fcomplex {
 	if v == nil {
 		NRerror([]byte("allocation failure in Cvector()\x00"))
 	}
-	return (*(*[1]fcomplex)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) - (nl)*unsafe.Sizeof(v[0]))))[:]
+	return (*(*[1]fcomplex)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) - (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:]
 }
 
 // Cmatrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:311
@@ -14152,7 +13990,7 @@ func Cmatrix(nrl int, nrh int, ncl int, nch int) [][]fcomplex {
 	if m == nil {
 		NRerror([]byte("allocation failure 1 in Cmatrix()\x00"))
 	}
-	m = (*(*[1][]fcomplex)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) - (nrl)*unsafe.Sizeof(m[0]))))[:]
+	m = (*(*[1][]fcomplex)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) - (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:]
 	{
 		for i = nrl; i <= nrh; func() int {
 			i += 1
@@ -14162,7 +14000,7 @@ func Cmatrix(nrl int, nrh int, ncl int, nch int) [][]fcomplex {
 			if m[i] == nil {
 				NRerror([]byte("allocation failure 2 in Cmatrix()\x00"))
 			}
-			m[i] = (*(*[1]fcomplex)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i][0])) - (ncl)*unsafe.Sizeof(m[i][0]))))[:]
+			m[i] = (*(*[1]fcomplex)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i][0])) - (uintptr)(ncl)*unsafe.Sizeof(m[i][0]))))[:]
 		}
 	}
 	return m
@@ -14178,7 +14016,7 @@ func D3matrix(nrl int, nrh int, ncl int, nch int, nzl int, nzh int) [][][]float3
 	if m == nil {
 		NRerror([]byte("alloc failure 1 in 3Dmatrix()\x00"))
 	}
-	m = (*(*[1][][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) - (nrl)*unsafe.Sizeof(m[0]))))[:]
+	m = (*(*[1][][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) - (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:]
 	{
 		for i = nrl; i <= nrh; func() int {
 			i += 1
@@ -14188,7 +14026,7 @@ func D3matrix(nrl int, nrh int, ncl int, nch int, nzl int, nzh int) [][][]float3
 			if m[i] == nil {
 				NRerror([]byte("alloc failure 2 in 3Dmatrix()\x00"))
 			}
-			m[i] = (*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i][0])) - (ncl)*unsafe.Sizeof(m[i][0]))))[:]
+			m[i] = (*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i][0])) - (uintptr)(ncl)*unsafe.Sizeof(m[i][0]))))[:]
 			{
 				for j = ncl; j <= nch; func() int {
 					j += 1
@@ -14198,7 +14036,7 @@ func D3matrix(nrl int, nrh int, ncl int, nch int, nzl int, nzh int) [][][]float3
 					if m[i][j] == nil {
 						NRerror([]byte("alloc failure 3 in 3Dmatrix()\x00"))
 					}
-					m[i][j] = (*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i][j][0])) - (nzl)*unsafe.Sizeof(m[i][j][0]))))[:]
+					m[i][j] = (*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i][j][0])) - (uintptr)(nzl)*unsafe.Sizeof(m[i][j][0]))))[:]
 				}
 			}
 		}
@@ -14216,7 +14054,7 @@ func D3dmatrix(nrl int, nrh int, ncl int, nch int, nzl int, nzh int) [][][]float
 	if m == nil {
 		NRerror([]byte("alloc failure 1 in 3Ddmatrix()\x00"))
 	}
-	m = (*(*[1][][]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) - (nrl)*unsafe.Sizeof(m[0]))))[:]
+	m = (*(*[1][][]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) - (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:]
 	{
 		for i = nrl; i <= nrh; func() int {
 			i += 1
@@ -14226,7 +14064,7 @@ func D3dmatrix(nrl int, nrh int, ncl int, nch int, nzl int, nzh int) [][][]float
 			if m[i] == nil {
 				NRerror([]byte("alloc failure 2 in 3Dmatrix()\x00"))
 			}
-			m[i] = (*(*[1][]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i][0])) - (ncl)*unsafe.Sizeof(m[i][0]))))[:]
+			m[i] = (*(*[1][]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i][0])) - (uintptr)(ncl)*unsafe.Sizeof(m[i][0]))))[:]
 			{
 				for j = ncl; j <= nch; func() int {
 					j += 1
@@ -14236,7 +14074,7 @@ func D3dmatrix(nrl int, nrh int, ncl int, nch int, nzl int, nzh int) [][][]float
 					if m[i][j] == nil {
 						NRerror([]byte("alloc failure 3 in 3Ddmatrix()\x00"))
 					}
-					m[i][j] = (*(*[1]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i][j][0])) - (nzl)*unsafe.Sizeof(m[i][j][0]))))[:]
+					m[i][j] = (*(*[1]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i][j][0])) - (uintptr)(nzl)*unsafe.Sizeof(m[i][j][0]))))[:]
 				}
 			}
 		}
@@ -14246,7 +14084,7 @@ func D3dmatrix(nrl int, nrh int, ncl int, nch int, nzl int, nzh int) [][][]float
 
 // free_Cvector - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:377
 func free_Cvector(v []fcomplex, nl int, nh int) {
-	_ = noarch.FcomplexSliceToByteSlice(((*(*[1]fcomplex)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (nl)*unsafe.Sizeof(v[0]))))[:]))
+	_ = noarch.FcomplexSliceToByteSlice(((*(*[1]fcomplex)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:]))
 }
 
 // free_Cmatrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:382
@@ -14257,10 +14095,10 @@ func free_Cmatrix(m [][]fcomplex, nrl int, nrh int, ncl int, nch int) {
 			i -= 1
 			return i
 		}() {
-			_ = noarch.FcomplexSliceToByteSlice(((*(*[1]fcomplex)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i][0])) + (ncl)*unsafe.Sizeof(m[i][0]))))[:]))
+			_ = noarch.FcomplexSliceToByteSlice(((*(*[1]fcomplex)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i][0])) + (uintptr)(ncl)*unsafe.Sizeof(m[i][0]))))[:]))
 		}
 	}
-	_ = noarch.FcomplexSliceSliceToByteSlice(((*(*[1][]fcomplex)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (nrl)*unsafe.Sizeof(m[0]))))[:]))
+	_ = noarch.FcomplexSliceSliceToByteSlice(((*(*[1][]fcomplex)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:]))
 }
 
 // free_D3matrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:390
@@ -14277,7 +14115,7 @@ func free_D3matrix(m [][][]float32, nrl int, nrh int, ncl int, nch int, nzl int,
 					j -= 1
 					return j
 				}() {
-					_ = noarch.Float32SliceToByteSlice(((*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i][j][0])) + (nzl)*unsafe.Sizeof(m[i][j][0]))))[:]))
+					_ = noarch.Float32SliceToByteSlice(((*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i][j][0])) + (uintptr)(nzl)*unsafe.Sizeof(m[i][j][0]))))[:]))
 				}
 			}
 		}
@@ -14298,7 +14136,7 @@ func free_D3dmatrix(m [][][]float64, nrl int, nrh int, ncl int, nch int, nzl int
 					j -= 1
 					return j
 				}() {
-					_ = noarch.Float64SliceToByteSlice(((*(*[1]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i][j][0])) + (nzl)*unsafe.Sizeof(m[i][j][0]))))[:]))
+					_ = noarch.Float64SliceToByteSlice(((*(*[1]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i][j][0])) + (uintptr)(nzl)*unsafe.Sizeof(m[i][j][0]))))[:]))
 				}
 			}
 		}

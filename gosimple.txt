@@ -1,60 +1,50 @@
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:2175:6: res declared but not used
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:3146:6: res declared but not used
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4238:18: undeclared name: getopt
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4244:29: undeclared name: optarg
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4250:30: undeclared name: optarg
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4304:23: undeclared name: optarg
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4307:24: undeclared name: optarg
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4319:23: undeclared name: optarg
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4322:24: undeclared name: optarg
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4334:34: undeclared name: optarg
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4346:23: undeclared name: optarg
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4349:24: undeclared name: optarg
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4361:23: undeclared name: optarg
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4364:24: undeclared name: optarg
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4376:32: undeclared name: optarg
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4386:34: undeclared name: optarg
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4396:40: undeclared name: optarg
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4406:37: undeclared name: optarg
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4972:15: cannot convert (-1) (untyped int constant -1) to byte
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:7311:6: u12 declared but not used
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:7307:6: u8 declared but not used
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:7306:6: u7 declared but not used
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:7309:6: u10 declared but not used
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:7310:6: u11 declared but not used
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:7308:6: u9 declared but not used
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:9582:6: u10 declared but not used
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:9576:6: u4 declared but not used
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13672:111: invalid operation: mismatched types int and uintptr
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13674:110: invalid operation: mismatched types int and uintptr
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13675:111: invalid operation: mismatched types int and uintptr
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13676:111: invalid operation: mismatched types int and uintptr
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13677:110: invalid operation: mismatched types int and uintptr
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13678:110: invalid operation: mismatched types int and uintptr
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13680:11: undeclared name: mktime
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13831:6: i declared but not used
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13856:6: i declared but not used
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13881:6: i declared but not used
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13907:6: ncol declared but not used
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13945:6: ncol declared but not used
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13986:6: j declared but not used
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:14143:74: invalid operation: mismatched types int and uintptr
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:14155:73: invalid operation: mismatched types int and uintptr
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:14165:79: invalid operation: mismatched types int and uintptr
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:14181:74: invalid operation: mismatched types int and uintptr
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:14191:80: invalid operation: mismatched types int and uintptr
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:14201:86: invalid operation: mismatched types int and uintptr
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:14219:74: invalid operation: mismatched types int and uintptr
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:14229:80: invalid operation: mismatched types int and uintptr
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:14239:86: invalid operation: mismatched types int and uintptr
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:14249:6: FcomplexSliceToByteSlice not declared by package noarch
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:14249:104: invalid operation: mismatched types int and uintptr
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:14260:8: FcomplexSliceToByteSlice not declared by package noarch
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:14260:109: invalid operation: mismatched types int and uintptr
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:14263:6: FcomplexSliceSliceToByteSlice not declared by package noarch
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:14263:111: invalid operation: mismatched types int and uintptr
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:14280:10: Float32SliceToByteSlice not declared by package noarch
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:14280:112: invalid operation: mismatched types int and uintptr
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:14301:10: Float64SliceToByteSlice not declared by package noarch
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:14301:112: invalid operation: mismatched types int and uintptr
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:2055:6: res declared but not used
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:3026:6: res declared but not used
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4118:18: undeclared name: getopt
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4124:29: undeclared name: optarg
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4130:30: undeclared name: optarg
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4184:23: undeclared name: optarg
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4187:24: undeclared name: optarg
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4199:23: undeclared name: optarg
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4202:24: undeclared name: optarg
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4214:34: undeclared name: optarg
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4226:23: undeclared name: optarg
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4229:24: undeclared name: optarg
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4241:23: undeclared name: optarg
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4244:24: undeclared name: optarg
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4256:32: undeclared name: optarg
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4266:34: undeclared name: optarg
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4276:40: undeclared name: optarg
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4286:37: undeclared name: optarg
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:4852:15: cannot convert (-1) (untyped int constant -1) to byte
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:7191:6: u12 declared but not used
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:7187:6: u8 declared but not used
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:7189:6: u10 declared but not used
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:7190:6: u11 declared but not used
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:7186:6: u7 declared but not used
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:7188:6: u9 declared but not used
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:9456:6: u4 declared but not used
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:9462:6: u10 declared but not used
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13561:11: undeclared name: mktime
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13905:6: Float32SliceToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13911:6: IntSliceToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13917:6: Uint8SliceToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13923:6: Uint32SliceToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13929:6: Float64SliceToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13935:6: Float32SliceToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13936:6: Float32SliceSliceToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13942:6: Float64SliceToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13943:6: Float64SliceSliceToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13949:6: IntSliceToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13950:6: IntSliceSliceToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13956:6: Float32SliceSliceToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13962:6: Float32SliceSliceToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13968:6: Float32SliceToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13969:6: Float32SliceSliceToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:13970:6: Float32SliceSliceSliceToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:14087:6: FcomplexSliceToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:14098:8: FcomplexSliceToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:14101:6: FcomplexSliceSliceToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:14118:10: Float32SliceToByteSlice not declared by package noarch
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:14139:10: Float64SliceToByteSlice not declared by package noarch
 couldn't load packages due to errors: github.com/Konstantin8105/Transpilation_Frame3DD
