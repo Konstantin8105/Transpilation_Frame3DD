@@ -838,1047 +838,582 @@ main.go:1494:6: don't use underscores in Go names; var shift_flag should be shif
 main.go:1495:6: don't use underscores in Go names; var pan_flag should be panFlag
 main.go:1495:15: should omit type float32 from declaration of var pan_flag; it will be inferred from the right-hand side
 main.go:1496:11: should omit type []byte from declaration of var extn; it will be inferred from the right-hand side
-main.go:1680:5: should replace lc += 1 with lc++
-main.go:1694:7: should replace i += 1 with i++
-main.go:1717:7: should replace i += 1 with i++
-main.go:1721:8: should replace j += 1 with j++
-main.go:1736:8: should replace i += 1 with i++
-main.go:1746:8: should replace i += 1 with i++
-main.go:1765:8: should replace i += 1 with i++
-main.go:1776:8: should replace i += 1 with i++
-main.go:1789:8: should replace i += 1 with i++
-main.go:1800:7: should replace i += 1 with i++
-main.go:1819:8: should replace iter += 1 with iter++
-main.go:1833:9: should replace i += 1 with i++
-main.go:1888:11: if block ends with a return statement, so drop this else and outdent its block
-main.go:1898:5: should replace j += 1 with j++
-main.go:1909:5: should replace i += 1 with i++
-main.go:1917:8: should replace j += 1 with j++
-main.go:1954:6: should replace j += 1 with j++
-main.go:2052:6: don't use underscores in Go names; func assemble_K should be assembleK
-main.go:2055:16: should drop = 0 from declaration of var res; it is the zero value
-main.go:2062:6: don't use underscores in Go names; var stiffness_fn should be stiffnessFn
-main.go:2062:19: should omit type []byte from declaration of var stiffness_fn; it will be inferred from the right-hand side
-main.go:2065:4: should replace i += 1 with i++
-main.go:2069:5: should replace j += 1 with j++
-main.go:2080:4: should replace i += 1 with i++
-main.go:2099:4: should replace i += 1 with i++
-main.go:2112:6: should replace l += 1 with l++
-main.go:2118:8: should replace ll += 1 with ll++
-main.go:2138:6: don't use underscores in Go names; func elastic_K should be elasticK
-main.go:2155:4: should replace i += 1 with i++
-main.go:2159:5: should replace j += 1 with j++
-main.go:2342:4: should replace i += 1 with i++
-main.go:2347:6: should replace j += 1 with j++
-main.go:2380:6: don't use underscores in Go names; func geometric_K should be geometricK
-main.go:2401:4: should replace i += 1 with i++
-main.go:2405:5: should replace j += 1 with j++
-main.go:2598:4: should replace i += 1 with i++
-main.go:2603:6: should replace j += 1 with j++
-main.go:2630:4: should replace i += 1 with i++
-main.go:2634:5: should replace j += 1 with j++
-main.go:2652:6: don't use underscores in Go names; func solve_system should be solveSystem
-main.go:2652:123: don't use underscores in Go names; func parameter rms_resid should be rmsResid
-main.go:2695:6: don't use underscores in Go names; func equilibrium_error should be equilibriumError
-main.go:2696:6: don't use underscores in Go names; var ss_dF should be ssDF
-main.go:2696:22: should drop = 0 from declaration of var ss_dF; it is the zero value
-main.go:2697:6: don't use underscores in Go names; var ss_F should be ssF
-main.go:2697:21: should drop = 0 from declaration of var ss_F; it is the zero value
-main.go:2698:21: should drop = 0 from declaration of var errF; it is the zero value
-main.go:2703:4: should replace i += 1 with i++
-main.go:2711:7: should replace j += 1 with j++
-main.go:2725:7: should replace j += 1 with j++
-main.go:2739:4: should replace i += 1 with i++
-main.go:2743:5: don't use underscores in Go names; var ss_dF should be ssDF
-main.go:2749:4: should replace i += 1 with i++
-main.go:2753:5: don't use underscores in Go names; var ss_F should be ssF
-main.go:2766:6: don't use underscores in Go names; func element_end_forces should be elementEndForces
-main.go:2766:232: don't use underscores in Go names; func parameter eqF_temp should be eqFTemp
-main.go:2766:254: don't use underscores in Go names; func parameter eqF_mech should be eqFMech
-main.go:2766:310: don't use underscores in Go names; func parameter axial_strain_warning should be axialStrainWarning
-main.go:2768:6: don't use underscores in Go names; var axial_strain should be axialStrain
-main.go:2768:19: should omit type float64 from declaration of var axial_strain; it will be inferred from the right-hand side
-main.go:2775:4: should replace m += 1 with m++
-main.go:2781:6: should replace j += 1 with j++
-main.go:2790:6: should replace (axial_strain_warning[0]) += 1 with (axial_strain_warning[0])++
-main.go:2827:6: don't use underscores in Go names; func frame_element_force should be frameElementForce
-main.go:2827:196: don't use underscores in Go names; func parameter f_t should be fT
-main.go:2827:211: don't use underscores in Go names; func parameter f_m should be fM
-main.go:2827:260: don't use underscores in Go names; func parameter axial_strain should be axialStrain
-main.go:2849:22: should drop = 0 from declaration of var delta; it is the zero value
-main.go:2854:18: should drop = 0 from declaration of var T; it is the zero value
-main.go:2855:9: should omit type float64 from declaration of var f1; it will be inferred from the right-hand side
-main.go:2856:9: should omit type float64 from declaration of var f2; it will be inferred from the right-hand side
-main.go:2857:9: should omit type float64 from declaration of var f3; it will be inferred from the right-hand side
-main.go:2858:9: should omit type float64 from declaration of var f4; it will be inferred from the right-hand side
-main.go:2859:9: should omit type float64 from declaration of var f5; it will be inferred from the right-hand side
-main.go:2860:9: should omit type float64 from declaration of var f6; it will be inferred from the right-hand side
-main.go:2861:9: should omit type float64 from declaration of var f7; it will be inferred from the right-hand side
-main.go:2862:9: should omit type float64 from declaration of var f8; it will be inferred from the right-hand side
-main.go:2863:9: should omit type float64 from declaration of var f9; it will be inferred from the right-hand side
-main.go:2864:10: should omit type float64 from declaration of var f10; it will be inferred from the right-hand side
-main.go:2865:10: should omit type float64 from declaration of var f11; it will be inferred from the right-hand side
-main.go:2866:10: should omit type float64 from declaration of var f12; it will be inferred from the right-hand side
-main.go:2995:6: don't use underscores in Go names; func compute_reaction_forces should be computeReactionForces
-main.go:3000:4: should replace i += 1 with i++
-main.go:3008:7: should replace j += 1 with j++
-main.go:3023:6: don't use underscores in Go names; func assemble_M should be assembleM
-main.go:3026:16: should drop = 0 from declaration of var res; it is the zero value
-main.go:3033:6: don't use underscores in Go names; var mass_fn should be massFn
-main.go:3033:14: should omit type []byte from declaration of var mass_fn; it will be inferred from the right-hand side
-main.go:3036:4: should replace i += 1 with i++
-main.go:3040:5: should replace j += 1 with j++
-main.go:3051:4: should replace i += 1 with i++
-main.go:3070:4: should replace i += 1 with i++
-main.go:3084:6: should replace l += 1 with l++
-main.go:3090:8: should replace ll += 1 with ll++
-main.go:3103:4: should replace j += 1 with j++
-main.go:3117:4: should replace i += 1 with i++
-main.go:3134:6: don't use underscores in Go names; func lumped_M should be lumpedM
-main.go:3157:4: should replace i += 1 with i++
-main.go:3161:5: should replace j += 1 with j++
-main.go:3271:6: don't use underscores in Go names; func consistent_M should be consistentM
-main.go:3294:4: should replace i += 1 with i++
-main.go:3298:5: should replace j += 1 with j++
-main.go:3467:4: should replace i += 1 with i++
-main.go:3475:4: should replace i += 1 with i++
-main.go:3484:4: should replace i += 1 with i++
-main.go:3489:6: should replace j += 1 with j++
-main.go:3520:6: don't use underscores in Go names; func static_condensation should be staticCondensation
-main.go:3538:4: should replace i += 1 with i++
-main.go:3544:6: should replace j += 1 with j++
-main.go:3555:6: should replace k += 1 with k++
-main.go:3563:4: should replace i += 1 with i++
-main.go:3568:6: should replace j += 1 with j++
-main.go:3589:4: should replace i += 1 with i++
-main.go:3594:6: should replace j += 1 with j++
-main.go:3611:4: should replace i += 1 with i++
-main.go:3616:6: should replace j += 1 with j++
-main.go:3645:6: don't use underscores in Go names; func paz_condensation should be pazCondensation
-main.go:3673:4: should replace i += 1 with i++
-main.go:3679:6: should replace j += 1 with j++
-main.go:3690:6: should replace k += 1 with k++
-main.go:3698:4: should replace i += 1 with i++
-main.go:3703:6: should replace j += 1 with j++
-main.go:3733:4: should replace i += 1 with i++
-main.go:3738:6: should replace j += 1 with j++
-main.go:3755:4: should replace i += 1 with i++
-main.go:3760:6: should replace j += 1 with j++
-main.go:3771:4: should replace i += 1 with i++
-main.go:3775:5: should replace j += 1 with j++
-main.go:3798:6: don't use underscores in Go names; func modal_condensation should be modalCondensation
-main.go:3801:13: should omit type float64 from declaration of var traceM; it will be inferred from the right-hand side
-main.go:3802:14: should omit type float64 from declaration of var traceMc; it will be inferred from the right-hand side
-main.go:3811:4: should replace i += 1 with i++
-main.go:3815:5: should replace j += 1 with j++
-main.go:3825:4: should replace i += 1 with i++
-main.go:3835:4: should replace i += 1 with i++
-main.go:3840:6: should replace j += 1 with j++
-main.go:3846:8: should replace k += 1 with k++
-main.go:3859:4: should replace i += 1 with i++
-main.go:3867:4: should replace i += 1 with i++
-main.go:3872:6: should replace j += 1 with j++
-main.go:3878:8: should replace k += 1 with k++
-main.go:3891:4: should replace i += 1 with i++
-main.go:3895:5: should replace j += 1 with j++
-main.go:3904:4: should replace i += 1 with i++
-main.go:3908:5: should replace j += 1 with j++
-main.go:3933:407: don't use underscores in Go names; func parameter F_mech should be FMech
-main.go:3933:427: don't use underscores in Go names; func parameter F_temp should be FTemp
-main.go:3933:447: don't use underscores in Go names; func parameter eqF_mech should be eqFMech
-main.go:3933:471: don't use underscores in Go names; func parameter eqF_temp should be eqFTemp
-main.go:4043:6: don't use underscores in Go names; func parse_options should be parseOptions
-main.go:4043:45: don't use underscores in Go names; func parameter IN_file should be INFile
-main.go:4043:61: don't use underscores in Go names; func parameter OUT_file should be OUTFile
-main.go:4043:78: don't use underscores in Go names; func parameter shear_flag should be shearFlag
-main.go:4043:96: don't use underscores in Go names; func parameter geom_flag should be geomFlag
-main.go:4043:113: don't use underscores in Go names; func parameter anlyz_flag should be anlyzFlag
-main.go:4043:131: don't use underscores in Go names; func parameter exagg_flag should be exaggFlag
-main.go:4043:153: don't use underscores in Go names; func parameter D3_flag should be D3Flag
-main.go:4043:168: don't use underscores in Go names; func parameter lump_flag should be lumpFlag
-main.go:4043:185: don't use underscores in Go names; func parameter modal_flag should be modalFlag
-main.go:4043:203: don't use underscores in Go names; func parameter tol_flag should be tolFlag
-main.go:4043:223: don't use underscores in Go names; func parameter shift_flag should be shiftFlag
-main.go:4043:245: don't use underscores in Go names; func parameter pan_flag should be panFlag
-main.go:4043:265: don't use underscores in Go names; func parameter write_matrix should be writeMatrix
-main.go:4043:285: don't use underscores in Go names; func parameter axial_sign should be axialSign
-main.go:4043:303: don't use underscores in Go names; func parameter condense_flag should be condenseFlag
-main.go:4045:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
-main.go:4046:17: should drop = 0 from declaration of var sfrv; it is the zero value
-main.go:4328:9: don't use underscores in Go names; func display_help should be displayHelp
-main.go:4371:9: don't use underscores in Go names; func display_usage should be displayUsage
-main.go:4384:6: don't use underscores in Go names; func display_version should be displayVersion
-main.go:4400:6: don't use underscores in Go names; func display_version_about should be displayVersionAbout
-main.go:4416:6: don't use underscores in Go names; func read_node_data should be readNodeData
-main.go:4419:17: should drop = 0 from declaration of var sfrv; it is the zero value
-main.go:4420:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
-main.go:4423:4: should replace i += 1 with i++
-main.go:4450:6: don't use underscores in Go names; func read_frame_element_data should be readFrameElementData
-main.go:4457:17: should drop = 0 from declaration of var epn0; it is the zero value
-main.go:4458:17: should drop = 0 from declaration of var sfrv; it is the zero value
-main.go:4459:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
-main.go:4463:4: should replace n += 1 with n++
-main.go:4471:4: should replace i += 1 with i++
-main.go:4484:4: should replace epn[N1[b]] += 1 with epn[N1[b]]++
-main.go:4485:4: should replace epn[N2[b]] += 1 with epn[N2[b]]++
-main.go:4554:4: should replace b += 1 with b++
-main.go:4576:4: should replace n += 1 with n++
-main.go:4582:5: should replace epn0 += 1 with epn0++
-main.go:4598:6: don't use underscores in Go names; func read_run_data should be readRunData
-main.go:4598:37: don't use underscores in Go names; func parameter OUT_file should be OUTFile
-main.go:4598:67: don't use underscores in Go names; func parameter shear_flag should be shearFlag
-main.go:4598:95: don't use underscores in Go names; func parameter geom_flag should be geomFlag
-main.go:4598:161: don't use underscores in Go names; func parameter exagg_static should be exaggStatic
-main.go:4598:185: don't use underscores in Go names; func parameter exagg_flag should be exaggFlag
-main.go:4598:249: don't use underscores in Go names; func parameter anlyz_flag should be anlyzFlag
-main.go:4599:6: don't use underscores in Go names; var full_len should be fullLen
-main.go:4599:21: should drop = 0 from declaration of var full_len; it is the zero value
-main.go:4600:16: should drop = 0 from declaration of var len; it is the zero value
-main.go:4602:6: don't use underscores in Go names; var base_file should be baseFile
-main.go:4602:16: should omit type []byte from declaration of var base_file; it will be inferred from the right-hand side
-main.go:4603:6: don't use underscores in Go names; var mesh_file should be meshFile
-main.go:4603:16: should omit type []byte from declaration of var mesh_file; it will be inferred from the right-hand side
-main.go:4604:17: should drop = 0 from declaration of var sfrv; it is the zero value
-main.go:4608:4: should replace len += 1 with len++
-main.go:4616:4: should replace len -= 1 with len--
-main.go:4625:3: should replace len += 1 with len++
-main.go:4635:5: should replace len -= 1 with len--
-main.go:4644:5: should replace i += 1 with i++
-main.go:4647:5: should replace len += 1 with len++
-main.go:4701:6: don't use underscores in Go names; func frame3dd_getline should be frame3ddGetline
-main.go:4702:14: should drop = 0 from declaration of var c; it is the zero value
-main.go:4703:14: should drop = 0 from declaration of var i; it is the zero value
-main.go:4706:4: should replace lim -= 1 with lim--
-main.go:4713:5: should replace i += 1 with i++
-main.go:4730:6: don't use underscores in Go names; func temp_dir should be tempDir
-main.go:4731:10: should omit type []byte from declaration of var tmp; it will be inferred from the right-hand side
-main.go:4752:6: don't use underscores in Go names; func output_path should be outputPath
-main.go:4752:58: don't use underscores in Go names; func parameter default_outdir should be defaultOutdir
-main.go:4782:6: don't use underscores in Go names; func parse_input should be parseInput
-main.go:4784:11: should omit type []byte from declaration of var line; it will be inferred from the right-hand side
-main.go:4785:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
-main.go:4816:6: don't use underscores in Go names; func getline_no_comment should be getlineNoComment
-main.go:4817:14: should drop = 0 from declaration of var c; it is the zero value
-main.go:4818:14: should drop = 0 from declaration of var i; it is the zero value
-main.go:4821:4: should replace lim -= 1 with lim--
-main.go:4829:6: should replace i += 1 with i++
-main.go:4834:6: should replace i += 1 with i++
-main.go:4843:4: should replace lim -= 1 with lim--
-main.go:4862:6: don't use underscores in Go names; func read_reaction_data should be readReactionData
-main.go:4866:17: should drop = 0 from declaration of var sfrv; it is the zero value
-main.go:4867:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
-main.go:4870:4: should replace i += 1 with i++
-main.go:4895:4: should replace i += 1 with i++
-main.go:4904:6: should replace l -= 1 with l--
-main.go:4926:6: should replace l -= 1 with l--
-main.go:4942:4: should replace i += 1 with i++
-main.go:4959:4: should replace i += 1 with i++
-main.go:5032:6: don't use underscores in Go names; func read_and_assemble_loads should be readAndAssembleLoads
-main.go:5032:400: don't use underscores in Go names; func parameter F_temp should be FTemp
-main.go:5032:420: don't use underscores in Go names; func parameter F_mech should be FMech
-main.go:5032:538: don't use underscores in Go names; func parameter eqF_mech should be eqFMech
-main.go:5032:562: don't use underscores in Go names; func parameter eqF_temp should be eqFTemp
-main.go:5047:20: should drop = 0 from declaration of var Mx1; it is the zero value
-main.go:5048:20: should drop = 0 from declaration of var My1; it is the zero value
-main.go:5049:20: should drop = 0 from declaration of var Mz1; it is the zero value
-main.go:5053:20: should drop = 0 from declaration of var Mx2; it is the zero value
-main.go:5054:20: should drop = 0 from declaration of var My2; it is the zero value
-main.go:5055:20: should drop = 0 from declaration of var Mz2; it is the zero value
-main.go:5076:17: should drop = 0 from declaration of var sfrv; it is the zero value
-main.go:5077:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
-main.go:5080:4: should replace j += 1 with j++
-main.go:5088:4: should replace j += 1 with j++
-main.go:5092:5: should replace lc += 1 with lc++
-main.go:5108:4: should replace i += 1 with i++
-main.go:5112:5: should replace n += 1 with n++
-main.go:5116:6: should replace lc += 1 with lc++
-main.go:5133:4: should replace i += 1 with i++
-main.go:5137:5: should replace lc += 1 with lc++
-main.go:5146:4: should replace i += 1 with i++
-main.go:5150:5: should replace j += 1 with j++
-main.go:5159:4: should replace lc += 1 with lc++
-main.go:5176:6: should replace n += 1 with n++
-main.go:5207:6: should replace i += 1 with i++
-main.go:5221:8: should replace l -= 1 with l--
-main.go:5254:6: should replace i += 1 with i++
-main.go:5269:8: should replace l += 1 with l++
-main.go:5350:6: should replace i += 1 with i++
-main.go:5365:8: should replace l += 1 with l++
-main.go:5503:6: should replace i += 1 with i++
-main.go:5518:8: should replace l += 1 with l++
-main.go:5602:6: should replace i += 1 with i++
-main.go:5617:8: should replace l += 1 with l++
-main.go:5683:6: should replace n += 1 with n++
-main.go:5690:8: should replace i += 1 with i++
-main.go:5698:8: should replace i += 1 with i++
-main.go:5706:8: should replace i += 1 with i++
-main.go:5714:8: should replace i += 1 with i++
-main.go:5733:6: should replace i += 1 with i++
-main.go:5742:8: should replace l -= 1 with l--
-main.go:5767:6: don't use underscores in Go names; func read_mass_data should be readMassData
-main.go:5767:38: don't use underscores in Go names; func parameter OUT_file should be OUTFile
-main.go:5767:206: don't use underscores in Go names; func parameter total_mass should be totalMass
-main.go:5767:228: don't use underscores in Go names; func parameter struct_mass should be structMass
-main.go:5767:276: don't use underscores in Go names; func parameter modal_flag should be modalFlag
-main.go:5767:304: don't use underscores in Go names; func parameter lump_flag should be lumpFlag
-main.go:5767:334: don't use underscores in Go names; func parameter tol_flag should be tolFlag
-main.go:5767:369: don't use underscores in Go names; func parameter shift_flag should be shiftFlag
-main.go:5767:389: don't use underscores in Go names; func parameter exagg_modal should be exaggModal
-main.go:5767:456: don't use underscores in Go names; func parameter pan_flag should be panFlag
-main.go:5774:6: don't use underscores in Go names; var full_len should be fullLen
-main.go:5774:21: should drop = 0 from declaration of var full_len; it is the zero value
-main.go:5775:16: should drop = 0 from declaration of var len; it is the zero value
-main.go:5776:17: should drop = 0 from declaration of var sfrv; it is the zero value
-main.go:5777:6: don't use underscores in Go names; var base_file should be baseFile
-main.go:5777:16: should omit type []byte from declaration of var base_file; it will be inferred from the right-hand side
-main.go:5778:6: don't use underscores in Go names; var mode_file should be modeFile
-main.go:5778:16: should omit type []byte from declaration of var mode_file; it will be inferred from the right-hand side
-main.go:5779:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
-main.go:5855:4: should replace j += 1 with j++
-main.go:5891:4: should replace m += 1 with m++
-main.go:5911:4: should replace b += 1 with b++
-main.go:5920:4: should replace m += 1 with m++
-main.go:5952:4: should replace m += 1 with m++
-main.go:5960:4: should replace m += 1 with m++
-main.go:5984:4: should replace len += 1 with len++
-main.go:5992:4: should replace len -= 1 with len--
-main.go:6001:3: should replace len += 1 with len++
-main.go:6007:5: should replace len -= 1 with len--
-main.go:6016:5: should replace i += 1 with i++
-main.go:6019:5: should replace len += 1 with len++
-main.go:6034:6: don't use underscores in Go names; func read_condensation_data should be readCondensationData
-main.go:6034:99: don't use underscores in Go names; func parameter condense_flag should be condenseFlag
-main.go:6039:17: should drop = 0 from declaration of var sfrv; it is the zero value
-main.go:6040:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
-main.go:6146:4: should replace i += 1 with i++
-main.go:6162:4: should replace i += 1 with i++
-main.go:6166:5: should replace j += 1 with j++
-main.go:6171:7: should replace (Cdof[0]) += 1 with (Cdof[0])++
-main.go:6181:4: should replace i += 1 with i++
-main.go:6186:6: should replace j += 1 with j++
-main.go:6192:8: should replace k += 1 with k++
-main.go:6202:4: should replace i += 1 with i++
-main.go:6228:6: don't use underscores in Go names; func write_input_data should be writeInputData
-main.go:6237:4: should replace i += 1 with i++
-main.go:6252:4: should replace i += 1 with i++
-main.go:6263:4: should replace i += 1 with i++
-main.go:6274:4: should replace i += 1 with i++
-main.go:6287:4: should replace i += 1 with i++
-main.go:6300:4: should replace i += 1 with i++
-main.go:6312:4: should replace i += 1 with i++
-main.go:6331:4: should replace lc += 1 with lc++
-main.go:6367:7: should replace j += 1 with j++
-main.go:6375:10: should replace i -= 1 with i--
-main.go:6392:7: should replace n += 1 with n++
-main.go:6398:9: should replace i += 1 with i++
-main.go:6414:7: should replace n += 1 with n++
-main.go:6420:9: should replace i += 1 with i++
-main.go:6430:9: should replace i += 1 with i++
-main.go:6440:9: should replace i += 1 with i++
-main.go:6456:7: should replace n += 1 with n++
-main.go:6462:9: should replace i += 1 with i++
-main.go:6479:7: should replace n += 1 with n++
-main.go:6486:9: should replace i += 1 with i++
-main.go:6503:7: should replace j += 1 with j++
-main.go:6511:10: should replace i -= 1 with i--
-main.go:6539:6: don't use underscores in Go names; func write_static_results should be writeStaticResults
-main.go:6539:189: don't use underscores in Go names; func parameter axial_sign should be axialSign
-main.go:6556:4: should replace j += 1 with j++
-main.go:6562:6: should replace i -= 1 with i--
-main.go:6572:7: should replace i -= 1 with i--
-main.go:6592:4: should replace n += 1 with n++
-main.go:6612:6: should replace i += 1 with i++
-main.go:6640:6: should replace i += 1 with i++
-main.go:6658:4: should replace j += 1 with j++
-main.go:6666:7: should replace i -= 1 with i--
-main.go:6691:6: don't use underscores in Go names; func CSV_filename should be CSVFilename
-main.go:6691:19: don't use underscores in Go names; func parameter CSV_file should be CSVFile
-main.go:6691:47: don't use underscores in Go names; func parameter OUT_file should be OUTFile
-main.go:6704:5: should replace i += 1 with i++
-main.go:6708:5: should replace j += 1 with j++
-main.go:6714:3: should replace j += 1 with j++
-main.go:6732:6: don't use underscores in Go names; func write_static_csv should be writeStaticCsv
-main.go:6732:23: don't use underscores in Go names; func parameter OUT_file should be OUTFile
-main.go:6737:9: should omit type []byte from declaration of var wa; it will be inferred from the right-hand side
-main.go:6738:6: don't use underscores in Go names; var CSV_file should be CSVFile
-main.go:6738:15: should omit type []byte from declaration of var CSV_file; it will be inferred from the right-hand side
-main.go:6740:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
-main.go:6765:5: should replace i += 1 with i++
-main.go:6785:4: should replace j += 1 with j++
-main.go:6791:6: should replace i -= 1 with i--
-main.go:6810:4: should replace n += 1 with n++
-main.go:6821:6: should replace i += 1 with i++
-main.go:6840:6: should replace i += 1 with i++
-main.go:6858:4: should replace j += 1 with j++
-main.go:6865:6: should replace i -= 1 with i--
-main.go:6911:6: don't use underscores in Go names; func write_static_mfile should be writeStaticMfile
-main.go:6911:25: don't use underscores in Go names; func parameter OUT_file should be OUTFile
-main.go:6917:6: don't use underscores in Go names; var M_file should be MFile
-main.go:6917:13: should omit type []byte from declaration of var M_file; it will be inferred from the right-hand side
-main.go:6919:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
-main.go:6931:5: should replace i += 1 with i++
-main.go:6935:5: should replace j += 1 with j++
-main.go:6941:3: should replace j += 1 with j++
-main.go:6982:4: should replace j += 1 with j++
-main.go:6987:6: should replace i -= 1 with i--
-main.go:7011:4: should replace n += 1 with n++
-main.go:7021:6: should replace i += 1 with i++
-main.go:7038:6: should replace i += 1 with i++
-main.go:7060:4: should replace j += 1 with j++
-main.go:7066:6: should replace i -= 1 with i--
-main.go:7170:6: don't use underscores in Go names; func peak_internal_forces should be peakInternalForces
-main.go:7204:9: should omit type float64 from declaration of var wx; it will be inferred from the right-hand side
-main.go:7205:9: should omit type float64 from declaration of var wy; it will be inferred from the right-hand side
-main.go:7206:9: should omit type float64 from declaration of var wz; it will be inferred from the right-hand side
-main.go:7207:6: don't use underscores in Go names; var wx_ should be wx
-main.go:7207:10: should omit type float64 from declaration of var wx_; it will be inferred from the right-hand side
-main.go:7208:6: don't use underscores in Go names; var wy_ should be wy
-main.go:7208:10: should omit type float64 from declaration of var wy_; it will be inferred from the right-hand side
-main.go:7209:6: don't use underscores in Go names; var wz_ should be wz
-main.go:7209:10: should omit type float64 from declaration of var wz_; it will be inferred from the right-hand side
-main.go:7210:10: should omit type float64 from declaration of var wxg; it will be inferred from the right-hand side
-main.go:7211:10: should omit type float64 from declaration of var wyg; it will be inferred from the right-hand side
-main.go:7212:10: should omit type float64 from declaration of var wzg; it will be inferred from the right-hand side
-main.go:7213:19: should drop = 0 from declaration of var tx; it is the zero value
-main.go:7214:6: don't use underscores in Go names; var tx_ should be tx
-main.go:7214:20: should drop = 0 from declaration of var tx_; it is the zero value
-main.go:7217:6: don't use underscores in Go names; var Nx_ should be Nx
-main.go:7219:6: don't use underscores in Go names; var Vy_ should be Vy
-main.go:7221:6: don't use underscores in Go names; var Vz_ should be Vz
-main.go:7223:6: don't use underscores in Go names; var Tx_ should be Tx
-main.go:7225:6: don't use underscores in Go names; var My_ should be My
-main.go:7227:6: don't use underscores in Go names; var Mz_ should be Mz
-main.go:7229:6: don't use underscores in Go names; var Sy_ should be Sy
-main.go:7231:6: don't use underscores in Go names; var Sz_ should be Sz
-main.go:7239:9: should omit type int from declaration of var nx; it will be inferred from the right-hand side
-main.go:7240:15: should drop = 0 from declaration of var cU; it is the zero value
-main.go:7241:15: should drop = 0 from declaration of var cW; it is the zero value
-main.go:7242:15: should drop = 0 from declaration of var cP; it is the zero value
-main.go:7253:4: should replace m += 1 with m++
-main.go:7308:4: should replace m += 1 with m++
-main.go:7320:6: should replace n += 1 with n++
-main.go:7328:8: should replace cU += 1 with cU++
-main.go:7418:6: should replace i += 1 with i++
-main.go:7433:8: should replace n += 1 with n++
-main.go:7439:11: should replace cW += 1 with cW++
-main.go:7477:8: should replace n += 1 with n++
-main.go:7483:11: should replace cP += 1 with cP++
-main.go:7524:14: if block ends with a return statement, so drop this else and outdent its block
-main.go:7531:14: if block ends with a return statement, so drop this else and outdent its block
-main.go:7538:14: if block ends with a return statement, so drop this else and outdent its block
-main.go:7545:14: if block ends with a return statement, so drop this else and outdent its block
-main.go:7552:14: if block ends with a return statement, so drop this else and outdent its block
-main.go:7559:14: if block ends with a return statement, so drop this else and outdent its block
-main.go:7566:14: if block ends with a return statement, so drop this else and outdent its block
-main.go:7573:14: if block ends with a return statement, so drop this else and outdent its block
-main.go:7580:14: if block ends with a return statement, so drop this else and outdent its block
-main.go:7587:14: if block ends with a return statement, so drop this else and outdent its block
-main.go:7594:14: if block ends with a return statement, so drop this else and outdent its block
-main.go:7601:14: if block ends with a return statement, so drop this else and outdent its block
-main.go:7615:4: should replace m += 1 with m++
-main.go:7626:4: should replace m += 1 with m++
-main.go:7717:6: don't use underscores in Go names; func write_internal_forces should be writeInternalForces
-main.go:7717:28: don't use underscores in Go names; func parameter OUT_file should be OUTFile
-main.go:7751:9: should omit type float64 from declaration of var wx; it will be inferred from the right-hand side
-main.go:7752:9: should omit type float64 from declaration of var wy; it will be inferred from the right-hand side
-main.go:7753:9: should omit type float64 from declaration of var wz; it will be inferred from the right-hand side
-main.go:7754:6: don't use underscores in Go names; var wx_ should be wx
-main.go:7754:10: should omit type float64 from declaration of var wx_; it will be inferred from the right-hand side
-main.go:7755:6: don't use underscores in Go names; var wy_ should be wy
-main.go:7755:10: should omit type float64 from declaration of var wy_; it will be inferred from the right-hand side
-main.go:7756:6: don't use underscores in Go names; var wz_ should be wz
-main.go:7756:10: should omit type float64 from declaration of var wz_; it will be inferred from the right-hand side
-main.go:7757:10: should omit type float64 from declaration of var wxg; it will be inferred from the right-hand side
-main.go:7758:10: should omit type float64 from declaration of var wyg; it will be inferred from the right-hand side
-main.go:7759:10: should omit type float64 from declaration of var wzg; it will be inferred from the right-hand side
-main.go:7760:19: should drop = 0 from declaration of var tx; it is the zero value
-main.go:7761:6: don't use underscores in Go names; var tx_ should be tx
-main.go:7761:20: should drop = 0 from declaration of var tx_; it is the zero value
-main.go:7764:6: don't use underscores in Go names; var dx_ should be dx
-main.go:7804:15: should drop = 0 from declaration of var cU; it is the zero value
-main.go:7805:15: should drop = 0 from declaration of var cW; it is the zero value
-main.go:7806:15: should drop = 0 from declaration of var cP; it is the zero value
-main.go:7813:11: should omit type []byte from declaration of var fnif; it will be inferred from the right-hand side
-main.go:7814:6: don't use underscores in Go names; var CSV_file should be CSVFile
-main.go:7814:15: should omit type []byte from declaration of var CSV_file; it will be inferred from the right-hand side
-main.go:7815:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
-main.go:7816:9: should omit type []byte from declaration of var wa; it will be inferred from the right-hand side
-main.go:7860:4: should replace m += 1 with m++
-main.go:7884:6: should replace i += 1 with i++
-main.go:7900:6: should replace n += 1 with n++
-main.go:7908:8: should replace cU += 1 with cU++
-main.go:7923:6: should replace i += 1 with i++
-main.go:7937:8: should replace n += 1 with n++
-main.go:7943:11: should replace cW += 1 with cW++
-main.go:7984:8: should replace n += 1 with n++
-main.go:7990:11: should replace cP += 1 with cP++
-main.go:8012:6: should replace i += 1 with i++
-main.go:8024:6: should replace i += 1 with i++
-main.go:8036:6: should replace i += 1 with i++
-main.go:8066:6: should replace i += 1 with i++
-main.go:8077:6: should replace i += 1 with i++
-main.go:8086:6: should replace i += 1 with i++
-main.go:8097:6: should replace i += 1 with i++
-main.go:8106:6: should replace i += 1 with i++
-main.go:8118:6: should replace i += 1 with i++
-main.go:8128:7: should replace i += 1 with i++
-main.go:8139:6: should replace i += 1 with i++
-main.go:8151:6: should replace i += 1 with i++
-main.go:8256:6: should replace i += 1 with i++
-main.go:8262:14: if block ends with a return statement, so drop this else and outdent its block
-main.go:8269:14: if block ends with a return statement, so drop this else and outdent its block
-main.go:8276:14: if block ends with a return statement, so drop this else and outdent its block
-main.go:8283:14: if block ends with a return statement, so drop this else and outdent its block
-main.go:8290:14: if block ends with a return statement, so drop this else and outdent its block
-main.go:8297:14: if block ends with a return statement, so drop this else and outdent its block
-main.go:8304:14: if block ends with a return statement, so drop this else and outdent its block
-main.go:8311:14: if block ends with a return statement, so drop this else and outdent its block
-main.go:8318:14: if block ends with a return statement, so drop this else and outdent its block
-main.go:8325:14: if block ends with a return statement, so drop this else and outdent its block
-main.go:8332:14: if block ends with a return statement, so drop this else and outdent its block
-main.go:8339:14: if block ends with a return statement, so drop this else and outdent its block
-main.go:8347:6: should replace i += 1 with i++
-main.go:8353:14: if block ends with a return statement, so drop this else and outdent its block
-main.go:8360:14: if block ends with a return statement, so drop this else and outdent its block
-main.go:8367:14: if block ends with a return statement, so drop this else and outdent its block
-main.go:8374:14: if block ends with a return statement, so drop this else and outdent its block
-main.go:8381:14: if block ends with a return statement, so drop this else and outdent its block
-main.go:8388:14: if block ends with a return statement, so drop this else and outdent its block
-main.go:8395:14: if block ends with a return statement, so drop this else and outdent its block
-main.go:8402:14: if block ends with a return statement, so drop this else and outdent its block
-main.go:8409:14: if block ends with a return statement, so drop this else and outdent its block
-main.go:8416:14: if block ends with a return statement, so drop this else and outdent its block
-main.go:8423:14: if block ends with a return statement, so drop this else and outdent its block
-main.go:8430:14: if block ends with a return statement, so drop this else and outdent its block
-main.go:8442:6: should replace i += 1 with i++
-main.go:8480:6: don't use underscores in Go names; func write_modal_results should be writeModalResults
-main.go:8480:119: don't use underscores in Go names; func parameter total_mass should be totalMass
-main.go:8480:139: don't use underscores in Go names; func parameter struct_mass should be structMass
-main.go:8485:6: don't use underscores in Go names; var num_modes should be numModes
-main.go:8498:4: should replace i += 1 with i++
-main.go:8544:4: should replace j += 1 with j++
-main.go:8551:6: should replace i += 1 with i++
-main.go:8570:4: should replace m += 1 with m++
-main.go:8576:6: should replace i += 1 with i++
-main.go:8585:6: should replace i += 1 with i++
-main.go:8594:6: should replace i += 1 with i++
-main.go:8608:6: should replace j += 1 with j++
-main.go:8614:8: should replace i -= 1 with i--
-main.go:8679:8: don't use underscores in Go names; func static_mesh should be staticMesh
-main.go:8679:20: don't use underscores in Go names; func parameter IN_file should be INFile
-main.go:8679:213: don't use underscores in Go names; func parameter exagg_static should be exaggStatic
-main.go:8679:235: don't use underscores in Go names; func parameter D3_flag should be D3Flag
-main.go:8680:26: should drop = nil from declaration of var fpif; it is the zero value
-main.go:8681:25: should drop = nil from declaration of var fpm; it is the zero value
-main.go:8685:11: should omit type []byte from declaration of var fnif; it will be inferred from the right-hand side
-main.go:8686:13: should omit type []byte from declaration of var meshfl; it will be inferred from the right-hand side
-main.go:8689:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
-main.go:8691:17: should drop = 0 from declaration of var sfrv; it is the zero value
-main.go:8702:14: should drop = 0 from declaration of var j; it is the zero value
-main.go:8703:14: should drop = 0 from declaration of var m; it is the zero value
-main.go:8704:14: should drop = 0 from declaration of var n; it is the zero value
-main.go:8705:14: should drop = 0 from declaration of var X; it is the zero value
-main.go:8706:14: should drop = 0 from declaration of var Y; it is the zero value
-main.go:8707:14: should drop = 0 from declaration of var Z; it is the zero value
-main.go:8708:9: should omit type int from declaration of var lw; it will be inferred from the right-hand side
-main.go:8713:4: should replace j += 1 with j++
-main.go:8774:5: should replace j += 1 with j++
-main.go:8783:5: should replace m += 1 with m++
-main.go:8845:5: should replace m += 1 with m++
-main.go:8889:4: should replace m += 1 with m++
-main.go:8935:6: don't use underscores in Go names; func modal_mesh should be modalMesh
-main.go:8935:17: don't use underscores in Go names; func parameter IN_file should be INFile
-main.go:8935:232: don't use underscores in Go names; func parameter exagg_modal should be exaggModal
-main.go:8935:253: don't use underscores in Go names; func parameter D3_flag should be D3Flag
-main.go:8948:14: should drop = 0 from declaration of var X; it is the zero value
-main.go:8949:14: should drop = 0 from declaration of var Y; it is the zero value
-main.go:8950:14: should drop = 0 from declaration of var Z; it is the zero value
-main.go:8951:9: should omit type int from declaration of var lw; it will be inferred from the right-hand side
-main.go:8954:13: should omit type []byte from declaration of var modefl; it will be inferred from the right-hand side
-main.go:8955:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
-main.go:8962:4: should replace i += 1 with i++
-main.go:8999:4: should replace m += 1 with m++
-main.go:9020:6: should replace i += 1 with i++
-main.go:9029:6: should replace i += 1 with i++
-main.go:9038:6: should replace i += 1 with i++
-main.go:9050:6: should replace i += 1 with i++
-main.go:9059:6: should replace n += 1 with n++
-main.go:9069:6: should replace j += 1 with j++
-main.go:9150:14: don't use underscores in Go names; func parameter IN_file should be INFile
-main.go:9150:226: don't use underscores in Go names; func parameter exagg_modal should be exaggModal
-main.go:9150:247: don't use underscores in Go names; func parameter D3_flag should be D3Flag
-main.go:9152:6: don't use underscores in Go names; var x_min should be xMin
-main.go:9152:12: should omit type float32 from declaration of var x_min; it will be inferred from the right-hand side
-main.go:9153:6: don't use underscores in Go names; var x_max should be xMax
-main.go:9153:12: should omit type float32 from declaration of var x_max; it will be inferred from the right-hand side
-main.go:9154:6: don't use underscores in Go names; var y_min should be yMin
-main.go:9154:12: should omit type float32 from declaration of var y_min; it will be inferred from the right-hand side
-main.go:9155:6: don't use underscores in Go names; var y_max should be yMax
-main.go:9155:12: should omit type float32 from declaration of var y_max; it will be inferred from the right-hand side
-main.go:9156:6: don't use underscores in Go names; var z_min should be zMin
-main.go:9156:12: should omit type float32 from declaration of var z_min; it will be inferred from the right-hand side
-main.go:9157:6: don't use underscores in Go names; var z_max should be zMax
-main.go:9157:12: should omit type float32 from declaration of var z_max; it will be inferred from the right-hand side
-main.go:9158:11: should omit type float32 from declaration of var Dxyz; it will be inferred from the right-hand side
-main.go:9159:6: don't use underscores in Go names; var rot_x_init should be rotXInit
-main.go:9159:17: should omit type float32 from declaration of var rot_x_init; it will be inferred from the right-hand side
-main.go:9160:6: don't use underscores in Go names; var rot_x_final should be rotXFinal
-main.go:9160:18: should omit type float32 from declaration of var rot_x_final; it will be inferred from the right-hand side
-main.go:9161:6: don't use underscores in Go names; var rot_z_init should be rotZInit
-main.go:9161:17: should omit type float32 from declaration of var rot_z_init; it will be inferred from the right-hand side
-main.go:9162:6: don't use underscores in Go names; var rot_z_final should be rotZFinal
-main.go:9162:18: should omit type float32 from declaration of var rot_z_final; it will be inferred from the right-hand side
-main.go:9163:6: don't use underscores in Go names; var zoom_init should be zoomInit
-main.go:9163:16: should omit type float32 from declaration of var zoom_init; it will be inferred from the right-hand side
-main.go:9164:6: don't use underscores in Go names; var zoom_final should be zoomFinal
-main.go:9164:17: should omit type float32 from declaration of var zoom_final; it will be inferred from the right-hand side
-main.go:9165:13: should omit type float32 from declaration of var frames; it will be inferred from the right-hand side
-main.go:9166:9: should omit type float64 from declaration of var ex; it will be inferred from the right-hand side
-main.go:9173:14: should drop = 0 from declaration of var X; it is the zero value
-main.go:9174:14: should drop = 0 from declaration of var Y; it is the zero value
-main.go:9175:14: should drop = 0 from declaration of var Z; it is the zero value
-main.go:9177:13: should omit type int from declaration of var CYCLES; it will be inferred from the right-hand side
-main.go:9178:6: don't use underscores in Go names; var frame_number should be frameNumber
-main.go:9178:25: should drop = 0 from declaration of var frame_number; it is the zero value
-main.go:9179:9: should omit type int from declaration of var lw; it will be inferred from the right-hand side
-main.go:9180:6: don't use underscores in Go names; var total_frames should be totalFrames
-main.go:9184:13: should omit type []byte from declaration of var modefl; it will be inferred from the right-hand side
-main.go:9185:14: should omit type []byte from declaration of var framefl; it will be inferred from the right-hand side
-main.go:9186:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
-main.go:9189:4: should replace j += 1 with j++
-main.go:9305:6: should replace c += 1 with c++
-main.go:9310:8: should replace fr += 1 with fr++
-main.go:9314:9: don't use underscores in Go names; var frame_number should be frameNumber
-main.go:9314:9: should replace frame_number += 1 with frame_number++
-main.go:9337:8: should replace fr -= 1 with fr--
-main.go:9341:9: don't use underscores in Go names; var frame_number should be frameNumber
-main.go:9341:9: should replace frame_number += 1 with frame_number++
-main.go:9367:5: should replace i += 1 with i++
-main.go:9382:6: should replace fr += 1 with fr++
-main.go:9403:8: should replace j += 1 with j++
-main.go:9412:8: should replace n += 1 with n++
-main.go:9423:5: should replace i += 1 with i++
-main.go:9443:6: don't use underscores in Go names; func cubic_bent_beam should be cubicBentBeam
-main.go:9477:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
-main.go:9557:6: don't use underscores in Go names; func force_bent_beam should be forceBentBeam
-main.go:9586:17: should drop = 0 from declaration of var sfrv; it is the zero value
-main.go:9602:7: should replace n += 1 with n++
-main.go:9631:6: don't use underscores in Go names; func my_itoa should be myItoa
-main.go:9646:5: should replace i += 1 with i++
-main.go:9660:5: should replace i += 1 with i++
-main.go:9667:4: should replace i += 1 with i++
-main.go:9676:5: should replace j += 1 with j++
-main.go:9682:3: should replace j -= 1 with j--
-main.go:9691:5: should replace i += 1 with i++
-main.go:9695:5: should replace j -= 1 with j--
-main.go:9713:8: don't use underscores in Go names; func get_file_ext should be getFileExt
-main.go:9714:14: should drop = 0 from declaration of var i; it is the zero value
-main.go:9715:6: don't use underscores in Go names; var full_len should be fullLen
-main.go:9715:21: should drop = 0 from declaration of var full_len; it is the zero value
-main.go:9716:16: should drop = 0 from declaration of var len; it is the zero value
-main.go:9719:4: should replace len += 1 with len++
-main.go:9727:4: should replace len -= 1 with len--
-main.go:9736:3: should replace len += 1 with len++
-main.go:9743:5: should replace i += 1 with i++
-main.go:9747:5: should replace len += 1 with len++
-main.go:9768:4: should replace i += 1 with i++
-main.go:9779:33: don't use underscores in Go names; func parameter rms_resid should be rmsResid
-main.go:10120:6: don't use underscores in Go names; func coord_trans should be coordTrans
-main.go:10218:4: should replace i += 1 with i++
-main.go:10222:5: should replace j += 1 with j++
-main.go:10246:4: should replace i += 1 with i++
-main.go:10262:4: should replace j += 1 with j++
-main.go:10266:5: should replace i += 1 with i++
-main.go:10270:6: should replace k += 1 with k++
-main.go:10280:4: should replace i += 1 with i++
-main.go:10284:5: should replace j += 1 with j++
-main.go:10300:4: should replace j += 1 with j++
-main.go:10304:5: should replace i += 1 with i++
-main.go:10308:6: should replace k += 1 with k++
-main.go:10376:6: don't use underscores in Go names; var km_old should be kmOld
-main.go:10378:6: don't use underscores in Go names; var w_old should be wOld
-main.go:10378:22: should drop = 0 from declaration of var w_old; it is the zero value
-main.go:10379:14: should drop = 0 from declaration of var i; it is the zero value
-main.go:10380:14: should drop = 0 from declaration of var j; it is the zero value
-main.go:10381:14: should drop = 0 from declaration of var k; it is the zero value
-main.go:10383:17: should drop = 0 from declaration of var disp; it is the zero value
-main.go:10385:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
-main.go:10401:4: should replace i += 1 with i++
-main.go:10407:6: should replace j += 1 with j++
-main.go:10440:4: should replace i += 1 with i++
-main.go:10444:5: should replace j += 1 with j++
-main.go:10461:10: if block ends with a return statement, so drop this else and outdent its block
-main.go:10467:4: should replace i += 1 with i++
-main.go:10471:5: should replace j += 1 with j++
-main.go:10481:4: should replace i += 1 with i++
-main.go:10495:4: should replace k += 1 with k++
-main.go:10501:6: should replace i += 1 with i++
-main.go:10508:9: should replace j += 1 with j++
-main.go:10527:7: should replace j += 1 with j++
-main.go:10543:4: should replace k += 1 with k++
-main.go:10600:6: should replace k += 1 with k++
-main.go:10625:8: should replace i += 1 with i++
-main.go:10645:5: should replace (iter[0]) += 1 with (iter[0])++
-main.go:10664:4: should replace k += 1 with k++
-main.go:10678:5: should replace k += 1 with k++
-main.go:10688:4: should replace i += 1 with i++
-main.go:10692:5: should replace j += 1 with j++
-main.go:10737:20: should drop = 0 from declaration of var tol; it is the zero value
-main.go:10772:4: should replace i += 1 with i++
-main.go:10776:5: should replace j += 1 with j++
-main.go:10792:4: should replace d += 1 with d++
-main.go:10800:4: should replace iter += 1 with iter++
-main.go:10807:6: should replace d += 1 with d++
-main.go:10812:8: should replace i += 1 with i++
-main.go:10833:11: should replace k += 1 with k++
-main.go:10851:4: should replace j += 1 with j++
-main.go:10857:6: should replace i += 1 with i++
-main.go:10867:4: should replace j += 1 with j++
-main.go:10893:4: should replace k += 1 with k++
-main.go:10907:4: should replace k += 1 with k++
-main.go:10956:6: don't use underscores in Go names; var d_min should be dMin
-main.go:10956:22: should drop = 0 from declaration of var d_min; it is the zero value
-main.go:10957:6: don't use underscores in Go names; var d_max should be dMax
-main.go:10957:22: should drop = 0 from declaration of var d_max; it is the zero value
-main.go:10958:6: don't use underscores in Go names; var d_old should be dOld
-main.go:10958:22: should drop = 0 from declaration of var d_old; it is the zero value
-main.go:10965:22: should drop = 0 from declaration of var RQold; it is the zero value
-main.go:10967:6: don't use underscores in Go names; var i_ex should be iEx
-main.go:10967:11: should omit type int from declaration of var i_ex; it will be inferred from the right-hand side
-main.go:10969:17: should drop = 0 from declaration of var disp; it is the zero value
-main.go:10973:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
-main.go:10982:10: if block ends with a return statement, so drop this else and outdent its block
-main.go:10988:4: should replace i += 1 with i++
-main.go:10992:5: should replace j += 1 with j++
-main.go:11007:4: should replace j += 1 with j++
-main.go:11012:6: should replace i += 1 with i++
-main.go:11039:6: should replace i += 1 with i++
-main.go:11050:4: should replace i += 1 with i++
-main.go:11068:4: should replace i += 1 with i++
-main.go:11078:4: should replace k += 1 with k++
-main.go:11084:6: should replace i += 1 with i++
-main.go:11100:6: should replace i += 1 with i++
-main.go:11108:6: should replace j += 1 with j++
-main.go:11113:8: should replace i += 1 with i++
-main.go:11124:6: should replace j += 1 with j++
-main.go:11128:7: should replace i += 1 with i++
-main.go:11138:6: should replace i += 1 with i++
-main.go:11149:8: should replace i += 1 with i++
-main.go:11155:10: should replace j += 1 with j++
-main.go:11166:8: should replace i += 1 with i++
-main.go:11174:8: should replace j += 1 with j++
-main.go:11179:10: should replace i += 1 with i++
-main.go:11190:8: should replace j += 1 with j++
-main.go:11194:9: should replace i += 1 with i++
-main.go:11204:8: should replace i += 1 with i++
-main.go:11213:7: should replace (iter[0]) += 1 with (iter[0])++
-main.go:11228:6: should replace i += 1 with i++
-main.go:11265:8: should omit type float64 from declaration of var p; it will be inferred from the right-hand side
-main.go:11268:4: should replace i += 1 with i++
-main.go:11275:6: should replace j += 1 with j++
-main.go:11291:7: should replace j += 1 with j++
-main.go:11321:6: don't use underscores in Go names; var ws_shift should be wsShift
-main.go:11323:15: should drop = 0 from declaration of var ok; it is the zero value
-main.go:11331:10: if block ends with a return statement, so drop this else and outdent its block
-main.go:11338:4: should replace i += 1 with i++
-main.go:11342:5: should replace j += 1 with j++
-main.go:11364:4: should replace i += 1 with i++
-main.go:11368:5: should replace j += 1 with j++
-main.go:11382:85: don't use underscores in Go names; func check_non_negative should be checkNonNegative
-main.go:11445:11: should omit type int from declaration of var icol; it will be inferred from the right-hand side
-main.go:11446:11: should omit type int from declaration of var irow; it will be inferred from the right-hand side
-main.go:11460:4: should replace j += 1 with j++
-main.go:11468:4: should replace i += 1 with i++
-main.go:11474:6: should replace j += 1 with j++
-main.go:11479:8: should replace k += 1 with k++
-main.go:11498:5: should replace (ipiv[icol]) += 1 with (ipiv[icol])++
-main.go:11504:7: should replace l += 1 with l++
-main.go:11514:7: should replace l += 1 with l++
-main.go:11532:6: should replace l += 1 with l++
-main.go:11540:6: should replace l += 1 with l++
-main.go:11548:6: should replace ll += 1 with ll++
-main.go:11556:9: should replace l += 1 with l++
-main.go:11564:9: should replace l += 1 with l++
-main.go:11577:4: should replace l -= 1 with l--
-main.go:11582:6: should replace k += 1 with k++
-main.go:11617:6: don't use underscores in Go names; func lu_dcmp should be luDcmp
-main.go:11626:5: should replace k += 1 with k++
-main.go:11640:7: should replace i += 1 with i++
-main.go:11646:9: should replace j += 1 with j++
-main.go:11660:5: should replace k += 1 with k++
-main.go:11664:6: should replace i += 1 with i++
-main.go:11673:5: should replace j -= 1 with j--
-main.go:11677:6: should replace i += 1 with i++
-main.go:11686:5: should replace i += 1 with i++
-main.go:11722:6: don't use underscores in Go names; func ldl_dcmp should be ldlDcmp
-main.go:11731:5: should replace j += 1 with j++
-main.go:11738:7: should replace i += 1 with i++
-main.go:11743:9: should replace m += 1 with m++
-main.go:11753:7: should replace i += 1 with i++
-main.go:11759:9: should replace k += 1 with k++
-main.go:11770:7: should replace i += 1 with i++
-main.go:11778:7: should replace i += 1 with i++
-main.go:11791:7: should replace (pd[0]) -= 1 with (pd[0])--
-main.go:11801:5: should replace i += 1 with i++
-main.go:11807:7: should replace j += 1 with j++
-main.go:11817:5: should replace i += 1 with i++
-main.go:11825:5: should replace i -= 1 with i--
-main.go:11829:6: should replace j += 1 with j++
-main.go:11855:6: don't use underscores in Go names; func ldl_mprove should be ldlMprove
-main.go:11855:78: don't use underscores in Go names; func parameter rms_resid should be rmsResid
-main.go:11858:6: don't use underscores in Go names; var rms_resid_new should be rmsResidNew
-main.go:11858:20: should omit type float64 from declaration of var rms_resid_new; it will be inferred from the right-hand side
-main.go:11865:4: should replace i += 1 with i++
-main.go:11871:6: should replace j += 1 with j++
-main.go:11887:4: should replace i += 1 with i++
-main.go:11890:4: don't use underscores in Go names; var rms_resid_new should be rmsResidNew
-main.go:11898:5: should replace i += 1 with i++
-main.go:11939:6: don't use underscores in Go names; func ldl_dcmp_pm should be ldlDcmpPm
-main.go:11948:5: should replace j += 1 with j++
-main.go:11957:8: should replace i += 1 with i++
-main.go:11962:10: should replace m += 1 with m++
-main.go:11972:8: should replace i += 1 with i++
-main.go:11979:11: should replace k += 1 with k++
-main.go:11993:8: should replace i += 1 with i++
-main.go:12003:8: should replace i += 1 with i++
-main.go:12018:8: should replace (pd[0]) -= 1 with (pd[0])--
-main.go:12029:5: should replace i += 1 with i++
-main.go:12036:8: should replace j += 1 with j++
-main.go:12049:5: should replace i += 1 with i++
-main.go:12054:7: should replace j += 1 with j++
-main.go:12066:5: should replace i += 1 with i++
-main.go:12076:5: should replace i -= 1 with i--
-main.go:12081:7: should replace j += 1 with j++
-main.go:12093:5: should replace i += 1 with i++
-main.go:12101:8: should replace j += 1 with j++
-main.go:12150:6: don't use underscores in Go names; func ldl_mprove_pm should be ldlMprovePm
-main.go:12150:112: don't use underscores in Go names; func parameter rms_resid should be rmsResid
-main.go:12154:6: don't use underscores in Go names; var rms_resid_new should be rmsResidNew
-main.go:12154:30: should drop = 0 from declaration of var rms_resid_new; it is the zero value
-main.go:12162:4: should replace i += 1 with i++
-main.go:12170:4: should replace i += 1 with i++
-main.go:12177:7: should replace j += 1 with j++
-main.go:12191:7: should replace j += 1 with j++
-main.go:12206:4: should replace i += 1 with i++
-main.go:12210:5: don't use underscores in Go names; var rms_resid_new should be rmsResidNew
-main.go:12219:5: should replace i += 1 with i++
-main.go:12247:6: don't use underscores in Go names; func PSB_update should be PSBUpdate
-main.go:12250:20: should drop = 0 from declaration of var dtd; it is the zero value
-main.go:12251:20: should drop = 0 from declaration of var ftd; it is the zero value
-main.go:12252:21: should drop = 0 from declaration of var dtd2; it is the zero value
-main.go:12255:4: should replace i += 1 with i++
-main.go:12264:4: should replace i += 1 with i++
-main.go:12272:4: should replace i += 1 with i++
-main.go:12276:5: should replace j += 1 with j++
-main.go:12295:6: don't use underscores in Go names; func pseudo_inv should be pseudoInv
-main.go:12302:6: don't use underscores in Go names; var tr_AtA should be trAtA
-main.go:12302:23: should drop = 0 from declaration of var tr_AtA; it is the zero value
-main.go:12318:4: should replace i += 1 with i++
-main.go:12335:6: should replace j += 1 with j++
-main.go:12352:4: should replace i += 1 with i++
-main.go:12357:6: should replace j += 1 with j++
-main.go:12363:8: should replace k += 1 with k++
-main.go:12376:4: should replace i += 1 with i++
-main.go:12380:5: should replace j += 1 with j++
-main.go:12397:4: should replace i += 1 with i++
-main.go:12400:4: don't use underscores in Go names; var tr_AtA should be trAtA
-main.go:12405:4: should replace i += 1 with i++
-main.go:12414:4: should replace j += 1 with j++
-main.go:12419:6: should replace k += 1 with k++
-main.go:12445:6: should replace k += 1 with k++
-main.go:12455:4: should replace i += 1 with i++
-main.go:12459:5: should replace j += 1 with j++
-main.go:12475:4: should replace i += 1 with i++
-main.go:12480:6: should replace j += 1 with j++
-main.go:12486:8: should replace k += 1 with k++
-main.go:12514:4: should replace i += 1 with i++
-main.go:12522:4: should replace i += 1 with i++
-main.go:12527:6: should replace k += 1 with k++
-main.go:12551:4: should replace i += 1 with i++
-main.go:12555:5: should replace k += 1 with k++
-main.go:12564:4: should replace i += 1 with i++
-main.go:12568:5: should replace k += 1 with k++
-main.go:12572:6: should replace j += 1 with j++
-main.go:12604:4: should replace i += 1 with i++
-main.go:12624:4: should replace j += 1 with j++
-main.go:12629:6: should replace k += 1 with k++
-main.go:12656:6: should replace i += 1 with i++
-main.go:12691:4: should replace i += 1 with i++
-main.go:12707:4: should replace j += 1 with j++
-main.go:12712:6: should replace k += 1 with k++
-main.go:12739:6: should replace i += 1 with i++
-main.go:12745:8: should replace k += 1 with k++
-main.go:12764:9: don't use underscores in Go names; func coord_xfrm should be coordXfrm
-main.go:12770:4: should replace i += 1 with i++
-main.go:12795:4: should replace i += 1 with i++
-main.go:12799:5: should replace j += 1 with j++
-main.go:12808:4: should replace i += 1 with i++
-main.go:12812:5: should replace j += 1 with j++
-main.go:12821:4: should replace i += 1 with i++
-main.go:12826:6: should replace j += 1 with j++
-main.go:12831:8: should replace k += 1 with k++
-main.go:12847:4: should replace i += 1 with i++
-main.go:12851:5: should replace j += 1 with j++
-main.go:12855:6: should replace k += 1 with k++
-main.go:12865:4: should replace i += 1 with i++
-main.go:12869:5: should replace j += 1 with j++
-main.go:12893:21: should drop = 0 from declaration of var xtAy; it is the zero value
-main.go:12898:4: should replace i += 1 with i++
-main.go:12904:6: should replace j += 1 with j++
-main.go:12918:4: should replace i += 1 with i++
-main.go:12955:4: should replace i += 1 with i++
-main.go:12972:6: should replace j += 1 with j++
-main.go:12990:4: should replace j += 1 with j++
-main.go:12995:6: should replace k += 1 with k++
-main.go:13023:6: should replace k += 1 with k++
-main.go:13033:4: should replace i += 1 with i++
-main.go:13037:5: should replace j += 1 with j++
-main.go:13053:4: should replace i += 1 with i++
-main.go:13058:6: should replace j += 1 with j++
-main.go:13064:8: should replace k += 1 with k++
-main.go:13077:4: should replace i += 1 with i++
-main.go:13082:6: should replace j += 1 with j++
-main.go:13088:8: should replace k += 1 with k++
-main.go:13101:4: should replace i += 1 with i++
-main.go:13105:5: should replace j += 1 with j++
-main.go:13132:9: don't use underscores in Go names; func relative_norm should be relativeNorm
-main.go:13133:19: should drop = 0 from declaration of var nN; it is the zero value
-main.go:13134:19: should drop = 0 from declaration of var nD; it is the zero value
-main.go:13138:4: should replace i += 1 with i++
-main.go:13146:4: should replace i += 1 with i++
-main.go:13165:4: should replace p += 1 with p++
-main.go:13182:6: should replace k += 1 with k++
-main.go:13344:17: should omit type []byte from declaration of var pathToFile; it will be inferred from the right-hand side
-main.go:13345:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
-main.go:13391:14: should drop = 0 from declaration of var c; it is the zero value
-main.go:13392:8: should omit type int from declaration of var i; it will be inferred from the right-hand side
-main.go:13395:4: should replace lim -= 1 with lim--
-main.go:13402:5: should replace i += 1 with i++
-main.go:13408:3: should replace i += 1 with i++
-main.go:13420:14: should drop = 0 from declaration of var c; it is the zero value
-main.go:13421:8: should omit type int from declaration of var i; it will be inferred from the right-hand side
-main.go:13424:4: should replace lim -= 1 with lim--
-main.go:13434:4: should replace lim -= 1 with lim--
-main.go:13441:5: should replace i += 1 with i++
-main.go:13447:3: should replace i += 1 with i++
-main.go:13460:32: don't use underscores in Go names; func parameter head_lines should be headLines
-main.go:13460:48: don't use underscores in Go names; func parameter start_chnl should be startChnl
-main.go:13460:64: don't use underscores in Go names; func parameter stop_chnl should be stopChnl
-main.go:13461:19: should drop = 0 from declaration of var points; it is the zero value
-main.go:13464:9: should omit type int from declaration of var ok; it will be inferred from the right-hand side
-main.go:13465:6: don't use underscores in Go names; var data_value should be dataValue
-main.go:13469:4: should replace i += 1 with i++
-main.go:13483:6: should replace chn += 1 with chn++
-main.go:13489:8: should replace points += 1 with points++
-main.go:13518:14: should drop = 0 from declaration of var c; it is the zero value
-main.go:13519:14: should drop = 0 from declaration of var i; it is the zero value
-main.go:13522:4: should replace lim -= 1 with lim--
-main.go:13529:5: should replace i += 1 with i++
-main.go:13535:3: should replace i += 1 with i++
-main.go:13550:11: should omit type []byte from declaration of var temp; it will be inferred from the right-hand side
-main.go:13551:6: don't use underscores in Go names; var t_tm should be tTm
-main.go:13552:6: don't use underscores in Go names; var t_time should be tTime
-main.go:13571:6: don't use underscores in Go names; var line_length should be lineLength
-main.go:13571:18: should omit type int from declaration of var line_length; it will be inferred from the right-hand side
-main.go:13572:6: don't use underscores in Go names; var percent_done should be percentDone
-main.go:13577:4: should replace k += 1 with k++
-main.go:13585:4: should replace k += 1 with k++
-main.go:13593:4: should replace k += 1 with k++
-main.go:13609:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
-main.go:13615:6: don't use underscores in Go names; type ptrdiff_t should be ptrdiffT
-main.go:13616:6: don't use underscores in Go names; type max_align_t should be maxAlignT
-main.go:13617:2: don't use underscores in Go names; struct field __clang_max_align_nonce1 should be _ClangMaxAlignNonce1
-main.go:13618:2: don't use underscores in Go names; struct field __clang_max_align_nonce2 should be _ClangMaxAlignNonce2
-main.go:13627:14: don't use underscores in Go names; func parameter error_text should be errorText
-main.go:13693:11: should omit type int32 from declaration of var nrow; it will be inferred from the right-hand side
-main.go:13694:11: should omit type int32 from declaration of var ncol; it will be inferred from the right-hand side
-main.go:13710:4: should replace i += 1 with i++
-main.go:13723:11: should omit type int32 from declaration of var nrow; it will be inferred from the right-hand side
-main.go:13724:11: should omit type int32 from declaration of var ncol; it will be inferred from the right-hand side
-main.go:13740:4: should replace i += 1 with i++
-main.go:13753:11: should omit type int32 from declaration of var nrow; it will be inferred from the right-hand side
-main.go:13754:11: should omit type int32 from declaration of var ncol; it will be inferred from the right-hand side
-main.go:13770:4: should replace i += 1 with i++
-main.go:13784:11: should omit type int32 from declaration of var nrow; it will be inferred from the right-hand side
-main.go:13785:11: should omit type int32 from declaration of var ncol; it will be inferred from the right-hand side
-main.go:13799:5: should replace i += 1 with i++
-main.go:13803:5: should replace j += 1 with j++
-main.go:13816:6: don't use underscores in Go names; func convert_matrix should be convertMatrix
-main.go:13819:11: should omit type int32 from declaration of var nrow; it will be inferred from the right-hand side
-main.go:13820:11: should omit type int32 from declaration of var ncol; it will be inferred from the right-hand side
-main.go:13835:5: should replace i += 1 with i++
-main.go:13839:5: should replace j += 1 with j++
-main.go:13852:11: should omit type int32 from declaration of var nrow; it will be inferred from the right-hand side
-main.go:13853:11: should omit type int32 from declaration of var ncol; it will be inferred from the right-hand side
-main.go:13854:11: should omit type int32 from declaration of var ndep; it will be inferred from the right-hand side
-main.go:13876:4: should replace j += 1 with j++
-main.go:13884:4: should replace i += 1 with i++
-main.go:13891:6: should replace j += 1 with j++
-main.go:13904:6: don't use underscores in Go names; func free_vector should be freeVector
-main.go:13910:6: don't use underscores in Go names; func free_ivector should be freeIvector
-main.go:13916:6: don't use underscores in Go names; func free_cvector should be freeCvector
-main.go:13922:6: don't use underscores in Go names; func free_lvector should be freeLvector
-main.go:13928:6: don't use underscores in Go names; func free_dvector should be freeDvector
-main.go:13934:6: don't use underscores in Go names; func free_matrix should be freeMatrix
-main.go:13941:6: don't use underscores in Go names; func free_dmatrix should be freeDmatrix
-main.go:13948:6: don't use underscores in Go names; func free_imatrix should be freeImatrix
-main.go:13955:6: don't use underscores in Go names; func free_subMatrix should be freeSubMatrix
-main.go:13961:6: don't use underscores in Go names; func free_convert_matrix should be freeConvertMatrix
-main.go:13967:6: don't use underscores in Go names; func free_f3tensor should be freeF3tensor
-main.go:13975:30: exported func Cvector returns unexported type []main.fcomplex, which can be annoying to use
-main.go:13986:50: exported func Cmatrix returns unexported type [][]main.fcomplex, which can be annoying to use
-main.go:13996:4: should replace i += 1 with i++
-main.go:14022:4: should replace i += 1 with i++
-main.go:14032:6: should replace j += 1 with j++
-main.go:14060:4: should replace i += 1 with i++
-main.go:14070:6: should replace j += 1 with j++
-main.go:14086:6: don't use underscores in Go names; func free_Cvector should be freeCvector
-main.go:14091:6: don't use underscores in Go names; func free_Cmatrix should be freeCmatrix
-main.go:14095:4: should replace i -= 1 with i--
-main.go:14105:6: don't use underscores in Go names; func free_D3matrix should be freeD3matrix
-main.go:14110:4: should replace i -= 1 with i--
-main.go:14115:6: should replace j -= 1 with j--
-main.go:14126:6: don't use underscores in Go names; func free_D3dmatrix should be freeD3dmatrix
-main.go:14131:4: should replace i -= 1 with i--
-main.go:14136:6: should replace j -= 1 with j--
-main.go:14149:9: don't use underscores in Go names; func show_vector should be showVector
-main.go:14153:4: should replace j += 1 with j++
-main.go:14170:9: don't use underscores in Go names; func show_dvector should be showDvector
-main.go:14174:4: should replace j += 1 with j++
-main.go:14191:9: don't use underscores in Go names; func show_ivector should be showIvector
-main.go:14195:4: should replace j += 1 with j++
-main.go:14212:9: don't use underscores in Go names; func show_matrix should be showMatrix
-main.go:14217:4: should replace i += 1 with i++
-main.go:14222:6: should replace j += 1 with j++
-main.go:14245:9: don't use underscores in Go names; func show_dmatrix should be showDmatrix
-main.go:14250:4: should replace i += 1 with i++
-main.go:14255:6: should replace j += 1 with j++
-main.go:14278:9: don't use underscores in Go names; func save_vector should be saveVector
-main.go:14279:6: don't use underscores in Go names; var fp_v should be fpV
-main.go:14296:4: should replace i += 1 with i++
-main.go:14314:9: don't use underscores in Go names; func save_dvector should be saveDvector
-main.go:14315:6: don't use underscores in Go names; var fp_v should be fpV
-main.go:14332:4: should replace i += 1 with i++
-main.go:14350:9: don't use underscores in Go names; func save_ivector should be saveIvector
-main.go:14351:6: don't use underscores in Go names; var fp_v should be fpV
-main.go:14368:4: should replace i += 1 with i++
-main.go:14386:9: don't use underscores in Go names; func save_matrix should be saveMatrix
-main.go:14387:6: don't use underscores in Go names; var fp_m should be fpM
-main.go:14418:5: should replace j += 1 with j++
-main.go:14423:7: should replace i += 1 with i++
-main.go:14439:5: should replace i += 1 with i++
-main.go:14444:7: should replace j += 1 with j++
-main.go:14465:9: don't use underscores in Go names; func save_dmatrix should be saveDmatrix
-main.go:14466:6: don't use underscores in Go names; var fp_m should be fpM
-main.go:14497:5: should replace j += 1 with j++
-main.go:14502:7: should replace i += 1 with i++
-main.go:14518:5: should replace i += 1 with i++
-main.go:14523:7: should replace j += 1 with j++
-main.go:14546:9: don't use underscores in Go names; func save_ut_matrix should be saveUtMatrix
-main.go:14547:6: don't use underscores in Go names; var fp_m should be fpM
-main.go:14565:4: should replace i += 1 with i++
-main.go:14570:6: should replace j += 1 with j++
-main.go:14600:9: don't use underscores in Go names; func save_ut_dmatrix should be saveUtDmatrix
-main.go:14601:6: don't use underscores in Go names; var fp_m should be fpM
-main.go:14619:4: should replace i += 1 with i++
-main.go:14624:6: should replace j += 1 with j++
+main.go:1769:6: should replace iter += 1 with iter++
+main.go:1831:11: if block ends with a return statement, so drop this else and outdent its block
+main.go:1973:6: don't use underscores in Go names; func assemble_K should be assembleK
+main.go:1976:16: should drop = 0 from declaration of var res; it is the zero value
+main.go:1983:6: don't use underscores in Go names; var stiffness_fn should be stiffnessFn
+main.go:1983:19: should omit type []byte from declaration of var stiffness_fn; it will be inferred from the right-hand side
+main.go:2031:6: don't use underscores in Go names; func elastic_K should be elasticK
+main.go:2255:6: don't use underscores in Go names; func geometric_K should be geometricK
+main.go:2501:6: don't use underscores in Go names; func solve_system should be solveSystem
+main.go:2501:123: don't use underscores in Go names; func parameter rms_resid should be rmsResid
+main.go:2542:6: don't use underscores in Go names; func equilibrium_error should be equilibriumError
+main.go:2543:6: don't use underscores in Go names; var ss_dF should be ssDF
+main.go:2543:22: should drop = 0 from declaration of var ss_dF; it is the zero value
+main.go:2544:6: don't use underscores in Go names; var ss_F should be ssF
+main.go:2544:21: should drop = 0 from declaration of var ss_F; it is the zero value
+main.go:2545:21: should drop = 0 from declaration of var errF; it is the zero value
+main.go:2571:4: don't use underscores in Go names; var ss_dF should be ssDF
+main.go:2576:4: don't use underscores in Go names; var ss_F should be ssF
+main.go:2588:6: don't use underscores in Go names; func element_end_forces should be elementEndForces
+main.go:2588:232: don't use underscores in Go names; func parameter eqF_temp should be eqFTemp
+main.go:2588:254: don't use underscores in Go names; func parameter eqF_mech should be eqFMech
+main.go:2588:310: don't use underscores in Go names; func parameter axial_strain_warning should be axialStrainWarning
+main.go:2590:6: don't use underscores in Go names; var axial_strain should be axialStrain
+main.go:2590:19: should omit type float64 from declaration of var axial_strain; it will be inferred from the right-hand side
+main.go:2603:5: should replace (axial_strain_warning[0]) += 1 with (axial_strain_warning[0])++
+main.go:2639:6: don't use underscores in Go names; func frame_element_force should be frameElementForce
+main.go:2639:196: don't use underscores in Go names; func parameter f_t should be fT
+main.go:2639:211: don't use underscores in Go names; func parameter f_m should be fM
+main.go:2639:260: don't use underscores in Go names; func parameter axial_strain should be axialStrain
+main.go:2661:22: should drop = 0 from declaration of var delta; it is the zero value
+main.go:2666:18: should drop = 0 from declaration of var T; it is the zero value
+main.go:2667:9: should omit type float64 from declaration of var f1; it will be inferred from the right-hand side
+main.go:2668:9: should omit type float64 from declaration of var f2; it will be inferred from the right-hand side
+main.go:2669:9: should omit type float64 from declaration of var f3; it will be inferred from the right-hand side
+main.go:2670:9: should omit type float64 from declaration of var f4; it will be inferred from the right-hand side
+main.go:2671:9: should omit type float64 from declaration of var f5; it will be inferred from the right-hand side
+main.go:2672:9: should omit type float64 from declaration of var f6; it will be inferred from the right-hand side
+main.go:2673:9: should omit type float64 from declaration of var f7; it will be inferred from the right-hand side
+main.go:2674:9: should omit type float64 from declaration of var f8; it will be inferred from the right-hand side
+main.go:2675:9: should omit type float64 from declaration of var f9; it will be inferred from the right-hand side
+main.go:2676:10: should omit type float64 from declaration of var f10; it will be inferred from the right-hand side
+main.go:2677:10: should omit type float64 from declaration of var f11; it will be inferred from the right-hand side
+main.go:2678:10: should omit type float64 from declaration of var f12; it will be inferred from the right-hand side
+main.go:2807:6: don't use underscores in Go names; func compute_reaction_forces should be computeReactionForces
+main.go:2825:6: don't use underscores in Go names; func assemble_M should be assembleM
+main.go:2828:16: should drop = 0 from declaration of var res; it is the zero value
+main.go:2835:6: don't use underscores in Go names; var mass_fn should be massFn
+main.go:2835:14: should omit type []byte from declaration of var mass_fn; it will be inferred from the right-hand side
+main.go:2898:6: don't use underscores in Go names; func lumped_M should be lumpedM
+main.go:3027:6: don't use underscores in Go names; func consistent_M should be consistentM
+main.go:3248:6: don't use underscores in Go names; func static_condensation should be staticCondensation
+main.go:3274:5: should replace k += 1 with k++
+main.go:3333:6: don't use underscores in Go names; func paz_condensation should be pazCondensation
+main.go:3369:5: should replace k += 1 with k++
+main.go:3438:6: don't use underscores in Go names; func modal_condensation should be modalCondensation
+main.go:3441:13: should omit type float64 from declaration of var traceM; it will be inferred from the right-hand side
+main.go:3442:14: should omit type float64 from declaration of var traceMc; it will be inferred from the right-hand side
+main.go:3509:407: don't use underscores in Go names; func parameter F_mech should be FMech
+main.go:3509:427: don't use underscores in Go names; func parameter F_temp should be FTemp
+main.go:3509:447: don't use underscores in Go names; func parameter eqF_mech should be eqFMech
+main.go:3509:471: don't use underscores in Go names; func parameter eqF_temp should be eqFTemp
+main.go:3619:6: don't use underscores in Go names; func parse_options should be parseOptions
+main.go:3619:45: don't use underscores in Go names; func parameter IN_file should be INFile
+main.go:3619:61: don't use underscores in Go names; func parameter OUT_file should be OUTFile
+main.go:3619:78: don't use underscores in Go names; func parameter shear_flag should be shearFlag
+main.go:3619:96: don't use underscores in Go names; func parameter geom_flag should be geomFlag
+main.go:3619:113: don't use underscores in Go names; func parameter anlyz_flag should be anlyzFlag
+main.go:3619:131: don't use underscores in Go names; func parameter exagg_flag should be exaggFlag
+main.go:3619:153: don't use underscores in Go names; func parameter D3_flag should be D3Flag
+main.go:3619:168: don't use underscores in Go names; func parameter lump_flag should be lumpFlag
+main.go:3619:185: don't use underscores in Go names; func parameter modal_flag should be modalFlag
+main.go:3619:203: don't use underscores in Go names; func parameter tol_flag should be tolFlag
+main.go:3619:223: don't use underscores in Go names; func parameter shift_flag should be shiftFlag
+main.go:3619:245: don't use underscores in Go names; func parameter pan_flag should be panFlag
+main.go:3619:265: don't use underscores in Go names; func parameter write_matrix should be writeMatrix
+main.go:3619:285: don't use underscores in Go names; func parameter axial_sign should be axialSign
+main.go:3619:303: don't use underscores in Go names; func parameter condense_flag should be condenseFlag
+main.go:3621:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
+main.go:3622:17: should drop = 0 from declaration of var sfrv; it is the zero value
+main.go:3902:9: don't use underscores in Go names; func display_help should be displayHelp
+main.go:3945:9: don't use underscores in Go names; func display_usage should be displayUsage
+main.go:3958:6: don't use underscores in Go names; func display_version should be displayVersion
+main.go:3974:6: don't use underscores in Go names; func display_version_about should be displayVersionAbout
+main.go:3990:6: don't use underscores in Go names; func read_node_data should be readNodeData
+main.go:3993:17: should drop = 0 from declaration of var sfrv; it is the zero value
+main.go:3994:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
+main.go:4019:6: don't use underscores in Go names; func read_frame_element_data should be readFrameElementData
+main.go:4026:17: should drop = 0 from declaration of var epn0; it is the zero value
+main.go:4027:17: should drop = 0 from declaration of var sfrv; it is the zero value
+main.go:4028:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
+main.go:4044:3: should replace epn[N1[b]] += 1 with epn[N1[b]]++
+main.go:4045:3: should replace epn[N2[b]] += 1 with epn[N2[b]]++
+main.go:4132:4: should replace epn0 += 1 with epn0++
+main.go:4147:6: don't use underscores in Go names; func read_run_data should be readRunData
+main.go:4147:37: don't use underscores in Go names; func parameter OUT_file should be OUTFile
+main.go:4147:67: don't use underscores in Go names; func parameter shear_flag should be shearFlag
+main.go:4147:95: don't use underscores in Go names; func parameter geom_flag should be geomFlag
+main.go:4147:161: don't use underscores in Go names; func parameter exagg_static should be exaggStatic
+main.go:4147:185: don't use underscores in Go names; func parameter exagg_flag should be exaggFlag
+main.go:4147:249: don't use underscores in Go names; func parameter anlyz_flag should be anlyzFlag
+main.go:4148:6: don't use underscores in Go names; var full_len should be fullLen
+main.go:4148:21: should drop = 0 from declaration of var full_len; it is the zero value
+main.go:4149:16: should drop = 0 from declaration of var len; it is the zero value
+main.go:4151:6: don't use underscores in Go names; var base_file should be baseFile
+main.go:4151:16: should omit type []byte from declaration of var base_file; it will be inferred from the right-hand side
+main.go:4152:6: don't use underscores in Go names; var mesh_file should be meshFile
+main.go:4152:16: should omit type []byte from declaration of var mesh_file; it will be inferred from the right-hand side
+main.go:4153:17: should drop = 0 from declaration of var sfrv; it is the zero value
+main.go:4156:3: should replace len += 1 with len++
+main.go:4162:3: should replace len -= 1 with len--
+main.go:4170:3: should replace len += 1 with len++
+main.go:4179:4: should replace len -= 1 with len--
+main.go:4186:4: should replace i += 1 with i++
+main.go:4189:4: should replace len += 1 with len++
+main.go:4242:6: don't use underscores in Go names; func frame3dd_getline should be frame3ddGetline
+main.go:4243:14: should drop = 0 from declaration of var c; it is the zero value
+main.go:4244:14: should drop = 0 from declaration of var i; it is the zero value
+main.go:4246:3: should replace lim -= 1 with lim--
+main.go:4253:4: should replace i += 1 with i++
+main.go:4269:6: don't use underscores in Go names; func temp_dir should be tempDir
+main.go:4270:10: should omit type []byte from declaration of var tmp; it will be inferred from the right-hand side
+main.go:4291:6: don't use underscores in Go names; func output_path should be outputPath
+main.go:4291:58: don't use underscores in Go names; func parameter default_outdir should be defaultOutdir
+main.go:4321:6: don't use underscores in Go names; func parse_input should be parseInput
+main.go:4323:11: should omit type []byte from declaration of var line; it will be inferred from the right-hand side
+main.go:4324:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
+main.go:4353:6: don't use underscores in Go names; func getline_no_comment should be getlineNoComment
+main.go:4354:14: should drop = 0 from declaration of var c; it is the zero value
+main.go:4355:14: should drop = 0 from declaration of var i; it is the zero value
+main.go:4357:3: should replace lim -= 1 with lim--
+main.go:4365:5: should replace i += 1 with i++
+main.go:4370:5: should replace i += 1 with i++
+main.go:4378:4: should replace lim -= 1 with lim--
+main.go:4397:6: don't use underscores in Go names; func read_reaction_data should be readReactionData
+main.go:4401:17: should drop = 0 from declaration of var sfrv; it is the zero value
+main.go:4402:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
+main.go:4429:4: should replace l -= 1 with l--
+main.go:4449:4: should replace l -= 1 with l--
+main.go:4543:6: don't use underscores in Go names; func read_and_assemble_loads should be readAndAssembleLoads
+main.go:4543:400: don't use underscores in Go names; func parameter F_temp should be FTemp
+main.go:4543:420: don't use underscores in Go names; func parameter F_mech should be FMech
+main.go:4543:538: don't use underscores in Go names; func parameter eqF_mech should be eqFMech
+main.go:4543:562: don't use underscores in Go names; func parameter eqF_temp should be eqFTemp
+main.go:4558:20: should drop = 0 from declaration of var Mx1; it is the zero value
+main.go:4559:20: should drop = 0 from declaration of var My1; it is the zero value
+main.go:4560:20: should drop = 0 from declaration of var Mz1; it is the zero value
+main.go:4564:20: should drop = 0 from declaration of var Mx2; it is the zero value
+main.go:4565:20: should drop = 0 from declaration of var My2; it is the zero value
+main.go:4566:20: should drop = 0 from declaration of var Mz2; it is the zero value
+main.go:4587:17: should drop = 0 from declaration of var sfrv; it is the zero value
+main.go:4588:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
+main.go:4678:5: should replace l -= 1 with l--
+main.go:5127:5: should replace l -= 1 with l--
+main.go:5149:6: don't use underscores in Go names; func read_mass_data should be readMassData
+main.go:5149:38: don't use underscores in Go names; func parameter OUT_file should be OUTFile
+main.go:5149:206: don't use underscores in Go names; func parameter total_mass should be totalMass
+main.go:5149:228: don't use underscores in Go names; func parameter struct_mass should be structMass
+main.go:5149:276: don't use underscores in Go names; func parameter modal_flag should be modalFlag
+main.go:5149:304: don't use underscores in Go names; func parameter lump_flag should be lumpFlag
+main.go:5149:334: don't use underscores in Go names; func parameter tol_flag should be tolFlag
+main.go:5149:369: don't use underscores in Go names; func parameter shift_flag should be shiftFlag
+main.go:5149:389: don't use underscores in Go names; func parameter exagg_modal should be exaggModal
+main.go:5149:456: don't use underscores in Go names; func parameter pan_flag should be panFlag
+main.go:5156:6: don't use underscores in Go names; var full_len should be fullLen
+main.go:5156:21: should drop = 0 from declaration of var full_len; it is the zero value
+main.go:5157:16: should drop = 0 from declaration of var len; it is the zero value
+main.go:5158:17: should drop = 0 from declaration of var sfrv; it is the zero value
+main.go:5159:6: don't use underscores in Go names; var base_file should be baseFile
+main.go:5159:16: should omit type []byte from declaration of var base_file; it will be inferred from the right-hand side
+main.go:5160:6: don't use underscores in Go names; var mode_file should be modeFile
+main.go:5160:16: should omit type []byte from declaration of var mode_file; it will be inferred from the right-hand side
+main.go:5161:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
+main.go:5335:3: should replace len += 1 with len++
+main.go:5341:3: should replace len -= 1 with len--
+main.go:5349:3: should replace len += 1 with len++
+main.go:5354:4: should replace len -= 1 with len--
+main.go:5361:4: should replace i += 1 with i++
+main.go:5364:4: should replace len += 1 with len++
+main.go:5378:6: don't use underscores in Go names; func read_condensation_data should be readCondensationData
+main.go:5378:99: don't use underscores in Go names; func parameter condense_flag should be condenseFlag
+main.go:5383:17: should drop = 0 from declaration of var sfrv; it is the zero value
+main.go:5384:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
+main.go:5503:6: should replace (Cdof[0]) += 1 with (Cdof[0])++
+main.go:5515:6: should replace k += 1 with k++
+main.go:5544:6: don't use underscores in Go names; func write_input_data should be writeInputData
+main.go:5647:7: should replace i -= 1 with i--
+main.go:5726:7: should replace i -= 1 with i--
+main.go:5751:6: don't use underscores in Go names; func write_static_results should be writeStaticResults
+main.go:5751:189: don't use underscores in Go names; func parameter axial_sign should be axialSign
+main.go:5769:4: should replace i -= 1 with i--
+main.go:5777:5: should replace i -= 1 with i--
+main.go:5849:5: should replace i -= 1 with i--
+main.go:5872:6: don't use underscores in Go names; func CSV_filename should be CSVFilename
+main.go:5872:19: don't use underscores in Go names; func parameter CSV_file should be CSVFile
+main.go:5872:47: don't use underscores in Go names; func parameter OUT_file should be OUTFile
+main.go:5884:4: should replace i += 1 with i++
+main.go:5888:4: should replace j += 1 with j++
+main.go:5893:3: should replace j += 1 with j++
+main.go:5911:6: don't use underscores in Go names; func write_static_csv should be writeStaticCsv
+main.go:5911:23: don't use underscores in Go names; func parameter OUT_file should be OUTFile
+main.go:5916:9: should omit type []byte from declaration of var wa; it will be inferred from the right-hand side
+main.go:5917:6: don't use underscores in Go names; var CSV_file should be CSVFile
+main.go:5917:15: should omit type []byte from declaration of var CSV_file; it will be inferred from the right-hand side
+main.go:5919:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
+main.go:5960:4: should replace i -= 1 with i--
+main.go:6012:4: should replace i -= 1 with i--
+main.go:6056:6: don't use underscores in Go names; func write_static_mfile should be writeStaticMfile
+main.go:6056:25: don't use underscores in Go names; func parameter OUT_file should be OUTFile
+main.go:6062:6: don't use underscores in Go names; var M_file should be MFile
+main.go:6062:13: should omit type []byte from declaration of var M_file; it will be inferred from the right-hand side
+main.go:6064:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
+main.go:6075:4: should replace i += 1 with i++
+main.go:6079:4: should replace j += 1 with j++
+main.go:6084:3: should replace j += 1 with j++
+main.go:6125:4: should replace i -= 1 with i--
+main.go:6182:4: should replace i -= 1 with i--
+main.go:6284:6: don't use underscores in Go names; func peak_internal_forces should be peakInternalForces
+main.go:6318:9: should omit type float64 from declaration of var wx; it will be inferred from the right-hand side
+main.go:6319:9: should omit type float64 from declaration of var wy; it will be inferred from the right-hand side
+main.go:6320:9: should omit type float64 from declaration of var wz; it will be inferred from the right-hand side
+main.go:6321:6: don't use underscores in Go names; var wx_ should be wx
+main.go:6321:10: should omit type float64 from declaration of var wx_; it will be inferred from the right-hand side
+main.go:6322:6: don't use underscores in Go names; var wy_ should be wy
+main.go:6322:10: should omit type float64 from declaration of var wy_; it will be inferred from the right-hand side
+main.go:6323:6: don't use underscores in Go names; var wz_ should be wz
+main.go:6323:10: should omit type float64 from declaration of var wz_; it will be inferred from the right-hand side
+main.go:6324:10: should omit type float64 from declaration of var wxg; it will be inferred from the right-hand side
+main.go:6325:10: should omit type float64 from declaration of var wyg; it will be inferred from the right-hand side
+main.go:6326:10: should omit type float64 from declaration of var wzg; it will be inferred from the right-hand side
+main.go:6327:19: should drop = 0 from declaration of var tx; it is the zero value
+main.go:6328:6: don't use underscores in Go names; var tx_ should be tx
+main.go:6328:20: should drop = 0 from declaration of var tx_; it is the zero value
+main.go:6331:6: don't use underscores in Go names; var Nx_ should be Nx
+main.go:6333:6: don't use underscores in Go names; var Vy_ should be Vy
+main.go:6335:6: don't use underscores in Go names; var Vz_ should be Vz
+main.go:6337:6: don't use underscores in Go names; var Tx_ should be Tx
+main.go:6339:6: don't use underscores in Go names; var My_ should be My
+main.go:6341:6: don't use underscores in Go names; var Mz_ should be Mz
+main.go:6343:6: don't use underscores in Go names; var Sy_ should be Sy
+main.go:6345:6: don't use underscores in Go names; var Sz_ should be Sz
+main.go:6353:9: should omit type int from declaration of var nx; it will be inferred from the right-hand side
+main.go:6354:15: should drop = 0 from declaration of var cU; it is the zero value
+main.go:6355:15: should drop = 0 from declaration of var cW; it is the zero value
+main.go:6356:15: should drop = 0 from declaration of var cP; it is the zero value
+main.go:6429:6: should replace cU += 1 with cU++
+main.go:6531:8: should replace cW += 1 with cW++
+main.go:6570:8: should replace cP += 1 with cP++
+main.go:6610:12: if block ends with a return statement, so drop this else and outdent its block
+main.go:6617:12: if block ends with a return statement, so drop this else and outdent its block
+main.go:6624:12: if block ends with a return statement, so drop this else and outdent its block
+main.go:6631:12: if block ends with a return statement, so drop this else and outdent its block
+main.go:6638:12: if block ends with a return statement, so drop this else and outdent its block
+main.go:6645:12: if block ends with a return statement, so drop this else and outdent its block
+main.go:6652:12: if block ends with a return statement, so drop this else and outdent its block
+main.go:6659:12: if block ends with a return statement, so drop this else and outdent its block
+main.go:6666:12: if block ends with a return statement, so drop this else and outdent its block
+main.go:6673:12: if block ends with a return statement, so drop this else and outdent its block
+main.go:6680:12: if block ends with a return statement, so drop this else and outdent its block
+main.go:6687:12: if block ends with a return statement, so drop this else and outdent its block
+main.go:6791:6: don't use underscores in Go names; func write_internal_forces should be writeInternalForces
+main.go:6791:28: don't use underscores in Go names; func parameter OUT_file should be OUTFile
+main.go:6825:9: should omit type float64 from declaration of var wx; it will be inferred from the right-hand side
+main.go:6826:9: should omit type float64 from declaration of var wy; it will be inferred from the right-hand side
+main.go:6827:9: should omit type float64 from declaration of var wz; it will be inferred from the right-hand side
+main.go:6828:6: don't use underscores in Go names; var wx_ should be wx
+main.go:6828:10: should omit type float64 from declaration of var wx_; it will be inferred from the right-hand side
+main.go:6829:6: don't use underscores in Go names; var wy_ should be wy
+main.go:6829:10: should omit type float64 from declaration of var wy_; it will be inferred from the right-hand side
+main.go:6830:6: don't use underscores in Go names; var wz_ should be wz
+main.go:6830:10: should omit type float64 from declaration of var wz_; it will be inferred from the right-hand side
+main.go:6831:10: should omit type float64 from declaration of var wxg; it will be inferred from the right-hand side
+main.go:6832:10: should omit type float64 from declaration of var wyg; it will be inferred from the right-hand side
+main.go:6833:10: should omit type float64 from declaration of var wzg; it will be inferred from the right-hand side
+main.go:6834:19: should drop = 0 from declaration of var tx; it is the zero value
+main.go:6835:6: don't use underscores in Go names; var tx_ should be tx
+main.go:6835:20: should drop = 0 from declaration of var tx_; it is the zero value
+main.go:6838:6: don't use underscores in Go names; var dx_ should be dx
+main.go:6878:15: should drop = 0 from declaration of var cU; it is the zero value
+main.go:6879:15: should drop = 0 from declaration of var cW; it is the zero value
+main.go:6880:15: should drop = 0 from declaration of var cP; it is the zero value
+main.go:6887:11: should omit type []byte from declaration of var fnif; it will be inferred from the right-hand side
+main.go:6888:6: don't use underscores in Go names; var CSV_file should be CSVFile
+main.go:6888:15: should omit type []byte from declaration of var CSV_file; it will be inferred from the right-hand side
+main.go:6889:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
+main.go:6890:9: should omit type []byte from declaration of var wa; it will be inferred from the right-hand side
+main.go:6969:6: should replace cU += 1 with cU++
+main.go:6995:8: should replace cW += 1 with cW++
+main.go:7037:8: should replace cP += 1 with cP++
+main.go:7243:12: if block ends with a return statement, so drop this else and outdent its block
+main.go:7250:12: if block ends with a return statement, so drop this else and outdent its block
+main.go:7257:12: if block ends with a return statement, so drop this else and outdent its block
+main.go:7264:12: if block ends with a return statement, so drop this else and outdent its block
+main.go:7271:12: if block ends with a return statement, so drop this else and outdent its block
+main.go:7278:12: if block ends with a return statement, so drop this else and outdent its block
+main.go:7285:12: if block ends with a return statement, so drop this else and outdent its block
+main.go:7292:12: if block ends with a return statement, so drop this else and outdent its block
+main.go:7299:12: if block ends with a return statement, so drop this else and outdent its block
+main.go:7306:12: if block ends with a return statement, so drop this else and outdent its block
+main.go:7313:12: if block ends with a return statement, so drop this else and outdent its block
+main.go:7320:12: if block ends with a return statement, so drop this else and outdent its block
+main.go:7329:12: if block ends with a return statement, so drop this else and outdent its block
+main.go:7336:12: if block ends with a return statement, so drop this else and outdent its block
+main.go:7343:12: if block ends with a return statement, so drop this else and outdent its block
+main.go:7350:12: if block ends with a return statement, so drop this else and outdent its block
+main.go:7357:12: if block ends with a return statement, so drop this else and outdent its block
+main.go:7364:12: if block ends with a return statement, so drop this else and outdent its block
+main.go:7371:12: if block ends with a return statement, so drop this else and outdent its block
+main.go:7378:12: if block ends with a return statement, so drop this else and outdent its block
+main.go:7385:12: if block ends with a return statement, so drop this else and outdent its block
+main.go:7392:12: if block ends with a return statement, so drop this else and outdent its block
+main.go:7399:12: if block ends with a return statement, so drop this else and outdent its block
+main.go:7406:12: if block ends with a return statement, so drop this else and outdent its block
+main.go:7449:6: don't use underscores in Go names; func write_modal_results should be writeModalResults
+main.go:7449:119: don't use underscores in Go names; func parameter total_mass should be totalMass
+main.go:7449:139: don't use underscores in Go names; func parameter struct_mass should be structMass
+main.go:7454:6: don't use underscores in Go names; var num_modes should be numModes
+main.go:7538:5: should replace i -= 1 with i--
+main.go:7600:8: don't use underscores in Go names; func static_mesh should be staticMesh
+main.go:7600:20: don't use underscores in Go names; func parameter IN_file should be INFile
+main.go:7600:213: don't use underscores in Go names; func parameter exagg_static should be exaggStatic
+main.go:7600:235: don't use underscores in Go names; func parameter D3_flag should be D3Flag
+main.go:7601:26: should drop = nil from declaration of var fpif; it is the zero value
+main.go:7602:25: should drop = nil from declaration of var fpm; it is the zero value
+main.go:7606:11: should omit type []byte from declaration of var fnif; it will be inferred from the right-hand side
+main.go:7607:13: should omit type []byte from declaration of var meshfl; it will be inferred from the right-hand side
+main.go:7610:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
+main.go:7612:17: should drop = 0 from declaration of var sfrv; it is the zero value
+main.go:7623:14: should drop = 0 from declaration of var j; it is the zero value
+main.go:7624:14: should drop = 0 from declaration of var m; it is the zero value
+main.go:7625:14: should drop = 0 from declaration of var n; it is the zero value
+main.go:7626:14: should drop = 0 from declaration of var X; it is the zero value
+main.go:7627:14: should drop = 0 from declaration of var Y; it is the zero value
+main.go:7628:14: should drop = 0 from declaration of var Z; it is the zero value
+main.go:7629:9: should omit type int from declaration of var lw; it will be inferred from the right-hand side
+main.go:7827:6: don't use underscores in Go names; func modal_mesh should be modalMesh
+main.go:7827:17: don't use underscores in Go names; func parameter IN_file should be INFile
+main.go:7827:232: don't use underscores in Go names; func parameter exagg_modal should be exaggModal
+main.go:7827:253: don't use underscores in Go names; func parameter D3_flag should be D3Flag
+main.go:7840:14: should drop = 0 from declaration of var X; it is the zero value
+main.go:7841:14: should drop = 0 from declaration of var Y; it is the zero value
+main.go:7842:14: should drop = 0 from declaration of var Z; it is the zero value
+main.go:7843:9: should omit type int from declaration of var lw; it will be inferred from the right-hand side
+main.go:7846:13: should omit type []byte from declaration of var modefl; it will be inferred from the right-hand side
+main.go:7847:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
+main.go:7996:14: don't use underscores in Go names; func parameter IN_file should be INFile
+main.go:7996:226: don't use underscores in Go names; func parameter exagg_modal should be exaggModal
+main.go:7996:247: don't use underscores in Go names; func parameter D3_flag should be D3Flag
+main.go:7998:6: don't use underscores in Go names; var x_min should be xMin
+main.go:7998:12: should omit type float32 from declaration of var x_min; it will be inferred from the right-hand side
+main.go:7999:6: don't use underscores in Go names; var x_max should be xMax
+main.go:7999:12: should omit type float32 from declaration of var x_max; it will be inferred from the right-hand side
+main.go:8000:6: don't use underscores in Go names; var y_min should be yMin
+main.go:8000:12: should omit type float32 from declaration of var y_min; it will be inferred from the right-hand side
+main.go:8001:6: don't use underscores in Go names; var y_max should be yMax
+main.go:8001:12: should omit type float32 from declaration of var y_max; it will be inferred from the right-hand side
+main.go:8002:6: don't use underscores in Go names; var z_min should be zMin
+main.go:8002:12: should omit type float32 from declaration of var z_min; it will be inferred from the right-hand side
+main.go:8003:6: don't use underscores in Go names; var z_max should be zMax
+main.go:8003:12: should omit type float32 from declaration of var z_max; it will be inferred from the right-hand side
+main.go:8004:11: should omit type float32 from declaration of var Dxyz; it will be inferred from the right-hand side
+main.go:8005:6: don't use underscores in Go names; var rot_x_init should be rotXInit
+main.go:8005:17: should omit type float32 from declaration of var rot_x_init; it will be inferred from the right-hand side
+main.go:8006:6: don't use underscores in Go names; var rot_x_final should be rotXFinal
+main.go:8006:18: should omit type float32 from declaration of var rot_x_final; it will be inferred from the right-hand side
+main.go:8007:6: don't use underscores in Go names; var rot_z_init should be rotZInit
+main.go:8007:17: should omit type float32 from declaration of var rot_z_init; it will be inferred from the right-hand side
+main.go:8008:6: don't use underscores in Go names; var rot_z_final should be rotZFinal
+main.go:8008:18: should omit type float32 from declaration of var rot_z_final; it will be inferred from the right-hand side
+main.go:8009:6: don't use underscores in Go names; var zoom_init should be zoomInit
+main.go:8009:16: should omit type float32 from declaration of var zoom_init; it will be inferred from the right-hand side
+main.go:8010:6: don't use underscores in Go names; var zoom_final should be zoomFinal
+main.go:8010:17: should omit type float32 from declaration of var zoom_final; it will be inferred from the right-hand side
+main.go:8011:13: should omit type float32 from declaration of var frames; it will be inferred from the right-hand side
+main.go:8012:9: should omit type float64 from declaration of var ex; it will be inferred from the right-hand side
+main.go:8019:14: should drop = 0 from declaration of var X; it is the zero value
+main.go:8020:14: should drop = 0 from declaration of var Y; it is the zero value
+main.go:8021:14: should drop = 0 from declaration of var Z; it is the zero value
+main.go:8023:13: should omit type int from declaration of var CYCLES; it will be inferred from the right-hand side
+main.go:8024:6: don't use underscores in Go names; var frame_number should be frameNumber
+main.go:8024:25: should drop = 0 from declaration of var frame_number; it is the zero value
+main.go:8025:9: should omit type int from declaration of var lw; it will be inferred from the right-hand side
+main.go:8026:6: don't use underscores in Go names; var total_frames should be totalFrames
+main.go:8030:13: should omit type []byte from declaration of var modefl; it will be inferred from the right-hand side
+main.go:8031:14: should omit type []byte from declaration of var framefl; it will be inferred from the right-hand side
+main.go:8032:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
+main.go:8146:6: don't use underscores in Go names; var frame_number should be frameNumber
+main.go:8146:6: should replace frame_number += 1 with frame_number++
+main.go:8167:5: should replace fr -= 1 with fr--
+main.go:8171:6: don't use underscores in Go names; var frame_number should be frameNumber
+main.go:8171:6: should replace frame_number += 1 with frame_number++
+main.go:8195:4: should replace i += 1 with i++
+main.go:8234:4: should replace i += 1 with i++
+main.go:8253:6: don't use underscores in Go names; func cubic_bent_beam should be cubicBentBeam
+main.go:8287:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
+main.go:8365:6: don't use underscores in Go names; func force_bent_beam should be forceBentBeam
+main.go:8394:17: should drop = 0 from declaration of var sfrv; it is the zero value
+main.go:8408:5: should replace n += 1 with n++
+main.go:8435:6: don't use underscores in Go names; func my_itoa should be myItoa
+main.go:8449:4: should replace i += 1 with i++
+main.go:8461:4: should replace i += 1 with i++
+main.go:8467:4: should replace i += 1 with i++
+main.go:8475:4: should replace j += 1 with j++
+main.go:8480:3: should replace j -= 1 with j--
+main.go:8488:4: should replace i += 1 with i++
+main.go:8492:4: should replace j -= 1 with j--
+main.go:8509:8: don't use underscores in Go names; func get_file_ext should be getFileExt
+main.go:8510:14: should drop = 0 from declaration of var i; it is the zero value
+main.go:8511:6: don't use underscores in Go names; var full_len should be fullLen
+main.go:8511:21: should drop = 0 from declaration of var full_len; it is the zero value
+main.go:8512:16: should drop = 0 from declaration of var len; it is the zero value
+main.go:8514:3: should replace len += 1 with len++
+main.go:8520:3: should replace len -= 1 with len--
+main.go:8528:3: should replace len += 1 with len++
+main.go:8534:4: should replace i += 1 with i++
+main.go:8538:4: should replace len += 1 with len++
+main.go:8564:33: don't use underscores in Go names; func parameter rms_resid should be rmsResid
+main.go:8905:6: don't use underscores in Go names; func coord_trans should be coordTrans
+main.go:9118:6: don't use underscores in Go names; var km_old should be kmOld
+main.go:9120:6: don't use underscores in Go names; var w_old should be wOld
+main.go:9120:22: should drop = 0 from declaration of var w_old; it is the zero value
+main.go:9121:14: should drop = 0 from declaration of var i; it is the zero value
+main.go:9122:14: should drop = 0 from declaration of var j; it is the zero value
+main.go:9123:14: should drop = 0 from declaration of var k; it is the zero value
+main.go:9125:17: should drop = 0 from declaration of var disp; it is the zero value
+main.go:9127:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
+main.go:9185:10: if block ends with a return statement, so drop this else and outdent its block
+main.go:9318:4: should replace (iter[0]) += 1 with (iter[0])++
+main.go:9391:20: should drop = 0 from declaration of var tol; it is the zero value
+main.go:9552:6: don't use underscores in Go names; var d_min should be dMin
+main.go:9552:22: should drop = 0 from declaration of var d_min; it is the zero value
+main.go:9553:6: don't use underscores in Go names; var d_max should be dMax
+main.go:9553:22: should drop = 0 from declaration of var d_max; it is the zero value
+main.go:9554:6: don't use underscores in Go names; var d_old should be dOld
+main.go:9554:22: should drop = 0 from declaration of var d_old; it is the zero value
+main.go:9561:22: should drop = 0 from declaration of var RQold; it is the zero value
+main.go:9563:6: don't use underscores in Go names; var i_ex should be iEx
+main.go:9563:11: should omit type int from declaration of var i_ex; it will be inferred from the right-hand side
+main.go:9565:17: should drop = 0 from declaration of var disp; it is the zero value
+main.go:9569:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
+main.go:9578:10: if block ends with a return statement, so drop this else and outdent its block
+main.go:9698:5: should replace (iter[0]) += 1 with (iter[0])++
+main.go:9743:8: should omit type float64 from declaration of var p; it will be inferred from the right-hand side
+main.go:9784:6: don't use underscores in Go names; var ws_shift should be wsShift
+main.go:9786:15: should drop = 0 from declaration of var ok; it is the zero value
+main.go:9794:10: if block ends with a return statement, so drop this else and outdent its block
+main.go:9829:85: don't use underscores in Go names; func check_non_negative should be checkNonNegative
+main.go:9892:11: should omit type int from declaration of var icol; it will be inferred from the right-hand side
+main.go:9893:11: should omit type int from declaration of var irow; it will be inferred from the right-hand side
+main.go:9928:4: should replace (ipiv[icol]) += 1 with (ipiv[icol])++
+main.go:9970:3: should replace l -= 1 with l--
+main.go:10006:6: don't use underscores in Go names; func lu_dcmp should be luDcmp
+main.go:10038:4: should replace j -= 1 with j--
+main.go:10078:6: don't use underscores in Go names; func ldl_dcmp should be ldlDcmp
+main.go:10092:8: should replace m += 1 with m++
+main.go:10120:6: should replace (pd[0]) -= 1 with (pd[0])--
+main.go:10137:4: should replace i -= 1 with i--
+main.go:10163:6: don't use underscores in Go names; func ldl_mprove should be ldlMprove
+main.go:10163:78: don't use underscores in Go names; func parameter rms_resid should be rmsResid
+main.go:10166:6: don't use underscores in Go names; var rms_resid_new should be rmsResidNew
+main.go:10166:20: should omit type float64 from declaration of var rms_resid_new; it will be inferred from the right-hand side
+main.go:10184:3: don't use underscores in Go names; var rms_resid_new should be rmsResidNew
+main.go:10227:6: don't use underscores in Go names; func ldl_dcmp_pm should be ldlDcmpPm
+main.go:10243:9: should replace m += 1 with m++
+main.go:10279:7: should replace (pd[0]) -= 1 with (pd[0])--
+main.go:10312:4: should replace i -= 1 with i--
+main.go:10372:6: don't use underscores in Go names; func ldl_mprove_pm should be ldlMprovePm
+main.go:10372:112: don't use underscores in Go names; func parameter rms_resid should be rmsResid
+main.go:10376:6: don't use underscores in Go names; var rms_resid_new should be rmsResidNew
+main.go:10376:30: should drop = 0 from declaration of var rms_resid_new; it is the zero value
+main.go:10408:4: don't use underscores in Go names; var rms_resid_new should be rmsResidNew
+main.go:10439:6: don't use underscores in Go names; func PSB_update should be PSBUpdate
+main.go:10442:20: should drop = 0 from declaration of var dtd; it is the zero value
+main.go:10443:20: should drop = 0 from declaration of var ftd; it is the zero value
+main.go:10444:21: should drop = 0 from declaration of var dtd2; it is the zero value
+main.go:10469:6: don't use underscores in Go names; func pseudo_inv should be pseudoInv
+main.go:10476:6: don't use underscores in Go names; var tr_AtA should be trAtA
+main.go:10476:23: should drop = 0 from declaration of var tr_AtA; it is the zero value
+main.go:10537:3: don't use underscores in Go names; var tr_AtA should be trAtA
+main.go:10772:9: don't use underscores in Go names; func coord_xfrm should be coordXfrm
+main.go:10846:21: should drop = 0 from declaration of var xtAy; it is the zero value
+main.go:10997:9: don't use underscores in Go names; func relative_norm should be relativeNorm
+main.go:10998:19: should drop = 0 from declaration of var nN; it is the zero value
+main.go:10999:19: should drop = 0 from declaration of var nD; it is the zero value
+main.go:11189:17: should omit type []byte from declaration of var pathToFile; it will be inferred from the right-hand side
+main.go:11190:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
+main.go:11236:14: should drop = 0 from declaration of var c; it is the zero value
+main.go:11237:8: should omit type int from declaration of var i; it will be inferred from the right-hand side
+main.go:11239:3: should replace lim -= 1 with lim--
+main.go:11246:4: should replace i += 1 with i++
+main.go:11251:3: should replace i += 1 with i++
+main.go:11263:14: should drop = 0 from declaration of var c; it is the zero value
+main.go:11264:8: should omit type int from declaration of var i; it will be inferred from the right-hand side
+main.go:11266:3: should replace lim -= 1 with lim--
+main.go:11274:3: should replace lim -= 1 with lim--
+main.go:11281:4: should replace i += 1 with i++
+main.go:11286:3: should replace i += 1 with i++
+main.go:11299:32: don't use underscores in Go names; func parameter head_lines should be headLines
+main.go:11299:48: don't use underscores in Go names; func parameter start_chnl should be startChnl
+main.go:11299:64: don't use underscores in Go names; func parameter stop_chnl should be stopChnl
+main.go:11300:19: should drop = 0 from declaration of var points; it is the zero value
+main.go:11303:9: should omit type int from declaration of var ok; it will be inferred from the right-hand side
+main.go:11304:6: don't use underscores in Go names; var data_value should be dataValue
+main.go:11318:6: should replace points += 1 with points++
+main.go:11345:14: should drop = 0 from declaration of var c; it is the zero value
+main.go:11346:14: should drop = 0 from declaration of var i; it is the zero value
+main.go:11348:3: should replace lim -= 1 with lim--
+main.go:11355:4: should replace i += 1 with i++
+main.go:11360:3: should replace i += 1 with i++
+main.go:11375:11: should omit type []byte from declaration of var temp; it will be inferred from the right-hand side
+main.go:11376:6: don't use underscores in Go names; var t_tm should be tTm
+main.go:11377:6: don't use underscores in Go names; var t_time should be tTime
+main.go:11396:6: don't use underscores in Go names; var line_length should be lineLength
+main.go:11396:18: should omit type int from declaration of var line_length; it will be inferred from the right-hand side
+main.go:11397:6: don't use underscores in Go names; var percent_done should be percentDone
+main.go:11419:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
+main.go:11425:6: don't use underscores in Go names; type ptrdiff_t should be ptrdiffT
+main.go:11426:6: don't use underscores in Go names; type max_align_t should be maxAlignT
+main.go:11427:2: don't use underscores in Go names; struct field __clang_max_align_nonce1 should be _ClangMaxAlignNonce1
+main.go:11428:2: don't use underscores in Go names; struct field __clang_max_align_nonce2 should be _ClangMaxAlignNonce2
+main.go:11437:14: don't use underscores in Go names; func parameter error_text should be errorText
+main.go:11503:11: should omit type int32 from declaration of var nrow; it will be inferred from the right-hand side
+main.go:11504:11: should omit type int32 from declaration of var ncol; it will be inferred from the right-hand side
+main.go:11528:11: should omit type int32 from declaration of var nrow; it will be inferred from the right-hand side
+main.go:11529:11: should omit type int32 from declaration of var ncol; it will be inferred from the right-hand side
+main.go:11553:11: should omit type int32 from declaration of var nrow; it will be inferred from the right-hand side
+main.go:11554:11: should omit type int32 from declaration of var ncol; it will be inferred from the right-hand side
+main.go:11579:11: should omit type int32 from declaration of var nrow; it will be inferred from the right-hand side
+main.go:11580:11: should omit type int32 from declaration of var ncol; it will be inferred from the right-hand side
+main.go:11594:5: should replace i += 1 with i++
+main.go:11598:5: should replace j += 1 with j++
+main.go:11611:6: don't use underscores in Go names; func convert_matrix should be convertMatrix
+main.go:11614:11: should omit type int32 from declaration of var nrow; it will be inferred from the right-hand side
+main.go:11615:11: should omit type int32 from declaration of var ncol; it will be inferred from the right-hand side
+main.go:11630:5: should replace i += 1 with i++
+main.go:11634:5: should replace j += 1 with j++
+main.go:11647:11: should omit type int32 from declaration of var nrow; it will be inferred from the right-hand side
+main.go:11648:11: should omit type int32 from declaration of var ncol; it will be inferred from the right-hand side
+main.go:11649:11: should omit type int32 from declaration of var ndep; it will be inferred from the right-hand side
+main.go:11684:6: don't use underscores in Go names; func free_vector should be freeVector
+main.go:11690:6: don't use underscores in Go names; func free_ivector should be freeIvector
+main.go:11696:6: don't use underscores in Go names; func free_cvector should be freeCvector
+main.go:11702:6: don't use underscores in Go names; func free_lvector should be freeLvector
+main.go:11708:6: don't use underscores in Go names; func free_dvector should be freeDvector
+main.go:11714:6: don't use underscores in Go names; func free_matrix should be freeMatrix
+main.go:11721:6: don't use underscores in Go names; func free_dmatrix should be freeDmatrix
+main.go:11728:6: don't use underscores in Go names; func free_imatrix should be freeImatrix
+main.go:11735:6: don't use underscores in Go names; func free_subMatrix should be freeSubMatrix
+main.go:11741:6: don't use underscores in Go names; func free_convert_matrix should be freeConvertMatrix
+main.go:11747:6: don't use underscores in Go names; func free_f3tensor should be freeF3tensor
+main.go:11755:30: exported func Cvector returns unexported type []main.fcomplex, which can be annoying to use
+main.go:11766:50: exported func Cmatrix returns unexported type [][]main.fcomplex, which can be annoying to use
+main.go:11841:6: don't use underscores in Go names; func free_Cvector should be freeCvector
+main.go:11846:6: don't use underscores in Go names; func free_Cmatrix should be freeCmatrix
+main.go:11849:3: should replace i -= 1 with i--
+main.go:11858:6: don't use underscores in Go names; func free_D3matrix should be freeD3matrix
+main.go:11862:3: should replace i -= 1 with i--
+main.go:11866:4: should replace j -= 1 with j--
+main.go:11875:6: don't use underscores in Go names; func free_D3dmatrix should be freeD3dmatrix
+main.go:11879:3: should replace i -= 1 with i--
+main.go:11883:4: should replace j -= 1 with j--
+main.go:11894:9: don't use underscores in Go names; func show_vector should be showVector
+main.go:11910:9: don't use underscores in Go names; func show_dvector should be showDvector
+main.go:11926:9: don't use underscores in Go names; func show_ivector should be showIvector
+main.go:11942:9: don't use underscores in Go names; func show_matrix should be showMatrix
+main.go:11965:9: don't use underscores in Go names; func show_dmatrix should be showDmatrix
+main.go:11988:9: don't use underscores in Go names; func save_vector should be saveVector
+main.go:11989:6: don't use underscores in Go names; var fp_v should be fpV
+main.go:12019:9: don't use underscores in Go names; func save_dvector should be saveDvector
+main.go:12020:6: don't use underscores in Go names; var fp_v should be fpV
+main.go:12050:9: don't use underscores in Go names; func save_ivector should be saveIvector
+main.go:12051:6: don't use underscores in Go names; var fp_v should be fpV
+main.go:12081:9: don't use underscores in Go names; func save_matrix should be saveMatrix
+main.go:12082:6: don't use underscores in Go names; var fp_m should be fpM
+main.go:12140:9: don't use underscores in Go names; func save_dmatrix should be saveDmatrix
+main.go:12141:6: don't use underscores in Go names; var fp_m should be fpM
+main.go:12201:9: don't use underscores in Go names; func save_ut_matrix should be saveUtMatrix
+main.go:12202:6: don't use underscores in Go names; var fp_m should be fpM
+main.go:12245:9: don't use underscores in Go names; func save_ut_dmatrix should be saveUtDmatrix
+main.go:12246:6: don't use underscores in Go names; var fp_m should be fpM

@@ -16,7 +16,7 @@
 // Warning (FieldDecl):  /usr/include/libio.h:369 : Cannot resolve type '__io_close_fn *' : Cannot resolve type '__io_close_fn' : Cannot resolve type 'int (void *)' : function pointers are not supported [2] : 'int (void *)'
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/waitstatus.h:75 : Error : name of FieldDecl is empty
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/waitstatus.h:89 : Error : name of FieldDecl is empty
-// Warning (TransparentUnionAttr):  /usr/include/stdlib.h:71 : could not parse &{40798352 {/usr/include/stdlib.h 71 0 35 0 } []}
+// Warning (TransparentUnionAttr):  /usr/include/stdlib.h:71 : could not parse &{45590672 {/usr/include/stdlib.h 71 0 35 0 } []}
 // Warning (FieldDecl):  /usr/include/stdlib.h:69 : Avoid struct `union wait *` in FieldDecl
 // Warning (RecordDecl):  :0 : could not determine the size of type `union __WAIT_STATUS` for that reason: Cannot determine sizeof : |union __WAIT_STATUS|. err = Cannot determine sizeof : |union wait *|. err = error in union
 // Warning (TypedefDecl):  /usr/include/stdlib.h:744 : Cannot resolve type '__compar_fn_t' : Cannot resolve type 'int (*)( void *, void *)' : function pointers are not supported [1] : 'int (*)( void *, void *)'
@@ -1516,9 +1516,7 @@ func main() {
 		if argc == 1 {
 			noarch.Fprintf(stderr, []byte(" Press the 'Enter' key to close.\n\x00"))
 			_ = noarch.Getchar()
-			{
-				for noarch.NotInt(noarch.Getchar()) != 0 {
-				}
+			for noarch.NotInt(noarch.Getchar()) != 0 {
 			}
 		}
 		os.Exit(11)
@@ -1675,201 +1673,146 @@ func main() {
 	write_input_data(fp, title, nN, nE, nL, nD, nR, nF, nU, nW, nP, nT, xyz, rj, N1, N2, Ax, Asy, Asz, Jx, Iy, Iz, E, G, p, d, gX, gY, gZ, F_temp, F_mech, Dp, r, U, W, P, T, shear, anlyz, geom)
 	if anlyz != 0 {
 		rand.Seed(int64(uint32(int32((int32((noarch.Time(nil))))))))
-		{
-			for lc = 1; lc <= nL; func() int {
-				lc += 1
-				return lc
-			}() {
+		for lc = 1; lc <= nL; lc++ {
+			if verbose != 0 {
+				noarch.Fprintf(stdout, []byte("\n\x00"))
+				textColor('y', 'g', 'b', 'x')
+				noarch.Fprintf(stdout, []byte(" Load Case %d of %d ... \x00"), lc, nL)
+				noarch.Fprintf(stdout, []byte("                                          \x00"))
+				noarch.Fflush(stdout)
+				color(0)
+				noarch.Fprintf(stdout, []byte("\n\x00"))
+			}
+			for i = 1; i <= DoF; i++ {
+				func() float64 {
+					dR[i] = 0
+					return dR[i]
+				}()
+				func() float64 {
+					R[i] = dR[i]
+					return R[i]
+				}()
+				func() float64 {
+					dD[i] = R[i]
+					return dD[i]
+				}()
+				func() float64 {
+					D[i] = dD[i]
+					return D[i]
+				}()
+			}
+			for i = 1; i <= nE; i++ {
+				for j = 1; j <= 12; j++ {
+					Q[i][j] = 0
+				}
+			}
+			assemble_K(K, DoF, nE, xyz, rj, L, Le, N1, N2, Ax, Asy, Asz, Jx, Iy, Iz, E, G, p, shear, geom, Q, debug)
+			if nT[lc] > 0 {
 				if verbose != 0 {
-					noarch.Fprintf(stdout, []byte("\n\x00"))
-					textColor('y', 'g', 'b', 'x')
-					noarch.Fprintf(stdout, []byte(" Load Case %d of %d ... \x00"), lc, nL)
-					noarch.Fprintf(stdout, []byte("                                          \x00"))
-					noarch.Fflush(stdout)
-					color(0)
-					noarch.Fprintf(stdout, []byte("\n\x00"))
+					noarch.Fprintf(stdout, []byte(" Linear Elastic Analysis ... Temperature Loads\n\x00"))
 				}
-				{
-					for i = 1; i <= DoF; func() int {
-						i += 1
-						return i
-					}() {
-						func() float64 {
-							dR[i] = 0
-							return dR[i]
-						}()
-						func() float64 {
-							R[i] = dR[i]
-							return R[i]
-						}()
-						func() float64 {
-							dD[i] = R[i]
-							return dD[i]
-						}()
-						func() float64 {
-							D[i] = dD[i]
-							return D[i]
-						}()
+				solve_system(K, dD, F_temp[lc], dR, DoF, q, r, (*[1]int)(unsafe.Pointer(&ok))[:], verbose, (*[1]float64)(unsafe.Pointer(&rms_resid))[:])
+				for i = 1; i <= DoF; i++ {
+					if q[i] != 0 {
+						D[i] += dD[i]
 					}
 				}
-				{
-					for i = 1; i <= nE; func() int {
-						i += 1
-						return i
-					}() {
-						for j = 1; j <= 12; func() int {
-							j += 1
-							return j
-						}() {
-							Q[i][j] = 0
-						}
+				for i = 1; i <= DoF; i++ {
+					if r[i] != 0 {
+						R[i] += dR[i]
 					}
 				}
+				if geom != 0 {
+					element_end_forces(Q, nE, xyz, L, Le, N1, N2, Ax, Asy, Asz, Jx, Iy, Iz, E, G, p, eqF_temp[lc], eqF_mech[lc], D, shear, geom, (*[1]int)(unsafe.Pointer(&axial_strain_warning))[:])
+					assemble_K(K, DoF, nE, xyz, rj, L, Le, N1, N2, Ax, Asy, Asz, Jx, Iy, Iz, E, G, p, shear, geom, Q, debug)
+				}
+			}
+			if nF[lc] > 0 || nU[lc] > 0 || nW[lc] > 0 || nP[lc] > 0 || nD[lc] > 0 || gX[lc] != float32(0) || gY[lc] != float32(0) || gZ[lc] != float32(0) {
+				if verbose != 0 {
+					noarch.Fprintf(stdout, []byte(" Linear Elastic Analysis ... Mechanical Loads\n\x00"))
+				}
+				for i = 1; i <= DoF; i++ {
+					if r[i] != 0 {
+						dD[i] = float64(Dp[lc][i])
+					}
+				}
+				solve_system(K, dD, F_mech[lc], dR, DoF, q, r, (*[1]int)(unsafe.Pointer(&ok))[:], verbose, (*[1]float64)(unsafe.Pointer(&rms_resid))[:])
+				for i = 1; i <= DoF; i++ {
+					if q[i] != 0 {
+						D[i] += dD[i]
+					} else {
+						D[i] = float64(Dp[lc][i])
+						dD[i] = 0
+					}
+				}
+				for i = 1; i <= DoF; i++ {
+					if r[i] != 0 {
+						R[i] += dR[i]
+					}
+				}
+			}
+			for i = 1; i <= DoF; i++ {
+				F[i] = F_temp[lc][i] + F_mech[lc][i]
+			}
+			element_end_forces(Q, nE, xyz, L, Le, N1, N2, Ax, Asy, Asz, Jx, Iy, Iz, E, G, p, eqF_temp[lc], eqF_mech[lc], D, shear, geom, (*[1]int)(unsafe.Pointer(&axial_strain_warning))[:])
+			error = equilibrium_error(dF, F, K, D, DoF, q, r)
+			if geom != 0 && verbose != 0 {
+				noarch.Fprintf(stdout, []byte("\n Non-Linear Elastic Analysis ...\n\x00"))
+			}
+			if geom != 0 {
+				error = 1
+				ok = 0
+				iter = 0
+			}
+			for geom != 0 && error > tol && iter < 500 && ok >= 0 {
+				func() int {
+					iter += 1
+					return iter
+				}()
 				assemble_K(K, DoF, nE, xyz, rj, L, Le, N1, N2, Ax, Asy, Asz, Jx, Iy, Iz, E, G, p, shear, geom, Q, debug)
-				if nT[lc] > 0 {
-					if verbose != 0 {
-						noarch.Fprintf(stdout, []byte(" Linear Elastic Analysis ... Temperature Loads\n\x00"))
-					}
-					solve_system(K, dD, F_temp[lc], dR, DoF, q, r, (*[1]int)(unsafe.Pointer(&ok))[:], verbose, (*[1]float64)(unsafe.Pointer(&rms_resid))[:])
-					{
-						for i = 1; i <= DoF; func() int {
-							i += 1
-							return i
-						}() {
-							if q[i] != 0 {
-								D[i] += dD[i]
-							}
-						}
-					}
-					{
-						for i = 1; i <= DoF; func() int {
-							i += 1
-							return i
-						}() {
-							if r[i] != 0 {
-								R[i] += dR[i]
-							}
-						}
-					}
-					if geom != 0 {
-						element_end_forces(Q, nE, xyz, L, Le, N1, N2, Ax, Asy, Asz, Jx, Iy, Iz, E, G, p, eqF_temp[lc], eqF_mech[lc], D, shear, geom, (*[1]int)(unsafe.Pointer(&axial_strain_warning))[:])
-						assemble_K(K, DoF, nE, xyz, rj, L, Le, N1, N2, Ax, Asy, Asz, Jx, Iy, Iz, E, G, p, shear, geom, Q, debug)
-					}
+				error = equilibrium_error(dF, F, K, D, DoF, q, r)
+				solve_system(K, dD, dF, dR, DoF, q, r, (*[1]int)(unsafe.Pointer(&ok))[:], verbose, (*[1]float64)(unsafe.Pointer(&rms_resid))[:])
+				if ok < 0 {
+					noarch.Fprintf(stderr, []byte("   The stiffness matrix is not pos-def. \n\x00"))
+					noarch.Fprintf(stderr, []byte("   Reduce loads and re-run the analysis.\n\x00"))
+					ExitCode = 181
+					break
 				}
-				if nF[lc] > 0 || nU[lc] > 0 || nW[lc] > 0 || nP[lc] > 0 || nD[lc] > 0 || gX[lc] != float32(0) || gY[lc] != float32(0) || gZ[lc] != float32(0) {
-					if verbose != 0 {
-						noarch.Fprintf(stdout, []byte(" Linear Elastic Analysis ... Mechanical Loads\n\x00"))
-					}
-					{
-						for i = 1; i <= DoF; func() int {
-							i += 1
-							return i
-						}() {
-							if r[i] != 0 {
-								dD[i] = float64(Dp[lc][i])
-							}
-						}
-					}
-					solve_system(K, dD, F_mech[lc], dR, DoF, q, r, (*[1]int)(unsafe.Pointer(&ok))[:], verbose, (*[1]float64)(unsafe.Pointer(&rms_resid))[:])
-					{
-						for i = 1; i <= DoF; func() int {
-							i += 1
-							return i
-						}() {
-							if q[i] != 0 {
-								D[i] += dD[i]
-							} else {
-								D[i] = float64(Dp[lc][i])
-								dD[i] = 0
-							}
-						}
-					}
-					{
-						for i = 1; i <= DoF; func() int {
-							i += 1
-							return i
-						}() {
-							if r[i] != 0 {
-								R[i] += dR[i]
-							}
-						}
-					}
-				}
-				{
-					for i = 1; i <= DoF; func() int {
-						i += 1
-						return i
-					}() {
-						F[i] = F_temp[lc][i] + F_mech[lc][i]
+				for i = 1; i <= DoF; i++ {
+					if q[i] != 0 {
+						D[i] += dD[i]
 					}
 				}
 				element_end_forces(Q, nE, xyz, L, Le, N1, N2, Ax, Asy, Asz, Jx, Iy, Iz, E, G, p, eqF_temp[lc], eqF_mech[lc], D, shear, geom, (*[1]int)(unsafe.Pointer(&axial_strain_warning))[:])
-				error = equilibrium_error(dF, F, K, D, DoF, q, r)
-				if geom != 0 && verbose != 0 {
-					noarch.Fprintf(stdout, []byte("\n Non-Linear Elastic Analysis ...\n\x00"))
+				if verbose != 0 {
+					noarch.Fprintf(stdout, []byte("   NR iteration %3d ---\x00"), iter)
+					noarch.Fprintf(stdout, []byte(" RMS relative equilibrium error = %8.2e \n\x00"), error)
 				}
-				if geom != 0 {
-					error = 1
-					ok = 0
-					iter = 0
-				}
-				{
-					for geom != 0 && error > tol && iter < 500 && ok >= 0 {
-						func() int {
-							iter += 1
-							return iter
-						}()
-						assemble_K(K, DoF, nE, xyz, rj, L, Le, N1, N2, Ax, Asy, Asz, Jx, Iy, Iz, E, G, p, shear, geom, Q, debug)
-						error = equilibrium_error(dF, F, K, D, DoF, q, r)
-						solve_system(K, dD, dF, dR, DoF, q, r, (*[1]int)(unsafe.Pointer(&ok))[:], verbose, (*[1]float64)(unsafe.Pointer(&rms_resid))[:])
-						if ok < 0 {
-							noarch.Fprintf(stderr, []byte("   The stiffness matrix is not pos-def. \n\x00"))
-							noarch.Fprintf(stderr, []byte("   Reduce loads and re-run the analysis.\n\x00"))
-							ExitCode = 181
-							break
-						}
-						{
-							for i = 1; i <= DoF; func() int {
-								i += 1
-								return i
-							}() {
-								if q[i] != 0 {
-									D[i] += dD[i]
-								}
-							}
-						}
-						element_end_forces(Q, nE, xyz, L, Le, N1, N2, Ax, Asy, Asz, Jx, Iy, Iz, E, G, p, eqF_temp[lc], eqF_mech[lc], D, shear, geom, (*[1]int)(unsafe.Pointer(&axial_strain_warning))[:])
-						if verbose != 0 {
-							noarch.Fprintf(stdout, []byte("   NR iteration %3d ---\x00"), iter)
-							noarch.Fprintf(stdout, []byte(" RMS relative equilibrium error = %8.2e \n\x00"), error)
-						}
-					}
-				}
-				if axial_strain_warning > 0 && ExitCode == 0 {
-					ExitCode = 182
-				}
-				if axial_strain_warning > 0 && ExitCode == 181 {
-					ExitCode = 183
-				}
-				if geom != 0 {
-					compute_reaction_forces(R, F, K, D, DoF, r)
-				}
-				if write_matrix != 0 {
-					save_ut_dmatrix([]byte("Ks\x00"), K, DoF, []byte("w\x00"))
-				}
-				if verbose != 0 && ok >= 0 {
-					evaluate(float32(error), float32(rms_resid), float32(tol), geom)
-				}
-				write_static_results(fp, nN, nE, nL, lc, DoF, N1, N2, F, D, R, r, Q, rms_resid, ok, axial_sign)
-				if filetype == 1 {
-					write_static_csv(OUT_file, title, nN, nE, nL, lc, DoF, N1, N2, F, D, R, r, Q, error, ok)
-				}
-				if filetype == 2 {
-					write_static_mfile(OUT_file, title, nN, nE, nL, lc, DoF, N1, N2, F, D, R, r, Q, error, ok)
-				}
-				write_internal_forces(OUT_file, fp, infcpath, lc, nL, title, dx, xyz, Q, nN, nE, L, N1, N2, Ax, Asy, Asz, Jx, Iy, Iz, E, G, p, d, gX[lc], gY[lc], gZ[lc], nU[lc], U[lc], nW[lc], W[lc], nP[lc], P[lc], D, shear, error)
-				static_mesh(IN_file, infcpath, meshpath, plotpath, title, nN, nE, nL, lc, DoF, xyz, L, N1, N2, p, D, exagg_static, D3_flag, anlyz, dx, scale)
 			}
+			if axial_strain_warning > 0 && ExitCode == 0 {
+				ExitCode = 182
+			}
+			if axial_strain_warning > 0 && ExitCode == 181 {
+				ExitCode = 183
+			}
+			if geom != 0 {
+				compute_reaction_forces(R, F, K, D, DoF, r)
+			}
+			if write_matrix != 0 {
+				save_ut_dmatrix([]byte("Ks\x00"), K, DoF, []byte("w\x00"))
+			}
+			if verbose != 0 && ok >= 0 {
+				evaluate(float32(error), float32(rms_resid), float32(tol), geom)
+			}
+			write_static_results(fp, nN, nE, nL, lc, DoF, N1, N2, F, D, R, r, Q, rms_resid, ok, axial_sign)
+			if filetype == 1 {
+				write_static_csv(OUT_file, title, nN, nE, nL, lc, DoF, N1, N2, F, D, R, r, Q, error, ok)
+			}
+			if filetype == 2 {
+				write_static_mfile(OUT_file, title, nN, nE, nL, lc, DoF, N1, N2, F, D, R, r, Q, error, ok)
+			}
+			write_internal_forces(OUT_file, fp, infcpath, lc, nL, title, dx, xyz, Q, nN, nE, L, N1, N2, Ax, Asy, Asz, Jx, Iy, Iz, E, G, p, d, gX[lc], gY[lc], gZ[lc], nU[lc], U[lc], nW[lc], W[lc], nP[lc], P[lc], D, shear, error)
+			static_mesh(IN_file, infcpath, meshpath, plotpath, title, nN, nE, nL, lc, DoF, xyz, L, N1, N2, p, D, exagg_static, D3_flag, anlyz, dx, scale)
 		}
 	} else {
 		if verbose != 0 {
@@ -1893,48 +1836,33 @@ func main() {
 		f = dvector(int32(1), int32(nM_calc))
 		V = dmatrix(int32(1), int32(DoF), int32(1), int32(nM_calc))
 		assemble_M(M, DoF, nN, nE, xyz, rj, L, N1, N2, Ax, Jx, Iy, Iz, p, d, EMs, NMs, NMx, NMy, NMz, lump, debug)
-		{
-			for j = 1; j <= DoF; func() int {
-				j += 1
-				return j
-			}() {
-				if noarch.NotInt(r[j]) != 0 {
-					traceK += K[j][j]
-					traceM += M[j][j]
-				}
+		for j = 1; j <= DoF; j++ {
+			if noarch.NotInt(r[j]) != 0 {
+				traceK += K[j][j]
+				traceM += M[j][j]
 			}
 		}
-		{
-			for i = 1; i <= DoF; func() int {
-				i += 1
-				return i
-			}() {
-				if r[i] != 0 {
-					K[i][i] = traceK * 10000
-					M[i][i] = traceM
-					{
-						for j = i + 1; j <= DoF; func() int {
-							j += 1
-							return j
-						}() {
-							func() float64 {
-								M[i][j] = 0
-								return M[i][j]
-							}()
-							func() float64 {
-								M[j][i] = M[i][j]
-								return M[j][i]
-							}()
-							func() float64 {
-								K[i][j] = M[j][i]
-								return K[i][j]
-							}()
-							func() float64 {
-								K[j][i] = K[i][j]
-								return K[j][i]
-							}()
-						}
-					}
+		for i = 1; i <= DoF; i++ {
+			if r[i] != 0 {
+				K[i][i] = traceK * 10000
+				M[i][i] = traceM
+				for j = i + 1; j <= DoF; j++ {
+					func() float64 {
+						M[i][j] = 0
+						return M[i][j]
+					}()
+					func() float64 {
+						M[j][i] = M[i][j]
+						return M[j][i]
+					}()
+					func() float64 {
+						K[i][j] = M[j][i]
+						return K[i][j]
+					}()
+					func() float64 {
+						K[j][i] = K[i][j]
+						return K[j][i]
+					}()
 				}
 			}
 		}
@@ -1949,13 +1877,8 @@ func main() {
 			if Mmethod == 2 {
 				stodola(K, M, DoF, nM_calc, f, V, tol, shift, (*[1]int)(unsafe.Pointer(&iter))[:], (*[1]int)(unsafe.Pointer(&ok))[:], verbose)
 			}
-			{
-				for j = 1; j <= nM_calc; func() int {
-					j += 1
-					return j
-				}() {
-					f[j] = math.Sqrt(f[j]) / (2 * 3.141592653589793)
-				}
+			for j = 1; j <= nM_calc; j++ {
+				f[j] = math.Sqrt(f[j]) / (2 * 3.141592653589793)
 			}
 			write_modal_results(fp, nN, nE, nI, DoF, M, f, V, total_mass, struct_mass, iter, sumR, nM, shift, lump, tol, ok)
 		}
@@ -2015,9 +1938,7 @@ func main() {
 		noarch.Fprintf(stderr, []byte(" A Gnuplot script was written to %s \n\x00"), plotpath)
 		noarch.Fprintf(stderr, []byte(" Press the 'Enter' key to close.\n\x00"))
 		_ = noarch.Getchar()
-		{
-			for noarch.NotInt(noarch.Getchar()) != 0 {
-			}
+		for noarch.NotInt(noarch.Getchar()) != 0 {
 		}
 	}
 	color(0)
@@ -2060,69 +1981,41 @@ func assemble_K(K [][]float64, DoF int, nE int, xyz []vec3, r []float32, L []flo
 	var l int
 	var ll int
 	var stiffness_fn []byte = make([]byte, 128, 128)
-	{
-		for i = 1; i <= DoF; func() int {
-			i += 1
-			return i
-		}() {
-			for j = 1; j <= DoF; func() int {
-				j += 1
-				return j
-			}() {
-				K[i][j] = 0
-			}
+	for i = 1; i <= DoF; i++ {
+		for j = 1; j <= DoF; j++ {
+			K[i][j] = 0
 		}
 	}
 	k = dmatrix(int32(1), int32(12), int32(1), int32(12))
 	ind = imatrix(int32(1), int32(12), int32(1), int32(nE))
-	{
-		for i = 1; i <= nE; func() int {
-			i += 1
-			return i
-		}() {
-			ind[1][i] = 6*N1[i] - 5
-			ind[7][i] = 6*N2[i] - 5
-			ind[2][i] = ind[1][i] + 1
-			ind[8][i] = ind[7][i] + 1
-			ind[3][i] = ind[1][i] + 2
-			ind[9][i] = ind[7][i] + 2
-			ind[4][i] = ind[1][i] + 3
-			ind[10][i] = ind[7][i] + 3
-			ind[5][i] = ind[1][i] + 4
-			ind[11][i] = ind[7][i] + 4
-			ind[6][i] = ind[1][i] + 5
-			ind[12][i] = ind[7][i] + 5
-		}
+	for i = 1; i <= nE; i++ {
+		ind[1][i] = 6*N1[i] - 5
+		ind[7][i] = 6*N2[i] - 5
+		ind[2][i] = ind[1][i] + 1
+		ind[8][i] = ind[7][i] + 1
+		ind[3][i] = ind[1][i] + 2
+		ind[9][i] = ind[7][i] + 2
+		ind[4][i] = ind[1][i] + 3
+		ind[10][i] = ind[7][i] + 3
+		ind[5][i] = ind[1][i] + 4
+		ind[11][i] = ind[7][i] + 4
+		ind[6][i] = ind[1][i] + 5
+		ind[12][i] = ind[7][i] + 5
 	}
-	{
-		for i = 1; i <= nE; func() int {
-			i += 1
-			return i
-		}() {
-			elastic_K(k, xyz, r, L[i], Le[i], N1[i], N2[i], Ax[i], Asy[i], Asz[i], Jx[i], Iy[i], Iz[i], E[i], G[i], p[i], shear)
-			if geom != 0 {
-				geometric_K(k, xyz, r, L[i], Le[i], N1[i], N2[i], Ax[i], Asy[i], Asz[i], Jx[i], Iy[i], Iz[i], E[i], G[i], p[i], -Q[i][1], shear)
-			}
-			if debug != 0 {
-				res = noarch.Sprintf(stiffness_fn, []byte("k_%03d\x00"), i)
-				save_dmatrix(stiffness_fn, k, 1, 12, 1, 12, 0, []byte("w\x00"))
-			}
-			{
-				for l = 1; l <= 12; func() int {
-					l += 1
-					return l
-				}() {
-					ii = ind[l][i]
-					{
-						for ll = 1; ll <= 12; func() int {
-							ll += 1
-							return ll
-						}() {
-							jj = ind[ll][i]
-							K[ii][jj] += k[l][ll]
-						}
-					}
-				}
+	for i = 1; i <= nE; i++ {
+		elastic_K(k, xyz, r, L[i], Le[i], N1[i], N2[i], Ax[i], Asy[i], Asz[i], Jx[i], Iy[i], Iz[i], E[i], G[i], p[i], shear)
+		if geom != 0 {
+			geometric_K(k, xyz, r, L[i], Le[i], N1[i], N2[i], Ax[i], Asy[i], Asz[i], Jx[i], Iy[i], Iz[i], E[i], G[i], p[i], -Q[i][1], shear)
+		}
+		if debug != 0 {
+			res = noarch.Sprintf(stiffness_fn, []byte("k_%03d\x00"), i)
+			save_dmatrix(stiffness_fn, k, 1, 12, 1, 12, 0, []byte("w\x00"))
+		}
+		for l = 1; l <= 12; l++ {
+			ii = ind[l][i]
+			for ll = 1; ll <= 12; ll++ {
+				jj = ind[ll][i]
+				K[ii][jj] += k[l][ll]
 			}
 		}
 	}
@@ -2150,17 +2043,9 @@ func elastic_K(k [][]float64, xyz []vec3, r []float32, L float64, Le float64, n1
 	var i int
 	var j int
 	coord_trans(xyz, L, n1, n2, (*[1]float64)(unsafe.Pointer(&t1))[:], (*[1]float64)(unsafe.Pointer(&t2))[:], (*[1]float64)(unsafe.Pointer(&t3))[:], (*[1]float64)(unsafe.Pointer(&t4))[:], (*[1]float64)(unsafe.Pointer(&t5))[:], (*[1]float64)(unsafe.Pointer(&t6))[:], (*[1]float64)(unsafe.Pointer(&t7))[:], (*[1]float64)(unsafe.Pointer(&t8))[:], (*[1]float64)(unsafe.Pointer(&t9))[:], p)
-	{
-		for i = 1; i <= 12; func() int {
-			i += 1
-			return i
-		}() {
-			for j = 1; j <= 12; func() int {
-				j += 1
-				return j
-			}() {
-				k[i][j] = 0
-			}
+	for i = 1; i <= 12; i++ {
+		for j = 1; j <= 12; j++ {
+			k[i][j] = 0
 		}
 	}
 	if shear != 0 {
@@ -2337,35 +2222,25 @@ func elastic_K(k [][]float64, xyz []vec3, r []float32, L float64, Le float64, n1
 		return k[12][6]
 	}()
 	atma(t1, t2, t3, t4, t5, t6, t7, t8, t9, k, r[n1], r[n2])
-	{
-		for i = 1; i <= 12; func() int {
-			i += 1
-			return i
-		}() {
-			{
-				for j = i + 1; j <= 12; func() int {
-					j += 1
-					return j
-				}() {
-					if k[i][j] != k[j][i] {
-						if math.Abs(k[i][j]/k[j][i]-1) > 1e-06 && (map[bool]int{false: 0, true: 1}[math.Abs(k[i][j]/k[i][i]) > 1e-06 || math.Abs(k[j][i]/k[i][i]) > 1e-06]) != 0 {
-							noarch.Fprintf(stderr, []byte("elastic_K: element stiffness matrix not symetric ...\n\x00"))
-							noarch.Fprintf(stderr, []byte(" ... k[%d][%d] = %15.6e \n\x00"), i, j, k[i][j])
-							noarch.Fprintf(stderr, []byte(" ... k[%d][%d] = %15.6e   \x00"), j, i, k[j][i])
-							noarch.Fprintf(stderr, []byte(" ... relative error = %e \n\x00"), math.Abs(k[i][j]/k[j][i]-1))
-							noarch.Fprintf(stderr, []byte(" ... element matrix saved in file 'kt'\n\x00"))
-							save_dmatrix([]byte("kt\x00"), k, 1, 12, 1, 12, 0, []byte("w\x00"))
-						}
-						func() float64 {
-							k[j][i] = 0.5 * (k[i][j] + k[j][i])
-							return k[j][i]
-						}()
-						func() float64 {
-							k[i][j] = k[j][i]
-							return k[i][j]
-						}()
-					}
+	for i = 1; i <= 12; i++ {
+		for j = i + 1; j <= 12; j++ {
+			if k[i][j] != k[j][i] {
+				if math.Abs(k[i][j]/k[j][i]-1) > 1e-06 && (map[bool]int{false: 0, true: 1}[math.Abs(k[i][j]/k[i][i]) > 1e-06 || math.Abs(k[j][i]/k[i][i]) > 1e-06]) != 0 {
+					noarch.Fprintf(stderr, []byte("elastic_K: element stiffness matrix not symetric ...\n\x00"))
+					noarch.Fprintf(stderr, []byte(" ... k[%d][%d] = %15.6e \n\x00"), i, j, k[i][j])
+					noarch.Fprintf(stderr, []byte(" ... k[%d][%d] = %15.6e   \x00"), j, i, k[j][i])
+					noarch.Fprintf(stderr, []byte(" ... relative error = %e \n\x00"), math.Abs(k[i][j]/k[j][i]-1))
+					noarch.Fprintf(stderr, []byte(" ... element matrix saved in file 'kt'\n\x00"))
+					save_dmatrix([]byte("kt\x00"), k, 1, 12, 1, 12, 0, []byte("w\x00"))
 				}
+				func() float64 {
+					k[j][i] = 0.5 * (k[i][j] + k[j][i])
+					return k[j][i]
+				}()
+				func() float64 {
+					k[i][j] = k[j][i]
+					return k[i][j]
+				}()
 			}
 		}
 	}
@@ -2396,17 +2271,9 @@ func geometric_K(k [][]float64, xyz []vec3, r []float32, L float64, Le float64, 
 	var j int
 	coord_trans(xyz, L, n1, n2, (*[1]float64)(unsafe.Pointer(&t1))[:], (*[1]float64)(unsafe.Pointer(&t2))[:], (*[1]float64)(unsafe.Pointer(&t3))[:], (*[1]float64)(unsafe.Pointer(&t4))[:], (*[1]float64)(unsafe.Pointer(&t5))[:], (*[1]float64)(unsafe.Pointer(&t6))[:], (*[1]float64)(unsafe.Pointer(&t7))[:], (*[1]float64)(unsafe.Pointer(&t8))[:], (*[1]float64)(unsafe.Pointer(&t9))[:], p)
 	kg = dmatrix(int32(1), int32(12), int32(1), int32(12))
-	{
-		for i = 1; i <= 12; func() int {
-			i += 1
-			return i
-		}() {
-			for j = 1; j <= 12; func() int {
-				j += 1
-				return j
-			}() {
-				kg[i][j] = 0
-			}
+	for i = 1; i <= 12; i++ {
+		for j = 1; j <= 12; j++ {
+			kg[i][j] = 0
 		}
 	}
 	if shear != 0 {
@@ -2593,49 +2460,31 @@ func geometric_K(k [][]float64, xyz []vec3, r []float32, L float64, Le float64, 
 		return kg[12][6]
 	}()
 	atma(t1, t2, t3, t4, t5, t6, t7, t8, t9, kg, r[n1], r[n2])
-	{
-		for i = 1; i <= 12; func() int {
-			i += 1
-			return i
-		}() {
-			{
-				for j = i + 1; j <= 12; func() int {
-					j += 1
-					return j
-				}() {
-					if kg[i][j] != kg[j][i] {
-						if math.Abs(kg[i][j]/kg[j][i]-1) > 1e-06 && (map[bool]int{false: 0, true: 1}[math.Abs(kg[i][j]/kg[i][i]) > 1e-06 || math.Abs(kg[j][i]/kg[i][i]) > 1e-06]) != 0 {
-							noarch.Fprintf(stderr, []byte("geometric_K element stiffness matrix not symetric ...\n\x00"))
-							noarch.Fprintf(stderr, []byte(" ... kg[%d][%d] = %15.6e \n\x00"), i, j, kg[i][j])
-							noarch.Fprintf(stderr, []byte(" ... kg[%d][%d] = %15.6e   \x00"), j, i, kg[j][i])
-							noarch.Fprintf(stderr, []byte(" ... relative error = %e \n\x00"), math.Abs(kg[i][j]/kg[j][i]-1))
-							noarch.Fprintf(stderr, []byte(" ... element matrix saved in file 'kg'\n\x00"))
-							save_dmatrix([]byte("kg\x00"), kg, 1, 12, 1, 12, 0, []byte("w\x00"))
-						}
-						func() float64 {
-							kg[j][i] = 0.5 * (kg[i][j] + kg[j][i])
-							return kg[j][i]
-						}()
-						func() float64 {
-							kg[i][j] = kg[j][i]
-							return kg[i][j]
-						}()
-					}
+	for i = 1; i <= 12; i++ {
+		for j = i + 1; j <= 12; j++ {
+			if kg[i][j] != kg[j][i] {
+				if math.Abs(kg[i][j]/kg[j][i]-1) > 1e-06 && (map[bool]int{false: 0, true: 1}[math.Abs(kg[i][j]/kg[i][i]) > 1e-06 || math.Abs(kg[j][i]/kg[i][i]) > 1e-06]) != 0 {
+					noarch.Fprintf(stderr, []byte("geometric_K element stiffness matrix not symetric ...\n\x00"))
+					noarch.Fprintf(stderr, []byte(" ... kg[%d][%d] = %15.6e \n\x00"), i, j, kg[i][j])
+					noarch.Fprintf(stderr, []byte(" ... kg[%d][%d] = %15.6e   \x00"), j, i, kg[j][i])
+					noarch.Fprintf(stderr, []byte(" ... relative error = %e \n\x00"), math.Abs(kg[i][j]/kg[j][i]-1))
+					noarch.Fprintf(stderr, []byte(" ... element matrix saved in file 'kg'\n\x00"))
+					save_dmatrix([]byte("kg\x00"), kg, 1, 12, 1, 12, 0, []byte("w\x00"))
 				}
+				func() float64 {
+					kg[j][i] = 0.5 * (kg[i][j] + kg[j][i])
+					return kg[j][i]
+				}()
+				func() float64 {
+					kg[i][j] = kg[j][i]
+					return kg[i][j]
+				}()
 			}
 		}
 	}
-	{
-		for i = 1; i <= 12; func() int {
-			i += 1
-			return i
-		}() {
-			for j = 1; j <= 12; func() int {
-				j += 1
-				return j
-			}() {
-				k[i][j] += kg[i][j]
-			}
+	for i = 1; i <= 12; i++ {
+		for j = 1; j <= 12; j++ {
+			k[i][j] += kg[i][j]
 		}
 	}
 	free_dmatrix(kg, int32(1), int32(12), int32(1), int32(12))
@@ -2666,12 +2515,10 @@ func solve_system(K [][]float64, D []float64, F []float64, R []float64, DoF int,
 			ok[0] = 1
 			return ok[0]
 		}())
-		{
-			for {
-				ldl_mprove_pm(K, DoF, diag, F, D, R, q, r, rms_resid, ok)
-				if verbose != 0 {
-					noarch.Fprintf(stdout, []byte("%9.2e\x00"), rms_resid[0])
-				}
+		for {
+			ldl_mprove_pm(K, DoF, diag, F, D, R, q, r, rms_resid, ok)
+			if verbose != 0 {
+				noarch.Fprintf(stdout, []byte("%9.2e\x00"), rms_resid[0])
 			}
 		}
 		if verbose != 0 {
@@ -2698,60 +2545,35 @@ func equilibrium_error(dF []float64, F []float64, K [][]float64, D []float64, Do
 	var errF float64 = 0
 	var i int
 	var j int
-	{
-		for i = 1; i <= DoF; func() int {
-			i += 1
-			return i
-		}() {
-			errF = 0
-			if q[i] != 0 {
-				errF = F[i]
-				{
-					for j = 1; j <= DoF; func() int {
-						j += 1
-						return j
-					}() {
-						if q[j] != 0 {
-							if i <= j {
-								errF -= K[i][j] * D[j]
-							} else {
-								errF -= K[j][i] * D[j]
-							}
-						}
-					}
-				}
-				{
-					for j = 1; j <= DoF; func() int {
-						j += 1
-						return j
-					}() {
-						if r[j] != 0 {
-							errF -= K[i][j] * D[j]
-						}
+	for i = 1; i <= DoF; i++ {
+		errF = 0
+		if q[i] != 0 {
+			errF = F[i]
+			for j = 1; j <= DoF; j++ {
+				if q[j] != 0 {
+					if i <= j {
+						errF -= K[i][j] * D[j]
+					} else {
+						errF -= K[j][i] * D[j]
 					}
 				}
 			}
-			dF[i] = errF
-		}
-	}
-	{
-		for i = 1; i <= DoF; func() int {
-			i += 1
-			return i
-		}() {
-			if q[i] != 0 {
-				ss_dF += (dF[i] * dF[i])
+			for j = 1; j <= DoF; j++ {
+				if r[j] != 0 {
+					errF -= K[i][j] * D[j]
+				}
 			}
 		}
+		dF[i] = errF
 	}
-	{
-		for i = 1; i <= DoF; func() int {
-			i += 1
-			return i
-		}() {
-			if q[i] != 0 {
-				ss_F += (F[i] * F[i])
-			}
+	for i = 1; i <= DoF; i++ {
+		if q[i] != 0 {
+			ss_dF += (dF[i] * dF[i])
+		}
+	}
+	for i = 1; i <= DoF; i++ {
+		if q[i] != 0 {
+			ss_F += (F[i] * F[i])
 		}
 	}
 	return (math.Sqrt(ss_dF) / math.Sqrt(ss_F))
@@ -2770,27 +2592,17 @@ func element_end_forces(Q [][]float64, nE int, xyz []vec3, L []float64, Le []flo
 	var j int
 	s = dvector(int32(1), int32(12))
 	axial_strain_warning[0] = 0
-	{
-		for m = 1; m <= nE; func() int {
-			m += 1
-			return m
-		}() {
-			frame_element_force(s, xyz, L[m], Le[m], N1[m], N2[m], Ax[m], Asy[m], Asz[m], Jx[m], Iy[m], Iz[m], E[m], G[m], p[m], eqF_temp[m], eqF_mech[m], D, shear, geom, (*[1]float64)(unsafe.Pointer(&axial_strain))[:])
-			{
-				for j = 1; j <= 12; func() int {
-					j += 1
-					return j
-				}() {
-					Q[m][j] = s[j]
-				}
-			}
-			if math.Abs(axial_strain) > 0.001 {
-				noarch.Fprintf(stderr, []byte(" Warning! Frame element %2d has an average axial strain of %8.6f\n\x00"), m, axial_strain)
-				func() int {
-					(axial_strain_warning[0]) += 1
-					return (axial_strain_warning[0])
-				}()
-			}
+	for m = 1; m <= nE; m++ {
+		frame_element_force(s, xyz, L[m], Le[m], N1[m], N2[m], Ax[m], Asy[m], Asz[m], Jx[m], Iy[m], Iz[m], E[m], G[m], p[m], eqF_temp[m], eqF_mech[m], D, shear, geom, (*[1]float64)(unsafe.Pointer(&axial_strain))[:])
+		for j = 1; j <= 12; j++ {
+			Q[m][j] = s[j]
+		}
+		if math.Abs(axial_strain) > 0.001 {
+			noarch.Fprintf(stderr, []byte(" Warning! Frame element %2d has an average axial strain of %8.6f\n\x00"), m, axial_strain)
+			func() int {
+				(axial_strain_warning[0]) += 1
+				return (axial_strain_warning[0])
+			}()
 		}
 	}
 	free_dvector(s, int32(1), int32(12))
@@ -2995,22 +2807,12 @@ int nE, int DoF,
 func compute_reaction_forces(R []float64, F []float64, K [][]float64, D []float64, DoF int, r []int) {
 	var i int
 	var j int
-	{
-		for i = 1; i <= DoF; func() int {
-			i += 1
-			return i
-		}() {
-			R[i] = float64(0)
-			if r[i] != 0 {
-				R[i] = -F[i]
-				{
-					for j = 1; j <= DoF; func() int {
-						j += 1
-						return j
-					}() {
-						R[i] += K[i][j] * D[j]
-					}
-				}
+	for i = 1; i <= DoF; i++ {
+		R[i] = float64(0)
+		if r[i] != 0 {
+			R[i] = -F[i]
+			for j = 1; j <= DoF; j++ {
+				R[i] += K[i][j] * D[j]
 			}
 		}
 	}
@@ -3031,96 +2833,58 @@ func assemble_M(M [][]float64, DoF int, nN int, nE int, xyz []vec3, r []float32,
 	var l int
 	var ll int
 	var mass_fn []byte = make([]byte, 128, 128)
-	{
-		for i = 1; i <= DoF; func() int {
-			i += 1
-			return i
-		}() {
-			for j = 1; j <= DoF; func() int {
-				j += 1
-				return j
-			}() {
-				M[i][j] = 0
-			}
+	for i = 1; i <= DoF; i++ {
+		for j = 1; j <= DoF; j++ {
+			M[i][j] = 0
 		}
 	}
 	m = dmatrix(int32(1), int32(12), int32(1), int32(12))
 	ind = imatrix(int32(1), int32(12), int32(1), int32(nE))
-	{
-		for i = 1; i <= nE; func() int {
-			i += 1
-			return i
-		}() {
-			ind[1][i] = 6*N1[i] - 5
-			ind[7][i] = 6*N2[i] - 5
-			ind[2][i] = ind[1][i] + 1
-			ind[8][i] = ind[7][i] + 1
-			ind[3][i] = ind[1][i] + 2
-			ind[9][i] = ind[7][i] + 2
-			ind[4][i] = ind[1][i] + 3
-			ind[10][i] = ind[7][i] + 3
-			ind[5][i] = ind[1][i] + 4
-			ind[11][i] = ind[7][i] + 4
-			ind[6][i] = ind[1][i] + 5
-			ind[12][i] = ind[7][i] + 5
-		}
+	for i = 1; i <= nE; i++ {
+		ind[1][i] = 6*N1[i] - 5
+		ind[7][i] = 6*N2[i] - 5
+		ind[2][i] = ind[1][i] + 1
+		ind[8][i] = ind[7][i] + 1
+		ind[3][i] = ind[1][i] + 2
+		ind[9][i] = ind[7][i] + 2
+		ind[4][i] = ind[1][i] + 3
+		ind[10][i] = ind[7][i] + 3
+		ind[5][i] = ind[1][i] + 4
+		ind[11][i] = ind[7][i] + 4
+		ind[6][i] = ind[1][i] + 5
+		ind[12][i] = ind[7][i] + 5
 	}
-	{
-		for i = 1; i <= nE; func() int {
-			i += 1
-			return i
-		}() {
-			if lump != 0 {
-				lumped_M(m, xyz, L[i], N1[i], N2[i], Ax[i], Jx[i], Iy[i], Iz[i], p[i], d[i], EMs[i])
-			} else {
-				consistent_M(m, xyz, r, L[i], N1[i], N2[i], Ax[i], Jx[i], Iy[i], Iz[i], p[i], d[i], EMs[i])
-			}
-			if debug != 0 {
-				res = noarch.Sprintf(mass_fn, []byte("m_%03d\x00"), i)
-				save_dmatrix(mass_fn, m, 1, 12, 1, 12, 0, []byte("w\x00"))
-			}
-			{
-				for l = 1; l <= 12; func() int {
-					l += 1
-					return l
-				}() {
-					ii = ind[l][i]
-					{
-						for ll = 1; ll <= 12; func() int {
-							ll += 1
-							return ll
-						}() {
-							jj = ind[ll][i]
-							M[ii][jj] += m[l][ll]
-						}
-					}
-				}
+	for i = 1; i <= nE; i++ {
+		if lump != 0 {
+			lumped_M(m, xyz, L[i], N1[i], N2[i], Ax[i], Jx[i], Iy[i], Iz[i], p[i], d[i], EMs[i])
+		} else {
+			consistent_M(m, xyz, r, L[i], N1[i], N2[i], Ax[i], Jx[i], Iy[i], Iz[i], p[i], d[i], EMs[i])
+		}
+		if debug != 0 {
+			res = noarch.Sprintf(mass_fn, []byte("m_%03d\x00"), i)
+			save_dmatrix(mass_fn, m, 1, 12, 1, 12, 0, []byte("w\x00"))
+		}
+		for l = 1; l <= 12; l++ {
+			ii = ind[l][i]
+			for ll = 1; ll <= 12; ll++ {
+				jj = ind[ll][i]
+				M[ii][jj] += m[l][ll]
 			}
 		}
 	}
-	{
-		for j = 1; j <= nN; func() int {
-			j += 1
-			return j
-		}() {
-			i = 6 * (j - 1)
-			M[i+1][i+1] += float64(NMs[j])
-			M[i+2][i+2] += float64(NMs[j])
-			M[i+3][i+3] += float64(NMs[j])
-			M[i+4][i+4] += float64(NMx[j])
-			M[i+5][i+5] += float64(NMy[j])
-			M[i+6][i+6] += float64(NMz[j])
-		}
+	for j = 1; j <= nN; j++ {
+		i = 6 * (j - 1)
+		M[i+1][i+1] += float64(NMs[j])
+		M[i+2][i+2] += float64(NMs[j])
+		M[i+3][i+3] += float64(NMs[j])
+		M[i+4][i+4] += float64(NMx[j])
+		M[i+5][i+5] += float64(NMy[j])
+		M[i+6][i+6] += float64(NMz[j])
 	}
-	{
-		for i = 1; i <= DoF; func() int {
-			i += 1
-			return i
-		}() {
-			if M[i][i] <= 0 {
-				noarch.Fprintf(stderr, []byte("  error: Non pos-def mass matrix\n\x00"))
-				noarch.Fprintf(stderr, []byte("  M[%d][%d] = %lf\n\x00"), i, i, M[i][i])
-			}
+	for i = 1; i <= DoF; i++ {
+		if M[i][i] <= 0 {
+			noarch.Fprintf(stderr, []byte("  error: Non pos-def mass matrix\n\x00"))
+			noarch.Fprintf(stderr, []byte("  M[%d][%d] = %lf\n\x00"), i, i, M[i][i])
 		}
 	}
 	free_dmatrix(m, int32(1), int32(12), int32(1), int32(12))
@@ -3152,17 +2916,9 @@ func lumped_M(m [][]float64, xyz []vec3, L float64, n1 int, n2 int, Ax float32, 
 	ry = float64(d*Iy) * L / 2
 	rz = float64(d*Iz) * L / 2
 	po = float64(d) * L * float64(J) / 2
-	{
-		for i = 1; i <= 12; func() int {
-			i += 1
-			return i
-		}() {
-			for j = 1; j <= 12; func() int {
-				j += 1
-				return j
-			}() {
-				m[i][j] = 0
-			}
+	for i = 1; i <= 12; i++ {
+		for j = 1; j <= 12; j++ {
+			m[i][j] = 0
 		}
 	}
 	func() float64 {
@@ -3289,17 +3045,9 @@ func consistent_M(m [][]float64, xyz []vec3, r []float32, L float64, n1 int, n2 
 	ry = float64(d * Iy)
 	rz = float64(d * Iz)
 	po = float64(d*J) * L
-	{
-		for i = 1; i <= 12; func() int {
-			i += 1
-			return i
-		}() {
-			for j = 1; j <= 12; func() int {
-				j += 1
-				return j
-			}() {
-				m[i][j] = 0
-			}
+	for i = 1; i <= 12; i++ {
+		for j = 1; j <= 12; j++ {
+			m[i][j] = 0
 		}
 	}
 	func() float64 {
@@ -3462,52 +3210,32 @@ func consistent_M(m [][]float64, xyz []vec3, r []float32, L float64, n1 int, n2 
 		m[12][6] = m[6][12]
 		return m[12][6]
 	}()
-	{
-		for i = 1; i <= 3; func() int {
-			i += 1
-			return i
-		}() {
-			m[i][i] += 0.5 * float64(EMs)
-		}
+	for i = 1; i <= 3; i++ {
+		m[i][i] += 0.5 * float64(EMs)
 	}
-	{
-		for i = 7; i <= 9; func() int {
-			i += 1
-			return i
-		}() {
-			m[i][i] += 0.5 * float64(EMs)
-		}
+	for i = 7; i <= 9; i++ {
+		m[i][i] += 0.5 * float64(EMs)
 	}
 	atma(t1, t2, t3, t4, t5, t6, t7, t8, t9, m, r[n1], r[n2])
-	{
-		for i = 1; i <= 12; func() int {
-			i += 1
-			return i
-		}() {
-			{
-				for j = i + 1; j <= 12; func() int {
-					j += 1
-					return j
-				}() {
-					if m[i][j] != m[j][i] {
-						if math.Abs(m[i][j]/m[j][i]-1) > 1e-06 && (map[bool]int{false: 0, true: 1}[math.Abs(m[i][j]/m[i][i]) > 1e-06 || math.Abs(m[j][i]/m[i][i]) > 1e-06]) != 0 {
-							noarch.Fprintf(stderr, []byte("consistent_M: element mass matrix not symetric ...\n\x00"))
-							noarch.Fprintf(stderr, []byte(" ... m[%d][%d] = %15.6e \n\x00"), i, j, m[i][j])
-							noarch.Fprintf(stderr, []byte(" ... m[%d][%d] = %15.6e   \x00"), j, i, m[j][i])
-							noarch.Fprintf(stderr, []byte(" ... relative error = %e \n\x00"), math.Abs(m[i][j]/m[j][i]-1))
-							noarch.Fprintf(stderr, []byte(" ... element matrix saved in file 'mc'\n\x00"))
-							save_dmatrix([]byte("mc\x00"), m, 1, 12, 1, 12, 0, []byte("w\x00"))
-						}
-						func() float64 {
-							m[j][i] = 0.5 * (m[i][j] + m[j][i])
-							return m[j][i]
-						}()
-						func() float64 {
-							m[i][j] = m[j][i]
-							return m[i][j]
-						}()
-					}
+	for i = 1; i <= 12; i++ {
+		for j = i + 1; j <= 12; j++ {
+			if m[i][j] != m[j][i] {
+				if math.Abs(m[i][j]/m[j][i]-1) > 1e-06 && (map[bool]int{false: 0, true: 1}[math.Abs(m[i][j]/m[i][i]) > 1e-06 || math.Abs(m[j][i]/m[i][i]) > 1e-06]) != 0 {
+					noarch.Fprintf(stderr, []byte("consistent_M: element mass matrix not symetric ...\n\x00"))
+					noarch.Fprintf(stderr, []byte(" ... m[%d][%d] = %15.6e \n\x00"), i, j, m[i][j])
+					noarch.Fprintf(stderr, []byte(" ... m[%d][%d] = %15.6e   \x00"), j, i, m[j][i])
+					noarch.Fprintf(stderr, []byte(" ... relative error = %e \n\x00"), math.Abs(m[i][j]/m[j][i]-1))
+					noarch.Fprintf(stderr, []byte(" ... element matrix saved in file 'mc'\n\x00"))
+					save_dmatrix([]byte("mc\x00"), m, 1, 12, 1, 12, 0, []byte("w\x00"))
 				}
+				func() float64 {
+					m[j][i] = 0.5 * (m[i][j] + m[j][i])
+					return m[j][i]
+				}()
+				func() float64 {
+					m[i][j] = m[j][i]
+					return m[i][j]
+				}()
 			}
 		}
 	}
@@ -3533,102 +3261,62 @@ func static_condensation(A [][]float64, N int, c []int, n int, Ac [][]float64, v
 	Arr = dmatrix(int32(1), int32(N-n), int32(1), int32(N-n))
 	Arc = dmatrix(int32(1), int32(N-n), int32(1), int32(n))
 	k = 1
-	{
-		for i = 1; i <= N; func() int {
-			i += 1
-			return i
-		}() {
-			ok = 1
-			{
-				for j = 1; j <= n; func() int {
-					j += 1
-					return j
-				}() {
-					if c[j] == i {
-						ok = 0
-						break
-					}
-				}
+	for i = 1; i <= N; i++ {
+		ok = 1
+		for j = 1; j <= n; j++ {
+			if c[j] == i {
+				ok = 0
+				break
 			}
-			if ok != 0 {
-				r[func() int {
-					k += 1
-					return k
-				}()] = i
+		}
+		if ok != 0 {
+			r[func() int {
+				k += 1
+				return k
+			}()] = i
+		}
+	}
+	for i = 1; i <= N-n; i++ {
+		for j = i; j <= N-n; j++ {
+			ri = r[i]
+			rj = r[j]
+			if ri <= rj {
+				func() float64 {
+					Arr[i][j] = A[ri][rj]
+					return Arr[i][j]
+				}()
+				func() float64 {
+					Arr[j][i] = Arr[i][j]
+					return Arr[j][i]
+				}()
 			}
 		}
 	}
-	{
-		for i = 1; i <= N-n; func() int {
-			i += 1
-			return i
-		}() {
-			{
-				for j = i; j <= N-n; func() int {
-					j += 1
-					return j
-				}() {
-					ri = r[i]
-					rj = r[j]
-					if ri <= rj {
-						func() float64 {
-							Arr[i][j] = A[ri][rj]
-							return Arr[i][j]
-						}()
-						func() float64 {
-							Arr[j][i] = Arr[i][j]
-							return Arr[j][i]
-						}()
-					}
-				}
-			}
-		}
-	}
-	{
-		for i = 1; i <= N-n; func() int {
-			i += 1
-			return i
-		}() {
-			{
-				for j = 1; j <= n; func() int {
-					j += 1
-					return j
-				}() {
-					ri = r[i]
-					cj = c[j]
-					if ri < cj {
-						Arc[i][j] = A[ri][cj]
-					} else {
-						Arc[i][j] = A[cj][ri]
-					}
-				}
+	for i = 1; i <= N-n; i++ {
+		for j = 1; j <= n; j++ {
+			ri = r[i]
+			cj = c[j]
+			if ri < cj {
+				Arc[i][j] = A[ri][cj]
+			} else {
+				Arc[i][j] = A[cj][ri]
 			}
 		}
 	}
 	xtinvAy(Arc, Arr, Arc, N-n, n, Ac, verbose)
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			{
-				for j = i; j <= n; func() int {
-					j += 1
-					return j
-				}() {
-					ci = c[i]
-					cj = c[j]
-					if ci <= cj {
-						func() float64 {
-							Ac[i][j] = A[ci][cj] - Ac[i][j]
-							return Ac[i][j]
-						}()
-						func() float64 {
-							Ac[j][i] = Ac[i][j]
-							return Ac[j][i]
-						}()
-					}
-				}
+	for i = 1; i <= n; i++ {
+		for j = i; j <= n; j++ {
+			ci = c[i]
+			cj = c[j]
+			if ci <= cj {
+				func() float64 {
+					Ac[i][j] = A[ci][cj] - Ac[i][j]
+					return Ac[i][j]
+				}()
+				func() float64 {
+					Ac[j][i] = Ac[i][j]
+					return Ac[j][i]
+				}()
 			}
 		}
 	}
@@ -3668,115 +3356,67 @@ func paz_condensation(M [][]float64, K [][]float64, N int, c []int, n int, Mc []
 	T = dmatrix(int32(1), int32(N), int32(1), int32(n))
 	w2 = 4 * 3.141592653589793 * 3.141592653589793 * w2 * w2
 	k = 1
-	{
-		for i = 1; i <= N; func() int {
-			i += 1
-			return i
-		}() {
-			ok = 1
-			{
-				for j = 1; j <= n; func() int {
-					j += 1
-					return j
-				}() {
-					if c[j] == i {
-						ok = 0
-						break
-					}
-				}
+	for i = 1; i <= N; i++ {
+		ok = 1
+		for j = 1; j <= n; j++ {
+			if c[j] == i {
+				ok = 0
+				break
 			}
-			if ok != 0 {
-				r[func() int {
-					k += 1
-					return k
-				}()] = i
+		}
+		if ok != 0 {
+			r[func() int {
+				k += 1
+				return k
+			}()] = i
+		}
+	}
+	for i = 1; i <= N-n; i++ {
+		for j = 1; j <= N-n; j++ {
+			ri = r[i]
+			rj = r[j]
+			if ri <= rj {
+				func() float64 {
+					Drr[i][j] = K[ri][rj] - w2*M[ri][rj]
+					return Drr[i][j]
+				}()
+				func() float64 {
+					Drr[j][i] = Drr[i][j]
+					return Drr[j][i]
+				}()
+			} else {
+				func() float64 {
+					Drr[i][j] = K[rj][ri] - w2*M[rj][ri]
+					return Drr[i][j]
+				}()
+				func() float64 {
+					Drr[j][i] = Drr[i][j]
+					return Drr[j][i]
+				}()
 			}
 		}
 	}
-	{
-		for i = 1; i <= N-n; func() int {
-			i += 1
-			return i
-		}() {
-			{
-				for j = 1; j <= N-n; func() int {
-					j += 1
-					return j
-				}() {
-					ri = r[i]
-					rj = r[j]
-					if ri <= rj {
-						func() float64 {
-							Drr[i][j] = K[ri][rj] - w2*M[ri][rj]
-							return Drr[i][j]
-						}()
-						func() float64 {
-							Drr[j][i] = Drr[i][j]
-							return Drr[j][i]
-						}()
-					} else {
-						func() float64 {
-							Drr[i][j] = K[rj][ri] - w2*M[rj][ri]
-							return Drr[i][j]
-						}()
-						func() float64 {
-							Drr[j][i] = Drr[i][j]
-							return Drr[j][i]
-						}()
-					}
-				}
-			}
-		}
-	}
-	{
-		for i = 1; i <= N-n; func() int {
-			i += 1
-			return i
-		}() {
-			{
-				for j = 1; j <= n; func() int {
-					j += 1
-					return j
-				}() {
-					ri = r[i]
-					cj = c[j]
-					if ri < cj {
-						Drc[i][j] = K[ri][cj] - w2*M[ri][cj]
-					} else {
-						Drc[i][j] = K[cj][ri] - w2*M[cj][ri]
-					}
-				}
+	for i = 1; i <= N-n; i++ {
+		for j = 1; j <= n; j++ {
+			ri = r[i]
+			cj = c[j]
+			if ri < cj {
+				Drc[i][j] = K[ri][cj] - w2*M[ri][cj]
+			} else {
+				Drc[i][j] = K[cj][ri] - w2*M[cj][ri]
 			}
 		}
 	}
 	invAB(Drr, Drc, N-n, n, invDrrDrc, (*[1]int)(unsafe.Pointer(&ok))[:], verbose)
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			{
-				for j = 1; j <= n; func() int {
-					j += 1
-					return j
-				}() {
-					T[c[i]][j] = 0
-				}
-			}
-			T[c[i]][i] = 1
+	for i = 1; i <= n; i++ {
+		for j = 1; j <= n; j++ {
+			T[c[i]][j] = 0
 		}
+		T[c[i]][i] = 1
 	}
-	{
-		for i = 1; i <= N-n; func() int {
-			i += 1
-			return i
-		}() {
-			for j = 1; j <= n; func() int {
-				j += 1
-				return j
-			}() {
-				T[r[i]][j] = -invDrrDrc[i][j]
-			}
+	for i = 1; i <= N-n; i++ {
+		for j = 1; j <= n; j++ {
+			T[r[i]][j] = -invDrrDrc[i][j]
 		}
 	}
 	xtAx(K, T, Kc, N, n)
@@ -3806,110 +3446,46 @@ func modal_condensation(M [][]float64, K [][]float64, N int, R []int, p []int, n
 	var k int
 	P = dmatrix(int32(1), int32(n), int32(1), int32(n))
 	invP = dmatrix(int32(1), int32(n), int32(1), int32(n))
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			for j = 1; j <= n; func() int {
-				j += 1
-				return j
-			}() {
-				P[i][j] = V[p[i]][m[j]]
-			}
+	for i = 1; i <= n; i++ {
+		for j = 1; j <= n; j++ {
+			P[i][j] = V[p[i]][m[j]]
 		}
 	}
 	pseudo_inv(P, invP, n, n, 1e-09, verbose)
-	{
-		for i = 1; i <= N; func() int {
-			i += 1
-			return i
-		}() {
-			if noarch.NotInt(R[i]) != 0 {
-				traceM += M[i][i]
-			}
+	for i = 1; i <= N; i++ {
+		if noarch.NotInt(R[i]) != 0 {
+			traceM += M[i][i]
 		}
 	}
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			{
-				for j = 1; j <= n; func() int {
-					j += 1
-					return j
-				}() {
-					Aij = 0
-					{
-						for k = 1; k <= n; func() int {
-							k += 1
-							return k
-						}() {
-							Aij += invP[k][i] * invP[k][j]
-						}
-					}
-					Mc[i][j] = Aij
-				}
+	for i = 1; i <= n; i++ {
+		for j = 1; j <= n; j++ {
+			Aij = 0
+			for k = 1; k <= n; k++ {
+				Aij += invP[k][i] * invP[k][j]
 			}
+			Mc[i][j] = Aij
 		}
 	}
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			traceMc += Mc[i][i]
+	for i = 1; i <= n; i++ {
+		traceMc += Mc[i][i]
+	}
+	for i = 1; i <= n; i++ {
+		for j = 1; j <= n; j++ {
+			Aij = 0
+			for k = 1; k <= n; k++ {
+				Aij += invP[k][i] * 4 * 3.141592653589793 * 3.141592653589793 * f[m[k]] * f[m[k]] * invP[k][j]
+			}
+			Kc[i][j] = Aij
 		}
 	}
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			{
-				for j = 1; j <= n; func() int {
-					j += 1
-					return j
-				}() {
-					Aij = 0
-					{
-						for k = 1; k <= n; func() int {
-							k += 1
-							return k
-						}() {
-							Aij += invP[k][i] * 4 * 3.141592653589793 * 3.141592653589793 * f[m[k]] * f[m[k]] * invP[k][j]
-						}
-					}
-					Kc[i][j] = Aij
-				}
-			}
+	for i = 1; i <= n; i++ {
+		for j = 1; j <= n; j++ {
+			Mc[i][j] *= (traceM / traceMc)
 		}
 	}
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			for j = 1; j <= n; func() int {
-				j += 1
-				return j
-			}() {
-				Mc[i][j] *= (traceM / traceMc)
-			}
-		}
-	}
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			for j = 1; j <= n; func() int {
-				j += 1
-				return j
-			}() {
-				Kc[i][j] *= (traceM / traceMc)
-			}
+	for i = 1; i <= n; i++ {
+		for j = 1; j <= n; j++ {
+			Kc[i][j] *= (traceM / traceMc)
 		}
 	}
 	free_dmatrix(P, int32(1), int32(n), int32(1), int32(n))
@@ -4113,191 +3689,189 @@ func parse_options(argc int, argv [][]byte, IN_file []byte, OUT_file []byte, she
 			}
 		}
 	}
-	{
-		for int((func() byte {
-			option = byte(getopt(argc, argv, []byte("i:o:acdhqvwxzs:e:f:g:l:m:p:r:t:\x00")))
-			return option
-		}())) != -1 {
-			switch int(option) {
-			case 'i':
-				{
-					noarch.Strcpy(IN_file, optarg)
-					break
-				}
-				fallthrough
-			case 'o':
-				{
-					noarch.Strcpy(OUT_file, optarg)
-					break
-				}
-				fallthrough
-			case 'h':
-				{
-					display_help()
-					os.Exit(0)
-				}
-				fallthrough
-			case 'v':
-				{
-					display_version()
-					os.Exit(0)
-				}
-				fallthrough
-			case 'a':
-				{
-					display_version_about()
-					os.Exit(0)
-				}
-				fallthrough
-			case 'q':
-				{
-					verbose[0] = 0
-					break
-				}
-				fallthrough
-			case 'c':
-				{
-					anlyz_flag[0] = 0
-					break
-				}
-				fallthrough
-			case 'd':
-				{
-					debug[0] = 1
-					break
-				}
-				fallthrough
-			case 'w':
-				{
-					write_matrix[0] = 1
-					break
-				}
-				fallthrough
-			case 'x':
-				{
-					axial_sign[0] = 0
-					break
-				}
-				fallthrough
-			case 's':
-				{
-					if noarch.Strcmp(optarg, []byte("Off\x00")) == 0 {
-						shear_flag[0] = 0
+	for int((func() byte {
+		option = byte(getopt(argc, argv, []byte("i:o:acdhqvwxzs:e:f:g:l:m:p:r:t:\x00")))
+		return option
+	}())) != -1 {
+		switch int(option) {
+		case 'i':
+			{
+				noarch.Strcpy(IN_file, optarg)
+				break
+			}
+			fallthrough
+		case 'o':
+			{
+				noarch.Strcpy(OUT_file, optarg)
+				break
+			}
+			fallthrough
+		case 'h':
+			{
+				display_help()
+				os.Exit(0)
+			}
+			fallthrough
+		case 'v':
+			{
+				display_version()
+				os.Exit(0)
+			}
+			fallthrough
+		case 'a':
+			{
+				display_version_about()
+				os.Exit(0)
+			}
+			fallthrough
+		case 'q':
+			{
+				verbose[0] = 0
+				break
+			}
+			fallthrough
+		case 'c':
+			{
+				anlyz_flag[0] = 0
+				break
+			}
+			fallthrough
+		case 'd':
+			{
+				debug[0] = 1
+				break
+			}
+			fallthrough
+		case 'w':
+			{
+				write_matrix[0] = 1
+				break
+			}
+			fallthrough
+		case 'x':
+			{
+				axial_sign[0] = 0
+				break
+			}
+			fallthrough
+		case 's':
+			{
+				if noarch.Strcmp(optarg, []byte("Off\x00")) == 0 {
+					shear_flag[0] = 0
+				} else {
+					if noarch.Strcmp(optarg, []byte("On\x00")) == 0 {
+						shear_flag[0] = 1
 					} else {
-						if noarch.Strcmp(optarg, []byte("On\x00")) == 0 {
-							shear_flag[0] = 1
-						} else {
-							errorMsg([]byte("\n frame3dd command-line error: argument to -s option should be either On or Off\n\x00"))
-							os.Exit(3)
-						}
+						errorMsg([]byte("\n frame3dd command-line error: argument to -s option should be either On or Off\n\x00"))
+						os.Exit(3)
 					}
-					break
 				}
-				fallthrough
-			case 'g':
-				{
-					if noarch.Strcmp(optarg, []byte("Off\x00")) == 0 {
-						geom_flag[0] = 0
+				break
+			}
+			fallthrough
+		case 'g':
+			{
+				if noarch.Strcmp(optarg, []byte("Off\x00")) == 0 {
+					geom_flag[0] = 0
+				} else {
+					if noarch.Strcmp(optarg, []byte("On\x00")) == 0 {
+						geom_flag[0] = 1
 					} else {
-						if noarch.Strcmp(optarg, []byte("On\x00")) == 0 {
-							geom_flag[0] = 1
-						} else {
-							errorMsg([]byte("\n frame3dd command-line error: argument to -g option should be either On or Off\n\x00"))
-							os.Exit(4)
-						}
+						errorMsg([]byte("\n frame3dd command-line error: argument to -g option should be either On or Off\n\x00"))
+						os.Exit(4)
 					}
-					break
 				}
-				fallthrough
-			case 'e':
-				{
-					exagg_flag[0] = noarch.Atof(optarg)
-					break
-				}
-				fallthrough
-			case 'z':
-				{
-					D3_flag[0] = 1
-					break
-				}
-				fallthrough
-			case 'l':
-				{
-					if noarch.Strcmp(optarg, []byte("Off\x00")) == 0 {
-						lump_flag[0] = 0
+				break
+			}
+			fallthrough
+		case 'e':
+			{
+				exagg_flag[0] = noarch.Atof(optarg)
+				break
+			}
+			fallthrough
+		case 'z':
+			{
+				D3_flag[0] = 1
+				break
+			}
+			fallthrough
+		case 'l':
+			{
+				if noarch.Strcmp(optarg, []byte("Off\x00")) == 0 {
+					lump_flag[0] = 0
+				} else {
+					if noarch.Strcmp(optarg, []byte("On\x00")) == 0 {
+						lump_flag[0] = 1
 					} else {
-						if noarch.Strcmp(optarg, []byte("On\x00")) == 0 {
-							lump_flag[0] = 1
-						} else {
-							errorMsg([]byte("\n frame3dd command-line error: argument to -l option should be either On or Off\n\x00"))
-							os.Exit(5)
-						}
+						errorMsg([]byte("\n frame3dd command-line error: argument to -l option should be either On or Off\n\x00"))
+						os.Exit(5)
 					}
-					break
 				}
-				fallthrough
-			case 'm':
-				{
-					if noarch.Strcmp(optarg, []byte("J\x00")) == 0 {
-						modal_flag[0] = 1
+				break
+			}
+			fallthrough
+		case 'm':
+			{
+				if noarch.Strcmp(optarg, []byte("J\x00")) == 0 {
+					modal_flag[0] = 1
+				} else {
+					if noarch.Strcmp(optarg, []byte("S\x00")) == 0 {
+						modal_flag[0] = 2
 					} else {
-						if noarch.Strcmp(optarg, []byte("S\x00")) == 0 {
-							modal_flag[0] = 2
-						} else {
-							errorMsg([]byte("\n frame3dd command-line error: argument to -m option should be either J or S\n\x00"))
-							os.Exit(6)
-						}
+						errorMsg([]byte("\n frame3dd command-line error: argument to -m option should be either J or S\n\x00"))
+						os.Exit(6)
 					}
-					break
 				}
-				fallthrough
-			case 't':
-				{
-					tol_flag[0] = noarch.Atof(optarg)
-					if tol_flag[0] == 0 {
-						errorMsg([]byte("\n frame3dd command-line error: argument to -t option should be a number.\n\x00"))
-						os.Exit(7)
-					}
-					break
+				break
+			}
+			fallthrough
+		case 't':
+			{
+				tol_flag[0] = noarch.Atof(optarg)
+				if tol_flag[0] == 0 {
+					errorMsg([]byte("\n frame3dd command-line error: argument to -t option should be a number.\n\x00"))
+					os.Exit(7)
 				}
-				fallthrough
-			case 'f':
-				{
-					shift_flag[0] = noarch.Atof(optarg)
-					if shift_flag[0] == 0 {
-						errorMsg([]byte("\n frame3dd command-line error: argument to -f option should be a number.\n\x00"))
-						os.Exit(8)
-					}
-					break
+				break
+			}
+			fallthrough
+		case 'f':
+			{
+				shift_flag[0] = noarch.Atof(optarg)
+				if shift_flag[0] == 0 {
+					errorMsg([]byte("\n frame3dd command-line error: argument to -f option should be a number.\n\x00"))
+					os.Exit(8)
 				}
-				fallthrough
-			case 'p':
-				{
-					pan_flag[0] = float32(noarch.Atof(optarg))
-					if float64(pan_flag[0]) < 0 {
-						errorMsg([]byte("\n frame3dd command-line error: argument to -p option should be a positive number.\n\x00"))
-						os.Exit(9)
-					}
-					break
+				break
+			}
+			fallthrough
+		case 'p':
+			{
+				pan_flag[0] = float32(noarch.Atof(optarg))
+				if float64(pan_flag[0]) < 0 {
+					errorMsg([]byte("\n frame3dd command-line error: argument to -p option should be a positive number.\n\x00"))
+					os.Exit(9)
 				}
-				fallthrough
-			case 'r':
-				{
-					condense_flag[0] = noarch.Atoi(optarg)
-					if condense_flag[0] < 0 || condense_flag[0] > 3 {
-						errorMsg([]byte("\n frame3dd command-line error: argument to -r option should be 0, 1, or 2.\n\x00"))
-						os.Exit(10)
-					}
-					break
+				break
+			}
+			fallthrough
+		case 'r':
+			{
+				condense_flag[0] = noarch.Atoi(optarg)
+				if condense_flag[0] < 0 || condense_flag[0] > 3 {
+					errorMsg([]byte("\n frame3dd command-line error: argument to -r option should be 0, 1, or 2.\n\x00"))
+					os.Exit(10)
 				}
-				fallthrough
-			case '?':
-				{
-					noarch.Sprintf(errMsg, []byte("  Missing argument or Unknown option: -%c\n\n\x00"), int(option))
-					errorMsg(errMsg)
-					display_help()
-					os.Exit(2)
-				}
+				break
+			}
+			fallthrough
+		case '?':
+			{
+				noarch.Sprintf(errMsg, []byte("  Missing argument or Unknown option: -%c\n\n\x00"), int(option))
+				errorMsg(errMsg)
+				display_help()
+				os.Exit(2)
 			}
 		}
 	}
@@ -4418,26 +3992,21 @@ func read_node_data(fp *noarch.File, nN int, xyz []vec3, r []float32) {
 	var j int
 	var sfrv int = 0
 	var errMsg []byte = make([]byte, 512, 512)
-	{
-		for i = 1; i <= nN; func() int {
-			i += 1
-			return i
-		}() {
-			sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&j))[:])
-			if sfrv != 1 {
-				sferr([]byte("node number in node data\x00"))
-			}
-			if j <= 0 || j > nN {
-				noarch.Sprintf(errMsg, []byte("\nERROR: in node coordinate data, node number out of range\n(node number %d is <= 0 or > %d)\n\x00"), j, nN)
-				errorMsg(errMsg)
-				os.Exit(41)
-			}
-			sfrv = noarch.Fscanf(fp, []byte("%lf %lf %lf %f\x00"), (*[1]float64)(unsafe.Pointer(&xyz[j].x))[:], (*[1]float64)(unsafe.Pointer(&xyz[j].y))[:], (*[1]float64)(unsafe.Pointer(&xyz[j].z))[:], (*[1]float32)(unsafe.Pointer(&r[j]))[:])
-			if sfrv != 4 {
-				sferr([]byte("node coordinates in node data\x00"))
-			}
-			r[j] = float32(math.Abs(float64(r[j])))
+	for i = 1; i <= nN; i++ {
+		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&j))[:])
+		if sfrv != 1 {
+			sferr([]byte("node number in node data\x00"))
 		}
+		if j <= 0 || j > nN {
+			noarch.Sprintf(errMsg, []byte("\nERROR: in node coordinate data, node number out of range\n(node number %d is <= 0 or > %d)\n\x00"), j, nN)
+			errorMsg(errMsg)
+			os.Exit(41)
+		}
+		sfrv = noarch.Fscanf(fp, []byte("%lf %lf %lf %f\x00"), (*[1]float64)(unsafe.Pointer(&xyz[j].x))[:], (*[1]float64)(unsafe.Pointer(&xyz[j].y))[:], (*[1]float64)(unsafe.Pointer(&xyz[j].z))[:], (*[1]float32)(unsafe.Pointer(&r[j]))[:])
+		if sfrv != 4 {
+			sferr([]byte("node coordinates in node data\x00"))
+		}
+		r[j] = float32(math.Abs(float64(r[j])))
 	}
 	return
 }
@@ -4458,129 +4027,109 @@ func read_frame_element_data(fp *noarch.File, nN int, nE int, xyz []vec3, r []fl
 	var sfrv int = 0
 	var errMsg []byte = make([]byte, 512, 512)
 	epn = ivector(int32(1), int32(nN))
-	{
-		for n = 1; n <= nN; func() int {
-			n += 1
-			return n
-		}() {
-			epn[n] = 0
+	for n = 1; n <= nN; n++ {
+		epn[n] = 0
+	}
+	for i = 1; i <= nE; i++ {
+		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&b))[:])
+		if sfrv != 1 {
+			sferr([]byte("frame element number in element data\x00"))
+		}
+		if b <= 0 || b > nE {
+			noarch.Sprintf(errMsg, []byte("\n  error in frame element property data: Element number out of range  \n Frame element number: %d  \n\x00"), b)
+			errorMsg(errMsg)
+			os.Exit(51)
+		}
+		sfrv = noarch.Fscanf(fp, []byte("%d %d\x00"), (*[1]int)(unsafe.Pointer(&N1[b]))[:], (*[1]int)(unsafe.Pointer(&N2[b]))[:])
+		epn[N1[b]] += 1
+		epn[N2[b]] += 1
+		if sfrv != 2 {
+			sferr([]byte("node numbers in frame element data\x00"))
+		}
+		if N1[b] <= 0 || N1[b] > nN || N2[b] <= 0 || N2[b] > nN {
+			noarch.Sprintf(errMsg, []byte("\n  error in frame element property data: node number out of range  \n Frame element number: %d \n\x00"), b)
+			errorMsg(errMsg)
+			os.Exit(52)
+		}
+		sfrv = noarch.Fscanf(fp, []byte("%f %f %f\x00"), (*[1]float32)(unsafe.Pointer(&Ax[b]))[:], (*[1]float32)(unsafe.Pointer(&Asy[b]))[:], (*[1]float32)(unsafe.Pointer(&Asz[b]))[:])
+		if sfrv != 3 {
+			sferr([]byte("section areas in frame element data\x00"))
+		}
+		sfrv = noarch.Fscanf(fp, []byte("%f %f %f\x00"), (*[1]float32)(unsafe.Pointer(&Jx[b]))[:], (*[1]float32)(unsafe.Pointer(&Iy[b]))[:], (*[1]float32)(unsafe.Pointer(&Iz[b]))[:])
+		if sfrv != 3 {
+			sferr([]byte("section inertias in frame element data\x00"))
+		}
+		sfrv = noarch.Fscanf(fp, []byte("%f %f\x00"), (*[1]float32)(unsafe.Pointer(&E[b]))[:], (*[1]float32)(unsafe.Pointer(&G[b]))[:])
+		if sfrv != 2 {
+			sferr([]byte("material moduli in frame element data\x00"))
+		}
+		sfrv = noarch.Fscanf(fp, []byte("%f\x00"), (*[1]float32)(unsafe.Pointer(&p[b]))[:])
+		if sfrv != 1 {
+			sferr([]byte("roll angle in frame element data\x00"))
+		}
+		p[b] = float32(float64(p[b]) * 3.141592653589793 / 180)
+		sfrv = noarch.Fscanf(fp, []byte("%f\x00"), (*[1]float32)(unsafe.Pointer(&d[b]))[:])
+		if sfrv != 1 {
+			sferr([]byte("mass density in frame element data\x00"))
+		}
+		if Ax[b] < float32(0) || Asy[b] < float32(0) || Asz[b] < float32(0) || Jx[b] < float32(0) || Iy[b] < float32(0) || Iz[b] < float32(0) {
+			noarch.Sprintf(errMsg, []byte("\n  error in frame element property data: section property < 0 \n  Frame element number: %d  \n\x00"), b)
+			errorMsg(errMsg)
+			os.Exit(53)
+		}
+		if Ax[b] == float32(0) {
+			noarch.Sprintf(errMsg, []byte("\n  error in frame element property data: cross section area is zero   \n  Frame element number: %d  \n\x00"), b)
+			errorMsg(errMsg)
+			os.Exit(54)
+		}
+		if (map[bool]int{false: 0, true: 1}[Asy[b] == float32(0) || Asz[b] == float32(0)]) != 0 && G[b] == float32(0) {
+			noarch.Sprintf(errMsg, []byte("\n  error in frame element property data: a shear area and shear modulus are zero   \n  Frame element number: %d  \n\x00"), b)
+			errorMsg(errMsg)
+			os.Exit(55)
+		}
+		if Jx[b] == float32(0) {
+			noarch.Sprintf(errMsg, []byte("\n  error in frame element property data: torsional moment of inertia is zero   \n  Frame element number: %d  \n\x00"), b)
+			errorMsg(errMsg)
+			os.Exit(56)
+		}
+		if Iy[b] == float32(0) || Iz[b] == float32(0) {
+			noarch.Sprintf(errMsg, []byte("\n  error: cross section bending moment of inertia is zero   \n  Frame element number : %d  \n\x00"), b)
+			errorMsg(errMsg)
+			os.Exit(57)
+		}
+		if E[b] <= float32(0) || G[b] <= float32(0) {
+			noarch.Sprintf(errMsg, []byte("\n  error : material elastic modulus E or G is not positive   \n  Frame element number: %d  \n\x00"), b)
+			errorMsg(errMsg)
+			os.Exit(58)
+		}
+		if d[b] <= float32(0) {
+			noarch.Sprintf(errMsg, []byte("\n  error : mass density d is not positive   \n  Frame element number: %d  \n\x00"), b)
+			errorMsg(errMsg)
+			os.Exit(59)
 		}
 	}
-	{
-		for i = 1; i <= nE; func() int {
-			i += 1
-			return i
-		}() {
-			sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&b))[:])
-			if sfrv != 1 {
-				sferr([]byte("frame element number in element data\x00"))
-			}
-			if b <= 0 || b > nE {
-				noarch.Sprintf(errMsg, []byte("\n  error in frame element property data: Element number out of range  \n Frame element number: %d  \n\x00"), b)
-				errorMsg(errMsg)
-				os.Exit(51)
-			}
-			sfrv = noarch.Fscanf(fp, []byte("%d %d\x00"), (*[1]int)(unsafe.Pointer(&N1[b]))[:], (*[1]int)(unsafe.Pointer(&N2[b]))[:])
-			epn[N1[b]] += 1
-			epn[N2[b]] += 1
-			if sfrv != 2 {
-				sferr([]byte("node numbers in frame element data\x00"))
-			}
-			if N1[b] <= 0 || N1[b] > nN || N2[b] <= 0 || N2[b] > nN {
-				noarch.Sprintf(errMsg, []byte("\n  error in frame element property data: node number out of range  \n Frame element number: %d \n\x00"), b)
-				errorMsg(errMsg)
-				os.Exit(52)
-			}
-			sfrv = noarch.Fscanf(fp, []byte("%f %f %f\x00"), (*[1]float32)(unsafe.Pointer(&Ax[b]))[:], (*[1]float32)(unsafe.Pointer(&Asy[b]))[:], (*[1]float32)(unsafe.Pointer(&Asz[b]))[:])
-			if sfrv != 3 {
-				sferr([]byte("section areas in frame element data\x00"))
-			}
-			sfrv = noarch.Fscanf(fp, []byte("%f %f %f\x00"), (*[1]float32)(unsafe.Pointer(&Jx[b]))[:], (*[1]float32)(unsafe.Pointer(&Iy[b]))[:], (*[1]float32)(unsafe.Pointer(&Iz[b]))[:])
-			if sfrv != 3 {
-				sferr([]byte("section inertias in frame element data\x00"))
-			}
-			sfrv = noarch.Fscanf(fp, []byte("%f %f\x00"), (*[1]float32)(unsafe.Pointer(&E[b]))[:], (*[1]float32)(unsafe.Pointer(&G[b]))[:])
-			if sfrv != 2 {
-				sferr([]byte("material moduli in frame element data\x00"))
-			}
-			sfrv = noarch.Fscanf(fp, []byte("%f\x00"), (*[1]float32)(unsafe.Pointer(&p[b]))[:])
-			if sfrv != 1 {
-				sferr([]byte("roll angle in frame element data\x00"))
-			}
-			p[b] = float32(float64(p[b]) * 3.141592653589793 / 180)
-			sfrv = noarch.Fscanf(fp, []byte("%f\x00"), (*[1]float32)(unsafe.Pointer(&d[b]))[:])
-			if sfrv != 1 {
-				sferr([]byte("mass density in frame element data\x00"))
-			}
-			if Ax[b] < float32(0) || Asy[b] < float32(0) || Asz[b] < float32(0) || Jx[b] < float32(0) || Iy[b] < float32(0) || Iz[b] < float32(0) {
-				noarch.Sprintf(errMsg, []byte("\n  error in frame element property data: section property < 0 \n  Frame element number: %d  \n\x00"), b)
-				errorMsg(errMsg)
-				os.Exit(53)
-			}
-			if Ax[b] == float32(0) {
-				noarch.Sprintf(errMsg, []byte("\n  error in frame element property data: cross section area is zero   \n  Frame element number: %d  \n\x00"), b)
-				errorMsg(errMsg)
-				os.Exit(54)
-			}
-			if (map[bool]int{false: 0, true: 1}[Asy[b] == float32(0) || Asz[b] == float32(0)]) != 0 && G[b] == float32(0) {
-				noarch.Sprintf(errMsg, []byte("\n  error in frame element property data: a shear area and shear modulus are zero   \n  Frame element number: %d  \n\x00"), b)
-				errorMsg(errMsg)
-				os.Exit(55)
-			}
-			if Jx[b] == float32(0) {
-				noarch.Sprintf(errMsg, []byte("\n  error in frame element property data: torsional moment of inertia is zero   \n  Frame element number: %d  \n\x00"), b)
-				errorMsg(errMsg)
-				os.Exit(56)
-			}
-			if Iy[b] == float32(0) || Iz[b] == float32(0) {
-				noarch.Sprintf(errMsg, []byte("\n  error: cross section bending moment of inertia is zero   \n  Frame element number : %d  \n\x00"), b)
-				errorMsg(errMsg)
-				os.Exit(57)
-			}
-			if E[b] <= float32(0) || G[b] <= float32(0) {
-				noarch.Sprintf(errMsg, []byte("\n  error : material elastic modulus E or G is not positive   \n  Frame element number: %d  \n\x00"), b)
-				errorMsg(errMsg)
-				os.Exit(58)
-			}
-			if d[b] <= float32(0) {
-				noarch.Sprintf(errMsg, []byte("\n  error : mass density d is not positive   \n  Frame element number: %d  \n\x00"), b)
-				errorMsg(errMsg)
-				os.Exit(59)
-			}
+	for b = 1; b <= nE; b++ {
+		n1 = N1[b]
+		n2 = N2[b]
+		L[b] = ((xyz[n2].x - xyz[n1].x) * (xyz[n2].x - xyz[n1].x)) + ((xyz[n2].y - xyz[n1].y) * (xyz[n2].y - xyz[n1].y)) + ((xyz[n2].z - xyz[n1].z) * (xyz[n2].z - xyz[n1].z))
+		L[b] = math.Sqrt(L[b])
+		Le[b] = L[b] - float64(r[n1]) - float64(r[n2])
+		if n1 == n2 || L[b] == 0 {
+			noarch.Sprintf(errMsg, []byte(" Frame elements must start and stop at different nodes\n  frame element %d  N1= %d N2= %d L= %e\n   Perhaps frame element number %d has not been specified.\n  or perhaps the Input Data file is missing expected data.\n\x00"), b, n1, n2, L[b], i)
+			errorMsg(errMsg)
+			os.Exit(60)
+		}
+		if Le[b] <= 0 {
+			noarch.Sprintf(errMsg, []byte(" Node  radii are too large.\n  frame element %d  N1= %d N2= %d L= %e \n  r1= %e r2= %e Le= %e \n\x00"), b, n1, n2, L[b], float64(r[n1]), float64(r[n2]), Le[b])
+			errorMsg(errMsg)
+			os.Exit(61)
 		}
 	}
-	{
-		for b = 1; b <= nE; func() int {
-			b += 1
-			return b
-		}() {
-			n1 = N1[b]
-			n2 = N2[b]
-			L[b] = ((xyz[n2].x - xyz[n1].x) * (xyz[n2].x - xyz[n1].x)) + ((xyz[n2].y - xyz[n1].y) * (xyz[n2].y - xyz[n1].y)) + ((xyz[n2].z - xyz[n1].z) * (xyz[n2].z - xyz[n1].z))
-			L[b] = math.Sqrt(L[b])
-			Le[b] = L[b] - float64(r[n1]) - float64(r[n2])
-			if n1 == n2 || L[b] == 0 {
-				noarch.Sprintf(errMsg, []byte(" Frame elements must start and stop at different nodes\n  frame element %d  N1= %d N2= %d L= %e\n   Perhaps frame element number %d has not been specified.\n  or perhaps the Input Data file is missing expected data.\n\x00"), b, n1, n2, L[b], i)
-				errorMsg(errMsg)
-				os.Exit(60)
-			}
-			if Le[b] <= 0 {
-				noarch.Sprintf(errMsg, []byte(" Node  radii are too large.\n  frame element %d  N1= %d N2= %d L= %e \n  r1= %e r2= %e Le= %e \n\x00"), b, n1, n2, L[b], float64(r[n1]), float64(r[n2]), Le[b])
-				errorMsg(errMsg)
-				os.Exit(61)
-			}
-		}
-	}
-	{
-		for n = 1; n <= nN; func() int {
-			n += 1
-			return n
-		}() {
-			if epn[n] == 0 {
-				noarch.Sprintf(errMsg, []byte("node or frame element property data:\n     node number %3d is unconnected. \n\x00"), n)
-				sferr(errMsg)
-				epn0 += 1
-			}
+	for n = 1; n <= nN; n++ {
+		if epn[n] == 0 {
+			noarch.Sprintf(errMsg, []byte("node or frame element property data:\n     node number %3d is unconnected. \n\x00"), n)
+			sferr(errMsg)
+			epn0 += 1
 		}
 	}
 	free_ivector(epn, int32(1), int32(nN))
@@ -4603,20 +4152,16 @@ func read_run_data(fp *noarch.File, OUT_file []byte, shear []int, shear_flag int
 	var mesh_file []byte = []byte("EMPTY_MESH\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00")
 	var sfrv int = 0
 	noarch.Strcpy(base_file, OUT_file)
-	{
-		for int(base_file[func() int {
-			len += 1
-			return len
-		}()]) != int('\x00') {
-		}
+	for int(base_file[func() int {
+		len += 1
+		return len
+	}()]) != int('\x00') {
 	}
 	full_len = len
-	{
-		for int(base_file[func() int {
-			len -= 1
-			return len
-		}()]) != int('.') && len > 0 {
-		}
+	for int(base_file[func() int {
+		len -= 1
+		return len
+	}()]) != int('.') && len > 0 {
 	}
 	if len == 0 {
 		len = full_len
@@ -4629,25 +4174,21 @@ func read_run_data(fp *noarch.File, OUT_file []byte, shear []int, shear_flag int
 	noarch.Strcat(plotpath, []byte(".plt\x00"))
 	noarch.Strcpy(infcpath, base_file)
 	noarch.Strcat(infcpath, []byte(".if\x00"))
-	{
-		for int(base_file[len]) != int('/') && int(base_file[len]) != int('\\') && len > 0 {
-			func() int {
-				len -= 1
-				return len
-			}()
-		}
+	for int(base_file[len]) != int('/') && int(base_file[len]) != int('\\') && len > 0 {
+		func() int {
+			len -= 1
+			return len
+		}()
 	}
 	i = 0
-	{
-		for int(base_file[len]) != int('\x00') {
-			mesh_file[func() int {
-				i += 1
-				return i
-			}()] = base_file[func() int {
-				len += 1
-				return len
-			}()]
-		}
+	for int(base_file[len]) != int('\x00') {
+		mesh_file[func() int {
+			i += 1
+			return i
+		}()] = base_file[func() int {
+			len += 1
+			return len
+		}()]
 	}
 	mesh_file[i] = '\x00'
 	noarch.Strcat(mesh_file, []byte("-msh\x00"))
@@ -4701,19 +4242,17 @@ func read_run_data(fp *noarch.File, OUT_file []byte, shear []int, shear_flag int
 func frame3dd_getline(fp *noarch.File, s []byte, lim int) int {
 	var c int = 0
 	var i int = 0
-	{
-		for func() int {
-			lim -= 1
-			return lim
-		}() > 0 && (func() int {
-			c = noarch.Fgetc(fp)
-			return c
-		}()) != (-1) && c != int('\n') {
-			s[func() int {
-				i += 1
-				return i
-			}()] = byte(c)
-		}
+	for func() int {
+		lim -= 1
+		return lim
+	}() > 0 && (func() int {
+		c = noarch.Fgetc(fp)
+		return c
+	}()) != (-1) && c != int('\n') {
+		s[func() int {
+			i += 1
+			return i
+		}()] = byte(c)
 	}
 	s[i] = '\x00'
 	return i
@@ -4791,13 +4330,11 @@ func parse_input(fp *noarch.File, tpath []byte) {
 		errorMsg(errMsg)
 		os.Exit(12)
 	}
-	{
-		for {
-			getline_no_comment(fp, line, 256)
-			noarch.Fprintf(fpc, []byte("%s \n\x00"), line)
-			if noarch.NotInt((map[bool]int{false: 0, true: 1}[int(line[0]) != int('_') && int(line[0]) != (-1)])) != 0 {
-				break
-			}
+	for {
+		getline_no_comment(fp, line, 256)
+		noarch.Fprintf(fpc, []byte("%s \n\x00"), line)
+		if noarch.NotInt((map[bool]int{false: 0, true: 1}[int(line[0]) != int('_') && int(line[0]) != (-1)])) != 0 {
+			break
 		}
 	}
 	noarch.Fclose(fpc)
@@ -4816,25 +4353,23 @@ func parse_input(fp *noarch.File, tpath []byte) {
 func getline_no_comment(fp *noarch.File, s []byte, lim int) {
 	var c int = 0
 	var i int = 0
-	{
-		for func() int {
-			lim -= 1
-			return lim
-		}() > 0 && (func() int {
-			c = noarch.Fgetc(fp)
-			return c
-		}()) != (-1) && c != int('\n') && c != int('%') && c != int('#') && c != int('?') {
-			if c != int(',') && c != int('"') && c != int(';') {
-				s[func() int {
-					i += 1
-					return i
-				}()] = byte(c)
-			} else {
-				s[func() int {
-					i += 1
-					return i
-				}()] = ' '
-			}
+	for func() int {
+		lim -= 1
+		return lim
+	}() > 0 && (func() int {
+		c = noarch.Fgetc(fp)
+		return c
+	}()) != (-1) && c != int('\n') && c != int('%') && c != int('#') && c != int('?') {
+		if c != int(',') && c != int('"') && c != int(';') {
+			s[func() int {
+				i += 1
+				return i
+			}()] = byte(c)
+		} else {
+			s[func() int {
+				i += 1
+				return i
+			}()] = ' '
 		}
 	}
 	s[i] = '\x00'
@@ -4865,13 +4400,8 @@ func read_reaction_data(fp *noarch.File, DoF int, nN int, nR []int, q []int, r [
 	var l int
 	var sfrv int = 0
 	var errMsg []byte = make([]byte, 512, 512)
-	{
-		for i = 1; i <= DoF; func() int {
-			i += 1
-			return i
-		}() {
-			r[i] = 0
-		}
+	for i = 1; i <= DoF; i++ {
+		r[i] = 0
 	}
 	sfrv = noarch.Fscanf(fp, []byte("%d\x00"), nR)
 	if sfrv != 1 {
@@ -4890,60 +4420,46 @@ func read_reaction_data(fp *noarch.File, DoF int, nN int, nR []int, q []int, r [
 		errorMsg(errMsg)
 		os.Exit(80)
 	}
-	{
-		for i = 1; i <= nR[0]; func() int {
-			i += 1
-			return i
+	for i = 1; i <= nR[0]; i++ {
+		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&j))[:])
+		if sfrv != 1 {
+			sferr([]byte("node number in reaction data\x00"))
+		}
+		for l = 5; l >= 0; func() int {
+			l -= 1
+			return l
 		}() {
-			sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&j))[:])
+			sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&r[6*j-l]))[:])
 			if sfrv != 1 {
-				sferr([]byte("node number in reaction data\x00"))
+				sferr([]byte("reaction value in reaction data\x00"))
 			}
-			{
-				for l = 5; l >= 0; func() int {
-					l -= 1
-					return l
-				}() {
-					sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&r[6*j-l]))[:])
-					if sfrv != 1 {
-						sferr([]byte("reaction value in reaction data\x00"))
-					}
-					if j > nN {
-						noarch.Sprintf(errMsg, []byte("\n  error in reaction data: node number %d is greater than the number of nodes, %d \n\x00"), j, nN)
-						errorMsg(errMsg)
-						os.Exit(81)
-					}
-					if r[6*j-l] != 0 && r[6*j-l] != 1 {
-						noarch.Sprintf(errMsg, []byte("\n  error in reaction data: Reaction data must be 0 or 1\n   Data for node %d, DoF %d is %d\n\x00"), j, 6-l, r[6*j-l])
-						errorMsg(errMsg)
-						os.Exit(82)
-					}
-				}
-			}
-			sumR[0] = 0
-			{
-				for l = 5; l >= 0; func() int {
-					l -= 1
-					return l
-				}() {
-					sumR[0] += r[6*j-l]
-				}
-			}
-			if sumR[0] == 0 {
-				noarch.Sprintf(errMsg, []byte("\n  error: node %3d has no reactions\n   Remove node %3d from the list of reactions\n   and set nR to %3d \n\x00"), j, j, nR[0]-1)
+			if j > nN {
+				noarch.Sprintf(errMsg, []byte("\n  error in reaction data: node number %d is greater than the number of nodes, %d \n\x00"), j, nN)
 				errorMsg(errMsg)
-				os.Exit(83)
+				os.Exit(81)
 			}
+			if r[6*j-l] != 0 && r[6*j-l] != 1 {
+				noarch.Sprintf(errMsg, []byte("\n  error in reaction data: Reaction data must be 0 or 1\n   Data for node %d, DoF %d is %d\n\x00"), j, 6-l, r[6*j-l])
+				errorMsg(errMsg)
+				os.Exit(82)
+			}
+		}
+		sumR[0] = 0
+		for l = 5; l >= 0; func() int {
+			l -= 1
+			return l
+		}() {
+			sumR[0] += r[6*j-l]
+		}
+		if sumR[0] == 0 {
+			noarch.Sprintf(errMsg, []byte("\n  error: node %3d has no reactions\n   Remove node %3d from the list of reactions\n   and set nR to %3d \n\x00"), j, j, nR[0]-1)
+			errorMsg(errMsg)
+			os.Exit(83)
 		}
 	}
 	sumR[0] = 0
-	{
-		for i = 1; i <= DoF; func() int {
-			i += 1
-			return i
-		}() {
-			sumR[0] += r[i]
-		}
+	for i = 1; i <= DoF; i++ {
+		sumR[0] += r[i]
 	}
 	if sumR[0] < 4 {
 		noarch.Sprintf(errMsg, []byte("\n  Warning:  un-restrained structure   %d imposed reactions.\n  At least 4 reactions are required to support static loads.\n\x00"), sumR[0])
@@ -4954,16 +4470,11 @@ func read_reaction_data(fp *noarch.File, DoF int, nN int, nR []int, q []int, r [
 		errorMsg(errMsg)
 		os.Exit(85)
 	}
-	{
-		for i = 1; i <= DoF; func() int {
-			i += 1
-			return i
-		}() {
-			if r[i] != 0 {
-				q[i] = 0
-			} else {
-				q[i] = 1
-			}
+	for i = 1; i <= DoF; i++ {
+		if r[i] != 0 {
+			q[i] = 0
+		} else {
+			q[i] = 1
 		}
 	}
 	return
@@ -5075,684 +4586,555 @@ func read_and_assemble_loads(fp *noarch.File, nN int, nE int, nL int, DoF int, x
 	var n2 int
 	var sfrv int = 0
 	var errMsg []byte = make([]byte, 512, 512)
-	{
-		for j = 1; j <= DoF; func() int {
-			j += 1
-			return j
-		}() {
-			Fo[j] = 0
+	for j = 1; j <= DoF; j++ {
+		Fo[j] = 0
+	}
+	for j = 1; j <= DoF; j++ {
+		for lc = 1; lc <= nL; lc++ {
+			func() float64 {
+				F_mech[lc][j] = 0
+				return F_mech[lc][j]
+			}()
+			func() float64 {
+				F_temp[lc][j] = F_mech[lc][j]
+				return F_temp[lc][j]
+			}()
 		}
 	}
-	{
-		for j = 1; j <= DoF; func() int {
-			j += 1
-			return j
-		}() {
-			for lc = 1; lc <= nL; func() int {
-				lc += 1
-				return lc
-			}() {
+	for i = 1; i <= 12; i++ {
+		for n = 1; n <= nE; n++ {
+			for lc = 1; lc <= nL; lc++ {
 				func() float64 {
-					F_mech[lc][j] = 0
-					return F_mech[lc][j]
+					eqF_temp[lc][n][i] = 0
+					return eqF_temp[lc][n][i]
 				}()
 				func() float64 {
-					F_temp[lc][j] = F_mech[lc][j]
-					return F_temp[lc][j]
+					eqF_mech[lc][n][i] = eqF_temp[lc][n][i]
+					return eqF_mech[lc][n][i]
 				}()
 			}
 		}
 	}
-	{
-		for i = 1; i <= 12; func() int {
-			i += 1
-			return i
-		}() {
-			for n = 1; n <= nE; func() int {
-				n += 1
-				return n
-			}() {
-				for lc = 1; lc <= nL; func() int {
-					lc += 1
-					return lc
-				}() {
-					func() float64 {
-						eqF_temp[lc][n][i] = 0
-						return eqF_temp[lc][n][i]
-					}()
-					func() float64 {
-						eqF_mech[lc][n][i] = eqF_temp[lc][n][i]
-						return eqF_mech[lc][n][i]
-					}()
-				}
-			}
+	for i = 1; i <= DoF; i++ {
+		for lc = 1; lc <= nL; lc++ {
+			Dp[lc][i] = float32(0)
 		}
 	}
-	{
-		for i = 1; i <= DoF; func() int {
-			i += 1
-			return i
-		}() {
-			for lc = 1; lc <= nL; func() int {
-				lc += 1
-				return lc
-			}() {
-				Dp[lc][i] = float32(0)
-			}
+	for i = 1; i <= nE; i++ {
+		for j = 1; j <= 12; j++ {
+			Q[i][j] = 0
 		}
 	}
-	{
-		for i = 1; i <= nE; func() int {
-			i += 1
-			return i
-		}() {
-			for j = 1; j <= 12; func() int {
-				j += 1
-				return j
+	for lc = 1; lc <= nL; lc++ {
+		if verbose != 0 {
+			textColor('y', 'g', 'b', 'x')
+			noarch.Fprintf(stdout, []byte(" load case %d of %d: \x00"), lc, nL)
+			noarch.Fprintf(stdout, []byte("                                            \x00"))
+			noarch.Fflush(stdout)
+			color(0)
+			noarch.Fprintf(stdout, []byte("\n\x00"))
+		}
+		sfrv = noarch.Fscanf(fp, []byte("%f %f %f\x00"), (*[1]float32)(unsafe.Pointer(&gX[lc]))[:], (*[1]float32)(unsafe.Pointer(&gY[lc]))[:], (*[1]float32)(unsafe.Pointer(&gZ[lc]))[:])
+		if sfrv != 3 {
+			sferr([]byte("gX gY gZ values in load data\x00"))
+		}
+		for n = 1; n <= nE; n++ {
+			n1 = J1[n]
+			n2 = J2[n]
+			coord_trans(xyz, L[n], n1, n2, (*[1]float64)(unsafe.Pointer(&t1))[:], (*[1]float64)(unsafe.Pointer(&t2))[:], (*[1]float64)(unsafe.Pointer(&t3))[:], (*[1]float64)(unsafe.Pointer(&t4))[:], (*[1]float64)(unsafe.Pointer(&t5))[:], (*[1]float64)(unsafe.Pointer(&t6))[:], (*[1]float64)(unsafe.Pointer(&t7))[:], (*[1]float64)(unsafe.Pointer(&t8))[:], (*[1]float64)(unsafe.Pointer(&t9))[:], p[n])
+			eqF_mech[lc][n][1] = float64(d[n]*Ax[n]) * L[n] * float64(gX[lc]) / 2
+			eqF_mech[lc][n][2] = float64(d[n]*Ax[n]) * L[n] * float64(gY[lc]) / 2
+			eqF_mech[lc][n][3] = float64(d[n]*Ax[n]) * L[n] * float64(gZ[lc]) / 2
+			eqF_mech[lc][n][4] = float64(d[n]*Ax[n]) * L[n] * L[n] / 12 * ((-t4*t8+t5*t7)*float64(gY[lc]) + (-t4*t9+t6*t7)*float64(gZ[lc]))
+			eqF_mech[lc][n][5] = float64(d[n]*Ax[n]) * L[n] * L[n] / 12 * ((-t5*t7+t4*t8)*float64(gX[lc]) + (-t5*t9+t6*t8)*float64(gZ[lc]))
+			eqF_mech[lc][n][6] = float64(d[n]*Ax[n]) * L[n] * L[n] / 12 * ((-t6*t7+t4*t9)*float64(gX[lc]) + (-t6*t8+t5*t9)*float64(gY[lc]))
+			eqF_mech[lc][n][7] = float64(d[n]*Ax[n]) * L[n] * float64(gX[lc]) / 2
+			eqF_mech[lc][n][8] = float64(d[n]*Ax[n]) * L[n] * float64(gY[lc]) / 2
+			eqF_mech[lc][n][9] = float64(d[n]*Ax[n]) * L[n] * float64(gZ[lc]) / 2
+			eqF_mech[lc][n][10] = float64(d[n]*Ax[n]) * L[n] * L[n] / 12 * ((t4*t8-t5*t7)*float64(gY[lc]) + (t4*t9-t6*t7)*float64(gZ[lc]))
+			eqF_mech[lc][n][11] = float64(d[n]*Ax[n]) * L[n] * L[n] / 12 * ((t5*t7-t4*t8)*float64(gX[lc]) + (t5*t9-t6*t8)*float64(gZ[lc]))
+			eqF_mech[lc][n][12] = float64(d[n]*Ax[n]) * L[n] * L[n] / 12 * ((t6*t7-t4*t9)*float64(gX[lc]) + (t6*t8-t5*t9)*float64(gY[lc]))
+		}
+		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&nF[lc]))[:])
+		if sfrv != 1 {
+			sferr([]byte("nF value in load data\x00"))
+		}
+		if verbose != 0 {
+			noarch.Fprintf(stdout, []byte("  number of loaded nodes \x00"))
+			dots(stdout, 28)
+			noarch.Fprintf(stdout, []byte(" nF = %3d\n\x00"), nF[lc])
+		}
+		for i = 1; i <= nF[lc]; i++ {
+			sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&j))[:])
+			if sfrv != 1 {
+				sferr([]byte("node value in point load data\x00"))
+			}
+			if j < 1 || j > nN {
+				noarch.Sprintf(errMsg, []byte("\n  error in node load data: node number out of range ... Node : %d\n   Perhaps you did not specify %d node loads \n  or perhaps the Input Data file is missing expected data.\n\x00"), j, nF[lc])
+				errorMsg(errMsg)
+				os.Exit(121)
+			}
+			for l = 5; l >= 0; func() int {
+				l -= 1
+				return l
 			}() {
-				Q[i][j] = 0
+				sfrv = noarch.Fscanf(fp, []byte("%lf\x00"), (*[1]float64)(unsafe.Pointer(&F_mech[lc][6*j-l]))[:])
+				if sfrv != 1 {
+					sferr([]byte("force value in point load data\x00"))
+				}
+			}
+			if F_mech[lc][6*j-5] == float64(0) && F_mech[lc][6*j-4] == float64(0) && F_mech[lc][6*j-3] == float64(0) && F_mech[lc][6*j-2] == float64(0) && F_mech[lc][6*j-1] == float64(0) && F_mech[lc][6*j] == float64(0) {
+				noarch.Fprintf(stderr, []byte("\n   Warning: All node loads applied at node %d  are zero\n\x00"), j)
 			}
 		}
-	}
-	{
-		for lc = 1; lc <= nL; func() int {
-			lc += 1
-			return lc
-		}() {
-			if verbose != 0 {
-				textColor('y', 'g', 'b', 'x')
-				noarch.Fprintf(stdout, []byte(" load case %d of %d: \x00"), lc, nL)
-				noarch.Fprintf(stdout, []byte("                                            \x00"))
-				noarch.Fflush(stdout)
-				color(0)
-				noarch.Fprintf(stdout, []byte("\n\x00"))
-			}
-			sfrv = noarch.Fscanf(fp, []byte("%f %f %f\x00"), (*[1]float32)(unsafe.Pointer(&gX[lc]))[:], (*[1]float32)(unsafe.Pointer(&gY[lc]))[:], (*[1]float32)(unsafe.Pointer(&gZ[lc]))[:])
-			if sfrv != 3 {
-				sferr([]byte("gX gY gZ values in load data\x00"))
-			}
-			{
-				for n = 1; n <= nE; func() int {
-					n += 1
-					return n
-				}() {
-					n1 = J1[n]
-					n2 = J2[n]
-					coord_trans(xyz, L[n], n1, n2, (*[1]float64)(unsafe.Pointer(&t1))[:], (*[1]float64)(unsafe.Pointer(&t2))[:], (*[1]float64)(unsafe.Pointer(&t3))[:], (*[1]float64)(unsafe.Pointer(&t4))[:], (*[1]float64)(unsafe.Pointer(&t5))[:], (*[1]float64)(unsafe.Pointer(&t6))[:], (*[1]float64)(unsafe.Pointer(&t7))[:], (*[1]float64)(unsafe.Pointer(&t8))[:], (*[1]float64)(unsafe.Pointer(&t9))[:], p[n])
-					eqF_mech[lc][n][1] = float64(d[n]*Ax[n]) * L[n] * float64(gX[lc]) / 2
-					eqF_mech[lc][n][2] = float64(d[n]*Ax[n]) * L[n] * float64(gY[lc]) / 2
-					eqF_mech[lc][n][3] = float64(d[n]*Ax[n]) * L[n] * float64(gZ[lc]) / 2
-					eqF_mech[lc][n][4] = float64(d[n]*Ax[n]) * L[n] * L[n] / 12 * ((-t4*t8+t5*t7)*float64(gY[lc]) + (-t4*t9+t6*t7)*float64(gZ[lc]))
-					eqF_mech[lc][n][5] = float64(d[n]*Ax[n]) * L[n] * L[n] / 12 * ((-t5*t7+t4*t8)*float64(gX[lc]) + (-t5*t9+t6*t8)*float64(gZ[lc]))
-					eqF_mech[lc][n][6] = float64(d[n]*Ax[n]) * L[n] * L[n] / 12 * ((-t6*t7+t4*t9)*float64(gX[lc]) + (-t6*t8+t5*t9)*float64(gY[lc]))
-					eqF_mech[lc][n][7] = float64(d[n]*Ax[n]) * L[n] * float64(gX[lc]) / 2
-					eqF_mech[lc][n][8] = float64(d[n]*Ax[n]) * L[n] * float64(gY[lc]) / 2
-					eqF_mech[lc][n][9] = float64(d[n]*Ax[n]) * L[n] * float64(gZ[lc]) / 2
-					eqF_mech[lc][n][10] = float64(d[n]*Ax[n]) * L[n] * L[n] / 12 * ((t4*t8-t5*t7)*float64(gY[lc]) + (t4*t9-t6*t7)*float64(gZ[lc]))
-					eqF_mech[lc][n][11] = float64(d[n]*Ax[n]) * L[n] * L[n] / 12 * ((t5*t7-t4*t8)*float64(gX[lc]) + (t5*t9-t6*t8)*float64(gZ[lc]))
-					eqF_mech[lc][n][12] = float64(d[n]*Ax[n]) * L[n] * L[n] / 12 * ((t6*t7-t4*t9)*float64(gX[lc]) + (t6*t8-t5*t9)*float64(gY[lc]))
-				}
-			}
-			sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&nF[lc]))[:])
+		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&nU[lc]))[:])
+		if sfrv != 1 {
+			sferr([]byte("nU value in uniform load data\x00"))
+		}
+		if verbose != 0 {
+			noarch.Fprintf(stdout, []byte("  number of uniformly distributed loads \x00"))
+			dots(stdout, 13)
+			noarch.Fprintf(stdout, []byte(" nU = %3d\n\x00"), nU[lc])
+		}
+		if nU[lc] < 0 || nU[lc] > nE {
+			noarch.Fprintf(stderr, []byte("  number of uniformly distributed loads \x00"))
+			dots(stderr, 13)
+			noarch.Fprintf(stderr, []byte(" nU = %3d\n\x00"), nU[lc])
+			noarch.Sprintf(errMsg, []byte("\n  error: valid ranges for nU is 0 ... %d \n\x00"), nE)
+			errorMsg(errMsg)
+			os.Exit(131)
+		}
+		for i = 1; i <= nU[lc]; i++ {
+			sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&n))[:])
 			if sfrv != 1 {
-				sferr([]byte("nF value in load data\x00"))
+				sferr([]byte("frame element number in uniform load data\x00"))
 			}
-			if verbose != 0 {
-				noarch.Fprintf(stdout, []byte("  number of loaded nodes \x00"))
-				dots(stdout, 28)
-				noarch.Fprintf(stdout, []byte(" nF = %3d\n\x00"), nF[lc])
-			}
-			{
-				for i = 1; i <= nF[lc]; func() int {
-					i += 1
-					return i
-				}() {
-					sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&j))[:])
-					if sfrv != 1 {
-						sferr([]byte("node value in point load data\x00"))
-					}
-					if j < 1 || j > nN {
-						noarch.Sprintf(errMsg, []byte("\n  error in node load data: node number out of range ... Node : %d\n   Perhaps you did not specify %d node loads \n  or perhaps the Input Data file is missing expected data.\n\x00"), j, nF[lc])
-						errorMsg(errMsg)
-						os.Exit(121)
-					}
-					{
-						for l = 5; l >= 0; func() int {
-							l -= 1
-							return l
-						}() {
-							sfrv = noarch.Fscanf(fp, []byte("%lf\x00"), (*[1]float64)(unsafe.Pointer(&F_mech[lc][6*j-l]))[:])
-							if sfrv != 1 {
-								sferr([]byte("force value in point load data\x00"))
-							}
-						}
-					}
-					if F_mech[lc][6*j-5] == float64(0) && F_mech[lc][6*j-4] == float64(0) && F_mech[lc][6*j-3] == float64(0) && F_mech[lc][6*j-2] == float64(0) && F_mech[lc][6*j-1] == float64(0) && F_mech[lc][6*j] == float64(0) {
-						noarch.Fprintf(stderr, []byte("\n   Warning: All node loads applied at node %d  are zero\n\x00"), j)
-					}
-				}
-			}
-			sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&nU[lc]))[:])
-			if sfrv != 1 {
-				sferr([]byte("nU value in uniform load data\x00"))
-			}
-			if verbose != 0 {
-				noarch.Fprintf(stdout, []byte("  number of uniformly distributed loads \x00"))
-				dots(stdout, 13)
-				noarch.Fprintf(stdout, []byte(" nU = %3d\n\x00"), nU[lc])
-			}
-			if nU[lc] < 0 || nU[lc] > nE {
-				noarch.Fprintf(stderr, []byte("  number of uniformly distributed loads \x00"))
-				dots(stderr, 13)
-				noarch.Fprintf(stderr, []byte(" nU = %3d\n\x00"), nU[lc])
-				noarch.Sprintf(errMsg, []byte("\n  error: valid ranges for nU is 0 ... %d \n\x00"), nE)
+			if n < 1 || n > nE {
+				noarch.Sprintf(errMsg, []byte("\n  error in uniform distributed loads: element number %d is out of range\n\x00"), n)
 				errorMsg(errMsg)
-				os.Exit(131)
+				os.Exit(132)
 			}
-			{
-				for i = 1; i <= nU[lc]; func() int {
-					i += 1
-					return i
-				}() {
-					sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&n))[:])
-					if sfrv != 1 {
-						sferr([]byte("frame element number in uniform load data\x00"))
-					}
-					if n < 1 || n > nE {
-						noarch.Sprintf(errMsg, []byte("\n  error in uniform distributed loads: element number %d is out of range\n\x00"), n)
-						errorMsg(errMsg)
-						os.Exit(132)
-					}
-					U[lc][i][1] = float32(float64(n))
-					{
-						for l = 2; l <= 4; func() int {
-							l += 1
-							return l
-						}() {
-							sfrv = noarch.Fscanf(fp, []byte("%f\x00"), (*[1]float32)(unsafe.Pointer(&U[lc][i][l]))[:])
-							if sfrv != 1 {
-								sferr([]byte("load value in uniform load data\x00"))
-							}
-						}
-					}
-					if U[lc][i][2] == float32(0) && U[lc][i][3] == float32(0) && U[lc][i][4] == float32(0) {
-						noarch.Fprintf(stderr, []byte("\n   Warning: All distributed loads applied to frame element %d  are zero\n\x00"), n)
-					}
-					func() float64 {
-						Nx2 = float64(U[lc][i][2]) * Le[n] / 2
-						return Nx2
-					}()
-					func() float64 {
-						Nx1 = Nx2
-						return Nx1
-					}()
-					func() float64 {
-						Vy2 = float64(U[lc][i][3]) * Le[n] / 2
-						return Vy2
-					}()
-					func() float64 {
-						Vy1 = Vy2
-						return Vy1
-					}()
-					func() float64 {
-						Vz2 = float64(U[lc][i][4]) * Le[n] / 2
-						return Vz2
-					}()
-					func() float64 {
-						Vz1 = Vz2
-						return Vz1
-					}()
-					func() float64 {
-						Mx2 = 0
-						return Mx2
-					}()
-					func() float64 {
-						Mx1 = Mx2
-						return Mx1
-					}()
-					My1 = float64(-U[lc][i][4]) * Le[n] * Le[n] / 12
-					My2 = -My1
-					Mz1 = float64(U[lc][i][3]) * Le[n] * Le[n] / 12
-					Mz2 = -Mz1
-					n1 = J1[n]
-					n2 = J2[n]
-					coord_trans(xyz, L[n], n1, n2, (*[1]float64)(unsafe.Pointer(&t1))[:], (*[1]float64)(unsafe.Pointer(&t2))[:], (*[1]float64)(unsafe.Pointer(&t3))[:], (*[1]float64)(unsafe.Pointer(&t4))[:], (*[1]float64)(unsafe.Pointer(&t5))[:], (*[1]float64)(unsafe.Pointer(&t6))[:], (*[1]float64)(unsafe.Pointer(&t7))[:], (*[1]float64)(unsafe.Pointer(&t8))[:], (*[1]float64)(unsafe.Pointer(&t9))[:], p[n])
-					eqF_mech[lc][n][1] += (Nx1*t1 + Vy1*t4 + Vz1*t7)
-					eqF_mech[lc][n][2] += (Nx1*t2 + Vy1*t5 + Vz1*t8)
-					eqF_mech[lc][n][3] += (Nx1*t3 + Vy1*t6 + Vz1*t9)
-					eqF_mech[lc][n][4] += (Mx1*t1 + My1*t4 + Mz1*t7)
-					eqF_mech[lc][n][5] += (Mx1*t2 + My1*t5 + Mz1*t8)
-					eqF_mech[lc][n][6] += (Mx1*t3 + My1*t6 + Mz1*t9)
-					eqF_mech[lc][n][7] += (Nx2*t1 + Vy2*t4 + Vz2*t7)
-					eqF_mech[lc][n][8] += (Nx2*t2 + Vy2*t5 + Vz2*t8)
-					eqF_mech[lc][n][9] += (Nx2*t3 + Vy2*t6 + Vz2*t9)
-					eqF_mech[lc][n][10] += (Mx2*t1 + My2*t4 + Mz2*t7)
-					eqF_mech[lc][n][11] += (Mx2*t2 + My2*t5 + Mz2*t8)
-					eqF_mech[lc][n][12] += (Mx2*t3 + My2*t6 + Mz2*t9)
+			U[lc][i][1] = float32(float64(n))
+			for l = 2; l <= 4; l++ {
+				sfrv = noarch.Fscanf(fp, []byte("%f\x00"), (*[1]float32)(unsafe.Pointer(&U[lc][i][l]))[:])
+				if sfrv != 1 {
+					sferr([]byte("load value in uniform load data\x00"))
 				}
 			}
-			sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&nW[lc]))[:])
+			if U[lc][i][2] == float32(0) && U[lc][i][3] == float32(0) && U[lc][i][4] == float32(0) {
+				noarch.Fprintf(stderr, []byte("\n   Warning: All distributed loads applied to frame element %d  are zero\n\x00"), n)
+			}
+			func() float64 {
+				Nx2 = float64(U[lc][i][2]) * Le[n] / 2
+				return Nx2
+			}()
+			func() float64 {
+				Nx1 = Nx2
+				return Nx1
+			}()
+			func() float64 {
+				Vy2 = float64(U[lc][i][3]) * Le[n] / 2
+				return Vy2
+			}()
+			func() float64 {
+				Vy1 = Vy2
+				return Vy1
+			}()
+			func() float64 {
+				Vz2 = float64(U[lc][i][4]) * Le[n] / 2
+				return Vz2
+			}()
+			func() float64 {
+				Vz1 = Vz2
+				return Vz1
+			}()
+			func() float64 {
+				Mx2 = 0
+				return Mx2
+			}()
+			func() float64 {
+				Mx1 = Mx2
+				return Mx1
+			}()
+			My1 = float64(-U[lc][i][4]) * Le[n] * Le[n] / 12
+			My2 = -My1
+			Mz1 = float64(U[lc][i][3]) * Le[n] * Le[n] / 12
+			Mz2 = -Mz1
+			n1 = J1[n]
+			n2 = J2[n]
+			coord_trans(xyz, L[n], n1, n2, (*[1]float64)(unsafe.Pointer(&t1))[:], (*[1]float64)(unsafe.Pointer(&t2))[:], (*[1]float64)(unsafe.Pointer(&t3))[:], (*[1]float64)(unsafe.Pointer(&t4))[:], (*[1]float64)(unsafe.Pointer(&t5))[:], (*[1]float64)(unsafe.Pointer(&t6))[:], (*[1]float64)(unsafe.Pointer(&t7))[:], (*[1]float64)(unsafe.Pointer(&t8))[:], (*[1]float64)(unsafe.Pointer(&t9))[:], p[n])
+			eqF_mech[lc][n][1] += (Nx1*t1 + Vy1*t4 + Vz1*t7)
+			eqF_mech[lc][n][2] += (Nx1*t2 + Vy1*t5 + Vz1*t8)
+			eqF_mech[lc][n][3] += (Nx1*t3 + Vy1*t6 + Vz1*t9)
+			eqF_mech[lc][n][4] += (Mx1*t1 + My1*t4 + Mz1*t7)
+			eqF_mech[lc][n][5] += (Mx1*t2 + My1*t5 + Mz1*t8)
+			eqF_mech[lc][n][6] += (Mx1*t3 + My1*t6 + Mz1*t9)
+			eqF_mech[lc][n][7] += (Nx2*t1 + Vy2*t4 + Vz2*t7)
+			eqF_mech[lc][n][8] += (Nx2*t2 + Vy2*t5 + Vz2*t8)
+			eqF_mech[lc][n][9] += (Nx2*t3 + Vy2*t6 + Vz2*t9)
+			eqF_mech[lc][n][10] += (Mx2*t1 + My2*t4 + Mz2*t7)
+			eqF_mech[lc][n][11] += (Mx2*t2 + My2*t5 + Mz2*t8)
+			eqF_mech[lc][n][12] += (Mx2*t3 + My2*t6 + Mz2*t9)
+		}
+		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&nW[lc]))[:])
+		if sfrv != 1 {
+			sferr([]byte("nW value in load data\x00"))
+		}
+		if verbose != 0 {
+			noarch.Fprintf(stdout, []byte("  number of trapezoidally distributed loads \x00"))
+			dots(stdout, 9)
+			noarch.Fprintf(stdout, []byte(" nW = %3d\n\x00"), nW[lc])
+		}
+		if nW[lc] < 0 || nW[lc] > 10*nE {
+			noarch.Sprintf(errMsg, []byte("\n  error: valid ranges for nW is 0 ... %d \n\x00"), 10*nE)
+			errorMsg(errMsg)
+			os.Exit(140)
+		}
+		for i = 1; i <= nW[lc]; i++ {
+			sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&n))[:])
 			if sfrv != 1 {
-				sferr([]byte("nW value in load data\x00"))
+				sferr([]byte("frame element number in trapezoidal load data\x00"))
 			}
-			if verbose != 0 {
-				noarch.Fprintf(stdout, []byte("  number of trapezoidally distributed loads \x00"))
-				dots(stdout, 9)
-				noarch.Fprintf(stdout, []byte(" nW = %3d\n\x00"), nW[lc])
-			}
-			if nW[lc] < 0 || nW[lc] > 10*nE {
-				noarch.Sprintf(errMsg, []byte("\n  error: valid ranges for nW is 0 ... %d \n\x00"), 10*nE)
+			if n < 1 || n > nE {
+				noarch.Sprintf(errMsg, []byte("\n  error in trapezoidally-distributed loads: element number %d is out of range\n\x00"), n)
 				errorMsg(errMsg)
-				os.Exit(140)
+				os.Exit(141)
 			}
-			{
-				for i = 1; i <= nW[lc]; func() int {
-					i += 1
-					return i
-				}() {
-					sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&n))[:])
-					if sfrv != 1 {
-						sferr([]byte("frame element number in trapezoidal load data\x00"))
-					}
-					if n < 1 || n > nE {
-						noarch.Sprintf(errMsg, []byte("\n  error in trapezoidally-distributed loads: element number %d is out of range\n\x00"), n)
-						errorMsg(errMsg)
-						os.Exit(141)
-					}
-					W[lc][i][1] = float32(float64(n))
-					{
-						for l = 2; l <= 13; func() int {
-							l += 1
-							return l
-						}() {
-							sfrv = noarch.Fscanf(fp, []byte("%f\x00"), (*[1]float32)(unsafe.Pointer(&W[lc][i][l]))[:])
-							if sfrv != 1 {
-								sferr([]byte("value in trapezoidal load data\x00"))
-							}
-						}
-					}
-					Ln = L[n]
-					if W[lc][i][4] == float32(0) && W[lc][i][5] == float32(0) && W[lc][i][8] == float32(0) && W[lc][i][9] == float32(0) && W[lc][i][12] == float32(0) && W[lc][i][13] == float32(0) {
-						noarch.Fprintf(stderr, []byte("\n   Warning: All trapezoidal loads applied to frame element %d  are zero\n\x00"), n)
-						noarch.Fprintf(stderr, []byte("     load case: %d , element %d , load %d\n \x00"), lc, n, i)
-					}
-					if W[lc][i][2] < float32(0) {
-						noarch.Sprintf(errMsg, []byte("\n   error in x-axis trapezoidal loads, load case: %d , element %d , load %d\n  starting location = %f < 0\n\x00"), lc, n, i, float64(W[lc][i][2]))
-						errorMsg(errMsg)
-						os.Exit(142)
-					}
-					if W[lc][i][2] > W[lc][i][3] {
-						noarch.Sprintf(errMsg, []byte("\n   error in x-axis trapezoidal loads, load case: %d , element %d , load %d\n  starting location = %f > ending location = %f \n\x00"), lc, n, i, float64(W[lc][i][2]), float64(W[lc][i][3]))
-						errorMsg(errMsg)
-						os.Exit(143)
-					}
-					if float64(W[lc][i][3]) > Ln {
-						noarch.Sprintf(errMsg, []byte("\n   error in x-axis trapezoidal loads, load case: %d , element %d , load %d\n ending location = %f > L (%f) \n\x00"), lc, n, i, float64(W[lc][i][3]), Ln)
-						errorMsg(errMsg)
-						os.Exit(144)
-					}
-					if W[lc][i][6] < float32(0) {
-						noarch.Sprintf(errMsg, []byte("\n   error in y-axis trapezoidal loads, load case: %d , element %d , load %d\n starting location = %f < 0\n\x00"), lc, n, i, float64(W[lc][i][6]))
-						errorMsg(errMsg)
-						os.Exit(142)
-					}
-					if W[lc][i][6] > W[lc][i][7] {
-						noarch.Sprintf(errMsg, []byte("\n   error in y-axis trapezoidal loads, load case: %d , element %d , load %d\n starting location = %f > ending location = %f \n\x00"), lc, n, i, float64(W[lc][i][6]), float64(W[lc][i][7]))
-						errorMsg(errMsg)
-						os.Exit(143)
-					}
-					if float64(W[lc][i][7]) > Ln {
-						noarch.Sprintf(errMsg, []byte("\n   error in y-axis trapezoidal loads, load case: %d , element %d , load %d\n ending location = %f > L (%f) \n\x00"), lc, n, i, float64(W[lc][i][7]), Ln)
-						errorMsg(errMsg)
-						os.Exit(144)
-					}
-					if W[lc][i][10] < float32(0) {
-						noarch.Sprintf(errMsg, []byte("\n   error in z-axis trapezoidal loads, load case: %d , element %d , load %d\n starting location = %f < 0\n\x00"), lc, n, i, float64(W[lc][i][10]))
-						errorMsg(errMsg)
-						os.Exit(142)
-					}
-					if W[lc][i][10] > W[lc][i][11] {
-						noarch.Sprintf(errMsg, []byte("\n   error in z-axis trapezoidal loads, load case: %d , element %d , load %d\n starting location = %f > ending location = %f \n\x00"), lc, n, i, float64(W[lc][i][10]), float64(W[lc][i][11]))
-						errorMsg(errMsg)
-						os.Exit(143)
-					}
-					if float64(W[lc][i][11]) > Ln {
-						noarch.Sprintf(errMsg, []byte("\n   error in z-axis trapezoidal loads, load case: %d , element %d , load %d\n ending location = %f > L (%f) \n\x00"), lc, n, i, float64(W[lc][i][11]), Ln)
-						errorMsg(errMsg)
-						os.Exit(144)
-					}
-					if shear != 0 {
-						Ksy = (12 * float64(E[n]) * float64(Iz[n])) / (float64(G[n]*Asy[n]) * Le[n] * Le[n])
-						Ksz = (12 * float64(E[n]) * float64(Iy[n])) / (float64(G[n]*Asz[n]) * Le[n] * Le[n])
-					} else {
-						func() float64 {
-							Ksz = 0
-							return Ksz
-						}()
-						func() float64 {
-							Ksy = Ksz
-							return Ksy
-						}()
-					}
-					x1 = W[lc][i][2]
-					x2 = W[lc][i][3]
-					w1 = W[lc][i][4]
-					w2 = W[lc][i][5]
-					Nx1 = (3*float64((w1+w2))*Ln*float64((x2-x1)) - (2*float64(w2)+float64(w1))*float64(x2)*float64(x2) + float64((w2-w1)*x2*x1) + (2*float64(w1)+float64(w2))*float64(x1)*float64(x1)) / (6 * Ln)
-					Nx2 = (-(2*float64(w1)+float64(w2))*float64(x1)*float64(x1) + (2*float64(w2)+float64(w1))*float64(x2)*float64(x2) - float64((w2-w1)*x1*x2)) / (6 * Ln)
-					x1 = W[lc][i][6]
-					x2 = W[lc][i][7]
-					w1 = W[lc][i][8]
-					w2 = W[lc][i][9]
-					R1o = ((2*float64(w1)+float64(w2))*float64(x1)*float64(x1) - (float64(w1)+2*float64(w2))*float64(x2)*float64(x2) + 3*float64((w1+w2))*Ln*float64((x2-x1)) - float64((w1-w2)*x1*x2)) / (6 * Ln)
-					R2o = ((float64(w1)+2*float64(w2))*float64(x2)*float64(x2) + float64((w1-w2)*x1*x2) - (2*float64(w1)+float64(w2))*float64(x1)*float64(x1)) / (6 * Ln)
-					f01 = (3*(float64(w2)+4*float64(w1))*float64(x1)*float64(x1)*float64(x1)*float64(x1) - 3*(float64(w1)+4*float64(w2))*float64(x2)*float64(x2)*float64(x2)*float64(x2) - 15*(float64(w2)+3*float64(w1))*Ln*float64(x1)*float64(x1)*float64(x1) + 15*(float64(w1)+3*float64(w2))*Ln*float64(x2)*float64(x2)*float64(x2) - 3*float64((w1-w2))*float64(x1)*float64(x2)*float64((x1*x1+x2*x2)) + 20*(float64(w2)+2*float64(w1))*Ln*Ln*float64(x1)*float64(x1) - 20*(float64(w1)+2*float64(w2))*Ln*Ln*float64(x2)*float64(x2) + 15*float64((w1-w2))*Ln*float64(x1)*float64(x2)*float64((x1+x2)) - 3*float64((w1-w2))*float64(x1)*float64(x1)*float64(x2)*float64(x2) - 20*float64((w1-w2))*Ln*Ln*float64(x1)*float64(x2)) / 360
-					f02 = (3*(float64(w2)+4*float64(w1))*float64(x1)*float64(x1)*float64(x1)*float64(x1) - 3*(float64(w1)+4*float64(w2))*float64(x2)*float64(x2)*float64(x2)*float64(x2) - 3*float64((w1-w2))*float64(x1)*float64(x2)*float64((x1*x1+x2*x2)) - 10*(float64(w2)+2*float64(w1))*Ln*Ln*float64(x1)*float64(x1) + 10*(float64(w1)+2*float64(w2))*Ln*Ln*float64(x2)*float64(x2) - 3*float64((w1-w2))*float64(x1)*float64(x1)*float64(x2)*float64(x2) + 10*float64((w1-w2))*Ln*Ln*float64(x1)*float64(x2)) / 360
-					Mz1 = -(4*f01 + 2*f02 + Ksy*(f01-f02)) / (Ln * Ln * (1 + Ksy))
-					Mz2 = -(2*f01 + 4*f02 - Ksy*(f01-f02)) / (Ln * Ln * (1 + Ksy))
-					Vy1 = R1o + Mz1/Ln + Mz2/Ln
-					Vy2 = R2o - Mz1/Ln - Mz2/Ln
-					x1 = W[lc][i][10]
-					x2 = W[lc][i][11]
-					w1 = W[lc][i][12]
-					w2 = W[lc][i][13]
-					R1o = ((2*float64(w1)+float64(w2))*float64(x1)*float64(x1) - (float64(w1)+2*float64(w2))*float64(x2)*float64(x2) + 3*float64((w1+w2))*Ln*float64((x2-x1)) - float64((w1-w2)*x1*x2)) / (6 * Ln)
-					R2o = ((float64(w1)+2*float64(w2))*float64(x2)*float64(x2) + float64((w1-w2)*x1*x2) - (2*float64(w1)+float64(w2))*float64(x1)*float64(x1)) / (6 * Ln)
-					f01 = (3*(float64(w2)+4*float64(w1))*float64(x1)*float64(x1)*float64(x1)*float64(x1) - 3*(float64(w1)+4*float64(w2))*float64(x2)*float64(x2)*float64(x2)*float64(x2) - 15*(float64(w2)+3*float64(w1))*Ln*float64(x1)*float64(x1)*float64(x1) + 15*(float64(w1)+3*float64(w2))*Ln*float64(x2)*float64(x2)*float64(x2) - 3*float64((w1-w2))*float64(x1)*float64(x2)*float64((x1*x1+x2*x2)) + 20*(float64(w2)+2*float64(w1))*Ln*Ln*float64(x1)*float64(x1) - 20*(float64(w1)+2*float64(w2))*Ln*Ln*float64(x2)*float64(x2) + 15*float64((w1-w2))*Ln*float64(x1)*float64(x2)*float64((x1+x2)) - 3*float64((w1-w2))*float64(x1)*float64(x1)*float64(x2)*float64(x2) - 20*float64((w1-w2))*Ln*Ln*float64(x1)*float64(x2)) / 360
-					f02 = (3*(float64(w2)+4*float64(w1))*float64(x1)*float64(x1)*float64(x1)*float64(x1) - 3*(float64(w1)+4*float64(w2))*float64(x2)*float64(x2)*float64(x2)*float64(x2) - 3*float64((w1-w2))*float64(x1)*float64(x2)*float64((x1*x1+x2*x2)) - 10*(float64(w2)+2*float64(w1))*Ln*Ln*float64(x1)*float64(x1) + 10*(float64(w1)+2*float64(w2))*Ln*Ln*float64(x2)*float64(x2) - 3*float64((w1-w2))*float64(x1)*float64(x1)*float64(x2)*float64(x2) + 10*float64((w1-w2))*Ln*Ln*float64(x1)*float64(x2)) / 360
-					My1 = (4*f01 + 2*f02 + Ksz*(f01-f02)) / (Ln * Ln * (1 + Ksz))
-					My2 = (2*f01 + 4*f02 - Ksz*(f01-f02)) / (Ln * Ln * (1 + Ksz))
-					Vz1 = R1o - My1/Ln - My2/Ln
-					Vz2 = R2o + My1/Ln + My2/Ln
-					n1 = J1[n]
-					n2 = J2[n]
-					coord_trans(xyz, Ln, n1, n2, (*[1]float64)(unsafe.Pointer(&t1))[:], (*[1]float64)(unsafe.Pointer(&t2))[:], (*[1]float64)(unsafe.Pointer(&t3))[:], (*[1]float64)(unsafe.Pointer(&t4))[:], (*[1]float64)(unsafe.Pointer(&t5))[:], (*[1]float64)(unsafe.Pointer(&t6))[:], (*[1]float64)(unsafe.Pointer(&t7))[:], (*[1]float64)(unsafe.Pointer(&t8))[:], (*[1]float64)(unsafe.Pointer(&t9))[:], p[n])
-					eqF_mech[lc][n][1] += (Nx1*t1 + Vy1*t4 + Vz1*t7)
-					eqF_mech[lc][n][2] += (Nx1*t2 + Vy1*t5 + Vz1*t8)
-					eqF_mech[lc][n][3] += (Nx1*t3 + Vy1*t6 + Vz1*t9)
-					eqF_mech[lc][n][4] += (Mx1*t1 + My1*t4 + Mz1*t7)
-					eqF_mech[lc][n][5] += (Mx1*t2 + My1*t5 + Mz1*t8)
-					eqF_mech[lc][n][6] += (Mx1*t3 + My1*t6 + Mz1*t9)
-					eqF_mech[lc][n][7] += (Nx2*t1 + Vy2*t4 + Vz2*t7)
-					eqF_mech[lc][n][8] += (Nx2*t2 + Vy2*t5 + Vz2*t8)
-					eqF_mech[lc][n][9] += (Nx2*t3 + Vy2*t6 + Vz2*t9)
-					eqF_mech[lc][n][10] += (Mx2*t1 + My2*t4 + Mz2*t7)
-					eqF_mech[lc][n][11] += (Mx2*t2 + My2*t5 + Mz2*t8)
-					eqF_mech[lc][n][12] += (Mx2*t3 + My2*t6 + Mz2*t9)
+			W[lc][i][1] = float32(float64(n))
+			for l = 2; l <= 13; l++ {
+				sfrv = noarch.Fscanf(fp, []byte("%f\x00"), (*[1]float32)(unsafe.Pointer(&W[lc][i][l]))[:])
+				if sfrv != 1 {
+					sferr([]byte("value in trapezoidal load data\x00"))
 				}
 			}
-			sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&nP[lc]))[:])
-			if sfrv != 1 {
-				sferr([]byte("nP value load data\x00"))
+			Ln = L[n]
+			if W[lc][i][4] == float32(0) && W[lc][i][5] == float32(0) && W[lc][i][8] == float32(0) && W[lc][i][9] == float32(0) && W[lc][i][12] == float32(0) && W[lc][i][13] == float32(0) {
+				noarch.Fprintf(stderr, []byte("\n   Warning: All trapezoidal loads applied to frame element %d  are zero\n\x00"), n)
+				noarch.Fprintf(stderr, []byte("     load case: %d , element %d , load %d\n \x00"), lc, n, i)
 			}
-			if verbose != 0 {
-				noarch.Fprintf(stdout, []byte("  number of concentrated frame element point loads \x00"))
-				dots(stdout, 2)
-				noarch.Fprintf(stdout, []byte(" nP = %3d\n\x00"), nP[lc])
-			}
-			if nP[lc] < 0 || nP[lc] > 10*nE {
-				noarch.Fprintf(stderr, []byte("  number of concentrated frame element point loads \x00"))
-				dots(stderr, 3)
-				noarch.Fprintf(stderr, []byte(" nP = %3d\n\x00"), nP[lc])
-				noarch.Sprintf(errMsg, []byte("\n  error: valid ranges for nP is 0 ... %d \n\x00"), 10*nE)
+			if W[lc][i][2] < float32(0) {
+				noarch.Sprintf(errMsg, []byte("\n   error in x-axis trapezoidal loads, load case: %d , element %d , load %d\n  starting location = %f < 0\n\x00"), lc, n, i, float64(W[lc][i][2]))
 				errorMsg(errMsg)
-				os.Exit(150)
+				os.Exit(142)
 			}
-			{
-				for i = 1; i <= nP[lc]; func() int {
-					i += 1
-					return i
-				}() {
-					sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&n))[:])
-					if sfrv != 1 {
-						sferr([]byte("frame element number value point load data\x00"))
-					}
-					if n < 1 || n > nE {
-						noarch.Sprintf(errMsg, []byte("\n   error in internal point loads: frame element number %d is out of range\n\x00"), n)
-						errorMsg(errMsg)
-						os.Exit(151)
-					}
-					P[lc][i][1] = float32(float64(n))
-					{
-						for l = 2; l <= 5; func() int {
-							l += 1
-							return l
-						}() {
-							sfrv = noarch.Fscanf(fp, []byte("%f\x00"), (*[1]float32)(unsafe.Pointer(&P[lc][i][l]))[:])
-							if sfrv != 1 {
-								sferr([]byte("value in point load data\x00"))
-							}
-						}
-					}
-					a = float64(P[lc][i][5])
-					b = L[n] - a
-					if a < float64(0) || L[n] < a || b < float64(0) || L[n] < b {
-						noarch.Sprintf(errMsg, []byte("\n  error in point load data: Point load coord. out of range\n   Frame element number: %d  L: %lf  load coord.: %lf\n\x00"), n, L[n], float64(P[lc][i][5]))
-						errorMsg(errMsg)
-						os.Exit(152)
-					}
-					if shear != 0 {
-						Ksy = (12 * float64(E[n]) * float64(Iz[n])) / (float64(G[n]*Asy[n]) * Le[n] * Le[n])
-						Ksz = (12 * float64(E[n]) * float64(Iy[n])) / (float64(G[n]*Asz[n]) * Le[n] * Le[n])
-					} else {
-						func() float64 {
-							Ksz = 0
-							return Ksz
-						}()
-						func() float64 {
-							Ksy = Ksz
-							return Ksy
-						}()
-					}
-					Ln = L[n]
-					Nx1 = float64(P[lc][i][2]) * a / Ln
-					Nx2 = float64(P[lc][i][2]) * b / Ln
-					Vy1 = (1/(1+Ksz))*float64(P[lc][i][3])*b*b*(3*a+b)/(Ln*Ln*Ln) + (Ksz/(1+Ksz))*float64(P[lc][i][3])*b/Ln
-					Vy2 = (1/(1+Ksz))*float64(P[lc][i][3])*a*a*(3*b+a)/(Ln*Ln*Ln) + (Ksz/(1+Ksz))*float64(P[lc][i][3])*a/Ln
-					Vz1 = (1/(1+Ksy))*float64(P[lc][i][4])*b*b*(3*a+b)/(Ln*Ln*Ln) + (Ksy/(1+Ksy))*float64(P[lc][i][4])*b/Ln
-					Vz2 = (1/(1+Ksy))*float64(P[lc][i][4])*a*a*(3*b+a)/(Ln*Ln*Ln) + (Ksy/(1+Ksy))*float64(P[lc][i][4])*a/Ln
-					func() float64 {
-						Mx2 = 0
-						return Mx2
-					}()
-					func() float64 {
-						Mx1 = Mx2
-						return Mx1
-					}()
-					My1 = -(1/(1+Ksy))*float64(P[lc][i][4])*a*b*b/(Ln*Ln) - (Ksy/(1+Ksy))*float64(P[lc][i][4])*a*b/(2*Ln)
-					My2 = (1/(1+Ksy))*float64(P[lc][i][4])*a*a*b/(Ln*Ln) + (Ksy/(1+Ksy))*float64(P[lc][i][4])*a*b/(2*Ln)
-					Mz1 = (1/(1+Ksz))*float64(P[lc][i][3])*a*b*b/(Ln*Ln) + (Ksz/(1+Ksz))*float64(P[lc][i][3])*a*b/(2*Ln)
-					Mz2 = -(1/(1+Ksz))*float64(P[lc][i][3])*a*a*b/(Ln*Ln) - (Ksz/(1+Ksz))*float64(P[lc][i][3])*a*b/(2*Ln)
-					n1 = J1[n]
-					n2 = J2[n]
-					coord_trans(xyz, Ln, n1, n2, (*[1]float64)(unsafe.Pointer(&t1))[:], (*[1]float64)(unsafe.Pointer(&t2))[:], (*[1]float64)(unsafe.Pointer(&t3))[:], (*[1]float64)(unsafe.Pointer(&t4))[:], (*[1]float64)(unsafe.Pointer(&t5))[:], (*[1]float64)(unsafe.Pointer(&t6))[:], (*[1]float64)(unsafe.Pointer(&t7))[:], (*[1]float64)(unsafe.Pointer(&t8))[:], (*[1]float64)(unsafe.Pointer(&t9))[:], p[n])
-					eqF_mech[lc][n][1] += (Nx1*t1 + Vy1*t4 + Vz1*t7)
-					eqF_mech[lc][n][2] += (Nx1*t2 + Vy1*t5 + Vz1*t8)
-					eqF_mech[lc][n][3] += (Nx1*t3 + Vy1*t6 + Vz1*t9)
-					eqF_mech[lc][n][4] += (Mx1*t1 + My1*t4 + Mz1*t7)
-					eqF_mech[lc][n][5] += (Mx1*t2 + My1*t5 + Mz1*t8)
-					eqF_mech[lc][n][6] += (Mx1*t3 + My1*t6 + Mz1*t9)
-					eqF_mech[lc][n][7] += (Nx2*t1 + Vy2*t4 + Vz2*t7)
-					eqF_mech[lc][n][8] += (Nx2*t2 + Vy2*t5 + Vz2*t8)
-					eqF_mech[lc][n][9] += (Nx2*t3 + Vy2*t6 + Vz2*t9)
-					eqF_mech[lc][n][10] += (Mx2*t1 + My2*t4 + Mz2*t7)
-					eqF_mech[lc][n][11] += (Mx2*t2 + My2*t5 + Mz2*t8)
-					eqF_mech[lc][n][12] += (Mx2*t3 + My2*t6 + Mz2*t9)
-				}
-			}
-			sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&nT[lc]))[:])
-			if sfrv != 1 {
-				sferr([]byte("nT value in load data\x00"))
-			}
-			if verbose != 0 {
-				noarch.Fprintf(stdout, []byte("  number of temperature changes \x00"))
-				dots(stdout, 21)
-				noarch.Fprintf(stdout, []byte(" nT = %3d\n\x00"), nT[lc])
-			}
-			if nT[lc] < 0 || nT[lc] > nE {
-				noarch.Fprintf(stderr, []byte("  number of temperature changes \x00"))
-				dots(stderr, 21)
-				noarch.Fprintf(stderr, []byte(" nT = %3d\n\x00"), nT[lc])
-				noarch.Sprintf(errMsg, []byte("\n  error: valid ranges for nT is 0 ... %d \n\x00"), nE)
+			if W[lc][i][2] > W[lc][i][3] {
+				noarch.Sprintf(errMsg, []byte("\n   error in x-axis trapezoidal loads, load case: %d , element %d , load %d\n  starting location = %f > ending location = %f \n\x00"), lc, n, i, float64(W[lc][i][2]), float64(W[lc][i][3]))
 				errorMsg(errMsg)
-				os.Exit(160)
+				os.Exit(143)
 			}
-			{
-				for i = 1; i <= nT[lc]; func() int {
-					i += 1
-					return i
-				}() {
-					sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&n))[:])
-					if sfrv != 1 {
-						sferr([]byte("frame element number in temperature load data\x00"))
-					}
-					if n < 1 || n > nE {
-						noarch.Sprintf(errMsg, []byte("\n  error in temperature loads: frame element number %d is out of range\n\x00"), n)
-						errorMsg(errMsg)
-						os.Exit(161)
-					}
-					T[lc][i][1] = float32(float64(n))
-					{
-						for l = 2; l <= 8; func() int {
-							l += 1
-							return l
-						}() {
-							sfrv = noarch.Fscanf(fp, []byte("%f\x00"), (*[1]float32)(unsafe.Pointer(&T[lc][i][l]))[:])
-							if sfrv != 1 {
-								sferr([]byte("value in temperature load data\x00"))
-							}
-						}
-					}
-					a = float64(T[lc][i][2])
-					hy = T[lc][i][3]
-					hz = T[lc][i][4]
-					if hy < float32(0) || hz < float32(0) {
-						noarch.Sprintf(errMsg, []byte("\n  error in thermal load data: section dimension < 0\n   Frame element number: %d  hy: %f  hz: %f\n\x00"), n, float64(hy), float64(hz))
-						errorMsg(errMsg)
-						os.Exit(162)
-					}
-					Nx2 = a * (1 / 4) * float64((T[lc][i][5] + T[lc][i][6] + T[lc][i][7] + T[lc][i][8])) * float64(E[n]) * float64(Ax[n])
-					Nx1 = -Nx2
-					func() float64 {
-						Vz2 = 0
-						return Vz2
-					}()
-					func() float64 {
-						Vz1 = Vz2
-						return Vz1
-					}()
-					func() float64 {
-						Vy2 = Vz1
-						return Vy2
-					}()
-					func() float64 {
-						Vy1 = Vy2
-						return Vy1
-					}()
-					func() float64 {
-						Mx2 = 0
-						return Mx2
-					}()
-					func() float64 {
-						Mx1 = Mx2
-						return Mx1
-					}()
-					My1 = (a / float64(hz)) * float64((T[lc][i][8] - T[lc][i][7])) * float64(E[n]) * float64(Iy[n])
-					My2 = -My1
-					Mz1 = (a / float64(hy)) * float64((T[lc][i][5] - T[lc][i][6])) * float64(E[n]) * float64(Iz[n])
-					Mz2 = -Mz1
-					n1 = J1[n]
-					n2 = J2[n]
-					coord_trans(xyz, L[n], n1, n2, (*[1]float64)(unsafe.Pointer(&t1))[:], (*[1]float64)(unsafe.Pointer(&t2))[:], (*[1]float64)(unsafe.Pointer(&t3))[:], (*[1]float64)(unsafe.Pointer(&t4))[:], (*[1]float64)(unsafe.Pointer(&t5))[:], (*[1]float64)(unsafe.Pointer(&t6))[:], (*[1]float64)(unsafe.Pointer(&t7))[:], (*[1]float64)(unsafe.Pointer(&t8))[:], (*[1]float64)(unsafe.Pointer(&t9))[:], p[n])
-					eqF_temp[lc][n][1] += (Nx1*t1 + Vy1*t4 + Vz1*t7)
-					eqF_temp[lc][n][2] += (Nx1*t2 + Vy1*t5 + Vz1*t8)
-					eqF_temp[lc][n][3] += (Nx1*t3 + Vy1*t6 + Vz1*t9)
-					eqF_temp[lc][n][4] += (Mx1*t1 + My1*t4 + Mz1*t7)
-					eqF_temp[lc][n][5] += (Mx1*t2 + My1*t5 + Mz1*t8)
-					eqF_temp[lc][n][6] += (Mx1*t3 + My1*t6 + Mz1*t9)
-					eqF_temp[lc][n][7] += (Nx2*t1 + Vy2*t4 + Vz2*t7)
-					eqF_temp[lc][n][8] += (Nx2*t2 + Vy2*t5 + Vz2*t8)
-					eqF_temp[lc][n][9] += (Nx2*t3 + Vy2*t6 + Vz2*t9)
-					eqF_temp[lc][n][10] += (Mx2*t1 + My2*t4 + Mz2*t7)
-					eqF_temp[lc][n][11] += (Mx2*t2 + My2*t5 + Mz2*t8)
-					eqF_temp[lc][n][12] += (Mx2*t3 + My2*t6 + Mz2*t9)
-				}
+			if float64(W[lc][i][3]) > Ln {
+				noarch.Sprintf(errMsg, []byte("\n   error in x-axis trapezoidal loads, load case: %d , element %d , load %d\n ending location = %f > L (%f) \n\x00"), lc, n, i, float64(W[lc][i][3]), Ln)
+				errorMsg(errMsg)
+				os.Exit(144)
 			}
-			{
-				for n = 1; n <= nE; func() int {
-					n += 1
-					return n
-				}() {
-					n1 = J1[n]
-					n2 = J2[n]
-					{
-						for i = 1; i <= 6; func() int {
-							i += 1
-							return i
-						}() {
-							F_mech[lc][6*n1-6+i] += eqF_mech[lc][n][i]
-						}
-					}
-					{
-						for i = 7; i <= 12; func() int {
-							i += 1
-							return i
-						}() {
-							F_mech[lc][6*n2-12+i] += eqF_mech[lc][n][i]
-						}
-					}
-					{
-						for i = 1; i <= 6; func() int {
-							i += 1
-							return i
-						}() {
-							F_temp[lc][6*n1-6+i] += eqF_temp[lc][n][i]
-						}
-					}
-					{
-						for i = 7; i <= 12; func() int {
-							i += 1
-							return i
-						}() {
-							F_temp[lc][6*n2-12+i] += eqF_temp[lc][n][i]
-						}
-					}
-				}
+			if W[lc][i][6] < float32(0) {
+				noarch.Sprintf(errMsg, []byte("\n   error in y-axis trapezoidal loads, load case: %d , element %d , load %d\n starting location = %f < 0\n\x00"), lc, n, i, float64(W[lc][i][6]))
+				errorMsg(errMsg)
+				os.Exit(142)
 			}
-			sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&nD[lc]))[:])
+			if W[lc][i][6] > W[lc][i][7] {
+				noarch.Sprintf(errMsg, []byte("\n   error in y-axis trapezoidal loads, load case: %d , element %d , load %d\n starting location = %f > ending location = %f \n\x00"), lc, n, i, float64(W[lc][i][6]), float64(W[lc][i][7]))
+				errorMsg(errMsg)
+				os.Exit(143)
+			}
+			if float64(W[lc][i][7]) > Ln {
+				noarch.Sprintf(errMsg, []byte("\n   error in y-axis trapezoidal loads, load case: %d , element %d , load %d\n ending location = %f > L (%f) \n\x00"), lc, n, i, float64(W[lc][i][7]), Ln)
+				errorMsg(errMsg)
+				os.Exit(144)
+			}
+			if W[lc][i][10] < float32(0) {
+				noarch.Sprintf(errMsg, []byte("\n   error in z-axis trapezoidal loads, load case: %d , element %d , load %d\n starting location = %f < 0\n\x00"), lc, n, i, float64(W[lc][i][10]))
+				errorMsg(errMsg)
+				os.Exit(142)
+			}
+			if W[lc][i][10] > W[lc][i][11] {
+				noarch.Sprintf(errMsg, []byte("\n   error in z-axis trapezoidal loads, load case: %d , element %d , load %d\n starting location = %f > ending location = %f \n\x00"), lc, n, i, float64(W[lc][i][10]), float64(W[lc][i][11]))
+				errorMsg(errMsg)
+				os.Exit(143)
+			}
+			if float64(W[lc][i][11]) > Ln {
+				noarch.Sprintf(errMsg, []byte("\n   error in z-axis trapezoidal loads, load case: %d , element %d , load %d\n ending location = %f > L (%f) \n\x00"), lc, n, i, float64(W[lc][i][11]), Ln)
+				errorMsg(errMsg)
+				os.Exit(144)
+			}
+			if shear != 0 {
+				Ksy = (12 * float64(E[n]) * float64(Iz[n])) / (float64(G[n]*Asy[n]) * Le[n] * Le[n])
+				Ksz = (12 * float64(E[n]) * float64(Iy[n])) / (float64(G[n]*Asz[n]) * Le[n] * Le[n])
+			} else {
+				func() float64 {
+					Ksz = 0
+					return Ksz
+				}()
+				func() float64 {
+					Ksy = Ksz
+					return Ksy
+				}()
+			}
+			x1 = W[lc][i][2]
+			x2 = W[lc][i][3]
+			w1 = W[lc][i][4]
+			w2 = W[lc][i][5]
+			Nx1 = (3*float64((w1+w2))*Ln*float64((x2-x1)) - (2*float64(w2)+float64(w1))*float64(x2)*float64(x2) + float64((w2-w1)*x2*x1) + (2*float64(w1)+float64(w2))*float64(x1)*float64(x1)) / (6 * Ln)
+			Nx2 = (-(2*float64(w1)+float64(w2))*float64(x1)*float64(x1) + (2*float64(w2)+float64(w1))*float64(x2)*float64(x2) - float64((w2-w1)*x1*x2)) / (6 * Ln)
+			x1 = W[lc][i][6]
+			x2 = W[lc][i][7]
+			w1 = W[lc][i][8]
+			w2 = W[lc][i][9]
+			R1o = ((2*float64(w1)+float64(w2))*float64(x1)*float64(x1) - (float64(w1)+2*float64(w2))*float64(x2)*float64(x2) + 3*float64((w1+w2))*Ln*float64((x2-x1)) - float64((w1-w2)*x1*x2)) / (6 * Ln)
+			R2o = ((float64(w1)+2*float64(w2))*float64(x2)*float64(x2) + float64((w1-w2)*x1*x2) - (2*float64(w1)+float64(w2))*float64(x1)*float64(x1)) / (6 * Ln)
+			f01 = (3*(float64(w2)+4*float64(w1))*float64(x1)*float64(x1)*float64(x1)*float64(x1) - 3*(float64(w1)+4*float64(w2))*float64(x2)*float64(x2)*float64(x2)*float64(x2) - 15*(float64(w2)+3*float64(w1))*Ln*float64(x1)*float64(x1)*float64(x1) + 15*(float64(w1)+3*float64(w2))*Ln*float64(x2)*float64(x2)*float64(x2) - 3*float64((w1-w2))*float64(x1)*float64(x2)*float64((x1*x1+x2*x2)) + 20*(float64(w2)+2*float64(w1))*Ln*Ln*float64(x1)*float64(x1) - 20*(float64(w1)+2*float64(w2))*Ln*Ln*float64(x2)*float64(x2) + 15*float64((w1-w2))*Ln*float64(x1)*float64(x2)*float64((x1+x2)) - 3*float64((w1-w2))*float64(x1)*float64(x1)*float64(x2)*float64(x2) - 20*float64((w1-w2))*Ln*Ln*float64(x1)*float64(x2)) / 360
+			f02 = (3*(float64(w2)+4*float64(w1))*float64(x1)*float64(x1)*float64(x1)*float64(x1) - 3*(float64(w1)+4*float64(w2))*float64(x2)*float64(x2)*float64(x2)*float64(x2) - 3*float64((w1-w2))*float64(x1)*float64(x2)*float64((x1*x1+x2*x2)) - 10*(float64(w2)+2*float64(w1))*Ln*Ln*float64(x1)*float64(x1) + 10*(float64(w1)+2*float64(w2))*Ln*Ln*float64(x2)*float64(x2) - 3*float64((w1-w2))*float64(x1)*float64(x1)*float64(x2)*float64(x2) + 10*float64((w1-w2))*Ln*Ln*float64(x1)*float64(x2)) / 360
+			Mz1 = -(4*f01 + 2*f02 + Ksy*(f01-f02)) / (Ln * Ln * (1 + Ksy))
+			Mz2 = -(2*f01 + 4*f02 - Ksy*(f01-f02)) / (Ln * Ln * (1 + Ksy))
+			Vy1 = R1o + Mz1/Ln + Mz2/Ln
+			Vy2 = R2o - Mz1/Ln - Mz2/Ln
+			x1 = W[lc][i][10]
+			x2 = W[lc][i][11]
+			w1 = W[lc][i][12]
+			w2 = W[lc][i][13]
+			R1o = ((2*float64(w1)+float64(w2))*float64(x1)*float64(x1) - (float64(w1)+2*float64(w2))*float64(x2)*float64(x2) + 3*float64((w1+w2))*Ln*float64((x2-x1)) - float64((w1-w2)*x1*x2)) / (6 * Ln)
+			R2o = ((float64(w1)+2*float64(w2))*float64(x2)*float64(x2) + float64((w1-w2)*x1*x2) - (2*float64(w1)+float64(w2))*float64(x1)*float64(x1)) / (6 * Ln)
+			f01 = (3*(float64(w2)+4*float64(w1))*float64(x1)*float64(x1)*float64(x1)*float64(x1) - 3*(float64(w1)+4*float64(w2))*float64(x2)*float64(x2)*float64(x2)*float64(x2) - 15*(float64(w2)+3*float64(w1))*Ln*float64(x1)*float64(x1)*float64(x1) + 15*(float64(w1)+3*float64(w2))*Ln*float64(x2)*float64(x2)*float64(x2) - 3*float64((w1-w2))*float64(x1)*float64(x2)*float64((x1*x1+x2*x2)) + 20*(float64(w2)+2*float64(w1))*Ln*Ln*float64(x1)*float64(x1) - 20*(float64(w1)+2*float64(w2))*Ln*Ln*float64(x2)*float64(x2) + 15*float64((w1-w2))*Ln*float64(x1)*float64(x2)*float64((x1+x2)) - 3*float64((w1-w2))*float64(x1)*float64(x1)*float64(x2)*float64(x2) - 20*float64((w1-w2))*Ln*Ln*float64(x1)*float64(x2)) / 360
+			f02 = (3*(float64(w2)+4*float64(w1))*float64(x1)*float64(x1)*float64(x1)*float64(x1) - 3*(float64(w1)+4*float64(w2))*float64(x2)*float64(x2)*float64(x2)*float64(x2) - 3*float64((w1-w2))*float64(x1)*float64(x2)*float64((x1*x1+x2*x2)) - 10*(float64(w2)+2*float64(w1))*Ln*Ln*float64(x1)*float64(x1) + 10*(float64(w1)+2*float64(w2))*Ln*Ln*float64(x2)*float64(x2) - 3*float64((w1-w2))*float64(x1)*float64(x1)*float64(x2)*float64(x2) + 10*float64((w1-w2))*Ln*Ln*float64(x1)*float64(x2)) / 360
+			My1 = (4*f01 + 2*f02 + Ksz*(f01-f02)) / (Ln * Ln * (1 + Ksz))
+			My2 = (2*f01 + 4*f02 - Ksz*(f01-f02)) / (Ln * Ln * (1 + Ksz))
+			Vz1 = R1o - My1/Ln - My2/Ln
+			Vz2 = R2o + My1/Ln + My2/Ln
+			n1 = J1[n]
+			n2 = J2[n]
+			coord_trans(xyz, Ln, n1, n2, (*[1]float64)(unsafe.Pointer(&t1))[:], (*[1]float64)(unsafe.Pointer(&t2))[:], (*[1]float64)(unsafe.Pointer(&t3))[:], (*[1]float64)(unsafe.Pointer(&t4))[:], (*[1]float64)(unsafe.Pointer(&t5))[:], (*[1]float64)(unsafe.Pointer(&t6))[:], (*[1]float64)(unsafe.Pointer(&t7))[:], (*[1]float64)(unsafe.Pointer(&t8))[:], (*[1]float64)(unsafe.Pointer(&t9))[:], p[n])
+			eqF_mech[lc][n][1] += (Nx1*t1 + Vy1*t4 + Vz1*t7)
+			eqF_mech[lc][n][2] += (Nx1*t2 + Vy1*t5 + Vz1*t8)
+			eqF_mech[lc][n][3] += (Nx1*t3 + Vy1*t6 + Vz1*t9)
+			eqF_mech[lc][n][4] += (Mx1*t1 + My1*t4 + Mz1*t7)
+			eqF_mech[lc][n][5] += (Mx1*t2 + My1*t5 + Mz1*t8)
+			eqF_mech[lc][n][6] += (Mx1*t3 + My1*t6 + Mz1*t9)
+			eqF_mech[lc][n][7] += (Nx2*t1 + Vy2*t4 + Vz2*t7)
+			eqF_mech[lc][n][8] += (Nx2*t2 + Vy2*t5 + Vz2*t8)
+			eqF_mech[lc][n][9] += (Nx2*t3 + Vy2*t6 + Vz2*t9)
+			eqF_mech[lc][n][10] += (Mx2*t1 + My2*t4 + Mz2*t7)
+			eqF_mech[lc][n][11] += (Mx2*t2 + My2*t5 + Mz2*t8)
+			eqF_mech[lc][n][12] += (Mx2*t3 + My2*t6 + Mz2*t9)
+		}
+		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&nP[lc]))[:])
+		if sfrv != 1 {
+			sferr([]byte("nP value load data\x00"))
+		}
+		if verbose != 0 {
+			noarch.Fprintf(stdout, []byte("  number of concentrated frame element point loads \x00"))
+			dots(stdout, 2)
+			noarch.Fprintf(stdout, []byte(" nP = %3d\n\x00"), nP[lc])
+		}
+		if nP[lc] < 0 || nP[lc] > 10*nE {
+			noarch.Fprintf(stderr, []byte("  number of concentrated frame element point loads \x00"))
+			dots(stderr, 3)
+			noarch.Fprintf(stderr, []byte(" nP = %3d\n\x00"), nP[lc])
+			noarch.Sprintf(errMsg, []byte("\n  error: valid ranges for nP is 0 ... %d \n\x00"), 10*nE)
+			errorMsg(errMsg)
+			os.Exit(150)
+		}
+		for i = 1; i <= nP[lc]; i++ {
+			sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&n))[:])
 			if sfrv != 1 {
-				sferr([]byte("nD value in load data\x00"))
+				sferr([]byte("frame element number value point load data\x00"))
 			}
-			if verbose != 0 {
-				noarch.Fprintf(stdout, []byte("  number of prescribed displacements \x00"))
-				dots(stdout, 16)
-				noarch.Fprintf(stdout, []byte(" nD = %3d\n\x00"), nD[lc])
+			if n < 1 || n > nE {
+				noarch.Sprintf(errMsg, []byte("\n   error in internal point loads: frame element number %d is out of range\n\x00"), n)
+				errorMsg(errMsg)
+				os.Exit(151)
 			}
-			{
-				for i = 1; i <= nD[lc]; func() int {
-					i += 1
-					return i
-				}() {
-					sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&j))[:])
-					if sfrv != 1 {
-						sferr([]byte("node number value in prescribed displacement data\x00"))
-					}
-					{
-						for l = 5; l >= 0; func() int {
-							l -= 1
-							return l
-						}() {
-							sfrv = noarch.Fscanf(fp, []byte("%f\x00"), (*[1]float32)(unsafe.Pointer(&Dp[lc][6*j-l]))[:])
-							if sfrv != 1 {
-								sferr([]byte("prescribed displacement value\x00"))
-							}
-							if r[6*j-l] == 0 && float64(Dp[lc][6*j-l]) != 0 {
-								noarch.Sprintf(errMsg, []byte(" Initial displacements can be prescribed only at restrained coordinates\n  node: %d  dof: %d  r: %d\n\x00"), j, 6-l, r[6*j-l])
-								errorMsg(errMsg)
-								os.Exit(171)
-							}
-						}
-					}
+			P[lc][i][1] = float32(float64(n))
+			for l = 2; l <= 5; l++ {
+				sfrv = noarch.Fscanf(fp, []byte("%f\x00"), (*[1]float32)(unsafe.Pointer(&P[lc][i][l]))[:])
+				if sfrv != 1 {
+					sferr([]byte("value in point load data\x00"))
+				}
+			}
+			a = float64(P[lc][i][5])
+			b = L[n] - a
+			if a < float64(0) || L[n] < a || b < float64(0) || L[n] < b {
+				noarch.Sprintf(errMsg, []byte("\n  error in point load data: Point load coord. out of range\n   Frame element number: %d  L: %lf  load coord.: %lf\n\x00"), n, L[n], float64(P[lc][i][5]))
+				errorMsg(errMsg)
+				os.Exit(152)
+			}
+			if shear != 0 {
+				Ksy = (12 * float64(E[n]) * float64(Iz[n])) / (float64(G[n]*Asy[n]) * Le[n] * Le[n])
+				Ksz = (12 * float64(E[n]) * float64(Iy[n])) / (float64(G[n]*Asz[n]) * Le[n] * Le[n])
+			} else {
+				func() float64 {
+					Ksz = 0
+					return Ksz
+				}()
+				func() float64 {
+					Ksy = Ksz
+					return Ksy
+				}()
+			}
+			Ln = L[n]
+			Nx1 = float64(P[lc][i][2]) * a / Ln
+			Nx2 = float64(P[lc][i][2]) * b / Ln
+			Vy1 = (1/(1+Ksz))*float64(P[lc][i][3])*b*b*(3*a+b)/(Ln*Ln*Ln) + (Ksz/(1+Ksz))*float64(P[lc][i][3])*b/Ln
+			Vy2 = (1/(1+Ksz))*float64(P[lc][i][3])*a*a*(3*b+a)/(Ln*Ln*Ln) + (Ksz/(1+Ksz))*float64(P[lc][i][3])*a/Ln
+			Vz1 = (1/(1+Ksy))*float64(P[lc][i][4])*b*b*(3*a+b)/(Ln*Ln*Ln) + (Ksy/(1+Ksy))*float64(P[lc][i][4])*b/Ln
+			Vz2 = (1/(1+Ksy))*float64(P[lc][i][4])*a*a*(3*b+a)/(Ln*Ln*Ln) + (Ksy/(1+Ksy))*float64(P[lc][i][4])*a/Ln
+			func() float64 {
+				Mx2 = 0
+				return Mx2
+			}()
+			func() float64 {
+				Mx1 = Mx2
+				return Mx1
+			}()
+			My1 = -(1/(1+Ksy))*float64(P[lc][i][4])*a*b*b/(Ln*Ln) - (Ksy/(1+Ksy))*float64(P[lc][i][4])*a*b/(2*Ln)
+			My2 = (1/(1+Ksy))*float64(P[lc][i][4])*a*a*b/(Ln*Ln) + (Ksy/(1+Ksy))*float64(P[lc][i][4])*a*b/(2*Ln)
+			Mz1 = (1/(1+Ksz))*float64(P[lc][i][3])*a*b*b/(Ln*Ln) + (Ksz/(1+Ksz))*float64(P[lc][i][3])*a*b/(2*Ln)
+			Mz2 = -(1/(1+Ksz))*float64(P[lc][i][3])*a*a*b/(Ln*Ln) - (Ksz/(1+Ksz))*float64(P[lc][i][3])*a*b/(2*Ln)
+			n1 = J1[n]
+			n2 = J2[n]
+			coord_trans(xyz, Ln, n1, n2, (*[1]float64)(unsafe.Pointer(&t1))[:], (*[1]float64)(unsafe.Pointer(&t2))[:], (*[1]float64)(unsafe.Pointer(&t3))[:], (*[1]float64)(unsafe.Pointer(&t4))[:], (*[1]float64)(unsafe.Pointer(&t5))[:], (*[1]float64)(unsafe.Pointer(&t6))[:], (*[1]float64)(unsafe.Pointer(&t7))[:], (*[1]float64)(unsafe.Pointer(&t8))[:], (*[1]float64)(unsafe.Pointer(&t9))[:], p[n])
+			eqF_mech[lc][n][1] += (Nx1*t1 + Vy1*t4 + Vz1*t7)
+			eqF_mech[lc][n][2] += (Nx1*t2 + Vy1*t5 + Vz1*t8)
+			eqF_mech[lc][n][3] += (Nx1*t3 + Vy1*t6 + Vz1*t9)
+			eqF_mech[lc][n][4] += (Mx1*t1 + My1*t4 + Mz1*t7)
+			eqF_mech[lc][n][5] += (Mx1*t2 + My1*t5 + Mz1*t8)
+			eqF_mech[lc][n][6] += (Mx1*t3 + My1*t6 + Mz1*t9)
+			eqF_mech[lc][n][7] += (Nx2*t1 + Vy2*t4 + Vz2*t7)
+			eqF_mech[lc][n][8] += (Nx2*t2 + Vy2*t5 + Vz2*t8)
+			eqF_mech[lc][n][9] += (Nx2*t3 + Vy2*t6 + Vz2*t9)
+			eqF_mech[lc][n][10] += (Mx2*t1 + My2*t4 + Mz2*t7)
+			eqF_mech[lc][n][11] += (Mx2*t2 + My2*t5 + Mz2*t8)
+			eqF_mech[lc][n][12] += (Mx2*t3 + My2*t6 + Mz2*t9)
+		}
+		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&nT[lc]))[:])
+		if sfrv != 1 {
+			sferr([]byte("nT value in load data\x00"))
+		}
+		if verbose != 0 {
+			noarch.Fprintf(stdout, []byte("  number of temperature changes \x00"))
+			dots(stdout, 21)
+			noarch.Fprintf(stdout, []byte(" nT = %3d\n\x00"), nT[lc])
+		}
+		if nT[lc] < 0 || nT[lc] > nE {
+			noarch.Fprintf(stderr, []byte("  number of temperature changes \x00"))
+			dots(stderr, 21)
+			noarch.Fprintf(stderr, []byte(" nT = %3d\n\x00"), nT[lc])
+			noarch.Sprintf(errMsg, []byte("\n  error: valid ranges for nT is 0 ... %d \n\x00"), nE)
+			errorMsg(errMsg)
+			os.Exit(160)
+		}
+		for i = 1; i <= nT[lc]; i++ {
+			sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&n))[:])
+			if sfrv != 1 {
+				sferr([]byte("frame element number in temperature load data\x00"))
+			}
+			if n < 1 || n > nE {
+				noarch.Sprintf(errMsg, []byte("\n  error in temperature loads: frame element number %d is out of range\n\x00"), n)
+				errorMsg(errMsg)
+				os.Exit(161)
+			}
+			T[lc][i][1] = float32(float64(n))
+			for l = 2; l <= 8; l++ {
+				sfrv = noarch.Fscanf(fp, []byte("%f\x00"), (*[1]float32)(unsafe.Pointer(&T[lc][i][l]))[:])
+				if sfrv != 1 {
+					sferr([]byte("value in temperature load data\x00"))
+				}
+			}
+			a = float64(T[lc][i][2])
+			hy = T[lc][i][3]
+			hz = T[lc][i][4]
+			if hy < float32(0) || hz < float32(0) {
+				noarch.Sprintf(errMsg, []byte("\n  error in thermal load data: section dimension < 0\n   Frame element number: %d  hy: %f  hz: %f\n\x00"), n, float64(hy), float64(hz))
+				errorMsg(errMsg)
+				os.Exit(162)
+			}
+			Nx2 = a * (1 / 4) * float64((T[lc][i][5] + T[lc][i][6] + T[lc][i][7] + T[lc][i][8])) * float64(E[n]) * float64(Ax[n])
+			Nx1 = -Nx2
+			func() float64 {
+				Vz2 = 0
+				return Vz2
+			}()
+			func() float64 {
+				Vz1 = Vz2
+				return Vz1
+			}()
+			func() float64 {
+				Vy2 = Vz1
+				return Vy2
+			}()
+			func() float64 {
+				Vy1 = Vy2
+				return Vy1
+			}()
+			func() float64 {
+				Mx2 = 0
+				return Mx2
+			}()
+			func() float64 {
+				Mx1 = Mx2
+				return Mx1
+			}()
+			My1 = (a / float64(hz)) * float64((T[lc][i][8] - T[lc][i][7])) * float64(E[n]) * float64(Iy[n])
+			My2 = -My1
+			Mz1 = (a / float64(hy)) * float64((T[lc][i][5] - T[lc][i][6])) * float64(E[n]) * float64(Iz[n])
+			Mz2 = -Mz1
+			n1 = J1[n]
+			n2 = J2[n]
+			coord_trans(xyz, L[n], n1, n2, (*[1]float64)(unsafe.Pointer(&t1))[:], (*[1]float64)(unsafe.Pointer(&t2))[:], (*[1]float64)(unsafe.Pointer(&t3))[:], (*[1]float64)(unsafe.Pointer(&t4))[:], (*[1]float64)(unsafe.Pointer(&t5))[:], (*[1]float64)(unsafe.Pointer(&t6))[:], (*[1]float64)(unsafe.Pointer(&t7))[:], (*[1]float64)(unsafe.Pointer(&t8))[:], (*[1]float64)(unsafe.Pointer(&t9))[:], p[n])
+			eqF_temp[lc][n][1] += (Nx1*t1 + Vy1*t4 + Vz1*t7)
+			eqF_temp[lc][n][2] += (Nx1*t2 + Vy1*t5 + Vz1*t8)
+			eqF_temp[lc][n][3] += (Nx1*t3 + Vy1*t6 + Vz1*t9)
+			eqF_temp[lc][n][4] += (Mx1*t1 + My1*t4 + Mz1*t7)
+			eqF_temp[lc][n][5] += (Mx1*t2 + My1*t5 + Mz1*t8)
+			eqF_temp[lc][n][6] += (Mx1*t3 + My1*t6 + Mz1*t9)
+			eqF_temp[lc][n][7] += (Nx2*t1 + Vy2*t4 + Vz2*t7)
+			eqF_temp[lc][n][8] += (Nx2*t2 + Vy2*t5 + Vz2*t8)
+			eqF_temp[lc][n][9] += (Nx2*t3 + Vy2*t6 + Vz2*t9)
+			eqF_temp[lc][n][10] += (Mx2*t1 + My2*t4 + Mz2*t7)
+			eqF_temp[lc][n][11] += (Mx2*t2 + My2*t5 + Mz2*t8)
+			eqF_temp[lc][n][12] += (Mx2*t3 + My2*t6 + Mz2*t9)
+		}
+		for n = 1; n <= nE; n++ {
+			n1 = J1[n]
+			n2 = J2[n]
+			for i = 1; i <= 6; i++ {
+				F_mech[lc][6*n1-6+i] += eqF_mech[lc][n][i]
+			}
+			for i = 7; i <= 12; i++ {
+				F_mech[lc][6*n2-12+i] += eqF_mech[lc][n][i]
+			}
+			for i = 1; i <= 6; i++ {
+				F_temp[lc][6*n1-6+i] += eqF_temp[lc][n][i]
+			}
+			for i = 7; i <= 12; i++ {
+				F_temp[lc][6*n2-12+i] += eqF_temp[lc][n][i]
+			}
+		}
+		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&nD[lc]))[:])
+		if sfrv != 1 {
+			sferr([]byte("nD value in load data\x00"))
+		}
+		if verbose != 0 {
+			noarch.Fprintf(stdout, []byte("  number of prescribed displacements \x00"))
+			dots(stdout, 16)
+			noarch.Fprintf(stdout, []byte(" nD = %3d\n\x00"), nD[lc])
+		}
+		for i = 1; i <= nD[lc]; i++ {
+			sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&j))[:])
+			if sfrv != 1 {
+				sferr([]byte("node number value in prescribed displacement data\x00"))
+			}
+			for l = 5; l >= 0; func() int {
+				l -= 1
+				return l
+			}() {
+				sfrv = noarch.Fscanf(fp, []byte("%f\x00"), (*[1]float32)(unsafe.Pointer(&Dp[lc][6*j-l]))[:])
+				if sfrv != 1 {
+					sferr([]byte("prescribed displacement value\x00"))
+				}
+				if r[6*j-l] == 0 && float64(Dp[lc][6*j-l]) != 0 {
+					noarch.Sprintf(errMsg, []byte(" Initial displacements can be prescribed only at restrained coordinates\n  node: %d  dof: %d  r: %d\n\x00"), j, 6-l, r[6*j-l])
+					errorMsg(errMsg)
+					os.Exit(171)
 				}
 			}
 		}
@@ -5850,28 +5232,23 @@ func read_mass_data(fp *noarch.File, OUT_file []byte, nN int, nE int, nI []int, 
 		dots(stdout, 10)
 		noarch.Fprintf(stdout, []byte(" nI = %3d\n\x00"), nI[0])
 	}
-	{
-		for j = 1; j <= nI[0]; func() int {
-			j += 1
-			return j
-		}() {
-			sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&jnt))[:])
-			if sfrv != 1 {
-				sferr([]byte("node value in extra node mass data\x00"))
-			}
-			if jnt < 1 || jnt > nN {
-				noarch.Sprintf(errMsg, []byte("\n  error in node mass data: node number out of range    Node : %d  \n   Perhaps you did not specify %d extra masses \n   or perhaps the Input Data file is missing expected data.\n\x00"), jnt, nI[0])
-				errorMsg(errMsg)
-				os.Exit(86)
-			}
-			sfrv = noarch.Fscanf(fp, []byte("%f %f %f %f\x00"), (*[1]float32)(unsafe.Pointer(&NMs[jnt]))[:], (*[1]float32)(unsafe.Pointer(&NMx[jnt]))[:], (*[1]float32)(unsafe.Pointer(&NMy[jnt]))[:], (*[1]float32)(unsafe.Pointer(&NMz[jnt]))[:])
-			if sfrv != 4 {
-				sferr([]byte("node inertia in extra mass data\x00"))
-			}
-			total_mass[0] += float64(NMs[jnt])
-			if NMs[jnt] == float32(0) && NMx[jnt] == float32(0) && NMy[jnt] == float32(0) && NMz[jnt] == float32(0) {
-				noarch.Fprintf(stderr, []byte("\n  Warning: All extra node inertia at node %d  are zero\n\x00"), jnt)
-			}
+	for j = 1; j <= nI[0]; j++ {
+		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&jnt))[:])
+		if sfrv != 1 {
+			sferr([]byte("node value in extra node mass data\x00"))
+		}
+		if jnt < 1 || jnt > nN {
+			noarch.Sprintf(errMsg, []byte("\n  error in node mass data: node number out of range    Node : %d  \n   Perhaps you did not specify %d extra masses \n   or perhaps the Input Data file is missing expected data.\n\x00"), jnt, nI[0])
+			errorMsg(errMsg)
+			os.Exit(86)
+		}
+		sfrv = noarch.Fscanf(fp, []byte("%f %f %f %f\x00"), (*[1]float32)(unsafe.Pointer(&NMs[jnt]))[:], (*[1]float32)(unsafe.Pointer(&NMx[jnt]))[:], (*[1]float32)(unsafe.Pointer(&NMy[jnt]))[:], (*[1]float32)(unsafe.Pointer(&NMz[jnt]))[:])
+		if sfrv != 4 {
+			sferr([]byte("node inertia in extra mass data\x00"))
+		}
+		total_mass[0] += float64(NMs[jnt])
+		if NMs[jnt] == float32(0) && NMx[jnt] == float32(0) && NMy[jnt] == float32(0) && NMz[jnt] == float32(0) {
+			noarch.Fprintf(stderr, []byte("\n  Warning: All extra node inertia at node %d  are zero\n\x00"), jnt)
 		}
 	}
 	sfrv = noarch.Fscanf(fp, []byte("%d\x00"), nX)
@@ -5886,45 +5263,30 @@ func read_mass_data(fp *noarch.File, OUT_file []byte, nN int, nE int, nI []int, 
 			sferr([]byte("element value in extra element mass data\x00"))
 		}
 	}
-	{
-		for m = 1; m <= nX[0]; func() int {
-			m += 1
-			return m
-		}() {
-			sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&b))[:])
-			if sfrv != 1 {
-				sferr([]byte("element number in extra element mass data\x00"))
-			}
-			if b < 1 || b > nE {
-				noarch.Sprintf(errMsg, []byte("\n  error in element mass data: element number out of range   Element: %d  \n   Perhaps you did not specify %d extra masses \n   or perhaps the Input Data file is missing expected data.\n\x00"), b, nX[0])
-				errorMsg(errMsg)
-				os.Exit(87)
-			}
-			sfrv = noarch.Fscanf(fp, []byte("%f\x00"), (*[1]float32)(unsafe.Pointer(&EMs[b]))[:])
-			if sfrv != 1 {
-				sferr([]byte("extra element mass value in mass data\x00"))
-			}
+	for m = 1; m <= nX[0]; m++ {
+		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&b))[:])
+		if sfrv != 1 {
+			sferr([]byte("element number in extra element mass data\x00"))
+		}
+		if b < 1 || b > nE {
+			noarch.Sprintf(errMsg, []byte("\n  error in element mass data: element number out of range   Element: %d  \n   Perhaps you did not specify %d extra masses \n   or perhaps the Input Data file is missing expected data.\n\x00"), b, nX[0])
+			errorMsg(errMsg)
+			os.Exit(87)
+		}
+		sfrv = noarch.Fscanf(fp, []byte("%f\x00"), (*[1]float32)(unsafe.Pointer(&EMs[b]))[:])
+		if sfrv != 1 {
+			sferr([]byte("extra element mass value in mass data\x00"))
 		}
 	}
-	{
-		for b = 1; b <= nE; func() int {
-			b += 1
-			return b
-		}() {
-			total_mass[0] += float64(d[b]*Ax[b])*L[b] + float64(EMs[b])
-			struct_mass[0] += float64(d[b]*Ax[b]) * L[b]
-		}
+	for b = 1; b <= nE; b++ {
+		total_mass[0] += float64(d[b]*Ax[b])*L[b] + float64(EMs[b])
+		struct_mass[0] += float64(d[b]*Ax[b]) * L[b]
 	}
-	{
-		for m = 1; m <= nE; func() int {
-			m += 1
-			return m
-		}() {
-			if float64(d[m]) < 0 || float64(EMs[m]) < 0 || float64(d[m]+EMs[m]) <= 0 {
-				noarch.Sprintf(errMsg, []byte("\n  error: Non-positive mass or density\n  d[%d]= %f  EMs[%d]= %f\n\x00"), m, float64(d[m]), m, float64(EMs[m]))
-				errorMsg(errMsg)
-				os.Exit(88)
-			}
+	for m = 1; m <= nE; m++ {
+		if float64(d[m]) < 0 || float64(EMs[m]) < 0 || float64(d[m]+EMs[m]) <= 0 {
+			noarch.Sprintf(errMsg, []byte("\n  error: Non-positive mass or density\n  d[%d]= %f  EMs[%d]= %f\n\x00"), m, float64(d[m]), m, float64(EMs[m]))
+			errorMsg(errMsg)
+			os.Exit(88)
 		}
 	}
 	if verbose != 0 {
@@ -5947,23 +5309,13 @@ func read_mass_data(fp *noarch.File, OUT_file []byte, nN int, nE int, nI []int, 
 	if nA > 20 {
 		noarch.Fprintf(stderr, []byte(" nA = %d, only 100 or fewer modes may be animated\n\x00"), nA)
 	}
-	{
-		for m = 0; m < 20; func() int {
-			m += 1
-			return m
-		}() {
-			anim[m] = 0
-		}
+	for m = 0; m < 20; m++ {
+		anim[m] = 0
 	}
-	{
-		for m = 1; m <= nA; func() int {
-			m += 1
-			return m
-		}() {
-			sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&anim[m]))[:])
-			if sfrv != 1 {
-				sferr([]byte("mode number in mode animation data\x00"))
-			}
+	for m = 1; m <= nA; m++ {
+		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&anim[m]))[:])
+		if sfrv != 1 {
+			sferr([]byte("mode number in mode animation data\x00"))
 		}
 	}
 	sfrv = noarch.Fscanf(fp, []byte("%f\x00"), pan)
@@ -5979,20 +5331,16 @@ func read_mass_data(fp *noarch.File, OUT_file []byte, nN int, nE int, nI []int, 
 		noarch.Fprintf(stdout, []byte(" %8.3f\n\x00"), float64(pan[0]))
 	}
 	noarch.Strcpy(base_file, OUT_file)
-	{
-		for int(base_file[func() int {
-			len += 1
-			return len
-		}()]) != int('\x00') {
-		}
+	for int(base_file[func() int {
+		len += 1
+		return len
+	}()]) != int('\x00') {
 	}
 	full_len = len
-	{
-		for int(base_file[func() int {
-			len -= 1
-			return len
-		}()]) != int('.') && len > 0 {
-		}
+	for int(base_file[func() int {
+		len -= 1
+		return len
+	}()]) != int('.') && len > 0 {
 	}
 	if len == 0 {
 		len = full_len
@@ -6001,25 +5349,21 @@ func read_mass_data(fp *noarch.File, OUT_file []byte, nN int, nE int, nI []int, 
 		len += 1
 		return len
 	}()] = '\x00'
-	{
-		for int(base_file[len]) != int('/') && int(base_file[len]) != int('\\') && len > 0 {
-			func() int {
-				len -= 1
-				return len
-			}()
-		}
+	for int(base_file[len]) != int('/') && int(base_file[len]) != int('\\') && len > 0 {
+		func() int {
+			len -= 1
+			return len
+		}()
 	}
 	i = 0
-	{
-		for int(base_file[len]) != int('\x00') {
-			mode_file[func() int {
-				i += 1
-				return i
-			}()] = base_file[func() int {
-				len += 1
-				return len
-			}()]
-		}
+	for int(base_file[len]) != int('\x00') {
+		mode_file[func() int {
+			i += 1
+			return i
+		}()] = base_file[func() int {
+			len += 1
+			return len
+		}()]
 	}
 	mode_file[i] = '\x00'
 	noarch.Strcat(mode_file, []byte("-m\x00"))
@@ -6141,78 +5485,50 @@ func read_condensation_data(fp *noarch.File, nN int, nM int, nC []int, Cdof []in
 		os.Exit(90)
 	}
 	cm = imatrix(int32(1), int32(nC[0]), int32(1), int32(7))
-	{
-		for i = 1; i <= nC[0]; func() int {
-			i += 1
-			return i
-		}() {
-			sfrv = noarch.Fscanf(fp, []byte("%d %d %d %d %d %d %d\x00"), (*[1]int)(unsafe.Pointer(&cm[i][1]))[:], (*[1]int)(unsafe.Pointer(&cm[i][2]))[:], (*[1]int)(unsafe.Pointer(&cm[i][3]))[:], (*[1]int)(unsafe.Pointer(&cm[i][4]))[:], (*[1]int)(unsafe.Pointer(&cm[i][5]))[:], (*[1]int)(unsafe.Pointer(&cm[i][6]))[:], (*[1]int)(unsafe.Pointer(&cm[i][7]))[:])
-			if sfrv != 7 {
-				sferr([]byte("DoF numbers in condensation data\x00"))
-			}
-			if cm[i][1] < 1 || cm[i][1] > nN {
-				noarch.Sprintf(errMsg, []byte("\n  error in matrix condensation data: \n  condensed node number out of range\n  cj[%d] = %d  ... nN = %d  \n\x00"), i, cm[i][1], nN)
-				errorMsg(errMsg)
-				os.Exit(91)
-			}
+	for i = 1; i <= nC[0]; i++ {
+		sfrv = noarch.Fscanf(fp, []byte("%d %d %d %d %d %d %d\x00"), (*[1]int)(unsafe.Pointer(&cm[i][1]))[:], (*[1]int)(unsafe.Pointer(&cm[i][2]))[:], (*[1]int)(unsafe.Pointer(&cm[i][3]))[:], (*[1]int)(unsafe.Pointer(&cm[i][4]))[:], (*[1]int)(unsafe.Pointer(&cm[i][5]))[:], (*[1]int)(unsafe.Pointer(&cm[i][6]))[:], (*[1]int)(unsafe.Pointer(&cm[i][7]))[:])
+		if sfrv != 7 {
+			sferr([]byte("DoF numbers in condensation data\x00"))
+		}
+		if cm[i][1] < 1 || cm[i][1] > nN {
+			noarch.Sprintf(errMsg, []byte("\n  error in matrix condensation data: \n  condensed node number out of range\n  cj[%d] = %d  ... nN = %d  \n\x00"), i, cm[i][1], nN)
+			errorMsg(errMsg)
+			os.Exit(91)
 		}
 	}
-	{
-		for i = 1; i <= nC[0]; func() int {
-			i += 1
-			return i
-		}() {
-			for j = 2; j <= 7; func() int {
-				j += 1
-				return j
-			}() {
-				if cm[i][j] != 0 {
-					func() int {
-						(Cdof[0]) += 1
-						return (Cdof[0])
-					}()
-				}
+	for i = 1; i <= nC[0]; i++ {
+		for j = 2; j <= 7; j++ {
+			if cm[i][j] != 0 {
+				func() int {
+					(Cdof[0]) += 1
+					return (Cdof[0])
+				}()
 			}
 		}
 	}
 	k = 1
-	{
-		for i = 1; i <= nC[0]; func() int {
-			i += 1
-			return i
-		}() {
-			{
-				for j = 2; j <= 7; func() int {
-					j += 1
-					return j
-				}() {
-					if cm[i][j] != 0 {
-						c[k] = 6*(cm[i][1]-1) + j - 1
-						func() int {
-							k += 1
-							return k
-						}()
-					}
-				}
+	for i = 1; i <= nC[0]; i++ {
+		for j = 2; j <= 7; j++ {
+			if cm[i][j] != 0 {
+				c[k] = 6*(cm[i][1]-1) + j - 1
+				func() int {
+					k += 1
+					return k
+				}()
 			}
 		}
 	}
-	{
-		for i = 1; i <= Cdof[0]; func() int {
-			i += 1
-			return i
-		}() {
-			sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&m[i]))[:])
-			if sfrv != 1 && Cmethod[0] == 3 {
-				sferr([]byte("mode number in condensation data\x00"))
-				noarch.Sprintf(errMsg, []byte("condensed mode %d = %d\x00"), i, m[i])
-				errorMsg(errMsg)
-			}
-			if (map[bool]int{false: 0, true: 1}[m[i] < 0 || m[i] > nM]) != 0 && Cmethod[0] == 3 {
-				noarch.Sprintf(errMsg, []byte("\n  error in matrix condensation data: \n  m[%d] = %d \n The condensed mode number must be between   1 and %d (modes).\n\x00"), i, m[i], nM)
-				errorMsg(errMsg)
-				os.Exit(92)
-			}
+	for i = 1; i <= Cdof[0]; i++ {
+		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&m[i]))[:])
+		if sfrv != 1 && Cmethod[0] == 3 {
+			sferr([]byte("mode number in condensation data\x00"))
+			noarch.Sprintf(errMsg, []byte("condensed mode %d = %d\x00"), i, m[i])
+			errorMsg(errMsg)
+		}
+		if (map[bool]int{false: 0, true: 1}[m[i] < 0 || m[i] > nM]) != 0 && Cmethod[0] == 3 {
+			noarch.Sprintf(errMsg, []byte("\n  error in matrix condensation data: \n  m[%d] = %d \n The condensed mode number must be between   1 and %d (modes).\n\x00"), i, m[i], nM)
+			errorMsg(errMsg)
+			os.Exit(92)
 		}
 	}
 	free_imatrix(cm, int32(1), int32(nC[0]), int32(1), int32(7))
@@ -6232,13 +5548,8 @@ func write_input_data(fp *noarch.File, title []byte, nN int, nE int, nL int, nD 
 	var lc int
 	var now noarch.TimeT
 	_ = noarch.Time((*[1]noarch.TimeT)(unsafe.Pointer(&now))[:])
-	{
-		for i = 1; i <= 80; func() int {
-			i += 1
-			return i
-		}() {
-			noarch.Fprintf(fp, []byte("_\x00"))
-		}
+	for i = 1; i <= 80; i++ {
+		noarch.Fprintf(fp, []byte("_\x00"))
 	}
 	noarch.Fprintf(fp, []byte("\nFrame3DD version: %s \x00"), []byte("20140514+\x00"))
 	noarch.Fprintf(fp, []byte("              http://frame3dd.sf.net/\n\x00"))
@@ -6247,74 +5558,44 @@ func write_input_data(fp *noarch.File, title []byte, nN int, nE int, nL int, nD 
 	noarch.Fprintf(fp, []byte(" but with no warranty.\n\x00"))
 	noarch.Fprintf(fp, []byte("For details see the GNU Public Licence:\x00"))
 	noarch.Fprintf(fp, []byte(" http://www.fsf.org/copyleft/gpl.html\n\x00"))
-	{
-		for i = 1; i <= 80; func() int {
-			i += 1
-			return i
-		}() {
-			noarch.Fprintf(fp, []byte("_\x00"))
-		}
+	for i = 1; i <= 80; i++ {
+		noarch.Fprintf(fp, []byte("_\x00"))
 	}
 	noarch.Fprintf(fp, []byte("\n\n\x00"))
 	noarch.Fprintf(fp, []byte("%s\n\x00"), title)
 	noarch.Fprintf(fp, []byte("%s\x00"), noarch.Ctime((*[1]noarch.TimeT)(unsafe.Pointer(&now))[:]))
-	{
-		for i = 1; i <= 80; func() int {
-			i += 1
-			return i
-		}() {
-			noarch.Fprintf(fp, []byte("_\x00"))
-		}
+	for i = 1; i <= 80; i++ {
+		noarch.Fprintf(fp, []byte("_\x00"))
 	}
 	noarch.Fprintf(fp, []byte("\n\x00"))
 	noarch.Fprintf(fp, []byte("In 2D problems the Y-axis is vertical.  \x00"))
 	noarch.Fprintf(fp, []byte("In 3D problems the Z-axis is vertical.\n\x00"))
-	{
-		for i = 1; i <= 80; func() int {
-			i += 1
-			return i
-		}() {
-			noarch.Fprintf(fp, []byte("_\x00"))
-		}
+	for i = 1; i <= 80; i++ {
+		noarch.Fprintf(fp, []byte("_\x00"))
 	}
 	noarch.Fprintf(fp, []byte("\n\x00"))
 	noarch.Fprintf(fp, []byte("%5d NODES          \x00"), nN)
 	noarch.Fprintf(fp, []byte("%5d FIXED NODES    \x00"), nR)
 	noarch.Fprintf(fp, []byte("%5d FRAME ELEMENTS \x00"), nE)
 	noarch.Fprintf(fp, []byte("%3d LOAD CASES   \n\x00"), nL)
-	{
-		for i = 1; i <= 80; func() int {
-			i += 1
-			return i
-		}() {
-			noarch.Fprintf(fp, []byte("_\x00"))
-		}
+	for i = 1; i <= 80; i++ {
+		noarch.Fprintf(fp, []byte("_\x00"))
 	}
 	noarch.Fprintf(fp, []byte("\n\x00"))
 	noarch.Fprintf(fp, []byte("N O D E   D A T A       \x00"))
 	noarch.Fprintf(fp, []byte("                                    R E S T R A I N T S\n\x00"))
 	noarch.Fprintf(fp, []byte("  Node       X              Y              Z\x00"))
 	noarch.Fprintf(fp, []byte("         radius  Fx Fy Fz Mx My Mz\n\x00"))
-	{
-		for i = 1; i <= nN; func() int {
-			i += 1
-			return i
-		}() {
-			j = 6 * (i - 1)
-			noarch.Fprintf(fp, []byte("%5d %14.6f %14.6f %14.6f %8.3f  %2d %2d %2d %2d %2d %2d\n\x00"), i, xyz[i].x, xyz[i].y, xyz[i].z, float64(r[i]), R[j+1], R[j+2], R[j+3], R[j+4], R[j+5], R[j+6])
-		}
+	for i = 1; i <= nN; i++ {
+		j = 6 * (i - 1)
+		noarch.Fprintf(fp, []byte("%5d %14.6f %14.6f %14.6f %8.3f  %2d %2d %2d %2d %2d %2d\n\x00"), i, xyz[i].x, xyz[i].y, xyz[i].z, float64(r[i]), R[j+1], R[j+2], R[j+3], R[j+4], R[j+5], R[j+6])
 	}
 	noarch.Fprintf(fp, []byte("F R A M E   E L E M E N T   D A T A\t\t\t\t\t(local)\n\x00"))
 	noarch.Fprintf(fp, []byte("  Elmnt  J1    J2     Ax   Asy   Asz    \x00"))
 	noarch.Fprintf(fp, []byte("Jxx     Iyy     Izz       E       G roll  density\n\x00"))
-	{
-		for i = 1; i <= nE; func() int {
-			i += 1
-			return i
-		}() {
-			noarch.Fprintf(fp, []byte("%5d %5d %5d %6.1f %5.1f %5.1f\x00"), i, J1[i], J2[i], float64(Ax[i]), float64(Asy[i]), float64(Asz[i]))
-			noarch.Fprintf(fp, []byte(" %6.1f %7.1f %7.1f %8.1f %7.1f %3.0f %8.2e\n\x00"), float64(Jx[i]), float64(Iy[i]), float64(Iz[i]), float64(E[i]), float64(G[i]), float64(p[i])*180/3.141592653589793, float64(d[i]))
-		}
+	for i = 1; i <= nE; i++ {
+		noarch.Fprintf(fp, []byte("%5d %5d %5d %6.1f %5.1f %5.1f\x00"), i, J1[i], J2[i], float64(Ax[i]), float64(Asy[i]), float64(Asz[i]))
+		noarch.Fprintf(fp, []byte(" %6.1f %7.1f %7.1f %8.1f %7.1f %3.0f %8.2e\n\x00"), float64(Jx[i]), float64(Iy[i]), float64(Iz[i]), float64(E[i]), float64(G[i]), float64(p[i])*180/3.141592653589793, float64(d[i]))
 	}
 	if shear != 0 {
 		noarch.Fprintf(fp, []byte("  Include shear deformations.\n\x00"))
@@ -6326,197 +5607,128 @@ func write_input_data(fp *noarch.File, title []byte, nN int, nE int, nL int, nD 
 	} else {
 		noarch.Fprintf(fp, []byte("  Neglect geometric stiffness.\n\x00"))
 	}
-	{
-		for lc = 1; lc <= nL; func() int {
-			lc += 1
-			return lc
-		}() {
-			noarch.Fprintf(fp, []byte("\nL O A D   C A S E   %d   O F   %d  ... \n\n\x00"), lc, nL)
-			noarch.Fprintf(fp, []byte("   Gravity X = \x00"))
-			if gX[lc] == float32(0) {
-				noarch.Fprintf(fp, []byte(" 0.0 \x00"))
-			} else {
-				noarch.Fprintf(fp, []byte(" %.3f \x00"), float64(gX[lc]))
-			}
-			noarch.Fprintf(fp, []byte("   Gravity Y = \x00"))
-			if gY[lc] == float32(0) {
-				noarch.Fprintf(fp, []byte(" 0.0 \x00"))
-			} else {
-				noarch.Fprintf(fp, []byte(" %.3f \x00"), float64(gY[lc]))
-			}
-			noarch.Fprintf(fp, []byte("   Gravity Z = \x00"))
-			if gZ[lc] == float32(0) {
-				noarch.Fprintf(fp, []byte(" 0.0 \x00"))
-			} else {
-				noarch.Fprintf(fp, []byte(" %.3f \x00"), float64(gZ[lc]))
-			}
-			noarch.Fprintf(fp, []byte("\n\x00"))
-			noarch.Fprintf(fp, []byte(" %3d concentrated loads\n\x00"), nF[lc])
-			noarch.Fprintf(fp, []byte(" %3d uniformly distributed loads\n\x00"), nU[lc])
-			noarch.Fprintf(fp, []byte(" %3d trapezoidally distributed loads\n\x00"), nW[lc])
-			noarch.Fprintf(fp, []byte(" %3d concentrated point loads\n\x00"), nP[lc])
-			noarch.Fprintf(fp, []byte(" %3d temperature loads\n\x00"), nT[lc])
-			noarch.Fprintf(fp, []byte(" %3d prescribed displacements\n\x00"), nD[lc])
-			if nF[lc] > 0 || nU[lc] > 0 || nW[lc] > 0 || nP[lc] > 0 || nT[lc] > 0 {
-				noarch.Fprintf(fp, []byte(" N O D A L   L O A D S\x00"))
-				noarch.Fprintf(fp, []byte("  +  E Q U I V A L E N T   N O D A L   L O A D S  (global)\n\x00"))
-				noarch.Fprintf(fp, []byte("  Node        Fx          Fy          Fz\x00"))
-				noarch.Fprintf(fp, []byte("          Mxx         Myy         Mzz\n\x00"))
-				{
-					for j = 1; j <= nN; func() int {
-						j += 1
-						return j
+	for lc = 1; lc <= nL; lc++ {
+		noarch.Fprintf(fp, []byte("\nL O A D   C A S E   %d   O F   %d  ... \n\n\x00"), lc, nL)
+		noarch.Fprintf(fp, []byte("   Gravity X = \x00"))
+		if gX[lc] == float32(0) {
+			noarch.Fprintf(fp, []byte(" 0.0 \x00"))
+		} else {
+			noarch.Fprintf(fp, []byte(" %.3f \x00"), float64(gX[lc]))
+		}
+		noarch.Fprintf(fp, []byte("   Gravity Y = \x00"))
+		if gY[lc] == float32(0) {
+			noarch.Fprintf(fp, []byte(" 0.0 \x00"))
+		} else {
+			noarch.Fprintf(fp, []byte(" %.3f \x00"), float64(gY[lc]))
+		}
+		noarch.Fprintf(fp, []byte("   Gravity Z = \x00"))
+		if gZ[lc] == float32(0) {
+			noarch.Fprintf(fp, []byte(" 0.0 \x00"))
+		} else {
+			noarch.Fprintf(fp, []byte(" %.3f \x00"), float64(gZ[lc]))
+		}
+		noarch.Fprintf(fp, []byte("\n\x00"))
+		noarch.Fprintf(fp, []byte(" %3d concentrated loads\n\x00"), nF[lc])
+		noarch.Fprintf(fp, []byte(" %3d uniformly distributed loads\n\x00"), nU[lc])
+		noarch.Fprintf(fp, []byte(" %3d trapezoidally distributed loads\n\x00"), nW[lc])
+		noarch.Fprintf(fp, []byte(" %3d concentrated point loads\n\x00"), nP[lc])
+		noarch.Fprintf(fp, []byte(" %3d temperature loads\n\x00"), nT[lc])
+		noarch.Fprintf(fp, []byte(" %3d prescribed displacements\n\x00"), nD[lc])
+		if nF[lc] > 0 || nU[lc] > 0 || nW[lc] > 0 || nP[lc] > 0 || nT[lc] > 0 {
+			noarch.Fprintf(fp, []byte(" N O D A L   L O A D S\x00"))
+			noarch.Fprintf(fp, []byte("  +  E Q U I V A L E N T   N O D A L   L O A D S  (global)\n\x00"))
+			noarch.Fprintf(fp, []byte("  Node        Fx          Fy          Fz\x00"))
+			noarch.Fprintf(fp, []byte("          Mxx         Myy         Mzz\n\x00"))
+			for j = 1; j <= nN; j++ {
+				i = 6 * (j - 1)
+				if Fm[lc][i+1] != 0 || Fm[lc][i+2] != 0 || Fm[lc][i+3] != 0 || Fm[lc][i+4] != 0 || Fm[lc][i+5] != 0 || Fm[lc][i+6] != 0 {
+					noarch.Fprintf(fp, []byte(" %5d\x00"), j)
+					for i = 5; i >= 0; func() int {
+						i -= 1
+						return i
 					}() {
-						i = 6 * (j - 1)
-						if Fm[lc][i+1] != 0 || Fm[lc][i+2] != 0 || Fm[lc][i+3] != 0 || Fm[lc][i+4] != 0 || Fm[lc][i+5] != 0 || Fm[lc][i+6] != 0 {
-							noarch.Fprintf(fp, []byte(" %5d\x00"), j)
-							{
-								for i = 5; i >= 0; func() int {
-									i -= 1
-									return i
-								}() {
-									noarch.Fprintf(fp, []byte(" %11.3f\x00"), Fm[lc][6*j-i])
-								}
-							}
-							noarch.Fprintf(fp, []byte("\n\x00"))
-						}
+						noarch.Fprintf(fp, []byte(" %11.3f\x00"), Fm[lc][6*j-i])
 					}
+					noarch.Fprintf(fp, []byte("\n\x00"))
 				}
 			}
-			if nU[lc] > 0 {
-				noarch.Fprintf(fp, []byte(" U N I F O R M   L O A D S\x00"))
-				noarch.Fprintf(fp, []byte("\t\t\t\t\t\t(local)\n\x00"))
-				noarch.Fprintf(fp, []byte("  Elmnt       Ux               Uy               Uz\n\x00"))
-				{
-					for n = 1; n <= nU[lc]; func() int {
-						n += 1
-						return n
-					}() {
-						noarch.Fprintf(fp, []byte(" %5d\x00"), int((U[lc][n][1])))
-						{
-							for i = 2; i <= 4; func() int {
-								i += 1
-								return i
-							}() {
-								noarch.Fprintf(fp, []byte(" %16.8f\x00"), float64(U[lc][n][i]))
-							}
-						}
-						noarch.Fprintf(fp, []byte("\n\x00"))
-					}
+		}
+		if nU[lc] > 0 {
+			noarch.Fprintf(fp, []byte(" U N I F O R M   L O A D S\x00"))
+			noarch.Fprintf(fp, []byte("\t\t\t\t\t\t(local)\n\x00"))
+			noarch.Fprintf(fp, []byte("  Elmnt       Ux               Uy               Uz\n\x00"))
+			for n = 1; n <= nU[lc]; n++ {
+				noarch.Fprintf(fp, []byte(" %5d\x00"), int((U[lc][n][1])))
+				for i = 2; i <= 4; i++ {
+					noarch.Fprintf(fp, []byte(" %16.8f\x00"), float64(U[lc][n][i]))
 				}
+				noarch.Fprintf(fp, []byte("\n\x00"))
 			}
-			if nW[lc] > 0 {
-				noarch.Fprintf(fp, []byte(" T R A P E Z O I D A L   L O A D S\x00"))
-				noarch.Fprintf(fp, []byte("\t\t\t\t\t(local)\n\x00"))
-				noarch.Fprintf(fp, []byte("  Elmnt       x1               x2               W1               W2\n\x00"))
-				{
-					for n = 1; n <= nW[lc]; func() int {
-						n += 1
-						return n
-					}() {
-						noarch.Fprintf(fp, []byte(" %5d\x00"), int((W[lc][n][1])))
-						{
-							for i = 2; i <= 5; func() int {
-								i += 1
-								return i
-							}() {
-								noarch.Fprintf(fp, []byte(" %16.8f\x00"), float64(W[lc][n][i]))
-							}
-						}
-						noarch.Fprintf(fp, []byte("  (x)\n\x00"))
-						noarch.Fprintf(fp, []byte(" %5d\x00"), int((W[lc][n][1])))
-						{
-							for i = 6; i <= 9; func() int {
-								i += 1
-								return i
-							}() {
-								noarch.Fprintf(fp, []byte(" %16.8f\x00"), float64(W[lc][n][i]))
-							}
-						}
-						noarch.Fprintf(fp, []byte("  (y)\n\x00"))
-						noarch.Fprintf(fp, []byte(" %5d\x00"), int((W[lc][n][1])))
-						{
-							for i = 10; i <= 13; func() int {
-								i += 1
-								return i
-							}() {
-								noarch.Fprintf(fp, []byte(" %16.8f\x00"), float64(W[lc][n][i]))
-							}
-						}
-						noarch.Fprintf(fp, []byte("  (z)\n\x00"))
-					}
+		}
+		if nW[lc] > 0 {
+			noarch.Fprintf(fp, []byte(" T R A P E Z O I D A L   L O A D S\x00"))
+			noarch.Fprintf(fp, []byte("\t\t\t\t\t(local)\n\x00"))
+			noarch.Fprintf(fp, []byte("  Elmnt       x1               x2               W1               W2\n\x00"))
+			for n = 1; n <= nW[lc]; n++ {
+				noarch.Fprintf(fp, []byte(" %5d\x00"), int((W[lc][n][1])))
+				for i = 2; i <= 5; i++ {
+					noarch.Fprintf(fp, []byte(" %16.8f\x00"), float64(W[lc][n][i]))
 				}
-			}
-			if nP[lc] > 0 {
-				noarch.Fprintf(fp, []byte(" C O N C E N T R A T E D   P O I N T   L O A D S\x00"))
-				noarch.Fprintf(fp, []byte("\t\t\t\t(local)\n\x00"))
-				noarch.Fprintf(fp, []byte("  Elmnt       Px          Py          Pz          x\n\x00"))
-				{
-					for n = 1; n <= nP[lc]; func() int {
-						n += 1
-						return n
-					}() {
-						noarch.Fprintf(fp, []byte(" %5d\x00"), int((P[lc][n][1])))
-						{
-							for i = 2; i <= 5; func() int {
-								i += 1
-								return i
-							}() {
-								noarch.Fprintf(fp, []byte(" %11.3f\x00"), float64(P[lc][n][i]))
-							}
-						}
-						noarch.Fprintf(fp, []byte("\n\x00"))
-					}
+				noarch.Fprintf(fp, []byte("  (x)\n\x00"))
+				noarch.Fprintf(fp, []byte(" %5d\x00"), int((W[lc][n][1])))
+				for i = 6; i <= 9; i++ {
+					noarch.Fprintf(fp, []byte(" %16.8f\x00"), float64(W[lc][n][i]))
 				}
-			}
-			if nT[lc] > 0 {
-				noarch.Fprintf(fp, []byte(" T E M P E R A T U R E   C H A N G E S\x00"))
-				noarch.Fprintf(fp, []byte("\t\t\t\t\t(local)\n\x00"))
-				noarch.Fprintf(fp, []byte("  Elmnt     coef      hy        hz\x00"))
-				noarch.Fprintf(fp, []byte("        Ty+       Ty-       Tz+       Tz-\n\x00"))
-				{
-					for n = 1; n <= nT[lc]; func() int {
-						n += 1
-						return n
-					}() {
-						noarch.Fprintf(fp, []byte(" %5d\x00"), int((T[lc][n][1])))
-						noarch.Fprintf(fp, []byte(" %9.2e\x00"), float64(T[lc][n][2]))
-						{
-							for i = 3; i <= 8; func() int {
-								i += 1
-								return i
-							}() {
-								noarch.Fprintf(fp, []byte(" %9.3f\x00"), float64(T[lc][n][i]))
-							}
-						}
-						noarch.Fprintf(fp, []byte("\n\x00"))
-					}
+				noarch.Fprintf(fp, []byte("  (y)\n\x00"))
+				noarch.Fprintf(fp, []byte(" %5d\x00"), int((W[lc][n][1])))
+				for i = 10; i <= 13; i++ {
+					noarch.Fprintf(fp, []byte(" %16.8f\x00"), float64(W[lc][n][i]))
 				}
+				noarch.Fprintf(fp, []byte("  (z)\n\x00"))
 			}
-			if nD[lc] > 0 {
-				noarch.Fprintf(fp, []byte("\n P R E S C R I B E D   D I S P L A C E M E N T S\x00"))
-				noarch.Fprintf(fp, []byte("                        (global)\n\x00"))
-				noarch.Fprintf(fp, []byte("  Node        Dx          Dy          Dz\x00"))
-				noarch.Fprintf(fp, []byte("          Dxx         Dyy         Dzz\n\x00"))
-				{
-					for j = 1; j <= nN; func() int {
-						j += 1
-						return j
+		}
+		if nP[lc] > 0 {
+			noarch.Fprintf(fp, []byte(" C O N C E N T R A T E D   P O I N T   L O A D S\x00"))
+			noarch.Fprintf(fp, []byte("\t\t\t\t(local)\n\x00"))
+			noarch.Fprintf(fp, []byte("  Elmnt       Px          Py          Pz          x\n\x00"))
+			for n = 1; n <= nP[lc]; n++ {
+				noarch.Fprintf(fp, []byte(" %5d\x00"), int((P[lc][n][1])))
+				for i = 2; i <= 5; i++ {
+					noarch.Fprintf(fp, []byte(" %11.3f\x00"), float64(P[lc][n][i]))
+				}
+				noarch.Fprintf(fp, []byte("\n\x00"))
+			}
+		}
+		if nT[lc] > 0 {
+			noarch.Fprintf(fp, []byte(" T E M P E R A T U R E   C H A N G E S\x00"))
+			noarch.Fprintf(fp, []byte("\t\t\t\t\t(local)\n\x00"))
+			noarch.Fprintf(fp, []byte("  Elmnt     coef      hy        hz\x00"))
+			noarch.Fprintf(fp, []byte("        Ty+       Ty-       Tz+       Tz-\n\x00"))
+			for n = 1; n <= nT[lc]; n++ {
+				noarch.Fprintf(fp, []byte(" %5d\x00"), int((T[lc][n][1])))
+				noarch.Fprintf(fp, []byte(" %9.2e\x00"), float64(T[lc][n][2]))
+				for i = 3; i <= 8; i++ {
+					noarch.Fprintf(fp, []byte(" %9.3f\x00"), float64(T[lc][n][i]))
+				}
+				noarch.Fprintf(fp, []byte("\n\x00"))
+			}
+		}
+		if nD[lc] > 0 {
+			noarch.Fprintf(fp, []byte("\n P R E S C R I B E D   D I S P L A C E M E N T S\x00"))
+			noarch.Fprintf(fp, []byte("                        (global)\n\x00"))
+			noarch.Fprintf(fp, []byte("  Node        Dx          Dy          Dz\x00"))
+			noarch.Fprintf(fp, []byte("          Dxx         Dyy         Dzz\n\x00"))
+			for j = 1; j <= nN; j++ {
+				i = 6 * (j - 1)
+				if float64(Dp[lc][i+1]) != 0 || float64(Dp[lc][i+2]) != 0 || float64(Dp[lc][i+3]) != 0 || float64(Dp[lc][i+4]) != 0 || float64(Dp[lc][i+5]) != 0 || float64(Dp[lc][i+6]) != 0 {
+					noarch.Fprintf(fp, []byte(" %5d\x00"), j)
+					for i = 5; i >= 0; func() int {
+						i -= 1
+						return i
 					}() {
-						i = 6 * (j - 1)
-						if float64(Dp[lc][i+1]) != 0 || float64(Dp[lc][i+2]) != 0 || float64(Dp[lc][i+3]) != 0 || float64(Dp[lc][i+4]) != 0 || float64(Dp[lc][i+5]) != 0 || float64(Dp[lc][i+6]) != 0 {
-							noarch.Fprintf(fp, []byte(" %5d\x00"), j)
-							{
-								for i = 5; i >= 0; func() int {
-									i -= 1
-									return i
-								}() {
-									noarch.Fprintf(fp, []byte(" %11.3f\x00"), float64(Dp[lc][6*j-i]))
-								}
-							}
-							noarch.Fprintf(fp, []byte("\n\x00"))
-						}
+						noarch.Fprintf(fp, []byte(" %11.3f\x00"), float64(Dp[lc][6*j-i]))
 					}
+					noarch.Fprintf(fp, []byte("\n\x00"))
 				}
 			}
 		}
@@ -6551,130 +5763,99 @@ func write_static_results(fp *noarch.File, nN int, nE int, nL int, lc int, DoF i
 	noarch.Fprintf(fp, []byte("\t\t\t\t\t(global)\n\x00"))
 	noarch.Fprintf(fp, []byte("  Node    X-dsp       Y-dsp       Z-dsp\x00"))
 	noarch.Fprintf(fp, []byte("       X-rot       Y-rot       Z-rot\n\x00"))
-	{
-		for j = 1; j <= nN; func() int {
-			j += 1
-			return j
+	for j = 1; j <= nN; j++ {
+		disp = 0
+		for i = 5; i >= 0; func() int {
+			i -= 1
+			return i
 		}() {
-			disp = 0
-			{
-				for i = 5; i >= 0; func() int {
-					i -= 1
-					return i
-				}() {
-					disp += math.Abs(D[6*j-i])
+			disp += math.Abs(D[6*j-i])
+		}
+		if disp > 0 {
+			noarch.Fprintf(fp, []byte(" %5d\x00"), j)
+			for i = 5; i >= 0; func() int {
+				i -= 1
+				return i
+			}() {
+				if math.Abs(D[6*j-i]) < 1e-08 {
+					noarch.Fprintf(fp, []byte("    0.0     \x00"))
+				} else {
+					noarch.Fprintf(fp, []byte(" %11.6f\x00"), D[6*j-i])
 				}
 			}
-			if disp > 0 {
-				noarch.Fprintf(fp, []byte(" %5d\x00"), j)
-				{
-					for i = 5; i >= 0; func() int {
-						i -= 1
-						return i
-					}() {
-						if math.Abs(D[6*j-i]) < 1e-08 {
-							noarch.Fprintf(fp, []byte("    0.0     \x00"))
-						} else {
-							noarch.Fprintf(fp, []byte(" %11.6f\x00"), D[6*j-i])
-						}
-					}
-				}
-				noarch.Fprintf(fp, []byte("\n\x00"))
-			}
+			noarch.Fprintf(fp, []byte("\n\x00"))
 		}
 	}
 	noarch.Fprintf(fp, []byte("F R A M E   E L E M E N T   E N D   F O R C E S\x00"))
 	noarch.Fprintf(fp, []byte("\t\t\t\t(local)\n\x00"))
 	noarch.Fprintf(fp, []byte("  Elmnt  Node       Nx          Vy         Vz\x00"))
 	noarch.Fprintf(fp, []byte("        Txx        Myy        Mzz\n\x00"))
-	{
-		for n = 1; n <= nE; func() int {
-			n += 1
-			return n
-		}() {
-			noarch.Fprintf(fp, []byte(" %5d  %5d\x00"), n, J1[n])
-			if math.Abs(Q[n][1]) < 0.0001 {
-				noarch.Fprintf(fp, []byte("      0.0   \x00"))
-			} else {
-				noarch.Fprintf(fp, []byte(" %10.3f\x00"), Q[n][1])
-			}
-			if Q[n][1] >= 0.0001 && axial_sign != 0 {
-				noarch.Fprintf(fp, []byte("c\x00"))
-			}
-			if Q[n][1] <= -0.0001 && axial_sign != 0 {
-				noarch.Fprintf(fp, []byte("t\x00"))
-			}
-			if noarch.NotInt(axial_sign) != 0 {
-				noarch.Fprintf(fp, []byte(" \x00"))
-			}
-			{
-				for i = 2; i <= 6; func() int {
-					i += 1
-					return i
-				}() {
-					if math.Abs(Q[n][i]) < 0.0001 {
-						noarch.Fprintf(fp, []byte("      0.0  \x00"))
-					} else {
-						noarch.Fprintf(fp, []byte(" %10.3f\x00"), Q[n][i])
-					}
-				}
-			}
-			noarch.Fprintf(fp, []byte("\n\x00"))
-			noarch.Fprintf(fp, []byte(" %5d  %5d\x00"), n, J2[n])
-			if math.Abs(Q[n][7]) < 0.0001 {
-				noarch.Fprintf(fp, []byte("      0.0   \x00"))
-			} else {
-				noarch.Fprintf(fp, []byte(" %10.3f\x00"), Q[n][7])
-			}
-			if Q[n][7] >= 0.0001 && axial_sign != 0 {
-				noarch.Fprintf(fp, []byte("t\x00"))
-			}
-			if Q[n][7] <= -0.0001 && axial_sign != 0 {
-				noarch.Fprintf(fp, []byte("c\x00"))
-			}
-			if noarch.NotInt(axial_sign) != 0 {
-				noarch.Fprintf(fp, []byte(" \x00"))
-			}
-			{
-				for i = 8; i <= 12; func() int {
-					i += 1
-					return i
-				}() {
-					if math.Abs(Q[n][i]) < 0.0001 {
-						noarch.Fprintf(fp, []byte("      0.0  \x00"))
-					} else {
-						noarch.Fprintf(fp, []byte(" %10.3f\x00"), Q[n][i])
-					}
-				}
-			}
-			noarch.Fprintf(fp, []byte("\n\x00"))
+	for n = 1; n <= nE; n++ {
+		noarch.Fprintf(fp, []byte(" %5d  %5d\x00"), n, J1[n])
+		if math.Abs(Q[n][1]) < 0.0001 {
+			noarch.Fprintf(fp, []byte("      0.0   \x00"))
+		} else {
+			noarch.Fprintf(fp, []byte(" %10.3f\x00"), Q[n][1])
 		}
+		if Q[n][1] >= 0.0001 && axial_sign != 0 {
+			noarch.Fprintf(fp, []byte("c\x00"))
+		}
+		if Q[n][1] <= -0.0001 && axial_sign != 0 {
+			noarch.Fprintf(fp, []byte("t\x00"))
+		}
+		if noarch.NotInt(axial_sign) != 0 {
+			noarch.Fprintf(fp, []byte(" \x00"))
+		}
+		for i = 2; i <= 6; i++ {
+			if math.Abs(Q[n][i]) < 0.0001 {
+				noarch.Fprintf(fp, []byte("      0.0  \x00"))
+			} else {
+				noarch.Fprintf(fp, []byte(" %10.3f\x00"), Q[n][i])
+			}
+		}
+		noarch.Fprintf(fp, []byte("\n\x00"))
+		noarch.Fprintf(fp, []byte(" %5d  %5d\x00"), n, J2[n])
+		if math.Abs(Q[n][7]) < 0.0001 {
+			noarch.Fprintf(fp, []byte("      0.0   \x00"))
+		} else {
+			noarch.Fprintf(fp, []byte(" %10.3f\x00"), Q[n][7])
+		}
+		if Q[n][7] >= 0.0001 && axial_sign != 0 {
+			noarch.Fprintf(fp, []byte("t\x00"))
+		}
+		if Q[n][7] <= -0.0001 && axial_sign != 0 {
+			noarch.Fprintf(fp, []byte("c\x00"))
+		}
+		if noarch.NotInt(axial_sign) != 0 {
+			noarch.Fprintf(fp, []byte(" \x00"))
+		}
+		for i = 8; i <= 12; i++ {
+			if math.Abs(Q[n][i]) < 0.0001 {
+				noarch.Fprintf(fp, []byte("      0.0  \x00"))
+			} else {
+				noarch.Fprintf(fp, []byte(" %10.3f\x00"), Q[n][i])
+			}
+		}
+		noarch.Fprintf(fp, []byte("\n\x00"))
 	}
 	noarch.Fprintf(fp, []byte("R E A C T I O N S\t\t\t\t\t\t\t(global)\n\x00"))
 	noarch.Fprintf(fp, []byte("  Node        Fx          Fy          Fz\x00"))
 	noarch.Fprintf(fp, []byte("         Mxx         Myy         Mzz\n\x00"))
-	{
-		for j = 1; j <= nN; func() int {
-			j += 1
-			return j
-		}() {
-			i = 6 * (j - 1)
-			if r[i+1] != 0 || r[i+2] != 0 || r[i+3] != 0 || r[i+4] != 0 || r[i+5] != 0 || r[i+6] != 0 {
-				noarch.Fprintf(fp, []byte(" %5d\x00"), j)
-				{
-					for i = 5; i >= 0; func() int {
-						i -= 1
-						return i
-					}() {
-						if r[6*j-i] != 0 {
-							noarch.Fprintf(fp, []byte(" %11.3f\x00"), R[6*j-i])
-						} else {
-							noarch.Fprintf(fp, []byte("       0.0  \x00"))
-						}
-					}
+	for j = 1; j <= nN; j++ {
+		i = 6 * (j - 1)
+		if r[i+1] != 0 || r[i+2] != 0 || r[i+3] != 0 || r[i+4] != 0 || r[i+5] != 0 || r[i+6] != 0 {
+			noarch.Fprintf(fp, []byte(" %5d\x00"), j)
+			for i = 5; i >= 0; func() int {
+				i -= 1
+				return i
+			}() {
+				if r[6*j-i] != 0 {
+					noarch.Fprintf(fp, []byte(" %11.3f\x00"), R[6*j-i])
+				} else {
+					noarch.Fprintf(fp, []byte("       0.0  \x00"))
 				}
-				noarch.Fprintf(fp, []byte("\n\x00"))
 			}
+			noarch.Fprintf(fp, []byte("\n\x00"))
 		}
 	}
 	noarch.Fprintf(fp, []byte("R M S    R E L A T I V E    E Q U I L I B R I U M    E R R O R: %9.3e\n\x00"), err)
@@ -6693,22 +5874,20 @@ func CSV_filename(CSV_file []byte, wa []byte, OUT_file []byte, lc int) {
 	var j int
 	i = 0
 	j = 0
-	{
-		for i < 128 {
-			CSV_file[j] = OUT_file[i]
-			if int(CSV_file[j]) == int('+') || int(CSV_file[j]) == int('-') || int(CSV_file[j]) == int('*') || int(CSV_file[j]) == int('^') || int(CSV_file[j]) == int('.') || int(CSV_file[j]) == int('\x00') {
-				CSV_file[j] = '_'
-				break
-			}
-			func() int {
-				i += 1
-				return i
-			}()
-			func() int {
-				j += 1
-				return j
-			}()
+	for i < 128 {
+		CSV_file[j] = OUT_file[i]
+		if int(CSV_file[j]) == int('+') || int(CSV_file[j]) == int('-') || int(CSV_file[j]) == int('*') || int(CSV_file[j]) == int('^') || int(CSV_file[j]) == int('.') || int(CSV_file[j]) == int('\x00') {
+			CSV_file[j] = '_'
+			break
 		}
+		func() int {
+			i += 1
+			return i
+		}()
+		func() int {
+			j += 1
+			return j
+		}()
 	}
 	CSV_file[func() int {
 		j += 1
@@ -6760,14 +5939,9 @@ func write_static_csv(OUT_file []byte, title []byte, nN int, nE int, nL int, lc 
 		noarch.Fprintf(fpcsv, []byte("\" %s \"\n\x00"), noarch.Ctime((*[1]noarch.TimeT)(unsafe.Pointer(&now))[:]))
 		noarch.Fprintf(fpcsv, []byte("\" .CSV formatted results of Frame3DD analysis \"\n\x00"))
 		noarch.Fprintf(fpcsv, []byte("\n , Load Case , Displacements , End Forces , Reactions , Internal Forces \n\x00"))
-		{
-			for i = 1; i <= nL; func() int {
-				i += 1
-				return i
-			}() {
-				noarch.Fprintf(fpcsv, []byte(" First Row , %d , %d , %d , %d  , %d  \n\x00"), i, 15+(i-1)*(nN*2+nE*4+13)+2*nL, 17+(i-1)*(nN*2+nE*4+13)+2*nL+nN, 19+(i-1)*(nN*2+nE*4+13)+2*nL+nN+2*nE, 23+(i-1)*(nN*2+nE*4+13)+2*nL+2*nN+2*nE)
-				noarch.Fprintf(fpcsv, []byte(" Last Row , %d , %d , %d , %d , %d \n\x00"), i, 15+(i-1)*(nN*2+nE*4+13)+2*nL+nN-1, 17+(i-1)*(nN*2+nE*4+13)+2*nL+nN+2*nE-1, 19+(i-1)*(nN*2+nE*4+13)+2*nL+2*nN+2*nE-1, 23+(i-1)*(nN*2+nE*4+13)+2*nL+2*nN+4*nE-1)
-			}
+		for i = 1; i <= nL; i++ {
+			noarch.Fprintf(fpcsv, []byte(" First Row , %d , %d , %d , %d  , %d  \n\x00"), i, 15+(i-1)*(nN*2+nE*4+13)+2*nL, 17+(i-1)*(nN*2+nE*4+13)+2*nL+nN, 19+(i-1)*(nN*2+nE*4+13)+2*nL+nN+2*nE, 23+(i-1)*(nN*2+nE*4+13)+2*nL+2*nN+2*nE)
+			noarch.Fprintf(fpcsv, []byte(" Last Row , %d , %d , %d , %d , %d \n\x00"), i, 15+(i-1)*(nN*2+nE*4+13)+2*nL+nN-1, 17+(i-1)*(nN*2+nE*4+13)+2*nL+nN+2*nE-1, 19+(i-1)*(nN*2+nE*4+13)+2*nL+2*nN+2*nE-1, 23+(i-1)*(nN*2+nE*4+13)+2*nL+2*nN+4*nE-1)
 		}
 	}
 	if ok < 0 {
@@ -6780,100 +5954,71 @@ func write_static_csv(OUT_file []byte, title []byte, nN int, nE int, nL int, lc 
 	noarch.Fprintf(fpcsv, []byte("    (global)\"\n\x00"))
 	noarch.Fprintf(fpcsv, []byte("Node  ,  X-dsp   ,   Y-dsp  ,    Z-dsp\x00"))
 	noarch.Fprintf(fpcsv, []byte(" ,     X-rot  ,    Y-rot   ,   Z-rot\n\x00"))
-	{
-		for j = 1; j <= nN; func() int {
-			j += 1
-			return j
+	for j = 1; j <= nN; j++ {
+		noarch.Fprintf(fpcsv, []byte(" %5d,\x00"), j)
+		for i = 5; i >= 0; func() int {
+			i -= 1
+			return i
 		}() {
-			noarch.Fprintf(fpcsv, []byte(" %5d,\x00"), j)
-			{
-				for i = 5; i >= 0; func() int {
-					i -= 1
-					return i
-				}() {
-					if math.Abs(D[6*j-i]) < 1e-08 {
-						noarch.Fprintf(fpcsv, []byte("    0.0,    \x00"))
-					} else {
-						noarch.Fprintf(fpcsv, []byte(" %12.5e,\x00"), D[6*j-i])
-					}
-				}
+			if math.Abs(D[6*j-i]) < 1e-08 {
+				noarch.Fprintf(fpcsv, []byte("    0.0,    \x00"))
+			} else {
+				noarch.Fprintf(fpcsv, []byte(" %12.5e,\x00"), D[6*j-i])
 			}
-			noarch.Fprintf(fpcsv, []byte("\n\x00"))
 		}
+		noarch.Fprintf(fpcsv, []byte("\n\x00"))
 	}
 	noarch.Fprintf(fpcsv, []byte("\"F R A M E   E L E M E N T   E N D   F O R C E S\x00"))
 	noarch.Fprintf(fpcsv, []byte("  (local)\"\n\x00"))
 	noarch.Fprintf(fpcsv, []byte("Elmnt , Node  ,    Nx     ,    Vy   ,     Vz\x00"))
 	noarch.Fprintf(fpcsv, []byte("   ,     Txx   ,    Myy  ,     Mzz\n\x00"))
-	{
-		for n = 1; n <= nE; func() int {
-			n += 1
-			return n
-		}() {
-			noarch.Fprintf(fpcsv, []byte(" %5d, %5d,\x00"), n, J1[n])
-			if math.Abs(Q[n][1]) < 0.0001 {
-				noarch.Fprintf(fpcsv, []byte("      0.0,  \x00"))
-			} else {
-				noarch.Fprintf(fpcsv, []byte(" %12.5e,\x00"), Q[n][1])
-			}
-			{
-				for i = 2; i <= 6; func() int {
-					i += 1
-					return i
-				}() {
-					if math.Abs(Q[n][i]) < 0.0001 {
-						noarch.Fprintf(fpcsv, []byte("      0.0, \x00"))
-					} else {
-						noarch.Fprintf(fpcsv, []byte(" %12.5e,\x00"), Q[n][i])
-					}
-				}
-			}
-			noarch.Fprintf(fpcsv, []byte("\n\x00"))
-			noarch.Fprintf(fpcsv, []byte(" %5d, %5d,\x00"), n, J2[n])
-			if math.Abs(Q[n][7]) < 0.0001 {
-				noarch.Fprintf(fpcsv, []byte("      0.0,  \x00"))
-			} else {
-				noarch.Fprintf(fpcsv, []byte(" %12.5e,\x00"), Q[n][7])
-			}
-			{
-				for i = 8; i <= 12; func() int {
-					i += 1
-					return i
-				}() {
-					if math.Abs(Q[n][i]) < 0.0001 {
-						noarch.Fprintf(fpcsv, []byte("      0.0, \x00"))
-					} else {
-						noarch.Fprintf(fpcsv, []byte(" %12.5e,\x00"), Q[n][i])
-					}
-				}
-			}
-			noarch.Fprintf(fpcsv, []byte("\n\x00"))
+	for n = 1; n <= nE; n++ {
+		noarch.Fprintf(fpcsv, []byte(" %5d, %5d,\x00"), n, J1[n])
+		if math.Abs(Q[n][1]) < 0.0001 {
+			noarch.Fprintf(fpcsv, []byte("      0.0,  \x00"))
+		} else {
+			noarch.Fprintf(fpcsv, []byte(" %12.5e,\x00"), Q[n][1])
 		}
+		for i = 2; i <= 6; i++ {
+			if math.Abs(Q[n][i]) < 0.0001 {
+				noarch.Fprintf(fpcsv, []byte("      0.0, \x00"))
+			} else {
+				noarch.Fprintf(fpcsv, []byte(" %12.5e,\x00"), Q[n][i])
+			}
+		}
+		noarch.Fprintf(fpcsv, []byte("\n\x00"))
+		noarch.Fprintf(fpcsv, []byte(" %5d, %5d,\x00"), n, J2[n])
+		if math.Abs(Q[n][7]) < 0.0001 {
+			noarch.Fprintf(fpcsv, []byte("      0.0,  \x00"))
+		} else {
+			noarch.Fprintf(fpcsv, []byte(" %12.5e,\x00"), Q[n][7])
+		}
+		for i = 8; i <= 12; i++ {
+			if math.Abs(Q[n][i]) < 0.0001 {
+				noarch.Fprintf(fpcsv, []byte("      0.0, \x00"))
+			} else {
+				noarch.Fprintf(fpcsv, []byte(" %12.5e,\x00"), Q[n][i])
+			}
+		}
+		noarch.Fprintf(fpcsv, []byte("\n\x00"))
 	}
 	noarch.Fprintf(fpcsv, []byte("\"R E A C T I O N S  (global)\"\n\x00"))
 	noarch.Fprintf(fpcsv, []byte(" Node   ,    Fx      ,   Fy   ,      Fz\x00"))
 	noarch.Fprintf(fpcsv, []byte("   ,     Mxx    ,    Myy    ,    Mzz\n\x00"))
-	{
-		for j = 1; j <= nN; func() int {
-			j += 1
-			return j
+	for j = 1; j <= nN; j++ {
+		i = 6 * (j - 1)
+		noarch.Fprintf(fpcsv, []byte(" %5d,\x00"), j)
+		for i = 5; i >= 0; func() int {
+			i -= 1
+			return i
 		}() {
-			i = 6 * (j - 1)
-			noarch.Fprintf(fpcsv, []byte(" %5d,\x00"), j)
-			{
-				for i = 5; i >= 0; func() int {
-					i -= 1
-					return i
-				}() {
-					if r[6*j-i] != 0 {
-						noarch.Fprintf(fpcsv, []byte(" %12.5e,\x00"), R[6*j-i])
-					} else {
-						noarch.Fprintf(fpcsv, []byte("       0.0, \x00"))
-					}
-				}
+			if r[6*j-i] != 0 {
+				noarch.Fprintf(fpcsv, []byte(" %12.5e,\x00"), R[6*j-i])
+			} else {
+				noarch.Fprintf(fpcsv, []byte("       0.0, \x00"))
 			}
-			noarch.Fprintf(fpcsv, []byte("\n\x00"))
 		}
+		noarch.Fprintf(fpcsv, []byte("\n\x00"))
 	}
 	noarch.Fprintf(fpcsv, []byte("\"R M S    R E L A T I V E    E Q U I L I B R I U M    E R R O R:\", %9.3e\n\x00"), err)
 	noarch.Fclose(fpcsv)
@@ -6920,22 +6065,20 @@ func write_static_mfile(OUT_file []byte, title []byte, nN int, nE int, nL int, l
 	_ = noarch.Time((*[1]noarch.TimeT)(unsafe.Pointer(&now))[:])
 	i = 0
 	j = 0
-	{
-		for i < 128 {
-			M_file[j] = OUT_file[i]
-			if int(M_file[j]) == int('+') || int(M_file[j]) == int('-') || int(M_file[j]) == int('*') || int(M_file[j]) == int('^') || int(M_file[j]) == int('.') || int(M_file[j]) == int('\x00') {
-				M_file[j] = '_'
-				break
-			}
-			func() int {
-				i += 1
-				return i
-			}()
-			func() int {
-				j += 1
-				return j
-			}()
+	for i < 128 {
+		M_file[j] = OUT_file[i]
+		if int(M_file[j]) == int('+') || int(M_file[j]) == int('-') || int(M_file[j]) == int('*') || int(M_file[j]) == int('^') || int(M_file[j]) == int('.') || int(M_file[j]) == int('\x00') {
+			M_file[j] = '_'
+			break
 		}
+		func() int {
+			i += 1
+			return i
+		}()
+		func() int {
+			j += 1
+			return j
+		}()
 	}
 	M_file[func() int {
 		j += 1
@@ -6977,28 +6120,21 @@ func write_static_mfile(OUT_file []byte, title []byte, nN int, nE int, nL int, l
 	noarch.Fprintf(fpm, []byte("\t\t(global)\n\x00"))
 	noarch.Fprintf(fpm, []byte("%%\tX-dsp\t\tY-dsp\t\tZ-dsp\t\tX-rot\t\tY-rot\t\tZ-rot\n\x00"))
 	noarch.Fprintf(fpm, []byte("D%d=[\x00"), lc)
-	{
-		for j = 1; j <= nN; func() int {
-			j += 1
-			return j
+	for j = 1; j <= nN; j++ {
+		for i = 5; i >= 0; func() int {
+			i -= 1
+			return i
 		}() {
-			{
-				for i = 5; i >= 0; func() int {
-					i -= 1
-					return i
-				}() {
-					if math.Abs(D[6*j-i]) < 1e-08 {
-						noarch.Fprintf(fpm, []byte("\t0.0\t\x00"))
-					} else {
-						noarch.Fprintf(fpm, []byte("\t%13.6e\x00"), D[6*j-i])
-					}
-				}
-			}
-			if j < nN {
-				noarch.Fprintf(fpm, []byte(" ; \n\x00"))
+			if math.Abs(D[6*j-i]) < 1e-08 {
+				noarch.Fprintf(fpm, []byte("\t0.0\t\x00"))
 			} else {
-				noarch.Fprintf(fpm, []byte(" ]'; \n\n\x00"))
+				noarch.Fprintf(fpm, []byte("\t%13.6e\x00"), D[6*j-i])
 			}
+		}
+		if j < nN {
+			noarch.Fprintf(fpm, []byte(" ; \n\x00"))
+		} else {
+			noarch.Fprintf(fpm, []byte(" ]'; \n\n\x00"))
 		}
 	}
 	noarch.Fprintf(fpm, []byte("%% F R A M E   E L E M E N T   E N D   F O R C E S\x00"))
@@ -7006,78 +6142,56 @@ func write_static_mfile(OUT_file []byte, title []byte, nN int, nE int, nL int, l
 	noarch.Fprintf(fpm, []byte("%%\tNx_1\t\tVy_1\t\tVz_1\t\tTxx_1\t\tMyy_1\t\tMzz_1\t\x00"))
 	noarch.Fprintf(fpm, []byte("  \tNx_2\t\tVy_2\t\tVz_2\t\tTxx_2\t\tMyy_2\t\tMzz_2\n\x00"))
 	noarch.Fprintf(fpm, []byte("F%d=[\x00"), lc)
-	{
-		for n = 1; n <= nE; func() int {
-			n += 1
-			return n
-		}() {
-			if math.Abs(Q[n][1]) < 0.0001 {
+	for n = 1; n <= nE; n++ {
+		if math.Abs(Q[n][1]) < 0.0001 {
+			noarch.Fprintf(fpm, []byte("\t0.0\t\x00"))
+		} else {
+			noarch.Fprintf(fpm, []byte("\t%13.6e\x00"), Q[n][1])
+		}
+		for i = 2; i <= 6; i++ {
+			if math.Abs(Q[n][i]) < 0.0001 {
 				noarch.Fprintf(fpm, []byte("\t0.0\t\x00"))
 			} else {
-				noarch.Fprintf(fpm, []byte("\t%13.6e\x00"), Q[n][1])
+				noarch.Fprintf(fpm, []byte("\t%13.6e\x00"), Q[n][i])
 			}
-			{
-				for i = 2; i <= 6; func() int {
-					i += 1
-					return i
-				}() {
-					if math.Abs(Q[n][i]) < 0.0001 {
-						noarch.Fprintf(fpm, []byte("\t0.0\t\x00"))
-					} else {
-						noarch.Fprintf(fpm, []byte("\t%13.6e\x00"), Q[n][i])
-					}
-				}
-			}
-			if math.Abs(Q[n][7]) < 0.0001 {
+		}
+		if math.Abs(Q[n][7]) < 0.0001 {
+			noarch.Fprintf(fpm, []byte("\t0.0\t\x00"))
+		} else {
+			noarch.Fprintf(fpm, []byte("\t%13.6e\x00"), Q[n][7])
+		}
+		for i = 8; i <= 12; i++ {
+			if math.Abs(Q[n][i]) < 0.0001 {
 				noarch.Fprintf(fpm, []byte("\t0.0\t\x00"))
 			} else {
-				noarch.Fprintf(fpm, []byte("\t%13.6e\x00"), Q[n][7])
+				noarch.Fprintf(fpm, []byte("\t%13.6e\x00"), Q[n][i])
 			}
-			{
-				for i = 8; i <= 12; func() int {
-					i += 1
-					return i
-				}() {
-					if math.Abs(Q[n][i]) < 0.0001 {
-						noarch.Fprintf(fpm, []byte("\t0.0\t\x00"))
-					} else {
-						noarch.Fprintf(fpm, []byte("\t%13.6e\x00"), Q[n][i])
-					}
-				}
-			}
-			if n < nE {
-				noarch.Fprintf(fpm, []byte(" ; \n\x00"))
-			} else {
-				noarch.Fprintf(fpm, []byte(" ]'; \n\n\x00"))
-			}
+		}
+		if n < nE {
+			noarch.Fprintf(fpm, []byte(" ; \n\x00"))
+		} else {
+			noarch.Fprintf(fpm, []byte(" ]'; \n\n\x00"))
 		}
 	}
 	noarch.Fprintf(fpm, []byte("%% R E A C T I O N S\t\t\t\t(global)\n\x00"))
 	noarch.Fprintf(fpm, []byte("%%\tFx\t\tFy\t\tFz\t\tMxx\t\tMyy\t\tMzz\n\x00"))
 	noarch.Fprintf(fpm, []byte("R%d=[\x00"), lc)
-	{
-		for j = 1; j <= nN; func() int {
-			j += 1
-			return j
+	for j = 1; j <= nN; j++ {
+		i = 6 * (j - 1)
+		for i = 5; i >= 0; func() int {
+			i -= 1
+			return i
 		}() {
-			i = 6 * (j - 1)
-			{
-				for i = 5; i >= 0; func() int {
-					i -= 1
-					return i
-				}() {
-					if noarch.NotInt(r[6*j-i]) != 0 || math.Abs(R[6*j-i]) < 0.0001 {
-						noarch.Fprintf(fpm, []byte("\t0.0\t\x00"))
-					} else {
-						noarch.Fprintf(fpm, []byte("\t%13.6e\x00"), R[6*j-i])
-					}
-				}
-			}
-			if j < nN {
-				noarch.Fprintf(fpm, []byte(" ; \n\x00"))
+			if noarch.NotInt(r[6*j-i]) != 0 || math.Abs(R[6*j-i]) < 0.0001 {
+				noarch.Fprintf(fpm, []byte("\t0.0\t\x00"))
 			} else {
-				noarch.Fprintf(fpm, []byte(" ]'; \n\n\x00"))
+				noarch.Fprintf(fpm, []byte("\t%13.6e\x00"), R[6*j-i])
 			}
+		}
+		if j < nN {
+			noarch.Fprintf(fpm, []byte(" ; \n\x00"))
+		} else {
+			noarch.Fprintf(fpm, []byte(" ]'; \n\n\x00"))
 		}
 	}
 	noarch.Fprintf(fpm, []byte("%% R M S    R E L A T I V E    E Q U I L I B R I U M    E R R O R: %9.3e\n\x00"), err)
@@ -7248,386 +6362,346 @@ func peak_internal_forces(lc int, nL int, xyz []vec3, Q [][]float64, nN int, nE 
 	if float64(dx) == -1 {
 		return
 	}
-	{
-		for m = 1; m <= nE; func() int {
-			m += 1
-			return m
-		}() {
-			func() float64 {
-				pkVz[lc][m] = 0
-				return pkVz[lc][m]
-			}()
-			func() float64 {
-				pkVy[lc][m] = pkVz[lc][m]
-				return pkVy[lc][m]
-			}()
-			func() float64 {
-				pkNx[lc][m] = pkVy[lc][m]
-				return pkNx[lc][m]
-			}()
-			func() float64 {
-				pkMz[lc][m] = 0
-				return pkMz[lc][m]
-			}()
-			func() float64 {
-				pkMy[lc][m] = pkMz[lc][m]
-				return pkMy[lc][m]
-			}()
-			func() float64 {
-				pkTx[lc][m] = pkMy[lc][m]
-				return pkTx[lc][m]
-			}()
-			func() float64 {
-				pkDz[lc][m] = 0
-				return pkDz[lc][m]
-			}()
-			func() float64 {
-				pkDy[lc][m] = pkDz[lc][m]
-				return pkDy[lc][m]
-			}()
-			func() float64 {
-				pkDx[lc][m] = pkDy[lc][m]
-				return pkDx[lc][m]
-			}()
-			func() float64 {
-				pkSz[lc][m] = 0
-				return pkSz[lc][m]
-			}()
-			func() float64 {
-				pkSy[lc][m] = pkSz[lc][m]
-				return pkSy[lc][m]
-			}()
-			func() float64 {
-				pkRx[lc][m] = pkSy[lc][m]
-				return pkRx[lc][m]
-			}()
-		}
+	for m = 1; m <= nE; m++ {
+		func() float64 {
+			pkVz[lc][m] = 0
+			return pkVz[lc][m]
+		}()
+		func() float64 {
+			pkVy[lc][m] = pkVz[lc][m]
+			return pkVy[lc][m]
+		}()
+		func() float64 {
+			pkNx[lc][m] = pkVy[lc][m]
+			return pkNx[lc][m]
+		}()
+		func() float64 {
+			pkMz[lc][m] = 0
+			return pkMz[lc][m]
+		}()
+		func() float64 {
+			pkMy[lc][m] = pkMz[lc][m]
+			return pkMy[lc][m]
+		}()
+		func() float64 {
+			pkTx[lc][m] = pkMy[lc][m]
+			return pkTx[lc][m]
+		}()
+		func() float64 {
+			pkDz[lc][m] = 0
+			return pkDz[lc][m]
+		}()
+		func() float64 {
+			pkDy[lc][m] = pkDz[lc][m]
+			return pkDy[lc][m]
+		}()
+		func() float64 {
+			pkDx[lc][m] = pkDy[lc][m]
+			return pkDx[lc][m]
+		}()
+		func() float64 {
+			pkSz[lc][m] = 0
+			return pkSz[lc][m]
+		}()
+		func() float64 {
+			pkSy[lc][m] = pkSz[lc][m]
+			return pkSy[lc][m]
+		}()
+		func() float64 {
+			pkRx[lc][m] = pkSy[lc][m]
+			return pkRx[lc][m]
+		}()
 	}
-	{
-		for m = 1; m <= nE; func() int {
-			m += 1
-			return m
-		}() {
-			n1 = N1[m]
-			n2 = N2[m]
-			dx = float32(L[m] / float64(float32(nx)))
-			coord_trans(xyz, L[m], n1, n2, (*[1]float64)(unsafe.Pointer(&t1))[:], (*[1]float64)(unsafe.Pointer(&t2))[:], (*[1]float64)(unsafe.Pointer(&t3))[:], (*[1]float64)(unsafe.Pointer(&t4))[:], (*[1]float64)(unsafe.Pointer(&t5))[:], (*[1]float64)(unsafe.Pointer(&t6))[:], (*[1]float64)(unsafe.Pointer(&t7))[:], (*[1]float64)(unsafe.Pointer(&t8))[:], (*[1]float64)(unsafe.Pointer(&t9))[:], p[m])
-			wxg = float64(d[m]*Ax[m]) * (t1*float64(gX) + t2*float64(gY) + t3*float64(gZ))
-			wyg = float64(d[m]*Ax[m]) * (t4*float64(gX) + t5*float64(gY) + t6*float64(gZ))
-			wzg = float64(d[m]*Ax[m]) * (t7*float64(gX) + t8*float64(gY) + t9*float64(gZ))
-			{
-				for n = 1; n <= nE && cU < nU; func() int {
-					n += 1
-					return n
-				}() {
-					if int(U[n][1]) == m {
-						wxg += float64(U[n][2])
-						wyg += float64(U[n][3])
-						wzg += float64(U[n][4])
+	for m = 1; m <= nE; m++ {
+		n1 = N1[m]
+		n2 = N2[m]
+		dx = float32(L[m] / float64(float32(nx)))
+		coord_trans(xyz, L[m], n1, n2, (*[1]float64)(unsafe.Pointer(&t1))[:], (*[1]float64)(unsafe.Pointer(&t2))[:], (*[1]float64)(unsafe.Pointer(&t3))[:], (*[1]float64)(unsafe.Pointer(&t4))[:], (*[1]float64)(unsafe.Pointer(&t5))[:], (*[1]float64)(unsafe.Pointer(&t6))[:], (*[1]float64)(unsafe.Pointer(&t7))[:], (*[1]float64)(unsafe.Pointer(&t8))[:], (*[1]float64)(unsafe.Pointer(&t9))[:], p[m])
+		wxg = float64(d[m]*Ax[m]) * (t1*float64(gX) + t2*float64(gY) + t3*float64(gZ))
+		wyg = float64(d[m]*Ax[m]) * (t4*float64(gX) + t5*float64(gY) + t6*float64(gZ))
+		wzg = float64(d[m]*Ax[m]) * (t7*float64(gX) + t8*float64(gY) + t9*float64(gZ))
+		for n = 1; n <= nE && cU < nU; n++ {
+			if int(U[n][1]) == m {
+				wxg += float64(U[n][2])
+				wyg += float64(U[n][3])
+				wzg += float64(U[n][4])
+				func() int {
+					cU += 1
+					return cU
+				}()
+			}
+		}
+		func() float64 {
+			Nx = -Q[m][1]
+			return Nx
+		}()
+		func() float64 {
+			Nx_ = Nx
+			return Nx_
+		}()
+		func() float64 {
+			Vy = -Q[m][2]
+			return Vy
+		}()
+		func() float64 {
+			Vy_ = Vy
+			return Vy_
+		}()
+		func() float64 {
+			Vz = -Q[m][3]
+			return Vz
+		}()
+		func() float64 {
+			Vz_ = Vz
+			return Vz_
+		}()
+		func() float64 {
+			Tx = -Q[m][4]
+			return Tx
+		}()
+		func() float64 {
+			Tx_ = Tx
+			return Tx_
+		}()
+		func() float64 {
+			My = Q[m][5]
+			return My
+		}()
+		func() float64 {
+			My_ = My
+			return My_
+		}()
+		func() float64 {
+			Mz = -Q[m][6]
+			return Mz
+		}()
+		func() float64 {
+			Mz_ = Mz
+			return Mz_
+		}()
+		i1 = 6 * (n1 - 1)
+		i2 = 6 * (n2 - 1)
+		u1 = t1*D[i1+1] + t2*D[i1+2] + t3*D[i1+3]
+		u2 = t4*D[i1+1] + t5*D[i1+2] + t6*D[i1+3]
+		u3 = t7*D[i1+1] + t8*D[i1+2] + t9*D[i1+3]
+		u4 = t1*D[i1+4] + t2*D[i1+5] + t3*D[i1+6]
+		u5 = t4*D[i1+4] + t5*D[i1+5] + t6*D[i1+6]
+		u6 = t7*D[i1+4] + t8*D[i1+5] + t9*D[i1+6]
+		u7 = t1*D[i2+1] + t2*D[i2+2] + t3*D[i2+3]
+		u8 = t4*D[i2+1] + t5*D[i2+2] + t6*D[i2+3]
+		u9 = t7*D[i2+1] + t8*D[i2+2] + t9*D[i2+3]
+		u10 = t1*D[i2+4] + t2*D[i2+5] + t3*D[i2+6]
+		u11 = t4*D[i2+4] + t5*D[i2+5] + t6*D[i2+6]
+		u12 = t7*D[i2+4] + t8*D[i2+5] + t9*D[i2+6]
+		Dx = u1
+		Dy = u2
+		Dz = u3
+		Rx = u4
+		func() float64 {
+			Sy = u6
+			return Sy
+		}()
+		func() float64 {
+			Sy_ = Sy
+			return Sy_
+		}()
+		func() float64 {
+			Sz = -u5
+			return Sz
+		}()
+		func() float64 {
+			Sz_ = Sz
+			return Sz_
+		}()
+		for i = 1; i <= nx; i++ {
+			x = float64(float32(i) * dx)
+			wx = wxg
+			wy = wyg
+			wz = wzg
+			if i == 1 {
+				wx_ = wxg
+				wy_ = wyg
+				wz_ = wzg
+				tx_ = tx
+			}
+			for n = 1; n <= 10*nE && cW < nW; n++ {
+				if int(W[n][1]) == m {
+					if i == nx {
 						func() int {
-							cU += 1
-							return cU
+							cW += 1
+							return cW
 						}()
 					}
+					xx1 = float64(W[n][2])
+					xx2 = float64(W[n][3])
+					wx1 = float64(W[n][4])
+					wx2 = float64(W[n][5])
+					xy1 = float64(W[n][6])
+					xy2 = float64(W[n][7])
+					wy1 = float64(W[n][8])
+					wy2 = float64(W[n][9])
+					xz1 = float64(W[n][10])
+					xz2 = float64(W[n][11])
+					wz1 = float64(W[n][12])
+					wz2 = float64(W[n][13])
+					if x > xx1 && x <= xx2 {
+						wx += wx1 + (wx2-wx1)*(x-xx1)/(xx2-xx1)
+					}
+					if x > xy1 && x <= xy2 {
+						wy += wy1 + (wy2-wy1)*(x-xy1)/(xy2-xy1)
+					}
+					if x > xz1 && x <= xz2 {
+						wz += wz1 + (wz2-wz1)*(x-xz1)/(xz2-xz1)
+					}
 				}
 			}
-			func() float64 {
-				Nx = -Q[m][1]
-				return Nx
-			}()
-			func() float64 {
-				Nx_ = Nx
-				return Nx_
-			}()
-			func() float64 {
-				Vy = -Q[m][2]
-				return Vy
-			}()
-			func() float64 {
-				Vy_ = Vy
-				return Vy_
-			}()
-			func() float64 {
-				Vz = -Q[m][3]
-				return Vz
-			}()
-			func() float64 {
-				Vz_ = Vz
-				return Vz_
-			}()
-			func() float64 {
-				Tx = -Q[m][4]
-				return Tx
-			}()
-			func() float64 {
-				Tx_ = Tx
-				return Tx_
-			}()
-			func() float64 {
-				My = Q[m][5]
-				return My
-			}()
-			func() float64 {
-				My_ = My
-				return My_
-			}()
-			func() float64 {
-				Mz = -Q[m][6]
-				return Mz
-			}()
-			func() float64 {
-				Mz_ = Mz
-				return Mz_
-			}()
-			i1 = 6 * (n1 - 1)
-			i2 = 6 * (n2 - 1)
-			u1 = t1*D[i1+1] + t2*D[i1+2] + t3*D[i1+3]
-			u2 = t4*D[i1+1] + t5*D[i1+2] + t6*D[i1+3]
-			u3 = t7*D[i1+1] + t8*D[i1+2] + t9*D[i1+3]
-			u4 = t1*D[i1+4] + t2*D[i1+5] + t3*D[i1+6]
-			u5 = t4*D[i1+4] + t5*D[i1+5] + t6*D[i1+6]
-			u6 = t7*D[i1+4] + t8*D[i1+5] + t9*D[i1+6]
-			u7 = t1*D[i2+1] + t2*D[i2+2] + t3*D[i2+3]
-			u8 = t4*D[i2+1] + t5*D[i2+2] + t6*D[i2+3]
-			u9 = t7*D[i2+1] + t8*D[i2+2] + t9*D[i2+3]
-			u10 = t1*D[i2+4] + t2*D[i2+5] + t3*D[i2+6]
-			u11 = t4*D[i2+4] + t5*D[i2+5] + t6*D[i2+6]
-			u12 = t7*D[i2+4] + t8*D[i2+5] + t9*D[i2+6]
-			Dx = u1
-			Dy = u2
-			Dz = u3
-			Rx = u4
-			func() float64 {
-				Sy = u6
-				return Sy
-			}()
-			func() float64 {
-				Sy_ = Sy
-				return Sy_
-			}()
-			func() float64 {
-				Sz = -u5
-				return Sz
-			}()
-			func() float64 {
-				Sz_ = Sz
-				return Sz_
-			}()
-			{
-				for i = 1; i <= nx; func() int {
-					i += 1
-					return i
-				}() {
-					x = float64(float32(i) * dx)
-					wx = wxg
-					wy = wyg
-					wz = wzg
-					if i == 1 {
-						wx_ = wxg
-						wy_ = wyg
-						wz_ = wzg
-						tx_ = tx
+			Nx = Nx - 0.5*(wx+wx_)*float64(dx)
+			Vy = Vy - 0.5*(wy+wy_)*float64(dx)
+			Vz = Vz - 0.5*(wz+wz_)*float64(dx)
+			Tx = Tx - 0.5*(tx+tx_)*float64(dx)
+			wx_ = wx
+			wy_ = wy
+			wz_ = wz
+			tx_ = tx
+			for n = 1; n <= 10*nE && cP < nP; n++ {
+				if int(P[n][1]) == m {
+					if i == nx {
+						func() int {
+							cP += 1
+							return cP
+						}()
 					}
-					{
-						for n = 1; n <= 10*nE && cW < nW; func() int {
-							n += 1
-							return n
-						}() {
-							if int(W[n][1]) == m {
-								if i == nx {
-									func() int {
-										cW += 1
-										return cW
-									}()
-								}
-								xx1 = float64(W[n][2])
-								xx2 = float64(W[n][3])
-								wx1 = float64(W[n][4])
-								wx2 = float64(W[n][5])
-								xy1 = float64(W[n][6])
-								xy2 = float64(W[n][7])
-								wy1 = float64(W[n][8])
-								wy2 = float64(W[n][9])
-								xz1 = float64(W[n][10])
-								xz2 = float64(W[n][11])
-								wz1 = float64(W[n][12])
-								wz2 = float64(W[n][13])
-								if x > xx1 && x <= xx2 {
-									wx += wx1 + (wx2-wx1)*(x-xx1)/(xx2-xx1)
-								}
-								if x > xy1 && x <= xy2 {
-									wy += wy1 + (wy2-wy1)*(x-xy1)/(xy2-xy1)
-								}
-								if x > xz1 && x <= xz2 {
-									wz += wz1 + (wz2-wz1)*(x-xz1)/(xz2-xz1)
-								}
-							}
-						}
+					xp = float64(P[n][5])
+					if x <= xp && xp < x+float64(dx) {
+						Nx -= float64(P[n][2]) * 0.5 * (1 - (xp-x)/float64(dx))
+						Vy -= float64(P[n][3]) * 0.5 * (1 - (xp-x)/float64(dx))
+						Vz -= float64(P[n][4]) * 0.5 * (1 - (xp-x)/float64(dx))
 					}
-					Nx = Nx - 0.5*(wx+wx_)*float64(dx)
-					Vy = Vy - 0.5*(wy+wy_)*float64(dx)
-					Vz = Vz - 0.5*(wz+wz_)*float64(dx)
-					Tx = Tx - 0.5*(tx+tx_)*float64(dx)
-					wx_ = wx
-					wy_ = wy
-					wz_ = wz
-					tx_ = tx
-					{
-						for n = 1; n <= 10*nE && cP < nP; func() int {
-							n += 1
-							return n
-						}() {
-							if int(P[n][1]) == m {
-								if i == nx {
-									func() int {
-										cP += 1
-										return cP
-									}()
-								}
-								xp = float64(P[n][5])
-								if x <= xp && xp < x+float64(dx) {
-									Nx -= float64(P[n][2]) * 0.5 * (1 - (xp-x)/float64(dx))
-									Vy -= float64(P[n][3]) * 0.5 * (1 - (xp-x)/float64(dx))
-									Vz -= float64(P[n][4]) * 0.5 * (1 - (xp-x)/float64(dx))
-								}
-								if x-float64(dx) <= xp && xp < x {
-									Nx -= float64(P[n][2]) * 0.5 * (1 - (x-float64(dx)-xp)/float64(dx))
-									Vy -= float64(P[n][3]) * 0.5 * (1 - (x-float64(dx)-xp)/float64(dx))
-									Vz -= float64(P[n][4]) * 0.5 * (1 - (x-float64(dx)-xp)/float64(dx))
-								}
-							}
-						}
+					if x-float64(dx) <= xp && xp < x {
+						Nx -= float64(P[n][2]) * 0.5 * (1 - (x-float64(dx)-xp)/float64(dx))
+						Vy -= float64(P[n][3]) * 0.5 * (1 - (x-float64(dx)-xp)/float64(dx))
+						Vz -= float64(P[n][4]) * 0.5 * (1 - (x-float64(dx)-xp)/float64(dx))
 					}
-					My = My - 0.5*(Vz_+Vz)*float64(dx)
-					Mz = Mz - 0.5*(Vy_+Vy)*float64(dx)
-					Dx = Dx + 0.5*(Nx_+Nx)/float64((E[m]*Ax[m]))*float64(dx)
-					Rx = Rx + 0.5*(Tx_+Tx)/float64((G[m]*Jx[m]))*float64(dx)
-					Sy = Sy + 0.5*(Mz_+Mz)/float64((E[m]*Iz[m]))*float64(dx)
-					Sz = Sz + 0.5*(My_+My)/float64((E[m]*Iy[m]))*float64(dx)
-					if shear != 0 {
-						Sy += Vy / float64((G[m] * Asy[m]))
-						Sz += Vz / float64((G[m] * Asz[m]))
-					}
-					Dy = Dy + 0.5*(Sy_+Sy)*float64(dx)
-					Dz = Dz + 0.5*(Sz_+Sz)*float64(dx)
-					Nx_ = Nx
-					Vy_ = Vy
-					Vz_ = Vz
-					Tx_ = Tx
-					My_ = My
-					Mz_ = Mz
-					Sy_ = Sy
-					Sz_ = Sz
-					pkNx[lc][m] = func() float64 {
-						if (map[bool]int{false: 0, true: 1}[math.Abs(Nx) > pkNx[lc][m]]) != 0 {
-							return math.Abs(Nx)
-						} else {
-							return pkNx[lc][m]
-						}
-					}()
-					pkVy[lc][m] = func() float64 {
-						if (map[bool]int{false: 0, true: 1}[math.Abs(Vy) > pkVy[lc][m]]) != 0 {
-							return math.Abs(Vy)
-						} else {
-							return pkVy[lc][m]
-						}
-					}()
-					pkVz[lc][m] = func() float64 {
-						if (map[bool]int{false: 0, true: 1}[math.Abs(Vz) > pkVz[lc][m]]) != 0 {
-							return math.Abs(Vz)
-						} else {
-							return pkVz[lc][m]
-						}
-					}()
-					pkTx[lc][m] = func() float64 {
-						if (map[bool]int{false: 0, true: 1}[math.Abs(Tx) > pkTx[lc][m]]) != 0 {
-							return math.Abs(Tx)
-						} else {
-							return pkTx[lc][m]
-						}
-					}()
-					pkMy[lc][m] = func() float64 {
-						if (map[bool]int{false: 0, true: 1}[math.Abs(My) > pkMy[lc][m]]) != 0 {
-							return math.Abs(My)
-						} else {
-							return pkMy[lc][m]
-						}
-					}()
-					pkMz[lc][m] = func() float64 {
-						if (map[bool]int{false: 0, true: 1}[math.Abs(Mz) > pkMz[lc][m]]) != 0 {
-							return math.Abs(Mz)
-						} else {
-							return pkMz[lc][m]
-						}
-					}()
-					pkDx[lc][m] = func() float64 {
-						if (map[bool]int{false: 0, true: 1}[math.Abs(Dx) > pkDx[lc][m]]) != 0 {
-							return math.Abs(Dx)
-						} else {
-							return pkDx[lc][m]
-						}
-					}()
-					pkDy[lc][m] = func() float64 {
-						if (map[bool]int{false: 0, true: 1}[math.Abs(Dy) > pkDy[lc][m]]) != 0 {
-							return math.Abs(Dy)
-						} else {
-							return pkDy[lc][m]
-						}
-					}()
-					pkDz[lc][m] = func() float64 {
-						if (map[bool]int{false: 0, true: 1}[math.Abs(Dz) > pkDz[lc][m]]) != 0 {
-							return math.Abs(Dz)
-						} else {
-							return pkDz[lc][m]
-						}
-					}()
-					pkRx[lc][m] = func() float64 {
-						if (map[bool]int{false: 0, true: 1}[math.Abs(Rx) > pkRx[lc][m]]) != 0 {
-							return math.Abs(Rx)
-						} else {
-							return pkRx[lc][m]
-						}
-					}()
-					pkSy[lc][m] = func() float64 {
-						if (map[bool]int{false: 0, true: 1}[math.Abs(Sy) > pkSy[lc][m]]) != 0 {
-							return math.Abs(Sy)
-						} else {
-							return pkSy[lc][m]
-						}
-					}()
-					pkSz[lc][m] = func() float64 {
-						if (map[bool]int{false: 0, true: 1}[math.Abs(Sz) > pkSz[lc][m]]) != 0 {
-							return math.Abs(Sz)
-						} else {
-							return pkSz[lc][m]
-						}
-					}()
 				}
 			}
+			My = My - 0.5*(Vz_+Vz)*float64(dx)
+			Mz = Mz - 0.5*(Vy_+Vy)*float64(dx)
+			Dx = Dx + 0.5*(Nx_+Nx)/float64((E[m]*Ax[m]))*float64(dx)
+			Rx = Rx + 0.5*(Tx_+Tx)/float64((G[m]*Jx[m]))*float64(dx)
+			Sy = Sy + 0.5*(Mz_+Mz)/float64((E[m]*Iz[m]))*float64(dx)
+			Sz = Sz + 0.5*(My_+My)/float64((E[m]*Iy[m]))*float64(dx)
+			if shear != 0 {
+				Sy += Vy / float64((G[m] * Asy[m]))
+				Sz += Vz / float64((G[m] * Asz[m]))
+			}
+			Dy = Dy + 0.5*(Sy_+Sy)*float64(dx)
+			Dz = Dz + 0.5*(Sz_+Sz)*float64(dx)
+			Nx_ = Nx
+			Vy_ = Vy
+			Vz_ = Vz
+			Tx_ = Tx
+			My_ = My
+			Mz_ = Mz
+			Sy_ = Sy
+			Sz_ = Sz
+			pkNx[lc][m] = func() float64 {
+				if (map[bool]int{false: 0, true: 1}[math.Abs(Nx) > pkNx[lc][m]]) != 0 {
+					return math.Abs(Nx)
+				} else {
+					return pkNx[lc][m]
+				}
+			}()
+			pkVy[lc][m] = func() float64 {
+				if (map[bool]int{false: 0, true: 1}[math.Abs(Vy) > pkVy[lc][m]]) != 0 {
+					return math.Abs(Vy)
+				} else {
+					return pkVy[lc][m]
+				}
+			}()
+			pkVz[lc][m] = func() float64 {
+				if (map[bool]int{false: 0, true: 1}[math.Abs(Vz) > pkVz[lc][m]]) != 0 {
+					return math.Abs(Vz)
+				} else {
+					return pkVz[lc][m]
+				}
+			}()
+			pkTx[lc][m] = func() float64 {
+				if (map[bool]int{false: 0, true: 1}[math.Abs(Tx) > pkTx[lc][m]]) != 0 {
+					return math.Abs(Tx)
+				} else {
+					return pkTx[lc][m]
+				}
+			}()
+			pkMy[lc][m] = func() float64 {
+				if (map[bool]int{false: 0, true: 1}[math.Abs(My) > pkMy[lc][m]]) != 0 {
+					return math.Abs(My)
+				} else {
+					return pkMy[lc][m]
+				}
+			}()
+			pkMz[lc][m] = func() float64 {
+				if (map[bool]int{false: 0, true: 1}[math.Abs(Mz) > pkMz[lc][m]]) != 0 {
+					return math.Abs(Mz)
+				} else {
+					return pkMz[lc][m]
+				}
+			}()
+			pkDx[lc][m] = func() float64 {
+				if (map[bool]int{false: 0, true: 1}[math.Abs(Dx) > pkDx[lc][m]]) != 0 {
+					return math.Abs(Dx)
+				} else {
+					return pkDx[lc][m]
+				}
+			}()
+			pkDy[lc][m] = func() float64 {
+				if (map[bool]int{false: 0, true: 1}[math.Abs(Dy) > pkDy[lc][m]]) != 0 {
+					return math.Abs(Dy)
+				} else {
+					return pkDy[lc][m]
+				}
+			}()
+			pkDz[lc][m] = func() float64 {
+				if (map[bool]int{false: 0, true: 1}[math.Abs(Dz) > pkDz[lc][m]]) != 0 {
+					return math.Abs(Dz)
+				} else {
+					return pkDz[lc][m]
+				}
+			}()
+			pkRx[lc][m] = func() float64 {
+				if (map[bool]int{false: 0, true: 1}[math.Abs(Rx) > pkRx[lc][m]]) != 0 {
+					return math.Abs(Rx)
+				} else {
+					return pkRx[lc][m]
+				}
+			}()
+			pkSy[lc][m] = func() float64 {
+				if (map[bool]int{false: 0, true: 1}[math.Abs(Sy) > pkSy[lc][m]]) != 0 {
+					return math.Abs(Sy)
+				} else {
+					return pkSy[lc][m]
+				}
+			}()
+			pkSz[lc][m] = func() float64 {
+				if (map[bool]int{false: 0, true: 1}[math.Abs(Sz) > pkSz[lc][m]]) != 0 {
+					return math.Abs(Sz)
+				} else {
+					return pkSz[lc][m]
+				}
+			}()
 		}
 	}
 	noarch.Fprintf(stderr, []byte("P E A K   F R A M E   E L E M E N T   I N T E R N A L   F O R C E S\x00"))
 	noarch.Fprintf(stderr, []byte("\t(local)\n\x00"))
 	noarch.Fprintf(stderr, []byte("  Elmnt       Nx          Vy         Vz\x00"))
 	noarch.Fprintf(stderr, []byte("        Txx        Myy        Mzz\n\x00"))
-	{
-		for m = 1; m <= nE; func() int {
-			m += 1
-			return m
-		}() {
-			noarch.Fprintf(stderr, []byte(" %5d  %10.3f  %10.3f %10.3f %10.3f %10.3f %10.3f\n\x00"), m, pkNx[lc][m], pkVy[lc][m], pkVz[lc][m], pkTx[lc][m], pkMy[lc][m], pkMz[lc][m])
-		}
+	for m = 1; m <= nE; m++ {
+		noarch.Fprintf(stderr, []byte(" %5d  %10.3f  %10.3f %10.3f %10.3f %10.3f %10.3f\n\x00"), m, pkNx[lc][m], pkVy[lc][m], pkVz[lc][m], pkTx[lc][m], pkMy[lc][m], pkMz[lc][m])
 	}
 	noarch.Fprintf(stderr, []byte("\n P E A K   I N T E R N A L   D I S P L A C E M E N T S\x00"))
 	noarch.Fprintf(stderr, []byte("\t\t\t(local)\n\x00"))
 	noarch.Fprintf(stderr, []byte("  Elmnt  X-dsp       Y-dsp       Z-dsp       X-rot       Y-rot       Z-rot\n\x00"))
-	{
-		for m = 1; m <= nE; func() int {
-			m += 1
-			return m
-		}() {
-			noarch.Fprintf(stderr, []byte(" %5d %10.6f  %10.6f  %10.6f  %10.6f  %10.6f  %10.6f\n\x00"), m, pkDx[lc][m], pkDy[lc][m], pkDz[lc][m], pkRx[lc][m], pkSy[lc][m], pkSz[lc][m])
-		}
+	for m = 1; m <= nE; m++ {
+		noarch.Fprintf(stderr, []byte(" %5d %10.6f  %10.6f  %10.6f  %10.6f  %10.6f  %10.6f\n\x00"), m, pkDx[lc][m], pkDy[lc][m], pkDz[lc][m], pkRx[lc][m], pkSy[lc][m], pkSz[lc][m])
 	}
 }
 
@@ -7855,618 +6929,513 @@ func write_internal_forces(OUT_file []byte, fp *noarch.File, infcpath []byte, lc
 	noarch.Fprintf(fpcsv, []byte("   (local)\",\n\x00"))
 	noarch.Fprintf(fpcsv, []byte(" \"Elmnt\",  \".\", \"Nx\", \"Vy\", \"Vz\", \x00"))
 	noarch.Fprintf(fpcsv, []byte(" \"Txx\", \"Myy\", \"Mzz\", \n\x00"))
-	{
-		for m = 1; m <= nE; func() int {
-			m += 1
-			return m
-		}() {
-			n1 = J1[m]
-			n2 = J2[m]
-			nx = int(math.Floor(L[m] / float64(dx)))
-			if nx < 1 {
-				nx = 1
+	for m = 1; m <= nE; m++ {
+		n1 = J1[m]
+		n2 = J2[m]
+		nx = int(math.Floor(L[m] / float64(dx)))
+		if nx < 1 {
+			nx = 1
+		}
+		x = dvector(int32(0), int32(nx))
+		Nx = dvector(int32(0), int32(nx))
+		Vy = dvector(int32(0), int32(nx))
+		Vz = dvector(int32(0), int32(nx))
+		Tx = dvector(int32(0), int32(nx))
+		My = dvector(int32(0), int32(nx))
+		Mz = dvector(int32(0), int32(nx))
+		Sy = dvector(int32(0), int32(nx))
+		Sz = dvector(int32(0), int32(nx))
+		Rx = dvector(int32(0), int32(nx))
+		Dx = dvector(int32(0), int32(nx))
+		Dy = dvector(int32(0), int32(nx))
+		Dz = dvector(int32(0), int32(nx))
+		for i = 0; i < nx; i++ {
+			x[i] = float64(float32(i) * dx)
+		}
+		x[nx] = L[m]
+		dxnx = x[nx] - x[nx-1]
+		noarch.Fprintf(fpif, []byte("#\tElmnt\tN1\tN2        \tX1        \tY1        \tZ1        \tX2        \tY2        \tZ2\tnx\n\x00"))
+		noarch.Fprintf(fpif, []byte("# @\t%5d\t%5d\t%5d\t%14.6e\t%14.6e\t%14.6e\t%14.6e\t%14.6e\t%14.6e\t%5d\n\x00"), m, n1, n2, xyz[n1].x, xyz[n1].y, xyz[n1].z, xyz[n2].x, xyz[n2].y, xyz[n2].z, nx+1)
+		coord_trans(xyz, L[m], n1, n2, (*[1]float64)(unsafe.Pointer(&t1))[:], (*[1]float64)(unsafe.Pointer(&t2))[:], (*[1]float64)(unsafe.Pointer(&t3))[:], (*[1]float64)(unsafe.Pointer(&t4))[:], (*[1]float64)(unsafe.Pointer(&t5))[:], (*[1]float64)(unsafe.Pointer(&t6))[:], (*[1]float64)(unsafe.Pointer(&t7))[:], (*[1]float64)(unsafe.Pointer(&t8))[:], (*[1]float64)(unsafe.Pointer(&t9))[:], p[m])
+		wxg = float64(d[m]*Ax[m]) * (t1*float64(gX) + t2*float64(gY) + t3*float64(gZ))
+		wyg = float64(d[m]*Ax[m]) * (t4*float64(gX) + t5*float64(gY) + t6*float64(gZ))
+		wzg = float64(d[m]*Ax[m]) * (t7*float64(gX) + t8*float64(gY) + t9*float64(gZ))
+		for n = 1; n <= nE && cU < nU; n++ {
+			if int(U[n][1]) == m {
+				wxg += float64(U[n][2])
+				wyg += float64(U[n][3])
+				wzg += float64(U[n][4])
+				func() int {
+					cU += 1
+					return cU
+				}()
 			}
-			x = dvector(int32(0), int32(nx))
-			Nx = dvector(int32(0), int32(nx))
-			Vy = dvector(int32(0), int32(nx))
-			Vz = dvector(int32(0), int32(nx))
-			Tx = dvector(int32(0), int32(nx))
-			My = dvector(int32(0), int32(nx))
-			Mz = dvector(int32(0), int32(nx))
-			Sy = dvector(int32(0), int32(nx))
-			Sz = dvector(int32(0), int32(nx))
-			Rx = dvector(int32(0), int32(nx))
-			Dx = dvector(int32(0), int32(nx))
-			Dy = dvector(int32(0), int32(nx))
-			Dz = dvector(int32(0), int32(nx))
-			{
-				for i = 0; i < nx; func() int {
-					i += 1
-					return i
-				}() {
-					x[i] = float64(float32(i) * dx)
-				}
+		}
+		Nx[0] = -Q[m][1]
+		Vy[0] = -Q[m][2]
+		Vz[0] = -Q[m][3]
+		Tx[0] = -Q[m][4]
+		My[0] = Q[m][5]
+		Mz[0] = -Q[m][6]
+		dx_ = float64(dx)
+		for i = 1; i <= nx; i++ {
+			wx = wxg
+			wy = wyg
+			wz = wzg
+			if i == 1 {
+				wx_ = wxg
+				wy_ = wyg
+				wz_ = wzg
+				tx_ = tx
 			}
-			x[nx] = L[m]
-			dxnx = x[nx] - x[nx-1]
-			noarch.Fprintf(fpif, []byte("#\tElmnt\tN1\tN2        \tX1        \tY1        \tZ1        \tX2        \tY2        \tZ2\tnx\n\x00"))
-			noarch.Fprintf(fpif, []byte("# @\t%5d\t%5d\t%5d\t%14.6e\t%14.6e\t%14.6e\t%14.6e\t%14.6e\t%14.6e\t%5d\n\x00"), m, n1, n2, xyz[n1].x, xyz[n1].y, xyz[n1].z, xyz[n2].x, xyz[n2].y, xyz[n2].z, nx+1)
-			coord_trans(xyz, L[m], n1, n2, (*[1]float64)(unsafe.Pointer(&t1))[:], (*[1]float64)(unsafe.Pointer(&t2))[:], (*[1]float64)(unsafe.Pointer(&t3))[:], (*[1]float64)(unsafe.Pointer(&t4))[:], (*[1]float64)(unsafe.Pointer(&t5))[:], (*[1]float64)(unsafe.Pointer(&t6))[:], (*[1]float64)(unsafe.Pointer(&t7))[:], (*[1]float64)(unsafe.Pointer(&t8))[:], (*[1]float64)(unsafe.Pointer(&t9))[:], p[m])
-			wxg = float64(d[m]*Ax[m]) * (t1*float64(gX) + t2*float64(gY) + t3*float64(gZ))
-			wyg = float64(d[m]*Ax[m]) * (t4*float64(gX) + t5*float64(gY) + t6*float64(gZ))
-			wzg = float64(d[m]*Ax[m]) * (t7*float64(gX) + t8*float64(gY) + t9*float64(gZ))
-			{
-				for n = 1; n <= nE && cU < nU; func() int {
-					n += 1
-					return n
-				}() {
-					if int(U[n][1]) == m {
-						wxg += float64(U[n][2])
-						wyg += float64(U[n][3])
-						wzg += float64(U[n][4])
+			for n = 1; n <= 10*nE && cW < nW; n++ {
+				if int(W[n][1]) == m {
+					if i == nx {
 						func() int {
-							cU += 1
-							return cU
+							cW += 1
+							return cW
 						}()
 					}
+					xx1 = float64(W[n][2])
+					xx2 = float64(W[n][3])
+					wx1 = float64(W[n][4])
+					wx2 = float64(W[n][5])
+					xy1 = float64(W[n][6])
+					xy2 = float64(W[n][7])
+					wy1 = float64(W[n][8])
+					wy2 = float64(W[n][9])
+					xz1 = float64(W[n][10])
+					xz2 = float64(W[n][11])
+					wz1 = float64(W[n][12])
+					wz2 = float64(W[n][13])
+					if x[i] > xx1 && x[i] <= xx2 {
+						wx += wx1 + (wx2-wx1)*(x[i]-xx1)/(xx2-xx1)
+					}
+					if x[i] > xy1 && x[i] <= xy2 {
+						wy += wy1 + (wy2-wy1)*(x[i]-xy1)/(xy2-xy1)
+					}
+					if x[i] > xz1 && x[i] <= xz2 {
+						wz += wz1 + (wz2-wz1)*(x[i]-xz1)/(xz2-xz1)
+					}
 				}
 			}
-			Nx[0] = -Q[m][1]
-			Vy[0] = -Q[m][2]
-			Vz[0] = -Q[m][3]
-			Tx[0] = -Q[m][4]
-			My[0] = Q[m][5]
-			Mz[0] = -Q[m][6]
-			dx_ = float64(dx)
-			{
-				for i = 1; i <= nx; func() int {
-					i += 1
-					return i
-				}() {
-					wx = wxg
-					wy = wyg
-					wz = wzg
-					if i == 1 {
-						wx_ = wxg
-						wy_ = wyg
-						wz_ = wzg
-						tx_ = tx
-					}
-					{
-						for n = 1; n <= 10*nE && cW < nW; func() int {
-							n += 1
-							return n
-						}() {
-							if int(W[n][1]) == m {
-								if i == nx {
-									func() int {
-										cW += 1
-										return cW
-									}()
-								}
-								xx1 = float64(W[n][2])
-								xx2 = float64(W[n][3])
-								wx1 = float64(W[n][4])
-								wx2 = float64(W[n][5])
-								xy1 = float64(W[n][6])
-								xy2 = float64(W[n][7])
-								wy1 = float64(W[n][8])
-								wy2 = float64(W[n][9])
-								xz1 = float64(W[n][10])
-								xz2 = float64(W[n][11])
-								wz1 = float64(W[n][12])
-								wz2 = float64(W[n][13])
-								if x[i] > xx1 && x[i] <= xx2 {
-									wx += wx1 + (wx2-wx1)*(x[i]-xx1)/(xx2-xx1)
-								}
-								if x[i] > xy1 && x[i] <= xy2 {
-									wy += wy1 + (wy2-wy1)*(x[i]-xy1)/(xy2-xy1)
-								}
-								if x[i] > xz1 && x[i] <= xz2 {
-									wz += wz1 + (wz2-wz1)*(x[i]-xz1)/(xz2-xz1)
-								}
-							}
-						}
-					}
+			if i == nx {
+				dx_ = dxnx
+			}
+			Nx[i] = Nx[i-1] - 0.5*(wx+wx_)*dx_
+			Vy[i] = Vy[i-1] - 0.5*(wy+wy_)*dx_
+			Vz[i] = Vz[i-1] - 0.5*(wz+wz_)*dx_
+			Tx[i] = Tx[i-1] - 0.5*(tx+tx_)*dx_
+			wx_ = wx
+			wy_ = wy
+			wz_ = wz
+			tx_ = tx
+			for n = 1; n <= 10*nE && cP < nP; n++ {
+				if int(P[n][1]) == m {
 					if i == nx {
-						dx_ = dxnx
+						func() int {
+							cP += 1
+							return cP
+						}()
 					}
-					Nx[i] = Nx[i-1] - 0.5*(wx+wx_)*dx_
-					Vy[i] = Vy[i-1] - 0.5*(wy+wy_)*dx_
-					Vz[i] = Vz[i-1] - 0.5*(wz+wz_)*dx_
-					Tx[i] = Tx[i-1] - 0.5*(tx+tx_)*dx_
-					wx_ = wx
-					wy_ = wy
-					wz_ = wz
-					tx_ = tx
-					{
-						for n = 1; n <= 10*nE && cP < nP; func() int {
-							n += 1
-							return n
-						}() {
-							if int(P[n][1]) == m {
-								if i == nx {
-									func() int {
-										cP += 1
-										return cP
-									}()
-								}
-								xp = float64(P[n][5])
-								if x[i] <= xp && xp < x[i]+float64(dx) {
-									Nx[i] -= float64(P[n][2]) * 0.5 * (1 - (xp-x[i])/float64(dx))
-									Vy[i] -= float64(P[n][3]) * 0.5 * (1 - (xp-x[i])/float64(dx))
-									Vz[i] -= float64(P[n][4]) * 0.5 * (1 - (xp-x[i])/float64(dx))
-								}
-								if x[i]-float64(dx) <= xp && xp < x[i] {
-									Nx[i] -= float64(P[n][2]) * 0.5 * (1 - (x[i]-float64(dx)-xp)/float64(dx))
-									Vy[i] -= float64(P[n][3]) * 0.5 * (1 - (x[i]-float64(dx)-xp)/float64(dx))
-									Vz[i] -= float64(P[n][4]) * 0.5 * (1 - (x[i]-float64(dx)-xp)/float64(dx))
-								}
-							}
-						}
+					xp = float64(P[n][5])
+					if x[i] <= xp && xp < x[i]+float64(dx) {
+						Nx[i] -= float64(P[n][2]) * 0.5 * (1 - (xp-x[i])/float64(dx))
+						Vy[i] -= float64(P[n][3]) * 0.5 * (1 - (xp-x[i])/float64(dx))
+						Vz[i] -= float64(P[n][4]) * 0.5 * (1 - (xp-x[i])/float64(dx))
+					}
+					if x[i]-float64(dx) <= xp && xp < x[i] {
+						Nx[i] -= float64(P[n][2]) * 0.5 * (1 - (x[i]-float64(dx)-xp)/float64(dx))
+						Vy[i] -= float64(P[n][3]) * 0.5 * (1 - (x[i]-float64(dx)-xp)/float64(dx))
+						Vz[i] -= float64(P[n][4]) * 0.5 * (1 - (x[i]-float64(dx)-xp)/float64(dx))
 					}
 				}
 			}
-			{
-				for i = 1; i <= nx; func() int {
-					i += 1
-					return i
-				}() {
-					Nx[i] -= (Nx[nx] - Q[m][7]) * float64(i) / float64(nx)
-					Vy[i] -= (Vy[nx] - Q[m][8]) * float64(i) / float64(nx)
-					Vz[i] -= (Vz[nx] - Q[m][9]) * float64(i) / float64(nx)
-					Tx[i] -= (Tx[nx] - Q[m][10]) * float64(i) / float64(nx)
-				}
-			}
-			dx_ = float64(dx)
-			{
-				for i = 1; i <= nx; func() int {
-					i += 1
-					return i
-				}() {
-					if i == nx {
-						dx_ = dxnx
-					}
-					My[i] = My[i-1] - 0.5*(Vz[i]+Vz[i-1])*dx_
-					Mz[i] = Mz[i-1] - 0.5*(Vy[i]+Vy[i-1])*dx_
-				}
-			}
-			{
-				for i = 1; i <= nx; func() int {
-					i += 1
-					return i
-				}() {
-					My[i] -= (My[nx] + Q[m][11]) * float64(i) / float64(nx)
-					Mz[i] -= (Mz[nx] - Q[m][12]) * float64(i) / float64(nx)
-				}
-			}
-			i1 = 6 * (n1 - 1)
-			i2 = 6 * (n2 - 1)
-			u1 = t1*D[i1+1] + t2*D[i1+2] + t3*D[i1+3]
-			u2 = t4*D[i1+1] + t5*D[i1+2] + t6*D[i1+3]
-			u3 = t7*D[i1+1] + t8*D[i1+2] + t9*D[i1+3]
-			u4 = t1*D[i1+4] + t2*D[i1+5] + t3*D[i1+6]
-			u5 = t4*D[i1+4] + t5*D[i1+5] + t6*D[i1+6]
-			u6 = t7*D[i1+4] + t8*D[i1+5] + t9*D[i1+6]
-			u7 = t1*D[i2+1] + t2*D[i2+2] + t3*D[i2+3]
-			u8 = t4*D[i2+1] + t5*D[i2+2] + t6*D[i2+3]
-			u9 = t7*D[i2+1] + t8*D[i2+2] + t9*D[i2+3]
-			u10 = t1*D[i2+4] + t2*D[i2+5] + t3*D[i2+6]
-			u11 = t4*D[i2+4] + t5*D[i2+5] + t6*D[i2+6]
-			u12 = t7*D[i2+4] + t8*D[i2+5] + t9*D[i2+6]
-			Dx[0] = u1
-			Dy[0] = u2
-			Dz[0] = u3
-			Rx[0] = u4
-			Sy[0] = u6
-			Sz[0] = -u5
-			dx_ = float64(dx)
-			{
-				for i = 1; i <= nx; func() int {
-					i += 1
-					return i
-				}() {
-					if i == nx {
-						dx_ = dxnx
-					}
-					Dx[i] = Dx[i-1] + 0.5*(Nx[i-1]+Nx[i])/float64((E[m]*Ax[m]))*dx_
-				}
-			}
-			{
-				for i = 1; i <= nx; func() int {
-					i += 1
-					return i
-				}() {
-					Dx[i] -= (Dx[nx] - u7) * float64(i) / float64(nx)
-				}
-			}
-			dx_ = float64(dx)
-			{
-				for i = 1; i <= nx; func() int {
-					i += 1
-					return i
-				}() {
-					if i == nx {
-						dx_ = dxnx
-					}
-					Rx[i] = Rx[i-1] + 0.5*(Tx[i-1]+Tx[i])/float64((G[m]*Jx[m]))*dx_
-				}
-			}
-			{
-				for i = 1; i <= nx; func() int {
-					i += 1
-					return i
-				}() {
-					Rx[i] -= (Rx[nx] - u10) * float64(i) / float64(nx)
-				}
-			}
-			dx_ = float64(dx)
-			{
-				for i = 1; i <= nx; func() int {
-					i += 1
-					return i
-				}() {
-					if i == nx {
-						dx_ = dxnx
-					}
-					Sy[i] = Sy[i-1] + 0.5*(Mz[i-1]+Mz[i])/float64((E[m]*Iz[m]))*dx_
-					Sz[i] = Sz[i-1] + 0.5*(My[i-1]+My[i])/float64((E[m]*Iy[m]))*dx_
-				}
-			}
-			{
-				for i = 1; i <= nx; func() int {
-					i += 1
-					return i
-				}() {
-					Sy[i] -= (Sy[nx] - u12) * float64(i) / float64(nx)
-					Sz[i] -= (Sz[nx] + u11) * float64(i) / float64(nx)
-				}
-			}
-			if shear != 0 {
-				{
-					for i = 0; i <= nx; func() int {
-						i += 1
-						return i
-					}() {
-						Sy[i] += Vy[i] / float64((G[m] * Asy[m]))
-						Sz[i] += Vz[i] / float64((G[m] * Asz[m]))
-					}
-				}
-			}
-			dx_ = float64(dx)
-			{
-				for i = 1; i <= nx; func() int {
-					i += 1
-					return i
-				}() {
-					if i == nx {
-						dx_ = dxnx
-					}
-					Dy[i] = Dy[i-1] + 0.5*(Sy[i-1]+Sy[i])*dx_
-					Dz[i] = Dz[i-1] + 0.5*(Sz[i-1]+Sz[i])*dx_
-				}
-			}
-			{
-				for i = 1; i <= nx; func() int {
-					i += 1
-					return i
-				}() {
-					Dy[i] -= (Dy[nx] - u8) * float64(i) / float64(nx)
-					Dz[i] -= (Dz[nx] - u9) * float64(i) / float64(nx)
-				}
-			}
-			func() float64 {
-				minNx = Nx[0]
-				return minNx
-			}()
-			func() float64 {
-				maxNx = minNx
-				return maxNx
-			}()
-			func() float64 {
-				minVy = Vy[0]
-				return minVy
-			}()
-			func() float64 {
-				maxVy = minVy
-				return maxVy
-			}()
-			func() float64 {
-				minVz = Vz[0]
-				return minVz
-			}()
-			func() float64 {
-				maxVz = minVz
-				return maxVz
-			}()
-			func() float64 {
-				minTx = Tx[0]
-				return minTx
-			}()
-			func() float64 {
-				maxTx = minTx
-				return maxTx
-			}()
-			func() float64 {
-				minMy = My[0]
-				return minMy
-			}()
-			func() float64 {
-				maxMy = minMy
-				return maxMy
-			}()
-			func() float64 {
-				minMz = Mz[0]
-				return minMz
-			}()
-			func() float64 {
-				maxMz = minMz
-				return maxMz
-			}()
-			func() float64 {
-				minDx = Dx[0]
-				return minDx
-			}()
-			func() float64 {
-				maxDx = minDx
-				return maxDx
-			}()
-			func() float64 {
-				minDy = Dy[0]
-				return minDy
-			}()
-			func() float64 {
-				maxDy = minDy
-				return maxDy
-			}()
-			func() float64 {
-				minDz = Dz[0]
-				return minDz
-			}()
-			func() float64 {
-				maxDz = minDz
-				return maxDz
-			}()
-			func() float64 {
-				minRx = Rx[0]
-				return minRx
-			}()
-			func() float64 {
-				maxRx = minRx
-				return maxRx
-			}()
-			func() float64 {
-				minSy = Sy[0]
-				return minSy
-			}()
-			func() float64 {
-				maxSy = minSy
-				return maxSy
-			}()
-			func() float64 {
-				minSz = Sz[0]
-				return minSz
-			}()
-			func() float64 {
-				maxSz = minSz
-				return maxSz
-			}()
-			{
-				for i = 1; i <= nx; func() int {
-					i += 1
-					return i
-				}() {
-					maxNx = func() float64 {
-						if (map[bool]int{false: 0, true: 1}[Nx[i] > maxNx]) != 0 {
-							return Nx[i]
-						} else {
-							return maxNx
-						}
-					}()
-					minNx = func() float64 {
-						if (map[bool]int{false: 0, true: 1}[Nx[i] < minNx]) != 0 {
-							return Nx[i]
-						} else {
-							return minNx
-						}
-					}()
-					maxVy = func() float64 {
-						if (map[bool]int{false: 0, true: 1}[Vy[i] > maxVy]) != 0 {
-							return Vy[i]
-						} else {
-							return maxVy
-						}
-					}()
-					minVy = func() float64 {
-						if (map[bool]int{false: 0, true: 1}[Vy[i] < minVy]) != 0 {
-							return Vy[i]
-						} else {
-							return minVy
-						}
-					}()
-					maxVz = func() float64 {
-						if (map[bool]int{false: 0, true: 1}[Vz[i] > maxVz]) != 0 {
-							return Vz[i]
-						} else {
-							return maxVz
-						}
-					}()
-					minVz = func() float64 {
-						if (map[bool]int{false: 0, true: 1}[Vz[i] < minVz]) != 0 {
-							return Vz[i]
-						} else {
-							return minVz
-						}
-					}()
-					maxTx = func() float64 {
-						if (map[bool]int{false: 0, true: 1}[Tx[i] > maxTx]) != 0 {
-							return Tx[i]
-						} else {
-							return maxTx
-						}
-					}()
-					minTx = func() float64 {
-						if (map[bool]int{false: 0, true: 1}[Tx[i] < minTx]) != 0 {
-							return Tx[i]
-						} else {
-							return minTx
-						}
-					}()
-					maxMy = func() float64 {
-						if (map[bool]int{false: 0, true: 1}[My[i] > maxMy]) != 0 {
-							return My[i]
-						} else {
-							return maxMy
-						}
-					}()
-					minMy = func() float64 {
-						if (map[bool]int{false: 0, true: 1}[My[i] < minMy]) != 0 {
-							return My[i]
-						} else {
-							return minMy
-						}
-					}()
-					maxMz = func() float64 {
-						if (map[bool]int{false: 0, true: 1}[Mz[i] > maxMz]) != 0 {
-							return Mz[i]
-						} else {
-							return maxMz
-						}
-					}()
-					minMz = func() float64 {
-						if (map[bool]int{false: 0, true: 1}[Mz[i] < minMz]) != 0 {
-							return Mz[i]
-						} else {
-							return minMz
-						}
-					}()
-				}
-			}
-			{
-				for i = 1; i <= nx; func() int {
-					i += 1
-					return i
-				}() {
-					maxDx = func() float64 {
-						if (map[bool]int{false: 0, true: 1}[Dx[i] > maxDx]) != 0 {
-							return Dx[i]
-						} else {
-							return maxDx
-						}
-					}()
-					minDx = func() float64 {
-						if (map[bool]int{false: 0, true: 1}[Dx[i] < minDx]) != 0 {
-							return Dx[i]
-						} else {
-							return minDx
-						}
-					}()
-					maxDy = func() float64 {
-						if (map[bool]int{false: 0, true: 1}[Dy[i] > maxDy]) != 0 {
-							return Dy[i]
-						} else {
-							return maxDy
-						}
-					}()
-					minDy = func() float64 {
-						if (map[bool]int{false: 0, true: 1}[Dy[i] < minDy]) != 0 {
-							return Dy[i]
-						} else {
-							return minDy
-						}
-					}()
-					maxDz = func() float64 {
-						if (map[bool]int{false: 0, true: 1}[Dz[i] > maxDz]) != 0 {
-							return Dz[i]
-						} else {
-							return maxDz
-						}
-					}()
-					minDz = func() float64 {
-						if (map[bool]int{false: 0, true: 1}[Dz[i] < minDz]) != 0 {
-							return Dz[i]
-						} else {
-							return minDz
-						}
-					}()
-					maxRx = func() float64 {
-						if (map[bool]int{false: 0, true: 1}[Rx[i] > maxRx]) != 0 {
-							return Rx[i]
-						} else {
-							return maxRx
-						}
-					}()
-					minRx = func() float64 {
-						if (map[bool]int{false: 0, true: 1}[Rx[i] < minRx]) != 0 {
-							return Rx[i]
-						} else {
-							return minRx
-						}
-					}()
-					maxSy = func() float64 {
-						if (map[bool]int{false: 0, true: 1}[Sy[i] > maxSy]) != 0 {
-							return Sy[i]
-						} else {
-							return maxSy
-						}
-					}()
-					minSy = func() float64 {
-						if (map[bool]int{false: 0, true: 1}[Sy[i] < minSy]) != 0 {
-							return Sy[i]
-						} else {
-							return minSy
-						}
-					}()
-					maxSz = func() float64 {
-						if (map[bool]int{false: 0, true: 1}[Sz[i] > maxSz]) != 0 {
-							return Sz[i]
-						} else {
-							return maxSz
-						}
-					}()
-					minSz = func() float64 {
-						if (map[bool]int{false: 0, true: 1}[Sz[i] < minSz]) != 0 {
-							return Sz[i]
-						} else {
-							return minSz
-						}
-					}()
-				}
-			}
-			noarch.Fprintf(fpif, []byte("#                \tNx        \tVy        \tVz        \tTx        \tMy        \tMz        \tDx        \tDy        \tDz         \tRx\t*\n\x00"))
-			noarch.Fprintf(fpif, []byte("# MAXIMUM\t%14.6e\t%14.6e\t%14.6e\t%14.6e\t%14.6e\t%14.6e\t%14.6e\t%14.6e\t%14.6e\t%14.6e\n\x00"), maxNx, maxVy, maxVz, maxTx, maxMy, maxMz, maxDx, maxDy, maxDz, maxRx)
-			noarch.Fprintf(fpif, []byte("# MINIMUM\t%14.6e\t%14.6e\t%14.6e\t%14.6e\t%14.6e\t%14.6e\t%14.6e\t%14.6e\t%14.6e\t%14.6e\n\x00"), minNx, minVy, minVz, minTx, minMy, minMz, minDx, minDy, minDz, minRx)
-			noarch.Fprintf(fpif, []byte("#.x                \tNx        \tVy        \tVz        \tTx       \tMy        \tMz        \tDx        \tDy        \tDz        \tRx\t~\n\x00"))
-			{
-				for i = 0; i <= nx; func() int {
-					i += 1
-					return i
-				}() {
-					noarch.Fprintf(fpif, []byte("%14.6e\t\x00"), x[i])
-					noarch.Fprintf(fpif, []byte("%14.6e\t%14.6e\t%14.6e\t\x00"), Nx[i], Vy[i], Vz[i])
-					noarch.Fprintf(fpif, []byte("%14.6e\t%14.6e\t%14.6e\t\x00"), Tx[i], My[i], Mz[i])
-					noarch.Fprintf(fpif, []byte("%14.6e\t%14.6e\t%14.6e\t%14.6e\n\x00"), Dx[i], Dy[i], Dz[i], Rx[i])
-				}
-			}
-			noarch.Fprintf(fpif, []byte("#---------------------------------------\n\n\n\x00"))
-			noarch.Fprintf(fp, []byte(" %5d   max  %10.3f  %10.3f %10.3f %10.3f %10.3f %10.3f\n\x00"), m, maxNx, maxVy, maxVz, maxTx, maxMy, maxMz)
-			noarch.Fprintf(fp, []byte(" %5d   min  %10.3f  %10.3f %10.3f %10.3f %10.3f %10.3f\n\x00"), m, minNx, minVy, minVz, minTx, minMy, minMz)
-			noarch.Fprintf(fpcsv, []byte(" %5d, \"max\", %10.3f,  %10.3f, %10.3f, %10.3f, %10.3f, %10.3f\n\x00"), m, maxNx, maxVy, maxVz, maxTx, maxMy, maxMz)
-			noarch.Fprintf(fpcsv, []byte(" %5d, \"min\", %10.3f,  %10.3f, %10.3f, %10.3f, %10.3f, %10.3f\n\x00"), m, minNx, minVy, minVz, minTx, minMy, minMz)
-			free_dvector(x, int32(0), int32(nx))
-			free_dvector(Nx, int32(0), int32(nx))
-			free_dvector(Vy, int32(0), int32(nx))
-			free_dvector(Vz, int32(0), int32(nx))
-			free_dvector(Tx, int32(0), int32(nx))
-			free_dvector(My, int32(0), int32(nx))
-			free_dvector(Mz, int32(0), int32(nx))
-			free_dvector(Rx, int32(0), int32(nx))
-			free_dvector(Sy, int32(0), int32(nx))
-			free_dvector(Sz, int32(0), int32(nx))
-			free_dvector(Dx, int32(0), int32(nx))
-			free_dvector(Dy, int32(0), int32(nx))
-			free_dvector(Dz, int32(0), int32(nx))
 		}
+		for i = 1; i <= nx; i++ {
+			Nx[i] -= (Nx[nx] - Q[m][7]) * float64(i) / float64(nx)
+			Vy[i] -= (Vy[nx] - Q[m][8]) * float64(i) / float64(nx)
+			Vz[i] -= (Vz[nx] - Q[m][9]) * float64(i) / float64(nx)
+			Tx[i] -= (Tx[nx] - Q[m][10]) * float64(i) / float64(nx)
+		}
+		dx_ = float64(dx)
+		for i = 1; i <= nx; i++ {
+			if i == nx {
+				dx_ = dxnx
+			}
+			My[i] = My[i-1] - 0.5*(Vz[i]+Vz[i-1])*dx_
+			Mz[i] = Mz[i-1] - 0.5*(Vy[i]+Vy[i-1])*dx_
+		}
+		for i = 1; i <= nx; i++ {
+			My[i] -= (My[nx] + Q[m][11]) * float64(i) / float64(nx)
+			Mz[i] -= (Mz[nx] - Q[m][12]) * float64(i) / float64(nx)
+		}
+		i1 = 6 * (n1 - 1)
+		i2 = 6 * (n2 - 1)
+		u1 = t1*D[i1+1] + t2*D[i1+2] + t3*D[i1+3]
+		u2 = t4*D[i1+1] + t5*D[i1+2] + t6*D[i1+3]
+		u3 = t7*D[i1+1] + t8*D[i1+2] + t9*D[i1+3]
+		u4 = t1*D[i1+4] + t2*D[i1+5] + t3*D[i1+6]
+		u5 = t4*D[i1+4] + t5*D[i1+5] + t6*D[i1+6]
+		u6 = t7*D[i1+4] + t8*D[i1+5] + t9*D[i1+6]
+		u7 = t1*D[i2+1] + t2*D[i2+2] + t3*D[i2+3]
+		u8 = t4*D[i2+1] + t5*D[i2+2] + t6*D[i2+3]
+		u9 = t7*D[i2+1] + t8*D[i2+2] + t9*D[i2+3]
+		u10 = t1*D[i2+4] + t2*D[i2+5] + t3*D[i2+6]
+		u11 = t4*D[i2+4] + t5*D[i2+5] + t6*D[i2+6]
+		u12 = t7*D[i2+4] + t8*D[i2+5] + t9*D[i2+6]
+		Dx[0] = u1
+		Dy[0] = u2
+		Dz[0] = u3
+		Rx[0] = u4
+		Sy[0] = u6
+		Sz[0] = -u5
+		dx_ = float64(dx)
+		for i = 1; i <= nx; i++ {
+			if i == nx {
+				dx_ = dxnx
+			}
+			Dx[i] = Dx[i-1] + 0.5*(Nx[i-1]+Nx[i])/float64((E[m]*Ax[m]))*dx_
+		}
+		for i = 1; i <= nx; i++ {
+			Dx[i] -= (Dx[nx] - u7) * float64(i) / float64(nx)
+		}
+		dx_ = float64(dx)
+		for i = 1; i <= nx; i++ {
+			if i == nx {
+				dx_ = dxnx
+			}
+			Rx[i] = Rx[i-1] + 0.5*(Tx[i-1]+Tx[i])/float64((G[m]*Jx[m]))*dx_
+		}
+		for i = 1; i <= nx; i++ {
+			Rx[i] -= (Rx[nx] - u10) * float64(i) / float64(nx)
+		}
+		dx_ = float64(dx)
+		for i = 1; i <= nx; i++ {
+			if i == nx {
+				dx_ = dxnx
+			}
+			Sy[i] = Sy[i-1] + 0.5*(Mz[i-1]+Mz[i])/float64((E[m]*Iz[m]))*dx_
+			Sz[i] = Sz[i-1] + 0.5*(My[i-1]+My[i])/float64((E[m]*Iy[m]))*dx_
+		}
+		for i = 1; i <= nx; i++ {
+			Sy[i] -= (Sy[nx] - u12) * float64(i) / float64(nx)
+			Sz[i] -= (Sz[nx] + u11) * float64(i) / float64(nx)
+		}
+		if shear != 0 {
+			for i = 0; i <= nx; i++ {
+				Sy[i] += Vy[i] / float64((G[m] * Asy[m]))
+				Sz[i] += Vz[i] / float64((G[m] * Asz[m]))
+			}
+		}
+		dx_ = float64(dx)
+		for i = 1; i <= nx; i++ {
+			if i == nx {
+				dx_ = dxnx
+			}
+			Dy[i] = Dy[i-1] + 0.5*(Sy[i-1]+Sy[i])*dx_
+			Dz[i] = Dz[i-1] + 0.5*(Sz[i-1]+Sz[i])*dx_
+		}
+		for i = 1; i <= nx; i++ {
+			Dy[i] -= (Dy[nx] - u8) * float64(i) / float64(nx)
+			Dz[i] -= (Dz[nx] - u9) * float64(i) / float64(nx)
+		}
+		func() float64 {
+			minNx = Nx[0]
+			return minNx
+		}()
+		func() float64 {
+			maxNx = minNx
+			return maxNx
+		}()
+		func() float64 {
+			minVy = Vy[0]
+			return minVy
+		}()
+		func() float64 {
+			maxVy = minVy
+			return maxVy
+		}()
+		func() float64 {
+			minVz = Vz[0]
+			return minVz
+		}()
+		func() float64 {
+			maxVz = minVz
+			return maxVz
+		}()
+		func() float64 {
+			minTx = Tx[0]
+			return minTx
+		}()
+		func() float64 {
+			maxTx = minTx
+			return maxTx
+		}()
+		func() float64 {
+			minMy = My[0]
+			return minMy
+		}()
+		func() float64 {
+			maxMy = minMy
+			return maxMy
+		}()
+		func() float64 {
+			minMz = Mz[0]
+			return minMz
+		}()
+		func() float64 {
+			maxMz = minMz
+			return maxMz
+		}()
+		func() float64 {
+			minDx = Dx[0]
+			return minDx
+		}()
+		func() float64 {
+			maxDx = minDx
+			return maxDx
+		}()
+		func() float64 {
+			minDy = Dy[0]
+			return minDy
+		}()
+		func() float64 {
+			maxDy = minDy
+			return maxDy
+		}()
+		func() float64 {
+			minDz = Dz[0]
+			return minDz
+		}()
+		func() float64 {
+			maxDz = minDz
+			return maxDz
+		}()
+		func() float64 {
+			minRx = Rx[0]
+			return minRx
+		}()
+		func() float64 {
+			maxRx = minRx
+			return maxRx
+		}()
+		func() float64 {
+			minSy = Sy[0]
+			return minSy
+		}()
+		func() float64 {
+			maxSy = minSy
+			return maxSy
+		}()
+		func() float64 {
+			minSz = Sz[0]
+			return minSz
+		}()
+		func() float64 {
+			maxSz = minSz
+			return maxSz
+		}()
+		for i = 1; i <= nx; i++ {
+			maxNx = func() float64 {
+				if (map[bool]int{false: 0, true: 1}[Nx[i] > maxNx]) != 0 {
+					return Nx[i]
+				} else {
+					return maxNx
+				}
+			}()
+			minNx = func() float64 {
+				if (map[bool]int{false: 0, true: 1}[Nx[i] < minNx]) != 0 {
+					return Nx[i]
+				} else {
+					return minNx
+				}
+			}()
+			maxVy = func() float64 {
+				if (map[bool]int{false: 0, true: 1}[Vy[i] > maxVy]) != 0 {
+					return Vy[i]
+				} else {
+					return maxVy
+				}
+			}()
+			minVy = func() float64 {
+				if (map[bool]int{false: 0, true: 1}[Vy[i] < minVy]) != 0 {
+					return Vy[i]
+				} else {
+					return minVy
+				}
+			}()
+			maxVz = func() float64 {
+				if (map[bool]int{false: 0, true: 1}[Vz[i] > maxVz]) != 0 {
+					return Vz[i]
+				} else {
+					return maxVz
+				}
+			}()
+			minVz = func() float64 {
+				if (map[bool]int{false: 0, true: 1}[Vz[i] < minVz]) != 0 {
+					return Vz[i]
+				} else {
+					return minVz
+				}
+			}()
+			maxTx = func() float64 {
+				if (map[bool]int{false: 0, true: 1}[Tx[i] > maxTx]) != 0 {
+					return Tx[i]
+				} else {
+					return maxTx
+				}
+			}()
+			minTx = func() float64 {
+				if (map[bool]int{false: 0, true: 1}[Tx[i] < minTx]) != 0 {
+					return Tx[i]
+				} else {
+					return minTx
+				}
+			}()
+			maxMy = func() float64 {
+				if (map[bool]int{false: 0, true: 1}[My[i] > maxMy]) != 0 {
+					return My[i]
+				} else {
+					return maxMy
+				}
+			}()
+			minMy = func() float64 {
+				if (map[bool]int{false: 0, true: 1}[My[i] < minMy]) != 0 {
+					return My[i]
+				} else {
+					return minMy
+				}
+			}()
+			maxMz = func() float64 {
+				if (map[bool]int{false: 0, true: 1}[Mz[i] > maxMz]) != 0 {
+					return Mz[i]
+				} else {
+					return maxMz
+				}
+			}()
+			minMz = func() float64 {
+				if (map[bool]int{false: 0, true: 1}[Mz[i] < minMz]) != 0 {
+					return Mz[i]
+				} else {
+					return minMz
+				}
+			}()
+		}
+		for i = 1; i <= nx; i++ {
+			maxDx = func() float64 {
+				if (map[bool]int{false: 0, true: 1}[Dx[i] > maxDx]) != 0 {
+					return Dx[i]
+				} else {
+					return maxDx
+				}
+			}()
+			minDx = func() float64 {
+				if (map[bool]int{false: 0, true: 1}[Dx[i] < minDx]) != 0 {
+					return Dx[i]
+				} else {
+					return minDx
+				}
+			}()
+			maxDy = func() float64 {
+				if (map[bool]int{false: 0, true: 1}[Dy[i] > maxDy]) != 0 {
+					return Dy[i]
+				} else {
+					return maxDy
+				}
+			}()
+			minDy = func() float64 {
+				if (map[bool]int{false: 0, true: 1}[Dy[i] < minDy]) != 0 {
+					return Dy[i]
+				} else {
+					return minDy
+				}
+			}()
+			maxDz = func() float64 {
+				if (map[bool]int{false: 0, true: 1}[Dz[i] > maxDz]) != 0 {
+					return Dz[i]
+				} else {
+					return maxDz
+				}
+			}()
+			minDz = func() float64 {
+				if (map[bool]int{false: 0, true: 1}[Dz[i] < minDz]) != 0 {
+					return Dz[i]
+				} else {
+					return minDz
+				}
+			}()
+			maxRx = func() float64 {
+				if (map[bool]int{false: 0, true: 1}[Rx[i] > maxRx]) != 0 {
+					return Rx[i]
+				} else {
+					return maxRx
+				}
+			}()
+			minRx = func() float64 {
+				if (map[bool]int{false: 0, true: 1}[Rx[i] < minRx]) != 0 {
+					return Rx[i]
+				} else {
+					return minRx
+				}
+			}()
+			maxSy = func() float64 {
+				if (map[bool]int{false: 0, true: 1}[Sy[i] > maxSy]) != 0 {
+					return Sy[i]
+				} else {
+					return maxSy
+				}
+			}()
+			minSy = func() float64 {
+				if (map[bool]int{false: 0, true: 1}[Sy[i] < minSy]) != 0 {
+					return Sy[i]
+				} else {
+					return minSy
+				}
+			}()
+			maxSz = func() float64 {
+				if (map[bool]int{false: 0, true: 1}[Sz[i] > maxSz]) != 0 {
+					return Sz[i]
+				} else {
+					return maxSz
+				}
+			}()
+			minSz = func() float64 {
+				if (map[bool]int{false: 0, true: 1}[Sz[i] < minSz]) != 0 {
+					return Sz[i]
+				} else {
+					return minSz
+				}
+			}()
+		}
+		noarch.Fprintf(fpif, []byte("#                \tNx        \tVy        \tVz        \tTx        \tMy        \tMz        \tDx        \tDy        \tDz         \tRx\t*\n\x00"))
+		noarch.Fprintf(fpif, []byte("# MAXIMUM\t%14.6e\t%14.6e\t%14.6e\t%14.6e\t%14.6e\t%14.6e\t%14.6e\t%14.6e\t%14.6e\t%14.6e\n\x00"), maxNx, maxVy, maxVz, maxTx, maxMy, maxMz, maxDx, maxDy, maxDz, maxRx)
+		noarch.Fprintf(fpif, []byte("# MINIMUM\t%14.6e\t%14.6e\t%14.6e\t%14.6e\t%14.6e\t%14.6e\t%14.6e\t%14.6e\t%14.6e\t%14.6e\n\x00"), minNx, minVy, minVz, minTx, minMy, minMz, minDx, minDy, minDz, minRx)
+		noarch.Fprintf(fpif, []byte("#.x                \tNx        \tVy        \tVz        \tTx       \tMy        \tMz        \tDx        \tDy        \tDz        \tRx\t~\n\x00"))
+		for i = 0; i <= nx; i++ {
+			noarch.Fprintf(fpif, []byte("%14.6e\t\x00"), x[i])
+			noarch.Fprintf(fpif, []byte("%14.6e\t%14.6e\t%14.6e\t\x00"), Nx[i], Vy[i], Vz[i])
+			noarch.Fprintf(fpif, []byte("%14.6e\t%14.6e\t%14.6e\t\x00"), Tx[i], My[i], Mz[i])
+			noarch.Fprintf(fpif, []byte("%14.6e\t%14.6e\t%14.6e\t%14.6e\n\x00"), Dx[i], Dy[i], Dz[i], Rx[i])
+		}
+		noarch.Fprintf(fpif, []byte("#---------------------------------------\n\n\n\x00"))
+		noarch.Fprintf(fp, []byte(" %5d   max  %10.3f  %10.3f %10.3f %10.3f %10.3f %10.3f\n\x00"), m, maxNx, maxVy, maxVz, maxTx, maxMy, maxMz)
+		noarch.Fprintf(fp, []byte(" %5d   min  %10.3f  %10.3f %10.3f %10.3f %10.3f %10.3f\n\x00"), m, minNx, minVy, minVz, minTx, minMy, minMz)
+		noarch.Fprintf(fpcsv, []byte(" %5d, \"max\", %10.3f,  %10.3f, %10.3f, %10.3f, %10.3f, %10.3f\n\x00"), m, maxNx, maxVy, maxVz, maxTx, maxMy, maxMz)
+		noarch.Fprintf(fpcsv, []byte(" %5d, \"min\", %10.3f,  %10.3f, %10.3f, %10.3f, %10.3f, %10.3f\n\x00"), m, minNx, minVy, minVz, minTx, minMy, minMz)
+		free_dvector(x, int32(0), int32(nx))
+		free_dvector(Nx, int32(0), int32(nx))
+		free_dvector(Vy, int32(0), int32(nx))
+		free_dvector(Vz, int32(0), int32(nx))
+		free_dvector(Tx, int32(0), int32(nx))
+		free_dvector(My, int32(0), int32(nx))
+		free_dvector(Mz, int32(0), int32(nx))
+		free_dvector(Rx, int32(0), int32(nx))
+		free_dvector(Sy, int32(0), int32(nx))
+		free_dvector(Sz, int32(0), int32(nx))
+		free_dvector(Dx, int32(0), int32(nx))
+		free_dvector(Dy, int32(0), int32(nx))
+		free_dvector(Dz, int32(0), int32(nx))
 	}
 	noarch.Fclose(fpif)
 	noarch.Fclose(fpcsv)
@@ -8493,38 +7462,27 @@ func write_modal_results(fp *noarch.File, nN int, nE int, nI int, DoF int, M [][
 	msX = dvector(int32(1), int32(DoF))
 	msY = dvector(int32(1), int32(DoF))
 	msZ = dvector(int32(1), int32(DoF))
-	{
-		for i = 1; i <= DoF; func() int {
-			i += 1
-			return i
-		}() {
-			func() float64 {
-				msZ[i] = 0
-				return msZ[i]
-			}()
-			func() float64 {
-				msY[i] = msZ[i]
-				return msY[i]
-			}()
-			func() float64 {
-				msX[i] = msY[i]
-				return msX[i]
-			}()
-			{
-				for j = 1; j <= DoF; j += 6 {
-					msX[i] += M[i][j]
-				}
-			}
-			{
-				for j = 2; j <= DoF; j += 6 {
-					msY[i] += M[i][j]
-				}
-			}
-			{
-				for j = 3; j <= DoF; j += 6 {
-					msZ[i] += M[i][j]
-				}
-			}
+	for i = 1; i <= DoF; i++ {
+		func() float64 {
+			msZ[i] = 0
+			return msZ[i]
+		}()
+		func() float64 {
+			msY[i] = msZ[i]
+			return msY[i]
+		}()
+		func() float64 {
+			msX[i] = msY[i]
+			return msX[i]
+		}()
+		for j = 1; j <= DoF; j += 6 {
+			msX[i] += M[i][j]
+		}
+		for j = 2; j <= DoF; j += 6 {
+			msY[i] += M[i][j]
+		}
+		for j = 3; j <= DoF; j += 6 {
+			msZ[i] += M[i][j]
 		}
 	}
 	if (DoF - sumR) > nM {
@@ -8539,23 +7497,13 @@ func write_modal_results(fp *noarch.File, nN int, nE int, nI int, DoF int, M [][
 	noarch.Fprintf(fp, []byte("\t(diagonal of the mass matrix)\t\t\t(global)\n\x00"))
 	noarch.Fprintf(fp, []byte("  Node  X-mass      Y-mass      Z-mass\x00"))
 	noarch.Fprintf(fp, []byte("      X-inrta     Y-inrta     Z-inrta\n\x00"))
-	{
-		for j = 1; j <= nN; func() int {
-			j += 1
-			return j
-		}() {
-			k = 6 * (j - 1)
-			noarch.Fprintf(fp, []byte(" %5d\x00"), j)
-			{
-				for i = 1; i <= 6; func() int {
-					i += 1
-					return i
-				}() {
-					noarch.Fprintf(fp, []byte(" %11.5e\x00"), M[k+i][k+i])
-				}
-			}
-			noarch.Fprintf(fp, []byte("\n\x00"))
+	for j = 1; j <= nN; j++ {
+		k = 6 * (j - 1)
+		noarch.Fprintf(fp, []byte(" %5d\x00"), j)
+		for i = 1; i <= 6; i++ {
+			noarch.Fprintf(fp, []byte(" %11.5e\x00"), M[k+i][k+i])
 		}
+		noarch.Fprintf(fp, []byte("\n\x00"))
 	}
 	if lump != 0 {
 		noarch.Fprintf(fp, []byte("  Lump masses at nodes.\n\x00"))
@@ -8565,61 +7513,34 @@ func write_modal_results(fp *noarch.File, nN int, nE int, nI int, DoF int, M [][
 	noarch.Fprintf(fp, []byte("N A T U R A L   F R E Q U E N C I E S   & \n\x00"))
 	noarch.Fprintf(fp, []byte("M A S S   N O R M A L I Z E D   M O D E   S H A P E S \n\x00"))
 	noarch.Fprintf(fp, []byte(" convergence tolerance: %.3e \n\x00"), tol)
-	{
-		for m = 1; m <= num_modes; func() int {
-			m += 1
-			return m
-		}() {
-			mpfX = 0
-			{
-				for i = 1; i <= DoF; func() int {
-					i += 1
-					return i
-				}() {
-					mpfX += V[i][m] * msX[i]
-				}
+	for m = 1; m <= num_modes; m++ {
+		mpfX = 0
+		for i = 1; i <= DoF; i++ {
+			mpfX += V[i][m] * msX[i]
+		}
+		mpfY = 0
+		for i = 1; i <= DoF; i++ {
+			mpfY += V[i][m] * msY[i]
+		}
+		mpfZ = 0
+		for i = 1; i <= DoF; i++ {
+			mpfZ += V[i][m] * msZ[i]
+		}
+		noarch.Fprintf(fp, []byte("  MODE %5d:   f= %lf Hz,  T= %lf sec\n\x00"), m, f[m], 1/f[m])
+		noarch.Fprintf(fp, []byte("\t\tX- modal participation factor = %12.4e \n\x00"), mpfX)
+		noarch.Fprintf(fp, []byte("\t\tY- modal participation factor = %12.4e \n\x00"), mpfY)
+		noarch.Fprintf(fp, []byte("\t\tZ- modal participation factor = %12.4e \n\x00"), mpfZ)
+		noarch.Fprintf(fp, []byte("  Node    X-dsp       Y-dsp       Z-dsp\x00"))
+		noarch.Fprintf(fp, []byte("       X-rot       Y-rot       Z-rot\n\x00"))
+		for j = 1; j <= nN; j++ {
+			noarch.Fprintf(fp, []byte(" %5d\x00"), j)
+			for i = 5; i >= 0; func() int {
+				i -= 1
+				return i
+			}() {
+				noarch.Fprintf(fp, []byte(" %11.3e\x00"), V[6*j-i][m])
 			}
-			mpfY = 0
-			{
-				for i = 1; i <= DoF; func() int {
-					i += 1
-					return i
-				}() {
-					mpfY += V[i][m] * msY[i]
-				}
-			}
-			mpfZ = 0
-			{
-				for i = 1; i <= DoF; func() int {
-					i += 1
-					return i
-				}() {
-					mpfZ += V[i][m] * msZ[i]
-				}
-			}
-			noarch.Fprintf(fp, []byte("  MODE %5d:   f= %lf Hz,  T= %lf sec\n\x00"), m, f[m], 1/f[m])
-			noarch.Fprintf(fp, []byte("\t\tX- modal participation factor = %12.4e \n\x00"), mpfX)
-			noarch.Fprintf(fp, []byte("\t\tY- modal participation factor = %12.4e \n\x00"), mpfY)
-			noarch.Fprintf(fp, []byte("\t\tZ- modal participation factor = %12.4e \n\x00"), mpfZ)
-			noarch.Fprintf(fp, []byte("  Node    X-dsp       Y-dsp       Z-dsp\x00"))
-			noarch.Fprintf(fp, []byte("       X-rot       Y-rot       Z-rot\n\x00"))
-			{
-				for j = 1; j <= nN; func() int {
-					j += 1
-					return j
-				}() {
-					noarch.Fprintf(fp, []byte(" %5d\x00"), j)
-					{
-						for i = 5; i >= 0; func() int {
-							i -= 1
-							return i
-						}() {
-							noarch.Fprintf(fp, []byte(" %11.3e\x00"), V[6*j-i][m])
-						}
-					}
-					noarch.Fprintf(fp, []byte("\n\x00"))
-				}
-			}
+			noarch.Fprintf(fp, []byte("\n\x00"))
 		}
 	}
 	noarch.Fprintf(fp, []byte("M A T R I X    I T E R A T I O N S: %d\n\x00"), iter)
@@ -8708,20 +7629,15 @@ printf("  frel = %3d; m = %3d; n1 =%4d; n2 = %4d; nx = %3d L = %f \n", frel,m,n1
 	var lw int = 1
 	var now noarch.TimeT
 	_ = noarch.Time((*[1]noarch.TimeT)(unsafe.Pointer(&now))[:])
-	{
-		for j = 1; j <= nN; func() int {
-			j += 1
-			return j
-		}() {
-			if xyz[j].x != 0 {
-				X = 1
-			}
-			if xyz[j].y != 0 {
-				Y = 1
-			}
-			if xyz[j].z != 0 {
-				Z = 1
-			}
+	for j = 1; j <= nN; j++ {
+		if xyz[j].x != 0 {
+			X = 1
+		}
+		if xyz[j].y != 0 {
+			Y = 1
+		}
+		if xyz[j].z != 0 {
+			Z = 1
 		}
 	}
 	if (map[bool]int{false: 0, true: 1}[X != 0 && Y != 0 && Z != 0]) != 0 || D3_flag != 0 {
@@ -8769,27 +7685,17 @@ printf("  frel = %3d; m = %3d; n1 =%4d; n2 = %4d; nx = %3d L = %f \n", frel,m,n1
 		noarch.Fprintf(fpm, []byte("set size ratio -1    # 1:1 2D axis scaling \n\x00"))
 		noarch.Fprintf(fpm, []byte("# set view equal xyz # 1:1 3D axis scaling \n\x00"))
 		noarch.Fprintf(fpm, []byte("# NODE NUMBER LABELS\n\x00"))
-		{
-			for j = 1; j <= nN; func() int {
-				j += 1
-				return j
-			}() {
-				noarch.Fprintf(fpm, []byte("set label ' %d' at %12.4e, %12.4e, %12.4e\n\x00"), j, xyz[j].x, xyz[j].y, xyz[j].z)
-			}
+		for j = 1; j <= nN; j++ {
+			noarch.Fprintf(fpm, []byte("set label ' %d' at %12.4e, %12.4e, %12.4e\n\x00"), j, xyz[j].x, xyz[j].y, xyz[j].z)
 		}
 		noarch.Fprintf(fpm, []byte("# ELEMENT NUMBER LABELS\n\x00"))
-		{
-			for m = 1; m <= nE; func() int {
-				m += 1
-				return m
-			}() {
-				n1 = N1[m]
-				n2 = N2[m]
-				mx = 0.5 * (xyz[n1].x + xyz[n2].x)
-				my = 0.5 * (xyz[n1].y + xyz[n2].y)
-				mz = 0.5 * (xyz[n1].z + xyz[n2].z)
-				noarch.Fprintf(fpm, []byte("set label ' %d' at %12.4e, %12.4e, %12.4e\n\x00"), m, mx, my, mz)
-			}
+		for m = 1; m <= nE; m++ {
+			n1 = N1[m]
+			n2 = N2[m]
+			mx = 0.5 * (xyz[n1].x + xyz[n2].x)
+			my = 0.5 * (xyz[n1].y + xyz[n2].y)
+			mz = 0.5 * (xyz[n1].z + xyz[n2].z)
+			noarch.Fprintf(fpm, []byte("set label ' %d' at %12.4e, %12.4e, %12.4e\n\x00"), m, mx, my, mz)
 		}
 		noarch.Fprintf(fpm, []byte("%c set parametric\n\x00"), int(D3))
 		noarch.Fprintf(fpm, []byte("%c set view 60, 70, %5.2f \n\x00"), int(D3), float64(scale))
@@ -8840,17 +7746,12 @@ printf("  frel = %3d; m = %3d; n1 =%4d; n2 = %4d; nx = %3d L = %f \n", frel,m,n1
 		noarch.Fprintf(fpm, []byte("# %s\x00"), noarch.Ctime((*[1]noarch.TimeT)(unsafe.Pointer(&now))[:]))
 		noarch.Fprintf(fpm, []byte("# U N D E F O R M E D   M E S H   D A T A   (global coordinates)\n\x00"))
 		noarch.Fprintf(fpm, []byte("# Node        X            Y            Z \n\x00"))
-		{
-			for m = 1; m <= nE; func() int {
-				m += 1
-				return m
-			}() {
-				n = N1[m]
-				noarch.Fprintf(fpm, []byte("%5d %12.4e %12.4e %12.4e \n\x00"), n, xyz[n].x, xyz[n].y, xyz[n].z)
-				n = N2[m]
-				noarch.Fprintf(fpm, []byte("%5d %12.4e %12.4e %12.4e\x00"), n, xyz[n].x, xyz[n].y, xyz[n].z)
-				noarch.Fprintf(fpm, []byte("\n\n\n\x00"))
-			}
+		for m = 1; m <= nE; m++ {
+			n = N1[m]
+			noarch.Fprintf(fpm, []byte("%5d %12.4e %12.4e %12.4e \n\x00"), n, xyz[n].x, xyz[n].y, xyz[n].z)
+			n = N2[m]
+			noarch.Fprintf(fpm, []byte("%5d %12.4e %12.4e %12.4e\x00"), n, xyz[n].x, xyz[n].y, xyz[n].z)
+			noarch.Fprintf(fpm, []byte("\n\n\n\x00"))
 		}
 		noarch.Fclose(fpm)
 	}
@@ -8884,37 +7785,28 @@ printf("  frel = %3d; m = %3d; n1 =%4d; n2 = %4d; nx = %3d L = %f \n", frel,m,n1
 			os.Exit(20)
 		}
 	}
-	{
-		for m = 1; m <= nE; func() int {
-			m += 1
-			return m
-		}() {
-			ch = 'a'
-			noarch.Fprintf(fpm, []byte("\n# element %5d \n\x00"), m)
-			if float64(dx) < 0 && anlyz != 0 {
-				cubic_bent_beam(fpm, N1[m], N2[m], xyz, L[m], p[m], D, exagg_static)
+	for m = 1; m <= nE; m++ {
+		ch = 'a'
+		noarch.Fprintf(fpm, []byte("\n# element %5d \n\x00"), m)
+		if float64(dx) < 0 && anlyz != 0 {
+			cubic_bent_beam(fpm, N1[m], N2[m], xyz, L[m], p[m], D, exagg_static)
+		}
+		if float64(dx) > 0 && anlyz != 0 {
+			for int(ch) != int('@') {
+				ch = byte(noarch.Fgetc(fpif))
 			}
-			if float64(dx) > 0 && anlyz != 0 {
-				{
-					for int(ch) != int('@') {
-						ch = byte(noarch.Fgetc(fpif))
-					}
-				}
-				sfrv = noarch.Fscanf(fpif, []byte("%d %d %d %f %f %f %f %f %f %d\x00"), (*[1]int)(unsafe.Pointer(&frel))[:], (*[1]int)(unsafe.Pointer(&n1))[:], (*[1]int)(unsafe.Pointer(&n2))[:], (*[1]float32)(unsafe.Pointer(&x1))[:], (*[1]float32)(unsafe.Pointer(&y1))[:], (*[1]float32)(unsafe.Pointer(&z1))[:], (*[1]float32)(unsafe.Pointer(&x2))[:], (*[1]float32)(unsafe.Pointer(&y2))[:], (*[1]float32)(unsafe.Pointer(&z2))[:], (*[1]int)(unsafe.Pointer(&nx))[:])
-				if sfrv != 10 {
-					sferr(fnif)
-				}
-				if frel != m || N1[m] != n1 || N2[m] != n2 {
-					noarch.Fprintf(stderr, []byte(" error in static_mesh parsing\n\x00"))
-					noarch.Fprintf(stderr, []byte("  frel = %d; m = %d; nx = %d \n\x00"), frel, m, nx)
-				}
-				{
-					for int(ch) != int('~') {
-						ch = byte(noarch.Fgetc(fpif))
-					}
-				}
-				force_bent_beam(fpm, fpif, fnif, nx, N1[m], N2[m], xyz, L[m], p[m], D, exagg_static)
+			sfrv = noarch.Fscanf(fpif, []byte("%d %d %d %f %f %f %f %f %f %d\x00"), (*[1]int)(unsafe.Pointer(&frel))[:], (*[1]int)(unsafe.Pointer(&n1))[:], (*[1]int)(unsafe.Pointer(&n2))[:], (*[1]float32)(unsafe.Pointer(&x1))[:], (*[1]float32)(unsafe.Pointer(&y1))[:], (*[1]float32)(unsafe.Pointer(&z1))[:], (*[1]float32)(unsafe.Pointer(&x2))[:], (*[1]float32)(unsafe.Pointer(&y2))[:], (*[1]float32)(unsafe.Pointer(&z2))[:], (*[1]int)(unsafe.Pointer(&nx))[:])
+			if sfrv != 10 {
+				sferr(fnif)
 			}
+			if frel != m || N1[m] != n1 || N2[m] != n2 {
+				noarch.Fprintf(stderr, []byte(" error in static_mesh parsing\n\x00"))
+				noarch.Fprintf(stderr, []byte("  frel = %d; m = %d; nx = %d \n\x00"), frel, m, nx)
+			}
+			for int(ch) != int('~') {
+				ch = byte(noarch.Fgetc(fpif))
+			}
+			force_bent_beam(fpm, fpif, fnif, nx, N1[m], N2[m], xyz, L[m], p[m], D, exagg_static)
 		}
 	}
 	if float64(dx) > 0 && anlyz != 0 {
@@ -8957,164 +7849,118 @@ func modal_mesh(IN_file []byte, meshpath []byte, modepath []byte, plotpath []byt
 	msY = dvector(int32(1), int32(DoF))
 	msZ = dvector(int32(1), int32(DoF))
 	v = dvector(int32(1), int32(DoF))
-	{
-		for i = 1; i <= DoF; func() int {
-			i += 1
-			return i
-		}() {
-			func() float64 {
-				msZ[i] = 0
-				return msZ[i]
-			}()
-			func() float64 {
-				msY[i] = msZ[i]
-				return msY[i]
-			}()
-			func() float64 {
-				msX[i] = msY[i]
-				return msX[i]
-			}()
-			{
-				for j = 1; j <= DoF; j += 6 {
-					msX[i] += M[i][j]
-				}
-			}
-			{
-				for j = 2; j <= DoF; j += 6 {
-					msY[i] += M[i][j]
-				}
-			}
-			{
-				for j = 3; j <= DoF; j += 6 {
-					msZ[i] += M[i][j]
-				}
-			}
+	for i = 1; i <= DoF; i++ {
+		func() float64 {
+			msZ[i] = 0
+			return msZ[i]
+		}()
+		func() float64 {
+			msY[i] = msZ[i]
+			return msY[i]
+		}()
+		func() float64 {
+			msX[i] = msY[i]
+			return msX[i]
+		}()
+		for j = 1; j <= DoF; j += 6 {
+			msX[i] += M[i][j]
+		}
+		for j = 2; j <= DoF; j += 6 {
+			msY[i] += M[i][j]
+		}
+		for j = 3; j <= DoF; j += 6 {
+			msZ[i] += M[i][j]
 		}
 	}
 	if noarch.NotInt(anlyz) != 0 {
 		exagg_modal = 0
 	}
-	{
-		for m = 1; m <= nM; func() int {
-			m += 1
-			return m
-		}() {
-			noarch.Sprintf(modefl, []byte("%s-%02d-\x00"), modepath, m)
-			if (func() *noarch.File {
-				fpm = noarch.Fopen(modefl, []byte("w\x00"))
-				return fpm
-			}()) == (nil) {
-				noarch.Sprintf(errMsg, []byte("\n  error: cannot open gnuplot modal mesh file: %s \n\x00"), modefl)
-				errorMsg(errMsg)
-				os.Exit(27)
-			}
-			noarch.Fprintf(fpm, []byte("# FRAME3DD ANALYSIS RESULTS  http://frame3dd.sf.net/\x00"))
-			noarch.Fprintf(fpm, []byte(" VERSION %s \n\x00"), []byte("20140514+\x00"))
-			noarch.Fprintf(fpm, []byte("# %s\n\x00"), title)
-			noarch.Fprintf(fpm, []byte("# M O D E   S H A P E   D A T A   F O R   M O D E\x00"))
-			noarch.Fprintf(fpm, []byte("   %d\t(global coordinates)\n\x00"), m)
-			noarch.Fprintf(fpm, []byte("# deflection exaggeration: %.1f\n\n\x00"), exagg_modal)
-			mpfX = 0
-			{
-				for i = 1; i <= DoF; func() int {
-					i += 1
-					return i
-				}() {
-					mpfX += V[i][m] * msX[i]
-				}
-			}
-			mpfY = 0
-			{
-				for i = 1; i <= DoF; func() int {
-					i += 1
-					return i
-				}() {
-					mpfY += V[i][m] * msY[i]
-				}
-			}
-			mpfZ = 0
-			{
-				for i = 1; i <= DoF; func() int {
-					i += 1
-					return i
-				}() {
-					mpfZ += V[i][m] * msZ[i]
-				}
-			}
-			noarch.Fprintf(fpm, []byte("# MODE %5d:   f= %lf Hz, T= %lf sec\n\x00"), m, f[m], 1/f[m])
-			noarch.Fprintf(fpm, []byte("#\t\tX- modal participation factor = %12.4e \n\x00"), mpfX)
-			noarch.Fprintf(fpm, []byte("#\t\tY- modal participation factor = %12.4e \n\x00"), mpfY)
-			noarch.Fprintf(fpm, []byte("#\t\tZ- modal participation factor = %12.4e \n\x00"), mpfZ)
-			{
-				for i = 1; i <= DoF; func() int {
-					i += 1
-					return i
-				}() {
-					v[i] = V[i][m]
-				}
-			}
-			noarch.Fprintf(fpm, []byte("#      X-dsp       Y-dsp       Z-dsp\n\n\x00"))
-			{
-				for n = 1; n <= nE; func() int {
-					n += 1
-					return n
-				}() {
-					noarch.Fprintf(fpm, []byte("\n# element %5d \n\x00"), n)
-					cubic_bent_beam(fpm, J1[n], J2[n], xyz, L[n], p[n], v, exagg_modal)
-				}
-			}
-			noarch.Fclose(fpm)
-			{
-				for j = 1; j <= nN; func() int {
-					j += 1
-					return j
-				}() {
-					if xyz[j].x != 0 {
-						X = 1
-					}
-					if xyz[j].y != 0 {
-						Y = 1
-					}
-					if xyz[j].z != 0 {
-						Z = 1
-					}
-				}
-			}
-			if (map[bool]int{false: 0, true: 1}[X != 0 && Y != 0 && Z != 0]) != 0 || D3_flag != 0 {
-				D3 = ' '
-				D2 = '#'
-			} else {
-				D3 = '#'
-				D2 = ' '
-			}
-			if (func() *noarch.File {
-				fpm = noarch.Fopen(plotpath, []byte("a\x00"))
-				return fpm
-			}()) == (nil) {
-				noarch.Sprintf(errMsg, []byte("\n  error: cannot append gnuplot script file: %s \n\x00"), plotpath)
-				errorMsg(errMsg)
-				os.Exit(25)
-			}
-			noarch.Fprintf(fpm, []byte("pause -1\n\x00"))
-			if m == 1 {
-				noarch.Fprintf(fpm, []byte("unset label\n\x00"))
-				noarch.Fprintf(fpm, []byte("%c unset key\n\x00"), int(D3))
-			}
-			noarch.Fprintf(fpm, []byte("set title '%s     mode %d     %lf Hz'\n\x00"), IN_file, m, f[m])
-			noarch.Fprintf(fpm, []byte("%c plot '%s' u 2:3 t 'undeformed mesh' w l \x00"), int(D2), meshpath)
-			if noarch.NotInt(anlyz) != 0 {
-				noarch.Fprintf(fpm, []byte(" lw %d lt 1 \n\x00"), lw)
-			} else {
-				noarch.Fprintf(fpm, []byte(" lw 1 lt 5 , '%s' u 1:2 t 'mode-shape %d' w l lw %d lt 3\n\x00"), modefl, m, lw)
-			}
-			noarch.Fprintf(fpm, []byte("%c splot '%s' u 2:3:4 t 'undeformed mesh' w l \x00"), int(D3), meshpath)
-			if noarch.NotInt(anlyz) != 0 {
-				noarch.Fprintf(fpm, []byte(" lw %d lt 1 \n\x00"), lw)
-			} else {
-				noarch.Fprintf(fpm, []byte(" lw 1 lt 5 , '%s' u 1:2:3 t 'mode-shape %d' w l lw %d lt 3\n\x00"), modefl, m, lw)
-			}
-			noarch.Fclose(fpm)
+	for m = 1; m <= nM; m++ {
+		noarch.Sprintf(modefl, []byte("%s-%02d-\x00"), modepath, m)
+		if (func() *noarch.File {
+			fpm = noarch.Fopen(modefl, []byte("w\x00"))
+			return fpm
+		}()) == (nil) {
+			noarch.Sprintf(errMsg, []byte("\n  error: cannot open gnuplot modal mesh file: %s \n\x00"), modefl)
+			errorMsg(errMsg)
+			os.Exit(27)
 		}
+		noarch.Fprintf(fpm, []byte("# FRAME3DD ANALYSIS RESULTS  http://frame3dd.sf.net/\x00"))
+		noarch.Fprintf(fpm, []byte(" VERSION %s \n\x00"), []byte("20140514+\x00"))
+		noarch.Fprintf(fpm, []byte("# %s\n\x00"), title)
+		noarch.Fprintf(fpm, []byte("# M O D E   S H A P E   D A T A   F O R   M O D E\x00"))
+		noarch.Fprintf(fpm, []byte("   %d\t(global coordinates)\n\x00"), m)
+		noarch.Fprintf(fpm, []byte("# deflection exaggeration: %.1f\n\n\x00"), exagg_modal)
+		mpfX = 0
+		for i = 1; i <= DoF; i++ {
+			mpfX += V[i][m] * msX[i]
+		}
+		mpfY = 0
+		for i = 1; i <= DoF; i++ {
+			mpfY += V[i][m] * msY[i]
+		}
+		mpfZ = 0
+		for i = 1; i <= DoF; i++ {
+			mpfZ += V[i][m] * msZ[i]
+		}
+		noarch.Fprintf(fpm, []byte("# MODE %5d:   f= %lf Hz, T= %lf sec\n\x00"), m, f[m], 1/f[m])
+		noarch.Fprintf(fpm, []byte("#\t\tX- modal participation factor = %12.4e \n\x00"), mpfX)
+		noarch.Fprintf(fpm, []byte("#\t\tY- modal participation factor = %12.4e \n\x00"), mpfY)
+		noarch.Fprintf(fpm, []byte("#\t\tZ- modal participation factor = %12.4e \n\x00"), mpfZ)
+		for i = 1; i <= DoF; i++ {
+			v[i] = V[i][m]
+		}
+		noarch.Fprintf(fpm, []byte("#      X-dsp       Y-dsp       Z-dsp\n\n\x00"))
+		for n = 1; n <= nE; n++ {
+			noarch.Fprintf(fpm, []byte("\n# element %5d \n\x00"), n)
+			cubic_bent_beam(fpm, J1[n], J2[n], xyz, L[n], p[n], v, exagg_modal)
+		}
+		noarch.Fclose(fpm)
+		for j = 1; j <= nN; j++ {
+			if xyz[j].x != 0 {
+				X = 1
+			}
+			if xyz[j].y != 0 {
+				Y = 1
+			}
+			if xyz[j].z != 0 {
+				Z = 1
+			}
+		}
+		if (map[bool]int{false: 0, true: 1}[X != 0 && Y != 0 && Z != 0]) != 0 || D3_flag != 0 {
+			D3 = ' '
+			D2 = '#'
+		} else {
+			D3 = '#'
+			D2 = ' '
+		}
+		if (func() *noarch.File {
+			fpm = noarch.Fopen(plotpath, []byte("a\x00"))
+			return fpm
+		}()) == (nil) {
+			noarch.Sprintf(errMsg, []byte("\n  error: cannot append gnuplot script file: %s \n\x00"), plotpath)
+			errorMsg(errMsg)
+			os.Exit(25)
+		}
+		noarch.Fprintf(fpm, []byte("pause -1\n\x00"))
+		if m == 1 {
+			noarch.Fprintf(fpm, []byte("unset label\n\x00"))
+			noarch.Fprintf(fpm, []byte("%c unset key\n\x00"), int(D3))
+		}
+		noarch.Fprintf(fpm, []byte("set title '%s     mode %d     %lf Hz'\n\x00"), IN_file, m, f[m])
+		noarch.Fprintf(fpm, []byte("%c plot '%s' u 2:3 t 'undeformed mesh' w l \x00"), int(D2), meshpath)
+		if noarch.NotInt(anlyz) != 0 {
+			noarch.Fprintf(fpm, []byte(" lw %d lt 1 \n\x00"), lw)
+		} else {
+			noarch.Fprintf(fpm, []byte(" lw 1 lt 5 , '%s' u 1:2 t 'mode-shape %d' w l lw %d lt 3\n\x00"), modefl, m, lw)
+		}
+		noarch.Fprintf(fpm, []byte("%c splot '%s' u 2:3:4 t 'undeformed mesh' w l \x00"), int(D3), meshpath)
+		if noarch.NotInt(anlyz) != 0 {
+			noarch.Fprintf(fpm, []byte(" lw %d lt 1 \n\x00"), lw)
+		} else {
+			noarch.Fprintf(fpm, []byte(" lw 1 lt 5 , '%s' u 1:2:3 t 'mode-shape %d' w l lw %d lt 3\n\x00"), modefl, m, lw)
+		}
+		noarch.Fclose(fpm)
 	}
 	free_dvector(msX, int32(1), int32(DoF))
 	free_dvector(msY, int32(1), int32(DoF))
@@ -9184,64 +8030,59 @@ func animate(IN_file []byte, meshpath []byte, modepath []byte, plotpath []byte, 
 	var modefl []byte = make([]byte, 128, 128)
 	var framefl []byte = make([]byte, 128, 128)
 	var errMsg []byte = make([]byte, 512, 512)
-	{
-		for j = 1; j <= nN; func() int {
-			j += 1
-			return j
-		}() {
-			if xyz[j].x != 0 {
-				X = 1
-			}
-			if xyz[j].y != 0 {
-				Y = 1
-			}
-			if xyz[j].z != 0 {
-				Z = 1
-			}
-			if j == 1 {
-				func() float32 {
-					x_max = float32(xyz[j].x)
-					return x_max
-				}()
-				func() float32 {
-					x_min = x_max
-					return x_min
-				}()
-				func() float32 {
-					y_max = float32(xyz[j].y)
-					return y_max
-				}()
-				func() float32 {
-					y_min = y_max
-					return y_min
-				}()
-				func() float32 {
-					z_max = float32(xyz[j].z)
-					return z_max
-				}()
-				func() float32 {
-					z_min = z_max
-					return z_min
-				}()
-			}
-			if xyz[j].x < float64(x_min) {
-				x_min = float32(xyz[j].x)
-			}
-			if xyz[j].y < float64(y_min) {
-				y_min = float32(xyz[j].y)
-			}
-			if xyz[j].z < float64(z_min) {
-				z_min = float32(xyz[j].z)
-			}
-			if float64(x_max) < xyz[j].x {
+	for j = 1; j <= nN; j++ {
+		if xyz[j].x != 0 {
+			X = 1
+		}
+		if xyz[j].y != 0 {
+			Y = 1
+		}
+		if xyz[j].z != 0 {
+			Z = 1
+		}
+		if j == 1 {
+			func() float32 {
 				x_max = float32(xyz[j].x)
-			}
-			if float64(y_max) < xyz[j].y {
+				return x_max
+			}()
+			func() float32 {
+				x_min = x_max
+				return x_min
+			}()
+			func() float32 {
 				y_max = float32(xyz[j].y)
-			}
-			if float64(z_max) < xyz[j].z {
+				return y_max
+			}()
+			func() float32 {
+				y_min = y_max
+				return y_min
+			}()
+			func() float32 {
 				z_max = float32(xyz[j].z)
-			}
+				return z_max
+			}()
+			func() float32 {
+				z_min = z_max
+				return z_min
+			}()
+		}
+		if xyz[j].x < float64(x_min) {
+			x_min = float32(xyz[j].x)
+		}
+		if xyz[j].y < float64(y_min) {
+			y_min = float32(xyz[j].y)
+		}
+		if xyz[j].z < float64(z_min) {
+			z_min = float32(xyz[j].z)
+		}
+		if float64(x_max) < xyz[j].x {
+			x_max = float32(xyz[j].x)
+		}
+		if float64(y_max) < xyz[j].y {
+			y_max = float32(xyz[j].y)
+		}
+		if float64(z_max) < xyz[j].z {
+			z_max = float32(xyz[j].z)
 		}
 	}
 	if (map[bool]int{false: 0, true: 1}[X != 0 && Y != 0 && Z != 0]) != 0 || D3_flag != 0 {
@@ -9261,169 +8102,138 @@ func animate(IN_file []byte, meshpath []byte, modepath []byte, plotpath []byte, 
 		os.Exit(26)
 	}
 	i = 1
-	{
-		for (func() int {
-			m = anim[i]
-			return m
-		}()) != 0 && i < 100 {
-			if i == 1 {
-				noarch.Fprintf(fpm, []byte("\n# --- M O D E   S H A P E   A N I M A T I O N ---\n\x00"))
-				noarch.Fprintf(fpm, []byte("# rot_x_init  = %7.2f\n\x00"), float64(rot_x_init))
-				noarch.Fprintf(fpm, []byte("# rot_x_final = %7.2f\n\x00"), float64(rot_x_final))
-				noarch.Fprintf(fpm, []byte("# rot_z_init  = %7.2f\n\x00"), float64(rot_z_init))
-				noarch.Fprintf(fpm, []byte("# rot_z_final = %7.2f\n\x00"), float64(rot_z_final))
-				noarch.Fprintf(fpm, []byte("# zoom_init   = %7.2f\n\x00"), float64(zoom_init))
-				noarch.Fprintf(fpm, []byte("# zoom_final  = %7.2f\n\x00"), float64(zoom_init))
-				noarch.Fprintf(fpm, []byte("# pan rate    = %7.2f \n\x00"), float64(pan))
-				noarch.Fprintf(fpm, []byte("set autoscale\n\x00"))
-				noarch.Fprintf(fpm, []byte("unset border\n\x00"))
-				noarch.Fprintf(fpm, []byte("%c unset xlabel \n\x00"), int(D3))
-				noarch.Fprintf(fpm, []byte("%c unset ylabel \n\x00"), int(D3))
-				noarch.Fprintf(fpm, []byte("%c unset zlabel \n\x00"), int(D3))
-				noarch.Fprintf(fpm, []byte("%c unset label \n\x00"), int(D3))
-				noarch.Fprintf(fpm, []byte("unset key\n\x00"))
-				noarch.Fprintf(fpm, []byte("%c set parametric\n\x00"), int(D3))
-				noarch.Fprintf(fpm, []byte("# x_min = %12.5e     x_max = %12.5e \n\x00"), float64(x_min), float64(x_max))
-				noarch.Fprintf(fpm, []byte("# y_min = %12.5e     y_max = %12.5e \n\x00"), float64(y_min), float64(y_max))
-				noarch.Fprintf(fpm, []byte("# z_min = %12.5e     z_max = %12.5e \n\x00"), float64(z_min), float64(z_max))
-				noarch.Fprintf(fpm, []byte("# Dxyz = %12.5e \n\x00"), float64(Dxyz))
-				noarch.Fprintf(fpm, []byte("set xrange [ %lf : %lf ] \n\x00"), float64(x_min)-0.2*float64(Dxyz), float64(x_max)+0.1*float64(Dxyz))
-				noarch.Fprintf(fpm, []byte("set yrange [ %lf : %lf ] \n\x00"), float64(y_min)-0.2*float64(Dxyz), float64(y_max)+0.1*float64(Dxyz))
-				noarch.Fprintf(fpm, []byte("set zrange [ %lf : %lf ] \n\x00"), float64(z_min)-0.2*float64(Dxyz), float64(z_max)+0.1*float64(Dxyz))
-				noarch.Fprintf(fpm, []byte("unset xzeroaxis; unset yzeroaxis; unset zzeroaxis\n\x00"))
-				noarch.Fprintf(fpm, []byte("unset xtics; unset ytics; unset ztics; \n\x00"))
-				noarch.Fprintf(fpm, []byte("%c set view 60, 70, %5.2f \n\x00"), int(D3), float64(scale))
-				noarch.Fprintf(fpm, []byte("set size ratio -1    # 1:1 2D axis scaling \n\x00"))
-				noarch.Fprintf(fpm, []byte("%c set view equal xyz # 1:1 3D axis scaling \n\x00"), int(D3))
-			}
-			noarch.Fprintf(fpm, []byte("pause -1 \n\x00"))
-			noarch.Fprintf(fpm, []byte("set title '%s     mode %d      %lf Hz'\n\x00"), IN_file, m, f[m])
-			frame_number = 0
-			total_frames = int(float32(2*CYCLES) * frames)
-			{
-				for c = 1; c <= CYCLES; func() int {
-					c += 1
-					return c
-				}() {
-					{
-						for fr = 0; float32(fr) <= frames; func() int {
-							fr += 1
-							return fr
-						}() {
-							func() int {
-								frame_number += 1
-								return frame_number
-							}()
-							noarch.Sprintf(modefl, []byte("%s-%02d.%03d\x00"), modepath, m, fr)
-							noarch.Sprintf(framefl, []byte("%s-%02d-f-%03d.ps\x00"), modepath, m, fr)
-							noarch.Fprintf(fpm, []byte("%c plot '%s' u 2:3 w l lw 1 lt 5, \x00"), int(D2), meshpath)
-							noarch.Fprintf(fpm, []byte(" '%s' u 1:2 w l lw %d lt 3 ; \n\x00"), modefl, lw)
-							if float64(pan) != 0 {
-								noarch.Fprintf(fpm, []byte("%c set view %7.2f, %7.2f, %5.3f # pan = %f\n\x00"), int(D3), float64(rot_x_init+pan*(rot_x_final-rot_x_init)*float32(frame_number)/float32(total_frames)), float64(rot_z_init+pan*(rot_z_final-rot_z_init)*float32(frame_number)/float32(total_frames)), float64(zoom_init+pan*(zoom_final-zoom_init)*float32(frame_number)/float32(total_frames)), float64(pan))
-							}
-							noarch.Fprintf(fpm, []byte("%c splot '%s' u 2:3:4 w l lw 1 lt 5, \x00"), int(D3), meshpath)
-							noarch.Fprintf(fpm, []byte(" '%s' u 1:2:3 w l lw %d lt 3;\x00"), modefl, lw)
-							if fr == 0 && c == 1 {
-								noarch.Fprintf(fpm, []byte("  pause 1.5 \n\x00"))
-							} else {
-								noarch.Fprintf(fpm, []byte("  pause 0.05 \n\x00"))
-							}
-							noarch.Fprintf(fpm, []byte("%c  load 'saveplot';\n\x00"), int(Movie))
-							noarch.Fprintf(fpm, []byte("%c  !mv my-plot.ps %s\n\x00"), int(Movie), framefl)
-						}
-					}
-					{
-						for fr = int(frames - float32(1)); fr > 0; func() int {
-							fr -= 1
-							return fr
-						}() {
-							func() int {
-								frame_number += 1
-								return frame_number
-							}()
-							noarch.Sprintf(modefl, []byte("%s-%02d.%03d\x00"), modepath, m, fr)
-							noarch.Sprintf(framefl, []byte("%s-%02d-f-%03d.ps\x00"), modepath, m, fr)
-							noarch.Fprintf(fpm, []byte("%c plot '%s' u 2:3 w l lw 1 lt 5, \x00"), int(D2), meshpath)
-							noarch.Fprintf(fpm, []byte(" '%s' u 1:2 w l lw %d lt 3; \n\x00"), modefl, lw)
-							if float64(pan) != 0 {
-								noarch.Fprintf(fpm, []byte("%c set view %7.2f, %7.2f, %5.3f # pan = %f\n\x00"), int(D3), float64(rot_x_init+pan*(rot_x_final-rot_x_init)*float32(frame_number)/float32(total_frames)), float64(rot_z_init+pan*(rot_z_final-rot_z_init)*float32(frame_number)/float32(total_frames)), float64(zoom_init+pan*(zoom_final-zoom_init)*float32(frame_number)/float32(total_frames)), float64(pan))
-							}
-							noarch.Fprintf(fpm, []byte("%c splot '%s' u 2:3:4 w l lw 1 lt 5, \x00"), int(D3), meshpath)
-							noarch.Fprintf(fpm, []byte(" '%s' u 1:2:3 w l lw %d lt 3;\x00"), modefl, lw)
-							noarch.Fprintf(fpm, []byte("  pause 0.05 \n\x00"))
-							noarch.Fprintf(fpm, []byte("%c  load 'saveplot';\n\x00"), int(Movie))
-							noarch.Fprintf(fpm, []byte("%c  !mv my-plot.ps %s\n\x00"), int(Movie), framefl)
-						}
-					}
-				}
-			}
-			fr = 0
-			noarch.Sprintf(modefl, []byte("%s-%02d.%03d\x00"), modepath, m, fr)
-			noarch.Fprintf(fpm, []byte("%c plot '%s' u 2:3 w l lw %d lt 5, \x00"), int(D2), meshpath, lw)
-			noarch.Fprintf(fpm, []byte(" '%s' u 1:2 w l lw 3 lt 3 \n\x00"), modefl)
-			noarch.Fprintf(fpm, []byte("%c splot '%s' u 2:3:4 w l lw %d lt 5, \x00"), int(D3), meshpath, lw)
-			noarch.Fprintf(fpm, []byte(" '%s' u 1:2:3 w l lw 3 lt 3 \n\x00"), modefl)
-			func() int {
-				i += 1
-				return i
-			}()
+	for (func() int {
+		m = anim[i]
+		return m
+	}()) != 0 && i < 100 {
+		if i == 1 {
+			noarch.Fprintf(fpm, []byte("\n# --- M O D E   S H A P E   A N I M A T I O N ---\n\x00"))
+			noarch.Fprintf(fpm, []byte("# rot_x_init  = %7.2f\n\x00"), float64(rot_x_init))
+			noarch.Fprintf(fpm, []byte("# rot_x_final = %7.2f\n\x00"), float64(rot_x_final))
+			noarch.Fprintf(fpm, []byte("# rot_z_init  = %7.2f\n\x00"), float64(rot_z_init))
+			noarch.Fprintf(fpm, []byte("# rot_z_final = %7.2f\n\x00"), float64(rot_z_final))
+			noarch.Fprintf(fpm, []byte("# zoom_init   = %7.2f\n\x00"), float64(zoom_init))
+			noarch.Fprintf(fpm, []byte("# zoom_final  = %7.2f\n\x00"), float64(zoom_init))
+			noarch.Fprintf(fpm, []byte("# pan rate    = %7.2f \n\x00"), float64(pan))
+			noarch.Fprintf(fpm, []byte("set autoscale\n\x00"))
+			noarch.Fprintf(fpm, []byte("unset border\n\x00"))
+			noarch.Fprintf(fpm, []byte("%c unset xlabel \n\x00"), int(D3))
+			noarch.Fprintf(fpm, []byte("%c unset ylabel \n\x00"), int(D3))
+			noarch.Fprintf(fpm, []byte("%c unset zlabel \n\x00"), int(D3))
+			noarch.Fprintf(fpm, []byte("%c unset label \n\x00"), int(D3))
+			noarch.Fprintf(fpm, []byte("unset key\n\x00"))
+			noarch.Fprintf(fpm, []byte("%c set parametric\n\x00"), int(D3))
+			noarch.Fprintf(fpm, []byte("# x_min = %12.5e     x_max = %12.5e \n\x00"), float64(x_min), float64(x_max))
+			noarch.Fprintf(fpm, []byte("# y_min = %12.5e     y_max = %12.5e \n\x00"), float64(y_min), float64(y_max))
+			noarch.Fprintf(fpm, []byte("# z_min = %12.5e     z_max = %12.5e \n\x00"), float64(z_min), float64(z_max))
+			noarch.Fprintf(fpm, []byte("# Dxyz = %12.5e \n\x00"), float64(Dxyz))
+			noarch.Fprintf(fpm, []byte("set xrange [ %lf : %lf ] \n\x00"), float64(x_min)-0.2*float64(Dxyz), float64(x_max)+0.1*float64(Dxyz))
+			noarch.Fprintf(fpm, []byte("set yrange [ %lf : %lf ] \n\x00"), float64(y_min)-0.2*float64(Dxyz), float64(y_max)+0.1*float64(Dxyz))
+			noarch.Fprintf(fpm, []byte("set zrange [ %lf : %lf ] \n\x00"), float64(z_min)-0.2*float64(Dxyz), float64(z_max)+0.1*float64(Dxyz))
+			noarch.Fprintf(fpm, []byte("unset xzeroaxis; unset yzeroaxis; unset zzeroaxis\n\x00"))
+			noarch.Fprintf(fpm, []byte("unset xtics; unset ytics; unset ztics; \n\x00"))
+			noarch.Fprintf(fpm, []byte("%c set view 60, 70, %5.2f \n\x00"), int(D3), float64(scale))
+			noarch.Fprintf(fpm, []byte("set size ratio -1    # 1:1 2D axis scaling \n\x00"))
+			noarch.Fprintf(fpm, []byte("%c set view equal xyz # 1:1 3D axis scaling \n\x00"), int(D3))
 		}
+		noarch.Fprintf(fpm, []byte("pause -1 \n\x00"))
+		noarch.Fprintf(fpm, []byte("set title '%s     mode %d      %lf Hz'\n\x00"), IN_file, m, f[m])
+		frame_number = 0
+		total_frames = int(float32(2*CYCLES) * frames)
+		for c = 1; c <= CYCLES; c++ {
+			for fr = 0; float32(fr) <= frames; fr++ {
+				func() int {
+					frame_number += 1
+					return frame_number
+				}()
+				noarch.Sprintf(modefl, []byte("%s-%02d.%03d\x00"), modepath, m, fr)
+				noarch.Sprintf(framefl, []byte("%s-%02d-f-%03d.ps\x00"), modepath, m, fr)
+				noarch.Fprintf(fpm, []byte("%c plot '%s' u 2:3 w l lw 1 lt 5, \x00"), int(D2), meshpath)
+				noarch.Fprintf(fpm, []byte(" '%s' u 1:2 w l lw %d lt 3 ; \n\x00"), modefl, lw)
+				if float64(pan) != 0 {
+					noarch.Fprintf(fpm, []byte("%c set view %7.2f, %7.2f, %5.3f # pan = %f\n\x00"), int(D3), float64(rot_x_init+pan*(rot_x_final-rot_x_init)*float32(frame_number)/float32(total_frames)), float64(rot_z_init+pan*(rot_z_final-rot_z_init)*float32(frame_number)/float32(total_frames)), float64(zoom_init+pan*(zoom_final-zoom_init)*float32(frame_number)/float32(total_frames)), float64(pan))
+				}
+				noarch.Fprintf(fpm, []byte("%c splot '%s' u 2:3:4 w l lw 1 lt 5, \x00"), int(D3), meshpath)
+				noarch.Fprintf(fpm, []byte(" '%s' u 1:2:3 w l lw %d lt 3;\x00"), modefl, lw)
+				if fr == 0 && c == 1 {
+					noarch.Fprintf(fpm, []byte("  pause 1.5 \n\x00"))
+				} else {
+					noarch.Fprintf(fpm, []byte("  pause 0.05 \n\x00"))
+				}
+				noarch.Fprintf(fpm, []byte("%c  load 'saveplot';\n\x00"), int(Movie))
+				noarch.Fprintf(fpm, []byte("%c  !mv my-plot.ps %s\n\x00"), int(Movie), framefl)
+			}
+			for fr = int(frames - float32(1)); fr > 0; func() int {
+				fr -= 1
+				return fr
+			}() {
+				func() int {
+					frame_number += 1
+					return frame_number
+				}()
+				noarch.Sprintf(modefl, []byte("%s-%02d.%03d\x00"), modepath, m, fr)
+				noarch.Sprintf(framefl, []byte("%s-%02d-f-%03d.ps\x00"), modepath, m, fr)
+				noarch.Fprintf(fpm, []byte("%c plot '%s' u 2:3 w l lw 1 lt 5, \x00"), int(D2), meshpath)
+				noarch.Fprintf(fpm, []byte(" '%s' u 1:2 w l lw %d lt 3; \n\x00"), modefl, lw)
+				if float64(pan) != 0 {
+					noarch.Fprintf(fpm, []byte("%c set view %7.2f, %7.2f, %5.3f # pan = %f\n\x00"), int(D3), float64(rot_x_init+pan*(rot_x_final-rot_x_init)*float32(frame_number)/float32(total_frames)), float64(rot_z_init+pan*(rot_z_final-rot_z_init)*float32(frame_number)/float32(total_frames)), float64(zoom_init+pan*(zoom_final-zoom_init)*float32(frame_number)/float32(total_frames)), float64(pan))
+				}
+				noarch.Fprintf(fpm, []byte("%c splot '%s' u 2:3:4 w l lw 1 lt 5, \x00"), int(D3), meshpath)
+				noarch.Fprintf(fpm, []byte(" '%s' u 1:2:3 w l lw %d lt 3;\x00"), modefl, lw)
+				noarch.Fprintf(fpm, []byte("  pause 0.05 \n\x00"))
+				noarch.Fprintf(fpm, []byte("%c  load 'saveplot';\n\x00"), int(Movie))
+				noarch.Fprintf(fpm, []byte("%c  !mv my-plot.ps %s\n\x00"), int(Movie), framefl)
+			}
+		}
+		fr = 0
+		noarch.Sprintf(modefl, []byte("%s-%02d.%03d\x00"), modepath, m, fr)
+		noarch.Fprintf(fpm, []byte("%c plot '%s' u 2:3 w l lw %d lt 5, \x00"), int(D2), meshpath, lw)
+		noarch.Fprintf(fpm, []byte(" '%s' u 1:2 w l lw 3 lt 3 \n\x00"), modefl)
+		noarch.Fprintf(fpm, []byte("%c splot '%s' u 2:3:4 w l lw %d lt 5, \x00"), int(D3), meshpath, lw)
+		noarch.Fprintf(fpm, []byte(" '%s' u 1:2:3 w l lw 3 lt 3 \n\x00"), modefl)
+		func() int {
+			i += 1
+			return i
+		}()
 	}
 	noarch.Fclose(fpm)
 	v = dvector(int32(1), int32(DoF))
 	i = 1
-	{
-		for (func() int {
-			m = anim[i]
-			return m
-		}()) != 0 {
-			{
-				for fr = 0; float32(fr) <= frames; func() int {
-					fr += 1
-					return fr
-				}() {
-					noarch.Sprintf(modefl, []byte("%s-%02d.%03d\x00"), modepath, m, fr)
-					if (func() *noarch.File {
-						fpm = noarch.Fopen(modefl, []byte("w\x00"))
-						return fpm
-					}()) == (nil) {
-						noarch.Sprintf(errMsg, []byte("\n  error: cannot open gnuplot modal mesh data file: %s \n\x00"), modefl)
-						errorMsg(errMsg)
-						os.Exit(28)
-					}
-					ex = exagg_modal * math.Cos(3.141592653589793*float64(fr)/float64(frames))
-					noarch.Fprintf(fpm, []byte("# FRAME3DD ANALYSIS RESULTS  http://frame3dd.sf.net/\x00"))
-					noarch.Fprintf(fpm, []byte(" VERSION %s \n\x00"), []byte("20140514+\x00"))
-					noarch.Fprintf(fpm, []byte("# %s\n\x00"), title)
-					noarch.Fprintf(fpm, []byte("# A N I M A T E D   M O D E   S H A P E   D A T A \n\x00"))
-					noarch.Fprintf(fpm, []byte("# deflection exaggeration: %.1f\n\x00"), ex)
-					noarch.Fprintf(fpm, []byte("# MODE %5d: f= %lf Hz  T= %lf sec\n\n\x00"), m, f[m], 1/f[m])
-					{
-						for j = 1; j <= DoF; func() int {
-							j += 1
-							return j
-						}() {
-							v[j] = V[j][m]
-						}
-					}
-					noarch.Fprintf(fpm, []byte("#      X-dsp       Y-dsp       Z-dsp\n\n\x00"))
-					{
-						for n = 1; n <= nE; func() int {
-							n += 1
-							return n
-						}() {
-							noarch.Fprintf(fpm, []byte("\n# element %5d \n\x00"), n)
-							cubic_bent_beam(fpm, J1[n], J2[n], xyz, L[n], p[n], v, ex)
-						}
-					}
-					noarch.Fclose(fpm)
-				}
+	for (func() int {
+		m = anim[i]
+		return m
+	}()) != 0 {
+		for fr = 0; float32(fr) <= frames; fr++ {
+			noarch.Sprintf(modefl, []byte("%s-%02d.%03d\x00"), modepath, m, fr)
+			if (func() *noarch.File {
+				fpm = noarch.Fopen(modefl, []byte("w\x00"))
+				return fpm
+			}()) == (nil) {
+				noarch.Sprintf(errMsg, []byte("\n  error: cannot open gnuplot modal mesh data file: %s \n\x00"), modefl)
+				errorMsg(errMsg)
+				os.Exit(28)
 			}
-			func() int {
-				i += 1
-				return i
-			}()
+			ex = exagg_modal * math.Cos(3.141592653589793*float64(fr)/float64(frames))
+			noarch.Fprintf(fpm, []byte("# FRAME3DD ANALYSIS RESULTS  http://frame3dd.sf.net/\x00"))
+			noarch.Fprintf(fpm, []byte(" VERSION %s \n\x00"), []byte("20140514+\x00"))
+			noarch.Fprintf(fpm, []byte("# %s\n\x00"), title)
+			noarch.Fprintf(fpm, []byte("# A N I M A T E D   M O D E   S H A P E   D A T A \n\x00"))
+			noarch.Fprintf(fpm, []byte("# deflection exaggeration: %.1f\n\x00"), ex)
+			noarch.Fprintf(fpm, []byte("# MODE %5d: f= %lf Hz  T= %lf sec\n\n\x00"), m, f[m], 1/f[m])
+			for j = 1; j <= DoF; j++ {
+				v[j] = V[j][m]
+			}
+			noarch.Fprintf(fpm, []byte("#      X-dsp       Y-dsp       Z-dsp\n\n\x00"))
+			for n = 1; n <= nE; n++ {
+				noarch.Fprintf(fpm, []byte("\n# element %5d \n\x00"), n)
+				cubic_bent_beam(fpm, J1[n], J2[n], xyz, L[n], p[n], v, ex)
+			}
+			noarch.Fclose(fpm)
 		}
+		func() int {
+			i += 1
+			return i
+		}()
 	}
 	free_dvector(v, int32(1), int32(DoF))
 	return
@@ -9526,15 +8336,13 @@ func cubic_bent_beam(fpm *noarch.File, n1 int, n2 int, xyz []vec3, L float64, p 
 		os.Exit(30)
 	}
 	lu_dcmp(A, 4, b, 0, 1, (*[1]int)(unsafe.Pointer(&pd))[:])
-	{
-		for s = u1; math.Abs(s) <= 1.01*math.Abs(L+u7); s += math.Abs(L+u7-u1) / 10 {
-			v = a[1] + a[2]*s + a[3]*s*s + a[4]*s*s*s
-			w = b[1] + b[2]*s + b[3]*s*s + b[4]*s*s*s
-			dX = t1*s + t4*v + t7*w
-			dY = t2*s + t5*v + t8*w
-			dZ = t3*s + t6*v + t9*w
-			noarch.Fprintf(fpm, []byte(" %12.4e %12.4e %12.4e\n\x00"), xyz[n1].x+dX, xyz[n1].y+dY, xyz[n1].z+dZ)
-		}
+	for s = u1; math.Abs(s) <= 1.01*math.Abs(L+u7); s += math.Abs(L+u7-u1) / 10 {
+		v = a[1] + a[2]*s + a[3]*s*s + a[4]*s*s*s
+		w = b[1] + b[2]*s + b[3]*s*s + b[4]*s*s*s
+		dX = t1*s + t4*v + t7*w
+		dY = t2*s + t5*v + t8*w
+		dZ = t3*s + t6*v + t9*w
+		noarch.Fprintf(fpm, []byte(" %12.4e %12.4e %12.4e\n\x00"), xyz[n1].x+dX, xyz[n1].y+dY, xyz[n1].z+dZ)
 	}
 	noarch.Fprintf(fpm, []byte("\n\n\x00"))
 	free_dmatrix(A, int32(1), int32(4), int32(1), int32(4))
@@ -9590,25 +8398,21 @@ func force_bent_beam(fpm *noarch.File, fpif *noarch.File, fnif []byte, nx int, n
 	coord_trans(xyz, L, n1, n2, (*[1]float64)(unsafe.Pointer(&t1))[:], (*[1]float64)(unsafe.Pointer(&t2))[:], (*[1]float64)(unsafe.Pointer(&t3))[:], (*[1]float64)(unsafe.Pointer(&t4))[:], (*[1]float64)(unsafe.Pointer(&t5))[:], (*[1]float64)(unsafe.Pointer(&t6))[:], (*[1]float64)(unsafe.Pointer(&t7))[:], (*[1]float64)(unsafe.Pointer(&t8))[:], (*[1]float64)(unsafe.Pointer(&t9))[:], p)
 	x = float32(-1)
 	n = 0
-	{
-		for xi = float64(0); xi <= 1.01*L && n < nx; xi += 0.1 * L {
-			{
-				for float64(x) < xi && n < nx {
-					sfrv = noarch.Fscanf(fpif, []byte("%f %f %f %f %f %f %f %f %f %f %f\x00"), (*[1]float32)(unsafe.Pointer(&x))[:], (*[1]float32)(unsafe.Pointer(&Nx))[:], (*[1]float32)(unsafe.Pointer(&Vy))[:], (*[1]float32)(unsafe.Pointer(&Vz))[:], (*[1]float32)(unsafe.Pointer(&Tx))[:], (*[1]float32)(unsafe.Pointer(&My))[:], (*[1]float32)(unsafe.Pointer(&Mz))[:], (*[1]float32)(unsafe.Pointer(&Dx))[:], (*[1]float32)(unsafe.Pointer(&Dy))[:], (*[1]float32)(unsafe.Pointer(&Dz))[:], (*[1]float32)(unsafe.Pointer(&Rx))[:])
-					if sfrv != 11 {
-						sferr(fnif)
-					}
-					func() int {
-						n += 1
-						return n
-					}()
-				}
+	for xi = float64(0); xi <= 1.01*L && n < nx; xi += 0.1 * L {
+		for float64(x) < xi && n < nx {
+			sfrv = noarch.Fscanf(fpif, []byte("%f %f %f %f %f %f %f %f %f %f %f\x00"), (*[1]float32)(unsafe.Pointer(&x))[:], (*[1]float32)(unsafe.Pointer(&Nx))[:], (*[1]float32)(unsafe.Pointer(&Vy))[:], (*[1]float32)(unsafe.Pointer(&Vz))[:], (*[1]float32)(unsafe.Pointer(&Tx))[:], (*[1]float32)(unsafe.Pointer(&My))[:], (*[1]float32)(unsafe.Pointer(&Mz))[:], (*[1]float32)(unsafe.Pointer(&Dx))[:], (*[1]float32)(unsafe.Pointer(&Dy))[:], (*[1]float32)(unsafe.Pointer(&Dz))[:], (*[1]float32)(unsafe.Pointer(&Rx))[:])
+			if sfrv != 11 {
+				sferr(fnif)
 			}
-			dX = exagg * (t1*float64(Dx) + t4*float64(Dy) + t7*float64(Dz))
-			dY = exagg * (t2*float64(Dx) + t5*float64(Dy) + t8*float64(Dz))
-			dZ = exagg * (t3*float64(Dx) + t6*float64(Dy) + t9*float64(Dz))
-			noarch.Fprintf(fpm, []byte(" %12.4e %12.4e %12.4e\n\x00"), xyz[n1].x+(float64(x)/L)*Lx+dX, xyz[n1].y+(float64(x)/L)*Ly+dY, xyz[n1].z+(float64(x)/L)*Lz+dZ)
+			func() int {
+				n += 1
+				return n
+			}()
 		}
+		dX = exagg * (t1*float64(Dx) + t4*float64(Dy) + t7*float64(Dz))
+		dY = exagg * (t2*float64(Dx) + t5*float64(Dy) + t8*float64(Dz))
+		dZ = exagg * (t3*float64(Dx) + t6*float64(Dy) + t9*float64(Dz))
+		noarch.Fprintf(fpm, []byte(" %12.4e %12.4e %12.4e\n\x00"), xyz[n1].x+(float64(x)/L)*Lx+dX, xyz[n1].y+(float64(x)/L)*Ly+dY, xyz[n1].z+(float64(x)/L)*Lz+dZ)
 	}
 	noarch.Fprintf(fpm, []byte("\n\n\x00"))
 	return
@@ -9640,27 +8444,23 @@ func my_itoa(n int, s []byte, k int) {
 		n = -n
 	}
 	i = 0
-	{
-		for {
-			s[func() int {
-				i += 1
-				return i
-			}()] = byte(n%10 + int('0'))
-			if noarch.NotInt((map[bool]int{false: 0, true: 1}[(func() int {
-				n /= 10
-				return n
-			}()) > 0])) != 0 {
-				break
-			}
+	for {
+		s[func() int {
+			i += 1
+			return i
+		}()] = byte(n%10 + int('0'))
+		if noarch.NotInt((map[bool]int{false: 0, true: 1}[(func() int {
+			n /= 10
+			return n
+		}()) > 0])) != 0 {
+			break
 		}
 	}
-	{
-		for i < k {
-			s[func() int {
-				i += 1
-				return i
-			}()] = '0'
-		}
+	for i < k {
+		s[func() int {
+			i += 1
+			return i
+		}()] = '0'
 	}
 	if sign < 0 {
 		s[func() int {
@@ -9670,32 +8470,28 @@ func my_itoa(n int, s []byte, k int) {
 	}
 	s[i] = '\x00'
 	j = 0
-	{
-		for int(s[j]) != int('\x00') {
-			func() int {
-				j += 1
-				return j
-			}()
-		}
+	for int(s[j]) != int('\x00') {
+		func() int {
+			j += 1
+			return j
+		}()
 	}
 	func() int {
 		j -= 1
 		return j
 	}()
-	{
-		for i = 0; i < j; {
-			c = int(s[i])
-			s[i] = s[j]
-			s[j] = byte(c)
-			func() int {
-				i += 1
-				return i
-			}()
-			func() int {
-				j -= 1
-				return j
-			}()
-		}
+	for i = 0; i < j; {
+		c = int(s[i])
+		s[i] = s[j]
+		s[j] = byte(c)
+		func() int {
+			i += 1
+			return i
+		}()
+		func() int {
+			j -= 1
+			return j
+		}()
 	}
 	return
 }
@@ -9714,20 +8510,16 @@ printf(" Is .CSV? ... = %d \n", !strcmp(ext,".csv") );
 	var i int = 0
 	var full_len int = 0
 	var len int = 0
-	{
-		for int(filename[func() int {
-			len += 1
-			return len
-		}()]) != int('\x00') {
-		}
+	for int(filename[func() int {
+		len += 1
+		return len
+	}()]) != int('\x00') {
 	}
 	full_len = len
-	{
-		for int(filename[func() int {
-			len -= 1
-			return len
-		}()]) != int('.') && len > 0 {
-		}
+	for int(filename[func() int {
+		len -= 1
+		return len
+	}()]) != int('.') && len > 0 {
 	}
 	if len == 0 {
 		len = full_len
@@ -9736,18 +8528,16 @@ printf(" Is .CSV? ... = %d \n", !strcmp(ext,".csv") );
 		len += 1
 		return len
 	}()
-	{
-		for i = 0; len < full_len; {
-			ext[i] = byte(linux.ToLower(int(filename[len])))
-			func() int {
-				i += 1
-				return i
-			}()
-			func() int {
-				len += 1
-				return len
-			}()
-		}
+	for i = 0; len < full_len; {
+		ext[i] = byte(linux.ToLower(int(filename[len])))
+		func() int {
+			i += 1
+			return i
+		}()
+		func() int {
+			len += 1
+			return len
+		}()
 	}
 	if noarch.NotInt(noarch.Strcmp(ext, []byte(".csv\x00"))) != 0 {
 		return (1)
@@ -9763,13 +8553,8 @@ printf(" Is .CSV? ... = %d \n", !strcmp(ext,".csv") );
  * DOTS  -  print a set of dots (periods)
  */func dots(fp *noarch.File, n int) {
 	var i int
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			noarch.Fprintf(fp, []byte(".\x00"))
-		}
+	for i = 1; i <= n; i++ {
+		noarch.Fprintf(fp, []byte(".\x00"))
 	}
 }
 
@@ -10213,103 +8998,60 @@ func atma(t1 float64, t2 float64, t3 float64, t4 float64, t5 float64, t6 float64
 	var k int
 	a = dmatrix(int32(1), int32(12), int32(1), int32(12))
 	ma = dmatrix(int32(1), int32(12), int32(1), int32(12))
-	{
-		for i = 1; i <= 12; func() int {
-			i += 1
-			return i
-		}() {
-			for j = i; j <= 12; func() int {
-				j += 1
-				return j
-			}() {
-				func() float64 {
-					a[i][j] = 0
-					return a[i][j]
-				}()
-				func() float64 {
-					a[j][i] = a[i][j]
-					return a[j][i]
-				}()
-				func() float64 {
-					ma[i][j] = a[j][i]
-					return ma[i][j]
-				}()
-				func() float64 {
-					ma[j][i] = ma[i][j]
-					return ma[j][i]
-				}()
+	for i = 1; i <= 12; i++ {
+		for j = i; j <= 12; j++ {
+			func() float64 {
+				a[i][j] = 0
+				return a[i][j]
+			}()
+			func() float64 {
+				a[j][i] = a[i][j]
+				return a[j][i]
+			}()
+			func() float64 {
+				ma[i][j] = a[j][i]
+				return ma[i][j]
+			}()
+			func() float64 {
+				ma[j][i] = ma[i][j]
+				return ma[j][i]
+			}()
+		}
+	}
+	for i = 0; i <= 3; i++ {
+		a[3*i+1][3*i+1] = t1
+		a[3*i+1][3*i+2] = t2
+		a[3*i+1][3*i+3] = t3
+		a[3*i+2][3*i+1] = t4
+		a[3*i+2][3*i+2] = t5
+		a[3*i+2][3*i+3] = t6
+		a[3*i+3][3*i+1] = t7
+		a[3*i+3][3*i+2] = t8
+		a[3*i+3][3*i+3] = t9
+	}
+	for j = 1; j <= 12; j++ {
+		for i = 1; i <= 12; i++ {
+			for k = 1; k <= 12; k++ {
+				ma[i][j] += m[i][k] * a[k][j]
 			}
 		}
 	}
-	{
-		for i = 0; i <= 3; func() int {
-			i += 1
-			return i
-		}() {
-			a[3*i+1][3*i+1] = t1
-			a[3*i+1][3*i+2] = t2
-			a[3*i+1][3*i+3] = t3
-			a[3*i+2][3*i+1] = t4
-			a[3*i+2][3*i+2] = t5
-			a[3*i+2][3*i+3] = t6
-			a[3*i+3][3*i+1] = t7
-			a[3*i+3][3*i+2] = t8
-			a[3*i+3][3*i+3] = t9
+	for i = 1; i <= 12; i++ {
+		for j = i; j <= 12; j++ {
+			func() float64 {
+				m[i][j] = 0
+				return m[i][j]
+			}()
+			func() float64 {
+				m[j][i] = m[i][j]
+				return m[j][i]
+			}()
 		}
 	}
-	{
-		for j = 1; j <= 12; func() int {
-			j += 1
-			return j
-		}() {
-			for i = 1; i <= 12; func() int {
-				i += 1
-				return i
-			}() {
-				for k = 1; k <= 12; func() int {
-					k += 1
-					return k
-				}() {
-					ma[i][j] += m[i][k] * a[k][j]
-				}
-			}
-		}
-	}
-	{
-		for i = 1; i <= 12; func() int {
-			i += 1
-			return i
-		}() {
-			for j = i; j <= 12; func() int {
-				j += 1
-				return j
-			}() {
-				func() float64 {
-					m[i][j] = 0
-					return m[i][j]
-				}()
-				func() float64 {
-					m[j][i] = m[i][j]
-					return m[j][i]
-				}()
-			}
-		}
-	}
-	{
-		for j = 1; j <= 12; func() int {
-			j += 1
-			return j
-		}() {
-			for i = 1; i <= 12; func() int {
-				i += 1
-				return i
-			}() {
-				for k = 1; k <= 12; func() int {
-					k += 1
-					return k
-				}() {
-					m[i][j] += a[k][i] * ma[k][j]
-				}
+	for j = 1; j <= 12; j++ {
+		for i = 1; i <= 12; i++ {
+			for k = 1; k <= 12; k++ {
+				m[i][j] += a[k][i] * ma[k][j]
 			}
 		}
 	}
@@ -10396,63 +9138,45 @@ func subspace(K [][]float64, M [][]float64, n int, m int, w []float64, V [][]flo
 	Xb = dmatrix(int32(1), int32(n), int32(1), int32(m))
 	Qb = dmatrix(int32(1), int32(m), int32(1), int32(m))
 	idx = ivector(int32(1), int32(m))
-	{
-		for i = 1; i <= m; func() int {
-			i += 1
-			return i
-		}() {
-			idx[i] = 0
-			{
-				for j = i; j <= m; func() int {
-					j += 1
-					return j
-				}() {
-					func() float64 {
-						Qb[j][i] = 0
-						return Qb[j][i]
-					}()
-					func() float64 {
-						Qb[i][j] = Qb[j][i]
-						return Qb[i][j]
-					}()
-					func() float64 {
-						Mb[j][i] = Qb[i][j]
-						return Mb[j][i]
-					}()
-					func() float64 {
-						Mb[i][j] = Mb[j][i]
-						return Mb[i][j]
-					}()
-					func() float64 {
-						Kb[j][i] = Mb[i][j]
-						return Kb[j][i]
-					}()
-					func() float64 {
-						Kb[i][j] = Kb[j][i]
-						return Kb[i][j]
-					}()
-				}
-			}
+	for i = 1; i <= m; i++ {
+		idx[i] = 0
+		for j = i; j <= m; j++ {
+			func() float64 {
+				Qb[j][i] = 0
+				return Qb[j][i]
+			}()
+			func() float64 {
+				Qb[i][j] = Qb[j][i]
+				return Qb[i][j]
+			}()
+			func() float64 {
+				Mb[j][i] = Qb[i][j]
+				return Mb[j][i]
+			}()
+			func() float64 {
+				Mb[i][j] = Mb[j][i]
+				return Mb[i][j]
+			}()
+			func() float64 {
+				Kb[j][i] = Mb[i][j]
+				return Kb[j][i]
+			}()
+			func() float64 {
+				Kb[i][j] = Kb[j][i]
+				return Kb[i][j]
+			}()
 		}
 	}
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			for j = 1; j <= m; func() int {
-				j += 1
-				return j
-			}() {
-				func() float64 {
-					V[i][j] = 0
-					return V[i][j]
-				}()
-				func() float64 {
-					Xb[i][j] = V[i][j]
-					return Xb[i][j]
-				}()
-			}
+	for i = 1; i <= n; i++ {
+		for j = 1; j <= m; j++ {
+			func() float64 {
+				V[i][j] = 0
+				return V[i][j]
+			}()
+			func() float64 {
+				Xb[i][j] = V[i][j]
+				return Xb[i][j]
+			}()
 		}
 	}
 	modes = (func() int {
@@ -10462,238 +9186,168 @@ func subspace(K [][]float64, M [][]float64, n int, m int, w []float64, V [][]flo
 			return m - 8
 		}
 	}())
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			for j = i; j <= n; func() int {
-				j += 1
-				return j
-			}() {
-				K[i][j] += shift * M[i][j]
-			}
+	for i = 1; i <= n; i++ {
+		for j = i; j <= n; j++ {
+			K[i][j] += shift * M[i][j]
 		}
 	}
 	ldl_dcmp(K, n, u, v, v, 1, 0, ok)
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			if M[i][i] <= 0 {
-				noarch.Sprintf(errMsg, []byte(" subspace: M[%d][%d] = %e \n\x00"), i, i, M[i][i])
-				errorMsg(errMsg)
-				os.Exit(32)
-			}
-			d[i] = K[i][i] / M[i][i]
+	for i = 1; i <= n; i++ {
+		if M[i][i] <= 0 {
+			noarch.Sprintf(errMsg, []byte(" subspace: M[%d][%d] = %e \n\x00"), i, i, M[i][i])
+			errorMsg(errMsg)
+			os.Exit(32)
 		}
+		d[i] = K[i][i] / M[i][i]
 	}
 	km_old = 0
-	{
-		for k = 1; k <= m; func() int {
-			k += 1
-			return k
-		}() {
-			km = d[1]
-			{
-				for i = 1; i <= n; func() int {
-					i += 1
-					return i
-				}() {
-					if km_old <= d[i] && d[i] <= km {
-						ok[0] = 1
-						{
-							for j = 1; j <= k-1; func() int {
-								j += 1
-								return j
-							}() {
-								if i == idx[j] {
-									ok[0] = 0
-								}
-							}
-						}
-						if ok[0] != 0 {
-							km = d[i]
-							idx[k] = i
-						}
+	for k = 1; k <= m; k++ {
+		km = d[1]
+		for i = 1; i <= n; i++ {
+			if km_old <= d[i] && d[i] <= km {
+				ok[0] = 1
+				for j = 1; j <= k-1; j++ {
+					if i == idx[j] {
+						ok[0] = 0
 					}
 				}
-			}
-			if idx[k] == 0 {
-				i = idx[1]
-				{
-					for j = 1; j < k; func() int {
-						j += 1
-						return j
-					}() {
-						if i < idx[j] {
-							i = idx[j]
-						}
-					}
+				if ok[0] != 0 {
+					km = d[i]
+					idx[k] = i
 				}
-				idx[k] = i + 1
-				km = d[i+1]
 			}
-			km_old = km
 		}
-	}
-	{
-		for k = 1; k <= m; func() int {
-			k += 1
-			return k
-		}() {
-			V[idx[k]][k] = 1
-			ok[0] = idx[k] % 6
-			switch ok[0] {
-			case 1:
-				{
-					i = 1
-					j = 2
-					break
-				}
-				fallthrough
-			case 2:
-				{
-					i = -1
-					j = 1
-					break
-				}
-				fallthrough
-			case 3:
-				{
-					i = -1
-					j = -2
-					break
-				}
-				fallthrough
-			case 4:
-				{
-					i = 1
-					j = 2
-					break
-				}
-				fallthrough
-			case 5:
-				{
-					i = -1
-					j = 1
-					break
-				}
-				fallthrough
-			case 0:
-				{
-					i = -1
-					j = -2
-					break
+		if idx[k] == 0 {
+			i = idx[1]
+			for j = 1; j < k; j++ {
+				if i < idx[j] {
+					i = idx[j]
 				}
 			}
-			V[idx[k]+i][k] = 0.2
-			V[idx[k]+j][k] = 0.2
+			idx[k] = i + 1
+			km = d[i+1]
 		}
+		km_old = km
 	}
-	iter[0] = 0
-	{
-		for {
+	for k = 1; k <= m; k++ {
+		V[idx[k]][k] = 1
+		ok[0] = idx[k] % 6
+		switch ok[0] {
+		case 1:
 			{
-				for k = 1; k <= m; func() int {
-					k += 1
-					return k
-				}() {
-					prodABj(M, V, v, n, k)
-					ldl_dcmp(K, n, u, v, d, 0, 1, ok)
-					if disp != 0 {
-						noarch.Fprintf(stdout, []byte("  RMS matrix error:\x00"))
-					}
-					error = float64(func() int {
-						ok[0] = 1
-						return ok[0]
-					}())
-					{
-						for {
-							ldl_mprove(K, n, u, v, d, (*[1]float64)(unsafe.Pointer(&error))[:], ok)
-							if disp != 0 {
-								noarch.Fprintf(stdout, []byte("%9.2e\x00"), error)
-							}
-						}
-					}
-					if disp != 0 {
-						noarch.Fprintf(stdout, []byte("\n\x00"))
-					}
-					{
-						for i = 1; i <= n; func() int {
-							i += 1
-							return i
-						}() {
-							Xb[i][k] = d[i]
-						}
-					}
-				}
+				i = 1
+				j = 2
+				break
 			}
-			xtAx(K, Xb, Kb, n, m)
-			xtAx(M, Xb, Mb, n, m)
-			jacobi(Kb, Mb, w, Qb, m)
-			prodAB(Xb, Qb, V, n, m, m)
-			eigsort(w, V, n, m)
-			if w[modes] == 0 {
-				noarch.Sprintf(errMsg, []byte(" subspace: Zero frequency found! \n w[%d] = %e \n\x00"), modes, w[modes])
-				errorMsg(errMsg)
-				os.Exit(32)
+			fallthrough
+		case 2:
+			{
+				i = -1
+				j = 1
+				break
 			}
-			error = math.Abs(w[modes]-w_old) / w[modes]
-			func() int {
-				(iter[0]) += 1
-				return (iter[0])
-			}()
-			if disp != 0 {
-				noarch.Fprintf(stdout, []byte(" iter = %d  w[%d] = %f error = %e\n\x00"), iter[0], modes, w[modes], error)
+			fallthrough
+		case 3:
+			{
+				i = -1
+				j = -2
+				break
 			}
-			w_old = w[modes]
-			if iter[0] > 1000 {
-				noarch.Sprintf(errMsg, []byte("  subspace: Iteration limit exceeded\n rel. error = %e > %e\n\x00"), error, tol)
-				errorMsg(errMsg)
-				os.Exit(32)
+			fallthrough
+		case 4:
+			{
+				i = 1
+				j = 2
+				break
 			}
-			if noarch.NotInt((map[bool]int{false: 0, true: 1}[error > tol])) != 0 {
+			fallthrough
+		case 5:
+			{
+				i = -1
+				j = 1
+				break
+			}
+			fallthrough
+		case 0:
+			{
+				i = -1
+				j = -2
 				break
 			}
 		}
+		V[idx[k]+i][k] = 0.2
+		V[idx[k]+j][k] = 0.2
 	}
-	{
-		for k = 1; k <= m; func() int {
-			k += 1
-			return k
-		}() {
-			if w[k] > shift {
-				w[k] = w[k] - shift
-			} else {
-				w[k] = shift - w[k]
+	iter[0] = 0
+	for {
+		for k = 1; k <= m; k++ {
+			prodABj(M, V, v, n, k)
+			ldl_dcmp(K, n, u, v, d, 0, 1, ok)
+			if disp != 0 {
+				noarch.Fprintf(stdout, []byte("  RMS matrix error:\x00"))
 			}
+			error = float64(func() int {
+				ok[0] = 1
+				return ok[0]
+			}())
+			for {
+				ldl_mprove(K, n, u, v, d, (*[1]float64)(unsafe.Pointer(&error))[:], ok)
+				if disp != 0 {
+					noarch.Fprintf(stdout, []byte("%9.2e\x00"), error)
+				}
+			}
+			if disp != 0 {
+				noarch.Fprintf(stdout, []byte("\n\x00"))
+			}
+			for i = 1; i <= n; i++ {
+				Xb[i][k] = d[i]
+			}
+		}
+		xtAx(K, Xb, Kb, n, m)
+		xtAx(M, Xb, Mb, n, m)
+		jacobi(Kb, Mb, w, Qb, m)
+		prodAB(Xb, Qb, V, n, m, m)
+		eigsort(w, V, n, m)
+		if w[modes] == 0 {
+			noarch.Sprintf(errMsg, []byte(" subspace: Zero frequency found! \n w[%d] = %e \n\x00"), modes, w[modes])
+			errorMsg(errMsg)
+			os.Exit(32)
+		}
+		error = math.Abs(w[modes]-w_old) / w[modes]
+		func() int {
+			(iter[0]) += 1
+			return (iter[0])
+		}()
+		if disp != 0 {
+			noarch.Fprintf(stdout, []byte(" iter = %d  w[%d] = %f error = %e\n\x00"), iter[0], modes, w[modes], error)
+		}
+		w_old = w[modes]
+		if iter[0] > 1000 {
+			noarch.Sprintf(errMsg, []byte("  subspace: Iteration limit exceeded\n rel. error = %e > %e\n\x00"), error, tol)
+			errorMsg(errMsg)
+			os.Exit(32)
+		}
+		if noarch.NotInt((map[bool]int{false: 0, true: 1}[error > tol])) != 0 {
+			break
+		}
+	}
+	for k = 1; k <= m; k++ {
+		if w[k] > shift {
+			w[k] = w[k] - shift
+		} else {
+			w[k] = shift - w[k]
 		}
 	}
 	if verbose != 0 {
 		noarch.Fprintf(stdout, []byte(" %4d sub-space iterations,   error: %.4e \n\x00"), iter[0], error)
-		{
-			for k = 1; k <= m; func() int {
-				k += 1
-				return k
-			}() {
-				noarch.Fprintf(stdout, []byte("  mode: %2d\tDoF: %5d\t %9.4lf Hz\n\x00"), k, idx[k], math.Sqrt(w[k])/(2*3.141592653589793))
-			}
+		for k = 1; k <= m; k++ {
+			noarch.Fprintf(stdout, []byte("  mode: %2d\tDoF: %5d\t %9.4lf Hz\n\x00"), k, idx[k], math.Sqrt(w[k])/(2*3.141592653589793))
 		}
 	}
 	ok[0] = sturm(K, M, n, m, shift, w[modes]+tol, verbose)
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			for j = i; j <= n; func() int {
-				j += 1
-				return j
-			}() {
-				K[i][j] -= shift * M[i][j]
-			}
+	for i = 1; i <= n; i++ {
+		for j = i; j <= n; j++ {
+			K[i][j] -= shift * M[i][j]
 		}
 	}
 	free_dmatrix(Kb, int32(1), int32(m), int32(1), int32(m))
@@ -10767,108 +9421,60 @@ func jacobi(K [][]float64, M [][]float64, E []float64, V [][]float64, n int) {
 		Kii = Kjj
 		return Kii
 	}()
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			for j = i + 1; j <= n; func() int {
-				j += 1
-				return j
-			}() {
-				func() float64 {
-					V[j][i] = 0
-					return V[j][i]
-				}()
-				func() float64 {
-					V[i][j] = V[j][i]
-					return V[i][j]
-				}()
-			}
+	for i = 1; i <= n; i++ {
+		for j = i + 1; j <= n; j++ {
+			func() float64 {
+				V[j][i] = 0
+				return V[j][i]
+			}()
+			func() float64 {
+				V[i][j] = V[j][i]
+				return V[i][j]
+			}()
 		}
 	}
-	{
-		for d = 1; d <= n; func() int {
-			d += 1
-			return d
-		}() {
-			V[d][d] = 1
-		}
+	for d = 1; d <= n; d++ {
+		V[d][d] = 1
 	}
-	{
-		for iter = 1; iter <= 2*n; func() int {
-			iter += 1
-			return iter
-		}() {
-			tol = math.Pow(0.01, float64((2 * iter)))
-			tol = 0
-			{
-				for d = 1; d <= (n - 1); func() int {
-					d += 1
-					return d
-				}() {
-					{
-						for i = 1; i <= (n - d); func() int {
-							i += 1
-							return i
-						}() {
-							j = i + d
-							Kij = K[i][j]
-							Mij = M[i][j]
-							if Kij*Kij/(K[i][i]*K[j][j]) > tol || Mij*Mij/(M[i][i]*M[j][j]) > tol {
-								Kii = K[i][i]*Mij - Kij*M[i][i]
-								Kjj = K[j][j]*Mij - Kij*M[j][j]
-								s = K[i][i]*M[j][j] - K[j][j]*M[i][i]
-								if s >= 0 {
-									gamma = 0.5*s + math.Sqrt(0.25*s*s+Kii*Kjj)
-								} else {
-									gamma = 0.5*s - math.Sqrt(0.25*s*s+Kii*Kjj)
-								}
-								alpha = Kjj / gamma
-								beta = -Kii / gamma
-								rotate(K, n, alpha, beta, i, j)
-								rotate(M, n, alpha, beta, i, j)
-								{
-									for k = 1; k <= n; func() int {
-										k += 1
-										return k
-									}() {
-										Vki = V[k][i]
-										Vkj = V[k][j]
-										V[k][i] = Vki + beta*Vkj
-										V[k][j] = Vkj + alpha*Vki
-									}
-								}
-							}
-						}
+	for iter = 1; iter <= 2*n; iter++ {
+		tol = math.Pow(0.01, float64((2 * iter)))
+		tol = 0
+		for d = 1; d <= (n - 1); d++ {
+			for i = 1; i <= (n - d); i++ {
+				j = i + d
+				Kij = K[i][j]
+				Mij = M[i][j]
+				if Kij*Kij/(K[i][i]*K[j][j]) > tol || Mij*Mij/(M[i][i]*M[j][j]) > tol {
+					Kii = K[i][i]*Mij - Kij*M[i][i]
+					Kjj = K[j][j]*Mij - Kij*M[j][j]
+					s = K[i][i]*M[j][j] - K[j][j]*M[i][i]
+					if s >= 0 {
+						gamma = 0.5*s + math.Sqrt(0.25*s*s+Kii*Kjj)
+					} else {
+						gamma = 0.5*s - math.Sqrt(0.25*s*s+Kii*Kjj)
+					}
+					alpha = Kjj / gamma
+					beta = -Kii / gamma
+					rotate(K, n, alpha, beta, i, j)
+					rotate(M, n, alpha, beta, i, j)
+					for k = 1; k <= n; k++ {
+						Vki = V[k][i]
+						Vkj = V[k][j]
+						V[k][i] = Vki + beta*Vkj
+						V[k][j] = Vkj + alpha*Vki
 					}
 				}
 			}
 		}
 	}
-	{
-		for j = 1; j <= n; func() int {
-			j += 1
-			return j
-		}() {
-			Mjj = math.Sqrt(M[j][j])
-			{
-				for i = 1; i <= n; func() int {
-					i += 1
-					return i
-				}() {
-					V[i][j] /= Mjj
-				}
-			}
+	for j = 1; j <= n; j++ {
+		Mjj = math.Sqrt(M[j][j])
+		for i = 1; i <= n; i++ {
+			V[i][j] /= Mjj
 		}
 	}
-	{
-		for j = 1; j <= n; func() int {
-			j += 1
-			return j
-		}() {
-			E[j] = K[j][j] / M[j][j]
-		}
+	for j = 1; j <= n; j++ {
+		E[j] = K[j][j] / M[j][j]
 	}
 	return
 }
@@ -10888,43 +9494,33 @@ func rotate(A [][]float64, n int, alpha float64, beta float64, i int, j int) {
 	var k int
 	Ai = dvector(int32(1), int32(n))
 	Aj = dvector(int32(1), int32(n))
-	{
-		for k = 1; k <= n; func() int {
-			k += 1
-			return k
-		}() {
-			Ai[k] = A[i][k]
-			Aj[k] = A[j][k]
-		}
+	for k = 1; k <= n; k++ {
+		Ai[k] = A[i][k]
+		Aj[k] = A[j][k]
 	}
 	Aii = A[i][i]
 	Ajj = A[j][j]
 	Aij = A[i][j]
 	A[i][i] = Aii + float64(2)*beta*Aij + beta*beta*Ajj
 	A[j][j] = Ajj + float64(2)*alpha*Aij + alpha*alpha*Aii
-	{
-		for k = 1; k <= n; func() int {
-			k += 1
-			return k
-		}() {
-			if k != i && k != j {
-				func() float64 {
-					A[i][k] = Ai[k] + beta*Aj[k]
-					return A[i][k]
-				}()
-				func() float64 {
-					A[k][i] = A[i][k]
-					return A[k][i]
-				}()
-				func() float64 {
-					A[j][k] = Aj[k] + alpha*Ai[k]
-					return A[j][k]
-				}()
-				func() float64 {
-					A[k][j] = A[j][k]
-					return A[k][j]
-				}()
-			}
+	for k = 1; k <= n; k++ {
+		if k != i && k != j {
+			func() float64 {
+				A[i][k] = Ai[k] + beta*Aj[k]
+				return A[i][k]
+			}()
+			func() float64 {
+				A[k][i] = A[i][k]
+				return A[k][i]
+			}()
+			func() float64 {
+				A[j][k] = Aj[k] + alpha*Ai[k]
+				return A[j][k]
+			}()
+			func() float64 {
+				A[k][j] = A[j][k]
+				return A[k][j]
+			}()
 		}
 	}
 	func() float64 {
@@ -10983,17 +9579,9 @@ func stodola(K [][]float64, M [][]float64, n int, m int, w []float64, V [][]floa
 			return m - 8
 		}
 	}())
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			for j = i; j <= n; func() int {
-				j += 1
-				return j
-			}() {
-				K[i][j] += shift * M[i][j]
-			}
+	for i = 1; i <= n; i++ {
+		for j = i; j <= n; j++ {
+			K[i][j] += shift * M[i][j]
 		}
 	}
 	ldl_dcmp(K, n, u, v, v, 1, 0, ok)
@@ -11002,57 +9590,35 @@ func stodola(K [][]float64, M [][]float64, n int, m int, w []float64, V [][]floa
 		errorMsg(errMsg)
 		os.Exit(32)
 	}
-	{
-		for j = 1; j <= n; func() int {
-			j += 1
-			return j
-		}() {
-			{
-				for i = 1; i <= n; func() int {
-					i += 1
-					return i
-				}() {
-					v[i] = M[i][j]
-				}
-			}
-			ldl_dcmp(K, n, u, v, d, 0, 1, ok)
+	for j = 1; j <= n; j++ {
+		for i = 1; i <= n; i++ {
+			v[i] = M[i][j]
+		}
+		ldl_dcmp(K, n, u, v, d, 0, 1, ok)
+		if disp != 0 {
+			noarch.Fprintf(stdout, []byte("  RMS matrix error:\x00"))
+		}
+		error = float64(func() int {
+			ok[0] = 1
+			return ok[0]
+		}())
+		for {
+			ldl_mprove(K, n, u, v, d, (*[1]float64)(unsafe.Pointer(&error))[:], ok)
 			if disp != 0 {
-				noarch.Fprintf(stdout, []byte("  RMS matrix error:\x00"))
+				noarch.Fprintf(stdout, []byte("%9.2e\x00"), error)
 			}
-			error = float64(func() int {
-				ok[0] = 1
-				return ok[0]
-			}())
-			{
-				for {
-					ldl_mprove(K, n, u, v, d, (*[1]float64)(unsafe.Pointer(&error))[:], ok)
-					if disp != 0 {
-						noarch.Fprintf(stdout, []byte("%9.2e\x00"), error)
-					}
-				}
-			}
-			if disp != 0 {
-				noarch.Fprintf(stdout, []byte("\n\x00"))
-			}
-			{
-				for i = 1; i <= n; func() int {
-					i += 1
-					return i
-				}() {
-					D[i][j] = d[i]
-				}
-			}
+		}
+		if disp != 0 {
+			noarch.Fprintf(stdout, []byte("\n\x00"))
+		}
+		for i = 1; i <= n; i++ {
+			D[i][j] = d[i]
 		}
 	}
 	iter[0] = 0
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			if D[i][i] > d_max {
-				d_max = D[i][i]
-			}
+	for i = 1; i <= n; i++ {
+		if D[i][i] > d_max {
+			d_max = D[i][i]
 		}
 	}
 	func() float64 {
@@ -11063,183 +9629,95 @@ func stodola(K [][]float64, M [][]float64, n int, m int, w []float64, V [][]floa
 		d_old = d_min
 		return d_old
 	}()
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			if D[i][i] < d_min {
-				d_min = D[i][i]
-			}
+	for i = 1; i <= n; i++ {
+		if D[i][i] < d_min {
+			d_min = D[i][i]
 		}
 	}
-	{
-		for k = 1; k <= m; func() int {
-			k += 1
-			return k
-		}() {
-			d_max = d_min
-			{
-				for i = 1; i <= n; func() int {
-					i += 1
-					return i
-				}() {
-					u[i] = 0
-					if D[i][i] < d_old && D[i][i] > d_max {
-						d_max = D[i][i]
-						i_ex = i
-					}
-				}
+	for k = 1; k <= m; k++ {
+		d_max = d_min
+		for i = 1; i <= n; i++ {
+			u[i] = 0
+			if D[i][i] < d_old && D[i][i] > d_max {
+				d_max = D[i][i]
+				i_ex = i
 			}
-			u[i_ex] = 1
-			u[i_ex+1] = 0.0001
-			d_old = d_max
-			vMv = xtAy(u, M, u, n, d)
-			{
-				for i = 1; i <= n; func() int {
-					i += 1
-					return i
-				}() {
-					u[i] /= math.Sqrt(vMv)
-				}
-			}
-			{
-				for j = 1; j < k; func() int {
-					j += 1
-					return j
-				}() {
-					{
-						for i = 1; i <= n; func() int {
-							i += 1
-							return i
-						}() {
-							v[i] = V[i][j]
-						}
-					}
-					c[j] = xtAy(v, M, u, n, d)
-				}
-			}
-			{
-				for j = 1; j < k; func() int {
-					j += 1
-					return j
-				}() {
-					for i = 1; i <= n; func() int {
-						i += 1
-						return i
-					}() {
-						u[i] -= c[j] * V[i][j]
-					}
-				}
-			}
-			vMv = xtAy(u, M, u, n, d)
-			{
-				for i = 1; i <= n; func() int {
-					i += 1
-					return i
-				}() {
-					u[i] /= math.Sqrt(vMv)
-				}
-			}
-			RQ = xtAy(u, K, u, n, d)
-			{
-				for {
-					{
-						for i = 1; i <= n; func() int {
-							i += 1
-							return i
-						}() {
-							v[i] = 0
-							{
-								for j = 1; j <= n; func() int {
-									j += 1
-									return j
-								}() {
-									v[i] += D[i][j] * u[j]
-								}
-							}
-						}
-					}
-					vMv = xtAy(v, M, v, n, d)
-					{
-						for i = 1; i <= n; func() int {
-							i += 1
-							return i
-						}() {
-							v[i] /= math.Sqrt(vMv)
-						}
-					}
-					{
-						for j = 1; j < k; func() int {
-							j += 1
-							return j
-						}() {
-							{
-								for i = 1; i <= n; func() int {
-									i += 1
-									return i
-								}() {
-									u[i] = V[i][j]
-								}
-							}
-							c[j] = xtAy(u, M, v, n, d)
-						}
-					}
-					{
-						for j = 1; j < k; func() int {
-							j += 1
-							return j
-						}() {
-							for i = 1; i <= n; func() int {
-								i += 1
-								return i
-							}() {
-								v[i] -= c[j] * V[i][j]
-							}
-						}
-					}
-					vMv = xtAy(v, M, v, n, d)
-					{
-						for i = 1; i <= n; func() int {
-							i += 1
-							return i
-						}() {
-							u[i] = v[i] / math.Sqrt(vMv)
-						}
-					}
-					RQold = RQ
-					RQ = xtAy(u, K, u, n, d)
-					func() int {
-						(iter[0]) += 1
-						return (iter[0])
-					}()
-					if iter[0] > 1000 {
-						noarch.Sprintf(errMsg, []byte("  stodola: Iteration limit exceeded\n  rel. error = %e > %e\n\x00"), (math.Abs(RQ-RQold) / RQ), tol)
-						errorMsg(errMsg)
-						os.Exit(32)
-					}
-					if noarch.NotInt((map[bool]int{false: 0, true: 1}[(math.Abs(RQ-RQold)/RQ) > tol])) != 0 {
-						break
-					}
-				}
-			}
-			{
-				for i = 1; i <= n; func() int {
-					i += 1
-					return i
-				}() {
-					V[i][k] = v[i]
-				}
-			}
-			w[k] = xtAy(u, K, u, n, d)
-			if w[k] > shift {
-				w[k] = w[k] - shift
-			} else {
-				w[k] = shift - w[k]
-			}
-			noarch.Fprintf(stdout, []byte("  mode: %2d\tDoF: %5d\t\x00"), k, i_ex)
-			noarch.Fprintf(stdout, []byte(" %9.4f Hz\t iter: %4d   error: %.4e \n\x00"), math.Sqrt(w[k])/(2*3.141592653589793), iter[0], (math.Abs(RQ-RQold) / RQ))
 		}
+		u[i_ex] = 1
+		u[i_ex+1] = 0.0001
+		d_old = d_max
+		vMv = xtAy(u, M, u, n, d)
+		for i = 1; i <= n; i++ {
+			u[i] /= math.Sqrt(vMv)
+		}
+		for j = 1; j < k; j++ {
+			for i = 1; i <= n; i++ {
+				v[i] = V[i][j]
+			}
+			c[j] = xtAy(v, M, u, n, d)
+		}
+		for j = 1; j < k; j++ {
+			for i = 1; i <= n; i++ {
+				u[i] -= c[j] * V[i][j]
+			}
+		}
+		vMv = xtAy(u, M, u, n, d)
+		for i = 1; i <= n; i++ {
+			u[i] /= math.Sqrt(vMv)
+		}
+		RQ = xtAy(u, K, u, n, d)
+		for {
+			for i = 1; i <= n; i++ {
+				v[i] = 0
+				for j = 1; j <= n; j++ {
+					v[i] += D[i][j] * u[j]
+				}
+			}
+			vMv = xtAy(v, M, v, n, d)
+			for i = 1; i <= n; i++ {
+				v[i] /= math.Sqrt(vMv)
+			}
+			for j = 1; j < k; j++ {
+				for i = 1; i <= n; i++ {
+					u[i] = V[i][j]
+				}
+				c[j] = xtAy(u, M, v, n, d)
+			}
+			for j = 1; j < k; j++ {
+				for i = 1; i <= n; i++ {
+					v[i] -= c[j] * V[i][j]
+				}
+			}
+			vMv = xtAy(v, M, v, n, d)
+			for i = 1; i <= n; i++ {
+				u[i] = v[i] / math.Sqrt(vMv)
+			}
+			RQold = RQ
+			RQ = xtAy(u, K, u, n, d)
+			func() int {
+				(iter[0]) += 1
+				return (iter[0])
+			}()
+			if iter[0] > 1000 {
+				noarch.Sprintf(errMsg, []byte("  stodola: Iteration limit exceeded\n  rel. error = %e > %e\n\x00"), (math.Abs(RQ-RQold) / RQ), tol)
+				errorMsg(errMsg)
+				os.Exit(32)
+			}
+			if noarch.NotInt((map[bool]int{false: 0, true: 1}[(math.Abs(RQ-RQold)/RQ) > tol])) != 0 {
+				break
+			}
+		}
+		for i = 1; i <= n; i++ {
+			V[i][k] = v[i]
+		}
+		w[k] = xtAy(u, K, u, n, d)
+		if w[k] > shift {
+			w[k] = w[k] - shift
+		} else {
+			w[k] = shift - w[k]
+		}
+		noarch.Fprintf(stdout, []byte("  mode: %2d\tDoF: %5d\t\x00"), k, i_ex)
+		noarch.Fprintf(stdout, []byte(" %9.4f Hz\t iter: %4d   error: %.4e \n\x00"), math.Sqrt(w[k])/(2*3.141592653589793), iter[0], (math.Abs(RQ-RQold) / RQ))
 	}
 	eigsort(w, V, n, m)
 	ok[0] = sturm(K, M, n, m, shift, w[modes]+tol, verbose)
@@ -11263,39 +9741,24 @@ func eigsort(e []float64, v [][]float64, n int, m int) {
 	var j int
 	var i int
 	var p float64 = float64(0)
-	{
-		for i = 1; i < m; func() int {
-			i += 1
-			return i
-		}() {
-			k = i
-			p = e[k]
-			{
-				for j = i + 1; j <= m; func() int {
-					j += 1
-					return j
-				}() {
-					if e[j] <= p {
-						p = e[func() int {
-							k = j
-							return k
-						}()]
-					}
-				}
+	for i = 1; i < m; i++ {
+		k = i
+		p = e[k]
+		for j = i + 1; j <= m; j++ {
+			if e[j] <= p {
+				p = e[func() int {
+					k = j
+					return k
+				}()]
 			}
-			if k != i {
-				e[k] = e[i]
-				e[i] = p
-				{
-					for j = 1; j <= n; func() int {
-						j += 1
-						return j
-					}() {
-						p = v[j][i]
-						v[j][i] = v[j][k]
-						v[j][k] = p
-					}
-				}
+		}
+		if k != i {
+			e[k] = e[i]
+			e[i] = p
+			for j = 1; j <= n; j++ {
+				p = v[j][i]
+				v[j][i] = v[j][k]
+				v[j][k] = p
 			}
 		}
 	}
@@ -11333,17 +9796,9 @@ func sturm(K [][]float64, M [][]float64, n int, m int, shift float64, ws float64
 		}
 	}())
 	ws_shift = ws + shift
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			for j = i; j <= n; func() int {
-				j += 1
-				return j
-			}() {
-				K[i][j] -= ws_shift * M[i][j]
-			}
+	for i = 1; i <= n; i++ {
+		for j = i; j <= n; j++ {
+			K[i][j] -= ws_shift * M[i][j]
 		}
 	}
 	ldl_dcmp(K, n, d, d, d, 1, 0, (*[1]int)(unsafe.Pointer(&ok))[:])
@@ -11359,17 +9814,9 @@ func sturm(K [][]float64, M [][]float64, n int, m int, shift float64, ws float64
 			noarch.Fprintf(stdout, []byte("  All %d modes were found.\n\x00"), modes)
 		}
 	}
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			for j = i; j <= n; func() int {
-				j += 1
-				return j
-			}() {
-				K[i][j] += ws_shift * M[i][j]
-			}
+	for i = 1; i <= n; i++ {
+		for j = i; j <= n; j++ {
+			K[i][j] += ws_shift * M[i][j]
 		}
 	}
 	free_dvector(d, int32(1), int32(n))
@@ -11455,137 +9902,79 @@ func gaussj(A [][]float32, n int, B [][]float32, m int) {
 	indxc = ivector(int32(1), int32(n))
 	indxr = ivector(int32(1), int32(n))
 	ipiv = ivector(int32(1), int32(n))
-	{
-		for j = 1; j <= n; func() int {
-			j += 1
-			return j
-		}() {
-			ipiv[j] = 0
-		}
+	for j = 1; j <= n; j++ {
+		ipiv[j] = 0
 	}
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			big = float32(0)
-			{
-				for j = 1; j <= n; func() int {
-					j += 1
-					return j
-				}() {
-					if ipiv[j] != 1 {
-						for k = 1; k <= n; func() int {
-							k += 1
-							return k
-						}() {
-							if ipiv[k] == 0 {
-								if math.Abs(float64(A[j][k])) >= float64(big) {
-									big = float32(math.Abs(float64(A[j][k])))
-									irow = j
-									icol = k
-								}
-							} else {
-								if ipiv[k] > 1 {
-									NRerror([]byte("gaussj: Singular Matrix-1\x00"))
-								}
-							}
+	for i = 1; i <= n; i++ {
+		big = float32(0)
+		for j = 1; j <= n; j++ {
+			if ipiv[j] != 1 {
+				for k = 1; k <= n; k++ {
+					if ipiv[k] == 0 {
+						if math.Abs(float64(A[j][k])) >= float64(big) {
+							big = float32(math.Abs(float64(A[j][k])))
+							irow = j
+							icol = k
 						}
-					}
-				}
-			}
-			func() int {
-				(ipiv[icol]) += 1
-				return (ipiv[icol])
-			}()
-			if irow != icol {
-				{
-					for l = 1; l <= n; func() int {
-						l += 1
-						return l
-					}() {
-						temp = (A[irow][l])
-						(A[irow][l]) = (A[icol][l])
-						(A[icol][l]) = temp
-					}
-				}
-				{
-					for l = 1; l <= m; func() int {
-						l += 1
-						return l
-					}() {
-						temp = (B[irow][l])
-						(B[irow][l]) = (B[icol][l])
-						(B[icol][l]) = temp
-					}
-				}
-			}
-			indxr[i] = irow
-			indxc[i] = icol
-			if float64(A[icol][icol]) == 0 {
-				NRerror([]byte("gaussj: Singular Matrix-2\x00"))
-			}
-			pivinv = float32(1 / float64(A[icol][icol]))
-			A[icol][icol] = float32(1)
-			{
-				for l = 1; l <= n; func() int {
-					l += 1
-					return l
-				}() {
-					A[icol][l] *= pivinv
-				}
-			}
-			{
-				for l = 1; l <= m; func() int {
-					l += 1
-					return l
-				}() {
-					B[icol][l] *= pivinv
-				}
-			}
-			{
-				for ll = 1; ll <= n; func() int {
-					ll += 1
-					return ll
-				}() {
-					if ll != icol {
-						dum = A[ll][icol]
-						A[ll][icol] = float32(0)
-						{
-							for l = 1; l <= n; func() int {
-								l += 1
-								return l
-							}() {
-								A[ll][l] -= A[icol][l] * dum
-							}
-						}
-						{
-							for l = 1; l <= m; func() int {
-								l += 1
-								return l
-							}() {
-								B[ll][l] -= B[icol][l] * dum
-							}
+					} else {
+						if ipiv[k] > 1 {
+							NRerror([]byte("gaussj: Singular Matrix-1\x00"))
 						}
 					}
 				}
 			}
 		}
-	}
-	{
-		for l = n; l >= 1; func() int {
-			l -= 1
-			return l
-		}() {
-			if indxr[l] != indxc[l] {
-				for k = 1; k <= n; func() int {
-					k += 1
-					return k
-				}() {
-					temp = (A[k][indxr[l]])
-					(A[k][indxr[l]]) = (A[k][indxc[l]])
-					(A[k][indxc[l]]) = temp
+		func() int {
+			(ipiv[icol]) += 1
+			return (ipiv[icol])
+		}()
+		if irow != icol {
+			for l = 1; l <= n; l++ {
+				temp = (A[irow][l])
+				(A[irow][l]) = (A[icol][l])
+				(A[icol][l]) = temp
+			}
+			for l = 1; l <= m; l++ {
+				temp = (B[irow][l])
+				(B[irow][l]) = (B[icol][l])
+				(B[icol][l]) = temp
+			}
+		}
+		indxr[i] = irow
+		indxc[i] = icol
+		if float64(A[icol][icol]) == 0 {
+			NRerror([]byte("gaussj: Singular Matrix-2\x00"))
+		}
+		pivinv = float32(1 / float64(A[icol][icol]))
+		A[icol][icol] = float32(1)
+		for l = 1; l <= n; l++ {
+			A[icol][l] *= pivinv
+		}
+		for l = 1; l <= m; l++ {
+			B[icol][l] *= pivinv
+		}
+		for ll = 1; ll <= n; ll++ {
+			if ll != icol {
+				dum = A[ll][icol]
+				A[ll][icol] = float32(0)
+				for l = 1; l <= n; l++ {
+					A[ll][l] -= A[icol][l] * dum
 				}
+				for l = 1; l <= m; l++ {
+					B[ll][l] -= B[icol][l] * dum
+				}
+			}
+		}
+	}
+	for l = n; l >= 1; func() int {
+		l -= 1
+		return l
+	}() {
+		if indxr[l] != indxc[l] {
+			for k = 1; k <= n; k++ {
+				temp = (A[k][indxr[l]])
+				(A[k][indxr[l]]) = (A[k][indxc[l]])
+				(A[k][indxc[l]]) = temp
 			}
 		}
 	}
@@ -11621,73 +10010,40 @@ func lu_dcmp(A [][]float64, n int, b []float64, reduce int, solve int, pd []int)
 	var k int
 	pd[0] = 1
 	if reduce != 0 {
-		{
-			for k = 1; k <= n; func() int {
-				k += 1
-				return k
-			}() {
-				if 0 == (func() float64 {
-					pivot = A[k][k]
-					return pivot
-				}()) {
-					noarch.Fprintf(stderr, []byte(" lu_dcmp: zero found on the diagonal\n\x00"))
-					noarch.Fprintf(stderr, []byte(" A[%d][%d] = %11.4e\n\x00"), k, k, A[k][k])
-					pd[0] = 0
-					return
-				}
-				{
-					for i = k + 1; i <= n; func() int {
-						i += 1
-						return i
-					}() {
-						A[i][k] /= pivot
-						{
-							for j = k + 1; j <= n; func() int {
-								j += 1
-								return j
-							}() {
-								A[i][j] -= A[i][k] * A[k][j]
-							}
-						}
-					}
+		for k = 1; k <= n; k++ {
+			if 0 == (func() float64 {
+				pivot = A[k][k]
+				return pivot
+			}()) {
+				noarch.Fprintf(stderr, []byte(" lu_dcmp: zero found on the diagonal\n\x00"))
+				noarch.Fprintf(stderr, []byte(" A[%d][%d] = %11.4e\n\x00"), k, k, A[k][k])
+				pd[0] = 0
+				return
+			}
+			for i = k + 1; i <= n; i++ {
+				A[i][k] /= pivot
+				for j = k + 1; j <= n; j++ {
+					A[i][j] -= A[i][k] * A[k][j]
 				}
 			}
 		}
 	}
 	if solve != 0 {
-		{
-			for k = 1; k <= n; func() int {
-				k += 1
-				return k
-			}() {
-				for i = k + 1; i <= n; func() int {
-					i += 1
-					return i
-				}() {
-					b[i] -= A[i][k] * b[k]
-				}
+		for k = 1; k <= n; k++ {
+			for i = k + 1; i <= n; i++ {
+				b[i] -= A[i][k] * b[k]
 			}
 		}
-		{
-			for j = n; j >= 2; func() int {
-				j -= 1
-				return j
-			}() {
-				for i = 1; i <= j-1; func() int {
-					i += 1
-					return i
-				}() {
-					b[i] -= b[j] * A[i][j] / A[j][j]
-				}
+		for j = n; j >= 2; func() int {
+			j -= 1
+			return j
+		}() {
+			for i = 1; i <= j-1; i++ {
+				b[i] -= b[j] * A[i][j] / A[j][j]
 			}
 		}
-		{
-			for i = 1; i <= n; func() int {
-				i += 1
-				return i
-			}() {
-				b[i] /= A[i][i]
-			}
+		for i = 1; i <= n; i++ {
+			b[i] /= A[i][i]
 		}
 	}
 	return
@@ -11726,111 +10082,63 @@ func ldl_dcmp(A [][]float64, n int, d []float64, b []float64, x []float64, reduc
 	var m int
 	pd[0] = 0
 	if reduce != 0 {
-		{
-			for j = 1; j <= n; func() int {
-				j += 1
-				return j
-			}() {
-				{
-					m = 1
-					i = 1
-					for i = 1; i < j; func() int {
-						i += 1
-						return i
-					}() {
-						if A[i][j] == 0 {
-							func() int {
-								m += 1
-								return m
-							}()
-						} else {
-							break
-						}
+		for j = 1; j <= n; j++ {
+			{
+				m = 1
+				i = 1
+				for i = 1; i < j; i++ {
+					if A[i][j] == 0 {
+						func() int {
+							m += 1
+							return m
+						}()
+					} else {
+						break
 					}
 				}
-				{
-					for i = m; i < j; func() int {
-						i += 1
-						return i
-					}() {
-						A[j][i] = A[i][j]
-						{
-							for k = m; k < i; func() int {
-								k += 1
-								return k
-							}() {
-								A[j][i] -= A[j][k] * A[i][k]
-							}
-						}
-					}
+			}
+			for i = m; i < j; i++ {
+				A[j][i] = A[i][j]
+				for k = m; k < i; k++ {
+					A[j][i] -= A[j][k] * A[i][k]
 				}
-				d[j] = A[j][j]
-				{
-					for i = m; i < j; func() int {
-						i += 1
-						return i
-					}() {
-						d[j] -= A[j][i] * A[j][i] / d[i]
-					}
-				}
-				{
-					for i = m; i < j; func() int {
-						i += 1
-						return i
-					}() {
-						A[j][i] /= d[i]
-					}
-				}
-				if d[j] == 0 {
-					noarch.Fprintf(stderr, []byte(" ldl_dcmp(): zero found on diagonal ...\n\x00"))
-					noarch.Fprintf(stderr, []byte(" d[%d] = %11.4e\n\x00"), j, d[j])
-					return
-				}
-				if d[j] < 0 {
-					func() int {
-						(pd[0]) -= 1
-						return (pd[0])
-					}()
-				}
+			}
+			d[j] = A[j][j]
+			for i = m; i < j; i++ {
+				d[j] -= A[j][i] * A[j][i] / d[i]
+			}
+			for i = m; i < j; i++ {
+				A[j][i] /= d[i]
+			}
+			if d[j] == 0 {
+				noarch.Fprintf(stderr, []byte(" ldl_dcmp(): zero found on diagonal ...\n\x00"))
+				noarch.Fprintf(stderr, []byte(" d[%d] = %11.4e\n\x00"), j, d[j])
+				return
+			}
+			if d[j] < 0 {
+				func() int {
+					(pd[0]) -= 1
+					return (pd[0])
+				}()
 			}
 		}
 	}
 	if solve != 0 {
-		{
-			for i = 1; i <= n; func() int {
-				i += 1
-				return i
-			}() {
-				x[i] = b[i]
-				{
-					for j = 1; j < i; func() int {
-						j += 1
-						return j
-					}() {
-						x[i] -= A[i][j] * x[j]
-					}
-				}
+		for i = 1; i <= n; i++ {
+			x[i] = b[i]
+			for j = 1; j < i; j++ {
+				x[i] -= A[i][j] * x[j]
 			}
 		}
-		{
-			for i = 1; i <= n; func() int {
-				i += 1
-				return i
-			}() {
-				x[i] /= d[i]
-			}
+		for i = 1; i <= n; i++ {
+			x[i] /= d[i]
 		}
-		{
-			for i = n; i > 1; func() int {
-				i -= 1
-				return i
-			}() {
-				for j = 1; j < i; func() int {
-					j += 1
-					return j
-				}() {
-					x[j] -= A[i][j] * x[i]
-				}
+		for i = n; i > 1; func() int {
+			i -= 1
+			return i
+		}() {
+			for j = 1; j < i; j++ {
+				x[j] -= A[i][j] * x[i]
 			}
 		}
 	}
@@ -11860,46 +10168,26 @@ func ldl_mprove(A [][]float64, n int, d []float64, b []float64, x []float64, rms
 	var i int
 	var pd int
 	resid = dvector(int32(1), int32(n))
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			sdp = b[i]
-			{
-				for j = 1; j <= n; func() int {
-					j += 1
-					return j
-				}() {
-					if i <= j {
-						sdp -= A[i][j] * x[j]
-					} else {
-						sdp -= A[j][i] * x[j]
-					}
-				}
+	for i = 1; i <= n; i++ {
+		sdp = b[i]
+		for j = 1; j <= n; j++ {
+			if i <= j {
+				sdp -= A[i][j] * x[j]
+			} else {
+				sdp -= A[j][i] * x[j]
 			}
-			resid[i] = sdp
 		}
+		resid[i] = sdp
 	}
 	ldl_dcmp(A, n, d, resid, resid, 0, 1, (*[1]int)(unsafe.Pointer(&pd))[:])
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			rms_resid_new += resid[i] * resid[i]
-		}
+	for i = 1; i <= n; i++ {
+		rms_resid_new += resid[i] * resid[i]
 	}
 	rms_resid_new = math.Sqrt(rms_resid_new / float64(n))
 	ok[0] = 0
 	if rms_resid_new/rms_resid[0] < 0.9 {
-		{
-			for i = 1; i <= n; func() int {
-				i += 1
-				return i
-			}() {
-				x[i] += resid[i]
-			}
+		for i = 1; i <= n; i++ {
+			x[i] += resid[i]
 		}
 		rms_resid[0] = rms_resid_new
 		ok[0] = 1
@@ -11943,167 +10231,101 @@ func ldl_dcmp_pm(A [][]float64, n int, d []float64, b []float64, x []float64, c 
 	var m int
 	pd[0] = 0
 	if reduce != 0 {
-		{
-			for j = 1; j <= n; func() int {
-				j += 1
-				return j
-			}() {
-				d[j] = 0
-				if q[j] != 0 {
-					{
-						m = 1
-						i = 1
-						for i = 1; i < j; func() int {
-							i += 1
-							return i
-						}() {
-							if A[i][j] == 0 {
-								func() int {
-									m += 1
-									return m
-								}()
-							} else {
-								break
+		for j = 1; j <= n; j++ {
+			d[j] = 0
+			if q[j] != 0 {
+				{
+					m = 1
+					i = 1
+					for i = 1; i < j; i++ {
+						if A[i][j] == 0 {
+							func() int {
+								m += 1
+								return m
+							}()
+						} else {
+							break
+						}
+					}
+				}
+				for i = m; i < j; i++ {
+					if q[i] != 0 {
+						A[j][i] = A[i][j]
+						for k = m; k < i; k++ {
+							if q[k] != 0 {
+								A[j][i] -= A[j][k] * A[i][k]
 							}
 						}
 					}
-					{
-						for i = m; i < j; func() int {
-							i += 1
-							return i
-						}() {
-							if q[i] != 0 {
-								A[j][i] = A[i][j]
-								{
-									for k = m; k < i; func() int {
-										k += 1
-										return k
-									}() {
-										if q[k] != 0 {
-											A[j][i] -= A[j][k] * A[i][k]
-										}
-									}
-								}
-							}
-						}
+				}
+				d[j] = A[j][j]
+				for i = m; i < j; i++ {
+					if q[i] != 0 {
+						d[j] -= A[j][i] * A[j][i] / d[i]
 					}
-					d[j] = A[j][j]
-					{
-						for i = m; i < j; func() int {
-							i += 1
-							return i
-						}() {
-							if q[i] != 0 {
-								d[j] -= A[j][i] * A[j][i] / d[i]
-							}
-						}
+				}
+				for i = m; i < j; i++ {
+					if q[i] != 0 {
+						A[j][i] /= d[i]
 					}
-					{
-						for i = m; i < j; func() int {
-							i += 1
-							return i
-						}() {
-							if q[i] != 0 {
-								A[j][i] /= d[i]
-							}
-						}
-					}
-					if d[j] == 0 {
-						noarch.Fprintf(stderr, []byte(" ldl_dcmp_pm(): zero found on diagonal ...\n\x00"))
-						noarch.Fprintf(stderr, []byte(" d[%d] = %11.4e\n\x00"), j, d[j])
-						return
-					}
-					if d[j] < 0 {
-						func() int {
-							(pd[0]) -= 1
-							return (pd[0])
-						}()
-					}
+				}
+				if d[j] == 0 {
+					noarch.Fprintf(stderr, []byte(" ldl_dcmp_pm(): zero found on diagonal ...\n\x00"))
+					noarch.Fprintf(stderr, []byte(" d[%d] = %11.4e\n\x00"), j, d[j])
+					return
+				}
+				if d[j] < 0 {
+					func() int {
+						(pd[0]) -= 1
+						return (pd[0])
+					}()
 				}
 			}
 		}
 	}
 	if solve != 0 {
-		{
-			for i = 1; i <= n; func() int {
-				i += 1
-				return i
-			}() {
-				if q[i] != 0 {
-					x[i] = b[i]
-					{
-						for j = 1; j <= n; func() int {
-							j += 1
-							return j
-						}() {
-							if r[j] != 0 {
-								x[i] -= A[i][j] * x[j]
-							}
-						}
+		for i = 1; i <= n; i++ {
+			if q[i] != 0 {
+				x[i] = b[i]
+				for j = 1; j <= n; j++ {
+					if r[j] != 0 {
+						x[i] -= A[i][j] * x[j]
 					}
 				}
 			}
 		}
-		{
-			for i = 1; i <= n; func() int {
-				i += 1
-				return i
-			}() {
-				if q[i] != 0 {
-					for j = 1; j < i; func() int {
-						j += 1
-						return j
-					}() {
-						if q[j] != 0 {
-							x[i] -= A[i][j] * x[j]
-						}
+		for i = 1; i <= n; i++ {
+			if q[i] != 0 {
+				for j = 1; j < i; j++ {
+					if q[j] != 0 {
+						x[i] -= A[i][j] * x[j]
 					}
 				}
 			}
 		}
-		{
-			for i = 1; i <= n; func() int {
-				i += 1
-				return i
-			}() {
-				if q[i] != 0 {
-					x[i] /= d[i]
-				}
+		for i = 1; i <= n; i++ {
+			if q[i] != 0 {
+				x[i] /= d[i]
 			}
 		}
-		{
-			for i = n; i > 1; func() int {
-				i -= 1
-				return i
-			}() {
-				if q[i] != 0 {
-					for j = 1; j < i; func() int {
-						j += 1
-						return j
-					}() {
-						if q[j] != 0 {
-							x[j] -= A[i][j] * x[i]
-						}
+		for i = n; i > 1; func() int {
+			i -= 1
+			return i
+		}() {
+			if q[i] != 0 {
+				for j = 1; j < i; j++ {
+					if q[j] != 0 {
+						x[j] -= A[i][j] * x[i]
 					}
 				}
 			}
 		}
-		{
-			for i = 1; i <= n; func() int {
-				i += 1
-				return i
-			}() {
-				c[i] = 0
-				if r[i] != 0 {
-					c[i] = -b[i]
-					{
-						for j = 1; j <= n; func() int {
-							j += 1
-							return j
-						}() {
-							c[i] += A[i][j] * x[j]
-						}
-					}
+		for i = 1; i <= n; i++ {
+			c[i] = 0
+			if r[i] != 0 {
+				c[i] = -b[i]
+				for j = 1; j <= n; j++ {
+					c[i] += A[i][j] * x[j]
 				}
 			}
 		}
@@ -12157,74 +10379,44 @@ func ldl_mprove_pm(A [][]float64, n int, d []float64, b []float64, x []float64, 
 	var pd int
 	dx = dvector(int32(1), int32(n))
 	dc = dvector(int32(1), int32(n))
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			dx[i] = 0
-		}
+	for i = 1; i <= n; i++ {
+		dx[i] = 0
 	}
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			if q[i] != 0 {
-				sdp = b[i]
-				{
-					for j = 1; j <= n; func() int {
-						j += 1
-						return j
-					}() {
-						if q[j] != 0 {
-							if i <= j {
-								sdp -= A[i][j] * x[j]
-							} else {
-								sdp -= A[j][i] * x[j]
-							}
-						}
+	for i = 1; i <= n; i++ {
+		if q[i] != 0 {
+			sdp = b[i]
+			for j = 1; j <= n; j++ {
+				if q[j] != 0 {
+					if i <= j {
+						sdp -= A[i][j] * x[j]
+					} else {
+						sdp -= A[j][i] * x[j]
 					}
 				}
-				{
-					for j = 1; j <= n; func() int {
-						j += 1
-						return j
-					}() {
-						if r[j] != 0 {
-							sdp -= A[i][j] * x[j]
-						}
-					}
-				}
-				dx[i] = sdp
 			}
+			for j = 1; j <= n; j++ {
+				if r[j] != 0 {
+					sdp -= A[i][j] * x[j]
+				}
+			}
+			dx[i] = sdp
 		}
 	}
 	ldl_dcmp_pm(A, n, d, dx, dx, dc, q, r, 0, 1, (*[1]int)(unsafe.Pointer(&pd))[:])
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			if q[i] != 0 {
-				rms_resid_new += dx[i] * dx[i]
-			}
+	for i = 1; i <= n; i++ {
+		if q[i] != 0 {
+			rms_resid_new += dx[i] * dx[i]
 		}
 	}
 	rms_resid_new = math.Sqrt(rms_resid_new / float64(n))
 	ok[0] = 0
 	if rms_resid_new/rms_resid[0] < 0.9 {
-		{
-			for i = 1; i <= n; func() int {
-				i += 1
-				return i
-			}() {
-				if q[i] != 0 {
-					x[i] += dx[i]
-				}
-				if r[i] != 0 {
-					c[i] += dc[i]
-				}
+		for i = 1; i <= n; i++ {
+			if q[i] != 0 {
+				x[i] += dx[i]
+			}
+			if r[i] != 0 {
+				c[i] += dc[i]
 			}
 		}
 		rms_resid[0] = rms_resid_new
@@ -12250,34 +10442,16 @@ func PSB_update(B [][]float64, f []float64, d []float64, n int) {
 	var dtd float64 = 0
 	var ftd float64 = 0
 	var dtd2 float64 = 0
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			dtd += d[i] * d[i]
-		}
+	for i = 1; i <= n; i++ {
+		dtd += d[i] * d[i]
 	}
 	dtd2 = dtd * dtd
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			ftd += f[i] * d[i]
-		}
+	for i = 1; i <= n; i++ {
+		ftd += f[i] * d[i]
 	}
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			for j = i; j <= n; func() int {
-				j += 1
-				return j
-			}() {
-				B[i][j] -= ((f[i]*d[j]+f[j]*d[i])/dtd - ftd*d[i]*d[j]/dtd2)
-			}
+	for i = 1; i <= n; i++ {
+		for j = i; j <= n; j++ {
+			B[i][j] -= ((f[i]*d[j]+f[j]*d[i])/dtd - ftd*d[i]*d[j]/dtd2)
 		}
 	}
 }
@@ -12313,185 +10487,102 @@ func pseudo_inv(A [][]float64, Ai [][]float64, n int, m int, beta float64, verbo
 	if beta > float64(1) {
 		noarch.Fprintf(stderr, []byte(" pseudo_inv: warning beta = %lf\n\x00"), beta)
 	}
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
+	for i = 1; i <= n; i++ {
+		func() float64 {
+			b[i] = 0
+			return b[i]
+		}()
+		func() float64 {
+			x[i] = b[i]
+			return x[i]
+		}()
+		func() float64 {
+			diag[i] = x[i]
+			return diag[i]
+		}()
+		for j = i; j <= n; j++ {
 			func() float64 {
-				b[i] = 0
-				return b[i]
+				AtA[j][i] = 0
+				return AtA[j][i]
 			}()
 			func() float64 {
-				x[i] = b[i]
-				return x[i]
+				AtA[i][j] = AtA[j][i]
+				return AtA[i][j]
 			}()
-			func() float64 {
-				diag[i] = x[i]
-				return diag[i]
-			}()
-			{
-				for j = i; j <= n; func() int {
-					j += 1
-					return j
-				}() {
-					func() float64 {
-						AtA[j][i] = 0
-						return AtA[j][i]
-					}()
-					func() float64 {
-						AtA[i][j] = AtA[j][i]
-						return AtA[i][j]
-					}()
-				}
-			}
 		}
 	}
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			{
-				for j = 1; j <= n; func() int {
-					j += 1
-					return j
-				}() {
-					tmp = 0
-					{
-						for k = 1; k <= m; func() int {
-							k += 1
-							return k
-						}() {
-							tmp += A[k][i] * A[k][j]
-						}
-					}
-					AtA[i][j] = tmp
-				}
+	for i = 1; i <= n; i++ {
+		for j = 1; j <= n; j++ {
+			tmp = 0
+			for k = 1; k <= m; k++ {
+				tmp += A[k][i] * A[k][j]
 			}
+			AtA[i][j] = tmp
 		}
 	}
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			for j = i; j <= n; func() int {
-				j += 1
-				return j
-			}() {
-				func() float64 {
-					AtA[j][i] = 0.5 * (AtA[i][j] + AtA[j][i])
-					return AtA[j][i]
-				}()
-				func() float64 {
-					AtA[i][j] = AtA[j][i]
-					return AtA[i][j]
-				}()
-			}
+	for i = 1; i <= n; i++ {
+		for j = i; j <= n; j++ {
+			func() float64 {
+				AtA[j][i] = 0.5 * (AtA[i][j] + AtA[j][i])
+				return AtA[j][i]
+			}()
+			func() float64 {
+				AtA[i][j] = AtA[j][i]
+				return AtA[i][j]
+			}()
 		}
 	}
 	tr_AtA = 0
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			tr_AtA += AtA[i][i]
-		}
+	for i = 1; i <= n; i++ {
+		tr_AtA += AtA[i][i]
 	}
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			AtA[i][i] += beta * tr_AtA
-		}
+	for i = 1; i <= n; i++ {
+		AtA[i][i] += beta * tr_AtA
 	}
 	ldl_dcmp(AtA, n, diag, b, x, 1, 0, (*[1]int)(unsafe.Pointer(&ok))[:])
-	{
-		for j = 1; j <= n; func() int {
-			j += 1
-			return j
-		}() {
-			{
-				for k = 1; k <= n; func() int {
-					k += 1
-					return k
-				}() {
-					b[k] = 0
-				}
-			}
-			b[j] = 1
-			ldl_dcmp(AtA, n, diag, b, x, 0, 1, (*[1]int)(unsafe.Pointer(&ok))[:])
+	for j = 1; j <= n; j++ {
+		for k = 1; k <= n; k++ {
+			b[k] = 0
+		}
+		b[j] = 1
+		ldl_dcmp(AtA, n, diag, b, x, 0, 1, (*[1]int)(unsafe.Pointer(&ok))[:])
+		if verbose != 0 {
+			noarch.Fprintf(stdout, []byte("  RMS matrix error:\x00"))
+		}
+		error = 1
+		ok = 1
+		for {
+			ldl_mprove(AtA, n, diag, b, x, (*[1]float64)(unsafe.Pointer(&error))[:], (*[1]int)(unsafe.Pointer(&ok))[:])
 			if verbose != 0 {
-				noarch.Fprintf(stdout, []byte("  RMS matrix error:\x00"))
-			}
-			error = 1
-			ok = 1
-			{
-				for {
-					ldl_mprove(AtA, n, diag, b, x, (*[1]float64)(unsafe.Pointer(&error))[:], (*[1]int)(unsafe.Pointer(&ok))[:])
-					if verbose != 0 {
-						noarch.Fprintf(stdout, []byte("%9.2e\x00"), error)
-					}
-				}
-			}
-			if verbose != 0 {
-				noarch.Fprintf(stdout, []byte("\n\x00"))
-			}
-			{
-				for k = 1; k <= n; func() int {
-					k += 1
-					return k
-				}() {
-					AtAi[k][j] = x[k]
-				}
+				noarch.Fprintf(stdout, []byte("%9.2e\x00"), error)
 			}
 		}
-	}
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			for j = i; j <= n; func() int {
-				j += 1
-				return j
-			}() {
-				func() float64 {
-					AtAi[j][i] = 0.5 * (AtAi[i][j] + AtAi[j][i])
-					return AtAi[j][i]
-				}()
-				func() float64 {
-					AtAi[i][j] = AtAi[j][i]
-					return AtAi[i][j]
-				}()
-			}
+		if verbose != 0 {
+			noarch.Fprintf(stdout, []byte("\n\x00"))
+		}
+		for k = 1; k <= n; k++ {
+			AtAi[k][j] = x[k]
 		}
 	}
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			{
-				for j = 1; j <= m; func() int {
-					j += 1
-					return j
-				}() {
-					tmp = 0
-					{
-						for k = 1; k <= n; func() int {
-							k += 1
-							return k
-						}() {
-							tmp += AtAi[i][k] * A[j][k]
-						}
-					}
-					Ai[i][j] = tmp
-				}
+	for i = 1; i <= n; i++ {
+		for j = i; j <= n; j++ {
+			func() float64 {
+				AtAi[j][i] = 0.5 * (AtAi[i][j] + AtAi[j][i])
+				return AtAi[j][i]
+			}()
+			func() float64 {
+				AtAi[i][j] = AtAi[j][i]
+				return AtAi[i][j]
+			}()
+		}
+	}
+	for i = 1; i <= n; i++ {
+		for j = 1; j <= m; j++ {
+			tmp = 0
+			for k = 1; k <= n; k++ {
+				tmp += AtAi[i][k] * A[j][k]
 			}
+			Ai[i][j] = tmp
 		}
 	}
 	free_dmatrix(AtAi, int32(1), int32(n), int32(1), int32(n))
@@ -12509,30 +10600,15 @@ func pseudo_inv(A [][]float64, Ai [][]float64, n int, m int, beta float64, verbo
  */func prodABj(A [][]float64, B [][]float64, u []float64, n int, j int) {
 	var i int
 	var k int
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			u[i] = 0
-		}
+	for i = 1; i <= n; i++ {
+		u[i] = 0
 	}
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			{
-				for k = 1; k <= n; func() int {
-					k += 1
-					return k
-				}() {
-					if i <= k {
-						u[i] += A[i][k] * B[k][j]
-					} else {
-						u[i] += A[k][i] * B[k][j]
-					}
-				}
+	for i = 1; i <= n; i++ {
+		for k = 1; k <= n; k++ {
+			if i <= k {
+				u[i] += A[i][k] * B[k][j]
+			} else {
+				u[i] += A[k][i] * B[k][j]
 			}
 		}
 	}
@@ -12546,34 +10622,15 @@ func pseudo_inv(A [][]float64, Ai [][]float64, n int, m int, beta float64, verbo
 	var i int
 	var j int
 	var k int
-	{
-		for i = 1; i <= I; func() int {
-			i += 1
-			return i
-		}() {
-			for k = 1; k <= K; func() int {
-				k += 1
-				return k
-			}() {
-				C[i][k] = 0
-			}
+	for i = 1; i <= I; i++ {
+		for k = 1; k <= K; k++ {
+			C[i][k] = 0
 		}
 	}
-	{
-		for i = 1; i <= I; func() int {
-			i += 1
-			return i
-		}() {
-			for k = 1; k <= K; func() int {
-				k += 1
-				return k
-			}() {
-				for j = 1; j <= J; func() int {
-					j += 1
-					return j
-				}() {
-					C[i][k] += A[i][j] * B[j][k]
-				}
+	for i = 1; i <= I; i++ {
+		for k = 1; k <= K; k++ {
+			for j = 1; j <= J; j++ {
+				C[i][k] += A[i][j] * B[j][k]
 			}
 		}
 	}
@@ -12599,66 +10656,44 @@ func invAB(A [][]float64, B [][]float64, n int, m int, AiB [][]float64, ok []int
 	diag = dvector(int32(1), int32(n))
 	x = dvector(int32(1), int32(n))
 	b = dvector(int32(1), int32(n))
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			func() float64 {
-				x[i] = 0
-				return x[i]
-			}()
-			func() float64 {
-				diag[i] = x[i]
-				return diag[i]
-			}()
-		}
+	for i = 1; i <= n; i++ {
+		func() float64 {
+			x[i] = 0
+			return x[i]
+		}()
+		func() float64 {
+			diag[i] = x[i]
+			return diag[i]
+		}()
 	}
 	ldl_dcmp(A, n, diag, b, x, 1, 0, ok)
 	if ok[0] < 0 {
 		noarch.Fprintf(stderr, []byte(" Make sure that all six\x00"))
 		noarch.Fprintf(stderr, []byte(" rigid body translations are restrained!\n\x00"))
 	}
-	{
-		for j = 1; j <= m; func() int {
-			j += 1
-			return j
-		}() {
-			{
-				for k = 1; k <= n; func() int {
-					k += 1
-					return k
-				}() {
-					b[k] = B[k][j]
-				}
-			}
-			ldl_dcmp(A, n, diag, b, x, 0, 1, ok)
+	for j = 1; j <= m; j++ {
+		for k = 1; k <= n; k++ {
+			b[k] = B[k][j]
+		}
+		ldl_dcmp(A, n, diag, b, x, 0, 1, ok)
+		if verbose != 0 {
+			noarch.Fprintf(stdout, []byte("    LDL' RMS matrix precision:\x00"))
+		}
+		error = float64(func() int {
+			ok[0] = 1
+			return ok[0]
+		}())
+		for {
+			ldl_mprove(A, n, diag, b, x, (*[1]float64)(unsafe.Pointer(&error))[:], ok)
 			if verbose != 0 {
-				noarch.Fprintf(stdout, []byte("    LDL' RMS matrix precision:\x00"))
+				noarch.Fprintf(stdout, []byte("%9.2e\x00"), error)
 			}
-			error = float64(func() int {
-				ok[0] = 1
-				return ok[0]
-			}())
-			{
-				for {
-					ldl_mprove(A, n, diag, b, x, (*[1]float64)(unsafe.Pointer(&error))[:], ok)
-					if verbose != 0 {
-						noarch.Fprintf(stdout, []byte("%9.2e\x00"), error)
-					}
-				}
-			}
-			if verbose != 0 {
-				noarch.Fprintf(stdout, []byte("\n\x00"))
-			}
-			{
-				for i = 1; i <= n; func() int {
-					i += 1
-					return i
-				}() {
-					AiB[i][j] = x[i]
-				}
-			}
+		}
+		if verbose != 0 {
+			noarch.Fprintf(stdout, []byte("\n\x00"))
+		}
+		for i = 1; i <= n; i++ {
+			AiB[i][j] = x[i]
 		}
 	}
 	free_dvector(diag, int32(1), int32(n))
@@ -12686,69 +10721,42 @@ func xtinvAy(X [][]float64, A [][]float64, Y [][]float64, n int, m int, Ac [][]f
 	diag = dvector(int32(1), int32(n))
 	x = dvector(int32(1), int32(n))
 	y = dvector(int32(1), int32(n))
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			func() float64 {
-				x[i] = 0
-				return x[i]
-			}()
-			func() float64 {
-				diag[i] = x[i]
-				return diag[i]
-			}()
-		}
+	for i = 1; i <= n; i++ {
+		func() float64 {
+			x[i] = 0
+			return x[i]
+		}()
+		func() float64 {
+			diag[i] = x[i]
+			return diag[i]
+		}()
 	}
 	ldl_dcmp(A, n, diag, y, x, 1, 0, (*[1]int)(unsafe.Pointer(&ok))[:])
-	{
-		for j = 1; j <= m; func() int {
-			j += 1
-			return j
-		}() {
-			{
-				for k = 1; k <= n; func() int {
-					k += 1
-					return k
-				}() {
-					y[k] = Y[k][j]
-				}
-			}
-			ldl_dcmp(A, n, diag, y, x, 0, 1, (*[1]int)(unsafe.Pointer(&ok))[:])
+	for j = 1; j <= m; j++ {
+		for k = 1; k <= n; k++ {
+			y[k] = Y[k][j]
+		}
+		ldl_dcmp(A, n, diag, y, x, 0, 1, (*[1]int)(unsafe.Pointer(&ok))[:])
+		if verbose != 0 {
+			noarch.Fprintf(stdout, []byte("    LDL' RMS matrix precision:\x00"))
+		}
+		error = float64(func() int {
+			ok = 1
+			return ok
+		}())
+		for {
+			ldl_mprove(A, n, diag, y, x, (*[1]float64)(unsafe.Pointer(&error))[:], (*[1]int)(unsafe.Pointer(&ok))[:])
 			if verbose != 0 {
-				noarch.Fprintf(stdout, []byte("    LDL' RMS matrix precision:\x00"))
+				noarch.Fprintf(stdout, []byte("%9.2e\x00"), error)
 			}
-			error = float64(func() int {
-				ok = 1
-				return ok
-			}())
-			{
-				for {
-					ldl_mprove(A, n, diag, y, x, (*[1]float64)(unsafe.Pointer(&error))[:], (*[1]int)(unsafe.Pointer(&ok))[:])
-					if verbose != 0 {
-						noarch.Fprintf(stdout, []byte("%9.2e\x00"), error)
-					}
-				}
-			}
-			if verbose != 0 {
-				noarch.Fprintf(stdout, []byte("\n\x00"))
-			}
-			{
-				for i = 1; i <= m; func() int {
-					i += 1
-					return i
-				}() {
-					Ac[i][j] = 0
-					{
-						for k = 1; k <= n; func() int {
-							k += 1
-							return k
-						}() {
-							Ac[i][j] += X[k][i] * x[k]
-						}
-					}
-				}
+		}
+		if verbose != 0 {
+			noarch.Fprintf(stdout, []byte("\n\x00"))
+		}
+		for i = 1; i <= m; i++ {
+			Ac[i][j] = 0
+			for k = 1; k <= n; k++ {
+				Ac[i][j] += X[k][i] * x[k]
 			}
 		}
 	}
@@ -12765,16 +10773,11 @@ func xtinvAy(X [][]float64, A [][]float64, Y [][]float64, n int, m int, Ac [][]f
 	var R1 float32
 	var R2 float32
 	var i int
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			R1 = float32((math.Cos(math.Mod(float64((theta)), float64(360))*3.141592653589793/float64(180)))*float64(R[1][i]) - (math.Sin(math.Mod(float64((theta)), float64(360))*3.141592653589793/float64(180)))*float64(R[2][i]))
-			R2 = float32((math.Sin(math.Mod(float64((theta)), float64(360))*3.141592653589793/float64(180)))*float64(R[1][i]) + (math.Cos(math.Mod(float64((theta)), float64(360))*3.141592653589793/float64(180)))*float64(R[2][i]))
-			Rr[1][i] = R1
-			Rr[2][i] = R2
-		}
+	for i = 1; i <= n; i++ {
+		R1 = float32((math.Cos(math.Mod(float64((theta)), float64(360))*3.141592653589793/float64(180)))*float64(R[1][i]) - (math.Sin(math.Mod(float64((theta)), float64(360))*3.141592653589793/float64(180)))*float64(R[2][i]))
+		R2 = float32((math.Sin(math.Mod(float64((theta)), float64(360))*3.141592653589793/float64(180)))*float64(R[1][i]) + (math.Cos(math.Mod(float64((theta)), float64(360))*3.141592653589793/float64(180)))*float64(R[2][i]))
+		Rr[1][i] = R1
+		Rr[2][i] = R2
 	}
 	return
 }
@@ -12790,94 +10793,44 @@ func xtAx(A [][]float64, X [][]float64, C [][]float64, N int, J int) {
 	var j int
 	var k int
 	AX = dmatrix(int32(1), int32(N), int32(1), int32(J))
-	{
-		for i = 1; i <= J; func() int {
-			i += 1
-			return i
-		}() {
-			for j = 1; j <= J; func() int {
-				j += 1
-				return j
-			}() {
-				C[i][j] = 0
-			}
+	for i = 1; i <= J; i++ {
+		for j = 1; j <= J; j++ {
+			C[i][j] = 0
 		}
 	}
-	{
-		for i = 1; i <= N; func() int {
-			i += 1
-			return i
-		}() {
-			for j = 1; j <= J; func() int {
-				j += 1
-				return j
-			}() {
-				AX[i][j] = 0
-			}
+	for i = 1; i <= N; i++ {
+		for j = 1; j <= J; j++ {
+			AX[i][j] = 0
 		}
 	}
-	{
-		for i = 1; i <= N; func() int {
-			i += 1
-			return i
-		}() {
-			{
-				for j = 1; j <= J; func() int {
-					j += 1
-					return j
-				}() {
-					{
-						for k = 1; k <= N; func() int {
-							k += 1
-							return k
-						}() {
-							if i <= k {
-								AX[i][j] += A[i][k] * X[k][j]
-							} else {
-								AX[i][j] += A[k][i] * X[k][j]
-							}
-						}
-					}
+	for i = 1; i <= N; i++ {
+		for j = 1; j <= J; j++ {
+			for k = 1; k <= N; k++ {
+				if i <= k {
+					AX[i][j] += A[i][k] * X[k][j]
+				} else {
+					AX[i][j] += A[k][i] * X[k][j]
 				}
 			}
 		}
 	}
-	{
-		for i = 1; i <= J; func() int {
-			i += 1
-			return i
-		}() {
-			for j = 1; j <= J; func() int {
-				j += 1
-				return j
-			}() {
-				for k = 1; k <= N; func() int {
-					k += 1
-					return k
-				}() {
-					C[i][j] += X[k][i] * AX[k][j]
-				}
+	for i = 1; i <= J; i++ {
+		for j = 1; j <= J; j++ {
+			for k = 1; k <= N; k++ {
+				C[i][j] += X[k][i] * AX[k][j]
 			}
 		}
 	}
-	{
-		for i = 1; i <= J; func() int {
-			i += 1
-			return i
-		}() {
-			for j = i; j <= J; func() int {
-				j += 1
-				return j
-			}() {
-				func() float64 {
-					C[j][i] = 0.5 * (C[i][j] + C[j][i])
-					return C[j][i]
-				}()
-				func() float64 {
-					C[i][j] = C[j][i]
-					return C[i][j]
-				}()
-			}
+	for i = 1; i <= J; i++ {
+		for j = i; j <= J; j++ {
+			func() float64 {
+				C[j][i] = 0.5 * (C[i][j] + C[j][i])
+				return C[j][i]
+			}()
+			func() float64 {
+				C[i][j] = C[j][i]
+				return C[i][j]
+			}()
 		}
 	}
 	free_dmatrix(AX, int32(1), int32(N), int32(1), int32(J))
@@ -12893,33 +10846,18 @@ func xtAy(x []float64, A [][]float64, y []float64, n int, d []float64) float64 {
 	var xtAy float64 = 0
 	var i int
 	var j int
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			d[i] = 0
-			{
-				for j = 1; j <= n; func() int {
-					j += 1
-					return j
-				}() {
-					if i <= j {
-						d[i] += A[i][j] * y[j]
-					} else {
-						d[i] += A[j][i] * y[j]
-					}
-				}
+	for i = 1; i <= n; i++ {
+		d[i] = 0
+		for j = 1; j <= n; j++ {
+			if i <= j {
+				d[i] += A[i][j] * y[j]
+			} else {
+				d[i] += A[j][i] * y[j]
 			}
 		}
 	}
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			xtAy += x[i] * d[i]
-		}
+	for i = 1; i <= n; i++ {
+		xtAy += x[i] * d[i]
 	}
 	return (xtAy)
 }
@@ -12950,170 +10888,97 @@ func invAXinvA(A [][]float64, X [][]float64, n int, verbose int) {
 	b = dvector(int32(1), int32(n))
 	Ai = dmatrix(int32(1), int32(n), int32(1), int32(n))
 	XAi = dmatrix(int32(1), int32(n), int32(1), int32(n))
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
+	for i = 1; i <= n; i++ {
+		func() float64 {
+			b[i] = 0
+			return b[i]
+		}()
+		func() float64 {
+			x[i] = b[i]
+			return x[i]
+		}()
+		func() float64 {
+			diag[i] = x[i]
+			return diag[i]
+		}()
+		for j = 1; j <= n; j++ {
 			func() float64 {
-				b[i] = 0
-				return b[i]
+				Ai[i][j] = 0
+				return Ai[i][j]
 			}()
 			func() float64 {
-				x[i] = b[i]
-				return x[i]
+				XAi[i][j] = Ai[i][j]
+				return XAi[i][j]
 			}()
-			func() float64 {
-				diag[i] = x[i]
-				return diag[i]
-			}()
-			{
-				for j = 1; j <= n; func() int {
-					j += 1
-					return j
-				}() {
-					func() float64 {
-						Ai[i][j] = 0
-						return Ai[i][j]
-					}()
-					func() float64 {
-						XAi[i][j] = Ai[i][j]
-						return XAi[i][j]
-					}()
-				}
-			}
 		}
 	}
 	ldl_dcmp(A, n, diag, b, x, 1, 0, (*[1]int)(unsafe.Pointer(&ok))[:])
-	{
-		for j = 1; j <= n; func() int {
-			j += 1
-			return j
-		}() {
-			{
-				for k = 1; k <= n; func() int {
-					k += 1
-					return k
-				}() {
-					b[k] = 0
-				}
-			}
-			b[j] = 1
-			ldl_dcmp(A, n, diag, b, x, 0, 1, (*[1]int)(unsafe.Pointer(&ok))[:])
+	for j = 1; j <= n; j++ {
+		for k = 1; k <= n; k++ {
+			b[k] = 0
+		}
+		b[j] = 1
+		ldl_dcmp(A, n, diag, b, x, 0, 1, (*[1]int)(unsafe.Pointer(&ok))[:])
+		if verbose != 0 {
+			noarch.Fprintf(stdout, []byte("    LDL' RMS matrix precision:\x00"))
+		}
+		error = float64(func() int {
+			ok = 1
+			return ok
+		}())
+		for {
+			ldl_mprove(A, n, diag, b, x, (*[1]float64)(unsafe.Pointer(&error))[:], (*[1]int)(unsafe.Pointer(&ok))[:])
 			if verbose != 0 {
-				noarch.Fprintf(stdout, []byte("    LDL' RMS matrix precision:\x00"))
-			}
-			error = float64(func() int {
-				ok = 1
-				return ok
-			}())
-			{
-				for {
-					ldl_mprove(A, n, diag, b, x, (*[1]float64)(unsafe.Pointer(&error))[:], (*[1]int)(unsafe.Pointer(&ok))[:])
-					if verbose != 0 {
-						noarch.Fprintf(stdout, []byte("%9.2e\x00"), error)
-					}
-				}
-			}
-			if verbose != 0 {
-				noarch.Fprintf(stdout, []byte("\n\x00"))
-			}
-			{
-				for k = 1; k <= n; func() int {
-					k += 1
-					return k
-				}() {
-					Ai[j][k] = x[k]
-				}
+				noarch.Fprintf(stdout, []byte("%9.2e\x00"), error)
 			}
 		}
-	}
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			for j = i; j <= n; func() int {
-				j += 1
-				return j
-			}() {
-				func() float64 {
-					Ai[j][i] = 0.5 * (Ai[i][j] + Ai[j][i])
-					return Ai[j][i]
-				}()
-				func() float64 {
-					Ai[i][j] = Ai[j][i]
-					return Ai[i][j]
-				}()
-			}
+		if verbose != 0 {
+			noarch.Fprintf(stdout, []byte("\n\x00"))
+		}
+		for k = 1; k <= n; k++ {
+			Ai[j][k] = x[k]
 		}
 	}
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			{
-				for j = 1; j <= n; func() int {
-					j += 1
-					return j
-				}() {
-					Aij = 0
-					{
-						for k = 1; k <= n; func() int {
-							k += 1
-							return k
-						}() {
-							Aij += X[i][k] * Ai[k][j]
-						}
-					}
-					XAi[i][j] = Aij
-				}
-			}
+	for i = 1; i <= n; i++ {
+		for j = i; j <= n; j++ {
+			func() float64 {
+				Ai[j][i] = 0.5 * (Ai[i][j] + Ai[j][i])
+				return Ai[j][i]
+			}()
+			func() float64 {
+				Ai[i][j] = Ai[j][i]
+				return Ai[i][j]
+			}()
 		}
 	}
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			{
-				for j = 1; j <= n; func() int {
-					j += 1
-					return j
-				}() {
-					Aij = 0
-					{
-						for k = 1; k <= n; func() int {
-							k += 1
-							return k
-						}() {
-							Aij += Ai[i][k] * XAi[k][j]
-						}
-					}
-					X[i][j] = Aij
-				}
+	for i = 1; i <= n; i++ {
+		for j = 1; j <= n; j++ {
+			Aij = 0
+			for k = 1; k <= n; k++ {
+				Aij += X[i][k] * Ai[k][j]
 			}
+			XAi[i][j] = Aij
 		}
 	}
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			for j = i; j <= n; func() int {
-				j += 1
-				return j
-			}() {
-				func() float64 {
-					X[j][i] = 0.5 * (X[i][j] + X[j][i])
-					return X[j][i]
-				}()
-				func() float64 {
-					X[i][j] = X[j][i]
-					return X[i][j]
-				}()
+	for i = 1; i <= n; i++ {
+		for j = 1; j <= n; j++ {
+			Aij = 0
+			for k = 1; k <= n; k++ {
+				Aij += Ai[i][k] * XAi[k][j]
 			}
+			X[i][j] = Aij
+		}
+	}
+	for i = 1; i <= n; i++ {
+		for j = i; j <= n; j++ {
+			func() float64 {
+				X[j][i] = 0.5 * (X[i][j] + X[j][i])
+				return X[j][i]
+			}()
+			func() float64 {
+				X[i][j] = X[j][i]
+				return X[i][j]
+			}()
 		}
 	}
 	free_dvector(diag, int32(1), int32(n))
@@ -13133,21 +10998,11 @@ func invAXinvA(A [][]float64, X [][]float64, n int, verbose int) {
 	var nN float64 = 0
 	var nD float64 = 0
 	var i int
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			nN += (N[i] * N[i])
-		}
+	for i = 1; i <= n; i++ {
+		nN += (N[i] * N[i])
 	}
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			nD += (D[i] * D[i])
-		}
+	for i = 1; i <= n; i++ {
+		nD += (D[i] * D[i])
 	}
 	return (math.Sqrt(nN) / math.Sqrt(nD))
 }
@@ -13160,33 +11015,23 @@ func invAXinvA(A [][]float64, X [][]float64, n int, verbose int) {
 func Legendre(order int, t []float32, n int, P [][]float32, Pp [][]float32, Ppp [][]float32) {
 	var k int
 	var p int
-	{
-		for p = 1; p <= n; func() int {
-			p += 1
-			return p
-		}() {
-			P[0][p] = float32(1)
-			P[1][p] = t[p]
-			P[2][p] = float32(1.5*float64(t[p])*float64(t[p]) - 0.5)
-			P[3][p] = float32(2.5*float64(t[p])*float64(t[p])*float64(t[p]) - 1.5*float64(t[p]))
-			Pp[0][p] = float32(0)
-			Pp[1][p] = float32(1)
-			Pp[2][p] = float32(3 * float64(t[p]))
-			Pp[3][p] = float32(7.5*float64(t[p])*float64(t[p]) - 1.5)
-			Ppp[0][p] = float32(0)
-			Ppp[1][p] = float32(0)
-			Ppp[2][p] = float32(3)
-			Ppp[3][p] = float32(15 * float64(t[p]))
-			{
-				for k = 4; k <= order; func() int {
-					k += 1
-					return k
-				}() {
-					P[k][p] = float32((2-1/float64(k))*float64(t[p])*float64(P[k-1][p]) - (1-1/float64(k))*float64(P[k-2][p]))
-					Pp[k][p] = float32((2-1/float64(k))*float64((P[k-1][p]+t[p]*Pp[k-1][p])) - (1-1/float64(k))*float64(Pp[k-2][p]))
-					Ppp[k][p] = float32((2-1/float64(k))*float64((float32(2)*Pp[k-1][p]+t[p]*Ppp[k-1][p])) - (1-1/float64(k))*float64(Ppp[k-2][p]))
-				}
-			}
+	for p = 1; p <= n; p++ {
+		P[0][p] = float32(1)
+		P[1][p] = t[p]
+		P[2][p] = float32(1.5*float64(t[p])*float64(t[p]) - 0.5)
+		P[3][p] = float32(2.5*float64(t[p])*float64(t[p])*float64(t[p]) - 1.5*float64(t[p]))
+		Pp[0][p] = float32(0)
+		Pp[1][p] = float32(1)
+		Pp[2][p] = float32(3 * float64(t[p]))
+		Pp[3][p] = float32(7.5*float64(t[p])*float64(t[p]) - 1.5)
+		Ppp[0][p] = float32(0)
+		Ppp[1][p] = float32(0)
+		Ppp[2][p] = float32(3)
+		Ppp[3][p] = float32(15 * float64(t[p]))
+		for k = 4; k <= order; k++ {
+			P[k][p] = float32((2-1/float64(k))*float64(t[p])*float64(P[k-1][p]) - (1-1/float64(k))*float64(P[k-2][p]))
+			Pp[k][p] = float32((2-1/float64(k))*float64((P[k-1][p]+t[p]*Pp[k-1][p])) - (1-1/float64(k))*float64(Pp[k-2][p]))
+			Ppp[k][p] = float32((2-1/float64(k))*float64((float32(2)*Pp[k-1][p]+t[p]*Ppp[k-1][p])) - (1-1/float64(k))*float64(Ppp[k-2][p]))
 		}
 	}
 	return
@@ -13390,19 +11235,17 @@ func openFile(path []byte, fileName []byte, mode []byte, usage []byte) (c2goDefa
  */func scanLine(fp *noarch.File, lim int, s []byte, a byte) int {
 	var c int = 0
 	var i int = -1
-	{
-		for func() int {
-			lim -= 1
-			return lim
-		}() > 0 && (func() int {
-			c = noarch.Fgetc(fp)
-			return c
-		}()) != (-1) && c != int(a) {
-			s[func() int {
-				i += 1
-				return i
-			}()] = byte(c)
-		}
+	for func() int {
+		lim -= 1
+		return lim
+	}() > 0 && (func() int {
+		c = noarch.Fgetc(fp)
+		return c
+	}()) != (-1) && c != int(a) {
+		s[func() int {
+			i += 1
+			return i
+		}()] = byte(c)
 	}
 	s[func() int {
 		i += 1
@@ -13419,29 +11262,25 @@ func openFile(path []byte, fileName []byte, mode []byte, usage []byte) (c2goDefa
 func scanLabel(fp *noarch.File, lim int, s []byte, a byte) int {
 	var c int = 0
 	var i int = -1
-	{
-		for func() int {
-			lim -= 1
-			return lim
-		}() > 0 && (func() int {
-			c = noarch.Fgetc(fp)
-			return c
-		}()) != (-1) && c != int(a) {
-		}
+	for func() int {
+		lim -= 1
+		return lim
+	}() > 0 && (func() int {
+		c = noarch.Fgetc(fp)
+		return c
+	}()) != (-1) && c != int(a) {
 	}
-	{
-		for func() int {
-			lim -= 1
-			return lim
-		}() > 0 && (func() int {
-			c = noarch.Fgetc(fp)
-			return c
-		}()) != (-1) && c != int(a) {
-			s[func() int {
-				i += 1
-				return i
-			}()] = byte(c)
-		}
+	for func() int {
+		lim -= 1
+		return lim
+	}() > 0 && (func() int {
+		c = noarch.Fgetc(fp)
+		return c
+	}()) != (-1) && c != int(a) {
+		s[func() int {
+			i += 1
+			return i
+		}()] = byte(c)
 	}
 	s[func() int {
 		i += 1
@@ -13464,44 +11303,32 @@ func scanFile(fp *noarch.File, head_lines int, start_chnl int, stop_chnl int) in
 	var ok int = 1
 	var data_value float32
 	var ch byte
-	{
-		for i = 1; i <= head_lines; func() int {
-			i += 1
-			return i
-		}() {
+	for i = 1; i <= head_lines; i++ {
+		for int((func() byte {
+			ch = byte(noarch.Fgetc(fp))
+			return ch
+		}())) != int('\n') {
+		}
+	}
+	for {
+		for chn = start_chnl; chn <= stop_chnl; chn++ {
+			ok = noarch.Fscanf(fp, []byte("%f\x00"), (*[1]float32)(unsafe.Pointer(&data_value))[:])
+			if ok == 1 {
+				func() int {
+					points += 1
+					return points
+				}()
+			}
+		}
+		if ok > 0 {
 			for int((func() byte {
 				ch = byte(noarch.Fgetc(fp))
 				return ch
 			}())) != int('\n') {
 			}
 		}
-	}
-	{
-		for {
-			{
-				for chn = start_chnl; chn <= stop_chnl; func() int {
-					chn += 1
-					return chn
-				}() {
-					ok = noarch.Fscanf(fp, []byte("%f\x00"), (*[1]float32)(unsafe.Pointer(&data_value))[:])
-					if ok == 1 {
-						func() int {
-							points += 1
-							return points
-						}()
-					}
-				}
-			}
-			if ok > 0 {
-				for int((func() byte {
-					ch = byte(noarch.Fgetc(fp))
-					return ch
-				}())) != int('\n') {
-				}
-			}
-			if noarch.NotInt((map[bool]int{false: 0, true: 1}[ok == 1])) != 0 {
-				break
-			}
+		if noarch.NotInt((map[bool]int{false: 0, true: 1}[ok == 1])) != 0 {
+			break
 		}
 	}
 	points = (points / (stop_chnl - start_chnl + 1))
@@ -13517,19 +11344,17 @@ func scanFile(fp *noarch.File, head_lines int, start_chnl int, stop_chnl int) in
 func getLine(fp *noarch.File, lim int, s []byte) int {
 	var c int = 0
 	var i int = 0
-	{
-		for func() int {
-			lim -= 1
-			return lim
-		}() > 0 && (func() int {
-			c = noarch.Fgetc(fp)
-			return c
-		}()) != (-1) && c != int('\n') {
-			s[func() int {
-				i += 1
-				return i
-			}()] = byte(c)
-		}
+	for func() int {
+		lim -= 1
+		return lim
+	}() > 0 && (func() int {
+		c = noarch.Fgetc(fp)
+		return c
+	}()) != (-1) && c != int('\n') {
+		s[func() int {
+			i += 1
+			return i
+		}()] = byte(c)
 	}
 	s[func() int {
 		i += 1
@@ -13572,29 +11397,14 @@ func getTime(s []byte, y int, m int, d int, hr int, mn int, sc int, os int) noar
 	var percent_done float32
 	percent_done = float32((i)) / float32((n))
 	j = int(math.Ceil(float64(percent_done * float32(line_length))))
-	{
-		for k = 1; k <= line_length+13; func() int {
-			k += 1
-			return k
-		}() {
-			noarch.Fprintf(stderr, []byte("\b\x00"))
-		}
+	for k = 1; k <= line_length+13; k++ {
+		noarch.Fprintf(stderr, []byte("\b\x00"))
 	}
-	{
-		for k = 1; k < j; func() int {
-			k += 1
-			return k
-		}() {
-			noarch.Fprintf(stderr, []byte(">\x00"))
-		}
+	for k = 1; k < j; k++ {
+		noarch.Fprintf(stderr, []byte(">\x00"))
 	}
-	{
-		for k = j; k < line_length; func() int {
-			k += 1
-			return k
-		}() {
-			noarch.Fprintf(stderr, []byte(" \x00"))
-		}
+	for k = j; k < line_length; k++ {
+		noarch.Fprintf(stderr, []byte(" \x00"))
 	}
 	noarch.Fprintf(stderr, []byte(" %5.1f%%\x00"), float64(percent_done)*100)
 	noarch.Fprintf(stderr, []byte(" %5d\x00"), count)
@@ -13705,13 +11515,8 @@ func matrix(nrl int32, nrh int32, ncl int32, nch int32) [][]float32 {
 	}
 	m[nrl] = (*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (uintptr)(1)*unsafe.Sizeof(m[nrl][0]))))[:]
 	m[nrl] = (*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) - (uintptr)(ncl)*unsafe.Sizeof(m[nrl][0]))))[:]
-	{
-		for i = nrl + int32(1); i <= nrh; func() int32 {
-			i += 1
-			return i
-		}() {
-			m[i] = (*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i-int32(1)][0])) + (uintptr)(ncol)*unsafe.Sizeof(m[i-int32(1)][0]))))[:]
-		}
+	for i = nrl + int32(1); i <= nrh; i++ {
+		m[i] = (*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i-int32(1)][0])) + (uintptr)(ncol)*unsafe.Sizeof(m[i-int32(1)][0]))))[:]
 	}
 	return m
 }
@@ -13735,13 +11540,8 @@ func dmatrix(nrl int32, nrh int32, ncl int32, nch int32) [][]float64 {
 	}
 	m[nrl] = (*(*[1]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (uintptr)(1)*unsafe.Sizeof(m[nrl][0]))))[:]
 	m[nrl] = (*(*[1]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) - (uintptr)(ncl)*unsafe.Sizeof(m[nrl][0]))))[:]
-	{
-		for i = nrl + int32(1); i <= nrh; func() int32 {
-			i += 1
-			return i
-		}() {
-			m[i] = (*(*[1]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i-int32(1)][0])) + (uintptr)(ncol)*unsafe.Sizeof(m[i-int32(1)][0]))))[:]
-		}
+	for i = nrl + int32(1); i <= nrh; i++ {
+		m[i] = (*(*[1]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i-int32(1)][0])) + (uintptr)(ncol)*unsafe.Sizeof(m[i-int32(1)][0]))))[:]
 	}
 	return m
 }
@@ -13765,13 +11565,8 @@ func imatrix(nrl int32, nrh int32, ncl int32, nch int32) [][]int {
 	}
 	m[nrl] = (*(*[1]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (uintptr)(1)*unsafe.Sizeof(m[nrl][0]))))[:]
 	m[nrl] = (*(*[1]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) - (uintptr)(ncl)*unsafe.Sizeof(m[nrl][0]))))[:]
-	{
-		for i = nrl + int32(1); i <= nrh; func() int32 {
-			i += 1
-			return i
-		}() {
-			m[i] = (*(*[1]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i-int32(1)][0])) + (uintptr)(ncol)*unsafe.Sizeof(m[i-int32(1)][0]))))[:]
-		}
+	for i = nrl + int32(1); i <= nrh; i++ {
+		m[i] = (*(*[1]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i-int32(1)][0])) + (uintptr)(ncol)*unsafe.Sizeof(m[i-int32(1)][0]))))[:]
 	}
 	return m
 }
@@ -13871,29 +11666,14 @@ func f3tensor(nrl int32, nrh int32, ncl int32, nch int32, ndl int32, ndh int32) 
 	}
 	t[nrl][ncl] = (*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][ncl][0])) + (uintptr)(1)*unsafe.Sizeof(t[nrl][ncl][0]))))[:]
 	t[nrl][ncl] = (*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][ncl][0])) - (uintptr)(ndl)*unsafe.Sizeof(t[nrl][ncl][0]))))[:]
-	{
-		for j = ncl + int32(1); j <= nch; func() int32 {
-			j += 1
-			return j
-		}() {
-			t[nrl][j] = (*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][j-int32(1)][0])) + (uintptr)(ndep)*unsafe.Sizeof(t[nrl][j-int32(1)][0]))))[:]
-		}
+	for j = ncl + int32(1); j <= nch; j++ {
+		t[nrl][j] = (*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][j-int32(1)][0])) + (uintptr)(ndep)*unsafe.Sizeof(t[nrl][j-int32(1)][0]))))[:]
 	}
-	{
-		for i = nrl + int32(1); i <= nrh; func() int32 {
-			i += 1
-			return i
-		}() {
-			t[i] = (*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[i-int32(1)][0])) + (uintptr)(ncol)*unsafe.Sizeof(t[i-int32(1)][0]))))[:]
-			t[i][ncl] = (*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[i-int32(1)][ncl][0])) + (uintptr)(ncol*ndep)*unsafe.Sizeof(t[i-int32(1)][ncl][0]))))[:]
-			{
-				for j = ncl + int32(1); j <= nch; func() int32 {
-					j += 1
-					return j
-				}() {
-					t[i][j] = (*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[i][j-int32(1)][0])) + (uintptr)(ndep)*unsafe.Sizeof(t[i][j-int32(1)][0]))))[:]
-				}
-			}
+	for i = nrl + int32(1); i <= nrh; i++ {
+		t[i] = (*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[i-int32(1)][0])) + (uintptr)(ncol)*unsafe.Sizeof(t[i-int32(1)][0]))))[:]
+		t[i][ncl] = (*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[i-int32(1)][ncl][0])) + (uintptr)(ncol*ndep)*unsafe.Sizeof(t[i-int32(1)][ncl][0]))))[:]
+		for j = ncl + int32(1); j <= nch; j++ {
+			t[i][j] = (*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[i][j-int32(1)][0])) + (uintptr)(ndep)*unsafe.Sizeof(t[i][j-int32(1)][0]))))[:]
 		}
 	}
 	return t
@@ -13991,17 +11771,12 @@ func Cmatrix(nrl int, nrh int, ncl int, nch int) [][]fcomplex {
 		NRerror([]byte("allocation failure 1 in Cmatrix()\x00"))
 	}
 	m = (*(*[1][]fcomplex)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) - (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:]
-	{
-		for i = nrl; i <= nrh; func() int {
-			i += 1
-			return i
-		}() {
-			m[i] = make([]fcomplex, uint32((nch-ncl+1))*8/8)
-			if m[i] == nil {
-				NRerror([]byte("allocation failure 2 in Cmatrix()\x00"))
-			}
-			m[i] = (*(*[1]fcomplex)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i][0])) - (uintptr)(ncl)*unsafe.Sizeof(m[i][0]))))[:]
+	for i = nrl; i <= nrh; i++ {
+		m[i] = make([]fcomplex, uint32((nch-ncl+1))*8/8)
+		if m[i] == nil {
+			NRerror([]byte("allocation failure 2 in Cmatrix()\x00"))
 		}
+		m[i] = (*(*[1]fcomplex)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i][0])) - (uintptr)(ncl)*unsafe.Sizeof(m[i][0]))))[:]
 	}
 	return m
 }
@@ -14017,28 +11792,18 @@ func D3matrix(nrl int, nrh int, ncl int, nch int, nzl int, nzh int) [][][]float3
 		NRerror([]byte("alloc failure 1 in 3Dmatrix()\x00"))
 	}
 	m = (*(*[1][][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) - (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:]
-	{
-		for i = nrl; i <= nrh; func() int {
-			i += 1
-			return i
-		}() {
-			m[i] = make([][]float32, uint32((nch-ncl+1))*8/8)
-			if m[i] == nil {
-				NRerror([]byte("alloc failure 2 in 3Dmatrix()\x00"))
+	for i = nrl; i <= nrh; i++ {
+		m[i] = make([][]float32, uint32((nch-ncl+1))*8/8)
+		if m[i] == nil {
+			NRerror([]byte("alloc failure 2 in 3Dmatrix()\x00"))
+		}
+		m[i] = (*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i][0])) - (uintptr)(ncl)*unsafe.Sizeof(m[i][0]))))[:]
+		for j = ncl; j <= nch; j++ {
+			m[i][j] = make([]float32, uint32((nzh-nzl+1))*4/4)
+			if m[i][j] == nil {
+				NRerror([]byte("alloc failure 3 in 3Dmatrix()\x00"))
 			}
-			m[i] = (*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i][0])) - (uintptr)(ncl)*unsafe.Sizeof(m[i][0]))))[:]
-			{
-				for j = ncl; j <= nch; func() int {
-					j += 1
-					return j
-				}() {
-					m[i][j] = make([]float32, uint32((nzh-nzl+1))*4/4)
-					if m[i][j] == nil {
-						NRerror([]byte("alloc failure 3 in 3Dmatrix()\x00"))
-					}
-					m[i][j] = (*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i][j][0])) - (uintptr)(nzl)*unsafe.Sizeof(m[i][j][0]))))[:]
-				}
-			}
+			m[i][j] = (*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i][j][0])) - (uintptr)(nzl)*unsafe.Sizeof(m[i][j][0]))))[:]
 		}
 	}
 	return m
@@ -14055,28 +11820,18 @@ func D3dmatrix(nrl int, nrh int, ncl int, nch int, nzl int, nzh int) [][][]float
 		NRerror([]byte("alloc failure 1 in 3Ddmatrix()\x00"))
 	}
 	m = (*(*[1][][]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) - (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:]
-	{
-		for i = nrl; i <= nrh; func() int {
-			i += 1
-			return i
-		}() {
-			m[i] = make([][]float64, uint32((nch-ncl+1))*8/8)
-			if m[i] == nil {
-				NRerror([]byte("alloc failure 2 in 3Dmatrix()\x00"))
+	for i = nrl; i <= nrh; i++ {
+		m[i] = make([][]float64, uint32((nch-ncl+1))*8/8)
+		if m[i] == nil {
+			NRerror([]byte("alloc failure 2 in 3Dmatrix()\x00"))
+		}
+		m[i] = (*(*[1][]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i][0])) - (uintptr)(ncl)*unsafe.Sizeof(m[i][0]))))[:]
+		for j = ncl; j <= nch; j++ {
+			m[i][j] = make([]float64, uint32((nzh-nzl+1))*8/8)
+			if m[i][j] == nil {
+				NRerror([]byte("alloc failure 3 in 3Ddmatrix()\x00"))
 			}
-			m[i] = (*(*[1][]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i][0])) - (uintptr)(ncl)*unsafe.Sizeof(m[i][0]))))[:]
-			{
-				for j = ncl; j <= nch; func() int {
-					j += 1
-					return j
-				}() {
-					m[i][j] = make([]float64, uint32((nzh-nzl+1))*8/8)
-					if m[i][j] == nil {
-						NRerror([]byte("alloc failure 3 in 3Ddmatrix()\x00"))
-					}
-					m[i][j] = (*(*[1]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i][j][0])) - (uintptr)(nzl)*unsafe.Sizeof(m[i][j][0]))))[:]
-				}
-			}
+			m[i][j] = (*(*[1]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i][j][0])) - (uintptr)(nzl)*unsafe.Sizeof(m[i][j][0]))))[:]
 		}
 	}
 	return m
@@ -14090,13 +11845,11 @@ func free_Cvector(v []fcomplex, nl int, nh int) {
 // free_Cmatrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:382
 func free_Cmatrix(m [][]fcomplex, nrl int, nrh int, ncl int, nch int) {
 	var i int
-	{
-		for i = nrh; i >= nrl; func() int {
-			i -= 1
-			return i
-		}() {
-			_ = noarch.FcomplexSliceToByteSlice(((*(*[1]fcomplex)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i][0])) + (uintptr)(ncl)*unsafe.Sizeof(m[i][0]))))[:]))
-		}
+	for i = nrh; i >= nrl; func() int {
+		i -= 1
+		return i
+	}() {
+		_ = noarch.FcomplexSliceToByteSlice(((*(*[1]fcomplex)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i][0])) + (uintptr)(ncl)*unsafe.Sizeof(m[i][0]))))[:]))
 	}
 	_ = noarch.FcomplexSliceSliceToByteSlice(((*(*[1][]fcomplex)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:]))
 }
@@ -14105,19 +11858,15 @@ func free_Cmatrix(m [][]fcomplex, nrl int, nrh int, ncl int, nch int) {
 func free_D3matrix(m [][][]float32, nrl int, nrh int, ncl int, nch int, nzl int, nzh int) {
 	var i int
 	var j int
-	{
-		for i = nrh; i >= nrl; func() int {
-			i -= 1
-			return i
+	for i = nrh; i >= nrl; func() int {
+		i -= 1
+		return i
+	}() {
+		for j = nch; j >= ncl; func() int {
+			j -= 1
+			return j
 		}() {
-			{
-				for j = nch; j >= ncl; func() int {
-					j -= 1
-					return j
-				}() {
-					_ = noarch.Float32SliceToByteSlice(((*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i][j][0])) + (uintptr)(nzl)*unsafe.Sizeof(m[i][j][0]))))[:]))
-				}
-			}
+			_ = noarch.Float32SliceToByteSlice(((*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i][j][0])) + (uintptr)(nzl)*unsafe.Sizeof(m[i][j][0]))))[:]))
 		}
 	}
 }
@@ -14126,19 +11875,15 @@ func free_D3matrix(m [][][]float32, nrl int, nrh int, ncl int, nch int, nzl int,
 func free_D3dmatrix(m [][][]float64, nrl int, nrh int, ncl int, nch int, nzl int, nzh int) {
 	var i int
 	var j int
-	{
-		for i = nrh; i >= nrl; func() int {
-			i -= 1
-			return i
+	for i = nrh; i >= nrl; func() int {
+		i -= 1
+		return i
+	}() {
+		for j = nch; j >= ncl; func() int {
+			j -= 1
+			return j
 		}() {
-			{
-				for j = nch; j >= ncl; func() int {
-					j -= 1
-					return j
-				}() {
-					_ = noarch.Float64SliceToByteSlice(((*(*[1]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i][j][0])) + (uintptr)(nzl)*unsafe.Sizeof(m[i][j][0]))))[:]))
-				}
-			}
+			_ = noarch.Float64SliceToByteSlice(((*(*[1]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i][j][0])) + (uintptr)(nzl)*unsafe.Sizeof(m[i][j][0]))))[:]))
 		}
 	}
 }
@@ -14148,16 +11893,11 @@ func free_D3dmatrix(m [][][]float64, nrl int, nrh int, ncl int, nch int, nzl int
  * SHOW_VECTOR  -  display a vector of dimension [1..n]
  */func show_vector(A []float32, n int) {
 	var j int
-	{
-		for j = 1; j <= n; func() int {
-			j += 1
-			return j
-		}() {
-			if A[j] != float32(0) {
-				noarch.Fprintf(stdout, []byte("%14.6e\x00"), float64(A[j]))
-			} else {
-				noarch.Fprintf(stdout, []byte("   0       \x00"))
-			}
+	for j = 1; j <= n; j++ {
+		if A[j] != float32(0) {
+			noarch.Fprintf(stdout, []byte("%14.6e\x00"), float64(A[j]))
+		} else {
+			noarch.Fprintf(stdout, []byte("   0       \x00"))
 		}
 	}
 	noarch.Fprintf(stdout, []byte(" ]';\n\n\x00"))
@@ -14169,16 +11909,11 @@ func free_D3dmatrix(m [][][]float64, nrl int, nrh int, ncl int, nch int, nzl int
  * SHOW_DVECTOR  -  display a vector of dimension [1..n]
  */func show_dvector(A []float64, n int) {
 	var j int
-	{
-		for j = 1; j <= n; func() int {
-			j += 1
-			return j
-		}() {
-			if math.Abs(A[j]) >= 1e-99 {
-				noarch.Fprintf(stdout, []byte("%14.6e\x00"), A[j])
-			} else {
-				noarch.Fprintf(stdout, []byte("   0       \x00"))
-			}
+	for j = 1; j <= n; j++ {
+		if math.Abs(A[j]) >= 1e-99 {
+			noarch.Fprintf(stdout, []byte("%14.6e\x00"), A[j])
+		} else {
+			noarch.Fprintf(stdout, []byte("   0       \x00"))
 		}
 	}
 	noarch.Fprintf(stdout, []byte(" ]';\n\n\x00"))
@@ -14190,16 +11925,11 @@ func free_D3dmatrix(m [][][]float64, nrl int, nrh int, ncl int, nch int, nzl int
  * SHOW_IVECTOR  -  display a vector of integers of dimension [1..n]
  */func show_ivector(A []int, n int) {
 	var j int
-	{
-		for j = 1; j <= n; func() int {
-			j += 1
-			return j
-		}() {
-			if A[j] != 0 {
-				noarch.Fprintf(stdout, []byte("%11d\x00"), A[j])
-			} else {
-				noarch.Fprintf(stdout, []byte("   0       \x00"))
-			}
+	for j = 1; j <= n; j++ {
+		if A[j] != 0 {
+			noarch.Fprintf(stdout, []byte("%11d\x00"), A[j])
+		} else {
+			noarch.Fprintf(stdout, []byte("   0       \x00"))
 		}
 	}
 	noarch.Fprintf(stdout, []byte(" ]';\n\n\x00"))
@@ -14212,28 +11942,18 @@ func free_D3dmatrix(m [][][]float64, nrl int, nrh int, ncl int, nch int, nzl int
  */func show_matrix(A [][]float32, m int, n int) {
 	var i int
 	var j int
-	{
-		for i = 1; i <= m; func() int {
-			i += 1
-			return i
-		}() {
-			{
-				for j = 1; j <= n; func() int {
-					j += 1
-					return j
-				}() {
-					if A[i][j] != float32(0) {
-						noarch.Fprintf(stdout, []byte("%14.6e\x00"), float64(A[i][j]))
-					} else {
-						noarch.Fprintf(stdout, []byte("   0       \x00"))
-					}
-				}
-			}
-			if i == m {
-				noarch.Fprintf(stdout, []byte(" ];\n\n\x00"))
+	for i = 1; i <= m; i++ {
+		for j = 1; j <= n; j++ {
+			if A[i][j] != float32(0) {
+				noarch.Fprintf(stdout, []byte("%14.6e\x00"), float64(A[i][j]))
 			} else {
-				noarch.Fprintf(stdout, []byte(" \n\x00"))
+				noarch.Fprintf(stdout, []byte("   0       \x00"))
 			}
+		}
+		if i == m {
+			noarch.Fprintf(stdout, []byte(" ];\n\n\x00"))
+		} else {
+			noarch.Fprintf(stdout, []byte(" \n\x00"))
 		}
 	}
 	return
@@ -14245,28 +11965,18 @@ func free_D3dmatrix(m [][][]float64, nrl int, nrh int, ncl int, nch int, nzl int
  */func show_dmatrix(A [][]float64, m int, n int) {
 	var i int
 	var j int
-	{
-		for i = 1; i <= m; func() int {
-			i += 1
-			return i
-		}() {
-			{
-				for j = 1; j <= n; func() int {
-					j += 1
-					return j
-				}() {
-					if math.Abs(A[i][j]) > 1e-99 {
-						noarch.Fprintf(stdout, []byte("%11.3e\x00"), A[i][j])
-					} else {
-						noarch.Fprintf(stdout, []byte("   0       \x00"))
-					}
-				}
-			}
-			if i == m {
-				noarch.Fprintf(stdout, []byte(" ];\n\n\x00"))
+	for i = 1; i <= m; i++ {
+		for j = 1; j <= n; j++ {
+			if math.Abs(A[i][j]) > 1e-99 {
+				noarch.Fprintf(stdout, []byte("%11.3e\x00"), A[i][j])
 			} else {
-				noarch.Fprintf(stdout, []byte(" \n\x00"))
+				noarch.Fprintf(stdout, []byte("   0       \x00"))
 			}
+		}
+		if i == m {
+			noarch.Fprintf(stdout, []byte(" ];\n\n\x00"))
+		} else {
+			noarch.Fprintf(stdout, []byte(" \n\x00"))
 		}
 	}
 	return
@@ -14291,18 +12001,13 @@ func free_D3dmatrix(m [][][]float64, nrl int, nrh int, ncl int, nch int, nzl int
 	noarch.Fprintf(fp_v, []byte("%% type: vector\n\x00"))
 	noarch.Fprintf(fp_v, []byte("%% rows: %d\n\x00"), 1)
 	noarch.Fprintf(fp_v, []byte("%% columns: %d\n\x00"), nh-nl+1)
-	{
-		for i = nl; i <= nh; func() int {
-			i += 1
-			return i
-		}() {
-			if V[i] != float32(0) {
-				noarch.Fprintf(fp_v, []byte("%15.6e\x00"), float64(V[i]))
-			} else {
-				noarch.Fprintf(fp_v, []byte("    0         \x00"))
-			}
-			noarch.Fprintf(fp_v, []byte("\n\x00"))
+	for i = nl; i <= nh; i++ {
+		if V[i] != float32(0) {
+			noarch.Fprintf(fp_v, []byte("%15.6e\x00"), float64(V[i]))
+		} else {
+			noarch.Fprintf(fp_v, []byte("    0         \x00"))
 		}
+		noarch.Fprintf(fp_v, []byte("\n\x00"))
 	}
 	noarch.Fclose(fp_v)
 	return
@@ -14327,18 +12032,13 @@ func free_D3dmatrix(m [][][]float64, nrl int, nrh int, ncl int, nch int, nzl int
 	noarch.Fprintf(fp_v, []byte("%% type: vector\n\x00"))
 	noarch.Fprintf(fp_v, []byte("%% rows: %d\n\x00"), 1)
 	noarch.Fprintf(fp_v, []byte("%% columns: %d\n\x00"), nh-nl+1)
-	{
-		for i = nl; i <= nh; func() int {
-			i += 1
-			return i
-		}() {
-			if V[i] != float64(0) {
-				noarch.Fprintf(fp_v, []byte("%21.12e\x00"), V[i])
-			} else {
-				noarch.Fprintf(fp_v, []byte("    0                \x00"))
-			}
-			noarch.Fprintf(fp_v, []byte("\n\x00"))
+	for i = nl; i <= nh; i++ {
+		if V[i] != float64(0) {
+			noarch.Fprintf(fp_v, []byte("%21.12e\x00"), V[i])
+		} else {
+			noarch.Fprintf(fp_v, []byte("    0                \x00"))
 		}
+		noarch.Fprintf(fp_v, []byte("\n\x00"))
 	}
 	noarch.Fclose(fp_v)
 	return
@@ -14363,18 +12063,13 @@ func free_D3dmatrix(m [][][]float64, nrl int, nrh int, ncl int, nch int, nzl int
 	noarch.Fprintf(fp_v, []byte("%% type: vector\n\x00"))
 	noarch.Fprintf(fp_v, []byte("%% rows: %d\n\x00"), 1)
 	noarch.Fprintf(fp_v, []byte("%% columns: %d\n\x00"), nh-nl+1)
-	{
-		for i = nl; i <= nh; func() int {
-			i += 1
-			return i
-		}() {
-			if V[i] != 0 {
-				noarch.Fprintf(fp_v, []byte("%15d\x00"), V[i])
-			} else {
-				noarch.Fprintf(fp_v, []byte("   0         \x00"))
-			}
-			noarch.Fprintf(fp_v, []byte("\n\x00"))
+	for i = nl; i <= nh; i++ {
+		if V[i] != 0 {
+			noarch.Fprintf(fp_v, []byte("%15d\x00"), V[i])
+		} else {
+			noarch.Fprintf(fp_v, []byte("   0         \x00"))
 		}
+		noarch.Fprintf(fp_v, []byte("\n\x00"))
 	}
 	noarch.Fclose(fp_v)
 	return
@@ -14413,46 +12108,26 @@ func free_D3dmatrix(m [][][]float64, nrl int, nrh int, ncl int, nch int, nzl int
 	noarch.Fprintf(fp_m, []byte("%% rows: %d\n\x00"), rows)
 	noarch.Fprintf(fp_m, []byte("%% columns: %d\n\x00"), cols)
 	if transpose != 0 {
-		{
-			for j = nl; j <= nh; func() int {
-				j += 1
-				return j
-			}() {
-				{
-					for i = ml; i <= mh; func() int {
-						i += 1
-						return i
-					}() {
-						if A[i][j] != float32(0) {
-							noarch.Fprintf(fp_m, []byte("%15.6e\x00"), float64(A[i][j]))
-						} else {
-							noarch.Fprintf(fp_m, []byte("    0          \x00"))
-						}
-					}
+		for j = nl; j <= nh; j++ {
+			for i = ml; i <= mh; i++ {
+				if A[i][j] != float32(0) {
+					noarch.Fprintf(fp_m, []byte("%15.6e\x00"), float64(A[i][j]))
+				} else {
+					noarch.Fprintf(fp_m, []byte("    0          \x00"))
 				}
-				noarch.Fprintf(fp_m, []byte("\n\x00"))
 			}
+			noarch.Fprintf(fp_m, []byte("\n\x00"))
 		}
 	} else {
-		{
-			for i = ml; i <= mh; func() int {
-				i += 1
-				return i
-			}() {
-				{
-					for j = nl; j <= nh; func() int {
-						j += 1
-						return j
-					}() {
-						if A[i][j] != float32(0) {
-							noarch.Fprintf(fp_m, []byte("%15.6e\x00"), float64(A[i][j]))
-						} else {
-							noarch.Fprintf(fp_m, []byte("    0          \x00"))
-						}
-					}
+		for i = ml; i <= mh; i++ {
+			for j = nl; j <= nh; j++ {
+				if A[i][j] != float32(0) {
+					noarch.Fprintf(fp_m, []byte("%15.6e\x00"), float64(A[i][j]))
+				} else {
+					noarch.Fprintf(fp_m, []byte("    0          \x00"))
 				}
-				noarch.Fprintf(fp_m, []byte("\n\x00"))
 			}
+			noarch.Fprintf(fp_m, []byte("\n\x00"))
 		}
 	}
 	noarch.Fclose(fp_m)
@@ -14492,46 +12167,26 @@ func free_D3dmatrix(m [][][]float64, nrl int, nrh int, ncl int, nch int, nzl int
 	noarch.Fprintf(fp_m, []byte("%% rows: %d\n\x00"), rows)
 	noarch.Fprintf(fp_m, []byte("%% columns: %d\n\x00"), cols)
 	if transpose != 0 {
-		{
-			for j = nl; j <= nh; func() int {
-				j += 1
-				return j
-			}() {
-				{
-					for i = ml; i <= mh; func() int {
-						i += 1
-						return i
-					}() {
-						if math.Abs(A[i][j]) > 1e-99 {
-							noarch.Fprintf(fp_m, []byte("%21.12e\x00"), A[i][j])
-						} else {
-							noarch.Fprintf(fp_m, []byte("    0                \x00"))
-						}
-					}
+		for j = nl; j <= nh; j++ {
+			for i = ml; i <= mh; i++ {
+				if math.Abs(A[i][j]) > 1e-99 {
+					noarch.Fprintf(fp_m, []byte("%21.12e\x00"), A[i][j])
+				} else {
+					noarch.Fprintf(fp_m, []byte("    0                \x00"))
 				}
-				noarch.Fprintf(fp_m, []byte("\n\x00"))
 			}
+			noarch.Fprintf(fp_m, []byte("\n\x00"))
 		}
 	} else {
-		{
-			for i = ml; i <= mh; func() int {
-				i += 1
-				return i
-			}() {
-				{
-					for j = nl; j <= nh; func() int {
-						j += 1
-						return j
-					}() {
-						if math.Abs(A[i][j]) > 1e-99 {
-							noarch.Fprintf(fp_m, []byte("%21.12e\x00"), A[i][j])
-						} else {
-							noarch.Fprintf(fp_m, []byte("    0                \x00"))
-						}
-					}
+		for i = ml; i <= mh; i++ {
+			for j = nl; j <= nh; j++ {
+				if math.Abs(A[i][j]) > 1e-99 {
+					noarch.Fprintf(fp_m, []byte("%21.12e\x00"), A[i][j])
+				} else {
+					noarch.Fprintf(fp_m, []byte("    0                \x00"))
 				}
-				noarch.Fprintf(fp_m, []byte("\n\x00"))
 			}
+			noarch.Fprintf(fp_m, []byte("\n\x00"))
 		}
 	}
 	noarch.Fclose(fp_m)
@@ -14560,33 +12215,23 @@ func free_D3dmatrix(m [][][]float64, nrl int, nrh int, ncl int, nch int, nzl int
 	noarch.Fprintf(fp_m, []byte("%% type: matrix \n\x00"))
 	noarch.Fprintf(fp_m, []byte("%% rows: %d\n\x00"), n)
 	noarch.Fprintf(fp_m, []byte("%% columns: %d\n\x00"), n)
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			{
-				for j = 1; j <= n; func() int {
-					j += 1
-					return j
-				}() {
-					if i > j {
-						if math.Abs(float64(A[j][i])) > 1e-99 {
-							noarch.Fprintf(fp_m, []byte("%15.6e\x00"), float64(A[j][i]))
-						} else {
-							noarch.Fprintf(fp_m, []byte("    0          \x00"))
-						}
-					} else {
-						if math.Abs(float64(A[i][j])) > 1e-99 {
-							noarch.Fprintf(fp_m, []byte("%15.6e\x00"), float64(A[i][j]))
-						} else {
-							noarch.Fprintf(fp_m, []byte("    0          \x00"))
-						}
-					}
+	for i = 1; i <= n; i++ {
+		for j = 1; j <= n; j++ {
+			if i > j {
+				if math.Abs(float64(A[j][i])) > 1e-99 {
+					noarch.Fprintf(fp_m, []byte("%15.6e\x00"), float64(A[j][i]))
+				} else {
+					noarch.Fprintf(fp_m, []byte("    0          \x00"))
+				}
+			} else {
+				if math.Abs(float64(A[i][j])) > 1e-99 {
+					noarch.Fprintf(fp_m, []byte("%15.6e\x00"), float64(A[i][j]))
+				} else {
+					noarch.Fprintf(fp_m, []byte("    0          \x00"))
 				}
 			}
-			noarch.Fprintf(fp_m, []byte("\n\x00"))
 		}
+		noarch.Fprintf(fp_m, []byte("\n\x00"))
 	}
 	noarch.Fclose(fp_m)
 	return
@@ -14614,33 +12259,23 @@ func free_D3dmatrix(m [][][]float64, nrl int, nrh int, ncl int, nch int, nzl int
 	noarch.Fprintf(fp_m, []byte("%% type: matrix \n\x00"))
 	noarch.Fprintf(fp_m, []byte("%% rows: %d\n\x00"), n)
 	noarch.Fprintf(fp_m, []byte("%% columns: %d\n\x00"), n)
-	{
-		for i = 1; i <= n; func() int {
-			i += 1
-			return i
-		}() {
-			{
-				for j = 1; j <= n; func() int {
-					j += 1
-					return j
-				}() {
-					if i > j {
-						if math.Abs(A[j][i]) > 1e-99 {
-							noarch.Fprintf(fp_m, []byte("%21.12e\x00"), A[j][i])
-						} else {
-							noarch.Fprintf(fp_m, []byte("    0                \x00"))
-						}
-					} else {
-						if math.Abs(A[i][j]) > 1e-99 {
-							noarch.Fprintf(fp_m, []byte("%21.12e\x00"), A[i][j])
-						} else {
-							noarch.Fprintf(fp_m, []byte("    0                \x00"))
-						}
-					}
+	for i = 1; i <= n; i++ {
+		for j = 1; j <= n; j++ {
+			if i > j {
+				if math.Abs(A[j][i]) > 1e-99 {
+					noarch.Fprintf(fp_m, []byte("%21.12e\x00"), A[j][i])
+				} else {
+					noarch.Fprintf(fp_m, []byte("    0                \x00"))
+				}
+			} else {
+				if math.Abs(A[i][j]) > 1e-99 {
+					noarch.Fprintf(fp_m, []byte("%21.12e\x00"), A[i][j])
+				} else {
+					noarch.Fprintf(fp_m, []byte("    0                \x00"))
 				}
 			}
-			noarch.Fprintf(fp_m, []byte("\n\x00"))
 		}
+		noarch.Fprintf(fp_m, []byte("\n\x00"))
 	}
 	noarch.Fclose(fp_m)
 	return
