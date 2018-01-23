@@ -71,10 +71,10 @@ deadcode: main.go:190:1: va_list is unused
 deadcode: main.go:191:1: __gnuc_va_list is unused
 deadcode: main.go:192:1: _IO_jump_t is unused
 deadcode: main.go:194:1: _IO_lock_t is unused
-deadcode: main.go:203:1: __codecvt_noconv is unused
-deadcode: main.go:203:1: __codecvt_ok is unused
-deadcode: main.go:203:1: __codecvt_error is unused
 deadcode: main.go:203:1: __codecvt_partial is unused
+deadcode: main.go:203:1: __codecvt_error is unused
+deadcode: main.go:203:1: __codecvt_ok is unused
+deadcode: main.go:203:1: __codecvt_noconv is unused
 deadcode: main.go:210:1: _IO_FILE_plus is unused
 deadcode: main.go:212:1: __io_read_fn is unused
 deadcode: main.go:213:1: __io_write_fn is unused
