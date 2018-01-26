@@ -1,59 +1,42 @@
 // Warning (EnumDecl):  /usr/include/math.h:347 : Add support of continues counter for type : *ast.UnaryExpr
-// Warning (TypedefDecl):  /usr/include/libio.h:358 : Cannot resolve type '__io_read_fn' : Cannot resolve type '__ssize_t (void *, char *, size_t)' : function pointers are not supported [2] : '__ssize_t (void *, char *, size_t)'
-// Warning (TypedefDecl):  /usr/include/libio.h:359 : Cannot resolve type '__io_write_fn' : Cannot resolve type '__ssize_t (void *, char *, size_t)' : function pointers are not supported [2] : '__ssize_t (void *, char *, size_t)'
-// Warning (TypedefDecl):  /usr/include/libio.h:360 : Cannot resolve type '__io_seek_fn' : Cannot resolve type 'int (void *, __off64_t *, int)' : function pointers are not supported [2] : 'int (void *, __off64_t *, int)'
-// Warning (TypedefDecl):  /usr/include/libio.h:361 : Cannot resolve type '__io_close_fn' : Cannot resolve type 'int (void *)' : function pointers are not supported [2] : 'int (void *)'
-// Warning (FieldDecl):  /usr/include/libio.h:366 : Cannot resolve type '__io_read_fn *' : Cannot resolve type '__io_read_fn' : Cannot resolve type '__ssize_t (void *, char *, size_t)' : function pointers are not supported [2] : '__ssize_t (void *, char *, size_t)'
-// Warning (FieldDecl):  /usr/include/libio.h:367 : Cannot resolve type '__io_write_fn *' : Cannot resolve type '__io_write_fn' : Cannot resolve type '__ssize_t (void *, char *, size_t)' : function pointers are not supported [2] : '__ssize_t (void *, char *, size_t)'
-// Warning (FieldDecl):  /usr/include/libio.h:368 : Cannot resolve type '__io_seek_fn *' : Cannot resolve type '__io_seek_fn' : Cannot resolve type 'int (void *, __off64_t *, int)' : function pointers are not supported [2] : 'int (void *, __off64_t *, int)'
-// Warning (FieldDecl):  /usr/include/libio.h:369 : Cannot resolve type '__io_close_fn *' : Cannot resolve type '__io_close_fn' : Cannot resolve type 'int (void *)' : function pointers are not supported [2] : 'int (void *)'
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/waitstatus.h:75 : Error : name of FieldDecl is empty
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/waitstatus.h:89 : Error : name of FieldDecl is empty
-// Warning (TransparentUnionAttr):  /usr/include/stdlib.h:71 : could not parse &{45590672 {/usr/include/stdlib.h 71 0 35 0 } []}
+// Warning (TransparentUnionAttr):  /usr/include/stdlib.h:71 : could not parse &{57587856 {/usr/include/stdlib.h 71 0 35 0 } []}
 // Warning (FieldDecl):  /usr/include/stdlib.h:69 : Avoid struct `union wait *` in FieldDecl
 // Warning (RecordDecl):  :0 : could not determine the size of type `union __WAIT_STATUS` for that reason: Cannot determine sizeof : |union __WAIT_STATUS|. err = Cannot determine sizeof : |union wait *|. err = error in union
-// Warning (TypedefDecl):  /usr/include/stdlib.h:744 : Cannot resolve type '__compar_fn_t' : Cannot resolve type 'int (*)( void *, void *)' : function pointers are not supported [1] : 'int (*)( void *, void *)'
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/timex.h:50 : Error : name of FieldDecl is empty
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/timex.h:51 : Error : name of FieldDecl is empty
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/timex.h:52 : Error : name of FieldDecl is empty
 // Warning (EnumDecl):  /usr/include/x86_64-linux-gnu/bits/confname.h:71 : Add support of continues counter for type : *ast.BinaryExpr
 // Warning (ParenExpr):  :0 : Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
+// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 // Warning (EnumDecl):  /usr/include/ctype.h:46 : Add support of continues counter for type : *ast.ParenExpr
 // Warning (ParenExpr):  :0 : Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
+// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 // Warning (ParenExpr):  :0 : Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
+// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 // Warning (ParenExpr):  :0 : Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
+// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 // Warning (ParenExpr):  :0 : Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
+// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 // Warning (ParenExpr):  :0 : Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
+// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 // Warning (ParenExpr):  :0 : Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
+// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 // Warning (SwitchStmt):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:126 : Unsupport case
-// Warning (TypedefDecl):  /usr/include/libio.h:358 : Cannot resolve type '__io_read_fn' : Cannot resolve type '__ssize_t (void *, char *, size_t)' : function pointers are not supported [2] : '__ssize_t (void *, char *, size_t)'
-// Warning (TypedefDecl):  /usr/include/libio.h:359 : Cannot resolve type '__io_write_fn' : Cannot resolve type '__ssize_t (void *, char *, size_t)' : function pointers are not supported [2] : '__ssize_t (void *, char *, size_t)'
-// Warning (TypedefDecl):  /usr/include/libio.h:360 : Cannot resolve type '__io_seek_fn' : Cannot resolve type 'int (void *, __off64_t *, int)' : function pointers are not supported [2] : 'int (void *, __off64_t *, int)'
-// Warning (TypedefDecl):  /usr/include/libio.h:361 : Cannot resolve type '__io_close_fn' : Cannot resolve type 'int (void *)' : function pointers are not supported [2] : 'int (void *)'
-// Warning (FieldDecl):  /usr/include/libio.h:366 : Cannot resolve type '__io_read_fn *' : Cannot resolve type '__io_read_fn' : Cannot resolve type '__ssize_t (void *, char *, size_t)' : function pointers are not supported [2] : '__ssize_t (void *, char *, size_t)'
-// Warning (FieldDecl):  /usr/include/libio.h:367 : Cannot resolve type '__io_write_fn *' : Cannot resolve type '__io_write_fn' : Cannot resolve type '__ssize_t (void *, char *, size_t)' : function pointers are not supported [2] : '__ssize_t (void *, char *, size_t)'
-// Warning (FieldDecl):  /usr/include/libio.h:368 : Cannot resolve type '__io_seek_fn *' : Cannot resolve type '__io_seek_fn' : Cannot resolve type 'int (void *, __off64_t *, int)' : function pointers are not supported [2] : 'int (void *, __off64_t *, int)'
-// Warning (FieldDecl):  /usr/include/libio.h:369 : Cannot resolve type '__io_close_fn *' : Cannot resolve type '__io_close_fn' : Cannot resolve type 'int (void *)' : function pointers are not supported [2] : 'int (void *)'
 // Warning (ParenExpr):  :0 : Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
+// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 const // Warning (EnumDecl):  /usr/include/ctype.h:46 : Add support of continues counter for type : *ast.ParenExpr
 // Warning (ParenExpr):  :0 : Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
+// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 // Warning (ParenExpr):  :0 : Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
+// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 // Warning (ParenExpr):  :0 : Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
+// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 // Warning (ParenExpr):  :0 : Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
+// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 // Warning (ParenExpr):  :0 : Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
+// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 // Warning (ParenExpr):  :0 : Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
+// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 // Warning (SwitchStmt):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:126 : Unsupport case

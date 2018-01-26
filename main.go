@@ -6,46 +6,37 @@
 */
 
 // Warning (EnumDecl):  /usr/include/math.h:347 : Add support of continues counter for type : *ast.UnaryExpr
-// Warning (TypedefDecl):  /usr/include/libio.h:358 : Cannot resolve type '__io_read_fn' : Cannot resolve type '__ssize_t (void *, char *, size_t)' : function pointers are not supported [2] : '__ssize_t (void *, char *, size_t)'
-// Warning (TypedefDecl):  /usr/include/libio.h:359 : Cannot resolve type '__io_write_fn' : Cannot resolve type '__ssize_t (void *, char *, size_t)' : function pointers are not supported [2] : '__ssize_t (void *, char *, size_t)'
-// Warning (TypedefDecl):  /usr/include/libio.h:360 : Cannot resolve type '__io_seek_fn' : Cannot resolve type 'int (void *, __off64_t *, int)' : function pointers are not supported [2] : 'int (void *, __off64_t *, int)'
-// Warning (TypedefDecl):  /usr/include/libio.h:361 : Cannot resolve type '__io_close_fn' : Cannot resolve type 'int (void *)' : function pointers are not supported [2] : 'int (void *)'
-// Warning (FieldDecl):  /usr/include/libio.h:366 : Cannot resolve type '__io_read_fn *' : Cannot resolve type '__io_read_fn' : Cannot resolve type '__ssize_t (void *, char *, size_t)' : function pointers are not supported [2] : '__ssize_t (void *, char *, size_t)'
-// Warning (FieldDecl):  /usr/include/libio.h:367 : Cannot resolve type '__io_write_fn *' : Cannot resolve type '__io_write_fn' : Cannot resolve type '__ssize_t (void *, char *, size_t)' : function pointers are not supported [2] : '__ssize_t (void *, char *, size_t)'
-// Warning (FieldDecl):  /usr/include/libio.h:368 : Cannot resolve type '__io_seek_fn *' : Cannot resolve type '__io_seek_fn' : Cannot resolve type 'int (void *, __off64_t *, int)' : function pointers are not supported [2] : 'int (void *, __off64_t *, int)'
-// Warning (FieldDecl):  /usr/include/libio.h:369 : Cannot resolve type '__io_close_fn *' : Cannot resolve type '__io_close_fn' : Cannot resolve type 'int (void *)' : function pointers are not supported [2] : 'int (void *)'
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/waitstatus.h:75 : Error : name of FieldDecl is empty
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/waitstatus.h:89 : Error : name of FieldDecl is empty
-// Warning (TransparentUnionAttr):  /usr/include/stdlib.h:71 : could not parse &{45590672 {/usr/include/stdlib.h 71 0 35 0 } []}
+// Warning (TransparentUnionAttr):  /usr/include/stdlib.h:71 : could not parse &{57587856 {/usr/include/stdlib.h 71 0 35 0 } []}
 // Warning (FieldDecl):  /usr/include/stdlib.h:69 : Avoid struct `union wait *` in FieldDecl
 // Warning (RecordDecl):  :0 : could not determine the size of type `union __WAIT_STATUS` for that reason: Cannot determine sizeof : |union __WAIT_STATUS|. err = Cannot determine sizeof : |union wait *|. err = error in union
-// Warning (TypedefDecl):  /usr/include/stdlib.h:744 : Cannot resolve type '__compar_fn_t' : Cannot resolve type 'int (*)( void *, void *)' : function pointers are not supported [1] : 'int (*)( void *, void *)'
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/timex.h:50 : Error : name of FieldDecl is empty
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/timex.h:51 : Error : name of FieldDecl is empty
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/timex.h:52 : Error : name of FieldDecl is empty
 // Warning (EnumDecl):  /usr/include/x86_64-linux-gnu/bits/confname.h:71 : Add support of continues counter for type : *ast.BinaryExpr
 // Warning (ParenExpr):  :0 : Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Error (IfStmt):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
+// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
+// Error (IfStmt):  :0 : Cannot transpileToExpr. err = Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 // Warning (EnumDecl):  /usr/include/ctype.h:46 : Add support of continues counter for type : *ast.ParenExpr
 // Warning (ParenExpr):  :0 : Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Error (IfStmt):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
+// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
+// Error (IfStmt):  :0 : Cannot transpileToExpr. err = Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 // Warning (ParenExpr):  :0 : Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Error (IfStmt):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
+// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
+// Error (IfStmt):  :0 : Cannot transpileToExpr. err = Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 // Warning (ParenExpr):  :0 : Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Error (IfStmt):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
+// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
+// Error (IfStmt):  :0 : Cannot transpileToExpr. err = Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 // Warning (ParenExpr):  :0 : Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Error (IfStmt):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
+// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
+// Error (IfStmt):  :0 : Cannot transpileToExpr. err = Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 // Warning (ParenExpr):  :0 : Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Error (IfStmt):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
+// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
+// Error (IfStmt):  :0 : Cannot transpileToExpr. err = Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 // Warning (ParenExpr):  :0 : Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Error (IfStmt):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
+// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
+// Error (IfStmt):  :0 : Cannot transpileToExpr. err = Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 // Warning (SwitchStmt):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:126 : Unsupport case
 
 package main
@@ -213,15 +204,15 @@ type __io_read_fn func(interface{}, []byte, uint32) int32
 type __io_write_fn func(interface{}, []byte, uint32) int32
 type __io_seek_fn func(interface{}, []int32, int) int
 type __io_close_fn func(interface{}) int
-type cookie_read_function_t interface{}
-type cookie_write_function_t interface{}
-type cookie_seek_function_t interface{}
-type cookie_close_function_t interface{}
+type cookie_read_function_t __io_read_fn
+type cookie_write_function_t __io_write_fn
+type cookie_seek_function_t __io_seek_fn
+type cookie_close_function_t __io_close_fn
 type _IO_cookie_io_functions_t struct {
-	read  []interface{}
-	write []interface{}
-	seek  []interface{}
-	close []interface{}
+	read  []__io_read_fn
+	write []__io_write_fn
+	seek  []__io_seek_fn
+	close []__io_close_fn
 }
 type cookie_io_functions_t _IO_cookie_io_functions_t
 type _IO_cookie_file struct {
@@ -232,14 +223,6 @@ type ssize_t int32
 type fpos_t _G_fpos_t
 type fpos64_t _G_fpos64_t
 
-// Warning (TypedefDecl):  /usr/include/libio.h:358 : Cannot resolve type '__io_read_fn' : Cannot resolve type '__ssize_t (void *, char *, size_t)' : function pointers are not supported [2] : '__ssize_t (void *, char *, size_t)'
-// Warning (TypedefDecl):  /usr/include/libio.h:359 : Cannot resolve type '__io_write_fn' : Cannot resolve type '__ssize_t (void *, char *, size_t)' : function pointers are not supported [2] : '__ssize_t (void *, char *, size_t)'
-// Warning (TypedefDecl):  /usr/include/libio.h:360 : Cannot resolve type '__io_seek_fn' : Cannot resolve type 'int (void *, __off64_t *, int)' : function pointers are not supported [2] : 'int (void *, __off64_t *, int)'
-// Warning (TypedefDecl):  /usr/include/libio.h:361 : Cannot resolve type '__io_close_fn' : Cannot resolve type 'int (void *)' : function pointers are not supported [2] : 'int (void *)'
-// Warning (FieldDecl):  /usr/include/libio.h:366 : Cannot resolve type '__io_read_fn *' : Cannot resolve type '__io_read_fn' : Cannot resolve type '__ssize_t (void *, char *, size_t)' : function pointers are not supported [2] : '__ssize_t (void *, char *, size_t)'
-// Warning (FieldDecl):  /usr/include/libio.h:367 : Cannot resolve type '__io_write_fn *' : Cannot resolve type '__io_write_fn' : Cannot resolve type '__ssize_t (void *, char *, size_t)' : function pointers are not supported [2] : '__ssize_t (void *, char *, size_t)'
-// Warning (FieldDecl):  /usr/include/libio.h:368 : Cannot resolve type '__io_seek_fn *' : Cannot resolve type '__io_seek_fn' : Cannot resolve type 'int (void *, __off64_t *, int)' : function pointers are not supported [2] : 'int (void *, __off64_t *, int)'
-// Warning (FieldDecl):  /usr/include/libio.h:369 : Cannot resolve type '__io_close_fn *' : Cannot resolve type '__io_close_fn' : Cannot resolve type 'int (void *)' : function pointers are not supported [2] : 'int (void *)'
 var stdin *noarch.File
 
 var stdout *noarch.File
@@ -801,7 +784,7 @@ type drand48_data struct {
 	__a     uint64
 }
 type __compar_fn_t func(interface{}, interface{}) int
-type comparison_fn_t interface{}
+type comparison_fn_t __compar_fn_t
 type __compar_d_fn_t func(interface{}, interface{}, interface{}) int
 type vec3_struct struct {
 	x float64
@@ -1509,7 +1492,7 @@ func main() {
 	if (func() *noarch.File {
 		fp = noarch.Fopen(IN_file, []byte("r\x00"))
 		return fp
-	}()) == (nil) {
+	}()) == nil {
 		noarch.Sprintf(errMsg, []byte("\n ERROR: cannot open input data file '%s'\n\x00"), IN_file)
 		errorMsg(errMsg)
 		display_help()
@@ -1528,7 +1511,7 @@ func main() {
 	if (func() *noarch.File {
 		fp = noarch.Fopen(strippedInputFile, []byte("r\x00"))
 		return fp
-	}()) == (nil) {
+	}()) == nil {
 		noarch.Sprintf(errMsg, []byte("\n ERROR: cannot open stripped input data file '%s'\n\x00"), strippedInputFile)
 		errorMsg(errMsg)
 		os.Exit(13)
@@ -1551,7 +1534,7 @@ func main() {
 		noarch.Fprintf(stdout, []byte(" nN =%4d \x00"), nN)
 	}
 	rj = vector(int32(1), int32(nN))
-	xyz = make([]vec3, 24*uint32((1+nN))/24)
+	xyz = make([]vec3, 24*uint32(1+nN)/24)
 	read_node_data(fp, nN, xyz, rj)
 	if verbose != 0 {
 		noarch.Printf([]byte(" ... complete\n\x00"))
@@ -1666,7 +1649,7 @@ func main() {
 	}
 	noarch.Fclose(fp)
 	fp = noarch.Fopen(OUT_file, []byte("a\x00"))
-	if fp == (nil) {
+	if fp == nil {
 		noarch.Fprintf(stderr, []byte("Unable to append to output data file '%s'!\n\x00"), OUT_file)
 		os.Exit(14)
 	}
@@ -1684,22 +1667,10 @@ func main() {
 				noarch.Fprintf(stdout, []byte("\n\x00"))
 			}
 			for i = 1; i <= DoF; i++ {
-				func() float64 {
-					dR[i] = 0
-					return dR[i]
-				}()
-				func() float64 {
-					R[i] = dR[i]
-					return R[i]
-				}()
-				func() float64 {
-					dD[i] = R[i]
-					return dD[i]
-				}()
-				func() float64 {
-					D[i] = dD[i]
-					return D[i]
-				}()
+				dR[i] = 0
+				R[i] = dR[i]
+				dD[i] = R[i]
+				D[i] = dD[i]
 			}
 			for i = 1; i <= nE; i++ {
 				for j = 1; j <= 12; j++ {
@@ -1765,10 +1736,7 @@ func main() {
 				iter = 0
 			}
 			for geom != 0 && error > tol && iter < 500 && ok >= 0 {
-				func() int {
-					iter += 1
-					return iter
-				}()
+				iter += 1
 				assemble_K(K, DoF, nE, xyz, rj, L, Le, N1, N2, Ax, Asy, Asz, Jx, Iy, Iz, E, G, p, shear, geom, Q, debug)
 				error = equilibrium_error(dF, F, K, D, DoF, q, r)
 				solve_system(K, dD, dF, dR, DoF, q, r, (*[1]int)(unsafe.Pointer(&ok))[:], verbose, (*[1]float64)(unsafe.Pointer(&rms_resid))[:])
@@ -1826,7 +1794,7 @@ func main() {
 			noarch.Fprintf(stdout, []byte("\n\n Modal Analysis ...\n\x00"))
 		}
 		nM_calc = func() int {
-			if (nM + 8) < (2 * nM) {
+			if nM+8 < 2*nM {
 				return nM + 8
 			} else {
 				return 2 * nM
@@ -1847,22 +1815,10 @@ func main() {
 				K[i][i] = traceK * 10000
 				M[i][i] = traceM
 				for j = i + 1; j <= DoF; j++ {
-					func() float64 {
-						M[i][j] = 0
-						return M[i][j]
-					}()
-					func() float64 {
-						M[j][i] = M[i][j]
-						return M[j][i]
-					}()
-					func() float64 {
-						K[i][j] = M[j][i]
-						return K[i][j]
-					}()
-					func() float64 {
-						K[j][i] = K[i][j]
-						return K[j][i]
-					}()
+					M[i][j] = 0
+					M[j][i] = M[i][j]
+					K[i][j] = M[j][i]
+					K[j][i] = K[i][j]
 				}
 			}
 		}
@@ -2052,180 +2008,54 @@ func elastic_K(k [][]float64, xyz []vec3, r []float32, L float64, Le float64, n1
 		Ksy = 12 * float64(E) * float64(Iz) / (float64(G*Asy) * Le * Le)
 		Ksz = 12 * float64(E) * float64(Iy) / (float64(G*Asz) * Le * Le)
 	} else {
-		func() float64 {
-			Ksz = 0
-			return Ksz
-		}()
-		func() float64 {
-			Ksy = Ksz
-			return Ksy
-		}()
+		Ksz = 0
+		Ksy = Ksz
 	}
-	func() float64 {
-		k[7][7] = float64(E*Ax) / Le
-		return k[7][7]
-	}()
-	func() float64 {
-		k[1][1] = k[7][7]
-		return k[1][1]
-	}()
-	func() float64 {
-		k[8][8] = 12 * float64(E) * float64(Iz) / (Le * Le * Le * (1 + Ksy))
-		return k[8][8]
-	}()
-	func() float64 {
-		k[2][2] = k[8][8]
-		return k[2][2]
-	}()
-	func() float64 {
-		k[9][9] = 12 * float64(E) * float64(Iy) / (Le * Le * Le * (1 + Ksz))
-		return k[9][9]
-	}()
-	func() float64 {
-		k[3][3] = k[9][9]
-		return k[3][3]
-	}()
-	func() float64 {
-		k[10][10] = float64(G*J) / Le
-		return k[10][10]
-	}()
-	func() float64 {
-		k[4][4] = k[10][10]
-		return k[4][4]
-	}()
-	func() float64 {
-		k[11][11] = (4 + Ksz) * float64(E) * float64(Iy) / (Le * (1 + Ksz))
-		return k[11][11]
-	}()
-	func() float64 {
-		k[5][5] = k[11][11]
-		return k[5][5]
-	}()
-	func() float64 {
-		k[12][12] = (4 + Ksy) * float64(E) * float64(Iz) / (Le * (1 + Ksy))
-		return k[12][12]
-	}()
-	func() float64 {
-		k[6][6] = k[12][12]
-		return k[6][6]
-	}()
-	func() float64 {
-		k[3][5] = -6 * float64(E) * float64(Iy) / (Le * Le * (1 + Ksz))
-		return k[3][5]
-	}()
-	func() float64 {
-		k[5][3] = k[3][5]
-		return k[5][3]
-	}()
-	func() float64 {
-		k[2][6] = 6 * float64(E) * float64(Iz) / (Le * Le * (1 + Ksy))
-		return k[2][6]
-	}()
-	func() float64 {
-		k[6][2] = k[2][6]
-		return k[6][2]
-	}()
-	func() float64 {
-		k[1][7] = -k[1][1]
-		return k[1][7]
-	}()
-	func() float64 {
-		k[7][1] = k[1][7]
-		return k[7][1]
-	}()
-	func() float64 {
-		k[6][8] = -k[6][2]
-		return k[6][8]
-	}()
-	func() float64 {
-		k[8][6] = k[6][8]
-		return k[8][6]
-	}()
-	func() float64 {
-		k[8][12] = k[8][6]
-		return k[8][12]
-	}()
-	func() float64 {
-		k[12][8] = k[8][12]
-		return k[12][8]
-	}()
-	func() float64 {
-		k[5][9] = -k[5][3]
-		return k[5][9]
-	}()
-	func() float64 {
-		k[9][5] = k[5][9]
-		return k[9][5]
-	}()
-	func() float64 {
-		k[9][11] = k[9][5]
-		return k[9][11]
-	}()
-	func() float64 {
-		k[11][9] = k[9][11]
-		return k[11][9]
-	}()
-	func() float64 {
-		k[4][10] = -k[4][4]
-		return k[4][10]
-	}()
-	func() float64 {
-		k[10][4] = k[4][10]
-		return k[10][4]
-	}()
-	func() float64 {
-		k[3][11] = k[5][3]
-		return k[3][11]
-	}()
-	func() float64 {
-		k[11][3] = k[3][11]
-		return k[11][3]
-	}()
-	func() float64 {
-		k[2][12] = k[6][2]
-		return k[2][12]
-	}()
-	func() float64 {
-		k[12][2] = k[2][12]
-		return k[12][2]
-	}()
-	func() float64 {
-		k[2][8] = -k[2][2]
-		return k[2][8]
-	}()
-	func() float64 {
-		k[8][2] = k[2][8]
-		return k[8][2]
-	}()
-	func() float64 {
-		k[3][9] = -k[3][3]
-		return k[3][9]
-	}()
-	func() float64 {
-		k[9][3] = k[3][9]
-		return k[9][3]
-	}()
-	func() float64 {
-		k[5][11] = (2 - Ksz) * float64(E) * float64(Iy) / (Le * (1 + Ksz))
-		return k[5][11]
-	}()
-	func() float64 {
-		k[11][5] = k[5][11]
-		return k[11][5]
-	}()
-	func() float64 {
-		k[6][12] = (2 - Ksy) * float64(E) * float64(Iz) / (Le * (1 + Ksy))
-		return k[6][12]
-	}()
-	func() float64 {
-		k[12][6] = k[6][12]
-		return k[12][6]
-	}()
+	k[7][7] = float64(E*Ax) / Le
+	k[1][1] = k[7][7]
+	k[8][8] = 12 * float64(E) * float64(Iz) / (Le * Le * Le * (1 + Ksy))
+	k[2][2] = k[8][8]
+	k[9][9] = 12 * float64(E) * float64(Iy) / (Le * Le * Le * (1 + Ksz))
+	k[3][3] = k[9][9]
+	k[10][10] = float64(G*J) / Le
+	k[4][4] = k[10][10]
+	k[11][11] = (4 + Ksz) * float64(E) * float64(Iy) / (Le * (1 + Ksz))
+	k[5][5] = k[11][11]
+	k[12][12] = (4 + Ksy) * float64(E) * float64(Iz) / (Le * (1 + Ksy))
+	k[6][6] = k[12][12]
+	k[3][5] = -6 * float64(E) * float64(Iy) / (Le * Le * (1 + Ksz))
+	k[5][3] = k[3][5]
+	k[2][6] = 6 * float64(E) * float64(Iz) / (Le * Le * (1 + Ksy))
+	k[6][2] = k[2][6]
+	k[1][7] = -k[1][1]
+	k[7][1] = k[1][7]
+	k[6][8] = -k[6][2]
+	k[8][6] = k[6][8]
+	k[8][12] = k[8][6]
+	k[12][8] = k[8][12]
+	k[5][9] = -k[5][3]
+	k[9][5] = k[5][9]
+	k[9][11] = k[9][5]
+	k[11][9] = k[9][11]
+	k[4][10] = -k[4][4]
+	k[10][4] = k[4][10]
+	k[3][11] = k[5][3]
+	k[11][3] = k[3][11]
+	k[2][12] = k[6][2]
+	k[12][2] = k[2][12]
+	k[2][8] = -k[2][2]
+	k[8][2] = k[2][8]
+	k[3][9] = -k[3][3]
+	k[9][3] = k[3][9]
+	k[5][11] = (2 - Ksz) * float64(E) * float64(Iy) / (Le * (1 + Ksz))
+	k[11][5] = k[5][11]
+	k[6][12] = (2 - Ksy) * float64(E) * float64(Iz) / (Le * (1 + Ksy))
+	k[12][6] = k[6][12]
 	atma(t1, t2, t3, t4, t5, t6, t7, t8, t9, k, r[n1], r[n2])
 	for i = 1; i <= 12; i++ {
 		for j = i + 1; j <= 12; j++ {
 			if k[i][j] != k[j][i] {
-				if math.Abs(k[i][j]/k[j][i]-1) > 1e-06 && (map[bool]int{false: 0, true: 1}[math.Abs(k[i][j]/k[i][i]) > 1e-06 || math.Abs(k[j][i]/k[i][i]) > 1e-06]) != 0 {
+				if math.Abs(k[i][j]/k[j][i]-1) > 1e-06 && (math.Abs(k[i][j]/k[i][i]) > 1e-06 || math.Abs(k[j][i]/k[i][i]) > 1e-06) {
 					noarch.Fprintf(stderr, []byte("elastic_K: element stiffness matrix not symetric ...\n\x00"))
 					noarch.Fprintf(stderr, []byte(" ... k[%d][%d] = %15.6e \n\x00"), i, j, k[i][j])
 					noarch.Fprintf(stderr, []byte(" ... k[%d][%d] = %15.6e   \x00"), j, i, k[j][i])
@@ -2233,14 +2063,8 @@ func elastic_K(k [][]float64, xyz []vec3, r []float32, L float64, Le float64, n1
 					noarch.Fprintf(stderr, []byte(" ... element matrix saved in file 'kt'\n\x00"))
 					save_dmatrix([]byte("kt\x00"), k, 1, 12, 1, 12, 0, []byte("w\x00"))
 				}
-				func() float64 {
-					k[j][i] = 0.5 * (k[i][j] + k[j][i])
-					return k[j][i]
-				}()
-				func() float64 {
-					k[i][j] = k[j][i]
-					return k[i][j]
-				}()
+				k[j][i] = 0.5 * (k[i][j] + k[j][i])
+				k[i][j] = k[j][i]
 			}
 		}
 	}
@@ -2282,188 +2106,56 @@ func geometric_K(k [][]float64, xyz []vec3, r []float32, L float64, Le float64, 
 		Dsy = (float64(1) + Ksy) * (float64(1) + Ksy)
 		Dsz = (float64(1) + Ksz) * (float64(1) + Ksz)
 	} else {
-		func() float64 {
-			Ksz = 0
-			return Ksz
-		}()
-		func() float64 {
-			Ksy = Ksz
-			return Ksy
-		}()
-		func() float64 {
-			Dsz = 1
-			return Dsz
-		}()
-		func() float64 {
-			Dsy = Dsz
-			return Dsy
-		}()
+		Ksz = 0
+		Ksy = Ksz
+		Dsz = 1
+		Dsy = Dsz
 	}
-	func() float64 {
-		kg[7][7] = 0
-		return kg[7][7]
-	}()
-	func() float64 {
-		kg[1][1] = kg[7][7]
-		return kg[1][1]
-	}()
-	func() float64 {
-		kg[8][8] = T / L * (1.2 + 2*Ksy + Ksy*Ksy) / Dsy
-		return kg[8][8]
-	}()
-	func() float64 {
-		kg[2][2] = kg[8][8]
-		return kg[2][2]
-	}()
-	func() float64 {
-		kg[9][9] = T / L * (1.2 + 2*Ksz + Ksz*Ksz) / Dsz
-		return kg[9][9]
-	}()
-	func() float64 {
-		kg[3][3] = kg[9][9]
-		return kg[3][3]
-	}()
-	func() float64 {
-		kg[10][10] = T / L * float64(J) / float64(Ax)
-		return kg[10][10]
-	}()
-	func() float64 {
-		kg[4][4] = kg[10][10]
-		return kg[4][4]
-	}()
-	func() float64 {
-		kg[11][11] = T * L * (2/15 + Ksz/6 + Ksz*Ksz/12) / Dsz
-		return kg[11][11]
-	}()
-	func() float64 {
-		kg[5][5] = kg[11][11]
-		return kg[5][5]
-	}()
-	func() float64 {
-		kg[12][12] = T * L * (2/15 + Ksy/6 + Ksy*Ksy/12) / Dsy
-		return kg[12][12]
-	}()
-	func() float64 {
-		kg[6][6] = kg[12][12]
-		return kg[6][6]
-	}()
-	func() float64 {
-		kg[7][1] = 0
-		return kg[7][1]
-	}()
-	func() float64 {
-		kg[1][7] = kg[7][1]
-		return kg[1][7]
-	}()
-	func() float64 {
-		kg[3][11] = -T / 10 / Dsz
-		return kg[3][11]
-	}()
-	func() float64 {
-		kg[11][3] = kg[3][11]
-		return kg[11][3]
-	}()
-	func() float64 {
-		kg[3][5] = kg[11][3]
-		return kg[3][5]
-	}()
-	func() float64 {
-		kg[5][3] = kg[3][5]
-		return kg[5][3]
-	}()
-	func() float64 {
-		kg[9][11] = T / 10 / Dsz
-		return kg[9][11]
-	}()
-	func() float64 {
-		kg[11][9] = kg[9][11]
-		return kg[11][9]
-	}()
-	func() float64 {
-		kg[5][9] = kg[11][9]
-		return kg[5][9]
-	}()
-	func() float64 {
-		kg[9][5] = kg[5][9]
-		return kg[9][5]
-	}()
-	func() float64 {
-		kg[2][12] = T / 10 / Dsy
-		return kg[2][12]
-	}()
-	func() float64 {
-		kg[12][2] = kg[2][12]
-		return kg[12][2]
-	}()
-	func() float64 {
-		kg[2][6] = kg[12][2]
-		return kg[2][6]
-	}()
-	func() float64 {
-		kg[6][2] = kg[2][6]
-		return kg[6][2]
-	}()
-	func() float64 {
-		kg[8][12] = -T / 10 / Dsy
-		return kg[8][12]
-	}()
-	func() float64 {
-		kg[12][8] = kg[8][12]
-		return kg[12][8]
-	}()
-	func() float64 {
-		kg[6][8] = kg[12][8]
-		return kg[6][8]
-	}()
-	func() float64 {
-		kg[8][6] = kg[6][8]
-		return kg[8][6]
-	}()
-	func() float64 {
-		kg[10][4] = -kg[4][4]
-		return kg[10][4]
-	}()
-	func() float64 {
-		kg[4][10] = kg[10][4]
-		return kg[4][10]
-	}()
-	func() float64 {
-		kg[2][8] = -T / L * (1.2 + 2*Ksy + Ksy*Ksy) / Dsy
-		return kg[2][8]
-	}()
-	func() float64 {
-		kg[8][2] = kg[2][8]
-		return kg[8][2]
-	}()
-	func() float64 {
-		kg[3][9] = -T / L * (1.2 + 2*Ksz + Ksz*Ksz) / Dsz
-		return kg[3][9]
-	}()
-	func() float64 {
-		kg[9][3] = kg[3][9]
-		return kg[9][3]
-	}()
-	func() float64 {
-		kg[5][11] = -T * L * (1/30 + Ksz/6 + Ksz*Ksz/12) / Dsz
-		return kg[5][11]
-	}()
-	func() float64 {
-		kg[11][5] = kg[5][11]
-		return kg[11][5]
-	}()
-	func() float64 {
-		kg[6][12] = -T * L * (1/30 + Ksy/6 + Ksy*Ksy/12) / Dsy
-		return kg[6][12]
-	}()
-	func() float64 {
-		kg[12][6] = kg[6][12]
-		return kg[12][6]
-	}()
+	kg[7][7] = 0
+	kg[1][1] = kg[7][7]
+	kg[8][8] = T / L * (1.2 + 2*Ksy + Ksy*Ksy) / Dsy
+	kg[2][2] = kg[8][8]
+	kg[9][9] = T / L * (1.2 + 2*Ksz + Ksz*Ksz) / Dsz
+	kg[3][3] = kg[9][9]
+	kg[10][10] = T / L * float64(J) / float64(Ax)
+	kg[4][4] = kg[10][10]
+	kg[11][11] = T * L * (2/15 + Ksz/6 + Ksz*Ksz/12) / Dsz
+	kg[5][5] = kg[11][11]
+	kg[12][12] = T * L * (2/15 + Ksy/6 + Ksy*Ksy/12) / Dsy
+	kg[6][6] = kg[12][12]
+	kg[7][1] = 0
+	kg[1][7] = kg[7][1]
+	kg[3][11] = -T / 10 / Dsz
+	kg[11][3] = kg[3][11]
+	kg[3][5] = kg[11][3]
+	kg[5][3] = kg[3][5]
+	kg[9][11] = T / 10 / Dsz
+	kg[11][9] = kg[9][11]
+	kg[5][9] = kg[11][9]
+	kg[9][5] = kg[5][9]
+	kg[2][12] = T / 10 / Dsy
+	kg[12][2] = kg[2][12]
+	kg[2][6] = kg[12][2]
+	kg[6][2] = kg[2][6]
+	kg[8][12] = -T / 10 / Dsy
+	kg[12][8] = kg[8][12]
+	kg[6][8] = kg[12][8]
+	kg[8][6] = kg[6][8]
+	kg[10][4] = -kg[4][4]
+	kg[4][10] = kg[10][4]
+	kg[2][8] = -T / L * (1.2 + 2*Ksy + Ksy*Ksy) / Dsy
+	kg[8][2] = kg[2][8]
+	kg[3][9] = -T / L * (1.2 + 2*Ksz + Ksz*Ksz) / Dsz
+	kg[9][3] = kg[3][9]
+	kg[5][11] = -T * L * (1/30 + Ksz/6 + Ksz*Ksz/12) / Dsz
+	kg[11][5] = kg[5][11]
+	kg[6][12] = -T * L * (1/30 + Ksy/6 + Ksy*Ksy/12) / Dsy
+	kg[12][6] = kg[6][12]
 	atma(t1, t2, t3, t4, t5, t6, t7, t8, t9, kg, r[n1], r[n2])
 	for i = 1; i <= 12; i++ {
 		for j = i + 1; j <= 12; j++ {
 			if kg[i][j] != kg[j][i] {
-				if math.Abs(kg[i][j]/kg[j][i]-1) > 1e-06 && (map[bool]int{false: 0, true: 1}[math.Abs(kg[i][j]/kg[i][i]) > 1e-06 || math.Abs(kg[j][i]/kg[i][i]) > 1e-06]) != 0 {
+				if math.Abs(kg[i][j]/kg[j][i]-1) > 1e-06 && (math.Abs(kg[i][j]/kg[i][i]) > 1e-06 || math.Abs(kg[j][i]/kg[i][i]) > 1e-06) {
 					noarch.Fprintf(stderr, []byte("geometric_K element stiffness matrix not symetric ...\n\x00"))
 					noarch.Fprintf(stderr, []byte(" ... kg[%d][%d] = %15.6e \n\x00"), i, j, kg[i][j])
 					noarch.Fprintf(stderr, []byte(" ... kg[%d][%d] = %15.6e   \x00"), j, i, kg[j][i])
@@ -2471,14 +2163,8 @@ func geometric_K(k [][]float64, xyz []vec3, r []float32, L float64, Le float64, 
 					noarch.Fprintf(stderr, []byte(" ... element matrix saved in file 'kg'\n\x00"))
 					save_dmatrix([]byte("kg\x00"), kg, 1, 12, 1, 12, 0, []byte("w\x00"))
 				}
-				func() float64 {
-					kg[j][i] = 0.5 * (kg[i][j] + kg[j][i])
-					return kg[j][i]
-				}()
-				func() float64 {
-					kg[i][j] = kg[j][i]
-					return kg[i][j]
-				}()
+				kg[j][i] = 0.5 * (kg[i][j] + kg[j][i])
+				kg[i][j] = kg[j][i]
 			}
 		}
 	}
@@ -2492,8 +2178,8 @@ func geometric_K(k [][]float64, xyz []vec3, r []float32, L float64, Le float64, 
 
 // solve_system - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd.c:352
 // Warning (ParenExpr):  :0 : Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Error (IfStmt):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
+// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
+// Error (IfStmt):  :0 : Cannot transpileToExpr. err = Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 /*
  * SOLVE_SYSTEM  -  solve {F} =   [K]{D} via L D L' decomposition        27dec01
  * Prescribed displacements are "mechanical loads" not "temperature loads"
@@ -2511,10 +2197,10 @@ func solve_system(K [][]float64, D []float64, F []float64, R []float64, DoF int,
 		if verbose != 0 {
 			noarch.Fprintf(stdout, []byte("    LDL' RMS residual:\x00"))
 		}
-		rms_resid[0] = float64(func() int {
+		rms_resid[0] = float64((func() int {
 			ok[0] = 1
 			return ok[0]
-		}())
+		}()))
 		for {
 			ldl_mprove_pm(K, DoF, diag, F, D, R, q, r, rms_resid, ok)
 			if verbose != 0 {
@@ -2599,10 +2285,7 @@ func element_end_forces(Q [][]float64, nE int, xyz []vec3, L []float64, Le []flo
 		}
 		if math.Abs(axial_strain) > 0.001 {
 			noarch.Fprintf(stderr, []byte(" Warning! Frame element %2d has an average axial strain of %8.6f\n\x00"), m, axial_strain)
-			func() int {
-				(axial_strain_warning[0]) += 1
-				return (axial_strain_warning[0])
-			}()
+			axial_strain_warning[0] += 1
 		}
 	}
 	free_dvector(s, int32(1), int32(12))
@@ -2697,22 +2380,10 @@ func frame_element_force(s []float64, xyz []vec3, L float64, Le float64, n1 int,
 		Dsy = (float64(1) + Ksy) * (float64(1) + Ksy)
 		Dsz = (float64(1) + Ksz) * (float64(1) + Ksz)
 	} else {
-		func() float64 {
-			Ksz = 0
-			return Ksz
-		}()
-		func() float64 {
-			Ksy = Ksz
-			return Ksy
-		}()
-		func() float64 {
-			Dsz = 1
-			return Dsz
-		}()
-		func() float64 {
-			Dsy = Dsz
-			return Dsy
-		}()
+		Ksz = 0
+		Ksy = Ksz
+		Dsz = 1
+		Dsy = Dsz
 	}
 	delta = (d7-d1)*t1 + (d8-d2)*t2 + (d9-d3)*t3
 	axial_strain[0] = delta / Le
@@ -2921,102 +2592,30 @@ func lumped_M(m [][]float64, xyz []vec3, L float64, n1 int, n2 int, Ax float32, 
 			m[i][j] = 0
 		}
 	}
-	func() float64 {
-		m[9][9] = t
-		return m[9][9]
-	}()
-	func() float64 {
-		m[8][8] = m[9][9]
-		return m[8][8]
-	}()
-	func() float64 {
-		m[7][7] = m[8][8]
-		return m[7][7]
-	}()
-	func() float64 {
-		m[3][3] = m[7][7]
-		return m[3][3]
-	}()
-	func() float64 {
-		m[2][2] = m[3][3]
-		return m[2][2]
-	}()
-	func() float64 {
-		m[1][1] = m[2][2]
-		return m[1][1]
-	}()
-	func() float64 {
-		m[10][10] = po*t1*t1 + ry*t4*t4 + rz*t7*t7
-		return m[10][10]
-	}()
-	func() float64 {
-		m[4][4] = m[10][10]
-		return m[4][4]
-	}()
-	func() float64 {
-		m[11][11] = po*t2*t2 + ry*t5*t5 + rz*t8*t8
-		return m[11][11]
-	}()
-	func() float64 {
-		m[5][5] = m[11][11]
-		return m[5][5]
-	}()
-	func() float64 {
-		m[12][12] = po*t3*t3 + ry*t6*t6 + rz*t9*t9
-		return m[12][12]
-	}()
-	func() float64 {
-		m[6][6] = m[12][12]
-		return m[6][6]
-	}()
-	func() float64 {
-		m[11][10] = po*t1*t2 + ry*t4*t5 + rz*t7*t8
-		return m[11][10]
-	}()
-	func() float64 {
-		m[10][11] = m[11][10]
-		return m[10][11]
-	}()
-	func() float64 {
-		m[5][4] = m[10][11]
-		return m[5][4]
-	}()
-	func() float64 {
-		m[4][5] = m[5][4]
-		return m[4][5]
-	}()
-	func() float64 {
-		m[12][10] = po*t1*t3 + ry*t4*t6 + rz*t7*t9
-		return m[12][10]
-	}()
-	func() float64 {
-		m[10][12] = m[12][10]
-		return m[10][12]
-	}()
-	func() float64 {
-		m[6][4] = m[10][12]
-		return m[6][4]
-	}()
-	func() float64 {
-		m[4][6] = m[6][4]
-		return m[4][6]
-	}()
-	func() float64 {
-		m[12][11] = po*t2*t3 + ry*t5*t6 + rz*t8*t9
-		return m[12][11]
-	}()
-	func() float64 {
-		m[11][12] = m[12][11]
-		return m[11][12]
-	}()
-	func() float64 {
-		m[6][5] = m[11][12]
-		return m[6][5]
-	}()
-	func() float64 {
-		m[5][6] = m[6][5]
-		return m[5][6]
-	}()
+	m[9][9] = t
+	m[8][8] = m[9][9]
+	m[7][7] = m[8][8]
+	m[3][3] = m[7][7]
+	m[2][2] = m[3][3]
+	m[1][1] = m[2][2]
+	m[10][10] = po*t1*t1 + ry*t4*t4 + rz*t7*t7
+	m[4][4] = m[10][10]
+	m[11][11] = po*t2*t2 + ry*t5*t5 + rz*t8*t8
+	m[5][5] = m[11][11]
+	m[12][12] = po*t3*t3 + ry*t6*t6 + rz*t9*t9
+	m[6][6] = m[12][12]
+	m[11][10] = po*t1*t2 + ry*t4*t5 + rz*t7*t8
+	m[10][11] = m[11][10]
+	m[5][4] = m[10][11]
+	m[4][5] = m[5][4]
+	m[12][10] = po*t1*t3 + ry*t4*t6 + rz*t7*t9
+	m[10][12] = m[12][10]
+	m[6][4] = m[10][12]
+	m[4][6] = m[6][4]
+	m[12][11] = po*t2*t3 + ry*t5*t6 + rz*t8*t9
+	m[11][12] = m[12][11]
+	m[6][5] = m[11][12]
+	m[5][6] = m[6][5]
 }
 
 // consistent_M - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd.c:791
@@ -3050,166 +2649,46 @@ func consistent_M(m [][]float64, xyz []vec3, r []float32, L float64, n1 int, n2 
 			m[i][j] = 0
 		}
 	}
-	func() float64 {
-		m[7][7] = t / 3
-		return m[7][7]
-	}()
-	func() float64 {
-		m[1][1] = m[7][7]
-		return m[1][1]
-	}()
-	func() float64 {
-		m[8][8] = 13*t/35 + 6*rz/(5*L)
-		return m[8][8]
-	}()
-	func() float64 {
-		m[2][2] = m[8][8]
-		return m[2][2]
-	}()
-	func() float64 {
-		m[9][9] = 13*t/35 + 6*ry/(5*L)
-		return m[9][9]
-	}()
-	func() float64 {
-		m[3][3] = m[9][9]
-		return m[3][3]
-	}()
-	func() float64 {
-		m[10][10] = po / 3
-		return m[10][10]
-	}()
-	func() float64 {
-		m[4][4] = m[10][10]
-		return m[4][4]
-	}()
-	func() float64 {
-		m[11][11] = t*L*L/105 + 2*L*ry/15
-		return m[11][11]
-	}()
-	func() float64 {
-		m[5][5] = m[11][11]
-		return m[5][5]
-	}()
-	func() float64 {
-		m[12][12] = t*L*L/105 + 2*L*rz/15
-		return m[12][12]
-	}()
-	func() float64 {
-		m[6][6] = m[12][12]
-		return m[6][6]
-	}()
-	func() float64 {
-		m[3][5] = -11*t*L/210 - ry/10
-		return m[3][5]
-	}()
-	func() float64 {
-		m[5][3] = m[3][5]
-		return m[5][3]
-	}()
-	func() float64 {
-		m[2][6] = 11*t*L/210 + rz/10
-		return m[2][6]
-	}()
-	func() float64 {
-		m[6][2] = m[2][6]
-		return m[6][2]
-	}()
-	func() float64 {
-		m[1][7] = t / 6
-		return m[1][7]
-	}()
-	func() float64 {
-		m[7][1] = m[1][7]
-		return m[7][1]
-	}()
-	func() float64 {
-		m[6][8] = 13*t*L/420 - rz/10
-		return m[6][8]
-	}()
-	func() float64 {
-		m[8][6] = m[6][8]
-		return m[8][6]
-	}()
-	func() float64 {
-		m[5][9] = -13*t*L/420 + ry/10
-		return m[5][9]
-	}()
-	func() float64 {
-		m[9][5] = m[5][9]
-		return m[9][5]
-	}()
-	func() float64 {
-		m[4][10] = po / 6
-		return m[4][10]
-	}()
-	func() float64 {
-		m[10][4] = m[4][10]
-		return m[10][4]
-	}()
-	func() float64 {
-		m[3][11] = 13*t*L/420 - ry/10
-		return m[3][11]
-	}()
-	func() float64 {
-		m[11][3] = m[3][11]
-		return m[11][3]
-	}()
-	func() float64 {
-		m[2][12] = -13*t*L/420 + rz/10
-		return m[2][12]
-	}()
-	func() float64 {
-		m[12][2] = m[2][12]
-		return m[12][2]
-	}()
-	func() float64 {
-		m[9][11] = 11*t*L/210 + ry/10
-		return m[9][11]
-	}()
-	func() float64 {
-		m[11][9] = m[9][11]
-		return m[11][9]
-	}()
-	func() float64 {
-		m[8][12] = -11*t*L/210 - rz/10
-		return m[8][12]
-	}()
-	func() float64 {
-		m[12][8] = m[8][12]
-		return m[12][8]
-	}()
-	func() float64 {
-		m[2][8] = 9*t/70 - 6*rz/(5*L)
-		return m[2][8]
-	}()
-	func() float64 {
-		m[8][2] = m[2][8]
-		return m[8][2]
-	}()
-	func() float64 {
-		m[3][9] = 9*t/70 - 6*ry/(5*L)
-		return m[3][9]
-	}()
-	func() float64 {
-		m[9][3] = m[3][9]
-		return m[9][3]
-	}()
-	func() float64 {
-		m[5][11] = -L*L*t/140 - ry*L/30
-		return m[5][11]
-	}()
-	func() float64 {
-		m[11][5] = m[5][11]
-		return m[11][5]
-	}()
-	func() float64 {
-		m[6][12] = -L*L*t/140 - rz*L/30
-		return m[6][12]
-	}()
-	func() float64 {
-		m[12][6] = m[6][12]
-		return m[12][6]
-	}()
+	m[7][7] = t / 3
+	m[1][1] = m[7][7]
+	m[8][8] = 13*t/35 + 6*rz/(5*L)
+	m[2][2] = m[8][8]
+	m[9][9] = 13*t/35 + 6*ry/(5*L)
+	m[3][3] = m[9][9]
+	m[10][10] = po / 3
+	m[4][4] = m[10][10]
+	m[11][11] = t*L*L/105 + 2*L*ry/15
+	m[5][5] = m[11][11]
+	m[12][12] = t*L*L/105 + 2*L*rz/15
+	m[6][6] = m[12][12]
+	m[3][5] = -11*t*L/210 - ry/10
+	m[5][3] = m[3][5]
+	m[2][6] = 11*t*L/210 + rz/10
+	m[6][2] = m[2][6]
+	m[1][7] = t / 6
+	m[7][1] = m[1][7]
+	m[6][8] = 13*t*L/420 - rz/10
+	m[8][6] = m[6][8]
+	m[5][9] = -13*t*L/420 + ry/10
+	m[9][5] = m[5][9]
+	m[4][10] = po / 6
+	m[10][4] = m[4][10]
+	m[3][11] = 13*t*L/420 - ry/10
+	m[11][3] = m[3][11]
+	m[2][12] = -13*t*L/420 + rz/10
+	m[12][2] = m[2][12]
+	m[9][11] = 11*t*L/210 + ry/10
+	m[11][9] = m[9][11]
+	m[8][12] = -11*t*L/210 - rz/10
+	m[12][8] = m[8][12]
+	m[2][8] = 9*t/70 - 6*rz/(5*L)
+	m[8][2] = m[2][8]
+	m[3][9] = 9*t/70 - 6*ry/(5*L)
+	m[9][3] = m[3][9]
+	m[5][11] = -L*L*t/140 - ry*L/30
+	m[11][5] = m[5][11]
+	m[6][12] = -L*L*t/140 - rz*L/30
+	m[12][6] = m[6][12]
 	for i = 1; i <= 3; i++ {
 		m[i][i] += 0.5 * float64(EMs)
 	}
@@ -3220,7 +2699,7 @@ func consistent_M(m [][]float64, xyz []vec3, r []float32, L float64, n1 int, n2 
 	for i = 1; i <= 12; i++ {
 		for j = i + 1; j <= 12; j++ {
 			if m[i][j] != m[j][i] {
-				if math.Abs(m[i][j]/m[j][i]-1) > 1e-06 && (map[bool]int{false: 0, true: 1}[math.Abs(m[i][j]/m[i][i]) > 1e-06 || math.Abs(m[j][i]/m[i][i]) > 1e-06]) != 0 {
+				if math.Abs(m[i][j]/m[j][i]-1) > 1e-06 && (math.Abs(m[i][j]/m[i][i]) > 1e-06 || math.Abs(m[j][i]/m[i][i]) > 1e-06) {
 					noarch.Fprintf(stderr, []byte("consistent_M: element mass matrix not symetric ...\n\x00"))
 					noarch.Fprintf(stderr, []byte(" ... m[%d][%d] = %15.6e \n\x00"), i, j, m[i][j])
 					noarch.Fprintf(stderr, []byte(" ... m[%d][%d] = %15.6e   \x00"), j, i, m[j][i])
@@ -3228,14 +2707,8 @@ func consistent_M(m [][]float64, xyz []vec3, r []float32, L float64, n1 int, n2 
 					noarch.Fprintf(stderr, []byte(" ... element matrix saved in file 'mc'\n\x00"))
 					save_dmatrix([]byte("mc\x00"), m, 1, 12, 1, 12, 0, []byte("w\x00"))
 				}
-				func() float64 {
-					m[j][i] = 0.5 * (m[i][j] + m[j][i])
-					return m[j][i]
-				}()
-				func() float64 {
-					m[i][j] = m[j][i]
-					return m[i][j]
-				}()
+				m[j][i] = 0.5 * (m[i][j] + m[j][i])
+				m[i][j] = m[j][i]
 			}
 		}
 	}
@@ -3271,7 +2744,9 @@ func static_condensation(A [][]float64, N int, c []int, n int, Ac [][]float64, v
 		}
 		if ok != 0 {
 			r[func() int {
-				k += 1
+				defer func() {
+					k += 1
+				}()
 				return k
 			}()] = i
 		}
@@ -3281,14 +2756,8 @@ func static_condensation(A [][]float64, N int, c []int, n int, Ac [][]float64, v
 			ri = r[i]
 			rj = r[j]
 			if ri <= rj {
-				func() float64 {
-					Arr[i][j] = A[ri][rj]
-					return Arr[i][j]
-				}()
-				func() float64 {
-					Arr[j][i] = Arr[i][j]
-					return Arr[j][i]
-				}()
+				Arr[i][j] = A[ri][rj]
+				Arr[j][i] = Arr[i][j]
 			}
 		}
 	}
@@ -3309,14 +2778,8 @@ func static_condensation(A [][]float64, N int, c []int, n int, Ac [][]float64, v
 			ci = c[i]
 			cj = c[j]
 			if ci <= cj {
-				func() float64 {
-					Ac[i][j] = A[ci][cj] - Ac[i][j]
-					return Ac[i][j]
-				}()
-				func() float64 {
-					Ac[j][i] = Ac[i][j]
-					return Ac[j][i]
-				}()
+				Ac[i][j] = A[ci][cj] - Ac[i][j]
+				Ac[j][i] = Ac[i][j]
 			}
 		}
 	}
@@ -3344,7 +2807,7 @@ func paz_condensation(M [][]float64, K [][]float64, N int, c []int, n int, Mc []
 	var ok int
 	var r []int
 	(func() {
-		if (map[bool]int{false: 0, true: 1}[M != (nil)]) != 0 {
+		if (map[bool]int{false: 0, true: 1}[M != nil]) != 0 {
 		} else {
 			linux.AssertFail([]byte("M!=NULL\x00"), []byte("/home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd.c\x00"), uint32(949), []byte("void print_number(int *)"))
 		}
@@ -3366,7 +2829,9 @@ func paz_condensation(M [][]float64, K [][]float64, N int, c []int, n int, Mc []
 		}
 		if ok != 0 {
 			r[func() int {
-				k += 1
+				defer func() {
+					k += 1
+				}()
 				return k
 			}()] = i
 		}
@@ -3376,23 +2841,11 @@ func paz_condensation(M [][]float64, K [][]float64, N int, c []int, n int, Mc []
 			ri = r[i]
 			rj = r[j]
 			if ri <= rj {
-				func() float64 {
-					Drr[i][j] = K[ri][rj] - w2*M[ri][rj]
-					return Drr[i][j]
-				}()
-				func() float64 {
-					Drr[j][i] = Drr[i][j]
-					return Drr[j][i]
-				}()
+				Drr[i][j] = K[ri][rj] - w2*M[ri][rj]
+				Drr[j][i] = Drr[i][j]
 			} else {
-				func() float64 {
-					Drr[i][j] = K[rj][ri] - w2*M[rj][ri]
-					return Drr[i][j]
-				}()
-				func() float64 {
-					Drr[j][i] = Drr[i][j]
-					return Drr[j][i]
-				}()
+				Drr[i][j] = K[rj][ri] - w2*M[rj][ri]
+				Drr[j][i] = Drr[i][j]
 			}
 		}
 	}
@@ -3620,38 +3073,14 @@ func parse_options(argc int, argv [][]byte, IN_file []byte, OUT_file []byte, she
 	var option byte
 	var errMsg []byte = make([]byte, 512, 512)
 	var sfrv int = 0
-	func() int {
-		modal_flag[0] = -1
-		return modal_flag[0]
-	}()
-	func() int {
-		lump_flag[0] = modal_flag[0]
-		return lump_flag[0]
-	}()
-	func() int {
-		anlyz_flag[0] = lump_flag[0]
-		return anlyz_flag[0]
-	}()
-	func() int {
-		geom_flag[0] = anlyz_flag[0]
-		return geom_flag[0]
-	}()
-	func() int {
-		shear_flag[0] = geom_flag[0]
-		return shear_flag[0]
-	}()
-	func() float64 {
-		shift_flag[0] = -1
-		return shift_flag[0]
-	}()
-	func() float64 {
-		tol_flag[0] = shift_flag[0]
-		return tol_flag[0]
-	}()
-	func() float64 {
-		exagg_flag[0] = tol_flag[0]
-		return exagg_flag[0]
-	}()
+	modal_flag[0] = -1
+	lump_flag[0] = modal_flag[0]
+	anlyz_flag[0] = lump_flag[0]
+	geom_flag[0] = anlyz_flag[0]
+	shear_flag[0] = geom_flag[0]
+	shift_flag[0] = -1
+	tol_flag[0] = shift_flag[0]
+	exagg_flag[0] = tol_flag[0]
 	D3_flag[0] = 0
 	pan_flag[0] = float32(-1)
 	condense_flag[0] = -1
@@ -3679,7 +3108,6 @@ func parse_options(argc int, argv [][]byte, IN_file []byte, OUT_file []byte, she
 			}
 			return
 		}
-		fallthrough
 	case 3:
 		{
 			if int(argv[1][0]) != int('-') {
@@ -3690,22 +3118,14 @@ func parse_options(argc int, argv [][]byte, IN_file []byte, OUT_file []byte, she
 		}
 	}
 	for int((func() byte {
-		option = byte(getopt(argc, argv, []byte("i:o:acdhqvwxzs:e:f:g:l:m:p:r:t:\x00")))
+		option = byte(noarch.Getopt(argc, argv, []byte("i:o:acdhqvwxzs:e:f:g:l:m:p:r:t:\x00")))
 		return option
 	}())) != -1 {
 		switch int(option) {
 		case 'i':
-			{
-				noarch.Strcpy(IN_file, optarg)
-				break
-			}
-			fallthrough
+			noarch.Strcpy(IN_file, noarch.Optarg)
 		case 'o':
-			{
-				noarch.Strcpy(OUT_file, optarg)
-				break
-			}
-			fallthrough
+			noarch.Strcpy(OUT_file, noarch.Optarg)
 		case 'h':
 			{
 				display_help()
@@ -3725,147 +3145,87 @@ func parse_options(argc int, argv [][]byte, IN_file []byte, OUT_file []byte, she
 			}
 			fallthrough
 		case 'q':
-			{
-				verbose[0] = 0
-				break
-			}
-			fallthrough
+			verbose[0] = 0
 		case 'c':
-			{
-				anlyz_flag[0] = 0
-				break
-			}
-			fallthrough
+			anlyz_flag[0] = 0
 		case 'd':
-			{
-				debug[0] = 1
-				break
-			}
-			fallthrough
+			debug[0] = 1
 		case 'w':
-			{
-				write_matrix[0] = 1
-				break
-			}
-			fallthrough
+			write_matrix[0] = 1
 		case 'x':
-			{
-				axial_sign[0] = 0
-				break
-			}
-			fallthrough
+			axial_sign[0] = 0
 		case 's':
-			{
-				if noarch.Strcmp(optarg, []byte("Off\x00")) == 0 {
-					shear_flag[0] = 0
+			if noarch.Strcmp(noarch.Optarg, []byte("Off\x00")) == 0 {
+				shear_flag[0] = 0
+			} else {
+				if noarch.Strcmp(noarch.Optarg, []byte("On\x00")) == 0 {
+					shear_flag[0] = 1
 				} else {
-					if noarch.Strcmp(optarg, []byte("On\x00")) == 0 {
-						shear_flag[0] = 1
-					} else {
-						errorMsg([]byte("\n frame3dd command-line error: argument to -s option should be either On or Off\n\x00"))
-						os.Exit(3)
-					}
+					errorMsg([]byte("\n frame3dd command-line error: argument to -s option should be either On or Off\n\x00"))
+					os.Exit(3)
 				}
-				break
 			}
-			fallthrough
 		case 'g':
-			{
-				if noarch.Strcmp(optarg, []byte("Off\x00")) == 0 {
-					geom_flag[0] = 0
+			if noarch.Strcmp(noarch.Optarg, []byte("Off\x00")) == 0 {
+				geom_flag[0] = 0
+			} else {
+				if noarch.Strcmp(noarch.Optarg, []byte("On\x00")) == 0 {
+					geom_flag[0] = 1
 				} else {
-					if noarch.Strcmp(optarg, []byte("On\x00")) == 0 {
-						geom_flag[0] = 1
-					} else {
-						errorMsg([]byte("\n frame3dd command-line error: argument to -g option should be either On or Off\n\x00"))
-						os.Exit(4)
-					}
+					errorMsg([]byte("\n frame3dd command-line error: argument to -g option should be either On or Off\n\x00"))
+					os.Exit(4)
 				}
-				break
 			}
-			fallthrough
 		case 'e':
-			{
-				exagg_flag[0] = noarch.Atof(optarg)
-				break
-			}
-			fallthrough
+			exagg_flag[0] = noarch.Atof(noarch.Optarg)
 		case 'z':
-			{
-				D3_flag[0] = 1
-				break
-			}
-			fallthrough
+			D3_flag[0] = 1
 		case 'l':
-			{
-				if noarch.Strcmp(optarg, []byte("Off\x00")) == 0 {
-					lump_flag[0] = 0
+			if noarch.Strcmp(noarch.Optarg, []byte("Off\x00")) == 0 {
+				lump_flag[0] = 0
+			} else {
+				if noarch.Strcmp(noarch.Optarg, []byte("On\x00")) == 0 {
+					lump_flag[0] = 1
 				} else {
-					if noarch.Strcmp(optarg, []byte("On\x00")) == 0 {
-						lump_flag[0] = 1
-					} else {
-						errorMsg([]byte("\n frame3dd command-line error: argument to -l option should be either On or Off\n\x00"))
-						os.Exit(5)
-					}
+					errorMsg([]byte("\n frame3dd command-line error: argument to -l option should be either On or Off\n\x00"))
+					os.Exit(5)
 				}
-				break
 			}
-			fallthrough
 		case 'm':
-			{
-				if noarch.Strcmp(optarg, []byte("J\x00")) == 0 {
-					modal_flag[0] = 1
+			if noarch.Strcmp(noarch.Optarg, []byte("J\x00")) == 0 {
+				modal_flag[0] = 1
+			} else {
+				if noarch.Strcmp(noarch.Optarg, []byte("S\x00")) == 0 {
+					modal_flag[0] = 2
 				} else {
-					if noarch.Strcmp(optarg, []byte("S\x00")) == 0 {
-						modal_flag[0] = 2
-					} else {
-						errorMsg([]byte("\n frame3dd command-line error: argument to -m option should be either J or S\n\x00"))
-						os.Exit(6)
-					}
+					errorMsg([]byte("\n frame3dd command-line error: argument to -m option should be either J or S\n\x00"))
+					os.Exit(6)
 				}
-				break
 			}
-			fallthrough
 		case 't':
-			{
-				tol_flag[0] = noarch.Atof(optarg)
-				if tol_flag[0] == 0 {
-					errorMsg([]byte("\n frame3dd command-line error: argument to -t option should be a number.\n\x00"))
-					os.Exit(7)
-				}
-				break
+			tol_flag[0] = noarch.Atof(noarch.Optarg)
+			if tol_flag[0] == 0 {
+				errorMsg([]byte("\n frame3dd command-line error: argument to -t option should be a number.\n\x00"))
+				os.Exit(7)
 			}
-			fallthrough
 		case 'f':
-			{
-				shift_flag[0] = noarch.Atof(optarg)
-				if shift_flag[0] == 0 {
-					errorMsg([]byte("\n frame3dd command-line error: argument to -f option should be a number.\n\x00"))
-					os.Exit(8)
-				}
-				break
+			shift_flag[0] = noarch.Atof(noarch.Optarg)
+			if shift_flag[0] == 0 {
+				errorMsg([]byte("\n frame3dd command-line error: argument to -f option should be a number.\n\x00"))
+				os.Exit(8)
 			}
-			fallthrough
 		case 'p':
-			{
-				pan_flag[0] = float32(noarch.Atof(optarg))
-				if float64(pan_flag[0]) < 0 {
-					errorMsg([]byte("\n frame3dd command-line error: argument to -p option should be a positive number.\n\x00"))
-					os.Exit(9)
-				}
-				break
+			pan_flag[0] = float32(noarch.Atof(noarch.Optarg))
+			if float64(pan_flag[0]) < 0 {
+				errorMsg([]byte("\n frame3dd command-line error: argument to -p option should be a positive number.\n\x00"))
+				os.Exit(9)
 			}
-			fallthrough
 		case 'r':
-			{
-				condense_flag[0] = noarch.Atoi(optarg)
-				if condense_flag[0] < 0 || condense_flag[0] > 3 {
-					errorMsg([]byte("\n frame3dd command-line error: argument to -r option should be 0, 1, or 2.\n\x00"))
-					os.Exit(10)
-				}
-				break
+			condense_flag[0] = noarch.Atoi(noarch.Optarg)
+			if condense_flag[0] < 0 || condense_flag[0] > 3 {
+				errorMsg([]byte("\n frame3dd command-line error: argument to -r option should be 0, 1, or 2.\n\x00"))
+				os.Exit(10)
 			}
-			fallthrough
 		case '?':
 			{
 				noarch.Sprintf(errMsg, []byte("  Missing argument or Unknown option: -%c\n\n\x00"), int(option))
@@ -4082,7 +3442,7 @@ func read_frame_element_data(fp *noarch.File, nN int, nE int, xyz []vec3, r []fl
 			errorMsg(errMsg)
 			os.Exit(54)
 		}
-		if (map[bool]int{false: 0, true: 1}[Asy[b] == float32(0) || Asz[b] == float32(0)]) != 0 && G[b] == float32(0) {
+		if (Asy[b] == float32(0) || Asz[b] == float32(0)) && G[b] == float32(0) {
 			noarch.Sprintf(errMsg, []byte("\n  error in frame element property data: a shear area and shear modulus are zero   \n  Frame element number: %d  \n\x00"), b)
 			errorMsg(errMsg)
 			os.Exit(55)
@@ -4111,7 +3471,7 @@ func read_frame_element_data(fp *noarch.File, nN int, nE int, xyz []vec3, r []fl
 	for b = 1; b <= nE; b++ {
 		n1 = N1[b]
 		n2 = N2[b]
-		L[b] = ((xyz[n2].x - xyz[n1].x) * (xyz[n2].x - xyz[n1].x)) + ((xyz[n2].y - xyz[n1].y) * (xyz[n2].y - xyz[n1].y)) + ((xyz[n2].z - xyz[n1].z) * (xyz[n2].z - xyz[n1].z))
+		L[b] = (xyz[n2].x-xyz[n1].x)*(xyz[n2].x-xyz[n1].x) + (xyz[n2].y-xyz[n1].y)*(xyz[n2].y-xyz[n1].y) + (xyz[n2].z-xyz[n1].z)*(xyz[n2].z-xyz[n1].z)
 		L[b] = math.Sqrt(L[b])
 		Le[b] = L[b] - float64(r[n1]) - float64(r[n2])
 		if n1 == n2 || L[b] == 0 {
@@ -4153,13 +3513,17 @@ func read_run_data(fp *noarch.File, OUT_file []byte, shear []int, shear_flag int
 	var sfrv int = 0
 	noarch.Strcpy(base_file, OUT_file)
 	for int(base_file[func() int {
-		len += 1
+		defer func() {
+			len += 1
+		}()
 		return len
 	}()]) != int('\x00') {
 	}
 	full_len = len
 	for int(base_file[func() int {
-		len -= 1
+		defer func() {
+			len -= 1
+		}()
 		return len
 	}()]) != int('.') && len > 0 {
 	}
@@ -4175,18 +3539,19 @@ func read_run_data(fp *noarch.File, OUT_file []byte, shear []int, shear_flag int
 	noarch.Strcpy(infcpath, base_file)
 	noarch.Strcat(infcpath, []byte(".if\x00"))
 	for int(base_file[len]) != int('/') && int(base_file[len]) != int('\\') && len > 0 {
-		func() int {
-			len -= 1
-			return len
-		}()
+		len -= 1
 	}
 	i = 0
 	for int(base_file[len]) != int('\x00') {
 		mesh_file[func() int {
-			i += 1
+			defer func() {
+				i += 1
+			}()
 			return i
 		}()] = base_file[func() int {
-			len += 1
+			defer func() {
+				len += 1
+			}()
 			return len
 		}()]
 	}
@@ -4248,9 +3613,11 @@ func frame3dd_getline(fp *noarch.File, s []byte, lim int) int {
 	}() > 0 && (func() int {
 		c = noarch.Fgetc(fp)
 		return c
-	}()) != (-1) && c != int('\n') {
+	}()) != -1 && c != int('\n') {
 		s[func() int {
-			i += 1
+			defer func() {
+				i += 1
+			}()
 			return i
 		}()] = byte(c)
 	}
@@ -4291,15 +3658,15 @@ func temp_dir() []byte {
 func output_path(fname []byte, fullpath []byte, len int, default_outdir []byte) {
 	var res int
 	(func() {
-		if (map[bool]int{false: 0, true: 1}[fname != (nil)]) != 0 {
+		if (map[bool]int{false: 0, true: 1}[fname != nil]) != 0 {
 		} else {
 			linux.AssertFail([]byte("fname!=NULL\x00"), []byte("/home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c\x00"), uint32(665), []byte("void print_number(int *)"))
 		}
 	}())
 	var outdir []byte
 	outdir = noarch.Getenv([]byte("FRAME3DD_OUTDIR\x00"))
-	if outdir == (nil) {
-		if default_outdir == (nil) {
+	if outdir == nil {
+		if default_outdir == nil {
 			outdir = temp_dir()
 		} else {
 			outdir = default_outdir
@@ -4325,7 +3692,7 @@ func parse_input(fp *noarch.File, tpath []byte) {
 	if (func() *noarch.File {
 		fpc = noarch.Fopen(tpath, []byte("w\x00"))
 		return fpc
-	}()) == (nil) {
+	}()) == nil {
 		noarch.Sprintf(errMsg, []byte("\n  error: cannot open parsed input data file: '%s' \n\x00"), tpath)
 		errorMsg(errMsg)
 		os.Exit(12)
@@ -4333,7 +3700,7 @@ func parse_input(fp *noarch.File, tpath []byte) {
 	for {
 		getline_no_comment(fp, line, 256)
 		noarch.Fprintf(fpc, []byte("%s \n\x00"), line)
-		if noarch.NotInt((map[bool]int{false: 0, true: 1}[int(line[0]) != int('_') && int(line[0]) != (-1)])) != 0 {
+		if noarch.NotInt((map[bool]int{false: 0, true: 1}[int(line[0]) != int('_') && int(line[0]) != -1])) != 0 {
 			break
 		}
 	}
@@ -4359,15 +3726,19 @@ func getline_no_comment(fp *noarch.File, s []byte, lim int) {
 	}() > 0 && (func() int {
 		c = noarch.Fgetc(fp)
 		return c
-	}()) != (-1) && c != int('\n') && c != int('%') && c != int('#') && c != int('?') {
+	}()) != -1 && c != int('\n') && c != int('%') && c != int('#') && c != int('?') {
 		if c != int(',') && c != int('"') && c != int(';') {
 			s[func() int {
-				i += 1
+				defer func() {
+					i += 1
+				}()
 				return i
 			}()] = byte(c)
 		} else {
 			s[func() int {
-				i += 1
+				defer func() {
+					i += 1
+				}()
 				return i
 			}()] = ' '
 		}
@@ -4380,11 +3751,11 @@ func getline_no_comment(fp *noarch.File, s []byte, lim int) {
 		}() > 0 && (func() int {
 			c = noarch.Fgetc(fp)
 			return c
-		}()) != (-1) && c != int('\n') {
+		}()) != -1 && c != int('\n') {
 		}
 	}
-	if c == (-1) {
-		s[0] = byte((-1))
+	if c == -1 {
+		s[0] = byte(-1 + 256)
 	}
 	return
 }
@@ -4425,10 +3796,7 @@ func read_reaction_data(fp *noarch.File, DoF int, nN int, nR []int, q []int, r [
 		if sfrv != 1 {
 			sferr([]byte("node number in reaction data\x00"))
 		}
-		for l = 5; l >= 0; func() int {
-			l -= 1
-			return l
-		}() {
+		for l = 5; l >= 0; l-- {
 			sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&r[6*j-l]))[:])
 			if sfrv != 1 {
 				sferr([]byte("reaction value in reaction data\x00"))
@@ -4445,10 +3813,7 @@ func read_reaction_data(fp *noarch.File, DoF int, nN int, nR []int, q []int, r [
 			}
 		}
 		sumR[0] = 0
-		for l = 5; l >= 0; func() int {
-			l -= 1
-			return l
-		}() {
+		for l = 5; l >= 0; l-- {
 			sumR[0] += r[6*j-l]
 		}
 		if sumR[0] == 0 {
@@ -4591,27 +3956,15 @@ func read_and_assemble_loads(fp *noarch.File, nN int, nE int, nL int, DoF int, x
 	}
 	for j = 1; j <= DoF; j++ {
 		for lc = 1; lc <= nL; lc++ {
-			func() float64 {
-				F_mech[lc][j] = 0
-				return F_mech[lc][j]
-			}()
-			func() float64 {
-				F_temp[lc][j] = F_mech[lc][j]
-				return F_temp[lc][j]
-			}()
+			F_mech[lc][j] = 0
+			F_temp[lc][j] = F_mech[lc][j]
 		}
 	}
 	for i = 1; i <= 12; i++ {
 		for n = 1; n <= nE; n++ {
 			for lc = 1; lc <= nL; lc++ {
-				func() float64 {
-					eqF_temp[lc][n][i] = 0
-					return eqF_temp[lc][n][i]
-				}()
-				func() float64 {
-					eqF_mech[lc][n][i] = eqF_temp[lc][n][i]
-					return eqF_mech[lc][n][i]
-				}()
+				eqF_temp[lc][n][i] = 0
+				eqF_mech[lc][n][i] = eqF_temp[lc][n][i]
 			}
 		}
 	}
@@ -4674,10 +4027,7 @@ func read_and_assemble_loads(fp *noarch.File, nN int, nE int, nL int, DoF int, x
 				errorMsg(errMsg)
 				os.Exit(121)
 			}
-			for l = 5; l >= 0; func() int {
-				l -= 1
-				return l
-			}() {
+			for l = 5; l >= 0; l-- {
 				sfrv = noarch.Fscanf(fp, []byte("%lf\x00"), (*[1]float64)(unsafe.Pointer(&F_mech[lc][6*j-l]))[:])
 				if sfrv != 1 {
 					sferr([]byte("force value in point load data\x00"))
@@ -4724,38 +4074,14 @@ func read_and_assemble_loads(fp *noarch.File, nN int, nE int, nL int, DoF int, x
 			if U[lc][i][2] == float32(0) && U[lc][i][3] == float32(0) && U[lc][i][4] == float32(0) {
 				noarch.Fprintf(stderr, []byte("\n   Warning: All distributed loads applied to frame element %d  are zero\n\x00"), n)
 			}
-			func() float64 {
-				Nx2 = float64(U[lc][i][2]) * Le[n] / 2
-				return Nx2
-			}()
-			func() float64 {
-				Nx1 = Nx2
-				return Nx1
-			}()
-			func() float64 {
-				Vy2 = float64(U[lc][i][3]) * Le[n] / 2
-				return Vy2
-			}()
-			func() float64 {
-				Vy1 = Vy2
-				return Vy1
-			}()
-			func() float64 {
-				Vz2 = float64(U[lc][i][4]) * Le[n] / 2
-				return Vz2
-			}()
-			func() float64 {
-				Vz1 = Vz2
-				return Vz1
-			}()
-			func() float64 {
-				Mx2 = 0
-				return Mx2
-			}()
-			func() float64 {
-				Mx1 = Mx2
-				return Mx1
-			}()
+			Nx2 = float64(U[lc][i][2]) * Le[n] / 2
+			Nx1 = Nx2
+			Vy2 = float64(U[lc][i][3]) * Le[n] / 2
+			Vy1 = Vy2
+			Vz2 = float64(U[lc][i][4]) * Le[n] / 2
+			Vz1 = Vz2
+			Mx2 = 0
+			Mx1 = Mx2
 			My1 = float64(-U[lc][i][4]) * Le[n] * Le[n] / 12
 			My2 = -My1
 			Mz1 = float64(U[lc][i][3]) * Le[n] * Le[n] / 12
@@ -4858,32 +4184,26 @@ func read_and_assemble_loads(fp *noarch.File, nN int, nE int, nL int, DoF int, x
 				os.Exit(144)
 			}
 			if shear != 0 {
-				Ksy = (12 * float64(E[n]) * float64(Iz[n])) / (float64(G[n]*Asy[n]) * Le[n] * Le[n])
-				Ksz = (12 * float64(E[n]) * float64(Iy[n])) / (float64(G[n]*Asz[n]) * Le[n] * Le[n])
+				Ksy = 12 * float64(E[n]) * float64(Iz[n]) / (float64(G[n]*Asy[n]) * Le[n] * Le[n])
+				Ksz = 12 * float64(E[n]) * float64(Iy[n]) / (float64(G[n]*Asz[n]) * Le[n] * Le[n])
 			} else {
-				func() float64 {
-					Ksz = 0
-					return Ksz
-				}()
-				func() float64 {
-					Ksy = Ksz
-					return Ksy
-				}()
+				Ksz = 0
+				Ksy = Ksz
 			}
 			x1 = W[lc][i][2]
 			x2 = W[lc][i][3]
 			w1 = W[lc][i][4]
 			w2 = W[lc][i][5]
-			Nx1 = (3*float64((w1+w2))*Ln*float64((x2-x1)) - (2*float64(w2)+float64(w1))*float64(x2)*float64(x2) + float64((w2-w1)*x2*x1) + (2*float64(w1)+float64(w2))*float64(x1)*float64(x1)) / (6 * Ln)
+			Nx1 = (3*float64(w1+w2)*Ln*float64(x2-x1) - (2*float64(w2)+float64(w1))*float64(x2)*float64(x2) + float64((w2-w1)*x2*x1) + (2*float64(w1)+float64(w2))*float64(x1)*float64(x1)) / (6 * Ln)
 			Nx2 = (-(2*float64(w1)+float64(w2))*float64(x1)*float64(x1) + (2*float64(w2)+float64(w1))*float64(x2)*float64(x2) - float64((w2-w1)*x1*x2)) / (6 * Ln)
 			x1 = W[lc][i][6]
 			x2 = W[lc][i][7]
 			w1 = W[lc][i][8]
 			w2 = W[lc][i][9]
-			R1o = ((2*float64(w1)+float64(w2))*float64(x1)*float64(x1) - (float64(w1)+2*float64(w2))*float64(x2)*float64(x2) + 3*float64((w1+w2))*Ln*float64((x2-x1)) - float64((w1-w2)*x1*x2)) / (6 * Ln)
+			R1o = ((2*float64(w1)+float64(w2))*float64(x1)*float64(x1) - (float64(w1)+2*float64(w2))*float64(x2)*float64(x2) + 3*float64(w1+w2)*Ln*float64(x2-x1) - float64((w1-w2)*x1*x2)) / (6 * Ln)
 			R2o = ((float64(w1)+2*float64(w2))*float64(x2)*float64(x2) + float64((w1-w2)*x1*x2) - (2*float64(w1)+float64(w2))*float64(x1)*float64(x1)) / (6 * Ln)
-			f01 = (3*(float64(w2)+4*float64(w1))*float64(x1)*float64(x1)*float64(x1)*float64(x1) - 3*(float64(w1)+4*float64(w2))*float64(x2)*float64(x2)*float64(x2)*float64(x2) - 15*(float64(w2)+3*float64(w1))*Ln*float64(x1)*float64(x1)*float64(x1) + 15*(float64(w1)+3*float64(w2))*Ln*float64(x2)*float64(x2)*float64(x2) - 3*float64((w1-w2))*float64(x1)*float64(x2)*float64((x1*x1+x2*x2)) + 20*(float64(w2)+2*float64(w1))*Ln*Ln*float64(x1)*float64(x1) - 20*(float64(w1)+2*float64(w2))*Ln*Ln*float64(x2)*float64(x2) + 15*float64((w1-w2))*Ln*float64(x1)*float64(x2)*float64((x1+x2)) - 3*float64((w1-w2))*float64(x1)*float64(x1)*float64(x2)*float64(x2) - 20*float64((w1-w2))*Ln*Ln*float64(x1)*float64(x2)) / 360
-			f02 = (3*(float64(w2)+4*float64(w1))*float64(x1)*float64(x1)*float64(x1)*float64(x1) - 3*(float64(w1)+4*float64(w2))*float64(x2)*float64(x2)*float64(x2)*float64(x2) - 3*float64((w1-w2))*float64(x1)*float64(x2)*float64((x1*x1+x2*x2)) - 10*(float64(w2)+2*float64(w1))*Ln*Ln*float64(x1)*float64(x1) + 10*(float64(w1)+2*float64(w2))*Ln*Ln*float64(x2)*float64(x2) - 3*float64((w1-w2))*float64(x1)*float64(x1)*float64(x2)*float64(x2) + 10*float64((w1-w2))*Ln*Ln*float64(x1)*float64(x2)) / 360
+			f01 = (3*(float64(w2)+4*float64(w1))*float64(x1)*float64(x1)*float64(x1)*float64(x1) - 3*(float64(w1)+4*float64(w2))*float64(x2)*float64(x2)*float64(x2)*float64(x2) - 15*(float64(w2)+3*float64(w1))*Ln*float64(x1)*float64(x1)*float64(x1) + 15*(float64(w1)+3*float64(w2))*Ln*float64(x2)*float64(x2)*float64(x2) - 3*float64(w1-w2)*float64(x1)*float64(x2)*float64(x1*x1+x2*x2) + 20*(float64(w2)+2*float64(w1))*Ln*Ln*float64(x1)*float64(x1) - 20*(float64(w1)+2*float64(w2))*Ln*Ln*float64(x2)*float64(x2) + 15*float64(w1-w2)*Ln*float64(x1)*float64(x2)*float64(x1+x2) - 3*float64(w1-w2)*float64(x1)*float64(x1)*float64(x2)*float64(x2) - 20*float64(w1-w2)*Ln*Ln*float64(x1)*float64(x2)) / 360
+			f02 = (3*(float64(w2)+4*float64(w1))*float64(x1)*float64(x1)*float64(x1)*float64(x1) - 3*(float64(w1)+4*float64(w2))*float64(x2)*float64(x2)*float64(x2)*float64(x2) - 3*float64(w1-w2)*float64(x1)*float64(x2)*float64(x1*x1+x2*x2) - 10*(float64(w2)+2*float64(w1))*Ln*Ln*float64(x1)*float64(x1) + 10*(float64(w1)+2*float64(w2))*Ln*Ln*float64(x2)*float64(x2) - 3*float64(w1-w2)*float64(x1)*float64(x1)*float64(x2)*float64(x2) + 10*float64(w1-w2)*Ln*Ln*float64(x1)*float64(x2)) / 360
 			Mz1 = -(4*f01 + 2*f02 + Ksy*(f01-f02)) / (Ln * Ln * (1 + Ksy))
 			Mz2 = -(2*f01 + 4*f02 - Ksy*(f01-f02)) / (Ln * Ln * (1 + Ksy))
 			Vy1 = R1o + Mz1/Ln + Mz2/Ln
@@ -4892,10 +4212,10 @@ func read_and_assemble_loads(fp *noarch.File, nN int, nE int, nL int, DoF int, x
 			x2 = W[lc][i][11]
 			w1 = W[lc][i][12]
 			w2 = W[lc][i][13]
-			R1o = ((2*float64(w1)+float64(w2))*float64(x1)*float64(x1) - (float64(w1)+2*float64(w2))*float64(x2)*float64(x2) + 3*float64((w1+w2))*Ln*float64((x2-x1)) - float64((w1-w2)*x1*x2)) / (6 * Ln)
+			R1o = ((2*float64(w1)+float64(w2))*float64(x1)*float64(x1) - (float64(w1)+2*float64(w2))*float64(x2)*float64(x2) + 3*float64(w1+w2)*Ln*float64(x2-x1) - float64((w1-w2)*x1*x2)) / (6 * Ln)
 			R2o = ((float64(w1)+2*float64(w2))*float64(x2)*float64(x2) + float64((w1-w2)*x1*x2) - (2*float64(w1)+float64(w2))*float64(x1)*float64(x1)) / (6 * Ln)
-			f01 = (3*(float64(w2)+4*float64(w1))*float64(x1)*float64(x1)*float64(x1)*float64(x1) - 3*(float64(w1)+4*float64(w2))*float64(x2)*float64(x2)*float64(x2)*float64(x2) - 15*(float64(w2)+3*float64(w1))*Ln*float64(x1)*float64(x1)*float64(x1) + 15*(float64(w1)+3*float64(w2))*Ln*float64(x2)*float64(x2)*float64(x2) - 3*float64((w1-w2))*float64(x1)*float64(x2)*float64((x1*x1+x2*x2)) + 20*(float64(w2)+2*float64(w1))*Ln*Ln*float64(x1)*float64(x1) - 20*(float64(w1)+2*float64(w2))*Ln*Ln*float64(x2)*float64(x2) + 15*float64((w1-w2))*Ln*float64(x1)*float64(x2)*float64((x1+x2)) - 3*float64((w1-w2))*float64(x1)*float64(x1)*float64(x2)*float64(x2) - 20*float64((w1-w2))*Ln*Ln*float64(x1)*float64(x2)) / 360
-			f02 = (3*(float64(w2)+4*float64(w1))*float64(x1)*float64(x1)*float64(x1)*float64(x1) - 3*(float64(w1)+4*float64(w2))*float64(x2)*float64(x2)*float64(x2)*float64(x2) - 3*float64((w1-w2))*float64(x1)*float64(x2)*float64((x1*x1+x2*x2)) - 10*(float64(w2)+2*float64(w1))*Ln*Ln*float64(x1)*float64(x1) + 10*(float64(w1)+2*float64(w2))*Ln*Ln*float64(x2)*float64(x2) - 3*float64((w1-w2))*float64(x1)*float64(x1)*float64(x2)*float64(x2) + 10*float64((w1-w2))*Ln*Ln*float64(x1)*float64(x2)) / 360
+			f01 = (3*(float64(w2)+4*float64(w1))*float64(x1)*float64(x1)*float64(x1)*float64(x1) - 3*(float64(w1)+4*float64(w2))*float64(x2)*float64(x2)*float64(x2)*float64(x2) - 15*(float64(w2)+3*float64(w1))*Ln*float64(x1)*float64(x1)*float64(x1) + 15*(float64(w1)+3*float64(w2))*Ln*float64(x2)*float64(x2)*float64(x2) - 3*float64(w1-w2)*float64(x1)*float64(x2)*float64(x1*x1+x2*x2) + 20*(float64(w2)+2*float64(w1))*Ln*Ln*float64(x1)*float64(x1) - 20*(float64(w1)+2*float64(w2))*Ln*Ln*float64(x2)*float64(x2) + 15*float64(w1-w2)*Ln*float64(x1)*float64(x2)*float64(x1+x2) - 3*float64(w1-w2)*float64(x1)*float64(x1)*float64(x2)*float64(x2) - 20*float64(w1-w2)*Ln*Ln*float64(x1)*float64(x2)) / 360
+			f02 = (3*(float64(w2)+4*float64(w1))*float64(x1)*float64(x1)*float64(x1)*float64(x1) - 3*(float64(w1)+4*float64(w2))*float64(x2)*float64(x2)*float64(x2)*float64(x2) - 3*float64(w1-w2)*float64(x1)*float64(x2)*float64(x1*x1+x2*x2) - 10*(float64(w2)+2*float64(w1))*Ln*Ln*float64(x1)*float64(x1) + 10*(float64(w1)+2*float64(w2))*Ln*Ln*float64(x2)*float64(x2) - 3*float64(w1-w2)*float64(x1)*float64(x1)*float64(x2)*float64(x2) + 10*float64(w1-w2)*Ln*Ln*float64(x1)*float64(x2)) / 360
 			My1 = (4*f01 + 2*f02 + Ksz*(f01-f02)) / (Ln * Ln * (1 + Ksz))
 			My2 = (2*f01 + 4*f02 - Ksz*(f01-f02)) / (Ln * Ln * (1 + Ksz))
 			Vz1 = R1o - My1/Ln - My2/Ln
@@ -4958,37 +4278,25 @@ func read_and_assemble_loads(fp *noarch.File, nN int, nE int, nL int, DoF int, x
 				os.Exit(152)
 			}
 			if shear != 0 {
-				Ksy = (12 * float64(E[n]) * float64(Iz[n])) / (float64(G[n]*Asy[n]) * Le[n] * Le[n])
-				Ksz = (12 * float64(E[n]) * float64(Iy[n])) / (float64(G[n]*Asz[n]) * Le[n] * Le[n])
+				Ksy = 12 * float64(E[n]) * float64(Iz[n]) / (float64(G[n]*Asy[n]) * Le[n] * Le[n])
+				Ksz = 12 * float64(E[n]) * float64(Iy[n]) / (float64(G[n]*Asz[n]) * Le[n] * Le[n])
 			} else {
-				func() float64 {
-					Ksz = 0
-					return Ksz
-				}()
-				func() float64 {
-					Ksy = Ksz
-					return Ksy
-				}()
+				Ksz = 0
+				Ksy = Ksz
 			}
 			Ln = L[n]
 			Nx1 = float64(P[lc][i][2]) * a / Ln
 			Nx2 = float64(P[lc][i][2]) * b / Ln
-			Vy1 = (1/(1+Ksz))*float64(P[lc][i][3])*b*b*(3*a+b)/(Ln*Ln*Ln) + (Ksz/(1+Ksz))*float64(P[lc][i][3])*b/Ln
-			Vy2 = (1/(1+Ksz))*float64(P[lc][i][3])*a*a*(3*b+a)/(Ln*Ln*Ln) + (Ksz/(1+Ksz))*float64(P[lc][i][3])*a/Ln
-			Vz1 = (1/(1+Ksy))*float64(P[lc][i][4])*b*b*(3*a+b)/(Ln*Ln*Ln) + (Ksy/(1+Ksy))*float64(P[lc][i][4])*b/Ln
-			Vz2 = (1/(1+Ksy))*float64(P[lc][i][4])*a*a*(3*b+a)/(Ln*Ln*Ln) + (Ksy/(1+Ksy))*float64(P[lc][i][4])*a/Ln
-			func() float64 {
-				Mx2 = 0
-				return Mx2
-			}()
-			func() float64 {
-				Mx1 = Mx2
-				return Mx1
-			}()
-			My1 = -(1/(1+Ksy))*float64(P[lc][i][4])*a*b*b/(Ln*Ln) - (Ksy/(1+Ksy))*float64(P[lc][i][4])*a*b/(2*Ln)
-			My2 = (1/(1+Ksy))*float64(P[lc][i][4])*a*a*b/(Ln*Ln) + (Ksy/(1+Ksy))*float64(P[lc][i][4])*a*b/(2*Ln)
-			Mz1 = (1/(1+Ksz))*float64(P[lc][i][3])*a*b*b/(Ln*Ln) + (Ksz/(1+Ksz))*float64(P[lc][i][3])*a*b/(2*Ln)
-			Mz2 = -(1/(1+Ksz))*float64(P[lc][i][3])*a*a*b/(Ln*Ln) - (Ksz/(1+Ksz))*float64(P[lc][i][3])*a*b/(2*Ln)
+			Vy1 = 1/(1+Ksz)*float64(P[lc][i][3])*b*b*(3*a+b)/(Ln*Ln*Ln) + Ksz/(1+Ksz)*float64(P[lc][i][3])*b/Ln
+			Vy2 = 1/(1+Ksz)*float64(P[lc][i][3])*a*a*(3*b+a)/(Ln*Ln*Ln) + Ksz/(1+Ksz)*float64(P[lc][i][3])*a/Ln
+			Vz1 = 1/(1+Ksy)*float64(P[lc][i][4])*b*b*(3*a+b)/(Ln*Ln*Ln) + Ksy/(1+Ksy)*float64(P[lc][i][4])*b/Ln
+			Vz2 = 1/(1+Ksy)*float64(P[lc][i][4])*a*a*(3*b+a)/(Ln*Ln*Ln) + Ksy/(1+Ksy)*float64(P[lc][i][4])*a/Ln
+			Mx2 = 0
+			Mx1 = Mx2
+			My1 = -(1/(1+Ksy))*float64(P[lc][i][4])*a*b*b/(Ln*Ln) - Ksy/(1+Ksy)*float64(P[lc][i][4])*a*b/(2*Ln)
+			My2 = 1/(1+Ksy)*float64(P[lc][i][4])*a*a*b/(Ln*Ln) + Ksy/(1+Ksy)*float64(P[lc][i][4])*a*b/(2*Ln)
+			Mz1 = 1/(1+Ksz)*float64(P[lc][i][3])*a*b*b/(Ln*Ln) + Ksz/(1+Ksz)*float64(P[lc][i][3])*a*b/(2*Ln)
+			Mz2 = -(1/(1+Ksz))*float64(P[lc][i][3])*a*a*b/(Ln*Ln) - Ksz/(1+Ksz)*float64(P[lc][i][3])*a*b/(2*Ln)
 			n1 = J1[n]
 			n2 = J2[n]
 			coord_trans(xyz, Ln, n1, n2, (*[1]float64)(unsafe.Pointer(&t1))[:], (*[1]float64)(unsafe.Pointer(&t2))[:], (*[1]float64)(unsafe.Pointer(&t3))[:], (*[1]float64)(unsafe.Pointer(&t4))[:], (*[1]float64)(unsafe.Pointer(&t5))[:], (*[1]float64)(unsafe.Pointer(&t6))[:], (*[1]float64)(unsafe.Pointer(&t7))[:], (*[1]float64)(unsafe.Pointer(&t8))[:], (*[1]float64)(unsafe.Pointer(&t9))[:], p[n])
@@ -5047,35 +4355,17 @@ func read_and_assemble_loads(fp *noarch.File, nN int, nE int, nL int, DoF int, x
 				errorMsg(errMsg)
 				os.Exit(162)
 			}
-			Nx2 = a * (1 / 4) * float64((T[lc][i][5] + T[lc][i][6] + T[lc][i][7] + T[lc][i][8])) * float64(E[n]) * float64(Ax[n])
+			Nx2 = a * (1 / 4) * float64(T[lc][i][5]+T[lc][i][6]+T[lc][i][7]+T[lc][i][8]) * float64(E[n]) * float64(Ax[n])
 			Nx1 = -Nx2
-			func() float64 {
-				Vz2 = 0
-				return Vz2
-			}()
-			func() float64 {
-				Vz1 = Vz2
-				return Vz1
-			}()
-			func() float64 {
-				Vy2 = Vz1
-				return Vy2
-			}()
-			func() float64 {
-				Vy1 = Vy2
-				return Vy1
-			}()
-			func() float64 {
-				Mx2 = 0
-				return Mx2
-			}()
-			func() float64 {
-				Mx1 = Mx2
-				return Mx1
-			}()
-			My1 = (a / float64(hz)) * float64((T[lc][i][8] - T[lc][i][7])) * float64(E[n]) * float64(Iy[n])
+			Vz2 = 0
+			Vz1 = Vz2
+			Vy2 = Vz1
+			Vy1 = Vy2
+			Mx2 = 0
+			Mx1 = Mx2
+			My1 = a / float64(hz) * float64(T[lc][i][8]-T[lc][i][7]) * float64(E[n]) * float64(Iy[n])
 			My2 = -My1
-			Mz1 = (a / float64(hy)) * float64((T[lc][i][5] - T[lc][i][6])) * float64(E[n]) * float64(Iz[n])
+			Mz1 = a / float64(hy) * float64(T[lc][i][5]-T[lc][i][6]) * float64(E[n]) * float64(Iz[n])
 			Mz2 = -Mz1
 			n1 = J1[n]
 			n2 = J2[n]
@@ -5123,10 +4413,7 @@ func read_and_assemble_loads(fp *noarch.File, nN int, nE int, nL int, DoF int, x
 			if sfrv != 1 {
 				sferr([]byte("node number value in prescribed displacement data\x00"))
 			}
-			for l = 5; l >= 0; func() int {
-				l -= 1
-				return l
-			}() {
+			for l = 5; l >= 0; l-- {
 				sfrv = noarch.Fscanf(fp, []byte("%f\x00"), (*[1]float32)(unsafe.Pointer(&Dp[lc][6*j-l]))[:])
 				if sfrv != 1 {
 					sferr([]byte("prescribed displacement value\x00"))
@@ -5159,14 +4446,8 @@ func read_mass_data(fp *noarch.File, OUT_file []byte, nN int, nE int, nI []int, 
 	var base_file []byte = []byte("EMPTY_BASE\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00")
 	var mode_file []byte = []byte("EMPTY_MODE\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00")
 	var errMsg []byte = make([]byte, 512, 512)
-	func() float64 {
-		struct_mass[0] = 0
-		return struct_mass[0]
-	}()
-	func() float64 {
-		total_mass[0] = struct_mass[0]
-		return total_mass[0]
-	}()
+	struct_mass[0] = 0
+	total_mass[0] = struct_mass[0]
 	sfrv = noarch.Fscanf(fp, []byte("%d\x00"), nM)
 	if sfrv != 1 {
 		sferr([]byte("nM value in mass data\x00"))
@@ -5332,13 +4613,17 @@ func read_mass_data(fp *noarch.File, OUT_file []byte, nN int, nE int, nI []int, 
 	}
 	noarch.Strcpy(base_file, OUT_file)
 	for int(base_file[func() int {
-		len += 1
+		defer func() {
+			len += 1
+		}()
 		return len
 	}()]) != int('\x00') {
 	}
 	full_len = len
 	for int(base_file[func() int {
-		len -= 1
+		defer func() {
+			len -= 1
+		}()
 		return len
 	}()]) != int('.') && len > 0 {
 	}
@@ -5350,18 +4635,19 @@ func read_mass_data(fp *noarch.File, OUT_file []byte, nN int, nE int, nI []int, 
 		return len
 	}()] = '\x00'
 	for int(base_file[len]) != int('/') && int(base_file[len]) != int('\\') && len > 0 {
-		func() int {
-			len -= 1
-			return len
-		}()
+		len -= 1
 	}
 	i = 0
 	for int(base_file[len]) != int('\x00') {
 		mode_file[func() int {
-			i += 1
+			defer func() {
+				i += 1
+			}()
 			return i
 		}()] = base_file[func() int {
-			len += 1
+			defer func() {
+				len += 1
+			}()
 			return len
 		}()]
 	}
@@ -5382,34 +4668,16 @@ func read_condensation_data(fp *noarch.File, nN int, nM int, nC []int, Cdof []in
 	var cm [][]int
 	var sfrv int = 0
 	var errMsg []byte = make([]byte, 512, 512)
-	func() int {
-		Cdof[0] = 0
-		return Cdof[0]
-	}()
-	func() int {
-		nC[0] = Cdof[0]
-		return nC[0]
-	}()
-	func() int {
-		Cmethod[0] = nC[0]
-		return Cmethod[0]
-	}()
+	Cdof[0] = 0
+	nC[0] = Cdof[0]
+	Cmethod[0] = nC[0]
 	if (func() int {
 		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), Cmethod)
 		return sfrv
 	}()) != 1 {
-		func() int {
-			Cdof[0] = 0
-			return Cdof[0]
-		}()
-		func() int {
-			nC[0] = Cdof[0]
-			return nC[0]
-		}()
-		func() int {
-			Cmethod[0] = nC[0]
-			return Cmethod[0]
-		}()
+		Cdof[0] = 0
+		nC[0] = Cdof[0]
+		Cmethod[0] = nC[0]
 		if verbose != 0 {
 			noarch.Fprintf(stdout, []byte(" missing matrix condensation data \n\x00"))
 		}
@@ -5422,18 +4690,9 @@ func read_condensation_data(fp *noarch.File, nN int, nM int, nC []int, Cdof []in
 		if verbose != 0 {
 			noarch.Fprintf(stdout, []byte(" Cmethod = %d : no matrix condensation \n\x00"), Cmethod[0])
 		}
-		func() int {
-			Cdof[0] = 0
-			return Cdof[0]
-		}()
-		func() int {
-			nC[0] = Cdof[0]
-			return nC[0]
-		}()
-		func() int {
-			Cmethod[0] = nC[0]
-			return Cmethod[0]
-		}()
+		Cdof[0] = 0
+		nC[0] = Cdof[0]
+		Cmethod[0] = nC[0]
 		return
 	}
 	if Cmethod[0] > 3 {
@@ -5457,18 +4716,9 @@ func read_condensation_data(fp *noarch.File, nN int, nM int, nC []int, Cdof []in
 		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), nC)
 		return sfrv
 	}()) != 1 {
-		func() int {
-			Cdof[0] = 0
-			return Cdof[0]
-		}()
-		func() int {
-			nC[0] = Cdof[0]
-			return nC[0]
-		}()
-		func() int {
-			Cmethod[0] = nC[0]
-			return Cmethod[0]
-		}()
+		Cdof[0] = 0
+		nC[0] = Cdof[0]
+		Cmethod[0] = nC[0]
 		if verbose != 0 {
 			noarch.Fprintf(stdout, []byte(" missing matrix condensation data \n\x00"))
 		}
@@ -5479,7 +4729,7 @@ func read_condensation_data(fp *noarch.File, nN int, nM int, nC []int, Cdof []in
 		dots(stdout, 15)
 		noarch.Fprintf(stdout, []byte(" nC = %3d\n\x00"), nC[0])
 	}
-	if (nC[0]) > nN {
+	if nC[0] > nN {
 		noarch.Sprintf(errMsg, []byte("\n  error in matrix condensation data: \n error: nC > nN ... nC=%d; nN=%d;\n The number of nodes with condensed DoF's may not exceed the total number of nodes.\n\x00"), nC[0], nN)
 		errorMsg(errMsg)
 		os.Exit(90)
@@ -5499,10 +4749,7 @@ func read_condensation_data(fp *noarch.File, nN int, nM int, nC []int, Cdof []in
 	for i = 1; i <= nC[0]; i++ {
 		for j = 2; j <= 7; j++ {
 			if cm[i][j] != 0 {
-				func() int {
-					(Cdof[0]) += 1
-					return (Cdof[0])
-				}()
+				Cdof[0] += 1
 			}
 		}
 	}
@@ -5511,10 +4758,7 @@ func read_condensation_data(fp *noarch.File, nN int, nM int, nC []int, Cdof []in
 		for j = 2; j <= 7; j++ {
 			if cm[i][j] != 0 {
 				c[k] = 6*(cm[i][1]-1) + j - 1
-				func() int {
-					k += 1
-					return k
-				}()
+				k += 1
 			}
 		}
 	}
@@ -5525,7 +4769,7 @@ func read_condensation_data(fp *noarch.File, nN int, nM int, nC []int, Cdof []in
 			noarch.Sprintf(errMsg, []byte("condensed mode %d = %d\x00"), i, m[i])
 			errorMsg(errMsg)
 		}
-		if (map[bool]int{false: 0, true: 1}[m[i] < 0 || m[i] > nM]) != 0 && Cmethod[0] == 3 {
+		if (m[i] < 0 || m[i] > nM) && Cmethod[0] == 3 {
 			noarch.Sprintf(errMsg, []byte("\n  error in matrix condensation data: \n  m[%d] = %d \n The condensed mode number must be between   1 and %d (modes).\n\x00"), i, m[i], nM)
 			errorMsg(errMsg)
 			os.Exit(92)
@@ -5643,10 +4887,7 @@ func write_input_data(fp *noarch.File, title []byte, nN int, nE int, nL int, nD 
 				i = 6 * (j - 1)
 				if Fm[lc][i+1] != 0 || Fm[lc][i+2] != 0 || Fm[lc][i+3] != 0 || Fm[lc][i+4] != 0 || Fm[lc][i+5] != 0 || Fm[lc][i+6] != 0 {
 					noarch.Fprintf(fp, []byte(" %5d\x00"), j)
-					for i = 5; i >= 0; func() int {
-						i -= 1
-						return i
-					}() {
+					for i = 5; i >= 0; i-- {
 						noarch.Fprintf(fp, []byte(" %11.3f\x00"), Fm[lc][6*j-i])
 					}
 					noarch.Fprintf(fp, []byte("\n\x00"))
@@ -5722,10 +4963,7 @@ func write_input_data(fp *noarch.File, title []byte, nN int, nE int, nL int, nD 
 				i = 6 * (j - 1)
 				if float64(Dp[lc][i+1]) != 0 || float64(Dp[lc][i+2]) != 0 || float64(Dp[lc][i+3]) != 0 || float64(Dp[lc][i+4]) != 0 || float64(Dp[lc][i+5]) != 0 || float64(Dp[lc][i+6]) != 0 {
 					noarch.Fprintf(fp, []byte(" %5d\x00"), j)
-					for i = 5; i >= 0; func() int {
-						i -= 1
-						return i
-					}() {
+					for i = 5; i >= 0; i-- {
 						noarch.Fprintf(fp, []byte(" %11.3f\x00"), float64(Dp[lc][6*j-i]))
 					}
 					noarch.Fprintf(fp, []byte("\n\x00"))
@@ -5765,18 +5003,12 @@ func write_static_results(fp *noarch.File, nN int, nE int, nL int, lc int, DoF i
 	noarch.Fprintf(fp, []byte("       X-rot       Y-rot       Z-rot\n\x00"))
 	for j = 1; j <= nN; j++ {
 		disp = 0
-		for i = 5; i >= 0; func() int {
-			i -= 1
-			return i
-		}() {
+		for i = 5; i >= 0; i-- {
 			disp += math.Abs(D[6*j-i])
 		}
 		if disp > 0 {
 			noarch.Fprintf(fp, []byte(" %5d\x00"), j)
-			for i = 5; i >= 0; func() int {
-				i -= 1
-				return i
-			}() {
+			for i = 5; i >= 0; i-- {
 				if math.Abs(D[6*j-i]) < 1e-08 {
 					noarch.Fprintf(fp, []byte("    0.0     \x00"))
 				} else {
@@ -5845,10 +5077,7 @@ func write_static_results(fp *noarch.File, nN int, nE int, nL int, lc int, DoF i
 		i = 6 * (j - 1)
 		if r[i+1] != 0 || r[i+2] != 0 || r[i+3] != 0 || r[i+4] != 0 || r[i+5] != 0 || r[i+6] != 0 {
 			noarch.Fprintf(fp, []byte(" %5d\x00"), j)
-			for i = 5; i >= 0; func() int {
-				i -= 1
-				return i
-			}() {
+			for i = 5; i >= 0; i-- {
 				if r[6*j-i] != 0 {
 					noarch.Fprintf(fp, []byte(" %11.3f\x00"), R[6*j-i])
 				} else {
@@ -5880,14 +5109,8 @@ func CSV_filename(CSV_file []byte, wa []byte, OUT_file []byte, lc int) {
 			CSV_file[j] = '_'
 			break
 		}
-		func() int {
-			i += 1
-			return i
-		}()
-		func() int {
-			j += 1
-			return j
-		}()
+		i += 1
+		j += 1
 	}
 	CSV_file[func() int {
 		j += 1
@@ -5922,7 +5145,7 @@ func write_static_csv(OUT_file []byte, title []byte, nN int, nE int, nL int, lc 
 	if (func() *noarch.File {
 		fpcsv = noarch.Fopen(CSV_file, wa)
 		return fpcsv
-	}()) == (nil) {
+	}()) == nil {
 		noarch.Sprintf(errMsg, []byte("\n  error: cannot open CSV output data file: %s \n\x00"), CSV_file)
 		errorMsg(errMsg)
 		os.Exit(17)
@@ -5956,10 +5179,7 @@ func write_static_csv(OUT_file []byte, title []byte, nN int, nE int, nL int, lc 
 	noarch.Fprintf(fpcsv, []byte(" ,     X-rot  ,    Y-rot   ,   Z-rot\n\x00"))
 	for j = 1; j <= nN; j++ {
 		noarch.Fprintf(fpcsv, []byte(" %5d,\x00"), j)
-		for i = 5; i >= 0; func() int {
-			i -= 1
-			return i
-		}() {
+		for i = 5; i >= 0; i-- {
 			if math.Abs(D[6*j-i]) < 1e-08 {
 				noarch.Fprintf(fpcsv, []byte("    0.0,    \x00"))
 			} else {
@@ -6008,10 +5228,7 @@ func write_static_csv(OUT_file []byte, title []byte, nN int, nE int, nL int, lc 
 	for j = 1; j <= nN; j++ {
 		i = 6 * (j - 1)
 		noarch.Fprintf(fpcsv, []byte(" %5d,\x00"), j)
-		for i = 5; i >= 0; func() int {
-			i -= 1
-			return i
-		}() {
+		for i = 5; i >= 0; i-- {
 			if r[6*j-i] != 0 {
 				noarch.Fprintf(fpcsv, []byte(" %12.5e,\x00"), R[6*j-i])
 			} else {
@@ -6071,14 +5288,8 @@ func write_static_mfile(OUT_file []byte, title []byte, nN int, nE int, nL int, l
 			M_file[j] = '_'
 			break
 		}
-		func() int {
-			i += 1
-			return i
-		}()
-		func() int {
-			j += 1
-			return j
-		}()
+		i += 1
+		j += 1
 	}
 	M_file[func() int {
 		j += 1
@@ -6092,7 +5303,7 @@ func write_static_mfile(OUT_file []byte, title []byte, nN int, nE int, nL int, l
 	if (func() *noarch.File {
 		fpm = noarch.Fopen(M_file, wa)
 		return fpm
-	}()) == (nil) {
+	}()) == nil {
 		noarch.Sprintf(errMsg, []byte("\n  error: cannot open Matlab output data file: %s \n\x00"), M_file)
 		errorMsg(errMsg)
 		os.Exit(18)
@@ -6121,10 +5332,7 @@ func write_static_mfile(OUT_file []byte, title []byte, nN int, nE int, nL int, l
 	noarch.Fprintf(fpm, []byte("%%\tX-dsp\t\tY-dsp\t\tZ-dsp\t\tX-rot\t\tY-rot\t\tZ-rot\n\x00"))
 	noarch.Fprintf(fpm, []byte("D%d=[\x00"), lc)
 	for j = 1; j <= nN; j++ {
-		for i = 5; i >= 0; func() int {
-			i -= 1
-			return i
-		}() {
+		for i = 5; i >= 0; i-- {
 			if math.Abs(D[6*j-i]) < 1e-08 {
 				noarch.Fprintf(fpm, []byte("\t0.0\t\x00"))
 			} else {
@@ -6178,10 +5386,7 @@ func write_static_mfile(OUT_file []byte, title []byte, nN int, nE int, nL int, l
 	noarch.Fprintf(fpm, []byte("R%d=[\x00"), lc)
 	for j = 1; j <= nN; j++ {
 		i = 6 * (j - 1)
-		for i = 5; i >= 0; func() int {
-			i -= 1
-			return i
-		}() {
+		for i = 5; i >= 0; i-- {
 			if noarch.NotInt(r[6*j-i]) != 0 || math.Abs(R[6*j-i]) < 0.0001 {
 				noarch.Fprintf(fpm, []byte("\t0.0\t\x00"))
 			} else {
@@ -6363,54 +5568,18 @@ func peak_internal_forces(lc int, nL int, xyz []vec3, Q [][]float64, nN int, nE 
 		return
 	}
 	for m = 1; m <= nE; m++ {
-		func() float64 {
-			pkVz[lc][m] = 0
-			return pkVz[lc][m]
-		}()
-		func() float64 {
-			pkVy[lc][m] = pkVz[lc][m]
-			return pkVy[lc][m]
-		}()
-		func() float64 {
-			pkNx[lc][m] = pkVy[lc][m]
-			return pkNx[lc][m]
-		}()
-		func() float64 {
-			pkMz[lc][m] = 0
-			return pkMz[lc][m]
-		}()
-		func() float64 {
-			pkMy[lc][m] = pkMz[lc][m]
-			return pkMy[lc][m]
-		}()
-		func() float64 {
-			pkTx[lc][m] = pkMy[lc][m]
-			return pkTx[lc][m]
-		}()
-		func() float64 {
-			pkDz[lc][m] = 0
-			return pkDz[lc][m]
-		}()
-		func() float64 {
-			pkDy[lc][m] = pkDz[lc][m]
-			return pkDy[lc][m]
-		}()
-		func() float64 {
-			pkDx[lc][m] = pkDy[lc][m]
-			return pkDx[lc][m]
-		}()
-		func() float64 {
-			pkSz[lc][m] = 0
-			return pkSz[lc][m]
-		}()
-		func() float64 {
-			pkSy[lc][m] = pkSz[lc][m]
-			return pkSy[lc][m]
-		}()
-		func() float64 {
-			pkRx[lc][m] = pkSy[lc][m]
-			return pkRx[lc][m]
-		}()
+		pkVz[lc][m] = 0
+		pkVy[lc][m] = pkVz[lc][m]
+		pkNx[lc][m] = pkVy[lc][m]
+		pkMz[lc][m] = 0
+		pkMy[lc][m] = pkMz[lc][m]
+		pkTx[lc][m] = pkMy[lc][m]
+		pkDz[lc][m] = 0
+		pkDy[lc][m] = pkDz[lc][m]
+		pkDx[lc][m] = pkDy[lc][m]
+		pkSz[lc][m] = 0
+		pkSy[lc][m] = pkSz[lc][m]
+		pkRx[lc][m] = pkSy[lc][m]
 	}
 	for m = 1; m <= nE; m++ {
 		n1 = N1[m]
@@ -6425,60 +5594,21 @@ func peak_internal_forces(lc int, nL int, xyz []vec3, Q [][]float64, nN int, nE 
 				wxg += float64(U[n][2])
 				wyg += float64(U[n][3])
 				wzg += float64(U[n][4])
-				func() int {
-					cU += 1
-					return cU
-				}()
+				cU += 1
 			}
 		}
-		func() float64 {
-			Nx = -Q[m][1]
-			return Nx
-		}()
-		func() float64 {
-			Nx_ = Nx
-			return Nx_
-		}()
-		func() float64 {
-			Vy = -Q[m][2]
-			return Vy
-		}()
-		func() float64 {
-			Vy_ = Vy
-			return Vy_
-		}()
-		func() float64 {
-			Vz = -Q[m][3]
-			return Vz
-		}()
-		func() float64 {
-			Vz_ = Vz
-			return Vz_
-		}()
-		func() float64 {
-			Tx = -Q[m][4]
-			return Tx
-		}()
-		func() float64 {
-			Tx_ = Tx
-			return Tx_
-		}()
-		func() float64 {
-			My = Q[m][5]
-			return My
-		}()
-		func() float64 {
-			My_ = My
-			return My_
-		}()
-		func() float64 {
-			Mz = -Q[m][6]
-			return Mz
-		}()
-		func() float64 {
-			Mz_ = Mz
-			return Mz_
-		}()
+		Nx = -Q[m][1]
+		Nx_ = Nx
+		Vy = -Q[m][2]
+		Vy_ = Vy
+		Vz = -Q[m][3]
+		Vz_ = Vz
+		Tx = -Q[m][4]
+		Tx_ = Tx
+		My = Q[m][5]
+		My_ = My
+		Mz = -Q[m][6]
+		Mz_ = Mz
 		i1 = 6 * (n1 - 1)
 		i2 = 6 * (n2 - 1)
 		u1 = t1*D[i1+1] + t2*D[i1+2] + t3*D[i1+3]
@@ -6497,22 +5627,10 @@ func peak_internal_forces(lc int, nL int, xyz []vec3, Q [][]float64, nN int, nE 
 		Dy = u2
 		Dz = u3
 		Rx = u4
-		func() float64 {
-			Sy = u6
-			return Sy
-		}()
-		func() float64 {
-			Sy_ = Sy
-			return Sy_
-		}()
-		func() float64 {
-			Sz = -u5
-			return Sz
-		}()
-		func() float64 {
-			Sz_ = Sz
-			return Sz_
-		}()
+		Sy = u6
+		Sy_ = Sy
+		Sz = -u5
+		Sz_ = Sz
 		for i = 1; i <= nx; i++ {
 			x = float64(float32(i) * dx)
 			wx = wxg
@@ -6527,10 +5645,7 @@ func peak_internal_forces(lc int, nL int, xyz []vec3, Q [][]float64, nN int, nE 
 			for n = 1; n <= 10*nE && cW < nW; n++ {
 				if int(W[n][1]) == m {
 					if i == nx {
-						func() int {
-							cW += 1
-							return cW
-						}()
+						cW += 1
 					}
 					xx1 = float64(W[n][2])
 					xx2 = float64(W[n][3])
@@ -6566,10 +5681,7 @@ func peak_internal_forces(lc int, nL int, xyz []vec3, Q [][]float64, nN int, nE 
 			for n = 1; n <= 10*nE && cP < nP; n++ {
 				if int(P[n][1]) == m {
 					if i == nx {
-						func() int {
-							cP += 1
-							return cP
-						}()
+						cP += 1
 					}
 					xp = float64(P[n][5])
 					if x <= xp && xp < x+float64(dx) {
@@ -6586,13 +5698,13 @@ func peak_internal_forces(lc int, nL int, xyz []vec3, Q [][]float64, nN int, nE 
 			}
 			My = My - 0.5*(Vz_+Vz)*float64(dx)
 			Mz = Mz - 0.5*(Vy_+Vy)*float64(dx)
-			Dx = Dx + 0.5*(Nx_+Nx)/float64((E[m]*Ax[m]))*float64(dx)
-			Rx = Rx + 0.5*(Tx_+Tx)/float64((G[m]*Jx[m]))*float64(dx)
-			Sy = Sy + 0.5*(Mz_+Mz)/float64((E[m]*Iz[m]))*float64(dx)
-			Sz = Sz + 0.5*(My_+My)/float64((E[m]*Iy[m]))*float64(dx)
+			Dx = Dx + 0.5*(Nx_+Nx)/float64(E[m]*Ax[m])*float64(dx)
+			Rx = Rx + 0.5*(Tx_+Tx)/float64(G[m]*Jx[m])*float64(dx)
+			Sy = Sy + 0.5*(Mz_+Mz)/float64(E[m]*Iz[m])*float64(dx)
+			Sz = Sz + 0.5*(My_+My)/float64(E[m]*Iy[m])*float64(dx)
 			if shear != 0 {
-				Sy += Vy / float64((G[m] * Asy[m]))
-				Sz += Vz / float64((G[m] * Asz[m]))
+				Sy += Vy / float64(G[m]*Asy[m])
+				Sz += Vz / float64(G[m]*Asz[m])
 			}
 			Dy = Dy + 0.5*(Sy_+Sy)*float64(dx)
 			Dz = Dz + 0.5*(Sz_+Sz)*float64(dx)
@@ -6899,7 +6011,7 @@ func write_internal_forces(OUT_file []byte, fp *noarch.File, infcpath []byte, lc
 	if (func() *noarch.File {
 		fpcsv = noarch.Fopen(CSV_file, []byte("a\x00"))
 		return fpcsv
-	}()) == (nil) {
+	}()) == nil {
 		noarch.Sprintf(errMsg, []byte("\n  error: cannot open CSV output data file: %s \n\x00"), CSV_file)
 		errorMsg(errMsg)
 		os.Exit(17)
@@ -6908,7 +6020,7 @@ func write_internal_forces(OUT_file []byte, fp *noarch.File, infcpath []byte, lc
 	if (func() *noarch.File {
 		fpif = noarch.Fopen(fnif, []byte("w\x00"))
 		return fpif
-	}()) == (nil) {
+	}()) == nil {
 		noarch.Sprintf(errMsg, []byte("\n  error: cannot open interior force data file: %s \n\x00"), fnif)
 		errorMsg(errMsg)
 		os.Exit(19)
@@ -6965,10 +6077,7 @@ func write_internal_forces(OUT_file []byte, fp *noarch.File, infcpath []byte, lc
 				wxg += float64(U[n][2])
 				wyg += float64(U[n][3])
 				wzg += float64(U[n][4])
-				func() int {
-					cU += 1
-					return cU
-				}()
+				cU += 1
 			}
 		}
 		Nx[0] = -Q[m][1]
@@ -6991,10 +6100,7 @@ func write_internal_forces(OUT_file []byte, fp *noarch.File, infcpath []byte, lc
 			for n = 1; n <= 10*nE && cW < nW; n++ {
 				if int(W[n][1]) == m {
 					if i == nx {
-						func() int {
-							cW += 1
-							return cW
-						}()
+						cW += 1
 					}
 					xx1 = float64(W[n][2])
 					xx2 = float64(W[n][3])
@@ -7033,10 +6139,7 @@ func write_internal_forces(OUT_file []byte, fp *noarch.File, infcpath []byte, lc
 			for n = 1; n <= 10*nE && cP < nP; n++ {
 				if int(P[n][1]) == m {
 					if i == nx {
-						func() int {
-							cP += 1
-							return cP
-						}()
+						cP += 1
 					}
 					xp = float64(P[n][5])
 					if x[i] <= xp && xp < x[i]+float64(dx) {
@@ -7095,7 +6198,7 @@ func write_internal_forces(OUT_file []byte, fp *noarch.File, infcpath []byte, lc
 			if i == nx {
 				dx_ = dxnx
 			}
-			Dx[i] = Dx[i-1] + 0.5*(Nx[i-1]+Nx[i])/float64((E[m]*Ax[m]))*dx_
+			Dx[i] = Dx[i-1] + 0.5*(Nx[i-1]+Nx[i])/float64(E[m]*Ax[m])*dx_
 		}
 		for i = 1; i <= nx; i++ {
 			Dx[i] -= (Dx[nx] - u7) * float64(i) / float64(nx)
@@ -7105,7 +6208,7 @@ func write_internal_forces(OUT_file []byte, fp *noarch.File, infcpath []byte, lc
 			if i == nx {
 				dx_ = dxnx
 			}
-			Rx[i] = Rx[i-1] + 0.5*(Tx[i-1]+Tx[i])/float64((G[m]*Jx[m]))*dx_
+			Rx[i] = Rx[i-1] + 0.5*(Tx[i-1]+Tx[i])/float64(G[m]*Jx[m])*dx_
 		}
 		for i = 1; i <= nx; i++ {
 			Rx[i] -= (Rx[nx] - u10) * float64(i) / float64(nx)
@@ -7115,8 +6218,8 @@ func write_internal_forces(OUT_file []byte, fp *noarch.File, infcpath []byte, lc
 			if i == nx {
 				dx_ = dxnx
 			}
-			Sy[i] = Sy[i-1] + 0.5*(Mz[i-1]+Mz[i])/float64((E[m]*Iz[m]))*dx_
-			Sz[i] = Sz[i-1] + 0.5*(My[i-1]+My[i])/float64((E[m]*Iy[m]))*dx_
+			Sy[i] = Sy[i-1] + 0.5*(Mz[i-1]+Mz[i])/float64(E[m]*Iz[m])*dx_
+			Sz[i] = Sz[i-1] + 0.5*(My[i-1]+My[i])/float64(E[m]*Iy[m])*dx_
 		}
 		for i = 1; i <= nx; i++ {
 			Sy[i] -= (Sy[nx] - u12) * float64(i) / float64(nx)
@@ -7124,8 +6227,8 @@ func write_internal_forces(OUT_file []byte, fp *noarch.File, infcpath []byte, lc
 		}
 		if shear != 0 {
 			for i = 0; i <= nx; i++ {
-				Sy[i] += Vy[i] / float64((G[m] * Asy[m]))
-				Sz[i] += Vz[i] / float64((G[m] * Asz[m]))
+				Sy[i] += Vy[i] / float64(G[m]*Asy[m])
+				Sz[i] += Vz[i] / float64(G[m]*Asz[m])
 			}
 		}
 		dx_ = float64(dx)
@@ -7140,102 +6243,30 @@ func write_internal_forces(OUT_file []byte, fp *noarch.File, infcpath []byte, lc
 			Dy[i] -= (Dy[nx] - u8) * float64(i) / float64(nx)
 			Dz[i] -= (Dz[nx] - u9) * float64(i) / float64(nx)
 		}
-		func() float64 {
-			minNx = Nx[0]
-			return minNx
-		}()
-		func() float64 {
-			maxNx = minNx
-			return maxNx
-		}()
-		func() float64 {
-			minVy = Vy[0]
-			return minVy
-		}()
-		func() float64 {
-			maxVy = minVy
-			return maxVy
-		}()
-		func() float64 {
-			minVz = Vz[0]
-			return minVz
-		}()
-		func() float64 {
-			maxVz = minVz
-			return maxVz
-		}()
-		func() float64 {
-			minTx = Tx[0]
-			return minTx
-		}()
-		func() float64 {
-			maxTx = minTx
-			return maxTx
-		}()
-		func() float64 {
-			minMy = My[0]
-			return minMy
-		}()
-		func() float64 {
-			maxMy = minMy
-			return maxMy
-		}()
-		func() float64 {
-			minMz = Mz[0]
-			return minMz
-		}()
-		func() float64 {
-			maxMz = minMz
-			return maxMz
-		}()
-		func() float64 {
-			minDx = Dx[0]
-			return minDx
-		}()
-		func() float64 {
-			maxDx = minDx
-			return maxDx
-		}()
-		func() float64 {
-			minDy = Dy[0]
-			return minDy
-		}()
-		func() float64 {
-			maxDy = minDy
-			return maxDy
-		}()
-		func() float64 {
-			minDz = Dz[0]
-			return minDz
-		}()
-		func() float64 {
-			maxDz = minDz
-			return maxDz
-		}()
-		func() float64 {
-			minRx = Rx[0]
-			return minRx
-		}()
-		func() float64 {
-			maxRx = minRx
-			return maxRx
-		}()
-		func() float64 {
-			minSy = Sy[0]
-			return minSy
-		}()
-		func() float64 {
-			maxSy = minSy
-			return maxSy
-		}()
-		func() float64 {
-			minSz = Sz[0]
-			return minSz
-		}()
-		func() float64 {
-			maxSz = minSz
-			return maxSz
-		}()
+		minNx = Nx[0]
+		maxNx = minNx
+		minVy = Vy[0]
+		maxVy = minVy
+		minVz = Vz[0]
+		maxVz = minVz
+		minTx = Tx[0]
+		maxTx = minTx
+		minMy = My[0]
+		maxMy = minMy
+		minMz = Mz[0]
+		maxMz = minMz
+		minDx = Dx[0]
+		maxDx = minDx
+		minDy = Dy[0]
+		maxDy = minDy
+		minDz = Dz[0]
+		maxDz = minDz
+		minRx = Rx[0]
+		maxRx = minRx
+		minSy = Sy[0]
+		maxSy = minSy
+		minSz = Sz[0]
+		maxSz = minSz
 		for i = 1; i <= nx; i++ {
 			maxNx = func() float64 {
 				if (map[bool]int{false: 0, true: 1}[Nx[i] > maxNx]) != 0 {
@@ -7463,18 +6494,9 @@ func write_modal_results(fp *noarch.File, nN int, nE int, nI int, DoF int, M [][
 	msY = dvector(int32(1), int32(DoF))
 	msZ = dvector(int32(1), int32(DoF))
 	for i = 1; i <= DoF; i++ {
-		func() float64 {
-			msZ[i] = 0
-			return msZ[i]
-		}()
-		func() float64 {
-			msY[i] = msZ[i]
-			return msY[i]
-		}()
-		func() float64 {
-			msX[i] = msY[i]
-			return msX[i]
-		}()
+		msZ[i] = 0
+		msY[i] = msZ[i]
+		msX[i] = msY[i]
 		for j = 1; j <= DoF; j += 6 {
 			msX[i] += M[i][j]
 		}
@@ -7485,7 +6507,7 @@ func write_modal_results(fp *noarch.File, nN int, nE int, nI int, DoF int, M [][
 			msZ[i] += M[i][j]
 		}
 	}
-	if (DoF - sumR) > nM {
+	if DoF-sumR > nM {
 		num_modes = nM
 	} else {
 		num_modes = DoF - sumR
@@ -7534,10 +6556,7 @@ func write_modal_results(fp *noarch.File, nN int, nE int, nI int, DoF int, M [][
 		noarch.Fprintf(fp, []byte("       X-rot       Y-rot       Z-rot\n\x00"))
 		for j = 1; j <= nN; j++ {
 			noarch.Fprintf(fp, []byte(" %5d\x00"), j)
-			for i = 5; i >= 0; func() int {
-				i -= 1
-				return i
-			}() {
+			for i = 5; i >= 0; i-- {
 				noarch.Fprintf(fp, []byte(" %11.3e\x00"), V[6*j-i][m])
 			}
 			noarch.Fprintf(fp, []byte("\n\x00"))
@@ -7640,7 +6659,7 @@ printf("  frel = %3d; m = %3d; n1 =%4d; n2 = %4d; nx = %3d L = %f \n", frel,m,n1
 			Z = 1
 		}
 	}
-	if (map[bool]int{false: 0, true: 1}[X != 0 && Y != 0 && Z != 0]) != 0 || D3_flag != 0 {
+	if X != 0 && Y != 0 && Z != 0 || D3_flag != 0 {
 		D3 = ' '
 		D2 = '#'
 	} else {
@@ -7651,7 +6670,7 @@ printf("  frel = %3d; m = %3d; n1 =%4d; n2 = %4d; nx = %3d L = %f \n", frel,m,n1
 		if (func() *noarch.File {
 			fpm = noarch.Fopen(plotpath, []byte("w\x00"))
 			return fpm
-		}()) == (nil) {
+		}()) == nil {
 			noarch.Sprintf(errMsg, []byte("\n  error: cannot open gnuplot script file: %s \n\x00"), plotpath)
 			errorMsg(errMsg)
 			os.Exit(23)
@@ -7660,7 +6679,7 @@ printf("  frel = %3d; m = %3d; n1 =%4d; n2 = %4d; nx = %3d L = %f \n", frel,m,n1
 		if (func() *noarch.File {
 			fpm = noarch.Fopen(plotpath, []byte("a\x00"))
 			return fpm
-		}()) == (nil) {
+		}()) == nil {
 			noarch.Sprintf(errMsg, []byte("\n  error: cannot open gnuplot script file: %s \n\x00"), plotpath)
 			errorMsg(errMsg)
 			os.Exit(24)
@@ -7735,7 +6754,7 @@ printf("  frel = %3d; m = %3d; n1 =%4d; n2 = %4d; nx = %3d L = %f \n", frel,m,n1
 		if (func() *noarch.File {
 			fpm = noarch.Fopen(meshpath, []byte("w\x00"))
 			return fpm
-		}()) == (nil) {
+		}()) == nil {
 			noarch.Sprintf(errMsg, []byte("\n  error: cannot open gnuplot undeformed mesh data file: %s\n\x00"), meshpath)
 			errorMsg(errMsg)
 			os.Exit(21)
@@ -7761,7 +6780,7 @@ printf("  frel = %3d; m = %3d; n1 =%4d; n2 = %4d; nx = %3d L = %f \n", frel,m,n1
 	if (func() *noarch.File {
 		fpm = noarch.Fopen(meshfl, []byte("w\x00"))
 		return fpm
-	}()) == (nil) {
+	}()) == nil {
 		noarch.Sprintf(errMsg, []byte("\n  error: cannot open gnuplot deformed mesh data file %s \n\x00"), meshfl)
 		errorMsg(errMsg)
 		os.Exit(22)
@@ -7779,7 +6798,7 @@ printf("  frel = %3d; m = %3d; n1 =%4d; n2 = %4d; nx = %3d L = %f \n", frel,m,n1
 		if (func() *noarch.File {
 			fpif = noarch.Fopen(fnif, []byte("r\x00"))
 			return fpif
-		}()) == (nil) {
+		}()) == nil {
 			noarch.Sprintf(errMsg, []byte("\n  error: cannot open interior force data file: %s \n\x00"), fnif)
 			errorMsg(errMsg)
 			os.Exit(20)
@@ -7850,18 +6869,9 @@ func modal_mesh(IN_file []byte, meshpath []byte, modepath []byte, plotpath []byt
 	msZ = dvector(int32(1), int32(DoF))
 	v = dvector(int32(1), int32(DoF))
 	for i = 1; i <= DoF; i++ {
-		func() float64 {
-			msZ[i] = 0
-			return msZ[i]
-		}()
-		func() float64 {
-			msY[i] = msZ[i]
-			return msY[i]
-		}()
-		func() float64 {
-			msX[i] = msY[i]
-			return msX[i]
-		}()
+		msZ[i] = 0
+		msY[i] = msZ[i]
+		msX[i] = msY[i]
 		for j = 1; j <= DoF; j += 6 {
 			msX[i] += M[i][j]
 		}
@@ -7880,7 +6890,7 @@ func modal_mesh(IN_file []byte, meshpath []byte, modepath []byte, plotpath []byt
 		if (func() *noarch.File {
 			fpm = noarch.Fopen(modefl, []byte("w\x00"))
 			return fpm
-		}()) == (nil) {
+		}()) == nil {
 			noarch.Sprintf(errMsg, []byte("\n  error: cannot open gnuplot modal mesh file: %s \n\x00"), modefl)
 			errorMsg(errMsg)
 			os.Exit(27)
@@ -7927,7 +6937,7 @@ func modal_mesh(IN_file []byte, meshpath []byte, modepath []byte, plotpath []byt
 				Z = 1
 			}
 		}
-		if (map[bool]int{false: 0, true: 1}[X != 0 && Y != 0 && Z != 0]) != 0 || D3_flag != 0 {
+		if X != 0 && Y != 0 && Z != 0 || D3_flag != 0 {
 			D3 = ' '
 			D2 = '#'
 		} else {
@@ -7937,7 +6947,7 @@ func modal_mesh(IN_file []byte, meshpath []byte, modepath []byte, plotpath []byt
 		if (func() *noarch.File {
 			fpm = noarch.Fopen(plotpath, []byte("a\x00"))
 			return fpm
-		}()) == (nil) {
+		}()) == nil {
 			noarch.Sprintf(errMsg, []byte("\n  error: cannot append gnuplot script file: %s \n\x00"), plotpath)
 			errorMsg(errMsg)
 			os.Exit(25)
@@ -8041,30 +7051,12 @@ func animate(IN_file []byte, meshpath []byte, modepath []byte, plotpath []byte, 
 			Z = 1
 		}
 		if j == 1 {
-			func() float32 {
-				x_max = float32(xyz[j].x)
-				return x_max
-			}()
-			func() float32 {
-				x_min = x_max
-				return x_min
-			}()
-			func() float32 {
-				y_max = float32(xyz[j].y)
-				return y_max
-			}()
-			func() float32 {
-				y_min = y_max
-				return y_min
-			}()
-			func() float32 {
-				z_max = float32(xyz[j].z)
-				return z_max
-			}()
-			func() float32 {
-				z_min = z_max
-				return z_min
-			}()
+			x_max = float32(xyz[j].x)
+			x_min = x_max
+			y_max = float32(xyz[j].y)
+			y_min = y_max
+			z_max = float32(xyz[j].z)
+			z_min = z_max
 		}
 		if xyz[j].x < float64(x_min) {
 			x_min = float32(xyz[j].x)
@@ -8085,7 +7077,7 @@ func animate(IN_file []byte, meshpath []byte, modepath []byte, plotpath []byte, 
 			z_max = float32(xyz[j].z)
 		}
 	}
-	if (map[bool]int{false: 0, true: 1}[X != 0 && Y != 0 && Z != 0]) != 0 || D3_flag != 0 {
+	if X != 0 && Y != 0 && Z != 0 || D3_flag != 0 {
 		D3 = ' '
 		D2 = '#'
 	} else {
@@ -8096,7 +7088,7 @@ func animate(IN_file []byte, meshpath []byte, modepath []byte, plotpath []byte, 
 	if (func() *noarch.File {
 		fpm = noarch.Fopen(plotpath, []byte("a\x00"))
 		return fpm
-	}()) == (nil) {
+	}()) == nil {
 		noarch.Sprintf(errMsg, []byte("\n  error: cannot append gnuplot script file: %s \n\x00"), plotpath)
 		errorMsg(errMsg)
 		os.Exit(26)
@@ -8142,10 +7134,7 @@ func animate(IN_file []byte, meshpath []byte, modepath []byte, plotpath []byte, 
 		total_frames = int(float32(2*CYCLES) * frames)
 		for c = 1; c <= CYCLES; c++ {
 			for fr = 0; float32(fr) <= frames; fr++ {
-				func() int {
-					frame_number += 1
-					return frame_number
-				}()
+				frame_number += 1
 				noarch.Sprintf(modefl, []byte("%s-%02d.%03d\x00"), modepath, m, fr)
 				noarch.Sprintf(framefl, []byte("%s-%02d-f-%03d.ps\x00"), modepath, m, fr)
 				noarch.Fprintf(fpm, []byte("%c plot '%s' u 2:3 w l lw 1 lt 5, \x00"), int(D2), meshpath)
@@ -8163,14 +7152,8 @@ func animate(IN_file []byte, meshpath []byte, modepath []byte, plotpath []byte, 
 				noarch.Fprintf(fpm, []byte("%c  load 'saveplot';\n\x00"), int(Movie))
 				noarch.Fprintf(fpm, []byte("%c  !mv my-plot.ps %s\n\x00"), int(Movie), framefl)
 			}
-			for fr = int(frames - float32(1)); fr > 0; func() int {
-				fr -= 1
-				return fr
-			}() {
-				func() int {
-					frame_number += 1
-					return frame_number
-				}()
+			for fr = int(frames - float32(1)); fr > 0; fr-- {
+				frame_number += 1
 				noarch.Sprintf(modefl, []byte("%s-%02d.%03d\x00"), modepath, m, fr)
 				noarch.Sprintf(framefl, []byte("%s-%02d-f-%03d.ps\x00"), modepath, m, fr)
 				noarch.Fprintf(fpm, []byte("%c plot '%s' u 2:3 w l lw 1 lt 5, \x00"), int(D2), meshpath)
@@ -8191,10 +7174,7 @@ func animate(IN_file []byte, meshpath []byte, modepath []byte, plotpath []byte, 
 		noarch.Fprintf(fpm, []byte(" '%s' u 1:2 w l lw 3 lt 3 \n\x00"), modefl)
 		noarch.Fprintf(fpm, []byte("%c splot '%s' u 2:3:4 w l lw %d lt 5, \x00"), int(D3), meshpath, lw)
 		noarch.Fprintf(fpm, []byte(" '%s' u 1:2:3 w l lw 3 lt 3 \n\x00"), modefl)
-		func() int {
-			i += 1
-			return i
-		}()
+		i += 1
 	}
 	noarch.Fclose(fpm)
 	v = dvector(int32(1), int32(DoF))
@@ -8208,7 +7188,7 @@ func animate(IN_file []byte, meshpath []byte, modepath []byte, plotpath []byte, 
 			if (func() *noarch.File {
 				fpm = noarch.Fopen(modefl, []byte("w\x00"))
 				return fpm
-			}()) == (nil) {
+			}()) == nil {
 				noarch.Sprintf(errMsg, []byte("\n  error: cannot open gnuplot modal mesh data file: %s \n\x00"), modefl)
 				errorMsg(errMsg)
 				os.Exit(28)
@@ -8230,10 +7210,7 @@ func animate(IN_file []byte, meshpath []byte, modepath []byte, plotpath []byte, 
 			}
 			noarch.Fclose(fpm)
 		}
-		func() int {
-			i += 1
-			return i
-		}()
+		i += 1
 	}
 	free_dvector(v, int32(1), int32(DoF))
 	return
@@ -8404,15 +7381,12 @@ func force_bent_beam(fpm *noarch.File, fpif *noarch.File, fnif []byte, nx int, n
 			if sfrv != 11 {
 				sferr(fnif)
 			}
-			func() int {
-				n += 1
-				return n
-			}()
+			n += 1
 		}
 		dX = exagg * (t1*float64(Dx) + t4*float64(Dy) + t7*float64(Dz))
 		dY = exagg * (t2*float64(Dx) + t5*float64(Dy) + t8*float64(Dz))
 		dZ = exagg * (t3*float64(Dx) + t6*float64(Dy) + t9*float64(Dz))
-		noarch.Fprintf(fpm, []byte(" %12.4e %12.4e %12.4e\n\x00"), xyz[n1].x+(float64(x)/L)*Lx+dX, xyz[n1].y+(float64(x)/L)*Ly+dY, xyz[n1].z+(float64(x)/L)*Lz+dZ)
+		noarch.Fprintf(fpm, []byte(" %12.4e %12.4e %12.4e\n\x00"), xyz[n1].x+float64(x)/L*Lx+dX, xyz[n1].y+float64(x)/L*Ly+dY, xyz[n1].z+float64(x)/L*Lz+dZ)
 	}
 	noarch.Fprintf(fpm, []byte("\n\n\x00"))
 	return
@@ -8446,52 +7420,46 @@ func my_itoa(n int, s []byte, k int) {
 	i = 0
 	for {
 		s[func() int {
-			i += 1
+			defer func() {
+				i += 1
+			}()
 			return i
 		}()] = byte(n%10 + int('0'))
-		if noarch.NotInt((map[bool]int{false: 0, true: 1}[(func() int {
+		if noarch.NotInt((map[bool]int{false: 0, true: 1}[func() int {
 			n /= 10
 			return n
-		}()) > 0])) != 0 {
+		}() > 0])) != 0 {
 			break
 		}
 	}
 	for i < k {
 		s[func() int {
-			i += 1
+			defer func() {
+				i += 1
+			}()
 			return i
 		}()] = '0'
 	}
 	if sign < 0 {
 		s[func() int {
-			i += 1
+			defer func() {
+				i += 1
+			}()
 			return i
 		}()] = '-'
 	}
 	s[i] = '\x00'
 	j = 0
 	for int(s[j]) != int('\x00') {
-		func() int {
-			j += 1
-			return j
-		}()
+		j += 1
 	}
-	func() int {
-		j -= 1
-		return j
-	}()
+	j -= 1
 	for i = 0; i < j; {
 		c = int(s[i])
 		s[i] = s[j]
 		s[j] = byte(c)
-		func() int {
-			i += 1
-			return i
-		}()
-		func() int {
-			j -= 1
-			return j
-		}()
+		i += 1
+		j -= 1
 	}
 	return
 }
@@ -8511,33 +7479,28 @@ printf(" Is .CSV? ... = %d \n", !strcmp(ext,".csv") );
 	var full_len int = 0
 	var len int = 0
 	for int(filename[func() int {
-		len += 1
+		defer func() {
+			len += 1
+		}()
 		return len
 	}()]) != int('\x00') {
 	}
 	full_len = len
 	for int(filename[func() int {
-		len -= 1
+		defer func() {
+			len -= 1
+		}()
 		return len
 	}()]) != int('.') && len > 0 {
 	}
 	if len == 0 {
 		len = full_len
 	}
-	func() int {
-		len += 1
-		return len
-	}()
+	len += 1
 	for i = 0; len < full_len; {
 		ext[i] = byte(linux.ToLower(int(filename[len])))
-		func() int {
-			i += 1
-			return i
-		}()
-		func() int {
-			len += 1
-			return len
-		}()
+		i += 1
+		len += 1
 	}
 	if noarch.NotInt(noarch.Strcmp(ext, []byte(".csv\x00"))) != 0 {
 		return (1)
@@ -8588,59 +7551,23 @@ printf(" Is .CSV? ... = %d \n", !strcmp(ext,".csv") );
 		textColor('y', 'b', 'b', 'x')
 		switch r {
 		case 0:
-			{
-				noarch.Fprintf(stdout, []byte(" * brilliant!  * \x00"))
-				break
-			}
-			fallthrough
+			noarch.Fprintf(stdout, []byte(" * brilliant!  * \x00"))
 		case 1:
-			{
-				noarch.Fprintf(stdout, []byte(" *  chuffed!   * \x00"))
-				break
-			}
-			fallthrough
+			noarch.Fprintf(stdout, []byte(" *  chuffed!   * \x00"))
 		case 2:
-			{
-				noarch.Fprintf(stdout, []byte(" *  woo-hoo!   * \x00"))
-				break
-			}
-			fallthrough
+			noarch.Fprintf(stdout, []byte(" *  woo-hoo!   * \x00"))
 		case 3:
-			{
-				noarch.Fprintf(stdout, []byte(" *  wicked!    * \x00"))
-				break
-			}
-			fallthrough
+			noarch.Fprintf(stdout, []byte(" *  wicked!    * \x00"))
 		case 4:
-			{
-				noarch.Fprintf(stdout, []byte(" *   beaut!    * \x00"))
-				break
-			}
-			fallthrough
+			noarch.Fprintf(stdout, []byte(" *   beaut!    * \x00"))
 		case 5:
-			{
-				noarch.Fprintf(stdout, []byte(" *   flash!    * \x00"))
-				break
-			}
-			fallthrough
+			noarch.Fprintf(stdout, []byte(" *   flash!    * \x00"))
 		case 6:
-			{
-				noarch.Fprintf(stdout, []byte(" *  well done! * \x00"))
-				break
-			}
-			fallthrough
+			noarch.Fprintf(stdout, []byte(" *  well done! * \x00"))
 		case 7:
-			{
-				noarch.Fprintf(stdout, []byte(" *  priceless! * \x00"))
-				break
-			}
-			fallthrough
+			noarch.Fprintf(stdout, []byte(" *  priceless! * \x00"))
 		case 8:
-			{
-				noarch.Fprintf(stdout, []byte(" *  sweet as!  * \x00"))
-				break
-			}
-			fallthrough
+			noarch.Fprintf(stdout, []byte(" *  sweet as!  * \x00"))
 		case 9:
 			{
 				noarch.Fprintf(stdout, []byte(" *good as gold!* \x00"))
@@ -8656,59 +7583,23 @@ printf(" Is .CSV? ... = %d \n", !strcmp(ext,".csv") );
 		textColor('y', 'g', 'b', 'x')
 		switch r {
 		case 0:
-			{
-				noarch.Fprintf(stdout, []byte("   acceptable!   \x00"))
-				break
-			}
-			fallthrough
+			noarch.Fprintf(stdout, []byte("   acceptable!   \x00"))
 		case 1:
-			{
-				noarch.Fprintf(stdout, []byte("      bling!     \x00"))
-				break
-			}
-			fallthrough
+			noarch.Fprintf(stdout, []byte("      bling!     \x00"))
 		case 2:
-			{
-				noarch.Fprintf(stdout, []byte("  that will do!  \x00"))
-				break
-			}
-			fallthrough
+			noarch.Fprintf(stdout, []byte("  that will do!  \x00"))
 		case 3:
-			{
-				noarch.Fprintf(stdout, []byte("   not shabby!   \x00"))
-				break
-			}
-			fallthrough
+			noarch.Fprintf(stdout, []byte("   not shabby!   \x00"))
 		case 4:
-			{
-				noarch.Fprintf(stdout, []byte("   reasonable!   \x00"))
-				break
-			}
-			fallthrough
+			noarch.Fprintf(stdout, []byte("   reasonable!   \x00"))
 		case 5:
-			{
-				noarch.Fprintf(stdout, []byte("   very good!    \x00"))
-				break
-			}
-			fallthrough
+			noarch.Fprintf(stdout, []byte("   very good!    \x00"))
 		case 6:
-			{
-				noarch.Fprintf(stdout, []byte("   up to snuff!  \x00"))
-				break
-			}
-			fallthrough
+			noarch.Fprintf(stdout, []byte("   up to snuff!  \x00"))
 		case 7:
-			{
-				noarch.Fprintf(stdout, []byte("     bully!      \x00"))
-				break
-			}
-			fallthrough
+			noarch.Fprintf(stdout, []byte("     bully!      \x00"))
 		case 8:
-			{
-				noarch.Fprintf(stdout, []byte("      nice!      \x00"))
-				break
-			}
-			fallthrough
+			noarch.Fprintf(stdout, []byte("      nice!      \x00"))
 		case 9:
 			{
 				noarch.Fprintf(stdout, []byte("     choice!     \x00"))
@@ -8724,59 +7615,23 @@ printf(" Is .CSV? ... = %d \n", !strcmp(ext,".csv") );
 		textColor('y', 'c', 'b', 'x')
 		switch r {
 		case 0:
-			{
-				noarch.Fprintf(stdout, []byte(" adequate. \x00"))
-				break
-			}
-			fallthrough
+			noarch.Fprintf(stdout, []byte(" adequate. \x00"))
 		case 1:
-			{
-				noarch.Fprintf(stdout, []byte(" passable. \x00"))
-				break
-			}
-			fallthrough
+			noarch.Fprintf(stdout, []byte(" passable. \x00"))
 		case 2:
-			{
-				noarch.Fprintf(stdout, []byte(" all right. \x00"))
-				break
-			}
-			fallthrough
+			noarch.Fprintf(stdout, []byte(" all right. \x00"))
 		case 3:
-			{
-				noarch.Fprintf(stdout, []byte(" ok. \x00"))
-				break
-			}
-			fallthrough
+			noarch.Fprintf(stdout, []byte(" ok. \x00"))
 		case 4:
-			{
-				noarch.Fprintf(stdout, []byte(" not bad. \x00"))
-				break
-			}
-			fallthrough
+			noarch.Fprintf(stdout, []byte(" not bad. \x00"))
 		case 5:
-			{
-				noarch.Fprintf(stdout, []byte(" fine. \x00"))
-				break
-			}
-			fallthrough
+			noarch.Fprintf(stdout, []byte(" fine. \x00"))
 		case 6:
-			{
-				noarch.Fprintf(stdout, []byte(" fair. \x00"))
-				break
-			}
-			fallthrough
+			noarch.Fprintf(stdout, []byte(" fair. \x00"))
 		case 7:
-			{
-				noarch.Fprintf(stdout, []byte(" respectable. \x00"))
-				break
-			}
-			fallthrough
+			noarch.Fprintf(stdout, []byte(" respectable. \x00"))
 		case 8:
-			{
-				noarch.Fprintf(stdout, []byte(" tolerable. \x00"))
-				break
-			}
-			fallthrough
+			noarch.Fprintf(stdout, []byte(" tolerable. \x00"))
 		case 9:
 			{
 				noarch.Fprintf(stdout, []byte(" just ok. \x00"))
@@ -8792,59 +7647,23 @@ printf(" Is .CSV? ... = %d \n", !strcmp(ext,".csv") );
 		textColor('y', 'r', 'b', 'x')
 		switch r {
 		case 0:
-			{
-				noarch.Fprintf(stdout, []byte(" abominable! \x00"))
-				break
-			}
-			fallthrough
+			noarch.Fprintf(stdout, []byte(" abominable! \x00"))
 		case 1:
-			{
-				noarch.Fprintf(stdout, []byte(" puckeroo! \x00"))
-				break
-			}
-			fallthrough
+			noarch.Fprintf(stdout, []byte(" puckeroo! \x00"))
 		case 2:
-			{
-				noarch.Fprintf(stdout, []byte(" atrocious! \x00"))
-				break
-			}
-			fallthrough
+			noarch.Fprintf(stdout, []byte(" atrocious! \x00"))
 		case 3:
-			{
-				noarch.Fprintf(stdout, []byte(" not ok! \x00"))
-				break
-			}
-			fallthrough
+			noarch.Fprintf(stdout, []byte(" not ok! \x00"))
 		case 4:
-			{
-				noarch.Fprintf(stdout, []byte(" wonky! \x00"))
-				break
-			}
-			fallthrough
+			noarch.Fprintf(stdout, []byte(" wonky! \x00"))
 		case 5:
-			{
-				noarch.Fprintf(stdout, []byte(" crappy! \x00"))
-				break
-			}
-			fallthrough
+			noarch.Fprintf(stdout, []byte(" crappy! \x00"))
 		case 6:
-			{
-				noarch.Fprintf(stdout, []byte(" oh noooo! \x00"))
-				break
-			}
-			fallthrough
+			noarch.Fprintf(stdout, []byte(" oh noooo! \x00"))
 		case 7:
-			{
-				noarch.Fprintf(stdout, []byte(" abominable! \x00"))
-				break
-			}
-			fallthrough
+			noarch.Fprintf(stdout, []byte(" abominable! \x00"))
 		case 8:
-			{
-				noarch.Fprintf(stdout, []byte(" munted! \x00"))
-				break
-			}
-			fallthrough
+			noarch.Fprintf(stdout, []byte(" munted! \x00"))
 		case 9:
 			{
 				noarch.Fprintf(stdout, []byte(" awful! \x00"))
@@ -8912,42 +7731,15 @@ func coord_trans(xyz []vec3, L float64, n1 int, n2 int, t1 []float64, t2 []float
 	Cx = (xyz[n2].x - xyz[n1].x) / L
 	Cy = (xyz[n2].y - xyz[n1].y) / L
 	Cz = (xyz[n2].z - xyz[n1].z) / L
-	func() float64 {
-		t9[0] = 0
-		return t9[0]
-	}()
-	func() float64 {
-		t8[0] = t9[0]
-		return t8[0]
-	}()
-	func() float64 {
-		t7[0] = t8[0]
-		return t7[0]
-	}()
-	func() float64 {
-		t6[0] = t7[0]
-		return t6[0]
-	}()
-	func() float64 {
-		t5[0] = t6[0]
-		return t5[0]
-	}()
-	func() float64 {
-		t4[0] = t5[0]
-		return t4[0]
-	}()
-	func() float64 {
-		t3[0] = t4[0]
-		return t3[0]
-	}()
-	func() float64 {
-		t2[0] = t3[0]
-		return t2[0]
-	}()
-	func() float64 {
-		t1[0] = t2[0]
-		return t1[0]
-	}()
+	t9[0] = 0
+	t8[0] = t9[0]
+	t7[0] = t8[0]
+	t6[0] = t7[0]
+	t5[0] = t6[0]
+	t4[0] = t5[0]
+	t3[0] = t4[0]
+	t2[0] = t3[0]
+	t1[0] = t2[0]
 	Cp = math.Cos(float64(p))
 	Sp = math.Sin(float64(p))
 	if math.Abs(Cz) == 1 {
@@ -9000,22 +7792,10 @@ func atma(t1 float64, t2 float64, t3 float64, t4 float64, t5 float64, t6 float64
 	ma = dmatrix(int32(1), int32(12), int32(1), int32(12))
 	for i = 1; i <= 12; i++ {
 		for j = i; j <= 12; j++ {
-			func() float64 {
-				a[i][j] = 0
-				return a[i][j]
-			}()
-			func() float64 {
-				a[j][i] = a[i][j]
-				return a[j][i]
-			}()
-			func() float64 {
-				ma[i][j] = a[j][i]
-				return ma[i][j]
-			}()
-			func() float64 {
-				ma[j][i] = ma[i][j]
-				return ma[j][i]
-			}()
+			a[i][j] = 0
+			a[j][i] = a[i][j]
+			ma[i][j] = a[j][i]
+			ma[j][i] = ma[i][j]
 		}
 	}
 	for i = 0; i <= 3; i++ {
@@ -9038,14 +7818,8 @@ func atma(t1 float64, t2 float64, t3 float64, t4 float64, t5 float64, t6 float64
 	}
 	for i = 1; i <= 12; i++ {
 		for j = i; j <= 12; j++ {
-			func() float64 {
-				m[i][j] = 0
-				return m[i][j]
-			}()
-			func() float64 {
-				m[j][i] = m[i][j]
-				return m[j][i]
-			}()
+			m[i][j] = 0
+			m[j][i] = m[i][j]
 		}
 	}
 	for j = 1; j <= 12; j++ {
@@ -9061,8 +7835,8 @@ func atma(t1 float64, t2 float64, t3 float64, t4 float64, t5 float64, t6 float64
 
 // subspace - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/eig.c:66
 // Warning (ParenExpr):  :0 : Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Error (IfStmt):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
+// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
+// Error (IfStmt):  :0 : Cannot transpileToExpr. err = Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 /*
  This file is part of FRAME3DD:
  Static and dynamic structural analysis of 2D and 3D frames and trusses with
@@ -9141,42 +7915,18 @@ func subspace(K [][]float64, M [][]float64, n int, m int, w []float64, V [][]flo
 	for i = 1; i <= m; i++ {
 		idx[i] = 0
 		for j = i; j <= m; j++ {
-			func() float64 {
-				Qb[j][i] = 0
-				return Qb[j][i]
-			}()
-			func() float64 {
-				Qb[i][j] = Qb[j][i]
-				return Qb[i][j]
-			}()
-			func() float64 {
-				Mb[j][i] = Qb[i][j]
-				return Mb[j][i]
-			}()
-			func() float64 {
-				Mb[i][j] = Mb[j][i]
-				return Mb[i][j]
-			}()
-			func() float64 {
-				Kb[j][i] = Mb[i][j]
-				return Kb[j][i]
-			}()
-			func() float64 {
-				Kb[i][j] = Kb[j][i]
-				return Kb[i][j]
-			}()
+			Qb[j][i] = 0
+			Qb[i][j] = Qb[j][i]
+			Mb[j][i] = Qb[i][j]
+			Mb[i][j] = Mb[j][i]
+			Kb[j][i] = Mb[i][j]
+			Kb[i][j] = Kb[j][i]
 		}
 	}
 	for i = 1; i <= n; i++ {
 		for j = 1; j <= m; j++ {
-			func() float64 {
-				V[i][j] = 0
-				return V[i][j]
-			}()
-			func() float64 {
-				Xb[i][j] = V[i][j]
-				return Xb[i][j]
-			}()
+			V[i][j] = 0
+			Xb[i][j] = V[i][j]
 		}
 	}
 	modes = (func() int {
@@ -9234,40 +7984,20 @@ func subspace(K [][]float64, M [][]float64, n int, m int, w []float64, V [][]flo
 		ok[0] = idx[k] % 6
 		switch ok[0] {
 		case 1:
-			{
-				i = 1
-				j = 2
-				break
-			}
-			fallthrough
+			i = 1
+			j = 2
 		case 2:
-			{
-				i = -1
-				j = 1
-				break
-			}
-			fallthrough
+			i = -1
+			j = 1
 		case 3:
-			{
-				i = -1
-				j = -2
-				break
-			}
-			fallthrough
+			i = -1
+			j = -2
 		case 4:
-			{
-				i = 1
-				j = 2
-				break
-			}
-			fallthrough
+			i = 1
+			j = 2
 		case 5:
-			{
-				i = -1
-				j = 1
-				break
-			}
-			fallthrough
+			i = -1
+			j = 1
 		case 0:
 			{
 				i = -1
@@ -9286,10 +8016,10 @@ func subspace(K [][]float64, M [][]float64, n int, m int, w []float64, V [][]flo
 			if disp != 0 {
 				noarch.Fprintf(stdout, []byte("  RMS matrix error:\x00"))
 			}
-			error = float64(func() int {
+			error = float64((func() int {
 				ok[0] = 1
 				return ok[0]
-			}())
+			}()))
 			for {
 				ldl_mprove(K, n, u, v, d, (*[1]float64)(unsafe.Pointer(&error))[:], ok)
 				if disp != 0 {
@@ -9314,10 +8044,7 @@ func subspace(K [][]float64, M [][]float64, n int, m int, w []float64, V [][]flo
 			os.Exit(32)
 		}
 		error = math.Abs(w[modes]-w_old) / w[modes]
-		func() int {
-			(iter[0]) += 1
-			return (iter[0])
-		}()
+		iter[0] += 1
 		if disp != 0 {
 			noarch.Fprintf(stdout, []byte(" iter = %d  w[%d] = %f error = %e\n\x00"), iter[0], modes, w[modes], error)
 		}
@@ -9389,48 +8116,18 @@ func jacobi(K [][]float64, M [][]float64, E []float64, V [][]float64, n int) {
 	var gamma float64
 	var s float64
 	var tol float64 = 0
-	func() float64 {
-		Vkj = 0
-		return Vkj
-	}()
-	func() float64 {
-		Vki = Vkj
-		return Vki
-	}()
-	func() float64 {
-		Mij = Vki
-		return Mij
-	}()
-	func() float64 {
-		Mjj = Mij
-		return Mjj
-	}()
-	func() float64 {
-		Mii = Mjj
-		return Mii
-	}()
-	func() float64 {
-		Kij = Mii
-		return Kij
-	}()
-	func() float64 {
-		Kjj = Kij
-		return Kjj
-	}()
-	func() float64 {
-		Kii = Kjj
-		return Kii
-	}()
+	Vkj = 0
+	Vki = Vkj
+	Mij = Vki
+	Mjj = Mij
+	Mii = Mjj
+	Kij = Mii
+	Kjj = Kij
+	Kii = Kjj
 	for i = 1; i <= n; i++ {
 		for j = i + 1; j <= n; j++ {
-			func() float64 {
-				V[j][i] = 0
-				return V[j][i]
-			}()
-			func() float64 {
-				V[i][j] = V[j][i]
-				return V[i][j]
-			}()
+			V[j][i] = 0
+			V[i][j] = V[j][i]
 		}
 	}
 	for d = 1; d <= n; d++ {
@@ -9439,8 +8136,8 @@ func jacobi(K [][]float64, M [][]float64, E []float64, V [][]float64, n int) {
 	for iter = 1; iter <= 2*n; iter++ {
 		tol = math.Pow(0.01, float64((2 * iter)))
 		tol = 0
-		for d = 1; d <= (n - 1); d++ {
-			for i = 1; i <= (n - d); i++ {
+		for d = 1; d <= n-1; d++ {
+			for i = 1; i <= n-d; i++ {
 				j = i + d
 				Kij = K[i][j]
 				Mij = M[i][j]
@@ -9505,32 +8202,14 @@ func rotate(A [][]float64, n int, alpha float64, beta float64, i int, j int) {
 	A[j][j] = Ajj + float64(2)*alpha*Aij + alpha*alpha*Aii
 	for k = 1; k <= n; k++ {
 		if k != i && k != j {
-			func() float64 {
-				A[i][k] = Ai[k] + beta*Aj[k]
-				return A[i][k]
-			}()
-			func() float64 {
-				A[k][i] = A[i][k]
-				return A[k][i]
-			}()
-			func() float64 {
-				A[j][k] = Aj[k] + alpha*Ai[k]
-				return A[j][k]
-			}()
-			func() float64 {
-				A[k][j] = A[j][k]
-				return A[k][j]
-			}()
+			A[i][k] = Ai[k] + beta*Aj[k]
+			A[k][i] = A[i][k]
+			A[j][k] = Aj[k] + alpha*Ai[k]
+			A[k][j] = A[j][k]
 		}
 	}
-	func() float64 {
-		A[i][j] = float64(0)
-		return A[i][j]
-	}()
-	func() float64 {
-		A[j][i] = A[i][j]
-		return A[j][i]
-	}()
+	A[i][j] = float64(0)
+	A[j][i] = A[i][j]
 	free_dvector(Ai, int32(1), int32(n))
 	free_dvector(Aj, int32(1), int32(n))
 	return
@@ -9538,8 +8217,8 @@ func rotate(A [][]float64, n int, alpha float64, beta float64, i int, j int) {
 
 // stodola - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/eig.c:363
 // Warning (ParenExpr):  :0 : Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Error (IfStmt):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
+// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
+// Error (IfStmt):  :0 : Cannot transpileToExpr. err = Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 /*------------------------------------------------------------------------------
 STODOLA  -  calculate the lowest m eigen-values and eigen-vectors of the
 generalized eigen-problem, K v = w M v, using a matrix iteration approach
@@ -9598,10 +8277,10 @@ func stodola(K [][]float64, M [][]float64, n int, m int, w []float64, V [][]floa
 		if disp != 0 {
 			noarch.Fprintf(stdout, []byte("  RMS matrix error:\x00"))
 		}
-		error = float64(func() int {
+		error = float64((func() int {
 			ok[0] = 1
 			return ok[0]
-		}())
+		}()))
 		for {
 			ldl_mprove(K, n, u, v, d, (*[1]float64)(unsafe.Pointer(&error))[:], ok)
 			if disp != 0 {
@@ -9621,14 +8300,8 @@ func stodola(K [][]float64, M [][]float64, n int, m int, w []float64, V [][]floa
 			d_max = D[i][i]
 		}
 	}
-	func() float64 {
-		d_min = d_max
-		return d_min
-	}()
-	func() float64 {
-		d_old = d_min
-		return d_old
-	}()
+	d_min = d_max
+	d_old = d_min
 	for i = 1; i <= n; i++ {
 		if D[i][i] < d_min {
 			d_min = D[i][i]
@@ -9694,16 +8367,13 @@ func stodola(K [][]float64, M [][]float64, n int, m int, w []float64, V [][]floa
 			}
 			RQold = RQ
 			RQ = xtAy(u, K, u, n, d)
-			func() int {
-				(iter[0]) += 1
-				return (iter[0])
-			}()
+			iter[0] += 1
 			if iter[0] > 1000 {
 				noarch.Sprintf(errMsg, []byte("  stodola: Iteration limit exceeded\n  rel. error = %e > %e\n\x00"), (math.Abs(RQ-RQold) / RQ), tol)
 				errorMsg(errMsg)
 				os.Exit(32)
 			}
-			if noarch.NotInt((map[bool]int{false: 0, true: 1}[(math.Abs(RQ-RQold)/RQ) > tol])) != 0 {
+			if noarch.NotInt((map[bool]int{false: 0, true: 1}[math.Abs(RQ-RQold)/RQ > tol])) != 0 {
 				break
 			}
 		}
@@ -9746,10 +8416,10 @@ func eigsort(e []float64, v [][]float64, n int, m int) {
 		p = e[k]
 		for j = i + 1; j <= m; j++ {
 			if e[j] <= p {
-				p = e[func() int {
+				p = e[(func() int {
 					k = j
 					return k
-				}()]
+				}())]
 			}
 		}
 		if k != i {
@@ -9924,20 +8594,17 @@ func gaussj(A [][]float32, n int, B [][]float32, m int) {
 				}
 			}
 		}
-		func() int {
-			(ipiv[icol]) += 1
-			return (ipiv[icol])
-		}()
+		ipiv[icol] += 1
 		if irow != icol {
 			for l = 1; l <= n; l++ {
-				temp = (A[irow][l])
-				(A[irow][l]) = (A[icol][l])
-				(A[icol][l]) = temp
+				temp = A[irow][l]
+				A[irow][l] = A[icol][l]
+				A[icol][l] = temp
 			}
 			for l = 1; l <= m; l++ {
-				temp = (B[irow][l])
-				(B[irow][l]) = (B[icol][l])
-				(B[icol][l]) = temp
+				temp = B[irow][l]
+				B[irow][l] = B[icol][l]
+				B[icol][l] = temp
 			}
 		}
 		indxr[i] = irow
@@ -9966,15 +8633,12 @@ func gaussj(A [][]float32, n int, B [][]float32, m int) {
 			}
 		}
 	}
-	for l = n; l >= 1; func() int {
-		l -= 1
-		return l
-	}() {
+	for l = n; l >= 1; l-- {
 		if indxr[l] != indxc[l] {
 			for k = 1; k <= n; k++ {
-				temp = (A[k][indxr[l]])
-				(A[k][indxr[l]]) = (A[k][indxc[l]])
-				(A[k][indxc[l]]) = temp
+				temp = A[k][indxr[l]]
+				A[k][indxr[l]] = A[k][indxc[l]]
+				A[k][indxc[l]] = temp
 			}
 		}
 	}
@@ -10034,10 +8698,7 @@ func lu_dcmp(A [][]float64, n int, b []float64, reduce int, solve int, pd []int)
 				b[i] -= A[i][k] * b[k]
 			}
 		}
-		for j = n; j >= 2; func() int {
-			j -= 1
-			return j
-		}() {
+		for j = n; j >= 2; j-- {
 			for i = 1; i <= j-1; i++ {
 				b[i] -= b[j] * A[i][j] / A[j][j]
 			}
@@ -10088,10 +8749,7 @@ func ldl_dcmp(A [][]float64, n int, d []float64, b []float64, x []float64, reduc
 				i = 1
 				for i = 1; i < j; i++ {
 					if A[i][j] == 0 {
-						func() int {
-							m += 1
-							return m
-						}()
+						m += 1
 					} else {
 						break
 					}
@@ -10116,10 +8774,7 @@ func ldl_dcmp(A [][]float64, n int, d []float64, b []float64, x []float64, reduc
 				return
 			}
 			if d[j] < 0 {
-				func() int {
-					(pd[0]) -= 1
-					return (pd[0])
-				}()
+				pd[0] -= 1
 			}
 		}
 	}
@@ -10133,10 +8788,7 @@ func ldl_dcmp(A [][]float64, n int, d []float64, b []float64, x []float64, reduc
 		for i = 1; i <= n; i++ {
 			x[i] /= d[i]
 		}
-		for i = n; i > 1; func() int {
-			i -= 1
-			return i
-		}() {
+		for i = n; i > 1; i-- {
 			for j = 1; j < i; j++ {
 				x[j] -= A[i][j] * x[i]
 			}
@@ -10239,10 +8891,7 @@ func ldl_dcmp_pm(A [][]float64, n int, d []float64, b []float64, x []float64, c 
 					i = 1
 					for i = 1; i < j; i++ {
 						if A[i][j] == 0 {
-							func() int {
-								m += 1
-								return m
-							}()
+							m += 1
 						} else {
 							break
 						}
@@ -10275,10 +8924,7 @@ func ldl_dcmp_pm(A [][]float64, n int, d []float64, b []float64, x []float64, c 
 					return
 				}
 				if d[j] < 0 {
-					func() int {
-						(pd[0]) -= 1
-						return (pd[0])
-					}()
+					pd[0] -= 1
 				}
 			}
 		}
@@ -10308,10 +8954,7 @@ func ldl_dcmp_pm(A [][]float64, n int, d []float64, b []float64, x []float64, c 
 				x[i] /= d[i]
 			}
 		}
-		for i = n; i > 1; func() int {
-			i -= 1
-			return i
-		}() {
+		for i = n; i > 1; i-- {
 			if q[i] != 0 {
 				for j = 1; j < i; j++ {
 					if q[j] != 0 {
@@ -10458,8 +9101,8 @@ func PSB_update(B [][]float64, f []float64, d []float64, n int) {
 
 // pseudo_inv - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/HPGmatrix.c:580
 // Warning (ParenExpr):  :0 : Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Error (IfStmt):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
+// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
+// Error (IfStmt):  :0 : Cannot transpileToExpr. err = Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 /*
  * PSEUDO_INV - calculate the pseudo-inverse of A ,
  * 	     Ai = inv ( A'*A + beta * trace(A'*A) * I ) * A'
@@ -10488,27 +9131,12 @@ func pseudo_inv(A [][]float64, Ai [][]float64, n int, m int, beta float64, verbo
 		noarch.Fprintf(stderr, []byte(" pseudo_inv: warning beta = %lf\n\x00"), beta)
 	}
 	for i = 1; i <= n; i++ {
-		func() float64 {
-			b[i] = 0
-			return b[i]
-		}()
-		func() float64 {
-			x[i] = b[i]
-			return x[i]
-		}()
-		func() float64 {
-			diag[i] = x[i]
-			return diag[i]
-		}()
+		b[i] = 0
+		x[i] = b[i]
+		diag[i] = x[i]
 		for j = i; j <= n; j++ {
-			func() float64 {
-				AtA[j][i] = 0
-				return AtA[j][i]
-			}()
-			func() float64 {
-				AtA[i][j] = AtA[j][i]
-				return AtA[i][j]
-			}()
+			AtA[j][i] = 0
+			AtA[i][j] = AtA[j][i]
 		}
 	}
 	for i = 1; i <= n; i++ {
@@ -10522,14 +9150,8 @@ func pseudo_inv(A [][]float64, Ai [][]float64, n int, m int, beta float64, verbo
 	}
 	for i = 1; i <= n; i++ {
 		for j = i; j <= n; j++ {
-			func() float64 {
-				AtA[j][i] = 0.5 * (AtA[i][j] + AtA[j][i])
-				return AtA[j][i]
-			}()
-			func() float64 {
-				AtA[i][j] = AtA[j][i]
-				return AtA[i][j]
-			}()
+			AtA[j][i] = 0.5 * (AtA[i][j] + AtA[j][i])
+			AtA[i][j] = AtA[j][i]
 		}
 	}
 	tr_AtA = 0
@@ -10566,14 +9188,8 @@ func pseudo_inv(A [][]float64, Ai [][]float64, n int, m int, beta float64, verbo
 	}
 	for i = 1; i <= n; i++ {
 		for j = i; j <= n; j++ {
-			func() float64 {
-				AtAi[j][i] = 0.5 * (AtAi[i][j] + AtAi[j][i])
-				return AtAi[j][i]
-			}()
-			func() float64 {
-				AtAi[i][j] = AtAi[j][i]
-				return AtAi[i][j]
-			}()
+			AtAi[j][i] = 0.5 * (AtAi[i][j] + AtAi[j][i])
+			AtAi[i][j] = AtAi[j][i]
 		}
 	}
 	for i = 1; i <= n; i++ {
@@ -10639,8 +9255,8 @@ func pseudo_inv(A [][]float64, Ai [][]float64, n int, m int, beta float64, verbo
 
 // invAB - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/HPGmatrix.c:701
 // Warning (ParenExpr):  :0 : Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Error (IfStmt):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
+// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
+// Error (IfStmt):  :0 : Cannot transpileToExpr. err = Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 /*
  * INVAB  -  calculate product inv(A) * B
  *	 A is n by n      B is n by m				    6jun07
@@ -10657,14 +9273,8 @@ func invAB(A [][]float64, B [][]float64, n int, m int, AiB [][]float64, ok []int
 	x = dvector(int32(1), int32(n))
 	b = dvector(int32(1), int32(n))
 	for i = 1; i <= n; i++ {
-		func() float64 {
-			x[i] = 0
-			return x[i]
-		}()
-		func() float64 {
-			diag[i] = x[i]
-			return diag[i]
-		}()
+		x[i] = 0
+		diag[i] = x[i]
 	}
 	ldl_dcmp(A, n, diag, b, x, 1, 0, ok)
 	if ok[0] < 0 {
@@ -10679,10 +9289,10 @@ func invAB(A [][]float64, B [][]float64, n int, m int, AiB [][]float64, ok []int
 		if verbose != 0 {
 			noarch.Fprintf(stdout, []byte("    LDL' RMS matrix precision:\x00"))
 		}
-		error = float64(func() int {
+		error = float64((func() int {
 			ok[0] = 1
 			return ok[0]
-		}())
+		}()))
 		for {
 			ldl_mprove(A, n, diag, b, x, (*[1]float64)(unsafe.Pointer(&error))[:], ok)
 			if verbose != 0 {
@@ -10703,8 +9313,8 @@ func invAB(A [][]float64, B [][]float64, n int, m int, AiB [][]float64, ok []int
 
 // xtinvAy - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/HPGmatrix.c:744
 // Warning (ParenExpr):  :0 : Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Error (IfStmt):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
+// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
+// Error (IfStmt):  :0 : Cannot transpileToExpr. err = Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 /*
  * XTinvAY  -  calculate quadratic form with inverse matrix   X' * inv(A) * Y
  *	   A is n by n    X is n by m     Y is n by m		    15sep01
@@ -10722,14 +9332,8 @@ func xtinvAy(X [][]float64, A [][]float64, Y [][]float64, n int, m int, Ac [][]f
 	x = dvector(int32(1), int32(n))
 	y = dvector(int32(1), int32(n))
 	for i = 1; i <= n; i++ {
-		func() float64 {
-			x[i] = 0
-			return x[i]
-		}()
-		func() float64 {
-			diag[i] = x[i]
-			return diag[i]
-		}()
+		x[i] = 0
+		diag[i] = x[i]
 	}
 	ldl_dcmp(A, n, diag, y, x, 1, 0, (*[1]int)(unsafe.Pointer(&ok))[:])
 	for j = 1; j <= m; j++ {
@@ -10740,10 +9344,10 @@ func xtinvAy(X [][]float64, A [][]float64, Y [][]float64, n int, m int, Ac [][]f
 		if verbose != 0 {
 			noarch.Fprintf(stdout, []byte("    LDL' RMS matrix precision:\x00"))
 		}
-		error = float64(func() int {
+		error = float64((func() int {
 			ok = 1
 			return ok
-		}())
+		}()))
 		for {
 			ldl_mprove(A, n, diag, y, x, (*[1]float64)(unsafe.Pointer(&error))[:], (*[1]int)(unsafe.Pointer(&ok))[:])
 			if verbose != 0 {
@@ -10774,8 +9378,8 @@ func xtinvAy(X [][]float64, A [][]float64, Y [][]float64, n int, m int, Ac [][]f
 	var R2 float32
 	var i int
 	for i = 1; i <= n; i++ {
-		R1 = float32((math.Cos(math.Mod(float64((theta)), float64(360))*3.141592653589793/float64(180)))*float64(R[1][i]) - (math.Sin(math.Mod(float64((theta)), float64(360))*3.141592653589793/float64(180)))*float64(R[2][i]))
-		R2 = float32((math.Sin(math.Mod(float64((theta)), float64(360))*3.141592653589793/float64(180)))*float64(R[1][i]) + (math.Cos(math.Mod(float64((theta)), float64(360))*3.141592653589793/float64(180)))*float64(R[2][i]))
+		R1 = float32(math.Cos(math.Mod(float64((theta)), float64(360))*3.141592653589793/float64(180))*float64(R[1][i]) - math.Sin(math.Mod(float64((theta)), float64(360))*3.141592653589793/float64(180))*float64(R[2][i]))
+		R2 = float32(math.Sin(math.Mod(float64((theta)), float64(360))*3.141592653589793/float64(180))*float64(R[1][i]) + math.Cos(math.Mod(float64((theta)), float64(360))*3.141592653589793/float64(180))*float64(R[2][i]))
 		Rr[1][i] = R1
 		Rr[2][i] = R2
 	}
@@ -10823,14 +9427,8 @@ func xtAx(A [][]float64, X [][]float64, C [][]float64, N int, J int) {
 	}
 	for i = 1; i <= J; i++ {
 		for j = i; j <= J; j++ {
-			func() float64 {
-				C[j][i] = 0.5 * (C[i][j] + C[j][i])
-				return C[j][i]
-			}()
-			func() float64 {
-				C[i][j] = C[j][i]
-				return C[i][j]
-			}()
+			C[j][i] = 0.5 * (C[i][j] + C[j][i])
+			C[i][j] = C[j][i]
 		}
 	}
 	free_dmatrix(AX, int32(1), int32(N), int32(1), int32(J))
@@ -10864,8 +9462,8 @@ func xtAy(x []float64, A [][]float64, y []float64, n int, d []float64) float64 {
 
 // invAXinvA - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/HPGmatrix.c:866
 // Warning (ParenExpr):  :0 : Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Error (IfStmt):  :0 : Cannot transpile UnaryOperator: err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
+// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
+// Error (IfStmt):  :0 : Cannot transpileToExpr. err = Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 /*
  * invAXinvA -  calculate quadratic form with inverse matrix
  *	   replace X with inv(A) * X * inv(A)
@@ -10889,27 +9487,12 @@ func invAXinvA(A [][]float64, X [][]float64, n int, verbose int) {
 	Ai = dmatrix(int32(1), int32(n), int32(1), int32(n))
 	XAi = dmatrix(int32(1), int32(n), int32(1), int32(n))
 	for i = 1; i <= n; i++ {
-		func() float64 {
-			b[i] = 0
-			return b[i]
-		}()
-		func() float64 {
-			x[i] = b[i]
-			return x[i]
-		}()
-		func() float64 {
-			diag[i] = x[i]
-			return diag[i]
-		}()
+		b[i] = 0
+		x[i] = b[i]
+		diag[i] = x[i]
 		for j = 1; j <= n; j++ {
-			func() float64 {
-				Ai[i][j] = 0
-				return Ai[i][j]
-			}()
-			func() float64 {
-				XAi[i][j] = Ai[i][j]
-				return XAi[i][j]
-			}()
+			Ai[i][j] = 0
+			XAi[i][j] = Ai[i][j]
 		}
 	}
 	ldl_dcmp(A, n, diag, b, x, 1, 0, (*[1]int)(unsafe.Pointer(&ok))[:])
@@ -10922,10 +9505,10 @@ func invAXinvA(A [][]float64, X [][]float64, n int, verbose int) {
 		if verbose != 0 {
 			noarch.Fprintf(stdout, []byte("    LDL' RMS matrix precision:\x00"))
 		}
-		error = float64(func() int {
+		error = float64((func() int {
 			ok = 1
 			return ok
-		}())
+		}()))
 		for {
 			ldl_mprove(A, n, diag, b, x, (*[1]float64)(unsafe.Pointer(&error))[:], (*[1]int)(unsafe.Pointer(&ok))[:])
 			if verbose != 0 {
@@ -10941,14 +9524,8 @@ func invAXinvA(A [][]float64, X [][]float64, n int, verbose int) {
 	}
 	for i = 1; i <= n; i++ {
 		for j = i; j <= n; j++ {
-			func() float64 {
-				Ai[j][i] = 0.5 * (Ai[i][j] + Ai[j][i])
-				return Ai[j][i]
-			}()
-			func() float64 {
-				Ai[i][j] = Ai[j][i]
-				return Ai[i][j]
-			}()
+			Ai[j][i] = 0.5 * (Ai[i][j] + Ai[j][i])
+			Ai[i][j] = Ai[j][i]
 		}
 	}
 	for i = 1; i <= n; i++ {
@@ -10971,14 +9548,8 @@ func invAXinvA(A [][]float64, X [][]float64, n int, verbose int) {
 	}
 	for i = 1; i <= n; i++ {
 		for j = i; j <= n; j++ {
-			func() float64 {
-				X[j][i] = 0.5 * (X[i][j] + X[j][i])
-				return X[j][i]
-			}()
-			func() float64 {
-				X[i][j] = X[j][i]
-				return X[i][j]
-			}()
+			X[j][i] = 0.5 * (X[i][j] + X[j][i])
+			X[i][j] = X[j][i]
 		}
 	}
 	free_dvector(diag, int32(1), int32(n))
@@ -11030,8 +9601,8 @@ func Legendre(order int, t []float32, n int, P [][]float32, Pp [][]float32, Ppp 
 		Ppp[3][p] = float32(15 * float64(t[p]))
 		for k = 4; k <= order; k++ {
 			P[k][p] = float32((2-1/float64(k))*float64(t[p])*float64(P[k-1][p]) - (1-1/float64(k))*float64(P[k-2][p]))
-			Pp[k][p] = float32((2-1/float64(k))*float64((P[k-1][p]+t[p]*Pp[k-1][p])) - (1-1/float64(k))*float64(Pp[k-2][p]))
-			Ppp[k][p] = float32((2-1/float64(k))*float64((float32(2)*Pp[k-1][p]+t[p]*Ppp[k-1][p])) - (1-1/float64(k))*float64(Ppp[k-2][p]))
+			Pp[k][p] = float32((2-1/float64(k))*float64(P[k-1][p]+t[p]*Pp[k-1][p]) - (1-1/float64(k))*float64(Pp[k-2][p]))
+			Ppp[k][p] = float32((2-1/float64(k))*float64(float32(2)*Pp[k-1][p]+t[p]*Ppp[k-1][p]) - (1-1/float64(k))*float64(Ppp[k-2][p]))
 		}
 	}
 	return
@@ -11195,27 +9766,15 @@ func openFile(path []byte, fileName []byte, mode []byte, usage []byte) (c2goDefa
 	if (func() *noarch.File {
 		fp = noarch.Fopen(pathToFile, mode)
 		return fp
-	}()) == (nil) {
+	}()) == nil {
 		noarch.Sprintf(errMsg, []byte(" openFile: \x00"))
 		switch int(mode[0]) {
 		case 'w':
-			{
-				noarch.Sprintf(errMsg, []byte("%s%s\n  usage: %s\x00"), []byte("cannot write to file: \x00"), pathToFile, usage)
-				break
-			}
-			fallthrough
+			noarch.Sprintf(errMsg, []byte("%s%s\n  usage: %s\x00"), []byte("cannot write to file: \x00"), pathToFile, usage)
 		case 'r':
-			{
-				noarch.Sprintf(errMsg, []byte("%s%s\n  usage: %s\x00"), []byte("cannot read from file: \x00"), pathToFile, usage)
-				break
-			}
-			fallthrough
+			noarch.Sprintf(errMsg, []byte("%s%s\n  usage: %s\x00"), []byte("cannot read from file: \x00"), pathToFile, usage)
 		case 'a':
-			{
-				noarch.Sprintf(errMsg, []byte("%s%s\n  usage: %s\x00"), []byte("cannot append to file: \x00"), pathToFile, usage)
-				break
-			}
-			fallthrough
+			noarch.Sprintf(errMsg, []byte("%s%s\n  usage: %s\x00"), []byte("cannot append to file: \x00"), pathToFile, usage)
 		default:
 			{
 				noarch.Sprintf(errMsg, []byte("%s%s\n  usage: %s\x00"), []byte("cannot open file: \x00"), pathToFile, usage)
@@ -11241,7 +9800,7 @@ func openFile(path []byte, fileName []byte, mode []byte, usage []byte) (c2goDefa
 	}() > 0 && (func() int {
 		c = noarch.Fgetc(fp)
 		return c
-	}()) != (-1) && c != int(a) {
+	}()) != -1 && c != int(a) {
 		s[func() int {
 			i += 1
 			return i
@@ -11268,7 +9827,7 @@ func scanLabel(fp *noarch.File, lim int, s []byte, a byte) int {
 	}() > 0 && (func() int {
 		c = noarch.Fgetc(fp)
 		return c
-	}()) != (-1) && c != int(a) {
+	}()) != -1 && c != int(a) {
 	}
 	for func() int {
 		lim -= 1
@@ -11276,7 +9835,7 @@ func scanLabel(fp *noarch.File, lim int, s []byte, a byte) int {
 	}() > 0 && (func() int {
 		c = noarch.Fgetc(fp)
 		return c
-	}()) != (-1) && c != int(a) {
+	}()) != -1 && c != int(a) {
 		s[func() int {
 			i += 1
 			return i
@@ -11314,10 +9873,7 @@ func scanFile(fp *noarch.File, head_lines int, start_chnl int, stop_chnl int) in
 		for chn = start_chnl; chn <= stop_chnl; chn++ {
 			ok = noarch.Fscanf(fp, []byte("%f\x00"), (*[1]float32)(unsafe.Pointer(&data_value))[:])
 			if ok == 1 {
-				func() int {
-					points += 1
-					return points
-				}()
+				points += 1
 			}
 		}
 		if ok > 0 {
@@ -11350,14 +9906,18 @@ func getLine(fp *noarch.File, lim int, s []byte) int {
 	}() > 0 && (func() int {
 		c = noarch.Fgetc(fp)
 		return c
-	}()) != (-1) && c != int('\n') {
+	}()) != -1 && c != int('\n') {
 		s[func() int {
-			i += 1
+			defer func() {
+				i += 1
+			}()
 			return i
 		}()] = byte(c)
 	}
 	s[func() int {
-		i += 1
+		defer func() {
+			i += 1
+		}()
 		return i
 	}()] = '\x00'
 	return (i)
@@ -11373,17 +9933,17 @@ func getLine(fp *noarch.File, lim int, s []byte) int {
 //	printf("%d ... %s", (int) t_time, ctime(&t_time) );
 func getTime(s []byte, y int, m int, d int, hr int, mn int, sc int, os int) noarch.TimeT {
 	var temp []byte = make([]byte, 16, 16)
-	var t_tm tm
+	var t_tm noarch.Tm
 	var t_time noarch.TimeT
-	t_tm.tm_year = noarch.Atoi(noarch.Strncpy(temp, (*(*[1]byte)(unsafe.Pointer(uintptr(unsafe.Pointer(&s[0])) + (uintptr)(y)*unsafe.Sizeof(s[0]))))[:], int(uint32(4)))) - 1900
+	t_tm.Tm_year = noarch.Atoi(noarch.Strncpy(temp, (*(*[1]byte)(unsafe.Pointer(uintptr(unsafe.Pointer(&s[0])) + (uintptr)(y)*unsafe.Sizeof(s[0]))))[:], int(uint32(4)))) - 1900
 	temp[2] = '\x00'
-	t_tm.tm_mon = noarch.Atoi(noarch.Strncpy(temp, (*(*[1]byte)(unsafe.Pointer(uintptr(unsafe.Pointer(&s[0])) + (uintptr)(m)*unsafe.Sizeof(s[0]))))[:], int(uint32(2)))) - 1
-	t_tm.tm_mday = noarch.Atoi(noarch.Strncpy(temp, (*(*[1]byte)(unsafe.Pointer(uintptr(unsafe.Pointer(&s[0])) + (uintptr)(d)*unsafe.Sizeof(s[0]))))[:], int(uint32(2))))
-	t_tm.tm_hour = noarch.Atoi(noarch.Strncpy(temp, (*(*[1]byte)(unsafe.Pointer(uintptr(unsafe.Pointer(&s[0])) + (uintptr)(hr)*unsafe.Sizeof(s[0]))))[:], int(uint32(2))))
-	t_tm.tm_min = noarch.Atoi(noarch.Strncpy(temp, (*(*[1]byte)(unsafe.Pointer(uintptr(unsafe.Pointer(&s[0])) + (uintptr)(mn)*unsafe.Sizeof(s[0]))))[:], int(uint32(2))))
-	t_tm.tm_sec = noarch.Atoi(noarch.Strncpy(temp, (*(*[1]byte)(unsafe.Pointer(uintptr(unsafe.Pointer(&s[0])) + (uintptr)(sc)*unsafe.Sizeof(s[0]))))[:], int(uint32(2)))) + os
-	t_tm.tm_isdst = -1
-	t_time = mktime((*[1]tm)(unsafe.Pointer(&t_tm))[:])
+	t_tm.Tm_mon = noarch.Atoi(noarch.Strncpy(temp, (*(*[1]byte)(unsafe.Pointer(uintptr(unsafe.Pointer(&s[0])) + (uintptr)(m)*unsafe.Sizeof(s[0]))))[:], int(uint32(2)))) - 1
+	t_tm.Tm_mday = noarch.Atoi(noarch.Strncpy(temp, (*(*[1]byte)(unsafe.Pointer(uintptr(unsafe.Pointer(&s[0])) + (uintptr)(d)*unsafe.Sizeof(s[0]))))[:], int(uint32(2))))
+	t_tm.Tm_hour = noarch.Atoi(noarch.Strncpy(temp, (*(*[1]byte)(unsafe.Pointer(uintptr(unsafe.Pointer(&s[0])) + (uintptr)(hr)*unsafe.Sizeof(s[0]))))[:], int(uint32(2))))
+	t_tm.Tm_min = noarch.Atoi(noarch.Strncpy(temp, (*(*[1]byte)(unsafe.Pointer(uintptr(unsafe.Pointer(&s[0])) + (uintptr)(mn)*unsafe.Sizeof(s[0]))))[:], int(uint32(2))))
+	t_tm.Tm_sec = noarch.Atoi(noarch.Strncpy(temp, (*(*[1]byte)(unsafe.Pointer(uintptr(unsafe.Pointer(&s[0])) + (uintptr)(sc)*unsafe.Sizeof(s[0]))))[:], int(uint32(2)))) + os
+	t_tm.Tm_isdst = -1
+	t_time = noarch.Mktime((*[1]noarch.Tm)(unsafe.Pointer(&t_tm))[:])
 	return t_time
 }
 
@@ -11445,7 +10005,7 @@ func NRerror(error_text []byte) {
 /* allocate a float vector with subscript range v[nl..nh] */
 func vector(nl int32, nh int32) []float32 {
 	var v []float32
-	v = make([]float32, uint32((uint32((nh-nl+int32(1)+int32(1)))*4))/4)
+	v = make([]float32, uint32((uint32(nh-nl+int32(1)+int32(1))*4))/4)
 	if v == nil {
 		NRerror([]byte("allocation failure in vector()\x00"))
 	}
@@ -11456,7 +10016,7 @@ func vector(nl int32, nh int32) []float32 {
 /* allocate an int vector with subscript range v[nl..nh] */
 func ivector(nl int32, nh int32) []int {
 	var v []int
-	v = make([]int, uint32((uint32((nh-nl+int32(1)+int32(1)))*4))/4)
+	v = make([]int, uint32((uint32(nh-nl+int32(1)+int32(1))*4))/4)
 	if v == nil {
 		NRerror([]byte("allocation failure in ivector()\x00"))
 	}
@@ -11467,7 +10027,7 @@ func ivector(nl int32, nh int32) []int {
 /* allocate an unsigned char vector with subscript range v[nl..nh] */
 func cvector(nl int32, nh int32) []uint8 {
 	var v []uint8
-	v = make([]uint8, uint32((uint32((nh-nl+int32(1)+int32(1)))*1))/1)
+	v = make([]uint8, uint32((uint32(nh-nl+int32(1)+int32(1))*1))/1)
 	if v == nil {
 		NRerror([]byte("allocation failure in cvector()\x00"))
 	}
@@ -11478,7 +10038,7 @@ func cvector(nl int32, nh int32) []uint8 {
 /* allocate an unsigned long vector with subscript range v[nl..nh] */
 func lvector(nl int32, nh int32) []uint32 {
 	var v []uint32
-	v = make([]uint32, uint32((uint32((nh-nl+int32(1)+int32(1)))*8))/8)
+	v = make([]uint32, uint32((uint32(nh-nl+int32(1)+int32(1))*8))/8)
 	if v == nil {
 		NRerror([]byte("allocation failure in lvector()\x00"))
 	}
@@ -11489,7 +10049,7 @@ func lvector(nl int32, nh int32) []uint32 {
 /* allocate a double vector with subscript range v[nl..nh] */
 func dvector(nl int32, nh int32) []float64 {
 	var v []float64
-	v = make([]float64, uint32((uint32((nh-nl+int32(1)+int32(1)))*8))/8)
+	v = make([]float64, uint32((uint32(nh-nl+int32(1)+int32(1))*8))/8)
 	if v == nil {
 		NRerror([]byte("allocation failure in dvector()\x00"))
 	}
@@ -11503,13 +10063,13 @@ func matrix(nrl int32, nrh int32, ncl int32, nch int32) [][]float32 {
 	var nrow int32 = nrh - nrl + int32(1)
 	var ncol int32 = nch - ncl + int32(1)
 	var m [][]float32
-	m = make([][]float32, uint32((uint32((nrow+int32(1)))*8))/8)
+	m = make([][]float32, uint32((uint32(nrow+int32(1))*8))/8)
 	if m == nil {
 		NRerror([]byte("allocation failure 1 in matrix()\x00"))
 	}
 	m = (*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(1)*unsafe.Sizeof(m[0]))))[:]
 	m = (*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) - (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:]
-	m[nrl] = make([]float32, uint32((uint32((nrow*ncol+int32(1)))*4))/4)
+	m[nrl] = make([]float32, uint32((uint32(nrow*ncol+int32(1))*4))/4)
 	if m[nrl] == nil {
 		NRerror([]byte("allocation failure 2 in matrix()\x00"))
 	}
@@ -11528,13 +10088,13 @@ func dmatrix(nrl int32, nrh int32, ncl int32, nch int32) [][]float64 {
 	var nrow int32 = nrh - nrl + int32(1)
 	var ncol int32 = nch - ncl + int32(1)
 	var m [][]float64
-	m = make([][]float64, uint32((uint32((nrow+int32(1)))*8))/8)
+	m = make([][]float64, uint32((uint32(nrow+int32(1))*8))/8)
 	if m == nil {
 		NRerror([]byte("allocation failure 1 in matrix()\x00"))
 	}
 	m = (*(*[1][]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(1)*unsafe.Sizeof(m[0]))))[:]
 	m = (*(*[1][]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) - (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:]
-	m[nrl] = make([]float64, uint32((uint32((nrow*ncol+int32(1)))*8))/8)
+	m[nrl] = make([]float64, uint32((uint32(nrow*ncol+int32(1))*8))/8)
 	if m[nrl] == nil {
 		NRerror([]byte("allocation failure 2 in matrix()\x00"))
 	}
@@ -11553,13 +10113,13 @@ func imatrix(nrl int32, nrh int32, ncl int32, nch int32) [][]int {
 	var nrow int32 = nrh - nrl + int32(1)
 	var ncol int32 = nch - ncl + int32(1)
 	var m [][]int
-	m = make([][]int, uint32((uint32((nrow+int32(1)))*8))/8)
+	m = make([][]int, uint32((uint32(nrow+int32(1))*8))/8)
 	if m == nil {
 		NRerror([]byte("allocation failure 1 in matrix()\x00"))
 	}
 	m = (*(*[1][]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(1)*unsafe.Sizeof(m[0]))))[:]
 	m = (*(*[1][]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) - (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:]
-	m[nrl] = make([]int, uint32((uint32((nrow*ncol+int32(1)))*4))/4)
+	m[nrl] = make([]int, uint32((uint32(nrow*ncol+int32(1))*4))/4)
 	if m[nrl] == nil {
 		NRerror([]byte("allocation failure 2 in matrix()\x00"))
 	}
@@ -11579,7 +10139,7 @@ func subMatrix(a [][]float32, oldrl int32, oldrh int32, oldcl int32, oldch int32
 	var nrow int32 = oldrh - oldrl + int32(1)
 	var ncol int32 = oldcl - newcl
 	var m [][]float32
-	m = make([][]float32, uint32((uint32((nrow+int32(1)))*8))/8)
+	m = make([][]float32, uint32((uint32(nrow+int32(1))*8))/8)
 	if m == nil {
 		NRerror([]byte("allocation failure in subMatrix()\x00"))
 	}
@@ -11590,14 +10150,8 @@ func subMatrix(a [][]float32, oldrl int32, oldrh int32, oldcl int32, oldch int32
 		j = newrl
 		for j = newrl; i <= oldrh; {
 			m[j] = (*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&a[i][0])) + (uintptr)(ncol)*unsafe.Sizeof(a[i][0]))))[:]
-			func() int32 {
-				i += 1
-				return i
-			}()
-			func() int32 {
-				j += 1
-				return j
-			}()
+			i += 1
+			j += 1
 		}
 	}
 	return m
@@ -11614,7 +10168,7 @@ func convert_matrix(a []float32, nrl int32, nrh int32, ncl int32, nch int32) [][
 	var nrow int32 = nrh - nrl + int32(1)
 	var ncol int32 = nch - ncl + int32(1)
 	var m [][]float32
-	m = make([][]float32, uint32((uint32((nrow+int32(1)))*8))/8)
+	m = make([][]float32, uint32((uint32(nrow+int32(1))*8))/8)
 	if m == nil {
 		NRerror([]byte("allocation failure in convert_matrix()\x00"))
 	}
@@ -11626,14 +10180,8 @@ func convert_matrix(a []float32, nrl int32, nrh int32, ncl int32, nch int32) [][
 		j = nrl + int32(1)
 		for j = nrl + int32(1); i < nrow; {
 			m[j] = (*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[j-int32(1)][0])) + (uintptr)(ncol)*unsafe.Sizeof(m[j-int32(1)][0]))))[:]
-			func() int32 {
-				i += 1
-				return i
-			}()
-			func() int32 {
-				j += 1
-				return j
-			}()
+			i += 1
+			j += 1
 		}
 	}
 	return m
@@ -11648,19 +10196,19 @@ func f3tensor(nrl int32, nrh int32, ncl int32, nch int32, ndl int32, ndh int32) 
 	var ncol int32 = nch - ncl + int32(1)
 	var ndep int32 = ndh - ndl + int32(1)
 	var t [][][]float32
-	t = make([][][]float32, uint32((uint32((nrow+int32(1)))*8))/8)
+	t = make([][][]float32, uint32((uint32(nrow+int32(1))*8))/8)
 	if t == nil {
 		NRerror([]byte("allocation failure 1 in f3tensor()\x00"))
 	}
 	t = (*(*[1][][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[0])) + (uintptr)(1)*unsafe.Sizeof(t[0]))))[:]
 	t = (*(*[1][][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[0])) - (uintptr)(nrl)*unsafe.Sizeof(t[0]))))[:]
-	t[nrl] = make([][]float32, uint32((uint32((nrow*ncol+int32(1)))*8))/8)
+	t[nrl] = make([][]float32, uint32((uint32(nrow*ncol+int32(1))*8))/8)
 	if t[nrl] == nil {
 		NRerror([]byte("allocation failure 2 in f3tensor()\x00"))
 	}
 	t[nrl] = (*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][0])) + (uintptr)(1)*unsafe.Sizeof(t[nrl][0]))))[:]
 	t[nrl] = (*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][0])) - (uintptr)(ncl)*unsafe.Sizeof(t[nrl][0]))))[:]
-	t[nrl][ncl] = make([]float32, uint32((uint32((nrow*ncol*ndep+int32(1)))*4))/4)
+	t[nrl][ncl] = make([]float32, uint32((uint32(nrow*ncol*ndep+int32(1))*4))/4)
 	if t[nrl][ncl] == nil {
 		NRerror([]byte("allocation failure 3 in f3tensor()\x00"))
 	}
@@ -11682,72 +10230,72 @@ func f3tensor(nrl int32, nrh int32, ncl int32, nch int32, ndl int32, ndh int32) 
 // free_vector - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:229
 /* free a float vector allocated with vector() */
 func free_vector(v []float32, nl int32, nh int32) {
-	_ = noarch.Float32SliceToByteSlice(((*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0]))))[:]))
+	_ = ((*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0]))))[:])
 }
 
 // free_ivector - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:235
 /* free an int vector allocated with ivector() */
 func free_ivector(v []int, nl int32, nh int32) {
-	_ = noarch.IntSliceToByteSlice(((*(*[1]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0]))))[:]))
+	_ = ((*(*[1]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0]))))[:])
 }
 
 // free_cvector - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:241
 /* free an unsigned char vector allocated with cvector() */
 func free_cvector(v []uint8, nl int32, nh int32) {
-	_ = noarch.Uint8SliceToByteSlice(((*(*[1]uint8)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1]uint8)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1]uint8)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0]))))[:]))
+	_ = ((*(*[1]uint8)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1]uint8)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1]uint8)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0]))))[:])
 }
 
 // free_lvector - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:247
 /* free an unsigned long vector allocated with lvector() */
 func free_lvector(v []uint32, nl int32, nh int32) {
-	_ = noarch.Uint32SliceToByteSlice(((*(*[1]uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1]uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1]uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0]))))[:]))
+	_ = ((*(*[1]uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1]uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1]uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0]))))[:])
 }
 
 // free_dvector - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:253
 /* free a double vector allocated with dvector() */
 func free_dvector(v []float64, nl int32, nh int32) {
-	_ = noarch.Float64SliceToByteSlice(((*(*[1]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0]))))[:]))
+	_ = ((*(*[1]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0]))))[:])
 }
 
 // free_matrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:259
 /* free a float matrix allocated by matrix() */
 func free_matrix(m [][]float32, nrl int32, nrh int32, ncl int32, nch int32) {
-	_ = noarch.Float32SliceToByteSlice(((*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (uintptr)(ncl)*unsafe.Sizeof(m[nrl][0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (uintptr)(ncl)*unsafe.Sizeof(m[nrl][0]))))[:][0]))))[:]))
-	_ = noarch.Float32SliceSliceToByteSlice(((*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:][0]))))[:]))
+	_ = ((*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (uintptr)(ncl)*unsafe.Sizeof(m[nrl][0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (uintptr)(ncl)*unsafe.Sizeof(m[nrl][0]))))[:][0]))))[:])
+	_ = ((*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:][0]))))[:])
 }
 
 // free_dmatrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:266
 /* free a double matrix allocated by dmatrix() */
 func free_dmatrix(m [][]float64, nrl int32, nrh int32, ncl int32, nch int32) {
-	_ = noarch.Float64SliceToByteSlice(((*(*[1]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (uintptr)(ncl)*unsafe.Sizeof(m[nrl][0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (uintptr)(ncl)*unsafe.Sizeof(m[nrl][0]))))[:][0]))))[:]))
-	_ = noarch.Float64SliceSliceToByteSlice(((*(*[1][]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1][]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1][]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:][0]))))[:]))
+	_ = ((*(*[1]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (uintptr)(ncl)*unsafe.Sizeof(m[nrl][0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (uintptr)(ncl)*unsafe.Sizeof(m[nrl][0]))))[:][0]))))[:])
+	_ = ((*(*[1][]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1][]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1][]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:][0]))))[:])
 }
 
 // free_imatrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:273
 /* free an int matrix allocated by imatrix() */
 func free_imatrix(m [][]int, nrl int32, nrh int32, ncl int32, nch int32) {
-	_ = noarch.IntSliceToByteSlice(((*(*[1]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (uintptr)(ncl)*unsafe.Sizeof(m[nrl][0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (uintptr)(ncl)*unsafe.Sizeof(m[nrl][0]))))[:][0]))))[:]))
-	_ = noarch.IntSliceSliceToByteSlice(((*(*[1][]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1][]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1][]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:][0]))))[:]))
+	_ = ((*(*[1]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (uintptr)(ncl)*unsafe.Sizeof(m[nrl][0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (uintptr)(ncl)*unsafe.Sizeof(m[nrl][0]))))[:][0]))))[:])
+	_ = ((*(*[1][]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1][]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1][]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:][0]))))[:])
 }
 
 // free_subMatrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:280
 /* free a subMatrix allocated by subMatrix() */
 func free_subMatrix(b [][]float32, nrl int32, nrh int32, ncl int32, nch int32) {
-	_ = noarch.Float32SliceSliceToByteSlice(((*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&b[0])) + (uintptr)(nrl)*unsafe.Sizeof(b[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&b[0])) + (uintptr)(nrl)*unsafe.Sizeof(b[0]))))[:][0]))))[:]))
+	_ = ((*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&b[0])) + (uintptr)(nrl)*unsafe.Sizeof(b[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&b[0])) + (uintptr)(nrl)*unsafe.Sizeof(b[0]))))[:][0]))))[:])
 }
 
 // free_convert_matrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:286
 /* free a matrix allocated by convert_matrix() */
 func free_convert_matrix(b [][]float32, nrl int32, nrh int32, ncl int32, nch int32) {
-	_ = noarch.Float32SliceSliceToByteSlice(((*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&b[0])) + (uintptr)(nrl)*unsafe.Sizeof(b[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&b[0])) + (uintptr)(nrl)*unsafe.Sizeof(b[0]))))[:][0]))))[:]))
+	_ = ((*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&b[0])) + (uintptr)(nrl)*unsafe.Sizeof(b[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&b[0])) + (uintptr)(nrl)*unsafe.Sizeof(b[0]))))[:][0]))))[:])
 }
 
 // free_f3tensor - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:292
 /* free a float f3tensor allocated by f3tensor() */
 func free_f3tensor(t [][][]float32, nrl int32, nrh int32, ncl int32, nch int32, ndl int32, ndh int32) {
-	_ = noarch.Float32SliceToByteSlice(((*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][ncl][0])) + (uintptr)(ndl)*unsafe.Sizeof(t[nrl][ncl][0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][ncl][0])) + (uintptr)(ndl)*unsafe.Sizeof(t[nrl][ncl][0]))))[:][0]))))[:]))
-	_ = noarch.Float32SliceSliceToByteSlice(((*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][0])) + (uintptr)(ncl)*unsafe.Sizeof(t[nrl][0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][0])) + (uintptr)(ncl)*unsafe.Sizeof(t[nrl][0]))))[:][0]))))[:]))
-	_ = noarch.Float32SliceSliceSliceToByteSlice(((*(*[1][][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1][][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[0])) + (uintptr)(nrl)*unsafe.Sizeof(t[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1][][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[0])) + (uintptr)(nrl)*unsafe.Sizeof(t[0]))))[:][0]))))[:]))
+	_ = ((*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][ncl][0])) + (uintptr)(ndl)*unsafe.Sizeof(t[nrl][ncl][0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][ncl][0])) + (uintptr)(ndl)*unsafe.Sizeof(t[nrl][ncl][0]))))[:][0]))))[:])
+	_ = ((*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][0])) + (uintptr)(ncl)*unsafe.Sizeof(t[nrl][0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][0])) + (uintptr)(ncl)*unsafe.Sizeof(t[nrl][0]))))[:][0]))))[:])
+	_ = ((*(*[1][][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1][][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[0])) + (uintptr)(nrl)*unsafe.Sizeof(t[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1][][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[0])) + (uintptr)(nrl)*unsafe.Sizeof(t[0]))))[:][0]))))[:])
 }
 
 // Cvector - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:300
@@ -11838,52 +10386,41 @@ func D3dmatrix(nrl int, nrh int, ncl int, nch int, nzl int, nzh int) [][][]float
 }
 
 // free_Cvector - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:377
+/*(char*)*/
 func free_Cvector(v []fcomplex, nl int, nh int) {
-	_ = noarch.FcomplexSliceToByteSlice(((*(*[1]fcomplex)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:]))
+	_ = ((*(*[1]fcomplex)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:])
 }
 
 // free_Cmatrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:382
+/*(char*)*/ /*(char*)*/
 func free_Cmatrix(m [][]fcomplex, nrl int, nrh int, ncl int, nch int) {
 	var i int
-	for i = nrh; i >= nrl; func() int {
-		i -= 1
-		return i
-	}() {
-		_ = noarch.FcomplexSliceToByteSlice(((*(*[1]fcomplex)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i][0])) + (uintptr)(ncl)*unsafe.Sizeof(m[i][0]))))[:]))
+	for i = nrh; i >= nrl; i-- {
+		_ = ((*(*[1]fcomplex)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i][0])) + (uintptr)(ncl)*unsafe.Sizeof(m[i][0]))))[:])
 	}
-	_ = noarch.FcomplexSliceSliceToByteSlice(((*(*[1][]fcomplex)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:]))
+	_ = ((*(*[1][]fcomplex)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:])
 }
 
 // free_D3matrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:390
+/*(char*)*/
 func free_D3matrix(m [][][]float32, nrl int, nrh int, ncl int, nch int, nzl int, nzh int) {
 	var i int
 	var j int
-	for i = nrh; i >= nrl; func() int {
-		i -= 1
-		return i
-	}() {
-		for j = nch; j >= ncl; func() int {
-			j -= 1
-			return j
-		}() {
-			_ = noarch.Float32SliceToByteSlice(((*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i][j][0])) + (uintptr)(nzl)*unsafe.Sizeof(m[i][j][0]))))[:]))
+	for i = nrh; i >= nrl; i-- {
+		for j = nch; j >= ncl; j-- {
+			_ = ((*(*[1]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i][j][0])) + (uintptr)(nzl)*unsafe.Sizeof(m[i][j][0]))))[:])
 		}
 	}
 }
 
 // free_D3dmatrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:401
+/*(char*)*/
 func free_D3dmatrix(m [][][]float64, nrl int, nrh int, ncl int, nch int, nzl int, nzh int) {
 	var i int
 	var j int
-	for i = nrh; i >= nrl; func() int {
-		i -= 1
-		return i
-	}() {
-		for j = nch; j >= ncl; func() int {
-			j -= 1
-			return j
-		}() {
-			_ = noarch.Float64SliceToByteSlice(((*(*[1]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i][j][0])) + (uintptr)(nzl)*unsafe.Sizeof(m[i][j][0]))))[:]))
+	for i = nrh; i >= nrl; i-- {
+		for j = nch; j >= ncl; j-- {
+			_ = ((*(*[1]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i][j][0])) + (uintptr)(nzl)*unsafe.Sizeof(m[i][j][0]))))[:])
 		}
 	}
 }
@@ -11992,7 +10529,7 @@ func free_D3dmatrix(m [][][]float64, nrl int, nrh int, ncl int, nch int, nzl int
 	if (func() *noarch.File {
 		fp_v = noarch.Fopen(filename, mode)
 		return fp_v
-	}()) == (nil) {
+	}()) == nil {
 		noarch.Printf([]byte(" error: cannot open file: '%s' \n\x00"), filename)
 		os.Exit(1011)
 	}
@@ -12023,7 +10560,7 @@ func free_D3dmatrix(m [][][]float64, nrl int, nrh int, ncl int, nch int, nzl int
 	if (func() *noarch.File {
 		fp_v = noarch.Fopen(filename, mode)
 		return fp_v
-	}()) == (nil) {
+	}()) == nil {
 		noarch.Printf([]byte(" error: cannot open file: '%s' \n\x00"), filename)
 		os.Exit(1011)
 	}
@@ -12054,7 +10591,7 @@ func free_D3dmatrix(m [][][]float64, nrl int, nrh int, ncl int, nch int, nzl int
 	if (func() *noarch.File {
 		fp_v = noarch.Fopen(filename, mode)
 		return fp_v
-	}()) == (nil) {
+	}()) == nil {
 		noarch.Printf([]byte(" error: cannot open file: '%s' \n\x00"), filename)
 		os.Exit(1012)
 	}
@@ -12098,7 +10635,7 @@ func free_D3dmatrix(m [][][]float64, nrl int, nrh int, ncl int, nch int, nzl int
 	if (func() *noarch.File {
 		fp_m = noarch.Fopen(filename, mode)
 		return fp_m
-	}()) == (nil) {
+	}()) == nil {
 		noarch.Printf([]byte(" error: cannot open file: %s \n\x00"), filename)
 		os.Exit(1013)
 	}
@@ -12157,7 +10694,7 @@ func free_D3dmatrix(m [][][]float64, nrl int, nrh int, ncl int, nch int, nzl int
 	if (func() *noarch.File {
 		fp_m = noarch.Fopen(filename, mode)
 		return fp_m
-	}()) == (nil) {
+	}()) == nil {
 		noarch.Printf([]byte(" error: cannot open file: %s \n\x00"), filename)
 		os.Exit(1014)
 	}
@@ -12206,7 +10743,7 @@ func free_D3dmatrix(m [][][]float64, nrl int, nrh int, ncl int, nch int, nzl int
 	if (func() *noarch.File {
 		fp_m = noarch.Fopen(filename, mode)
 		return fp_m
-	}()) == (nil) {
+	}()) == nil {
 		noarch.Printf([]byte(" error: cannot open file: %s \n\x00"), filename)
 		os.Exit(1015)
 	}
@@ -12250,7 +10787,7 @@ func free_D3dmatrix(m [][][]float64, nrl int, nrh int, ncl int, nch int, nzl int
 	if (func() *noarch.File {
 		fp_m = noarch.Fopen(filename, mode)
 		return fp_m
-	}()) == (nil) {
+	}()) == nil {
 		noarch.Printf([]byte(" error: cannot open file: %s \n\x00"), filename)
 		os.Exit(1016)
 	}

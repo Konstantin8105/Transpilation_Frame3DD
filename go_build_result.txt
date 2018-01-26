@@ -1,12 +1,12 @@
 # command-line-arguments
-./main.go:3693:17: undefined: getopt
-./main.go:3699:28: undefined: optarg
-./main.go:3705:29: undefined: optarg
-./main.go:3759:22: undefined: optarg
-./main.go:3762:23: undefined: optarg
-./main.go:3774:22: undefined: optarg
-./main.go:3777:23: undefined: optarg
-./main.go:3789:33: undefined: optarg
-./main.go:3801:22: undefined: optarg
-./main.go:3804:23: undefined: optarg
-./main.go:3804:23: too many errors
+./main.go:1932:6: res declared and not used
+./main.go:2499:6: res declared and not used
+./main.go:5505:6: u7 declared and not used
+./main.go:5506:6: u8 declared and not used
+./main.go:5507:6: u9 declared and not used
+./main.go:5508:6: u10 declared and not used
+./main.go:5509:6: u11 declared and not used
+./main.go:5510:6: u12 declared and not used
+./main.go:7243:6: u4 declared and not used
+./main.go:7249:6: u10 declared and not used
+./main.go:7249:6: too many errors
