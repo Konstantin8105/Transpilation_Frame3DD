@@ -1,12 +1,12 @@
 # command-line-arguments
-./main.go:1932:6: res declared and not used
-./main.go:2499:6: res declared and not used
-./main.go:5505:6: u7 declared and not used
-./main.go:5506:6: u8 declared and not used
-./main.go:5507:6: u9 declared and not used
-./main.go:5508:6: u10 declared and not used
-./main.go:5509:6: u11 declared and not used
-./main.go:5510:6: u12 declared and not used
-./main.go:7243:6: u4 declared and not used
-./main.go:7249:6: u10 declared and not used
-./main.go:7249:6: too many errors
+./main.go:1911:6: res declared and not used
+./main.go:2478:6: res declared and not used
+./main.go:5484:6: u7 declared and not used
+./main.go:5485:6: u8 declared and not used
+./main.go:5486:6: u9 declared and not used
+./main.go:5487:6: u10 declared and not used
+./main.go:5488:6: u11 declared and not used
+./main.go:5489:6: u12 declared and not used
+./main.go:7222:6: u4 declared and not used
+./main.go:7228:6: u10 declared and not used
+./main.go:7228:6: too many errors

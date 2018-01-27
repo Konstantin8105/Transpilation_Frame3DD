@@ -1,5 +1,5 @@
 /*
-	Package main - transpiled by c2go version: v0.21.0 Zinc 2018-01-11
+	Package main - transpiled by c2go version: v0.21.2 Zinc 2018-01-26
 
 	If you have found any issues, please raise an issue at:
 	https://github.com/elliotchance/c2go/
@@ -8,35 +8,14 @@
 // Warning (EnumDecl):  /usr/include/math.h:347 : Add support of continues counter for type : *ast.UnaryExpr
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/waitstatus.h:75 : Error : name of FieldDecl is empty
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/waitstatus.h:89 : Error : name of FieldDecl is empty
-// Warning (TransparentUnionAttr):  /usr/include/stdlib.h:71 : could not parse &{39024784 {/usr/include/stdlib.h 71 0 35 0 } []}
+// Warning (TransparentUnionAttr):  /usr/include/stdlib.h:71 : could not parse &{46495888 {/usr/include/stdlib.h 71 0 35 0 } []}
 // Warning (FieldDecl):  /usr/include/stdlib.h:69 : Avoid struct `union wait *` in FieldDecl
 // Warning (RecordDecl):  :0 : could not determine the size of type `union __WAIT_STATUS` for that reason: Cannot determine sizeof : |union __WAIT_STATUS|. err = Cannot determine sizeof : |union wait *|. err = error in union
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/timex.h:50 : Error : name of FieldDecl is empty
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/timex.h:51 : Error : name of FieldDecl is empty
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/timex.h:52 : Error : name of FieldDecl is empty
 // Warning (EnumDecl):  /usr/include/x86_64-linux-gnu/bits/confname.h:71 : Add support of continues counter for type : *ast.BinaryExpr
-// Warning (ParenExpr):  :0 : Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Error (IfStmt):  :0 : Cannot transpileToExpr. err = Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 // Warning (EnumDecl):  /usr/include/ctype.h:46 : Add support of continues counter for type : *ast.ParenExpr
-// Warning (ParenExpr):  :0 : Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Error (IfStmt):  :0 : Cannot transpileToExpr. err = Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (ParenExpr):  :0 : Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Error (IfStmt):  :0 : Cannot transpileToExpr. err = Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (ParenExpr):  :0 : Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Error (IfStmt):  :0 : Cannot transpileToExpr. err = Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (ParenExpr):  :0 : Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Error (IfStmt):  :0 : Cannot transpileToExpr. err = Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (ParenExpr):  :0 : Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Error (IfStmt):  :0 : Cannot transpileToExpr. err = Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (ParenExpr):  :0 : Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Error (IfStmt):  :0 : Cannot transpileToExpr. err = Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 // Warning (SwitchStmt):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:126 : Unsupport case
 
 package main
@@ -136,33 +115,33 @@ type BSunionSatSSusrSincludeSwcharPhD85D3E struct {
 	arr   [8]byte
 }
 
-func (self *BSunionSatSSusrSincludeSwcharPhD85D3E) cast(t reflect.Type) reflect.Value {
-	return reflect.NewAt(t, unsafe.Pointer(&self.arr[0]))
+func (unionVar *BSunionSatSSusrSincludeSwcharPhD85D3E) cast(t reflect.Type) reflect.Value {
+	return reflect.NewAt(t, unsafe.Pointer(&unionVar.arr[0]))
 }
-func (self *BSunionSatSSusrSincludeSwcharPhD85D3E) assign(v interface{}) {
+func (unionVar *BSunionSatSSusrSincludeSwcharPhD85D3E) assign(v interface{}) {
 	value := reflect.ValueOf(v).Elem()
-	value.Set(self.cast(value.Type()).Elem())
+	value.Set(unionVar.cast(value.Type()).Elem())
 }
-func (self *BSunionSatSSusrSincludeSwcharPhD85D3E) UntypedSet(v interface{}) {
+func (unionVar *BSunionSatSSusrSincludeSwcharPhD85D3E) UntypedSet(v interface{}) {
 	value := reflect.ValueOf(v)
-	self.cast(value.Type()).Elem().Set(value)
+	unionVar.cast(value.Type()).Elem().Set(value)
 }
-func (self *BSunionSatSSusrSincludeSwcharPhD85D3E) Get__wch() (res uint32) {
-	self.assign(&res)
+func (unionVar *BSunionSatSSusrSincludeSwcharPhD85D3E) Get__wch() (res uint32) {
+	unionVar.assign(&res)
 	return
 }
-func (self *BSunionSatSSusrSincludeSwcharPhD85D3E) Set__wch(v uint32) uint32 {
-	self.value = v
-	self.UntypedSet(v)
+func (unionVar *BSunionSatSSusrSincludeSwcharPhD85D3E) Set__wch(v uint32) uint32 {
+	unionVar.value = v
+	unionVar.UntypedSet(v)
 	return v
 }
-func (self *BSunionSatSSusrSincludeSwcharPhD85D3E) Get__wchb() (res []byte) {
-	self.assign(&res)
+func (unionVar *BSunionSatSSusrSincludeSwcharPhD85D3E) Get__wchb() (res []byte) {
+	unionVar.assign(&res)
 	return
 }
-func (self *BSunionSatSSusrSincludeSwcharPhD85D3E) Set__wchb(v []byte) []byte {
-	self.value = v
-	self.UntypedSet(v)
+func (unionVar *BSunionSatSSusrSincludeSwcharPhD85D3E) Set__wchb(v []byte) []byte {
+	unionVar.value = v
+	unionVar.UntypedSet(v)
 	return v
 }
 
@@ -252,42 +231,42 @@ type wait struct {
 	arr   [16]byte
 }
 
-func (self *wait) cast(t reflect.Type) reflect.Value {
-	return reflect.NewAt(t, unsafe.Pointer(&self.arr[0]))
+func (unionVar *wait) cast(t reflect.Type) reflect.Value {
+	return reflect.NewAt(t, unsafe.Pointer(&unionVar.arr[0]))
 }
-func (self *wait) assign(v interface{}) {
+func (unionVar *wait) assign(v interface{}) {
 	value := reflect.ValueOf(v).Elem()
-	value.Set(self.cast(value.Type()).Elem())
+	value.Set(unionVar.cast(value.Type()).Elem())
 }
-func (self *wait) UntypedSet(v interface{}) {
+func (unionVar *wait) UntypedSet(v interface{}) {
 	value := reflect.ValueOf(v)
-	self.cast(value.Type()).Elem().Set(value)
+	unionVar.cast(value.Type()).Elem().Set(value)
 }
-func (self *wait) GetW_status() (res int) {
-	self.assign(&res)
+func (unionVar *wait) GetW_status() (res int) {
+	unionVar.assign(&res)
 	return
 }
-func (self *wait) SetW_status(v int) int {
-	self.value = v
-	self.UntypedSet(v)
+func (unionVar *wait) SetW_status(v int) int {
+	unionVar.value = v
+	unionVar.UntypedSet(v)
 	return v
 }
-func (self *wait) Get__wait_terminated() (res BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSwaitstatusPhD69D5E) {
-	self.assign(&res)
+func (unionVar *wait) Get__wait_terminated() (res BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSwaitstatusPhD69D5E) {
+	unionVar.assign(&res)
 	return
 }
-func (self *wait) Set__wait_terminated(v BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSwaitstatusPhD69D5E) BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSwaitstatusPhD69D5E {
-	self.value = v
-	self.UntypedSet(v)
+func (unionVar *wait) Set__wait_terminated(v BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSwaitstatusPhD69D5E) BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSwaitstatusPhD69D5E {
+	unionVar.value = v
+	unionVar.UntypedSet(v)
 	return v
 }
-func (self *wait) Get__wait_stopped() (res BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSwaitstatusPhD84D5E) {
-	self.assign(&res)
+func (unionVar *wait) Get__wait_stopped() (res BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSwaitstatusPhD84D5E) {
+	unionVar.assign(&res)
 	return
 }
-func (self *wait) Set__wait_stopped(v BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSwaitstatusPhD84D5E) BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSwaitstatusPhD84D5E {
-	self.value = v
-	self.UntypedSet(v)
+func (unionVar *wait) Set__wait_stopped(v BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSwaitstatusPhD84D5E) BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSwaitstatusPhD84D5E {
+	unionVar.value = v
+	unionVar.UntypedSet(v)
 	return v
 }
 
@@ -385,33 +364,33 @@ type pthread_attr_t struct {
 	arr   [56]byte
 }
 
-func (self *pthread_attr_t) cast(t reflect.Type) reflect.Value {
-	return reflect.NewAt(t, unsafe.Pointer(&self.arr[0]))
+func (unionVar *pthread_attr_t) cast(t reflect.Type) reflect.Value {
+	return reflect.NewAt(t, unsafe.Pointer(&unionVar.arr[0]))
 }
-func (self *pthread_attr_t) assign(v interface{}) {
+func (unionVar *pthread_attr_t) assign(v interface{}) {
 	value := reflect.ValueOf(v).Elem()
-	value.Set(self.cast(value.Type()).Elem())
+	value.Set(unionVar.cast(value.Type()).Elem())
 }
-func (self *pthread_attr_t) UntypedSet(v interface{}) {
+func (unionVar *pthread_attr_t) UntypedSet(v interface{}) {
 	value := reflect.ValueOf(v)
-	self.cast(value.Type()).Elem().Set(value)
+	unionVar.cast(value.Type()).Elem().Set(value)
 }
-func (self *pthread_attr_t) Get__size() (res []byte) {
-	self.assign(&res)
+func (unionVar *pthread_attr_t) Get__size() (res []byte) {
+	unionVar.assign(&res)
 	return
 }
-func (self *pthread_attr_t) Set__size(v []byte) []byte {
-	self.value = v
-	self.UntypedSet(v)
+func (unionVar *pthread_attr_t) Set__size(v []byte) []byte {
+	unionVar.value = v
+	unionVar.UntypedSet(v)
 	return v
 }
-func (self *pthread_attr_t) Get__align() (res int32) {
-	self.assign(&res)
+func (unionVar *pthread_attr_t) Get__align() (res int32) {
+	unionVar.assign(&res)
 	return
 }
-func (self *pthread_attr_t) Set__align(v int32) int32 {
-	self.value = v
-	self.UntypedSet(v)
+func (unionVar *pthread_attr_t) Set__align(v int32) int32 {
+	unionVar.value = v
+	unionVar.UntypedSet(v)
 	return v
 }
 
@@ -438,42 +417,42 @@ type pthread_mutex_t struct {
 	arr   [40]byte
 }
 
-func (self *pthread_mutex_t) cast(t reflect.Type) reflect.Value {
-	return reflect.NewAt(t, unsafe.Pointer(&self.arr[0]))
+func (unionVar *pthread_mutex_t) cast(t reflect.Type) reflect.Value {
+	return reflect.NewAt(t, unsafe.Pointer(&unionVar.arr[0]))
 }
-func (self *pthread_mutex_t) assign(v interface{}) {
+func (unionVar *pthread_mutex_t) assign(v interface{}) {
 	value := reflect.ValueOf(v).Elem()
-	value.Set(self.cast(value.Type()).Elem())
+	value.Set(unionVar.cast(value.Type()).Elem())
 }
-func (self *pthread_mutex_t) UntypedSet(v interface{}) {
+func (unionVar *pthread_mutex_t) UntypedSet(v interface{}) {
 	value := reflect.ValueOf(v)
-	self.cast(value.Type()).Elem().Set(value)
+	unionVar.cast(value.Type()).Elem().Set(value)
 }
-func (self *pthread_mutex_t) Get__data() (res __pthread_mutex_s) {
-	self.assign(&res)
+func (unionVar *pthread_mutex_t) Get__data() (res __pthread_mutex_s) {
+	unionVar.assign(&res)
 	return
 }
-func (self *pthread_mutex_t) Set__data(v __pthread_mutex_s) __pthread_mutex_s {
-	self.value = v
-	self.UntypedSet(v)
+func (unionVar *pthread_mutex_t) Set__data(v __pthread_mutex_s) __pthread_mutex_s {
+	unionVar.value = v
+	unionVar.UntypedSet(v)
 	return v
 }
-func (self *pthread_mutex_t) Get__size() (res []byte) {
-	self.assign(&res)
+func (unionVar *pthread_mutex_t) Get__size() (res []byte) {
+	unionVar.assign(&res)
 	return
 }
-func (self *pthread_mutex_t) Set__size(v []byte) []byte {
-	self.value = v
-	self.UntypedSet(v)
+func (unionVar *pthread_mutex_t) Set__size(v []byte) []byte {
+	unionVar.value = v
+	unionVar.UntypedSet(v)
 	return v
 }
-func (self *pthread_mutex_t) Get__align() (res int32) {
-	self.assign(&res)
+func (unionVar *pthread_mutex_t) Get__align() (res int32) {
+	unionVar.assign(&res)
 	return
 }
-func (self *pthread_mutex_t) Set__align(v int32) int32 {
-	self.value = v
-	self.UntypedSet(v)
+func (unionVar *pthread_mutex_t) Set__align(v int32) int32 {
+	unionVar.value = v
+	unionVar.UntypedSet(v)
 	return v
 }
 
@@ -482,33 +461,33 @@ type pthread_mutexattr_t struct {
 	arr   [8]byte
 }
 
-func (self *pthread_mutexattr_t) cast(t reflect.Type) reflect.Value {
-	return reflect.NewAt(t, unsafe.Pointer(&self.arr[0]))
+func (unionVar *pthread_mutexattr_t) cast(t reflect.Type) reflect.Value {
+	return reflect.NewAt(t, unsafe.Pointer(&unionVar.arr[0]))
 }
-func (self *pthread_mutexattr_t) assign(v interface{}) {
+func (unionVar *pthread_mutexattr_t) assign(v interface{}) {
 	value := reflect.ValueOf(v).Elem()
-	value.Set(self.cast(value.Type()).Elem())
+	value.Set(unionVar.cast(value.Type()).Elem())
 }
-func (self *pthread_mutexattr_t) UntypedSet(v interface{}) {
+func (unionVar *pthread_mutexattr_t) UntypedSet(v interface{}) {
 	value := reflect.ValueOf(v)
-	self.cast(value.Type()).Elem().Set(value)
+	unionVar.cast(value.Type()).Elem().Set(value)
 }
-func (self *pthread_mutexattr_t) Get__size() (res []byte) {
-	self.assign(&res)
+func (unionVar *pthread_mutexattr_t) Get__size() (res []byte) {
+	unionVar.assign(&res)
 	return
 }
-func (self *pthread_mutexattr_t) Set__size(v []byte) []byte {
-	self.value = v
-	self.UntypedSet(v)
+func (unionVar *pthread_mutexattr_t) Set__size(v []byte) []byte {
+	unionVar.value = v
+	unionVar.UntypedSet(v)
 	return v
 }
-func (self *pthread_mutexattr_t) Get__align() (res int) {
-	self.assign(&res)
+func (unionVar *pthread_mutexattr_t) Get__align() (res int) {
+	unionVar.assign(&res)
 	return
 }
-func (self *pthread_mutexattr_t) Set__align(v int) int {
-	self.value = v
-	self.UntypedSet(v)
+func (unionVar *pthread_mutexattr_t) Set__align(v int) int {
+	unionVar.value = v
+	unionVar.UntypedSet(v)
 	return v
 }
 
@@ -527,42 +506,42 @@ type pthread_cond_t struct {
 	arr   [72]byte
 }
 
-func (self *pthread_cond_t) cast(t reflect.Type) reflect.Value {
-	return reflect.NewAt(t, unsafe.Pointer(&self.arr[0]))
+func (unionVar *pthread_cond_t) cast(t reflect.Type) reflect.Value {
+	return reflect.NewAt(t, unsafe.Pointer(&unionVar.arr[0]))
 }
-func (self *pthread_cond_t) assign(v interface{}) {
+func (unionVar *pthread_cond_t) assign(v interface{}) {
 	value := reflect.ValueOf(v).Elem()
-	value.Set(self.cast(value.Type()).Elem())
+	value.Set(unionVar.cast(value.Type()).Elem())
 }
-func (self *pthread_cond_t) UntypedSet(v interface{}) {
+func (unionVar *pthread_cond_t) UntypedSet(v interface{}) {
 	value := reflect.ValueOf(v)
-	self.cast(value.Type()).Elem().Set(value)
+	unionVar.cast(value.Type()).Elem().Set(value)
 }
-func (self *pthread_cond_t) Get__data() (res BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSpthreadtypesPhD141D3E) {
-	self.assign(&res)
+func (unionVar *pthread_cond_t) Get__data() (res BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSpthreadtypesPhD141D3E) {
+	unionVar.assign(&res)
 	return
 }
-func (self *pthread_cond_t) Set__data(v BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSpthreadtypesPhD141D3E) BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSpthreadtypesPhD141D3E {
-	self.value = v
-	self.UntypedSet(v)
+func (unionVar *pthread_cond_t) Set__data(v BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSpthreadtypesPhD141D3E) BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSpthreadtypesPhD141D3E {
+	unionVar.value = v
+	unionVar.UntypedSet(v)
 	return v
 }
-func (self *pthread_cond_t) Get__size() (res []byte) {
-	self.assign(&res)
+func (unionVar *pthread_cond_t) Get__size() (res []byte) {
+	unionVar.assign(&res)
 	return
 }
-func (self *pthread_cond_t) Set__size(v []byte) []byte {
-	self.value = v
-	self.UntypedSet(v)
+func (unionVar *pthread_cond_t) Set__size(v []byte) []byte {
+	unionVar.value = v
+	unionVar.UntypedSet(v)
 	return v
 }
-func (self *pthread_cond_t) Get__align() (res int64) {
-	self.assign(&res)
+func (unionVar *pthread_cond_t) Get__align() (res int64) {
+	unionVar.assign(&res)
 	return
 }
-func (self *pthread_cond_t) Set__align(v int64) int64 {
-	self.value = v
-	self.UntypedSet(v)
+func (unionVar *pthread_cond_t) Set__align(v int64) int64 {
+	unionVar.value = v
+	unionVar.UntypedSet(v)
 	return v
 }
 
@@ -571,33 +550,33 @@ type pthread_condattr_t struct {
 	arr   [8]byte
 }
 
-func (self *pthread_condattr_t) cast(t reflect.Type) reflect.Value {
-	return reflect.NewAt(t, unsafe.Pointer(&self.arr[0]))
+func (unionVar *pthread_condattr_t) cast(t reflect.Type) reflect.Value {
+	return reflect.NewAt(t, unsafe.Pointer(&unionVar.arr[0]))
 }
-func (self *pthread_condattr_t) assign(v interface{}) {
+func (unionVar *pthread_condattr_t) assign(v interface{}) {
 	value := reflect.ValueOf(v).Elem()
-	value.Set(self.cast(value.Type()).Elem())
+	value.Set(unionVar.cast(value.Type()).Elem())
 }
-func (self *pthread_condattr_t) UntypedSet(v interface{}) {
+func (unionVar *pthread_condattr_t) UntypedSet(v interface{}) {
 	value := reflect.ValueOf(v)
-	self.cast(value.Type()).Elem().Set(value)
+	unionVar.cast(value.Type()).Elem().Set(value)
 }
-func (self *pthread_condattr_t) Get__size() (res []byte) {
-	self.assign(&res)
+func (unionVar *pthread_condattr_t) Get__size() (res []byte) {
+	unionVar.assign(&res)
 	return
 }
-func (self *pthread_condattr_t) Set__size(v []byte) []byte {
-	self.value = v
-	self.UntypedSet(v)
+func (unionVar *pthread_condattr_t) Set__size(v []byte) []byte {
+	unionVar.value = v
+	unionVar.UntypedSet(v)
 	return v
 }
-func (self *pthread_condattr_t) Get__align() (res int) {
-	self.assign(&res)
+func (unionVar *pthread_condattr_t) Get__align() (res int) {
+	unionVar.assign(&res)
 	return
 }
-func (self *pthread_condattr_t) Set__align(v int) int {
-	self.value = v
-	self.UntypedSet(v)
+func (unionVar *pthread_condattr_t) Set__align(v int) int {
+	unionVar.value = v
+	unionVar.UntypedSet(v)
 	return v
 }
 
@@ -622,42 +601,42 @@ type pthread_rwlock_t struct {
 	arr   [56]byte
 }
 
-func (self *pthread_rwlock_t) cast(t reflect.Type) reflect.Value {
-	return reflect.NewAt(t, unsafe.Pointer(&self.arr[0]))
+func (unionVar *pthread_rwlock_t) cast(t reflect.Type) reflect.Value {
+	return reflect.NewAt(t, unsafe.Pointer(&unionVar.arr[0]))
 }
-func (self *pthread_rwlock_t) assign(v interface{}) {
+func (unionVar *pthread_rwlock_t) assign(v interface{}) {
 	value := reflect.ValueOf(v).Elem()
-	value.Set(self.cast(value.Type()).Elem())
+	value.Set(unionVar.cast(value.Type()).Elem())
 }
-func (self *pthread_rwlock_t) UntypedSet(v interface{}) {
+func (unionVar *pthread_rwlock_t) UntypedSet(v interface{}) {
 	value := reflect.ValueOf(v)
-	self.cast(value.Type()).Elem().Set(value)
+	unionVar.cast(value.Type()).Elem().Set(value)
 }
-func (self *pthread_rwlock_t) Get__data() (res BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSpthreadtypesPhD177D3E) {
-	self.assign(&res)
+func (unionVar *pthread_rwlock_t) Get__data() (res BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSpthreadtypesPhD177D3E) {
+	unionVar.assign(&res)
 	return
 }
-func (self *pthread_rwlock_t) Set__data(v BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSpthreadtypesPhD177D3E) BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSpthreadtypesPhD177D3E {
-	self.value = v
-	self.UntypedSet(v)
+func (unionVar *pthread_rwlock_t) Set__data(v BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSpthreadtypesPhD177D3E) BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSpthreadtypesPhD177D3E {
+	unionVar.value = v
+	unionVar.UntypedSet(v)
 	return v
 }
-func (self *pthread_rwlock_t) Get__size() (res []byte) {
-	self.assign(&res)
+func (unionVar *pthread_rwlock_t) Get__size() (res []byte) {
+	unionVar.assign(&res)
 	return
 }
-func (self *pthread_rwlock_t) Set__size(v []byte) []byte {
-	self.value = v
-	self.UntypedSet(v)
+func (unionVar *pthread_rwlock_t) Set__size(v []byte) []byte {
+	unionVar.value = v
+	unionVar.UntypedSet(v)
 	return v
 }
-func (self *pthread_rwlock_t) Get__align() (res int32) {
-	self.assign(&res)
+func (unionVar *pthread_rwlock_t) Get__align() (res int32) {
+	unionVar.assign(&res)
 	return
 }
-func (self *pthread_rwlock_t) Set__align(v int32) int32 {
-	self.value = v
-	self.UntypedSet(v)
+func (unionVar *pthread_rwlock_t) Set__align(v int32) int32 {
+	unionVar.value = v
+	unionVar.UntypedSet(v)
 	return v
 }
 
@@ -666,33 +645,33 @@ type pthread_rwlockattr_t struct {
 	arr   [8]byte
 }
 
-func (self *pthread_rwlockattr_t) cast(t reflect.Type) reflect.Value {
-	return reflect.NewAt(t, unsafe.Pointer(&self.arr[0]))
+func (unionVar *pthread_rwlockattr_t) cast(t reflect.Type) reflect.Value {
+	return reflect.NewAt(t, unsafe.Pointer(&unionVar.arr[0]))
 }
-func (self *pthread_rwlockattr_t) assign(v interface{}) {
+func (unionVar *pthread_rwlockattr_t) assign(v interface{}) {
 	value := reflect.ValueOf(v).Elem()
-	value.Set(self.cast(value.Type()).Elem())
+	value.Set(unionVar.cast(value.Type()).Elem())
 }
-func (self *pthread_rwlockattr_t) UntypedSet(v interface{}) {
+func (unionVar *pthread_rwlockattr_t) UntypedSet(v interface{}) {
 	value := reflect.ValueOf(v)
-	self.cast(value.Type()).Elem().Set(value)
+	unionVar.cast(value.Type()).Elem().Set(value)
 }
-func (self *pthread_rwlockattr_t) Get__size() (res []byte) {
-	self.assign(&res)
+func (unionVar *pthread_rwlockattr_t) Get__size() (res []byte) {
+	unionVar.assign(&res)
 	return
 }
-func (self *pthread_rwlockattr_t) Set__size(v []byte) []byte {
-	self.value = v
-	self.UntypedSet(v)
+func (unionVar *pthread_rwlockattr_t) Set__size(v []byte) []byte {
+	unionVar.value = v
+	unionVar.UntypedSet(v)
 	return v
 }
-func (self *pthread_rwlockattr_t) Get__align() (res int32) {
-	self.assign(&res)
+func (unionVar *pthread_rwlockattr_t) Get__align() (res int32) {
+	unionVar.assign(&res)
 	return
 }
-func (self *pthread_rwlockattr_t) Set__align(v int32) int32 {
-	self.value = v
-	self.UntypedSet(v)
+func (unionVar *pthread_rwlockattr_t) Set__align(v int32) int32 {
+	unionVar.value = v
+	unionVar.UntypedSet(v)
 	return v
 }
 
@@ -702,33 +681,33 @@ type pthread_barrier_t struct {
 	arr   [32]byte
 }
 
-func (self *pthread_barrier_t) cast(t reflect.Type) reflect.Value {
-	return reflect.NewAt(t, unsafe.Pointer(&self.arr[0]))
+func (unionVar *pthread_barrier_t) cast(t reflect.Type) reflect.Value {
+	return reflect.NewAt(t, unsafe.Pointer(&unionVar.arr[0]))
 }
-func (self *pthread_barrier_t) assign(v interface{}) {
+func (unionVar *pthread_barrier_t) assign(v interface{}) {
 	value := reflect.ValueOf(v).Elem()
-	value.Set(self.cast(value.Type()).Elem())
+	value.Set(unionVar.cast(value.Type()).Elem())
 }
-func (self *pthread_barrier_t) UntypedSet(v interface{}) {
+func (unionVar *pthread_barrier_t) UntypedSet(v interface{}) {
 	value := reflect.ValueOf(v)
-	self.cast(value.Type()).Elem().Set(value)
+	unionVar.cast(value.Type()).Elem().Set(value)
 }
-func (self *pthread_barrier_t) Get__size() (res []byte) {
-	self.assign(&res)
+func (unionVar *pthread_barrier_t) Get__size() (res []byte) {
+	unionVar.assign(&res)
 	return
 }
-func (self *pthread_barrier_t) Set__size(v []byte) []byte {
-	self.value = v
-	self.UntypedSet(v)
+func (unionVar *pthread_barrier_t) Set__size(v []byte) []byte {
+	unionVar.value = v
+	unionVar.UntypedSet(v)
 	return v
 }
-func (self *pthread_barrier_t) Get__align() (res int32) {
-	self.assign(&res)
+func (unionVar *pthread_barrier_t) Get__align() (res int32) {
+	unionVar.assign(&res)
 	return
 }
-func (self *pthread_barrier_t) Set__align(v int32) int32 {
-	self.value = v
-	self.UntypedSet(v)
+func (unionVar *pthread_barrier_t) Set__align(v int32) int32 {
+	unionVar.value = v
+	unionVar.UntypedSet(v)
 	return v
 }
 
@@ -737,33 +716,33 @@ type pthread_barrierattr_t struct {
 	arr   [8]byte
 }
 
-func (self *pthread_barrierattr_t) cast(t reflect.Type) reflect.Value {
-	return reflect.NewAt(t, unsafe.Pointer(&self.arr[0]))
+func (unionVar *pthread_barrierattr_t) cast(t reflect.Type) reflect.Value {
+	return reflect.NewAt(t, unsafe.Pointer(&unionVar.arr[0]))
 }
-func (self *pthread_barrierattr_t) assign(v interface{}) {
+func (unionVar *pthread_barrierattr_t) assign(v interface{}) {
 	value := reflect.ValueOf(v).Elem()
-	value.Set(self.cast(value.Type()).Elem())
+	value.Set(unionVar.cast(value.Type()).Elem())
 }
-func (self *pthread_barrierattr_t) UntypedSet(v interface{}) {
+func (unionVar *pthread_barrierattr_t) UntypedSet(v interface{}) {
 	value := reflect.ValueOf(v)
-	self.cast(value.Type()).Elem().Set(value)
+	unionVar.cast(value.Type()).Elem().Set(value)
 }
-func (self *pthread_barrierattr_t) Get__size() (res []byte) {
-	self.assign(&res)
+func (unionVar *pthread_barrierattr_t) Get__size() (res []byte) {
+	unionVar.assign(&res)
 	return
 }
-func (self *pthread_barrierattr_t) Set__size(v []byte) []byte {
-	self.value = v
-	self.UntypedSet(v)
+func (unionVar *pthread_barrierattr_t) Set__size(v []byte) []byte {
+	unionVar.value = v
+	unionVar.UntypedSet(v)
 	return v
 }
-func (self *pthread_barrierattr_t) Get__align() (res int) {
-	self.assign(&res)
+func (unionVar *pthread_barrierattr_t) Get__align() (res int) {
+	unionVar.assign(&res)
 	return
 }
-func (self *pthread_barrierattr_t) Set__align(v int) int {
-	self.value = v
-	self.UntypedSet(v)
+func (unionVar *pthread_barrierattr_t) Set__align(v int) int {
+	unionVar.value = v
+	unionVar.UntypedSet(v)
 	return v
 }
 
@@ -2177,9 +2156,6 @@ func geometric_K(k [][]float64, xyz []vec3, r []float32, L float64, Le float64, 
 }
 
 // solve_system - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd.c:352
-// Warning (ParenExpr):  :0 : Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Error (IfStmt):  :0 : Cannot transpileToExpr. err = Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 /*
  * SOLVE_SYSTEM  -  solve {F} =   [K]{D} via L D L' decomposition        27dec01
  * Prescribed displacements are "mechanical loads" not "temperature loads"
@@ -2205,6 +2181,9 @@ func solve_system(K [][]float64, D []float64, F []float64, R []float64, DoF int,
 			ldl_mprove_pm(K, DoF, diag, F, D, R, q, r, rms_resid, ok)
 			if verbose != 0 {
 				noarch.Fprintf(stdout, []byte("%9.2e\x00"), rms_resid[0])
+			}
+			if noarch.NotInt((ok[0])) != 0 {
+				break
 			}
 		}
 		if verbose != 0 {
@@ -7834,9 +7813,6 @@ func atma(t1 float64, t2 float64, t3 float64, t4 float64, t5 float64, t6 float64
 }
 
 // subspace - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/eig.c:66
-// Warning (ParenExpr):  :0 : Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Error (IfStmt):  :0 : Cannot transpileToExpr. err = Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 /*
  This file is part of FRAME3DD:
  Static and dynamic structural analysis of 2D and 3D frames and trusses with
@@ -8024,6 +8000,9 @@ func subspace(K [][]float64, M [][]float64, n int, m int, w []float64, V [][]flo
 				ldl_mprove(K, n, u, v, d, (*[1]float64)(unsafe.Pointer(&error))[:], ok)
 				if disp != 0 {
 					noarch.Fprintf(stdout, []byte("%9.2e\x00"), error)
+				}
+				if noarch.NotInt((ok[0])) != 0 {
+					break
 				}
 			}
 			if disp != 0 {
@@ -8216,9 +8195,6 @@ func rotate(A [][]float64, n int, alpha float64, beta float64, i int, j int) {
 }
 
 // stodola - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/eig.c:363
-// Warning (ParenExpr):  :0 : Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Error (IfStmt):  :0 : Cannot transpileToExpr. err = Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 /*------------------------------------------------------------------------------
 STODOLA  -  calculate the lowest m eigen-values and eigen-vectors of the
 generalized eigen-problem, K v = w M v, using a matrix iteration approach
@@ -8285,6 +8261,9 @@ func stodola(K [][]float64, M [][]float64, n int, m int, w []float64, V [][]floa
 			ldl_mprove(K, n, u, v, d, (*[1]float64)(unsafe.Pointer(&error))[:], ok)
 			if disp != 0 {
 				noarch.Fprintf(stdout, []byte("%9.2e\x00"), error)
+			}
+			if noarch.NotInt((ok[0])) != 0 {
+				break
 			}
 		}
 		if disp != 0 {
@@ -9100,9 +9079,6 @@ func PSB_update(B [][]float64, f []float64, d []float64, n int) {
 }
 
 // pseudo_inv - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/HPGmatrix.c:580
-// Warning (ParenExpr):  :0 : Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Error (IfStmt):  :0 : Cannot transpileToExpr. err = Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 /*
  * PSEUDO_INV - calculate the pseudo-inverse of A ,
  * 	     Ai = inv ( A'*A + beta * trace(A'*A) * I ) * A'
@@ -9177,6 +9153,9 @@ func pseudo_inv(A [][]float64, Ai [][]float64, n int, m int, beta float64, verbo
 			ldl_mprove(AtA, n, diag, b, x, (*[1]float64)(unsafe.Pointer(&error))[:], (*[1]int)(unsafe.Pointer(&ok))[:])
 			if verbose != 0 {
 				noarch.Fprintf(stdout, []byte("%9.2e\x00"), error)
+			}
+			if noarch.NotInt((ok)) != 0 {
+				break
 			}
 		}
 		if verbose != 0 {
@@ -9254,9 +9233,6 @@ func pseudo_inv(A [][]float64, Ai [][]float64, n int, m int, beta float64, verbo
 }
 
 // invAB - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/HPGmatrix.c:701
-// Warning (ParenExpr):  :0 : Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Error (IfStmt):  :0 : Cannot transpileToExpr. err = Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 /*
  * INVAB  -  calculate product inv(A) * B
  *	 A is n by n      B is n by m				    6jun07
@@ -9298,6 +9274,9 @@ func invAB(A [][]float64, B [][]float64, n int, m int, AiB [][]float64, ok []int
 			if verbose != 0 {
 				noarch.Fprintf(stdout, []byte("%9.2e\x00"), error)
 			}
+			if noarch.NotInt((ok[0])) != 0 {
+				break
+			}
 		}
 		if verbose != 0 {
 			noarch.Fprintf(stdout, []byte("\n\x00"))
@@ -9312,9 +9291,6 @@ func invAB(A [][]float64, B [][]float64, n int, m int, AiB [][]float64, ok []int
 }
 
 // xtinvAy - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/HPGmatrix.c:744
-// Warning (ParenExpr):  :0 : Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Error (IfStmt):  :0 : Cannot transpileToExpr. err = Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 /*
  * XTinvAY  -  calculate quadratic form with inverse matrix   X' * inv(A) * Y
  *	   A is n by n    X is n by m     Y is n by m		    15sep01
@@ -9352,6 +9328,9 @@ func xtinvAy(X [][]float64, A [][]float64, Y [][]float64, n int, m int, Ac [][]f
 			ldl_mprove(A, n, diag, y, x, (*[1]float64)(unsafe.Pointer(&error))[:], (*[1]int)(unsafe.Pointer(&ok))[:])
 			if verbose != 0 {
 				noarch.Fprintf(stdout, []byte("%9.2e\x00"), error)
+			}
+			if noarch.NotInt((ok)) != 0 {
+				break
 			}
 		}
 		if verbose != 0 {
@@ -9461,9 +9440,6 @@ func xtAy(x []float64, A [][]float64, y []float64, n int, d []float64) float64 {
 }
 
 // invAXinvA - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/HPGmatrix.c:866
-// Warning (ParenExpr):  :0 : Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Warning (UnaryOperator):  :0 : Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
-// Error (IfStmt):  :0 : Cannot transpileToExpr. err = Cannot transpile UnaryOperator: err = Cannot transpileToExpr. err = Cannot transpile ParenExpr. err = Cannot casting {int -> }. err = Cannot resolve type '' : probably an incorrect type translation 1
 /*
  * invAXinvA -  calculate quadratic form with inverse matrix
  *	   replace X with inv(A) * X * inv(A)
@@ -9513,6 +9489,9 @@ func invAXinvA(A [][]float64, X [][]float64, n int, verbose int) {
 			ldl_mprove(A, n, diag, b, x, (*[1]float64)(unsafe.Pointer(&error))[:], (*[1]int)(unsafe.Pointer(&ok))[:])
 			if verbose != 0 {
 				noarch.Fprintf(stdout, []byte("%9.2e\x00"), error)
+			}
+			if noarch.NotInt((ok)) != 0 {
+				break
 			}
 		}
 		if verbose != 0 {
