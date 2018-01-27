@@ -6,7 +6,7 @@ Amount lines into file go_build_result.txt:
 Amount lines into file govet.txt: 
 0
 Amount lines into file golint.txt: 
-1310
+416
 Amount lines into file deadcode.txt: 
 528
 Amount lines into file gosimple.txt: 

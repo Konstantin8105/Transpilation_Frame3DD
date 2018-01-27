@@ -30,8 +30,12 @@ cat ./govet.txt | wc -l >> $RESULT
 echo "Golint"
 golint > golint.txt 2>&1
 
+cat ./golint.txt | grep -v "should have comment or be unexported" | grep -v "use ALL_CAPS in Go names" | grep -v "use underscores in Go names" > /tmp/golint.txt
+cat /tmp/golint.txt > golint.txt
+
 echo "Amount lines into file golint.txt: " >> $RESULT 
-cat ./golint.txt | wc -l >> $RESULT
+
+cat ./golint.txt |  wc -l >> $RESULT
 # -----------------------------
 echo "Deadcode"
 deadcode > deadcode.txt 2>&1

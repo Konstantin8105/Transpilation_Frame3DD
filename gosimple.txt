@@ -1,11 +1,11 @@
 /home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:1911:6: res declared but not used
 /home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:2478:6: res declared but not used
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:5486:6: u9 declared but not used
 /home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:5488:6: u11 declared but not used
 /home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:5485:6: u8 declared but not used
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:5486:6: u9 declared but not used
 /home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:5484:6: u7 declared but not used
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:5487:6: u10 declared but not used
 /home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:5489:6: u12 declared but not used
-/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:7222:6: u4 declared but not used
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:5487:6: u10 declared but not used
 /home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:7228:6: u10 declared but not used
+/home/lepricon/go/src/github.com/Konstantin8105/Transpilation_Frame3DD/main.go:7222:6: u4 declared but not used
 couldn't load packages due to errors: github.com/Konstantin8105/Transpilation_Frame3DD
