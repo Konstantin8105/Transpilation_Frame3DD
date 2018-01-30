@@ -58,6 +58,3 @@ cat ./main.go | grep "// Warning" | wc -l > warning_amount.txt
 echo "Amount lines into file warning.txt: " >> $RESULT 
 cat ./warning.txt | wc -l >> $RESULT
 # -----------------------------
-echo "Debugging"
-c2go transpile -debug -clang-flag="-I$CODE_PATH/viewer/" -clang-flag="-lm" -clang-flag="-I$CODE_PATH/microstran/" "$CODE_PATH/main.c" "$CODE_PATH/frame3dd.c" "$CODE_PATH/frame3dd_io.c" "$CODE_PATH/coordtrans.c" "$CODE_PATH/eig.c" "$CODE_PATH/HPGmatrix.c" "$CODE_PATH/HPGutil.c" "$CODE_PATH/NRutil.c" | tee ./debug.txt
-# -----------------------------
