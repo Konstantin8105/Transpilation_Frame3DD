@@ -1,11 +1,1 @@
-# Compilation C program : /tmp/analyze209991100/cProgram1
-# Copy file /home/konstantin/go/src/github.com/Konstantin8105/History_frame3DD/src/main.c to /tmp/analyze209991100/main.c
-# Copy file /home/konstantin/go/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd.c to /tmp/analyze209991100/frame3dd.c
-# Copy file /home/konstantin/go/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c to /tmp/analyze209991100/frame3dd_io.c
-# Copy file /home/konstantin/go/src/github.com/Konstantin8105/History_frame3DD/src/coordtrans.c to /tmp/analyze209991100/coordtrans.c
-# Copy file /home/konstantin/go/src/github.com/Konstantin8105/History_frame3DD/src/eig.c to /tmp/analyze209991100/eig.c
-# Copy file /home/konstantin/go/src/github.com/Konstantin8105/History_frame3DD/src/HPGmatrix.c to /tmp/analyze209991100/HPGmatrix.c
-# Copy file /home/konstantin/go/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c to /tmp/analyze209991100/HPGutil.c
-# Copy file /home/konstantin/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c to /tmp/analyze209991100/NRutil.c
-# Compilation C program : /tmp/analyze209991100/cProgram2
-Error: exit status 1
+Error: Input file ~/temp/History_frame3DD/src/main.c is not found

@@ -9,8 +9,16 @@ echo "Write version c2go"
 c2go -v > c2go_version.txt
 
 # -----------------------------
+echo "Compilation"
+
+gcc "-I$CODE_PATH/viewer/" "-I$CODE_PATH/microstran/" "$CODE_PATH/main.c" "$CODE_PATH/frame3dd.c" "$CODE_PATH/frame3dd_io.c" "$CODE_PATH/coordtrans.c" "$CODE_PATH/eig.c" "$CODE_PATH/HPGmatrix.c" "$CODE_PATH/HPGutil.c" "$CODE_PATH/NRutil.c" -lm
+
+echo "Execution"
+./a.out
+# -----------------------------
 echo "Transpilation"
-c2go transpile -o="main.go" -clang-flag="-I$CODE_PATH/viewer/" -clang-flag="-lm" -clang-flag="-I$CODE_PATH/microstran/" "$CODE_PATH/main.c" "$CODE_PATH/frame3dd.c" "$CODE_PATH/frame3dd_io.c" "$CODE_PATH/coordtrans.c" "$CODE_PATH/eig.c" "$CODE_PATH/HPGmatrix.c" "$CODE_PATH/HPGutil.c" "$CODE_PATH/NRutil.c"
+# -clang-flag="-lm" 
+c2go transpile -o="main.go" -clang-flag="-I$CODE_PATH/viewer/" -clang-flag="-I$CODE_PATH/microstran/" "$CODE_PATH/main.c" "$CODE_PATH/frame3dd.c" "$CODE_PATH/frame3dd_io.c" "$CODE_PATH/coordtrans.c" "$CODE_PATH/eig.c" "$CODE_PATH/HPGmatrix.c" "$CODE_PATH/HPGutil.c" "$CODE_PATH/NRutil.c"
 
 echo "Amount lines into file main.go: " >> $RESULT 
 cat ./main.go | wc -l >> $RESULT

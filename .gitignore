@@ -15,5 +15,8 @@
 
 #Project files
 *.3dd
+*.plt
+*.if*
+*.CSV
 main
 main.exe
