@@ -1,5 +1,5 @@
 /*
-	Package main - transpiled by c2go version: v0.21.5 Zinc 2018-01-31
+	Package main - transpiled by c2go version: v0.21.7 Zinc 2018-02-08
 
 	If you have found any issues, please raise an issue at:
 	https://github.com/elliotchance/c2go/
@@ -8,9 +8,10 @@
 // Warning (EnumDecl):  /usr/include/math.h:347 : Add support of continues counter for type : *ast.UnaryExpr
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/waitstatus.h:75 : Error : name of FieldDecl is empty
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/waitstatus.h:89 : Error : name of FieldDecl is empty
-// Warning (TransparentUnionAttr):  /usr/include/stdlib.h:71 : could not parse &{65099920 {/usr/include/stdlib.h 71 0 35 0 } []}
+// Warning (TransparentUnionAttr):  /usr/include/stdlib.h:71 : could not parse &{55421072 {/usr/include/stdlib.h 71 0 35 0 } []}
 // Warning (FieldDecl):  /usr/include/stdlib.h:69 : Avoid struct `union wait *` in FieldDecl
 // Warning (RecordDecl):  :0 : could not determine the size of type `union __WAIT_STATUS` for that reason: Cannot determine sizeof : |union __WAIT_STATUS|. err = Cannot determine sizeof : |union wait *|. err = error in union
+// Error (TranslationUnitDecl):  :0 : Cannot determine sizeof : |union __WAIT_STATUS|. err = Cannot determine sizeof : |union wait *|. err = error in union
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/timex.h:50 : Error : name of FieldDecl is empty
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/timex.h:51 : Error : name of FieldDecl is empty
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/timex.h:52 : Error : name of FieldDecl is empty
@@ -26,7 +27,6 @@ import "math/rand"
 import "os"
 import "github.com/elliotchance/c2go/noarch"
 import "unsafe"
-import "reflect"
 
 type float_t float32
 type double_t float64
@@ -76,7 +76,7 @@ type __off_t int32
 type __off64_t int32
 type __pid_t int
 type __fsid_t struct {
-	__val []int
+	__val [2]int
 }
 type __clock_t int32
 type __rlim_t uint32
@@ -110,39 +110,30 @@ type _IO_FILE struct {
 type FILE struct {
 }
 type __FILE _IO_FILE
-type BSunionSatSSusrSincludeSwcharPhD85D3E struct {
-	value interface{}
-	arr   [8]byte
-}
+type BSunionSatSSusrSincludeSwcharPhD85D3E struct{ memory unsafe.Pointer }
 
-func (unionVar *BSunionSatSSusrSincludeSwcharPhD85D3E) cast(t reflect.Type) reflect.Value {
-	return reflect.NewAt(t, unsafe.Pointer(&unionVar.arr[0]))
+func (unionVar *BSunionSatSSusrSincludeSwcharPhD85D3E) copy() BSunionSatSSusrSincludeSwcharPhD85D3E {
+	var buffer [8]byte
+	for i := range buffer {
+		buffer[i] = (*((*[8]byte)(unionVar.memory)))[i]
+	}
+	var newUnion BSunionSatSSusrSincludeSwcharPhD85D3E
+	newUnion.memory = unsafe.Pointer(&buffer)
+	return newUnion
 }
-func (unionVar *BSunionSatSSusrSincludeSwcharPhD85D3E) assign(v interface{}) {
-	value := reflect.ValueOf(v).Elem()
-	value.Set(unionVar.cast(value.Type()).Elem())
+func (unionVar *BSunionSatSSusrSincludeSwcharPhD85D3E) __wch() *uint32 {
+	if unionVar.memory == nil {
+		var buffer [8]byte
+		unionVar.memory = unsafe.Pointer(&buffer)
+	}
+	return (*uint32)(unionVar.memory)
 }
-func (unionVar *BSunionSatSSusrSincludeSwcharPhD85D3E) UntypedSet(v interface{}) {
-	value := reflect.ValueOf(v)
-	unionVar.cast(value.Type()).Elem().Set(value)
-}
-func (unionVar *BSunionSatSSusrSincludeSwcharPhD85D3E) Get__wch() (res uint32) {
-	unionVar.assign(&res)
-	return
-}
-func (unionVar *BSunionSatSSusrSincludeSwcharPhD85D3E) Set__wch(v uint32) uint32 {
-	unionVar.value = v
-	unionVar.UntypedSet(v)
-	return v
-}
-func (unionVar *BSunionSatSSusrSincludeSwcharPhD85D3E) Get__wchb() (res []byte) {
-	unionVar.assign(&res)
-	return
-}
-func (unionVar *BSunionSatSSusrSincludeSwcharPhD85D3E) Set__wchb(v []byte) []byte {
-	unionVar.value = v
-	unionVar.UntypedSet(v)
-	return v
+func (unionVar *BSunionSatSSusrSincludeSwcharPhD85D3E) __wchb() *[4]byte {
+	if unionVar.memory == nil {
+		var buffer [8]byte
+		unionVar.memory = unsafe.Pointer(&buffer)
+	}
+	return (*[4]byte)(unionVar.memory)
 }
 
 type __mbstate_t struct {
@@ -226,48 +217,37 @@ type BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSwaitstatusPhD84D5E struct {
 	__w_stopval uint32
 	__w_stopsig uint32
 }
-type wait struct {
-	value interface{}
-	arr   [16]byte
-}
+type wait struct{ memory unsafe.Pointer }
 
-func (unionVar *wait) cast(t reflect.Type) reflect.Value {
-	return reflect.NewAt(t, unsafe.Pointer(&unionVar.arr[0]))
+func (unionVar *wait) copy() wait {
+	var buffer [16]byte
+	for i := range buffer {
+		buffer[i] = (*((*[16]byte)(unionVar.memory)))[i]
+	}
+	var newUnion wait
+	newUnion.memory = unsafe.Pointer(&buffer)
+	return newUnion
 }
-func (unionVar *wait) assign(v interface{}) {
-	value := reflect.ValueOf(v).Elem()
-	value.Set(unionVar.cast(value.Type()).Elem())
+func (unionVar *wait) w_status() *int {
+	if unionVar.memory == nil {
+		var buffer [16]byte
+		unionVar.memory = unsafe.Pointer(&buffer)
+	}
+	return (*int)(unionVar.memory)
 }
-func (unionVar *wait) UntypedSet(v interface{}) {
-	value := reflect.ValueOf(v)
-	unionVar.cast(value.Type()).Elem().Set(value)
+func (unionVar *wait) __wait_terminated() *BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSwaitstatusPhD69D5E {
+	if unionVar.memory == nil {
+		var buffer [16]byte
+		unionVar.memory = unsafe.Pointer(&buffer)
+	}
+	return (*BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSwaitstatusPhD69D5E)(unionVar.memory)
 }
-func (unionVar *wait) GetW_status() (res int) {
-	unionVar.assign(&res)
-	return
-}
-func (unionVar *wait) SetW_status(v int) int {
-	unionVar.value = v
-	unionVar.UntypedSet(v)
-	return v
-}
-func (unionVar *wait) Get__wait_terminated() (res BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSwaitstatusPhD69D5E) {
-	unionVar.assign(&res)
-	return
-}
-func (unionVar *wait) Set__wait_terminated(v BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSwaitstatusPhD69D5E) BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSwaitstatusPhD69D5E {
-	unionVar.value = v
-	unionVar.UntypedSet(v)
-	return v
-}
-func (unionVar *wait) Get__wait_stopped() (res BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSwaitstatusPhD84D5E) {
-	unionVar.assign(&res)
-	return
-}
-func (unionVar *wait) Set__wait_stopped(v BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSwaitstatusPhD84D5E) BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSwaitstatusPhD84D5E {
-	unionVar.value = v
-	unionVar.UntypedSet(v)
-	return v
+func (unionVar *wait) __wait_stopped() *BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSwaitstatusPhD84D5E {
+	if unionVar.memory == nil {
+		var buffer [16]byte
+		unionVar.memory = unsafe.Pointer(&buffer)
+	}
+	return (*BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSwaitstatusPhD84D5E)(unionVar.memory)
 }
 
 type div_t struct {
@@ -282,16 +262,7 @@ type lldiv_t struct {
 	quot int64
 	rem  int64
 }
-type __locale_data struct {
-}
-type __locale_t struct {
-	__locales       [][]__locale_data
-	__ctype_b       []uint16
-	__ctype_tolower []int
-	__ctype_toupper []int
-	__names         [][]byte
-}
-type locale_t __locale_t
+type locale_t int
 type u_char uint8
 type u_short uint16
 type u_int uint32
@@ -332,7 +303,7 @@ type u_int64_t uint32
 type register_t int32
 type __sig_atomic_t int
 type __sigset_t struct {
-	__val []uint32
+	__val [16]uint32
 }
 type sigset_t __sigset_t
 type timespec struct {
@@ -348,7 +319,7 @@ type __fd_mask struct {
 	tv_usec int32
 }
 type fd_set struct {
-	fds_bits []__fd_mask
+	fds_bits [16]__fd_mask
 }
 type fd_mask __fd_mask
 type blksize_t int32
@@ -359,39 +330,30 @@ type blkcnt64_t int32
 type fsblkcnt64_t uint32
 type fsfilcnt64_t uint32
 type pthread_t uint32
-type pthread_attr_t struct {
-	value interface{}
-	arr   [56]byte
-}
+type pthread_attr_t struct{ memory unsafe.Pointer }
 
-func (unionVar *pthread_attr_t) cast(t reflect.Type) reflect.Value {
-	return reflect.NewAt(t, unsafe.Pointer(&unionVar.arr[0]))
+func (unionVar *pthread_attr_t) copy() pthread_attr_t {
+	var buffer [56]byte
+	for i := range buffer {
+		buffer[i] = (*((*[56]byte)(unionVar.memory)))[i]
+	}
+	var newUnion pthread_attr_t
+	newUnion.memory = unsafe.Pointer(&buffer)
+	return newUnion
 }
-func (unionVar *pthread_attr_t) assign(v interface{}) {
-	value := reflect.ValueOf(v).Elem()
-	value.Set(unionVar.cast(value.Type()).Elem())
+func (unionVar *pthread_attr_t) __size() *[56]byte {
+	if unionVar.memory == nil {
+		var buffer [56]byte
+		unionVar.memory = unsafe.Pointer(&buffer)
+	}
+	return (*[56]byte)(unionVar.memory)
 }
-func (unionVar *pthread_attr_t) UntypedSet(v interface{}) {
-	value := reflect.ValueOf(v)
-	unionVar.cast(value.Type()).Elem().Set(value)
-}
-func (unionVar *pthread_attr_t) Get__size() (res []byte) {
-	unionVar.assign(&res)
-	return
-}
-func (unionVar *pthread_attr_t) Set__size(v []byte) []byte {
-	unionVar.value = v
-	unionVar.UntypedSet(v)
-	return v
-}
-func (unionVar *pthread_attr_t) Get__align() (res int32) {
-	unionVar.assign(&res)
-	return
-}
-func (unionVar *pthread_attr_t) Set__align(v int32) int32 {
-	unionVar.value = v
-	unionVar.UntypedSet(v)
-	return v
+func (unionVar *pthread_attr_t) __align() *int32 {
+	if unionVar.memory == nil {
+		var buffer [56]byte
+		unionVar.memory = unsafe.Pointer(&buffer)
+	}
+	return (*int32)(unionVar.memory)
 }
 
 type __pthread_internal_list struct {
@@ -412,83 +374,63 @@ type __pthread_mutex_s struct {
 	__elision int16
 	__list    __pthread_list_t
 }
-type pthread_mutex_t struct {
-	value interface{}
-	arr   [40]byte
+type pthread_mutex_t struct{ memory unsafe.Pointer }
+
+func (unionVar *pthread_mutex_t) copy() pthread_mutex_t {
+	var buffer [40]byte
+	for i := range buffer {
+		buffer[i] = (*((*[40]byte)(unionVar.memory)))[i]
+	}
+	var newUnion pthread_mutex_t
+	newUnion.memory = unsafe.Pointer(&buffer)
+	return newUnion
+}
+func (unionVar *pthread_mutex_t) __data() *__pthread_mutex_s {
+	if unionVar.memory == nil {
+		var buffer [40]byte
+		unionVar.memory = unsafe.Pointer(&buffer)
+	}
+	return (*__pthread_mutex_s)(unionVar.memory)
+}
+func (unionVar *pthread_mutex_t) __size() *[40]byte {
+	if unionVar.memory == nil {
+		var buffer [40]byte
+		unionVar.memory = unsafe.Pointer(&buffer)
+	}
+	return (*[40]byte)(unionVar.memory)
+}
+func (unionVar *pthread_mutex_t) __align() *int32 {
+	if unionVar.memory == nil {
+		var buffer [40]byte
+		unionVar.memory = unsafe.Pointer(&buffer)
+	}
+	return (*int32)(unionVar.memory)
 }
 
-func (unionVar *pthread_mutex_t) cast(t reflect.Type) reflect.Value {
-	return reflect.NewAt(t, unsafe.Pointer(&unionVar.arr[0]))
-}
-func (unionVar *pthread_mutex_t) assign(v interface{}) {
-	value := reflect.ValueOf(v).Elem()
-	value.Set(unionVar.cast(value.Type()).Elem())
-}
-func (unionVar *pthread_mutex_t) UntypedSet(v interface{}) {
-	value := reflect.ValueOf(v)
-	unionVar.cast(value.Type()).Elem().Set(value)
-}
-func (unionVar *pthread_mutex_t) Get__data() (res __pthread_mutex_s) {
-	unionVar.assign(&res)
-	return
-}
-func (unionVar *pthread_mutex_t) Set__data(v __pthread_mutex_s) __pthread_mutex_s {
-	unionVar.value = v
-	unionVar.UntypedSet(v)
-	return v
-}
-func (unionVar *pthread_mutex_t) Get__size() (res []byte) {
-	unionVar.assign(&res)
-	return
-}
-func (unionVar *pthread_mutex_t) Set__size(v []byte) []byte {
-	unionVar.value = v
-	unionVar.UntypedSet(v)
-	return v
-}
-func (unionVar *pthread_mutex_t) Get__align() (res int32) {
-	unionVar.assign(&res)
-	return
-}
-func (unionVar *pthread_mutex_t) Set__align(v int32) int32 {
-	unionVar.value = v
-	unionVar.UntypedSet(v)
-	return v
-}
+type pthread_mutexattr_t struct{ memory unsafe.Pointer }
 
-type pthread_mutexattr_t struct {
-	value interface{}
-	arr   [8]byte
+func (unionVar *pthread_mutexattr_t) copy() pthread_mutexattr_t {
+	var buffer [8]byte
+	for i := range buffer {
+		buffer[i] = (*((*[8]byte)(unionVar.memory)))[i]
+	}
+	var newUnion pthread_mutexattr_t
+	newUnion.memory = unsafe.Pointer(&buffer)
+	return newUnion
 }
-
-func (unionVar *pthread_mutexattr_t) cast(t reflect.Type) reflect.Value {
-	return reflect.NewAt(t, unsafe.Pointer(&unionVar.arr[0]))
+func (unionVar *pthread_mutexattr_t) __size() *[4]byte {
+	if unionVar.memory == nil {
+		var buffer [8]byte
+		unionVar.memory = unsafe.Pointer(&buffer)
+	}
+	return (*[4]byte)(unionVar.memory)
 }
-func (unionVar *pthread_mutexattr_t) assign(v interface{}) {
-	value := reflect.ValueOf(v).Elem()
-	value.Set(unionVar.cast(value.Type()).Elem())
-}
-func (unionVar *pthread_mutexattr_t) UntypedSet(v interface{}) {
-	value := reflect.ValueOf(v)
-	unionVar.cast(value.Type()).Elem().Set(value)
-}
-func (unionVar *pthread_mutexattr_t) Get__size() (res []byte) {
-	unionVar.assign(&res)
-	return
-}
-func (unionVar *pthread_mutexattr_t) Set__size(v []byte) []byte {
-	unionVar.value = v
-	unionVar.UntypedSet(v)
-	return v
-}
-func (unionVar *pthread_mutexattr_t) Get__align() (res int) {
-	unionVar.assign(&res)
-	return
-}
-func (unionVar *pthread_mutexattr_t) Set__align(v int) int {
-	unionVar.value = v
-	unionVar.UntypedSet(v)
-	return v
+func (unionVar *pthread_mutexattr_t) __align() *int {
+	if unionVar.memory == nil {
+		var buffer [8]byte
+		unionVar.memory = unsafe.Pointer(&buffer)
+	}
+	return (*int)(unionVar.memory)
 }
 
 type BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSpthreadtypesPhD141D3E struct {
@@ -501,83 +443,63 @@ type BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSpthreadtypesPhD141D3E struct
 	__nwaiters      uint32
 	__broadcast_seq uint32
 }
-type pthread_cond_t struct {
-	value interface{}
-	arr   [72]byte
+type pthread_cond_t struct{ memory unsafe.Pointer }
+
+func (unionVar *pthread_cond_t) copy() pthread_cond_t {
+	var buffer [72]byte
+	for i := range buffer {
+		buffer[i] = (*((*[72]byte)(unionVar.memory)))[i]
+	}
+	var newUnion pthread_cond_t
+	newUnion.memory = unsafe.Pointer(&buffer)
+	return newUnion
+}
+func (unionVar *pthread_cond_t) __data() *BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSpthreadtypesPhD141D3E {
+	if unionVar.memory == nil {
+		var buffer [72]byte
+		unionVar.memory = unsafe.Pointer(&buffer)
+	}
+	return (*BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSpthreadtypesPhD141D3E)(unionVar.memory)
+}
+func (unionVar *pthread_cond_t) __size() *[48]byte {
+	if unionVar.memory == nil {
+		var buffer [72]byte
+		unionVar.memory = unsafe.Pointer(&buffer)
+	}
+	return (*[48]byte)(unionVar.memory)
+}
+func (unionVar *pthread_cond_t) __align() *int64 {
+	if unionVar.memory == nil {
+		var buffer [72]byte
+		unionVar.memory = unsafe.Pointer(&buffer)
+	}
+	return (*int64)(unionVar.memory)
 }
 
-func (unionVar *pthread_cond_t) cast(t reflect.Type) reflect.Value {
-	return reflect.NewAt(t, unsafe.Pointer(&unionVar.arr[0]))
-}
-func (unionVar *pthread_cond_t) assign(v interface{}) {
-	value := reflect.ValueOf(v).Elem()
-	value.Set(unionVar.cast(value.Type()).Elem())
-}
-func (unionVar *pthread_cond_t) UntypedSet(v interface{}) {
-	value := reflect.ValueOf(v)
-	unionVar.cast(value.Type()).Elem().Set(value)
-}
-func (unionVar *pthread_cond_t) Get__data() (res BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSpthreadtypesPhD141D3E) {
-	unionVar.assign(&res)
-	return
-}
-func (unionVar *pthread_cond_t) Set__data(v BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSpthreadtypesPhD141D3E) BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSpthreadtypesPhD141D3E {
-	unionVar.value = v
-	unionVar.UntypedSet(v)
-	return v
-}
-func (unionVar *pthread_cond_t) Get__size() (res []byte) {
-	unionVar.assign(&res)
-	return
-}
-func (unionVar *pthread_cond_t) Set__size(v []byte) []byte {
-	unionVar.value = v
-	unionVar.UntypedSet(v)
-	return v
-}
-func (unionVar *pthread_cond_t) Get__align() (res int64) {
-	unionVar.assign(&res)
-	return
-}
-func (unionVar *pthread_cond_t) Set__align(v int64) int64 {
-	unionVar.value = v
-	unionVar.UntypedSet(v)
-	return v
-}
+type pthread_condattr_t struct{ memory unsafe.Pointer }
 
-type pthread_condattr_t struct {
-	value interface{}
-	arr   [8]byte
+func (unionVar *pthread_condattr_t) copy() pthread_condattr_t {
+	var buffer [8]byte
+	for i := range buffer {
+		buffer[i] = (*((*[8]byte)(unionVar.memory)))[i]
+	}
+	var newUnion pthread_condattr_t
+	newUnion.memory = unsafe.Pointer(&buffer)
+	return newUnion
 }
-
-func (unionVar *pthread_condattr_t) cast(t reflect.Type) reflect.Value {
-	return reflect.NewAt(t, unsafe.Pointer(&unionVar.arr[0]))
+func (unionVar *pthread_condattr_t) __size() *[4]byte {
+	if unionVar.memory == nil {
+		var buffer [8]byte
+		unionVar.memory = unsafe.Pointer(&buffer)
+	}
+	return (*[4]byte)(unionVar.memory)
 }
-func (unionVar *pthread_condattr_t) assign(v interface{}) {
-	value := reflect.ValueOf(v).Elem()
-	value.Set(unionVar.cast(value.Type()).Elem())
-}
-func (unionVar *pthread_condattr_t) UntypedSet(v interface{}) {
-	value := reflect.ValueOf(v)
-	unionVar.cast(value.Type()).Elem().Set(value)
-}
-func (unionVar *pthread_condattr_t) Get__size() (res []byte) {
-	unionVar.assign(&res)
-	return
-}
-func (unionVar *pthread_condattr_t) Set__size(v []byte) []byte {
-	unionVar.value = v
-	unionVar.UntypedSet(v)
-	return v
-}
-func (unionVar *pthread_condattr_t) Get__align() (res int) {
-	unionVar.assign(&res)
-	return
-}
-func (unionVar *pthread_condattr_t) Set__align(v int) int {
-	unionVar.value = v
-	unionVar.UntypedSet(v)
-	return v
+func (unionVar *pthread_condattr_t) __align() *int {
+	if unionVar.memory == nil {
+		var buffer [8]byte
+		unionVar.memory = unsafe.Pointer(&buffer)
+	}
+	return (*int)(unionVar.memory)
 }
 
 type pthread_key_t uint32
@@ -592,158 +514,120 @@ type BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSpthreadtypesPhD177D3E struct
 	__writer            int
 	__shared            int
 	__rwelision         int8
-	__pad1              []uint8
+	__pad1              [7]uint8
 	__pad2              uint32
 	__flags             uint32
 }
-type pthread_rwlock_t struct {
-	value interface{}
-	arr   [56]byte
+type pthread_rwlock_t struct{ memory unsafe.Pointer }
+
+func (unionVar *pthread_rwlock_t) copy() pthread_rwlock_t {
+	var buffer [56]byte
+	for i := range buffer {
+		buffer[i] = (*((*[56]byte)(unionVar.memory)))[i]
+	}
+	var newUnion pthread_rwlock_t
+	newUnion.memory = unsafe.Pointer(&buffer)
+	return newUnion
+}
+func (unionVar *pthread_rwlock_t) __data() *BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSpthreadtypesPhD177D3E {
+	if unionVar.memory == nil {
+		var buffer [56]byte
+		unionVar.memory = unsafe.Pointer(&buffer)
+	}
+	return (*BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSpthreadtypesPhD177D3E)(unionVar.memory)
+}
+func (unionVar *pthread_rwlock_t) __size() *[56]byte {
+	if unionVar.memory == nil {
+		var buffer [56]byte
+		unionVar.memory = unsafe.Pointer(&buffer)
+	}
+	return (*[56]byte)(unionVar.memory)
+}
+func (unionVar *pthread_rwlock_t) __align() *int32 {
+	if unionVar.memory == nil {
+		var buffer [56]byte
+		unionVar.memory = unsafe.Pointer(&buffer)
+	}
+	return (*int32)(unionVar.memory)
 }
 
-func (unionVar *pthread_rwlock_t) cast(t reflect.Type) reflect.Value {
-	return reflect.NewAt(t, unsafe.Pointer(&unionVar.arr[0]))
-}
-func (unionVar *pthread_rwlock_t) assign(v interface{}) {
-	value := reflect.ValueOf(v).Elem()
-	value.Set(unionVar.cast(value.Type()).Elem())
-}
-func (unionVar *pthread_rwlock_t) UntypedSet(v interface{}) {
-	value := reflect.ValueOf(v)
-	unionVar.cast(value.Type()).Elem().Set(value)
-}
-func (unionVar *pthread_rwlock_t) Get__data() (res BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSpthreadtypesPhD177D3E) {
-	unionVar.assign(&res)
-	return
-}
-func (unionVar *pthread_rwlock_t) Set__data(v BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSpthreadtypesPhD177D3E) BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSpthreadtypesPhD177D3E {
-	unionVar.value = v
-	unionVar.UntypedSet(v)
-	return v
-}
-func (unionVar *pthread_rwlock_t) Get__size() (res []byte) {
-	unionVar.assign(&res)
-	return
-}
-func (unionVar *pthread_rwlock_t) Set__size(v []byte) []byte {
-	unionVar.value = v
-	unionVar.UntypedSet(v)
-	return v
-}
-func (unionVar *pthread_rwlock_t) Get__align() (res int32) {
-	unionVar.assign(&res)
-	return
-}
-func (unionVar *pthread_rwlock_t) Set__align(v int32) int32 {
-	unionVar.value = v
-	unionVar.UntypedSet(v)
-	return v
-}
+type pthread_rwlockattr_t struct{ memory unsafe.Pointer }
 
-type pthread_rwlockattr_t struct {
-	value interface{}
-	arr   [8]byte
+func (unionVar *pthread_rwlockattr_t) copy() pthread_rwlockattr_t {
+	var buffer [8]byte
+	for i := range buffer {
+		buffer[i] = (*((*[8]byte)(unionVar.memory)))[i]
+	}
+	var newUnion pthread_rwlockattr_t
+	newUnion.memory = unsafe.Pointer(&buffer)
+	return newUnion
 }
-
-func (unionVar *pthread_rwlockattr_t) cast(t reflect.Type) reflect.Value {
-	return reflect.NewAt(t, unsafe.Pointer(&unionVar.arr[0]))
+func (unionVar *pthread_rwlockattr_t) __size() *[8]byte {
+	if unionVar.memory == nil {
+		var buffer [8]byte
+		unionVar.memory = unsafe.Pointer(&buffer)
+	}
+	return (*[8]byte)(unionVar.memory)
 }
-func (unionVar *pthread_rwlockattr_t) assign(v interface{}) {
-	value := reflect.ValueOf(v).Elem()
-	value.Set(unionVar.cast(value.Type()).Elem())
-}
-func (unionVar *pthread_rwlockattr_t) UntypedSet(v interface{}) {
-	value := reflect.ValueOf(v)
-	unionVar.cast(value.Type()).Elem().Set(value)
-}
-func (unionVar *pthread_rwlockattr_t) Get__size() (res []byte) {
-	unionVar.assign(&res)
-	return
-}
-func (unionVar *pthread_rwlockattr_t) Set__size(v []byte) []byte {
-	unionVar.value = v
-	unionVar.UntypedSet(v)
-	return v
-}
-func (unionVar *pthread_rwlockattr_t) Get__align() (res int32) {
-	unionVar.assign(&res)
-	return
-}
-func (unionVar *pthread_rwlockattr_t) Set__align(v int32) int32 {
-	unionVar.value = v
-	unionVar.UntypedSet(v)
-	return v
+func (unionVar *pthread_rwlockattr_t) __align() *int32 {
+	if unionVar.memory == nil {
+		var buffer [8]byte
+		unionVar.memory = unsafe.Pointer(&buffer)
+	}
+	return (*int32)(unionVar.memory)
 }
 
 type pthread_spinlock_t int
-type pthread_barrier_t struct {
-	value interface{}
-	arr   [32]byte
+type pthread_barrier_t struct{ memory unsafe.Pointer }
+
+func (unionVar *pthread_barrier_t) copy() pthread_barrier_t {
+	var buffer [32]byte
+	for i := range buffer {
+		buffer[i] = (*((*[32]byte)(unionVar.memory)))[i]
+	}
+	var newUnion pthread_barrier_t
+	newUnion.memory = unsafe.Pointer(&buffer)
+	return newUnion
+}
+func (unionVar *pthread_barrier_t) __size() *[32]byte {
+	if unionVar.memory == nil {
+		var buffer [32]byte
+		unionVar.memory = unsafe.Pointer(&buffer)
+	}
+	return (*[32]byte)(unionVar.memory)
+}
+func (unionVar *pthread_barrier_t) __align() *int32 {
+	if unionVar.memory == nil {
+		var buffer [32]byte
+		unionVar.memory = unsafe.Pointer(&buffer)
+	}
+	return (*int32)(unionVar.memory)
 }
 
-func (unionVar *pthread_barrier_t) cast(t reflect.Type) reflect.Value {
-	return reflect.NewAt(t, unsafe.Pointer(&unionVar.arr[0]))
-}
-func (unionVar *pthread_barrier_t) assign(v interface{}) {
-	value := reflect.ValueOf(v).Elem()
-	value.Set(unionVar.cast(value.Type()).Elem())
-}
-func (unionVar *pthread_barrier_t) UntypedSet(v interface{}) {
-	value := reflect.ValueOf(v)
-	unionVar.cast(value.Type()).Elem().Set(value)
-}
-func (unionVar *pthread_barrier_t) Get__size() (res []byte) {
-	unionVar.assign(&res)
-	return
-}
-func (unionVar *pthread_barrier_t) Set__size(v []byte) []byte {
-	unionVar.value = v
-	unionVar.UntypedSet(v)
-	return v
-}
-func (unionVar *pthread_barrier_t) Get__align() (res int32) {
-	unionVar.assign(&res)
-	return
-}
-func (unionVar *pthread_barrier_t) Set__align(v int32) int32 {
-	unionVar.value = v
-	unionVar.UntypedSet(v)
-	return v
-}
+type pthread_barrierattr_t struct{ memory unsafe.Pointer }
 
-type pthread_barrierattr_t struct {
-	value interface{}
-	arr   [8]byte
+func (unionVar *pthread_barrierattr_t) copy() pthread_barrierattr_t {
+	var buffer [8]byte
+	for i := range buffer {
+		buffer[i] = (*((*[8]byte)(unionVar.memory)))[i]
+	}
+	var newUnion pthread_barrierattr_t
+	newUnion.memory = unsafe.Pointer(&buffer)
+	return newUnion
 }
-
-func (unionVar *pthread_barrierattr_t) cast(t reflect.Type) reflect.Value {
-	return reflect.NewAt(t, unsafe.Pointer(&unionVar.arr[0]))
+func (unionVar *pthread_barrierattr_t) __size() *[4]byte {
+	if unionVar.memory == nil {
+		var buffer [8]byte
+		unionVar.memory = unsafe.Pointer(&buffer)
+	}
+	return (*[4]byte)(unionVar.memory)
 }
-func (unionVar *pthread_barrierattr_t) assign(v interface{}) {
-	value := reflect.ValueOf(v).Elem()
-	value.Set(unionVar.cast(value.Type()).Elem())
-}
-func (unionVar *pthread_barrierattr_t) UntypedSet(v interface{}) {
-	value := reflect.ValueOf(v)
-	unionVar.cast(value.Type()).Elem().Set(value)
-}
-func (unionVar *pthread_barrierattr_t) Get__size() (res []byte) {
-	unionVar.assign(&res)
-	return
-}
-func (unionVar *pthread_barrierattr_t) Set__size(v []byte) []byte {
-	unionVar.value = v
-	unionVar.UntypedSet(v)
-	return v
-}
-func (unionVar *pthread_barrierattr_t) Get__align() (res int) {
-	unionVar.assign(&res)
-	return
-}
-func (unionVar *pthread_barrierattr_t) Set__align(v int) int {
-	unionVar.value = v
-	unionVar.UntypedSet(v)
-	return v
+func (unionVar *pthread_barrierattr_t) __align() *int {
+	if unionVar.memory == nil {
+		var buffer [8]byte
+		unionVar.memory = unsafe.Pointer(&buffer)
+	}
+	return (*int)(unionVar.memory)
 }
 
 type random_data struct {
@@ -756,8 +640,8 @@ type random_data struct {
 	end_ptr   []int
 }
 type drand48_data struct {
-	__x     []uint16
-	__old_x []uint16
+	__x     [3]uint16
+	__old_x [3]uint16
 	__c     uint16
 	__init  uint16
 	__a     uint64
@@ -8301,10 +8185,8 @@ func sturm(K [][]float64, M [][]float64, n int, m int, shift float64, ws float64
 		noarch.Fprintf(stderr, []byte(" ... %d modes were not found.\n\x00"), -ok-modes)
 		noarch.Fprintf(stderr, []byte(" Try increasing the number of modes in \n\x00"))
 		noarch.Fprintf(stderr, []byte(" order to get the missing modes below %f Hz.\n\x00"), math.Sqrt(ws)/(2*3.141592653589793))
-	} else {
-		if verbose != 0 {
-			noarch.Fprintf(stdout, []byte("  All %d modes were found.\n\x00"), modes)
-		}
+	} else if verbose != 0 {
+		noarch.Fprintf(stdout, []byte("  All %d modes were found.\n\x00"), modes)
 	}
 	for i = 1; i <= n; i++ {
 		for j = i; j <= n; j++ {
@@ -8408,10 +8290,8 @@ func gaussj(A [][]float32, n int, B [][]float32, m int) {
 							irow = j
 							icol = k
 						}
-					} else {
-						if ipiv[k] > 1 {
-							NRerror([]byte("gaussj: Singular Matrix-1\x00"))
-						}
+					} else if ipiv[k] > 1 {
+						NRerror([]byte("gaussj: Singular Matrix-1\x00"))
 					}
 				}
 			}
