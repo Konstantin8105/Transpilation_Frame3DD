@@ -1,5 +1,5 @@
 /*
-	Package main - transpiled by c2go version: v0.21.7 Zinc 2018-02-08
+	Package main - transpiled by c2go version: v0.21.8 Zinc 2018-02-09
 
 	If you have found any issues, please raise an issue at:
 	https://github.com/elliotchance/c2go/
@@ -8,7 +8,7 @@
 // Warning (EnumDecl):  /usr/include/math.h:347 : Add support of continues counter for type : *ast.UnaryExpr
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/waitstatus.h:75 : Error : name of FieldDecl is empty
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/waitstatus.h:89 : Error : name of FieldDecl is empty
-// Warning (TransparentUnionAttr):  /usr/include/stdlib.h:71 : could not parse &{55421072 {/usr/include/stdlib.h 71 0 35 0 } []}
+// Warning (TransparentUnionAttr):  /usr/include/stdlib.h:71 : could not parse &{40896656 {/usr/include/stdlib.h 71 0 35 0 } []}
 // Warning (FieldDecl):  /usr/include/stdlib.h:69 : Avoid struct `union wait *` in FieldDecl
 // Warning (RecordDecl):  :0 : could not determine the size of type `union __WAIT_STATUS` for that reason: Cannot determine sizeof : |union __WAIT_STATUS|. err = Cannot determine sizeof : |union wait *|. err = error in union
 // Error (TranslationUnitDecl):  :0 : Cannot determine sizeof : |union __WAIT_STATUS|. err = Cannot determine sizeof : |union wait *|. err = error in union
@@ -1035,9 +1035,11 @@ type fcomplex struct {
 
     You should have received a copy of the GNU General Public License
     along with FRAME3DD.  If not, see <http://www.gnu.org/licenses/>.
-*/ /** @file
+*/ //
+/** @file
 Main FRAME3DD program driver
-*/ /** @mainpage
+*/ //
+/** @mainpage
 FRAME3DD: a program for static and dynamic structural analysis of 2D and 3D
 frames and trusses with elastic and geometric stiffness.
 
@@ -1056,7 +1058,8 @@ John Pye john.pye@anu.edu.au (Microstran parser and viewer)
 
 For compilation/installation, see README.txt.
 
-*/ // compile the Frame3DD analysis into another code, such as a GUI
+*/ //
+// compile the Frame3DD analysis into another code, such as a GUI
 // compile Frame3DD to run as a stand-alone code through the terminal
 // the input  data filename
 // the output data filename
@@ -1178,13 +1181,104 @@ For compilation/installation, see README.txt.
 			&lump_flag, &modal_flag, &tol_flag, &shift_flag,
 			&pan_flag, &write_matrix, &axial_sign, &condense_flag,
 			&verbose, &debug);
-*/ /*  display program name, version and license type */ //frame3dd.sf.net\n");
-/* open the input data file */ /* open input data file */ // clear the buffer ??
+*/ //
+/*  display program name, version and license type */ //
+//frame3dd.sf.net\n");
+/* open the input data file */ //
+/* open input data file */ //
+// clear the buffer ??
 // wait for the Enter key
-/* .CSV or .FMM or other? */ //	temp_file_location("frame3dd.3dd",strippedInputFile,FRAME3DD_PATHMAX);
-/* strip comments from input data */ /* open stripped input file */ /*  display analysis title */ /* number of nodes	*/ /* display nN */ /* allocate memory for node data ... */ /* rigid radius around each node */ /* node coordinates */ /* total number of degrees of freedom	*/ /* allocate memory for reaction data ... */ /* allocate memory for reaction data ... */ /* number of frame elements	*/ /* display nE */ /* not enough elements */ /* allocate memory for frame elements ... */ /* length of each element		*/ /* effective length of each element	*/ /* node #1 of each element		*/ /* node #2 of each element		*/ /* cross section area of each element	*/ /* shear area in local y direction 	*/ /* shear area in local z direction	*/ /* torsional moment of inertia 		*/ /* bending moment of inertia about y-axis */ /* bending moment of inertia about z-axis */ /* frame element Young's modulus	*/ /* frame element shear modulus		*/ /* element rotation angle about local x axis */ /* element mass density			*/ /* number of load cases		*/ /* display nL */ /* not enough load cases */ /* too many load cases */ /* allocate memory for loads ... */ /* uniform load on each member */ /* trapezoidal load on each member */ /* internal point load each member */ /* internal temp change each member*/ /* prescribed displacement of each node */ /* mechanical load vector	*/ /* temperature load vector	*/ /* external load vector	*/ /* equilibrium error {F} - [K]{D} */ /* eqF due to mech loads */ /* eqF due to temp loads */ /* global stiffness matrix	*/ /* end forces for each member	*/ /* displacments of each node		*/ /* incremental displ. of each node	*/ /* reaction forces			*/ /* incremental reaction forces		*/ /* lumped mass for each frame element	*/ /* node mass for each node		*/ /* node inertia about global X axis	*/ /* node inertia about global Y axis	*/ /* node inertia about global Z axis	*/ /* vector of condensed degrees of freedom */ /* vector of condensed mode numbers	*/ // peak axial forces, shears, torques, and moments along each element
+/* .CSV or .FMM or other? */ //
+//	temp_file_location("frame3dd.3dd",strippedInputFile,FRAME3DD_PATHMAX);
+/* strip comments from input data */ //
+/* open stripped input file */ //
+/*  display analysis title */ //
+/* number of nodes	*/ //
+/* display nN */ //
+/* allocate memory for node data ... */ //
+/* rigid radius around each node */ //
+/* node coordinates */ //
+/* total number of degrees of freedom	*/ //
+/* allocate memory for reaction data ... */ //
+/* allocate memory for reaction data ... */ //
+/* number of frame elements	*/ //
+/* display nE */ //
+/* not enough elements */ //
+/* allocate memory for frame elements ... */ //
+/* length of each element		*/ //
+/* effective length of each element	*/ //
+/* node #1 of each element		*/ //
+/* node #2 of each element		*/ //
+/* cross section area of each element	*/ //
+/* shear area in local y direction 	*/ //
+/* shear area in local z direction	*/ //
+/* torsional moment of inertia 		*/ //
+/* bending moment of inertia about y-axis */ //
+/* bending moment of inertia about z-axis */ //
+/* frame element Young's modulus	*/ //
+/* frame element shear modulus		*/ //
+/* element rotation angle about local x axis */ //
+/* element mass density			*/ //
+/* number of load cases		*/ //
+/* display nL */ //
+/* not enough load cases */ //
+/* too many load cases */ //
+/* allocate memory for loads ... */ //
+/* uniform load on each member */ //
+/* trapezoidal load on each member */ //
+/* internal point load each member */ //
+/* internal temp change each member*/ //
+/* prescribed displacement of each node */ //
+/* mechanical load vector	*/ //
+/* temperature load vector	*/ //
+/* external load vector	*/ //
+/* equilibrium error {F} - [K]{D} */ //
+/* eqF due to mech loads */ //
+/* eqF due to temp loads */ //
+/* global stiffness matrix	*/ //
+/* end forces for each member	*/ //
+/* displacments of each node		*/ //
+/* incremental displ. of each node	*/ //
+/* reaction forces			*/ //
+/* incremental reaction forces		*/ //
+/* lumped mass for each frame element	*/ //
+/* node mass for each node		*/ //
+/* node inertia about global X axis	*/ //
+/* node inertia about global Y axis	*/ //
+/* node inertia about global Z axis	*/ //
+/* vector of condensed degrees of freedom */ //
+/* vector of condensed mode numbers	*/ //
+// peak axial forces, shears, torques, and moments along each element
 // peak displacements and slopes along each element
-/* display load data complete */ /* display mass data complete */ /*  display condensation data complete */ /* close the input data file */ /* open the output data file for appending */ /* unable to append to output data file */ /* solve the problem	*/ /* begin load case analysis loop */ /* display the load case number  */ /*  initialize displacements and displ. increment to {0}  */ /*  initialize reactions     and react. increment to {0}  */ /*  initialize internal element end forces Q = {0}	*/ /*  elastic stiffness matrix  [K({D}^(i))], {D}^(0)={0} (i=0) */ /* first apply temperature loads only, if there are any ... */ /*  solve {F_t} = [K({D=0})] * {D_t} */ /* increment {D_t} = {0} + {D_t} temp.-induced displ */ /* increment {R_t} = {0} + {R_t} temp.-induced react */ /* assemble K = Ke + Kg */ /* compute   {Q}={Q_t} ... temp.-induced forces     */ /* assemble temp.-stressed stiffness [K({D_t})]     */ /* ... then apply mechanical loads only, if there are any ... */ /* incremental displ at react'ns = prescribed displ */ /*  solve {F_m} = [K({D_t})] * {D_m}	*/ /* combine {D} = {D_t} + {D_m}	*/ /* combine {R} = {R_t} + {R_m} --- for linear systems */ /*  combine {F} = {F_t} + {F_m} */ /*  element forces {Q} for displacements {D}	*/ /*  check the equilibrium error	*/ /*
+/* display load data complete */ //
+/* display mass data complete */ //
+/*  display condensation data complete */ //
+/* close the input data file */ //
+/* open the output data file for appending */ //
+/* unable to append to output data file */ //
+/* solve the problem	*/ //
+/* begin load case analysis loop */ //
+/* display the load case number  */ //
+/*  initialize displacements and displ. increment to {0}  */ //
+/*  initialize reactions     and react. increment to {0}  */ //
+/*  initialize internal element end forces Q = {0}	*/ //
+/*  elastic stiffness matrix  [K({D}^(i))], {D}^(0)={0} (i=0) */ //
+/* first apply temperature loads only, if there are any ... */ //
+/*  solve {F_t} = [K({D=0})] * {D_t} */ //
+/* increment {D_t} = {0} + {D_t} temp.-induced displ */ //
+/* increment {R_t} = {0} + {R_t} temp.-induced react */ //
+/* assemble K = Ke + Kg */ //
+/* compute   {Q}={Q_t} ... temp.-induced forces     */ //
+/* assemble temp.-stressed stiffness [K({D_t})]     */ //
+/* ... then apply mechanical loads only, if there are any ... */ //
+/* incremental displ at react'ns = prescribed displ */ //
+/*  solve {F_m} = [K({D_t})] * {D_m}	*/ //
+/* combine {D} = {D_t} + {D_m}	*/ //
+/* combine {R} = {R_t} + {R_m} --- for linear systems */ //
+/*  combine {F} = {F_t} + {F_m} */ //
+/*  element forces {Q} for displacements {D}	*/ //
+/*  check the equilibrium error	*/ //
+/*
  * 		if ( geom ) { // initialize Broyden secant stiffness matrix, Ks
  *			Ks  = dmatrix( 1, DoF, 1, DoF );
  *			for (i=1;i<=DoF;i++) {
@@ -1193,9 +1287,28 @@ For compilation/installation, see README.txt.
  *				}
  *			}
  *		}
- */ /* quasi Newton-Raphson iteration for geometric nonlinearity  */ /* re-initialize */ /*  assemble stiffness matrix [K({D}^(i))]	      */ /*  compute equilibrium error, {dF}, at iteration i   */ /*  {dF}^(i) = {F} - [K({D}^(i))]*{D}^(i)	      */ /*  convergence criteria = || {dF}^(i) ||  /  || F || */ /*  Powell-Symmetric-Broyden secant stiffness update  */ // PSB_update ( Ks, dF, dD, DoF );  /* not helpful?   */
-/*  solve {dF}^(i) = [K({D}^(i))] * {dD}^(i)	      */ /*  K is not positive definite	      */ /*  increment {D}^(i+1) = {D}^(i) + {dD}^(i)	      */ /*  element forces {Q} for displacements {D}^(i)      */ /*  display equilibrium error        */ /* end quasi Newton-Raphson iteration */ /*   strain limit failure ... */ /*   strain limit _and_ buckling failure ... */ /*  dealocate Broyden secant stiffness matrix, Ks */ // if ( geom )	free_dmatrix(Ks, 1, DoF, 1, DoF );
-/* write static stiffness matrix */ /*  display RMS equilibrium error */ // .CSV format output
+ */ //
+/* quasi Newton-Raphson iteration for geometric nonlinearity  */ //
+/* re-initialize */ //
+/*  assemble stiffness matrix [K({D}^(i))]	      */ //
+/*  compute equilibrium error, {dF}, at iteration i   */ //
+/*  {dF}^(i) = {F} - [K({D}^(i))]*{D}^(i)	      */ //
+/*  convergence criteria = || {dF}^(i) ||  /  || F || */ //
+/*  Powell-Symmetric-Broyden secant stiffness update  */ //
+// PSB_update ( Ks, dF, dD, DoF );  /* not helpful?   */
+/*  solve {dF}^(i) = [K({D}^(i))] * {dD}^(i)	      */ //
+/*  K is not positive definite	      */ //
+/*  increment {D}^(i+1) = {D}^(i) + {dD}^(i)	      */ //
+/*  element forces {Q} for displacements {D}^(i)      */ //
+/*  display equilibrium error        */ //
+/* end quasi Newton-Raphson iteration */ //
+/*   strain limit failure ... */ //
+/*   strain limit _and_ buckling failure ... */ //
+/*  dealocate Broyden secant stiffness matrix, Ks */ //
+// if ( geom )	free_dmatrix(Ks, 1, DoF, 1, DoF );
+/* write static stiffness matrix */ //
+/*  display RMS equilibrium error */ //
+// .CSV format output
 // .m matlab format output
 /*
  *		if ( verbose )
@@ -1203,7 +1316,28 @@ For compilation/installation, see README.txt.
  *		 " hit CTRL-C to stop execution, \n"
  *		 "    reduce exagg_static in the Input Data,"
  *		 " and re-run the analysis. \n");
- */ /* end load case loop */ /*  data check only  */ /* display data check only */ /* carry out modal analysis */ /* Bathe */ /*  compute traceK and traceM */ /*  modify K and M for reactions    */ /* apply reactions to upper triangle */ /* write Kd and Md matrices */ /* dynamic stff matx */ /* dynamic mass matx */ /* subspace or stodola methods */ /* write modal analysis results */ /* matrix condensation of stiffness and mass */ /* static condensation only */ /*  dynamic condensation  */ /* deallocate memory used for each frame analysis variable */ /* wait for keyboard entry to close the terminal */ /* (void) getchar();	// clear the buffer ??  */ /* while( !getchar() ) ;	// wait for the Enter key to be hit  */
+ */ //
+/* end load case loop */ //
+/*  data check only  */ //
+/* display data check only */ //
+/* carry out modal analysis */ //
+/* Bathe */ //
+/*  compute traceK and traceM */ //
+/*  modify K and M for reactions    */ //
+/* apply reactions to upper triangle */ //
+/* write Kd and Md matrices */ //
+/* dynamic stff matx */ //
+/* dynamic mass matx */ //
+/* subspace or stodola methods */ //
+/* write modal analysis results */ //
+/* matrix condensation of stiffness and mass */ //
+/* static condensation only */ //
+/*  dynamic condensation  */ //
+/* deallocate memory used for each frame analysis variable */ //
+/* wait for keyboard entry to close the terminal */ //
+/* (void) getchar();	// clear the buffer ??  */ //
+/* while( !getchar() ) ;	// wait for the Enter key to be hit  */ //
+//
 func main() {
 	argc := len(os.Args)
 	argv := [][]byte{}
@@ -1804,9 +1938,18 @@ func main() {
 
     You should have received a copy of the GNU General Public License
     along with FRAME3DD.  If not, see <http://www.gnu.org/licenses/>.
-*/ /* NOTE main 'driver' routine is now moved to main.c */ /* #define MATRIX_DEBUG */ /* forward declarations */ /*
+*/ //
+/* NOTE main 'driver' routine is now moved to main.c */ //
+/* #define MATRIX_DEBUG */ //
+/* forward declarations */ //
+/*
  * ASSEMBLE_K  -  assemble global stiffness matrix from individual elements 23feb94
- */ /* element stiffness matrix in global coord */ /* member-structure DoF index table	*/ /* res=0, */ /* res = sprintf(stiffness_fn,"k_%03d",i); */
+ */ //
+/* element stiffness matrix in global coord */ //
+/* member-structure DoF index table	*/ //
+/* res=0, */ //
+/* res = sprintf(stiffness_fn,"k_%03d",i); */ //
+//
 func assemble_K(K [][]float64, DoF int, nE int, xyz []vec3, r []float32, L []float64, Le []float64, N1 []int, N2 []int, Ax []float32, Asy []float32, Asz []float32, Jx []float32, Iy []float32, Iz []float32, E []float32, G []float32, p []float32, shear int, geom int, Q [][]float64, debug int) {
 	var k [][]float64
 	var ind [][]int
@@ -1862,7 +2005,12 @@ func assemble_K(K [][]float64, DoF int, nE int, xyz []vec3, r []float32, L []flo
 // elastic_K - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd.c:151
 /*
  * ELASTIC_K - space frame elastic stiffness matrix in global coordnates	22oct02
- */ /* coord Xformn */ /* shear deformatn coefficients	*/ /* globalize */ /* check and enforce symmetry of elastic element stiffness matrix */
+ */ //
+/* coord Xformn */ //
+/* shear deformatn coefficients	*/ //
+/* globalize */ //
+/* check and enforce symmetry of elastic element stiffness matrix */ //
+//
 func elastic_K(k [][]float64, xyz []vec3, r []float32, L float64, Le float64, n1 int, n2 int, Ax float32, Asy float32, Asz float32, J float32, Iy float32, Iz float32, E float32, G float32, p float32, shear int) {
 	var t1 float64
 	var t2 float64
@@ -1952,9 +2100,15 @@ func elastic_K(k [][]float64, xyz []vec3, r []float32, L float64, Le float64, n1
 // geometric_K - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd.c:232
 /*
  * GEOMETRIC_K - space frame geometric stiffness matrix, global coordnates 20dec07
- */ /* coord Xformn */ /* shear deformation coefficients	*/ // T/L;
+ */ //
+/* coord Xformn */ //
+/* shear deformation coefficients	*/ //
+// T/L;
 // -T/L;
-/* globalize */ /* check and enforce symmetry of geometric element stiffness matrix */ /* add geometric stiffness matrix to elastic stiffness matrix ... */
+/* globalize */ //
+/* check and enforce symmetry of geometric element stiffness matrix */ //
+/* add geometric stiffness matrix to elastic stiffness matrix ... */ //
+//
 func geometric_K(k [][]float64, xyz []vec3, r []float32, L float64, Le float64, n1 int, n2 int, Ax float32, Asy float32, Asz float32, J float32, Iy float32, Iz float32, E float32, G float32, p float32, T float64, shear int) {
 	var t1 float64
 	var t2 float64
@@ -2059,7 +2213,15 @@ func geometric_K(k [][]float64, xyz []vec3, r []float32, L float64, Le float64, 
 /*
  * SOLVE_SYSTEM  -  solve {F} =   [K]{D} via L D L' decomposition        27dec01
  * Prescribed displacements are "mechanical loads" not "temperature loads"
- */ /* diagonal vector of the L D L' decomp. */ /* suppress verbose output		*/ /*  L D L' decomposition of K[q,q] into lower triangle of K[q,q] and diag[q] */ /*  vectors F and D are unchanged */ /* exit(31); */ /* LDL'  back-substitution for D[q] and R[r] */ /* improve solution for D[q] and R[r] */
+ */ //
+/* diagonal vector of the L D L' decomp. */ //
+/* suppress verbose output		*/ //
+/*  L D L' decomposition of K[q,q] into lower triangle of K[q,q] and diag[q] */ //
+/*  vectors F and D are unchanged */ //
+/* exit(31); */ //
+/* LDL'  back-substitution for D[q] and R[r] */ //
+/* improve solution for D[q] and R[r] */ //
+//
 func solve_system(K [][]float64, D []float64, F []float64, R []float64, DoF int, q []int, r []int, ok []int, verbose int, rms_resid []float64) {
 	var diag []float64
 	verbose = 0
@@ -2099,11 +2261,13 @@ func solve_system(K [][]float64, D []float64, F []float64, R []float64, DoF int,
  * use only the upper-triangle of [K_qq]
  * return ||dF||/||F||
  * 2014-05-16
- */ //  sum of squares of dF
+ */ //
+//  sum of squares of dF
 //  sum of squares of F
 // compute equilibrium error at free coord's (q)
 // K_qq in upper triangle only
 // convergence criterion
+//
 func equilibrium_error(dF []float64, F []float64, K [][]float64, D []float64, DoF int, q []int, r []int) float64 {
 	var ss_dF float64 = 0
 	var ss_F float64 = 0
@@ -2148,8 +2312,10 @@ func equilibrium_error(dF []float64, F []float64, K [][]float64, D []float64, Do
 /*
  * ELEMENT_END_FORCES  -  evaluate the end forces for all elements
  * 23feb94
- */ // equivalent element end forces from temp loads
+ */ //
+// equivalent element end forces from temp loads
 // equivalent element end forces from mech loads
+//
 func element_end_forces(Q [][]float64, nE int, xyz []vec3, L []float64, Le []float64, N1 []int, N2 []int, Ax []float32, Asy []float32, Asz []float32, Jx []float32, Iy []float32, Iz []float32, E []float32, G []float32, p []float32, eqF_temp [][]float64, eqF_mech [][]float64, D []float64, shear int, geom int, axial_strain_warning []int) {
 	var s []float64
 	var axial_strain float64 = float64(0)
@@ -2174,12 +2340,20 @@ func element_end_forces(Q [][]float64, nE int, xyz []vec3, L []float64, Le []flo
 /*
  * FRAME_ELEMENT_FORCE  -  evaluate the end forces in local coord's
  * 12nov02
- */ /* coord Xformn	*/ // x1, y1, z1, x2, y2, z2,	/* node coordinates	*/
+ */ //
+/* coord Xformn	*/ //
+// x1, y1, z1, x2, y2, z2,	/* node coordinates	*/
 //  Ls,			/* stretched length of element */
-/* stretch in the frame element */ /* shear deformation coeff's	*/ /* axial force for geometric stiffness */ /* finite strain ... (not consistent with 2nd order formulation) */ /*
+/* stretch in the frame element */ //
+/* shear deformation coeff's	*/ //
+/* axial force for geometric stiffness */ //
+/* finite strain ... (not consistent with 2nd order formulation) */ //
+/*
  *	delta += ( pow(((d7-d1)*t4 + (d8-d2)*t5 + (d9-d3)*t6),2.0) +
  *		   pow(((d7-d1)*t7 + (d8-d2)*t8 + (d9-d3)*t9),2.0) )/(2.0*L);
- */ /* true strain ... (not appropriate for structural materials) */ /*
+ */ //
+/* true strain ... (not appropriate for structural materials) */ //
+/*
  *	x1 = xyz[n1].x;	y1 = xyz[n1].y;	z1 = xyz[n1].z;
  *	x2 = xyz[n2].x;	y2 = xyz[n2].y;	z2 = xyz[n2].z;
  *
@@ -2189,7 +2363,9 @@ func element_end_forces(Q [][]float64, nE int, xyz []vec3, L []float64, Le []flo
  *	Ls = sqrt(Ls) + Le - L;
  *
  *	delta = Le*log(Ls/Le);
- */ /* axial element displacement ... */ // log(Ls/Le);
+ */ //
+/* axial element displacement ... */ //
+// log(Ls/Le);
 // add fixed end forces to internal element forces
 // 18oct2012, 14may1204, 15may2014
 // add temperature fixed-end-forces to variables f1-f12
@@ -2198,6 +2374,7 @@ func element_end_forces(Q [][]float64, nE int, xyz []vec3, L []float64, Le []flo
 // transform f1 ... f12 to local element coordinate system and
 // add local fixed end forces (-equivalent loads) to internal loads
 // {Q} = [T]{f}
+//
 func frame_element_force(s []float64, xyz []vec3, L float64, Le float64, n1 int, n2 int, Ax float32, Asy float32, Asz float32, J float32, Iy float32, Iz float32, E float32, G float32, p float32, f_t []float64, f_m []float64, D []float64, shear int, geom int, axial_strain []float64) {
 	var t1 float64
 	var t2 float64
@@ -2346,14 +2523,17 @@ int nE, int DoF,
 
 	}
 }
-*/ /*
+*/ //
+/*
  * COMPUTE_REACTION_FORCES : R(r) = [K(r,q)]*{D(q)} + [K(r,r)]*{D(r)} - F(r)
  * reaction forces satisfy equilibrium in the solved system
  * only really needed for geometric-nonlinear problems
  * 2012-10-12  , 2014-05-16
- */ // coordinate "i" is a reaction coord.
+ */ //
+// coordinate "i" is a reaction coord.
 // negative of equiv loads at coord i
 // reactions are relaxed through system deformations
+//
 func compute_reaction_forces(R []float64, F []float64, K [][]float64, D []float64, DoF int, r []int) {
 	var i int
 	var j int
@@ -2371,7 +2551,13 @@ func compute_reaction_forces(R []float64, F []float64, K [][]float64, D []float6
 // assemble_M - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd.c:677
 /*
  * ASSEMBLE_M  -  assemble global mass matrix from element mass & inertia  24nov98
- */ /* element mass matrix in global coord */ /* member-structure DoF index table     */ /* res=0,  */ /* res = sprintf(mass_fn,"m_%03d",i); */ // add extra node mass
+ */ //
+/* element mass matrix in global coord */ //
+/* member-structure DoF index table     */ //
+/* res=0,  */ //
+/* res = sprintf(mass_fn,"m_%03d",i); */ //
+// add extra node mass
+//
 func assemble_M(M [][]float64, DoF int, nN int, nE int, xyz []vec3, r []float32, L []float64, N1 []int, N2 []int, Ax []float32, Jx []float32, Iy []float32, Iz []float32, p []float32, d []float32, EMs []float32, NMs []float32, NMx []float32, NMy []float32, NMz []float32, lump int, debug int) {
 	var m [][]float64
 	var ind [][]int
@@ -2442,7 +2628,12 @@ func assemble_M(M [][]float64, DoF int, nN int, nE int, xyz []vec3, r []float32,
 // lumped_M - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd.c:754
 /*
  * LUMPED_M  -  space frame element lumped mass matrix in global coordnates 7apr94
- */ /* coord Xformn */ /* translational, rotational & polar inertia */ /* rotatory inertia of extra mass is neglected */ /* assumes simple cross-section	*/
+ */ //
+/* coord Xformn */ //
+/* translational, rotational & polar inertia */ //
+/* rotatory inertia of extra mass is neglected */ //
+/* assumes simple cross-section	*/ //
+//
 func lumped_M(m [][]float64, xyz []vec3, L float64, n1 int, n2 int, Ax float32, J float32, Iy float32, Iz float32, p float32, d float32, EMs float32) {
 	var t1 float64
 	var t2 float64
@@ -2499,7 +2690,13 @@ func lumped_M(m [][]float64, xyz []vec3, L float64, n1 int, n2 int, Ax float32, 
 /*
  * CONSISTENT_M  -  space frame consistent mass matrix in global coordnates 2oct97
  *		 does not include shear deformations
- */ /* coord Xformn */ /* translational, rotational & polar inertia */ /* rotatory inertia of extra beam mass is neglected */ /* globalize */ /* check and enforce symmetry of consistent element mass matrix */
+ */ //
+/* coord Xformn */ //
+/* translational, rotational & polar inertia */ //
+/* rotatory inertia of extra beam mass is neglected */ //
+/* globalize */ //
+/* check and enforce symmetry of consistent element mass matrix */ //
+//
 func consistent_M(m [][]float64, xyz []vec3, r []float32, L float64, n1 int, n2 int, Ax float32, J float32, Iy float32, Iz float32, p float32, d float32, EMs float32) {
 	var t1 float64
 	var t2 float64
@@ -2594,7 +2791,11 @@ func consistent_M(m [][]float64, xyz []vec3, r []float32, L float64, n1 int, n2 
 // static_condensation - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd.c:879
 /*
  * STATIC_CONDENSATION - of stiffness matrix from NxN to nxn    30aug01
- */ /* use only upper triangle of A */ /* use only upper triangle of A */ /* use only upper triangle of A */
+ */ //
+/* use only upper triangle of A */ //
+/* use only upper triangle of A */ //
+/* use only upper triangle of A */ //
+//
 func static_condensation(A [][]float64, N int, c []int, n int, Ac [][]float64, verbose int) {
 	var Arr [][]float64
 	var Arc [][]float64
@@ -2669,7 +2870,18 @@ func static_condensation(A [][]float64, N int, c []int, n int, Ac [][]float64, v
 /*
  * PAZ_CONDENSATION -   Paz condensation of mass and stiffness matrices 6jun07
  *          Paz M. Dynamic condensation. AIAA J 1984;22(5):724-727.
- */ /* inv(Drr) * Drc	*/ /* coordinate transformation matrix	*/ /* eigen-value ... omega^2 	*/ /* find "remaining" (r) degrees of freedom, not "condensed" (c)	*/ /* use only upper triangle of K,M */ /* use only upper triangle of K,M */ /* inv(Drr) * Drc */ /* coordinate transformation matrix	*/ /* Kc = T' * K * T	*/ /* Mc = T' * M * T	*/
+ */ //
+/* inv(Drr) * Drc	*/ //
+/* coordinate transformation matrix	*/ //
+/* eigen-value ... omega^2 	*/ //
+/* find "remaining" (r) degrees of freedom, not "condensed" (c)	*/ //
+/* use only upper triangle of K,M */ //
+/* use only upper triangle of K,M */ //
+/* inv(Drr) * Drc */ //
+/* coordinate transformation matrix	*/ //
+/* Kc = T' * K * T	*/ //
+/* Mc = T' * M * T	*/ //
+//
 func paz_condensation(M [][]float64, K [][]float64, N int, c []int, n int, Mc [][]float64, Kc [][]float64, w2 float64, verbose int) {
 	var Drr [][]float64
 	var Drc [][]float64
@@ -2764,7 +2976,12 @@ func paz_condensation(M [][]float64, K [][]float64, N int, c []int, n int, Mc []
  *      dynamic condensation of mass and stiffness matrices    8oct01
  *  	matches the response at a set of frequencies and modes
  * WARNING: Kc and Mc may be ill-conditioned, and xyzsibly non-positive def.
- */ /* temporary storage for matrix mult. */ /* first n modal vectors at primary DoF's */ /* compute inv(P)' * I * inv(P)	*/ /* compute inv(P)' * W^2 * inv(P) */
+ */ //
+/* temporary storage for matrix mult. */ //
+/* first n modal vectors at primary DoF's */ //
+/* compute inv(P)' * I * inv(P)	*/ //
+/* compute inv(P)' * W^2 * inv(P) */ //
+//
 func modal_condensation(M [][]float64, K [][]float64, N int, R []int, p []int, n int, Mc [][]float64, Kc [][]float64, V [][]float64, f []float64, m []int, verbose int) {
 	var P [][]float64
 	var invP [][]float64
@@ -2825,7 +3042,8 @@ func modal_condensation(M [][]float64, K [][]float64, N int, R []int, p []int, n
 // deallocate - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd.c:1076
 /*
  * DEALLOCATE  -  release allocated memory					9sep08
- */ // printf("..B..element connectivity\n"); /* debug */
+ */ //
+// printf("..B..element connectivity\n"); /* debug */
 // printf("..C..section properties \n"); /* debug */
 // printf("..D.. U W P T Dp\n"); /* debug */
 // printf("..E..F_mech & F_temp\n"); /* debug */
@@ -2836,6 +3054,7 @@ func modal_condensation(M [][]float64, K [][]float64, N int, R []int, p []int, n
 // printf("..J.. extra mass\n"); /* debug */
 // printf("..K.. peak stats\n"); /* debug */
 // printf("..L.. M f V\n"); /* debug */
+//
 func deallocate(nN int, nE int, nL int, nF []int, nU []int, nW []int, nP []int, nT []int, DoF int, nM int, xyz []vec3, rj []float32, L []float64, Le []float64, N1 []int, N2 []int, q []int, r []int, Ax []float32, Asy []float32, Asz []float32, J []float32, Iy []float32, Iz []float32, E []float32, G []float32, p []float32, U [][][]float32, W [][][]float32, P [][][]float32, T [][][]float32, Dp [][]float32, F_mech [][]float64, F_temp [][]float64, eqF_mech [][][]float64, eqF_temp [][][]float64, F []float64, dF []float64, K [][]float64, Q [][]float64, D []float64, dD []float64, R []float64, dR []float64, d []float32, EMs []float32, NMs []float32, NMx []float32, NMy []float32, NMz []float32, M [][]float64, f []float64, V [][]float64, c []int, m []int, pkNx [][]float64, pkVy [][]float64, pkVz [][]float64, pkTx [][]float64, pkMy [][]float64, pkMz [][]float64, pkDx [][]float64, pkDy [][]float64, pkDz [][]float64, pkRx [][]float64, pkSy [][]float64, pkSz [][]float64) {
 	_ = xyz
 	free_vector(rj, int32(1), int32(nN))
@@ -2934,16 +3153,179 @@ const _ISalnum uint16 = ((1 << 11) >> 8)
 
  You should have received a copy of the GNU General Public License
  along with FRAME3DD.  If not, see <http://www.gnu.org/licenses/>.
-*/ /**
+*/ //
+/**
 @file
 Input/output routines for FRAME.
 
 @note The file format for FRAME is defined in doc/user_manual.html.
-*/ /* #define MASSDATA_DEBUG */ /* forward decls */ /**< pointer to the file from which to read */ /**< pointer to the string to which to write */ /**< the longest anticipated line length  */ /*
+*/ //
+/* #define MASSDATA_DEBUG */ //
+/* forward decls */ //
+/**< pointer to the file from which to read */ //
+/**< pointer to the string to which to write */ //
+/**< the longest anticipated line length  */ //
+/*
  * PARSE_OPTIONS -  parse command line options
  * command line options over-ride values in the input data file
  * 04 Mar 2009, 22 Sep 2009
- */ /* char	option; */ /* char	errMsg[MAXL]; */ /* int	sfrv=0;		#<{(| *scanf return value	|)}># */ /* default values */ /*  */ /* strcpy(  IN_file , "\0" ); */ /* strcpy( OUT_file , "\0" ); */ /*  */ /* set up file names for the the input data and the output data */ /*  */ /* switch ( argc ) { */ /*  case 1: { */ /* 	fprintf(stderr,"\n Frame3DD version: %s\n", VERSION); */ /* 	fprintf(stderr," Analysis of 2D and 3D structural frames with elastic and geometric stiffness.\n"); */ /* 	fprintf(stderr," http://frame3dd.sourceforge.net\n\n"); */ /* 	fprintf (stderr," Please enter the  input data file name: "); */ /* 	sfrv=scanf("%s", IN_file ); */ /* 	if (sfrv != 1) sferr("IN_file"); */ /* 	fprintf (stderr," Please enter the output data file name: "); */ /* 	sfrv=scanf("%s", OUT_file ); */ /* 	if (sfrv != 1) sferr("OUT_file"); */ /* 	return; */ /*  } */ /*  case 3: { */ /* 	if ( argv[1][0] != '-' ) { */ /* 		strcpy(  IN_file , argv[1] ); */ /* 		strcpy( OUT_file , argv[2] ); */ /* 		return; */ /* 	} */ /*  } */ /* } */ /*  */ /* // remaining unused flags ... b j k n u y  */ /*  */ /* while ((option=getopt(argc,argv, "i:o:acdhqvwxzs:e:f:g:l:m:p:r:t:")) != -1){ */ /* 	switch ( option ) { */ /* 		case 'i':		#<{(| input data file name |)}># */ /* 			strcpy(IN_file,optarg); */ /* 			break; */ /* 		case 'o':		#<{(| output data file name |)}># */ /* 			strcpy(OUT_file,optarg); */ /* 			break; */ /* 		case 'h':		#<{(| help	|)}># */ /* 			display_help(); */ /* 			exit(0); */ /* 		case 'v':		#<{(| version |)}># */ /* 			display_version(); */ /* 			exit(0); */ /* 		case 'a':		#<{(| about |)}># */ /* 			display_version_about(); */ /* 			exit(0); */ /* 		case 'q':		#<{(| quiet |)}># */ /* 			*verbose = 0; */ /* 			break; */ /* 		case 'c':		#<{(| data check only |)}># */ /* 			*anlyz_flag = 0; */ /* 			break; */ /* 		case 'd':		#<{(| debug |)}># */ /* 			*debug = 1; */ /* 			break; */ /* 		case 'w':		#<{(| write stiffness and mass |)}># */ /* 			*write_matrix = 1; */ /* 			break; */ /* 		case 'x':		#<{(| write sign of axial forces |)}># */ /* 			*axial_sign = 0; */ /* 			break; */ /* 		case 's':		#<{(| shear deformation |)}># */ /* 			if (strcmp(optarg,"Off")==0) */ /* 				*shear_flag = 0; */ /* 			else if (strcmp(optarg,"On")==0) */ /* 				*shear_flag = 1; */ /* 			else { */ /* 			 errorMsg("\n frame3dd command-line error: argument to -s option should be either On or Off\n"); */ /* 			 exit(3); */ /* 			} */ /* 			break; */ /* 		case 'g':		#<{(| geometric stiffness |)}># */ /* 			if (strcmp(optarg,"Off")==0) */ /* 				*geom_flag = 0; */ /* 			else if (strcmp(optarg,"On")==0) */ /* 				*geom_flag = 1; */ /* 			else { */ /* 			 errorMsg("\n frame3dd command-line error: argument to -g option should be either On or Off\n"); */ /* 			 exit(4); */ /* 			} */ /* 			break; */ /* 		case 'e':		#<{(| static mesh exagg. factor |)}># */ /* 			*exagg_flag = atof(optarg); */ /* 			break; */ /* 		case 'z':		#<{(| force 3D plotting |)}># */ /* 			*D3_flag = 1; */ /* 			break; */ /* 		case 'l':		#<{(| lumped or consistent mass |)}># */ /* 			if (strcmp(optarg,"Off")==0) */ /* 				*lump_flag = 0; */ /* 			else if (strcmp(optarg,"On")==0) */ /* 				*lump_flag = 1; */ /* 			else { */ /* 			 errorMsg("\n frame3dd command-line error: argument to -l option should be either On or Off\n"); */ /* 			 exit(5); */ /* 			} */ /* 			break; */ /* 		case 'm':		#<{(| modal analysis method |)}># */ /* 			if (strcmp(optarg,"J")==0) */ /* 				*modal_flag = 1; */ /* 			else if (strcmp(optarg,"S")==0) */ /* 				*modal_flag = 2; */ /* 			else { */ /* 			 errorMsg("\n frame3dd command-line error: argument to -m option should be either J or S\n"); */ /* 			 exit(6); */ /* 			} */ /* 			break; */ /* 		case 't':		#<{(| modal analysis tolerence |)}># */ /* 			*tol_flag = atof(optarg); */ /* 			if (*tol_flag == 0.0) { */ /* 			 errorMsg("\n frame3dd command-line error: argument to -t option should be a number.\n"); */ /* 			 exit(7); */ /* 			} */ /* 			break; */ /* 		case 'f':		#<{(| modal analysis freq. shift |)}># */ /* 			*shift_flag = atof(optarg); */ /* 			if (*shift_flag == 0.0) { */ /* 			 errorMsg("\n frame3dd command-line error: argument to -f option should be a number.\n"); */ /* 			 exit(8); */ /* 			} */ /* 			break; */ /* 		case 'p':		#<{(| pan rate	|)}># */ /* 			*pan_flag = atof(optarg); */ /* 			if (*pan_flag < 0.0) { */ /* 			 errorMsg("\n frame3dd command-line error: argument to -p option should be a positive number.\n"); */ /* 			 exit(9); */ /* 			} */ /* 			break; */ /* 		case 'r':		#<{(| matrix condensation method |)}># */ /* 			*condense_flag = atoi(optarg); */ /* 			if (*condense_flag < 0 || *condense_flag > 3) { */ /* 			 errorMsg("\n frame3dd command-line error: argument to -r option should be 0, 1, or 2.\n"); */ /* 			 exit(10); */ /* 			} */ /* 			break; */ /* 		case '?': */ /* 			sprintf(errMsg,"  Missing argument or Unknown option: -%c\n\n", option ); */ /* 			errorMsg(errMsg); */ /* 			display_help(); */ /* 			exit(2); */ /* 	} */ /* } */ /* if ( strcmp(IN_file,"\0") == 0 ) { */ /* 	fprintf (stderr," Please enter the  input data file name: "); */ /* 	sfrv=scanf("%s", IN_file ); */ /* 	if (sfrv != 1) sferr("IN_file"); */ /* 	fprintf (stderr," Please enter the output data file name: "); */ /* 	sfrv=scanf("%s", OUT_file ); */ /* 	if (sfrv != 1) sferr("OUT_file"); */ /* } */
+ */ //
+/* char	option; */ //
+/* char	errMsg[MAXL]; */ //
+/* int	sfrv=0;		#<{(| *scanf return value	|)}># */ //
+/* default values */ //
+/*  */ //
+/* strcpy(  IN_file , "\0" ); */ //
+/* strcpy( OUT_file , "\0" ); */ //
+/*  */ //
+/* set up file names for the the input data and the output data */ //
+/*  */ //
+/* switch ( argc ) { */ //
+/*  case 1: { */ //
+/* 	fprintf(stderr,"\n Frame3DD version: %s\n", VERSION); */ //
+/* 	fprintf(stderr," Analysis of 2D and 3D structural frames with elastic and geometric stiffness.\n"); */ //
+/* 	fprintf(stderr," http://frame3dd.sourceforge.net\n\n"); */ //
+/* 	fprintf (stderr," Please enter the  input data file name: "); */ //
+/* 	sfrv=scanf("%s", IN_file ); */ //
+/* 	if (sfrv != 1) sferr("IN_file"); */ //
+/* 	fprintf (stderr," Please enter the output data file name: "); */ //
+/* 	sfrv=scanf("%s", OUT_file ); */ //
+/* 	if (sfrv != 1) sferr("OUT_file"); */ //
+/* 	return; */ //
+/*  } */ //
+/*  case 3: { */ //
+/* 	if ( argv[1][0] != '-' ) { */ //
+/* 		strcpy(  IN_file , argv[1] ); */ //
+/* 		strcpy( OUT_file , argv[2] ); */ //
+/* 		return; */ //
+/* 	} */ //
+/*  } */ //
+/* } */ //
+/*  */ //
+/* // remaining unused flags ... b j k n u y  */ //
+/*  */ //
+/* while ((option=getopt(argc,argv, "i:o:acdhqvwxzs:e:f:g:l:m:p:r:t:")) != -1){ */ //
+/* 	switch ( option ) { */ //
+/* 		case 'i':		#<{(| input data file name |)}># */ //
+/* 			strcpy(IN_file,optarg); */ //
+/* 			break; */ //
+/* 		case 'o':		#<{(| output data file name |)}># */ //
+/* 			strcpy(OUT_file,optarg); */ //
+/* 			break; */ //
+/* 		case 'h':		#<{(| help	|)}># */ //
+/* 			display_help(); */ //
+/* 			exit(0); */ //
+/* 		case 'v':		#<{(| version |)}># */ //
+/* 			display_version(); */ //
+/* 			exit(0); */ //
+/* 		case 'a':		#<{(| about |)}># */ //
+/* 			display_version_about(); */ //
+/* 			exit(0); */ //
+/* 		case 'q':		#<{(| quiet |)}># */ //
+/* 			*verbose = 0; */ //
+/* 			break; */ //
+/* 		case 'c':		#<{(| data check only |)}># */ //
+/* 			*anlyz_flag = 0; */ //
+/* 			break; */ //
+/* 		case 'd':		#<{(| debug |)}># */ //
+/* 			*debug = 1; */ //
+/* 			break; */ //
+/* 		case 'w':		#<{(| write stiffness and mass |)}># */ //
+/* 			*write_matrix = 1; */ //
+/* 			break; */ //
+/* 		case 'x':		#<{(| write sign of axial forces |)}># */ //
+/* 			*axial_sign = 0; */ //
+/* 			break; */ //
+/* 		case 's':		#<{(| shear deformation |)}># */ //
+/* 			if (strcmp(optarg,"Off")==0) */ //
+/* 				*shear_flag = 0; */ //
+/* 			else if (strcmp(optarg,"On")==0) */ //
+/* 				*shear_flag = 1; */ //
+/* 			else { */ //
+/* 			 errorMsg("\n frame3dd command-line error: argument to -s option should be either On or Off\n"); */ //
+/* 			 exit(3); */ //
+/* 			} */ //
+/* 			break; */ //
+/* 		case 'g':		#<{(| geometric stiffness |)}># */ //
+/* 			if (strcmp(optarg,"Off")==0) */ //
+/* 				*geom_flag = 0; */ //
+/* 			else if (strcmp(optarg,"On")==0) */ //
+/* 				*geom_flag = 1; */ //
+/* 			else { */ //
+/* 			 errorMsg("\n frame3dd command-line error: argument to -g option should be either On or Off\n"); */ //
+/* 			 exit(4); */ //
+/* 			} */ //
+/* 			break; */ //
+/* 		case 'e':		#<{(| static mesh exagg. factor |)}># */ //
+/* 			*exagg_flag = atof(optarg); */ //
+/* 			break; */ //
+/* 		case 'z':		#<{(| force 3D plotting |)}># */ //
+/* 			*D3_flag = 1; */ //
+/* 			break; */ //
+/* 		case 'l':		#<{(| lumped or consistent mass |)}># */ //
+/* 			if (strcmp(optarg,"Off")==0) */ //
+/* 				*lump_flag = 0; */ //
+/* 			else if (strcmp(optarg,"On")==0) */ //
+/* 				*lump_flag = 1; */ //
+/* 			else { */ //
+/* 			 errorMsg("\n frame3dd command-line error: argument to -l option should be either On or Off\n"); */ //
+/* 			 exit(5); */ //
+/* 			} */ //
+/* 			break; */ //
+/* 		case 'm':		#<{(| modal analysis method |)}># */ //
+/* 			if (strcmp(optarg,"J")==0) */ //
+/* 				*modal_flag = 1; */ //
+/* 			else if (strcmp(optarg,"S")==0) */ //
+/* 				*modal_flag = 2; */ //
+/* 			else { */ //
+/* 			 errorMsg("\n frame3dd command-line error: argument to -m option should be either J or S\n"); */ //
+/* 			 exit(6); */ //
+/* 			} */ //
+/* 			break; */ //
+/* 		case 't':		#<{(| modal analysis tolerence |)}># */ //
+/* 			*tol_flag = atof(optarg); */ //
+/* 			if (*tol_flag == 0.0) { */ //
+/* 			 errorMsg("\n frame3dd command-line error: argument to -t option should be a number.\n"); */ //
+/* 			 exit(7); */ //
+/* 			} */ //
+/* 			break; */ //
+/* 		case 'f':		#<{(| modal analysis freq. shift |)}># */ //
+/* 			*shift_flag = atof(optarg); */ //
+/* 			if (*shift_flag == 0.0) { */ //
+/* 			 errorMsg("\n frame3dd command-line error: argument to -f option should be a number.\n"); */ //
+/* 			 exit(8); */ //
+/* 			} */ //
+/* 			break; */ //
+/* 		case 'p':		#<{(| pan rate	|)}># */ //
+/* 			*pan_flag = atof(optarg); */ //
+/* 			if (*pan_flag < 0.0) { */ //
+/* 			 errorMsg("\n frame3dd command-line error: argument to -p option should be a positive number.\n"); */ //
+/* 			 exit(9); */ //
+/* 			} */ //
+/* 			break; */ //
+/* 		case 'r':		#<{(| matrix condensation method |)}># */ //
+/* 			*condense_flag = atoi(optarg); */ //
+/* 			if (*condense_flag < 0 || *condense_flag > 3) { */ //
+/* 			 errorMsg("\n frame3dd command-line error: argument to -r option should be 0, 1, or 2.\n"); */ //
+/* 			 exit(10); */ //
+/* 			} */ //
+/* 			break; */ //
+/* 		case '?': */ //
+/* 			sprintf(errMsg,"  Missing argument or Unknown option: -%c\n\n", option ); */ //
+/* 			errorMsg(errMsg); */ //
+/* 			display_help(); */ //
+/* 			exit(2); */ //
+/* 	} */ //
+/* } */ //
+/* if ( strcmp(IN_file,"\0") == 0 ) { */ //
+/* 	fprintf (stderr," Please enter the  input data file name: "); */ //
+/* 	sfrv=scanf("%s", IN_file ); */ //
+/* 	if (sfrv != 1) sferr("IN_file"); */ //
+/* 	fprintf (stderr," Please enter the output data file name: "); */ //
+/* 	sfrv=scanf("%s", OUT_file ); */ //
+/* 	if (sfrv != 1) sferr("OUT_file"); */ //
+/* } */ //
+//
 func parse_options(argc int, argv [][]byte, IN_file []byte, OUT_file []byte, shear_flag []int, geom_flag []int, anlyz_flag []int, exagg_flag []float64, D3_flag []int, lump_flag []int, modal_flag []int, tol_flag []float64, shift_flag []float64, pan_flag []float32, write_matrix []int, axial_sign []int, condense_flag []int, verbose []int, debug []int) {
 	modal_flag[0] = -1
 	lump_flag[0] = modal_flag[0]
@@ -2972,9 +3354,12 @@ func parse_options(argc int, argv [][]byte, IN_file []byte, OUT_file []byte, she
 /*
  * DISPLAY_HELP -  display help information to stderr
  * 04 Mar 2009, 22 Sep 2009
- */ //frame3dd.sourceforge.net\n\n");
+ */ //
+//frame3dd.sourceforge.net\n\n");
 /* fprintf(stderr,"  Usage: frame3dd -i<input> -o<output> [-hvcqz] [-s<On|Off>] [-g<On|Off>] [-e<value>] [-l<On|Off>] [-f<value>] [-m J|S] [-t<value>] [-p<value>] \n");
- */func display_help() {
+ */ //
+//
+func display_help() {
 	textColor('g', 'x', 'x', 'x')
 	noarch.Fprintf(stderr, []byte("\n Frame3DD version: %s\n\x00"), []byte("20140514+\x00"))
 	noarch.Fprintf(stderr, []byte(" Analysis of 2D and 3D structural frames with elastic and geometric stiffness.\n\x00"))
@@ -3015,9 +3400,12 @@ func parse_options(argc int, argv [][]byte, IN_file []byte, OUT_file []byte, she
 /*
  * DISPLAY_USAGE -  display usage information to stderr
  * 04 Mar 2009
- */ //frame3dd.sourceforge.net\n\n");
+ */ //
+//frame3dd.sourceforge.net\n\n");
 /* fprintf(stderr,"  Usage: frame3dd -i<input> -o<output> [-hvcqz] [-s<On|Off>] [-g<On|Off>] [-e<value>] [-l<On|Off>] [-f<value>] [-m J|S] [-t<value>] [-p<value>] \n");
- */func display_usage() {
+ */ //
+//
+func display_usage() {
 	noarch.Fprintf(stderr, []byte("\n Frame3DD version: %s\n\x00"), []byte("20140514+\x00"))
 	noarch.Fprintf(stderr, []byte(" Analysis of 2D and 3D structural frames with elastic and geometric stiffness.\n\x00"))
 	noarch.Fprintf(stderr, []byte(" http://frame3dd.sourceforge.net\n\n\x00"))
@@ -3029,7 +3417,9 @@ func parse_options(argc int, argv [][]byte, IN_file []byte, OUT_file []byte, she
 /*
  * DISPLAY_VERSION_HELP -  display version, website, and brief help info. to stderr
  * 04 Mar 2009
- */ //frame3dd.sourceforge.net\n\n");
+ */ //
+//frame3dd.sourceforge.net\n\n");
+//
 func display_version() {
 	noarch.Fprintf(stderr, []byte("\n Frame3DD version: %s\n\x00"), []byte("20140514+\x00"))
 	noarch.Fprintf(stderr, []byte(" Analysis of 2D and 3D structural frames with elastic and geometric stiffness.\n\x00"))
@@ -3044,8 +3434,10 @@ func display_version() {
  * running as a background process
  * 22 Sep 2009
  * Contributed by Barry Sanford, barry.sanford@trimjoist.com
- */ //frame3dd.sourceforge.net\n");
+ */ //
+//frame3dd.sourceforge.net\n");
 //www.fsf.org/copyleft/gpl.html\n");
+//
 func display_version_about() {
 	noarch.Fprintf(stderr, []byte(" Frame3DD version: %s\n\x00"), []byte("20140514+\x00"))
 	noarch.Fprintf(stderr, []byte(" Analysis of 2D and 3D structural frames with elastic and geometric stiffness\n\x00"))
@@ -3061,7 +3453,11 @@ func display_version_about() {
 /*
  * READ_NODE_DATA  -  read node location data
  * 04 Jan 2009
- */ /* *scanf return value	*/ /* read node coordinates	*/ /* fprintf(stderr,"\nj = %d, pos = (%lf, %lf, %lf), r = %f", j, xyz[j].x, xyz[j].y, xyz[j].z, r[j]); */
+ */ //
+/* *scanf return value	*/ //
+/* read node coordinates	*/ //
+/* fprintf(stderr,"\nj = %d, pos = (%lf, %lf, %lf), r = %f", j, xyz[j].x, xyz[j].y, xyz[j].z, r[j]); */ //
+//
 func read_node_data(fp *noarch.File, nN int, xyz []vec3, r []float32) {
 	var i int
 	var j int
@@ -3090,7 +3486,13 @@ func read_node_data(fp *noarch.File, nN int, xyz []vec3, r []float32) {
 /*
  * READ_FRAME_ELEMENT_DATA  -  read frame element property data
  * 04 Jan 2009
- */ /* vector of elements per node */ /* *scanf return value */ /* read frame element properties */ /* convert from degrees to radians */ /* calculate frame element lengths */
+ */ //
+/* vector of elements per node */ //
+/* *scanf return value */ //
+/* read frame element properties */ //
+/* convert from degrees to radians */ //
+/* calculate frame element lengths */ //
+//
 func read_frame_element_data(fp *noarch.File, nN int, nE int, xyz []vec3, r []float32, L []float64, Le []float64, N1 []int, N2 []int, Ax []float32, Asy []float32, Asz []float32, Jx []float32, Iy []float32, Iz []float32, E []float32, G []float32, p []float32, d []float32) {
 	var n1 int
 	var n2 int
@@ -3218,7 +3620,15 @@ func read_frame_element_data(fp *noarch.File, nN int, nE int, xyz []vec3, r []fl
 /*
  * READ_RUN_DATA  -  read information for analysis
  * 29 Dec 2008
- */ /* output data file name */ /* *scanf return value */ /* the length of the base_file */ /* find the last '.' in base_file */ /* end base_file at the last '.' */ /* find the last '/' or '\' in base_file */ /* over-ride values from input data file with command-line options */
+ */ //
+/* output data file name */ //
+/* *scanf return value */ //
+/* the length of the base_file */ //
+/* find the last '.' in base_file */ //
+/* end base_file at the last '.' */ //
+/* find the last '/' or '\' in base_file */ //
+/* over-ride values from input data file with command-line options */ //
+//
 func read_run_data(fp *noarch.File, OUT_file []byte, shear []int, shear_flag int, geom []int, geom_flag int, meshpath []byte, plotpath []byte, infcpath []byte, exagg_static []float64, exagg_flag float64, scale []float32, dx []float32, anlyz []int, anlyz_flag int, debug int) {
 	var full_len int = 0
 	var len int = 0
@@ -3318,7 +3728,9 @@ func read_run_data(fp *noarch.File, OUT_file []byte, shear []int, shear_flag int
 // frame3dd_getline - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:612
 /*
  * FRAME3DD_GETLINE -  get line into a character string. from K&R        03feb94
- */ /*      if (c == '\n')  s[i++] = c;	*/
+ */ //
+/*      if (c == '\n')  s[i++] = c;	*/ //
+//
 func frame3dd_getline(fp *noarch.File, s []byte, lim int) int {
 	var c int = 0
 	var i int = 0
@@ -3343,11 +3755,14 @@ func frame3dd_getline(fp *noarch.File, s []byte, lim int) int {
 var sep byte = '/'
 
 // temp_dir - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:640
-/* platform-dependent path sperator character ... */ /*
+/* platform-dependent path sperator character ... */ //
+/*
  * TEMP_DIR
  * return platform-specific temp file location --
  * John Pye, Feb 2009
- */ /* Linux, Unix, OS X	*/
+ */ //
+/* Linux, Unix, OS X	*/ //
+//
 func temp_dir() []byte {
 	var tmp []byte = []byte("/tmp\x00")
 	return tmp
@@ -3359,17 +3774,21 @@ func temp_dir() []byte {
  * return path for output files using either current directory, or FRAME3DD_OUTDIR
  * if specified. --
  * John Pye, Feb 2009.
- */ /*			deprecated code, January 15 2010 ...
+ */ //
+/*			deprecated code, January 15 2010 ...
 	if ( fname[0]==sep ) {	in Win32 absolute path starts with C:\ not \ ??
 		// absolute output path specified
 //		res = snprintf(fullpath,len,"%s",fname);
 		res = sprintf(fullpath,"%s",fname);
 	} else {
-*/ //		fprintf(stderr,"Generating output path for file '%s'\n",fname);
+*/ //
+//		fprintf(stderr,"Generating output path for file '%s'\n",fname);
 //		res = snprintf(fullpath,len,"%s%c%s",outdir,sep,fname);
 /*			closing bracket for deprecated code "if"
 }
-*/ //	printf("Output file path generated: %s\n",fullpath); /* debug */
+*/ //
+//	printf("Output file path generated: %s\n",fullpath); /* debug */
+//
 func output_path(fname []byte, fullpath []byte, len int, default_outdir []byte) {
 	var res int
 	(func() {
@@ -3399,7 +3818,9 @@ func output_path(fname []byte, fullpath []byte, len int, default_outdir []byte) 
  * PARSE_INPUT
  * strip comments from the input file, and write a stripped input file
  * 07 May 2003
- */ /* stripped input file pointer	*/
+ */ //
+/* stripped input file pointer	*/ //
+//
 func parse_input(fp *noarch.File, tpath []byte) {
 	var fpc *noarch.File
 	var line []byte = make([]byte, 256, 256)
@@ -3431,7 +3852,13 @@ func parse_input(fp *noarch.File, tpath []byte) {
  * ignore all double quote (") characters
  * ignore all semi-colon (;) characters
  * 09 Feb 2009
- */ /**< pointer to the file from which to read */ /**< pointer to the string to which to write */ /**< the longest anticipated line length  */ /*      if (c == '\n')  s[i++] = c;     */ /* read the rest of the line, otherwise do nothing */
+ */ //
+/**< pointer to the file from which to read */ //
+/**< pointer to the string to which to write */ //
+/**< the longest anticipated line length  */ //
+/*      if (c == '\n')  s[i++] = c;     */ //
+/* read the rest of the line, otherwise do nothing */ //
+//
 func getline_no_comment(fp *noarch.File, s []byte, lim int) {
 	var c int = 0
 	var i int = 0
@@ -3479,7 +3906,11 @@ func getline_no_comment(fp *noarch.File, s []byte, lim int) {
 /*
  * READ_REACTION_DATA - Read fixed node displacement boundary conditions
  * 29 Dec 2009
- */ /* *scanf return value */ /* read restrained degrees of freedom */ /*	exit(84); */
+ */ //
+/* *scanf return value */ //
+/* read restrained degrees of freedom */ //
+/*	exit(84); */ //
+//
 func read_reaction_data(fp *noarch.File, DoF int, nN int, nR []int, q []int, r []int, sumR []int, verbose int) {
 	var i int
 	var j int
@@ -3569,37 +4000,69 @@ func read_reaction_data(fp *noarch.File, DoF int, nN int, nR []int, q []int, r [
  * distributed internal and temperature loadings.
  * eqF_temp and eqF_mech are computed for the global coordinate system
  * 2008-09-09, 2015-05-15
- */ // equivalent mech loads, global coord
+ */ //
+// equivalent mech loads, global coord
 // equivalent temp loads, global coord
-/* section dimensions in local coords */ /* equivalent element end forces from distributed and thermal loads */ /* shear deformatn coefficients	*/ /* point load locations */ /* 3D coord Xfrm coeffs */ /* *scanf return value */ /* initialize load data vectors and matrices to zero */ /* begin load-case loop */ /*  display the load case number */ /* gravity loads applied uniformly to all frame elements ------- */ /* debugging ... check eqF data
+/* section dimensions in local coords */ //
+/* equivalent element end forces from distributed and thermal loads */ //
+/* shear deformatn coefficients	*/ //
+/* point load locations */ //
+/* 3D coord Xfrm coeffs */ //
+/* *scanf return value */ //
+/* initialize load data vectors and matrices to zero */ //
+/* begin load-case loop */ //
+/*  display the load case number */ //
+/* gravity loads applied uniformly to all frame elements ------- */ //
+/* debugging ... check eqF data
 printf("n=%d ", n);
 for (l=1;l<=12;l++) {
 	if (eqF_mech[lc][n][l] != 0)
 	   printf(" eqF %d = %9.2e ", l, eqF_mech[lc][n][l] );
 }
 printf("\n");
-*/ /* end gravity loads */ /* node point loads -------------------------------------------- */ /* ! global structural coordinates ! */ /* end node point loads  */ /* uniformly distributed loads --------------------------------- */ /* ! local element coordinates ! */ /* debugging ... check end force values
+*/ //
+/* end gravity loads */ //
+/* node point loads -------------------------------------------- */ //
+/* ! global structural coordinates ! */ //
+/* end node point loads  */ //
+/* uniformly distributed loads --------------------------------- */ //
+/* ! local element coordinates ! */ //
+/* debugging ... check end force values
  * printf("n=%d Vy=%9.2e Vz=%9.2e My=%9.2e Mz=%9.2e\n",
  *				n, Vy1,Vz1, My1,Mz1 );
- */ /* debugging ... check coordinate transform coefficients
+ */ //
+/* debugging ... check coordinate transform coefficients
 printf("t1=%5.2f t2=%5.2f t3=%5.2f \n", t1, t2, t3 );
 printf("t4=%5.2f t5=%5.2f t6=%5.2f \n", t4, t5, t6 );
 printf("t7=%5.2f t8=%5.2f t9=%5.2f \n", t7, t8, t9 );
-*/ /* {F} = [T]'{Q} */ /* debugging ... check eqF values
+*/ //
+/* {F} = [T]'{Q} */ //
+/* debugging ... check eqF values
 printf("n=%d ", n);
 for (l=1;l<=12;l++) {
 	if (eqF_mech[lc][n][l] != 0)
 	   printf(" eqF %d = %9.2e ", l, eqF_mech[lc][n][l] );
 }
 printf("\n");
-*/ /* end uniformly distributed loads */ /* trapezoidally distributed loads ----------------------------- */ /* ! local element coordinates ! */ /* error checking */ /* x-axis trapezoidal loads (along the frame element length) */ /* y-axis trapezoidal loads (across the frame element length) */ /* z-axis trapezoidal loads (across the frame element length) */ /* debugging ... check internal force values
+*/ //
+/* end uniformly distributed loads */ //
+/* trapezoidally distributed loads ----------------------------- */ //
+/* ! local element coordinates ! */ //
+/* error checking */ //
+/* x-axis trapezoidal loads (along the frame element length) */ //
+/* y-axis trapezoidal loads (across the frame element length) */ //
+/* z-axis trapezoidal loads (across the frame element length) */ //
+/* debugging ... check internal force values
 printf("n=%d\n Nx1=%9.3f\n Nx2=%9.3f\n Vy1=%9.3f\n Vy2=%9.3f\n Vz1=%9.3f\n Vz2=%9.3f\n My1=%9.3f\n My2=%9.3f\n Mz1=%9.3f\n Mz2=%9.3f\n",
 		n, Nx1,Nx2,Vy1,Vy2,Vz1,Vz2, My1,My2,Mz1,Mz2 );
-*/ /* debugging ... check coordinate transformation coefficients
+*/ //
+/* debugging ... check coordinate transformation coefficients
 printf("t1=%5.2f t2=%5.2f t3=%5.2f \n", t1, t2, t3 );
 printf("t4=%5.2f t5=%5.2f t6=%5.2f \n", t4, t5, t6 );
 printf("t7=%5.2f t8=%5.2f t9=%5.2f \n", t7, t8, t9 );
-*/ /* {F} = [T]'{Q} */ /* debugging ... check eqF data
+*/ //
+/* {F} = [T]'{Q} */ //
+/* debugging ... check eqF data
 for (l=1;l<=13;l++) printf(" %9.2e ", W[lc][i][l] );
 printf("\n");
 printf("n=%d ", n);
@@ -3608,7 +4071,17 @@ for (l=1;l<=12;l++) {
 	   printf(" eqF %d = %9.3f ", l, eqF_mech[lc][n][l] );
 }
 printf("\n");
-*/ /* end trapezoidally distributed loads */ /* internal element point loads -------------------------------- */ /* ! local element coordinates ! */ /* {F} = [T]'{Q} */ /* end element point loads */ /* thermal loads ----------------------------------------------- */ /* ! local element coordinates ! */ /* {F} = [T]'{Q} */ /* end thermal loads	*/ /* debugging ...  check eqF's prior to asembly
+*/ //
+/* end trapezoidally distributed loads */ //
+/* internal element point loads -------------------------------- */ //
+/* ! local element coordinates ! */ //
+/* {F} = [T]'{Q} */ //
+/* end element point loads */ //
+/* thermal loads ----------------------------------------------- */ //
+/* ! local element coordinates ! */ //
+/* {F} = [T]'{Q} */ //
+/* end thermal loads	*/ //
+/* debugging ...  check eqF's prior to asembly
   for (n=1; n<=nE; n++) {
 	printf("n=%d ", n);
 	for (l=1;l<=12;l++) {
@@ -3617,9 +4090,12 @@ printf("\n");
 	}
 	printf("\n");
   }
-*/ // assemble all element equivalent loads into
+*/ //
+// assemble all element equivalent loads into
 // separate load vectors for mechanical and thermal loading
-/* prescribed displacements ------------------------------------ */ /* end load-case loop */
+/* prescribed displacements ------------------------------------ */ //
+/* end load-case loop */ //
+//
 func read_and_assemble_loads(fp *noarch.File, nN int, nE int, nL int, DoF int, xyz []vec3, L []float64, Le []float64, J1 []int, J2 []int, Ax []float32, Asy []float32, Asz []float32, Iy []float32, Iz []float32, E []float32, G []float32, p []float32, d []float32, gX []float32, gY []float32, gZ []float32, r []int, shear int, nF []int, nU []int, nW []int, nP []int, nT []int, nD []int, Q [][]float64, F_temp [][]float64, F_mech [][]float64, Fo []float64, U [][][]float32, W [][][]float32, P [][][]float32, T [][][]float32, Dp [][]float32, eqF_mech [][][]float64, eqF_temp [][][]float64, verbose int) {
 	var hy float32
 	var hz float32
@@ -4147,7 +4623,20 @@ func read_and_assemble_loads(fp *noarch.File, nN int, nE int, nL int, DoF int, x
 // read_mass_data - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:1465
 /*
  * READ_MASS_DATA  -  read element densities and extra inertial mass data	16aug01
- */ /*	double	ms = 0.0; */ /* *scanf return value	*/ /* number of nodes with extra inertias */ /* number of frame elements with extra beam mass */ /* calculate the total mass and the structural mass */ /* check inertia data	*/ /*	for (m=1;m<=nE;m++) ms += EMs[m]; // consistent mass doesn't agree  */ /*	if ( ms > 0.0 )	    *lump = 1;    // with concentrated masses, EMs  */ /* the length of the base_file */ /* find the last '.' in base_file */ /* end base_file at the last '.' */ /* find the last '/' or '\' in base_file */
+ */ //
+/*	double	ms = 0.0; */ //
+/* *scanf return value	*/ //
+/* number of nodes with extra inertias */ //
+/* number of frame elements with extra beam mass */ //
+/* calculate the total mass and the structural mass */ //
+/* check inertia data	*/ //
+/*	for (m=1;m<=nE;m++) ms += EMs[m]; // consistent mass doesn't agree  */ //
+/*	if ( ms > 0.0 )	    *lump = 1;    // with concentrated masses, EMs  */ //
+/* the length of the base_file */ //
+/* find the last '.' in base_file */ //
+/* end base_file at the last '.' */ //
+/* find the last '/' or '\' in base_file */ //
+//
 func read_mass_data(fp *noarch.File, OUT_file []byte, nN int, nE int, nI []int, nX []int, d []float32, EMs []float32, NMs []float32, NMx []float32, NMy []float32, NMz []float32, L []float64, Ax []float32, total_mass []float64, struct_mass []float64, nM []int, Mmethod []int, modal_flag int, lump []int, lump_flag int, tol []float64, tol_flag float64, shift []float64, shift_flag float64, exagg_modal []float64, modepath []byte, anim []int, pan []float32, pan_flag float32, verbose int, debug int) {
 	var i int
 	var j int
@@ -4375,7 +4864,11 @@ func read_mass_data(fp *noarch.File, OUT_file []byte, nN int, nE int, nI []int, 
 // read_condensation_data - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:1668
 /*
  * READ_CONDENSE   -  read matrix condensation information 	        30aug01
- */ /* *scanf return value */ /* default */ /* error check */
+ */ //
+/* *scanf return value */ //
+/* default */ //
+/* error check */ //
+//
 func read_condensation_data(fp *noarch.File, nN int, nM int, nC []int, Cdof []int, Cmethod []int, condense_flag int, c []int, m []int, verbose int) {
 	var i int
 	var j int
@@ -4497,9 +4990,13 @@ func read_condensation_data(fp *noarch.File, nN int, nM int, nC []int, Cdof []in
 // write_input_data - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:1773
 /*
  * WRITE_INPUT_DATA  -  save input data					07nov02
- */ /* modern time variable type	*/ //frame3dd.sf.net/\n");
+ */ //
+/* modern time variable type	*/ //
+//frame3dd.sf.net/\n");
 //www.fsf.org/copyleft/gpl.html\n");
-/* start load case loop */ /* end load case loop	*/
+/* start load case loop */ //
+/* end load case loop	*/ //
+//
 func write_input_data(fp *noarch.File, title []byte, nN int, nE int, nL int, nD []int, nR int, nF []int, nU []int, nW []int, nP []int, nT []int, xyz []vec3, r []float32, J1 []int, J2 []int, Ax []float32, Asy []float32, Asz []float32, Jx []float32, Iy []float32, Iz []float32, E []float32, G []float32, p []float32, d []float32, gX []float32, gY []float32, gZ []float32, Ft [][]float64, Fm [][]float64, Dp [][]float32, R []int, U [][][]float32, W [][][]float32, P [][][]float32, T [][][]float32, shear int, anlyz int, geom int) {
 	var i int
 	var j int
@@ -4700,7 +5197,9 @@ func write_input_data(fp *noarch.File, title []byte, nN int, nE int, nL int, nD 
 /*
  * WRITE_STATIC_RESULTS -  save node displacements and frame element end forces
  * 09 Sep 2008 , 2015-05-15
- */ /*	 return; */
+ */ //
+/*	 return; */ //
+//
 func write_static_results(fp *noarch.File, nN int, nE int, nL int, lc int, DoF int, J1 []int, J2 []int, F []float64, D []float64, R []float64, r []int, Q [][]float64, err float64, ok int, axial_sign int) {
 	var disp float64
 	var i int
@@ -4812,7 +5311,9 @@ func write_static_results(fp *noarch.File, nN int, nE int, nL int, lc int, DoF i
  * CSV_filename - return the file name for the .CSV file and
  * whether the file should be written or appended (wa)
  * 1 Nov 2015
- */ //	fprintf(stderr," 1. CSV_file = %s  wa = %s \n", CSV_file, wa );
+ */ //
+//	fprintf(stderr," 1. CSV_file = %s  wa = %s \n", CSV_file, wa );
+//
 func CSV_filename(CSV_file []byte, wa []byte, OUT_file []byte, lc int) {
 	var i int
 	var j int
@@ -4843,9 +5344,12 @@ func CSV_filename(CSV_file []byte, wa []byte, OUT_file []byte, lc int) {
 /*
  * WRITE_STATIC_CSV -  save node displacements and frame element end forces
  * 31 Dec 2008
- */ /* modern time variable type	*/ //frame3dd.sf.net/\"\n");
+ */ //
+/* modern time variable type	*/ //
+//frame3dd.sf.net/\"\n");
 //www.fsf.org/copyleft/gpl.html\"\n");
-/*	 return; */
+/*	 return; */ //
+//
 func write_static_csv(OUT_file []byte, title []byte, nN int, nE int, nL int, lc int, DoF int, J1 []int, J2 []int, F []float64, D []float64, R []float64, r []int, Q [][]float64, err float64, ok int) {
 	var fpcsv *noarch.File
 	var i int
@@ -4962,7 +5466,8 @@ func write_static_csv(OUT_file []byte, title []byte, nN int, nE int, nL int, lc 
  * WRITE_VALUE - write a value in %f or %e notation depending on numerical values
  * and the number of available significant figures
  * 12 Dec 2009
- */ /*
+ */ //
+/*
 void write_value (
 		FILE *fp,
 		int sig_figs,
@@ -4977,14 +5482,18 @@ void write_value (
 	if ( fabs(x) < threshold ) fprintf ( fp, "0.0 \n");
 
 }
-*/ /*
+*/ //
+/*
  * WRITE_STATIC_MFILE -
  * save node displacements and frame element end forces in an m-file
  * this function interacts with frame_3dd.m, an m-file interface to frame3dd
  * 09 Sep 2008
- */ /* modern time variable type	*/ //frame3dd.sf.net/\n");
+ */ //
+/* modern time variable type	*/ //
+//frame3dd.sf.net/\n");
 //www.fsf.org/copyleft/gpl.html\n");
-/*	 return; */
+/*	 return; */ //
+//
 func write_static_mfile(OUT_file []byte, title []byte, nN int, nE int, nL int, lc int, DoF int, J1 []int, J2 []int, F []float64, D []float64, R []float64, r []int, Q [][]float64, err float64, ok int) {
 	var fpm *noarch.File
 	var i int
@@ -5127,23 +5636,40 @@ func write_static_mfile(OUT_file []byte, title []byte, nN int, nE int, nL int, l
  * calculate frame element local displacements, Rx, Dx, Dy, Dz
  * return the peak values of the internal forces, moments, slopes, and displacements
  * 18jun13
- */ // load case number
+ */ //
+// load case number
 // total number of load cases
 // node locations
 // x-axis increment along frame element
 // vectors of peak forces, moments, displacements and slopes
 // for each frame element, for load case "lc"
-/* coord transformation */ /*, u7, u8, u9, u10, u11, u12*/ /* displ. */ /* trapz load data, local x dir */ /* trapz load data, local y dir */ /* trapz load data, local z dir */ // distributed loads in local coords at x[i]
+/* coord transformation */ //
+/*, u7, u8, u9, u10, u11, u12*/ //
+/* displ. */ //
+/* trapz load data, local x dir */ //
+/* trapz load data, local y dir */ //
+/* trapz load data, local z dir */ //
+// distributed loads in local coords at x[i]
 // distributed loads in local coords at x[i-1]
 // gravity loads in local x, y, z coord's
 // distributed torque about local x coord
-/* location of internal point loads	*/ /* distance along frame element		*/ // underscored "_" variables correspond to x=(i-1)*dx;
+/* location of internal point loads	*/ //
+/* distance along frame element		*/ //
+// underscored "_" variables correspond to x=(i-1)*dx;
 // non-underscored variables correspond to x=i*dx;
-/* axial force within frame el.		*/ /* shear forces within frame el.	*/ /* torsional moment within frame el.	*/ /* bending moments within frame el.	*/ /* transverse slopes of frame el.	*/ /* frame el. displ. in local x,y,z, dir's */ /* twist rotation about the local x-axis */ // frame element number
+/* axial force within frame el.		*/ //
+/* shear forces within frame el.	*/ //
+/* torsional moment within frame el.	*/ //
+/* bending moments within frame el.	*/ //
+/* transverse slopes of frame el.	*/ //
+/* frame el. displ. in local x,y,z, dir's */ //
+/* twist rotation about the local x-axis */ //
+// frame element number
 // number of sections alont x axis
 // counters for U, W, and P loads
 // counter along x axis from node N1 to node N2
-/*,i2*/ // starting and stopping node numbers
+/*,i2*/ //
+// starting and stopping node numbers
 // skip calculation of internal forces and displ
 // initialize peak values to zero
 // loop over all frame elements
@@ -5162,7 +5688,15 @@ func write_static_mfile(OUT_file []byte, title []byte, nN int, nE int, nL int, l
 // positive My -> positive x-z curvature
 // positive Mz -> positive x-y curvature
 //	i2 = 6*(n2-1);
-/* compute end deflections in local coordinates */ /* u7  = t1*D[i2+1] + t2*D[i2+2] + t3*D[i2+3]; */ /* u8  = t4*D[i2+1] + t5*D[i2+2] + t6*D[i2+3]; */ /* u9  = t7*D[i2+1] + t8*D[i2+2] + t9*D[i2+3]; */ /*  */ /* u10 = t1*D[i2+4] + t2*D[i2+5] + t3*D[i2+6]; */ /* u11 = t4*D[i2+4] + t5*D[i2+5] + t6*D[i2+6]; */ /* u12 = t7*D[i2+4] + t8*D[i2+5] + t9*D[i2+6]; */ // rotations and displacements for frame element "m" at (x=0)
+/* compute end deflections in local coordinates */ //
+/* u7  = t1*D[i2+1] + t2*D[i2+2] + t3*D[i2+3]; */ //
+/* u8  = t4*D[i2+1] + t5*D[i2+2] + t6*D[i2+3]; */ //
+/* u9  = t7*D[i2+1] + t8*D[i2+2] + t9*D[i2+3]; */ //
+/*  */ //
+/* u10 = t1*D[i2+4] + t2*D[i2+5] + t3*D[i2+6]; */ //
+/* u11 = t4*D[i2+4] + t5*D[i2+5] + t6*D[i2+6]; */ //
+/* u12 = t7*D[i2+4] + t8*D[i2+5] + t9*D[i2+6]; */ //
+// rotations and displacements for frame element "m" at (x=0)
 // displacement in  local x dir  at node N1
 // displacement in  local y dir  at node N1
 // displacement in  local z dir  at node N1
@@ -5202,6 +5736,7 @@ func write_static_mfile(OUT_file []byte, title []byte, nN int, nE int, nL int, l
 // round-off errors are larger in the peak displacements than in the peak forces
 // end of loop over all frame elements
 // DEBUG --- write output to terminal
+//
 func peak_internal_forces(lc int, nL int, xyz []vec3, Q [][]float64, nN int, nE int, L []float64, N1 []int, N2 []int, Ax []float32, Asy []float32, Asz []float32, Jx []float32, Iy []float32, Iz []float32, E []float32, G []float32, p []float32, d []float32, gX float32, gY float32, gZ float32, nU int, U [][]float32, nW int, W [][]float32, nP int, P [][]float32, D []float64, shear int, dx float32, pkNx [][]float64, pkVy [][]float64, pkVz [][]float64, pkTx [][]float64, pkMy [][]float64, pkMz [][]float64, pkDx [][]float64, pkDy [][]float64, pkDz [][]float64, pkRx [][]float64, pkSy [][]float64, pkSz [][]float64) {
 	var t1 float64
 	var t2 float64
@@ -5526,18 +6061,53 @@ func peak_internal_forces(lc int, nL int, xyz []vec3, Q [][]float64, nN int, nE 
  * calculate frame element local displacements, Rx, Dx, Dy, Dz
  * write internal forces and local displacements to an output data file
  * 4jan10, 7mar11, 21jan14
- */ /* coord transformation */ /* displ. */ /* trapz load data, local x dir */ /* trapz load data, local y dir */ /* trapz load data, local z dir */ // distributed loads in local coords at x[i]
+ */ //
+/* coord transformation */ //
+/* displ. */ //
+/* trapz load data, local x dir */ //
+/* trapz load data, local y dir */ //
+/* trapz load data, local z dir */ //
+// distributed loads in local coords at x[i]
 // distributed loads in local coords at x[i-1]
 // gravity loads in local x, y, z coord's
 // distributed torque about local x coord
-/* location of internal point loads	*/ /* distance along frame element		*/ /* axial force within frame el.		*/ /* shear forces within frame el.	*/ /* torsional moment within frame el.	*/ /* bending moments within frame el.	*/ /* transverse slopes of frame el.	*/ /* frame el. displ. in local x,y,z, dir's */ /* twist rotation about the local x-axis */ /*  maximum internal forces	*/ /*  maximum internal moments	*/ /*  maximum element displacements */ /*  maximum element rotations	*/ /*  minimum internal forces	*/ /*  minimum internal moments	*/ /*  minimum element displacements */ /*  minimum element rotations	*/ /* frame element number			*/ /* counters for U, W, and P loads	*/ /* number of sections alont x axis	*/ /* starting and stopping node no's	*/ /* file name    for internal force data	*/ /* indicate 'write' or 'append' to file */ /* file pointer for internal force data */ /* file pointer to .CSV output data file */ /* modern time variable type		*/ // skip calculation of internal forces and displ
-/* file name for internal force data for load case "lc" */ /* open the interior force data file */ //frame3dd.sf.net/");
+/* location of internal point loads	*/ //
+/* distance along frame element		*/ //
+/* axial force within frame el.		*/ //
+/* shear forces within frame el.	*/ //
+/* torsional moment within frame el.	*/ //
+/* bending moments within frame el.	*/ //
+/* transverse slopes of frame el.	*/ //
+/* frame el. displ. in local x,y,z, dir's */ //
+/* twist rotation about the local x-axis */ //
+/*  maximum internal forces	*/ //
+/*  maximum internal moments	*/ //
+/*  maximum element displacements */ //
+/*  maximum element rotations	*/ //
+/*  minimum internal forces	*/ //
+/*  minimum internal moments	*/ //
+/*  minimum element displacements */ //
+/*  minimum element rotations	*/ //
+/* frame element number			*/ //
+/* counters for U, W, and P loads	*/ //
+/* number of sections alont x axis	*/ //
+/* starting and stopping node no's	*/ //
+/* file name    for internal force data	*/ //
+/* indicate 'write' or 'append' to file */ //
+/* file pointer for internal force data */ //
+/* file pointer to .CSV output data file */ //
+/* modern time variable type		*/ //
+// skip calculation of internal forces and displ
+/* file name for internal force data for load case "lc" */ //
+/* open the interior force data file */ //
+//frame3dd.sf.net/");
 // write header information for each frame element to txt output data file
 // write header information for each frame element to CSV output data file
 /*	fprintf(fp,"\n P E A K   I N T E R N A L   D I S P L A C E M E N T S");
  *	fprintf(fp,"\t\t\t(local)\n");
  * 	fprintf(fp,"  Elmnt  X-dsp       Y-dsp       Z-dsp       X-rot       Y-rot       Z-rot\n");
- */ // loop over all frame elements
+ */ //
+// loop over all frame elements
 // node 1 and node 2 of elmnt m
 // number of x-axis increments
 // at least one x-axis increment
@@ -5556,7 +6126,8 @@ func peak_internal_forces(lc int, nL int, xyz []vec3, Q [][]float64, nN int, nE 
 // positive Tx r.h.r. about local x axis
 // positive My -> positive x-z curvature
 // positive Mz -> positive x-y curvature
-/*  accumulate interior span loads */ // start with gravitational plus uniform loads
+/*  accumulate interior span loads */ //
+// start with gravitational plus uniform loads
 // add trapezoidally-distributed loads
 // load n on element m
 // trapezoidal integration of distributed loads
@@ -5568,7 +6139,8 @@ func peak_internal_forces(lc int, nL int, xyz []vec3, Q [][]float64, nN int, nE 
 // trapezoidal integration of shear force for bending momemnt
 // linear correction of moments for bias in trapezoidal integration
 // find interior transverse displacements
-/* compute end deflections in local coordinates */ // rotations and displacements for frame element "m" at (x=0)
+/* compute end deflections in local coordinates */ //
+// rotations and displacements for frame element "m" at (x=0)
 // displacement in  local x dir  at node N1
 // displacement in  local y dir  at node N1
 // displacement in  local z dir  at node N1
@@ -5600,8 +6172,10 @@ func peak_internal_forces(lc int, nL int, xyz []vec3, Q [][]float64, nN int, nE 
 			m, maxDx, maxDy, maxDz, maxRx, maxSy, maxSz );
 	fprintf(fp," %5d %10.6f  %10.6f  %10.6f  %10.6f  %10.6f  %10.6f\n",
 			m, minDx, minDy, minDz, minRx, minSy, minSz );
-*/ // free memory
+*/ //
+// free memory
 // end of loop over all frame elements
+//
 func write_internal_forces(OUT_file []byte, fp *noarch.File, infcpath []byte, lc int, nL int, title []byte, dx float32, xyz []vec3, Q [][]float64, nN int, nE int, L []float64, J1 []int, J2 []int, Ax []float32, Asy []float32, Asz []float32, Jx []float32, Iy []float32, Iz []float32, E []float32, G []float32, p []float32, d []float32, gX float32, gY float32, gZ float32, nU int, U [][]float32, nW int, W [][]float32, nP int, P [][]float32, D []float64, shear int, error float64) {
 	var t1 float64
 	var t2 float64
@@ -6178,7 +6752,9 @@ func write_internal_forces(OUT_file []byte, fp *noarch.File, infcpath []byte, lc
 /*
  * WRITE_MODAL_RESULTS -  save modal frequencies and mode shapes
  * 16 Aug 2001
- */ /* mode participation factors	*/
+ */ //
+/* mode participation factors	*/ //
+//
 func write_modal_results(fp *noarch.File, nN int, nE int, nI int, DoF int, M [][]float64, f []float64, V [][]float64, total_mass float64, struct_mass float64, iter int, sumR int, nM int, shift float64, lump int, tol float64, ok int) {
 	var i int
 	var j int
@@ -6290,7 +6866,17 @@ func write_modal_results(fp *noarch.File, nN int, nE int, nI int, DoF int, M [][
  * The internal force output data file contains all the information required
  * to plot deformed meshes, internal axial force, internal shear force, internal
  * torsion, and internal bending moment diagrams.
- */ /* coordinates of the frame element number labels */ /* indicates plotting in 2D or 3D	*/ /* *scanf return value			*/ /* frame element number, number of increments */ /* node numbers			*/ /* coordinates of node n1		*/ /* coordinates of node n2		*/ /*  line width of deformed mesh		*/ /* modern time variable type		*/ // write gnuplot plotting script commands
+ */ //
+/* coordinates of the frame element number labels */ //
+/* indicates plotting in 2D or 3D	*/ //
+/* *scanf return value			*/ //
+/* frame element number, number of increments */ //
+/* node numbers			*/ //
+/* coordinates of node n1		*/ //
+/* coordinates of node n2		*/ //
+/*  line width of deformed mesh		*/ //
+/* modern time variable type		*/ //
+// write gnuplot plotting script commands
 // check for three-dimensional frame
 // open plotting script file for writing
 // open plotting script file for appending
@@ -6298,7 +6884,8 @@ func write_modal_results(fp *noarch.File, nN int, nE int, nI int, DoF int, M [][
 // write header, plot-setup cmds, node label, and element label data
 // header & node number & element number labels
 //frame3dd.sf.net/");
-/* fprintf(fpm,"#  X=%d , Y=%d , Z=%d, D3=%d  \n", X,Y,Z,D3_flag); */ // 3D plot setup commands
+/* fprintf(fpm,"#  X=%d , Y=%d , Z=%d, D3=%d  \n", X,Y,Z,D3_flag); */ //
+// 3D plot setup commands
 //	 fprintf(fpm,"%c unset label\n", D3 );
 // different plot title for each load case
 // requires Gnuplot >= 4.6
@@ -6318,7 +6905,9 @@ func write_modal_results(fp *noarch.File, nN int, nE int, nI int, DoF int, M [][
 // write deformed shape data for each element
 /* debugging ... check mesh data
 printf("  frel = %3d; m = %3d; n1 =%4d; n2 = %4d; nx = %3d L = %f \n", frel,m,n1,n2,nx,L[m] );
-*/func static_mesh(IN_file []byte, infcpath []byte, meshpath []byte, plotpath []byte, title []byte, nN int, nE int, nL int, lc int, DoF int, xyz []vec3, L []float64, N1 []int, N2 []int, p []float32, D []float64, exagg_static float64, D3_flag int, anlyz int, dx float32, scale float32) {
+*/ //
+//
+func static_mesh(IN_file []byte, infcpath []byte, meshpath []byte, plotpath []byte, title []byte, nN int, nE int, nL int, lc int, DoF int, xyz []vec3, L []float64, N1 []int, N2 []int, p []float32, D []float64, exagg_static float64, D3_flag int, anlyz int, dx float32, scale float32) {
 	var fpif *noarch.File = nil
 	var fpm *noarch.File = nil
 	var mx float64
@@ -6541,10 +7130,17 @@ printf("  frel = %3d; m = %3d; n1 =%4d; n2 = %4d; nx = %3d L = %f \n", frel,m,n1
 /*
  * MODAL_MESH  -  create mesh data of the mode-shape meshes, use gnuplot	19oct98
  * useful gnuplot options: unset xtics ytics ztics border view key
- */ /* mode participation factors	*/ /* a mode-shape vector */ /*  line thickness of deformed mesh	*/ /* indicate 2D or 3D frame	*/ /* modal participation factors */ //frame3dd.sf.net/");
+ */ //
+/* mode participation factors	*/ //
+/* a mode-shape vector */ //
+/*  line thickness of deformed mesh	*/ //
+/* indicate 2D or 3D frame	*/ //
+/* modal participation factors */ //
+//frame3dd.sf.net/");
 // check for three-dimensional frame
 // 2D plot command
 // 3D plot command
+//
 func modal_mesh(IN_file []byte, meshpath []byte, modepath []byte, plotpath []byte, title []byte, nN int, nE int, DoF int, nM int, xyz []vec3, L []float64, J1 []int, J2 []int, p []float32, M [][]float64, f []float64, V [][]float64, exagg_modal float64, D3_flag int, anlyz int) {
 	var fpm *noarch.File
 	var mpfX float64
@@ -6686,7 +7282,23 @@ func modal_mesh(IN_file []byte, meshpath []byte, modepath []byte, plotpath []byt
  * useful gnuplot options: unset xtics ytics ztics border view key
  * mpeg movie example:   % convert mesh_file-03-f-*.ps mode-03.mpeg
  * ... requires ImageMagick and mpeg2vidcodec packages
- */ /* pan rate for animation	     */ /* inital zoom scale in 3D animation */ /* "diameter" of the structure	*/ /* inital x-rotation in 3D animation */ /* final  x-rotation in 3D animation */ /* inital z-rotation in 3D animation */ /* final  z-rotation in 3D animation */ /* init.  zoom scale in 3D animation */ /* final  zoom scale in 3D animation */ /* number of frames in animation */ /* an exageration factor, for animation */ /*  line thickness of deformed mesh	*/ /* total number of frames in animation	*/ /* indicate 2D or 3D frame	*/ /* use '#' for no-movie  -OR-  ' ' for movie */ // check for three-dimensional frame
+ */ //
+/* pan rate for animation	     */ //
+/* inital zoom scale in 3D animation */ //
+/* "diameter" of the structure	*/ //
+/* inital x-rotation in 3D animation */ //
+/* final  x-rotation in 3D animation */ //
+/* inital z-rotation in 3D animation */ //
+/* final  z-rotation in 3D animation */ //
+/* init.  zoom scale in 3D animation */ //
+/* final  zoom scale in 3D animation */ //
+/* number of frames in animation */ //
+/* an exageration factor, for animation */ //
+/*  line thickness of deformed mesh	*/ //
+/* total number of frames in animation	*/ //
+/* indicate 2D or 3D frame	*/ //
+/* use '#' for no-movie  -OR-  ' ' for movie */ //
+// check for three-dimensional frame
 /*
  *	   if ( x_min != x_max )
  *		fprintf(fpm,"set xrange [ %lf : %lf ] \n",
@@ -6703,8 +7315,10 @@ func modal_mesh(IN_file []byte, meshpath []byte, modepath []byte, plotpath []byt
  *			z_min-0.2*(z_max-z_min), z_max+0.2*(z_max-z_min) );
  *	   else fprintf(fpm,"set zrange [ %lf : %lf ] \n",
  *			z_min-exagg_modal, z_max+exagg_modal );
- */ //frame3dd.sf.net/");
-/* mode "m" */
+ */ //
+//frame3dd.sf.net/");
+/* mode "m" */ //
+//
 func animate(IN_file []byte, meshpath []byte, modepath []byte, plotpath []byte, title []byte, anim []int, nN int, nE int, DoF int, nM int, xyz []vec3, L []float64, p []float32, J1 []int, J2 []int, f []float64, V [][]float64, exagg_modal float64, D3_flag int, pan float32, scale float32) {
 	var fpm *noarch.File
 	var x_min float32 = float32(0)
@@ -6924,11 +7538,23 @@ func animate(IN_file []byte, meshpath []byte, modepath []byte, plotpath []byte, 
  * and end rotations.  Saves deflected shapes to a file.  These bent shapes
  * are exact for mode-shapes, and for frames loaded at their nodes.
  * 15 May 2009
- */ /* coord xfmn	*/ /* u4,*/ /* u10,*/ /* compute end deflections in local coordinates */ /* u4  = exagg*(t1*D[i1+4] + t2*D[i1+5] + t3*D[i1+6]); */ /* u10 = exagg*(t1*D[i2+4] + t2*D[i2+5] + t3*D[i2+6]); */ /* curve-fitting problem for a cubic polynomial */ /* solve for cubic coef's */ /* solve for cubic coef's */ // debug ... if deformed mesh exageration is too big, some elements
+ */ //
+/* coord xfmn	*/ //
+/* u4,*/ //
+/* u10,*/ //
+/* compute end deflections in local coordinates */ //
+/* u4  = exagg*(t1*D[i1+4] + t2*D[i1+5] + t3*D[i1+6]); */ //
+/* u10 = exagg*(t1*D[i2+4] + t2*D[i2+5] + t3*D[i2+6]); */ //
+/* curve-fitting problem for a cubic polynomial */ //
+/* solve for cubic coef's */ //
+/* solve for cubic coef's */ //
+// debug ... if deformed mesh exageration is too big, some elements
 // may not be plotted.
 //fprintf( fpm, "# u1=%e  L+u7=%e, dx = %e \n",
 //				u1, fabs(L+u7), fabs(L+u7-u1)/10.0);
-/* deformed shape in local coordinates */ /* deformed shape in global coordinates */
+/* deformed shape in local coordinates */ //
+/* deformed shape in global coordinates */ //
+//
 func cubic_bent_beam(fpm *noarch.File, n1 int, n2 int, xyz []vec3, L float64, p float32, D []float64, exagg float64) {
 	var t1 float64
 	var t2 float64
@@ -7034,9 +7660,15 @@ func cubic_bent_beam(fpm *noarch.File, n1 int, n2 int, xyz []vec3, L float64, p 
  * Note: It would not be difficult to adapt this function to plot
  * internal axial force, shear force, torques, or bending moments.
  * 9 Jan 2010
- */ /* coord xfmn	*/ /* *scanf return value	*/ /* read the deformed shape in local coordinates */ //		    printf("x = %12.4f\n", x );		/* debug */
-/* exaggerated deformed shape in global coordinates */ //		printf("...  x = %7.3f  n = %3d  Dx = %10.3e   Dy = %10.3e   Dz = %10.3e \n", x,n,Dx,Dy,Dz ); /* debug */
+ */ //
+/* coord xfmn	*/ //
+/* *scanf return value	*/ //
+/* read the deformed shape in local coordinates */ //
+//		    printf("x = %12.4f\n", x );		/* debug */
+/* exaggerated deformed shape in global coordinates */ //
+//		printf("...  x = %7.3f  n = %3d  Dx = %10.3e   Dy = %10.3e   Dz = %10.3e \n", x,n,Dx,Dy,Dz ); /* debug */
 //		printf("                           dX = %10.3e   dY = %10.3e   dZ = %10.3e \n", dX,dY,dZ ); /* debug */
+//
 func force_bent_beam(fpm *noarch.File, fpif *noarch.File, fnif []byte, nx int, n1 int, n2 int, xyz []vec3, L float64, p float32, D []float64, exagg float64) {
 	var t1 float64
 	var t2 float64
@@ -7100,10 +7732,20 @@ void sferr ( char s[] ) {
 	errorMsg(errMsg);
 	return;
 }
-*/ /*
+*/ //
+/*
  * MY_ITOA  -  Convert an integer n to charcters in s, from K&R, 1978,   p. 59-60
  * ... specialized for portability between GNU GCC and DJGPP GCC
- */ /* record sign */ /* make n positive */ /* generate digits in reverse order */ /* get next digit */ /* delete it */ /* add leading '0' */ /* reverse order of string s */ /* j is length of s - 1 */
+ */ //
+/* record sign */ //
+/* make n positive */ //
+/* generate digits in reverse order */ //
+/* get next digit */ //
+/* delete it */ //
+/* add leading '0' */ //
+/* reverse order of string s */ //
+/* j is length of s - 1 */ //
+//
 func my_itoa(n int, s []byte, k int) {
 	var c int
 	var i int
@@ -7168,11 +7810,16 @@ func my_itoa(n int, s []byte, k int) {
  *		return 1 if the extension is ".csv"
  *		return 2 if the extension is ".fmm"
  *		return 0 otherwise
- */ /* the length of file filename */ /* the last '.' in filename */ /* debugging ... check file names
+ */ //
+/* the length of file filename */ //
+/* the last '.' in filename */ //
+/* debugging ... check file names
 printf(" filename '%s' has length %d and extension = '%s' \n",
 						filename, len, ext);
 printf(" Is .CSV? ... = %d \n", !strcmp(ext,".csv") );
-*/func get_file_ext(filename []byte, ext []byte) int {
+*/ //
+//
+func get_file_ext(filename []byte, ext []byte) int {
 	noarch.Printf([]byte("0001\x00"))
 	var i int = 0
 	var full_len int = 0
@@ -7220,7 +7867,9 @@ printf(" Is .CSV? ... = %d \n", !strcmp(ext,".csv") );
 // dots - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:4050
 /*
  * DOTS  -  print a set of dots (periods)
- */func dots(fp *noarch.File, n int) {
+ */ //
+//
+func dots(fp *noarch.File, n int) {
 	var i int
 	for i = 1; i <= n; i++ {
 		noarch.Fprintf(fp, []byte(".\x00"))
@@ -7230,7 +7879,9 @@ printf(" Is .CSV? ... = %d \n", !strcmp(ext,".csv") );
 // evaluate - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:4059
 /*
  * EVALUATE -  displays a randomly-generated goodbye message.
- */func evaluate(error float32, rms_resid float32, tol float32, geom int) {
+ */ //
+//
+func evaluate(error float32, rms_resid float32, tol float32, geom int) {
 	var r int
 	r = rand.Int() % 10
 	color(0)
@@ -7405,7 +8056,8 @@ printf(" Is .CSV? ... = %d \n", !strcmp(ext,".csv") );
 
     You should have received a copy of the GNU General Public License
     along with FRAME3DD.  If not, see <http://www.gnu.org/licenses/>.
-*/ /* -------------------------------------------------------------------------
+*/ //
+/* -------------------------------------------------------------------------
 COORD_TRANS - calculate the 9 elements of the block-diagonal 12-by-12
 coordinate transformation matrix, t1, t2, ..., t9.
 
@@ -7426,7 +8078,11 @@ re-write of much of the code.
 
 Currently the effect of finite node sizes is used only in the calculation
 of the element stiffness matrices.
-------------------------------------------------------------------------- */ /**< the roll angle (radians) */ /* direction cosines	*/ /* cosine and sine of roll angle */
+------------------------------------------------------------------------- */ //
+/**< the roll angle (radians) */ //
+/* direction cosines	*/ //
+/* cosine and sine of roll angle */ //
+//
 func coord_trans(xyz []vec3, L float64, n1 int, n2 int, t1 []float64, t2 []float64, t3 []float64, t4 []float64, t5 []float64, t6 []float64, t7 []float64, t8 []float64, t9 []float64, p float32) {
 	var Cx float64
 	var Cy float64
@@ -7473,7 +8129,10 @@ func coord_trans(xyz []vec3, L float64, n1 int, n2 int, t1 []float64, t2 []float
 /* ------------------------------------------------------------------------------
  * ATMA  -  perform the coordinate transformation from local to global     6jan96
  *	  include effects of a finite node radii, r1 and r2.	    9dec04
- *	  ------------------------------------------------------------------------------*/ /*  effect of finite node radius on coordinate transformation  ... */ /*  this needs work ... */ /*
+ *	  ------------------------------------------------------------------------------*/ //
+/*  effect of finite node radius on coordinate transformation  ... */ //
+/*  this needs work ... */ //
+/*
  	a[5][1] =  r1*t7;
   	a[5][2] =  r1*t8;
   	a[5][3] =  r1*t9;
@@ -7487,7 +8146,10 @@ func coord_trans(xyz []vec3, L float64, n1 int, n2 int, t1 []float64, t2 []float
   	a[12][7] =  r2*t4;
   	a[12][8] =  r2*t5;
   	a[12][9] =  r2*t6;
-*/ /*  MT = M T     */ /*  T'MT = T' MT */
+*/ //
+/*  MT = M T     */ //
+/*  T'MT = T' MT */ //
+//
 func atma(t1 float64, t2 float64, t3 float64, t4 float64, t5 float64, t6 float64, t7 float64, t8 float64, t9 float64, m [][]float64, r1 float32, r2 float32) {
 	var a [][]float64
 	var ma [][]float64
@@ -7561,7 +8223,8 @@ func atma(t1 float64, t2 float64, t3 float64, t4 float64, t5 float64, t6 float64
 
     You should have received a copy of the GNU General Public License
     along with FRAME3DD.  If not, see <http://www.gnu.org/licenses/>.
-*/ /**
+*/ //
+/**
 	@file
 	Routines to solve the generalized eigenvalue problem
 
@@ -7569,7 +8232,10 @@ func atma(t1 float64, t2 float64, t3 float64, t4 float64, t5 float64, t6 float64
  Department of Civil and Environmental Engineering
  Duke University, Box 90287
  Durham, NC  27708--0287
-*/ /* #define EIG_DEBUG */ /* forward declarations */ /*-----------------------------------------------------------------------------
+*/ //
+/* #define EIG_DEBUG */ //
+/* forward declarations */ //
+/*-----------------------------------------------------------------------------
 SUBSPACE - Find the lowest m eigen-values, w, and eigen-vectors, V, of the
 general eigen-problem  ...       K V = w M V using sub-space / Jacobi iteration
 where
@@ -7580,9 +8246,27 @@ where
 
  H.P. Gavin, Civil Engineering, Duke University, hpgavin@duke.edu  1 March 2007
  Bathe, Finite Element Procecures in Engineering Analysis, Prentice Hall, 1982
------------------------------------------------------------------------------*/ /**< DoF and number of required modes	*/ /**< sub-space iterations		*/ /**< Sturm check result			*/ /* display convergence info.	*/ /* shift eigen-values by this much */ /* use L D L' decomp  */ //	for (k=1; k<=m; k++) printf(" idx[%d] = %d \n", k, idx[k] ); /*debug*/
+-----------------------------------------------------------------------------*/ //
+/**< DoF and number of required modes	*/ //
+/**< sub-space iterations		*/ //
+/**< Sturm check result			*/ //
+/* display convergence info.	*/ //
+/* shift eigen-values by this much */ //
+/* use L D L' decomp  */ //
+//	for (k=1; k<=m; k++) printf(" idx[%d] = %d \n", k, idx[k] ); /*debug*/
 //		printf(" idx[%3d] = %3d   ok = %d \n", k , idx[k], *ok); /*debug*/
-/*	for (i=1; i<=n; i++)	V[i][1] = M[i][i];	// diag(M)	*/ /* Begin sub-space iterations */ /* K Xb = M V	(12.10) */ /* LDL bk-sub */ /* improve the solution iteratively */ /* Kb = Xb' K Xb (12.11) */ /* Mb = Xb' M Xb (12.12) */ /* (12.13) */ /* V = Xb Qb (12.14) */ /* End   sub-space iterations */ /* shift eigen-values */
+/*	for (i=1; i<=n; i++)	V[i][1] = M[i][i];	// diag(M)	*/ //
+/* Begin sub-space iterations */ //
+/* K Xb = M V	(12.10) */ //
+/* LDL bk-sub */ //
+/* improve the solution iteratively */ //
+/* Kb = Xb' K Xb (12.11) */ //
+/* Mb = Xb' M Xb (12.12) */ //
+/* (12.13) */ //
+/* V = Xb Qb (12.14) */ //
+/* End   sub-space iterations */ //
+/* shift eigen-values */ //
+//
 func subspace(K [][]float64, M [][]float64, n int, m int, w []float64, V [][]float64, tol float64, shift float64, iter []int, ok []int, verbose int) {
 	var Kb [][]float64
 	var Mb [][]float64
@@ -7802,7 +8486,22 @@ func subspace(K [][]float64, M [][]float64, n int, m int, w []float64, V [][]flo
 
  H.P. Gavin, Civil Engineering, Duke University, hpgavin@duke.edu  1 March 2007
  Bathe, Finite Element Procecures in Engineering Analysis, Prentice Hall, 1982
------------------------------------------------------------------------------*/ /* Begin Sweep Iteration */ /* sweep along upper diagonals */ /* row */ /* column */ /* do a rotation */ /* make Kij zero */ /* make Mij zero */ /*  update eigen-vectors  V = V * P */ /* rotations complete */ /* row */ /* diagonal */ /* End Sweep Iteration */ /* scale eigen-vectors */ /* eigen-values */
+-----------------------------------------------------------------------------*/ //
+/* Begin Sweep Iteration */ //
+/* sweep along upper diagonals */ //
+/* row */ //
+/* column */ //
+/* do a rotation */ //
+/* make Kij zero */ //
+/* make Mij zero */ //
+/*  update eigen-vectors  V = V * P */ //
+/* rotations complete */ //
+/* row */ //
+/* diagonal */ //
+/* End Sweep Iteration */ //
+/* scale eigen-vectors */ //
+/* eigen-values */ //
+//
 func jacobi(K [][]float64, M [][]float64, E []float64, V [][]float64, n int) {
 	var iter int
 	var d int
@@ -7887,7 +8586,10 @@ func jacobi(K [][]float64, M [][]float64, E []float64, V [][]float64, n int) {
 ROTATE - rotate an n by n symmetric matrix A such that A[i][j] = A[j][i] = 0
      A = P' * A * P  where diag(P) = 1 and P[i][j] = alpha and P[j][i] = beta.
      Since P is sparse, this matrix multiplcation can be done efficiently.
------------------------------------------------------------------------------*/ /* elements of A	*/ /* i-th and j-th rows of A */
+-----------------------------------------------------------------------------*/ //
+/* elements of A	*/ //
+/* i-th and j-th rows of A */ //
+//
 func rotate(A [][]float64, n int, alpha float64, beta float64, i int, j int) {
 	var Aii float64
 	var Ajj float64
@@ -7928,7 +8630,39 @@ generalized eigen-problem, K v = w M v, using a matrix iteration approach
 with shifting. 								15oct98
 
  H.P. Gavin, Civil Engineering, Duke University, hpgavin@duke.edu  12 Jul 2001
-------------------------------------------------------------------------------*/ /* stiffness and mass matrices */ /* DoF and number of required modes	*/ /* the dynamics matrix, D = K^(-1) M	*/ /* minimum value of D[i][i]		*/ /* maximum value of D[i][i]		*/ /* previous extreme value of D[i][i]	*/ /* columns of the D, M, and V matrices	*/ /* trial eigen-vector vectors		*/ /* coefficients for lower mode purge	*/ /* factor for mass normalization	*/ /* Raliegh quotient			*/ /* location of minimum value of D[i][i]	*/ /* number of desired modes		*/ /* 1: display convergence error; 0: dont*/ /* shift eigen-values by this much */ /* use L D L' decomp	*/ /* calculate  D = K^(-1) M */ /* L D L' bk-sub */ /* improve the solution iteratively */ /* loop over lowest m modes */ /* initial guess */ /* mass-normalize */ /* purge lower modes */ /* mass-normalize */ /* Raleigh quotient */ /* iterate	*/ /* v = D u	*/ /* mass-normalize */ /* purge lower modes */ /* mass-normalize */ /* Raleigh quotient */
+------------------------------------------------------------------------------*/ //
+/* stiffness and mass matrices */ //
+/* DoF and number of required modes	*/ //
+/* the dynamics matrix, D = K^(-1) M	*/ //
+/* minimum value of D[i][i]		*/ //
+/* maximum value of D[i][i]		*/ //
+/* previous extreme value of D[i][i]	*/ //
+/* columns of the D, M, and V matrices	*/ //
+/* trial eigen-vector vectors		*/ //
+/* coefficients for lower mode purge	*/ //
+/* factor for mass normalization	*/ //
+/* Raliegh quotient			*/ //
+/* location of minimum value of D[i][i]	*/ //
+/* number of desired modes		*/ //
+/* 1: display convergence error; 0: dont*/ //
+/* shift eigen-values by this much */ //
+/* use L D L' decomp	*/ //
+/* calculate  D = K^(-1) M */ //
+/* L D L' bk-sub */ //
+/* improve the solution iteratively */ //
+/* loop over lowest m modes */ //
+/* initial guess */ //
+/* mass-normalize */ //
+/* purge lower modes */ //
+/* mass-normalize */ //
+/* Raleigh quotient */ //
+/* iterate	*/ //
+/* v = D u	*/ //
+/* mass-normalize */ //
+/* purge lower modes */ //
+/* mass-normalize */ //
+/* Raleigh quotient */ //
+//
 func stodola(K [][]float64, M [][]float64, n int, m int, w []float64, V [][]float64, tol float64, shift float64, iter []int, ok []int, verbose int) {
 	var D [][]float64
 	var d_min float64 = 0
@@ -8111,7 +8845,11 @@ EIGSORT  -  Given the eigenvallues e[1..m] and eigenvectors v[1..n][1..m],
 this routine sorts the eigenvalues into ascending order, and rearranges
 the columns of v correspondingly.  The method is straight insertion.
 Adapted from Numerical Recipes in C, Ch 11
-------------------------------------------------------------------------------*/ /* find smallest eigen-value */ /* swap eigen-values	*/ /* swap eigen-vectors	*/
+------------------------------------------------------------------------------*/ //
+/* find smallest eigen-value */ //
+/* swap eigen-values	*/ //
+/* swap eigen-vectors	*/ //
+//
 func eigsort(e []float64, v [][]float64, n int, m int) {
 	var k int
 	var j int
@@ -8155,7 +8893,9 @@ STURM  -  Determine the number of eigenvalues, w, of the general eigen-problem
 
  H.P. Gavin, Civil Engineering, Duke University, hpgavin@duke.edu  30 Aug 2001
  Bathe, Finite Element Procecures in Engineering Analysis, Prentice Hall, 1982
------------------------------------------------------------------------------*/ /* shift [K]	*/
+-----------------------------------------------------------------------------*/ //
+/* shift [K]	*/ //
+//
 func sturm(K [][]float64, M [][]float64, n int, m int, shift float64, ws float64, verbose int) int {
 	var ws_shift float64
 	var d []float64
@@ -8200,7 +8940,9 @@ func sturm(K [][]float64, M [][]float64, n int, m int, shift float64, ws float64
 // check_non_negative - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/eig.c:601
 /*----------------------------------------------------------------------------
 CHECK_NON_NEGATIVE -  checks that a value is non-negative
------------------------------------------------------------------------------*/func check_non_negative(x float64, i int) {
+-----------------------------------------------------------------------------*/ //
+//
+func check_non_negative(x float64, i int) {
 	if x <= 1e-100 {
 		noarch.Fprintf(stderr, []byte(" value %e is less than or equal to zero \x00"), x)
 		noarch.Fprintf(stderr, []byte(" i = %d \n\x00"), i)
@@ -8226,7 +8968,8 @@ CHECK_NON_NEGATIVE -  checks that a value is non-negative
  *	Company:  Duke Univ.
  *
  * ==========================================================================
- */ /*
+ */ //
+/*
  Copyright (C) 2012 Henri P. Gavin
 
     HPGmatrix is free software: you can redistribute it and/or modify
@@ -8241,23 +8984,33 @@ CHECK_NON_NEGATIVE -  checks that a value is non-negative
 
     You should have received a copy of the GNU General Public License
     along with HPGmatrix.  If not, see <http://www.gnu.org/licenses/>.
-*/ /*
+*/ //
+/*
  * GAUSSJ
  * Linear equation solution by Gauss-Jordan elimination, [A][X]=[B] above. A[1..n][1..n]
  * is the input matrix. B[1..n][1..m] is input containing the m right-hand side vectors. On
  * output, a is replaced by its matrix inverse, and B is replaced by the corresponding set of solution
  * vectors.
- */ /* The integer arrays ipiv, indxr, and indxc are used for bookkeeping on the pivoting. */ /*  This is the main loop over the columns to be reduced. */ /*  This is the outer loop for the search for a pivot element. */ /* We now have the pivot element, so we interchange rows, if needed, to put the pivot
+ */ //
+/* The integer arrays ipiv, indxr, and indxc are used for bookkeeping on the pivoting. */ //
+/*  This is the main loop over the columns to be reduced. */ //
+/*  This is the outer loop for the search for a pivot element. */ //
+/* We now have the pivot element, so we interchange rows, if needed, to put the pivot
  * element on the diagonal. The columns are not physically interchanged, only relabeled:
  * indxc[i], the column of the ith pivot element, is the ith column that is reduced, while
  * indxr[i] is the row in which that pivot element was originally located. If indxr[i] =
  * indxc[i] there is an implied column interchange. With this form of bookkeeping, the
  * solution b's will end up in the correct order, and the inverse matrix will be scrambled
  * by columns.
- */ /* We are now ready to divide the pivot row by the by the pivot element, located at irow,icol */ /*  Next, we reduce the rows ... except for the pivot one, of course. */ /* This is the end of the main loop over columns of the reduction. It only remains to unscram-
+ */ //
+/* We are now ready to divide the pivot row by the by the pivot element, located at irow,icol */ //
+/*  Next, we reduce the rows ... except for the pivot one, of course. */ //
+/* This is the end of the main loop over columns of the reduction. It only remains to unscram-
  * ble the solution in view of the column interchanges. We do this by interchanging pairs of
  * columns in the reverse order that the permutation was built up.
- */ /*  And we are done. */
+ */ //
+/*  And we are done. */ //
+//
 func gaussj(A [][]float32, n int, B [][]float32, m int) {
 	var indxc []int
 	var indxr []int
@@ -8362,13 +9115,22 @@ func gaussj(A [][]float32, n int, B [][]float32, m int) {
  *  usage:  double **A, *b;
  *	  int   n, reduce, solve, pd;
  *	  lu_dcmp ( A, n, b, reduce, solve, &pd );		     5may98
- */ // the system matrix, and it's LU- reduction
+ */ //
+// the system matrix, and it's LU- reduction
 // the dimension of the matrix
 // the right hand side vector, and the solution vector
 // 1: do a forward reduction; 0: don't do the reduction
 // 1: do a back substitution for {x};  0: do no bk-sub'n
 // 1: positive diagonal  and  successful LU decomp'n
-/* a diagonal element of [A]		*/ /* forward reduction of [A]	*/ /* the forward reduction of [A] is now complete	*/ /* back substitution to solve for {x}	*/ /* {b} is run through the same forward reduction as was [A]	*/ /* now back substitution is conducted on {b};  [A] is preserved */ /* finally we solve for the {x} vector			*/ /* TAA DAAAAAAAA! {b} is now {x} and is ready to be returned	*/
+/* a diagonal element of [A]		*/ //
+/* forward reduction of [A]	*/ //
+/* the forward reduction of [A] is now complete	*/ //
+/* back substitution to solve for {x}	*/ //
+/* {b} is run through the same forward reduction as was [A]	*/ //
+/* now back substitution is conducted on {b};  [A] is preserved */ //
+/* finally we solve for the {x} vector			*/ //
+/* TAA DAAAAAAAA! {b} is now {x} and is ready to be returned	*/ //
+//
 func lu_dcmp(A [][]float64, n int, b []float64, reduce int, solve int, pd []int) {
 	var pivot float64
 	var i int
@@ -8429,7 +9191,8 @@ func lu_dcmp(A [][]float64, n int, b []float64, reduce int, solve int, pd []int)
  *
  * H.P. Gavin, Civil Engineering, Duke University, hpgavin@duke.edu  9 Oct 2001
  * Bathe, Finite Element Procecures in Engineering Analysis, Prentice Hall, 1982
- */ // the system matrix, and L of the L D L' decomp.
+ */ //
+// the system matrix, and L of the L D L' decomp.
 // the dimension of the matrix
 // diagonal of D in the  L D L' - decomp'n
 // the right hand side vector
@@ -8437,7 +9200,14 @@ func lu_dcmp(A [][]float64, n int, b []float64, reduce int, solve int, pd []int)
 // 1: do a forward reduction of A; 0: don't
 // 1: do a back substitution for {x}; 0: don't
 // 1: definite matrix and successful L D L' decomp'n
-/* number of negative elements on the diagonal of D */ /* forward column-wise reduction of [A]	*/ /* scan the sky-line	*/ /* the forward reduction of [A] is now complete	*/ /* back substitution to solve for {x}   */ /* {x} is run through the same forward reduction as was [A] */ /* now back substitution is conducted on {x};  [A] is preserved */
+/* number of negative elements on the diagonal of D */ //
+/* forward column-wise reduction of [A]	*/ //
+/* scan the sky-line	*/ //
+/* the forward reduction of [A] is now complete	*/ //
+/* back substitution to solve for {x}   */ //
+/* {x} is run through the same forward reduction as was [A] */ //
+/* now back substitution is conducted on {x};  [A] is preserved */ //
+//
 func ldl_dcmp(A [][]float64, n int, d []float64, b []float64, x []float64, reduce int, solve int, pd []int) {
 	var i int
 	var j int
@@ -8513,7 +9283,19 @@ func ldl_dcmp(A [][]float64, n int, d []float64, b []float64, x []float64, reduc
  * 	ldl_mprove ( A, n, d, b, x, &rms_resid, &ok );
  *
  * H.P. Gavin, Civil Engineering, Duke University, hpgavin@duke.edu  4 May 2001
- */ /* accumulate the r.h.s. in double precision */ /* the residual error		  	*/ /* the RMS error of the mprvd solution	*/ /* allocate memory for a vector	of doubles */ /* calculate the r.h.s. of      */ /* [A]{r} = {b} - [A]{x+r}      */ /* A in upper triangle only     */ /* solve for the error term */ /* good improvement */ /* subtract the error from the old solution */ /* the solution has improved		*/
+ */ //
+/* accumulate the r.h.s. in double precision */ //
+/* the residual error		  	*/ //
+/* the RMS error of the mprvd solution	*/ //
+/* allocate memory for a vector	of doubles */ //
+/* calculate the r.h.s. of      */ //
+/* [A]{r} = {b} - [A]{x+r}      */ //
+/* A in upper triangle only     */ //
+/* solve for the error term */ //
+/* good improvement */ //
+/* subtract the error from the old solution */ //
+/* the solution has improved		*/ //
+//
 func ldl_mprove(A [][]float64, n int, d []float64, b []float64, x []float64, rms_resid []float64, ok []int) {
 	var sdp float64
 	var resid []float64
@@ -8577,7 +9359,29 @@ func ldl_mprove(A [][]float64, n int, d []float64, b []float64, x []float64, rms
  * H.P. Gavin, Civil Engineering, Duke University, hpgavin@duke.edu
  * Bathe, Finite Element Procecures in Engineering Analysis, Prentice Hall, 1982
  * 2014-05-14
- */ /**< the system matrix, and L of the L D L' decomp.*/ /**< the dimension of the matrix		*/ /**< diagonal of D in the  L D L' - decomp'n    */ /**< the right hand side vector			*/ /**< part of the solution vector		*/ /**< the part of the solution vector in the rhs */ /**< q[j]=1 if  b[j] is known; q[j]=0 otherwise	*/ /**< r[j]=1 if  x[j] is known; r[j]=0 otherwise	*/ /**< 1: do a forward reduction of A; 0: don't   */ /**< 1: do a back substitution for {x}; 0: don't */ /**< 1: definite matrix and successful L D L' decomp'n*/ /* number of negative elements on the diagonal of D */ /* forward column-wise reduction of [A]	*/ /* reduce column j, except where q[i]==0	*/ /* scan the sky-line	*/ /* the forward reduction of [A] is now complete	*/ /* back substitution to solve for {x}   */ /* {x} is run through the same forward reduction as was [A] */ /* now back substitution is conducted on {x};  [A] is preserved */ /* finally, evaluate c_r	*/ // changed from 0.0 to -b[i]; 2014-05-14
+ */ //
+/**< the system matrix, and L of the L D L' decomp.*/ //
+/**< the dimension of the matrix		*/ //
+/**< diagonal of D in the  L D L' - decomp'n    */ //
+/**< the right hand side vector			*/ //
+/**< part of the solution vector		*/ //
+/**< the part of the solution vector in the rhs */ //
+/**< q[j]=1 if  b[j] is known; q[j]=0 otherwise	*/ //
+/**< r[j]=1 if  x[j] is known; r[j]=0 otherwise	*/ //
+/**< 1: do a forward reduction of A; 0: don't   */ //
+/**< 1: do a back substitution for {x}; 0: don't */ //
+/**< 1: definite matrix and successful L D L' decomp'n*/ //
+/* number of negative elements on the diagonal of D */ //
+/* forward column-wise reduction of [A]	*/ //
+/* reduce column j, except where q[i]==0	*/ //
+/* scan the sky-line	*/ //
+/* the forward reduction of [A] is now complete	*/ //
+/* back substitution to solve for {x}   */ //
+/* {x} is run through the same forward reduction as was [A] */ //
+/* now back substitution is conducted on {x};  [A] is preserved */ //
+/* finally, evaluate c_r	*/ //
+// changed from 0.0 to -b[i]; 2014-05-14
+//
 func ldl_dcmp_pm(A [][]float64, n int, d []float64, b []float64, x []float64, c []float64, q []int, r []int, reduce int, solve int, pd []int) {
 	var i int
 	var j int
@@ -8702,7 +9506,18 @@ func ldl_dcmp_pm(A [][]float64, n int, d []float64, b []float64, x []float64, c 
  *
  * H.P. Gavin, Civil Engineering, Duke University, hpgavin@duke.edu
  * 2001-05-01, 2014-05-14
- */ /**< the system matrix, and L of the L D L' decomp.*/ /**< the dimension of the matrix		*/ /**< diagonal of D in the  L D L' - decomp'n    */ /**< the right hand side vector			*/ /**< part of the solution vector		*/ /**< the part of the solution vector in the rhs */ /**< q[j]=1 if  b[j] is known; q[j]=0 otherwise	*/ /**< r[j]=1 if  x[j] is known; r[j]=0 otherwise	*/ /**< root-mean-square of residual error	*/ /**< 1: >10% reduction in rms_resid; 0: not	*/ // accumulate the r.h.s. in double precision
+ */ //
+/**< the system matrix, and L of the L D L' decomp.*/ //
+/**< the dimension of the matrix		*/ //
+/**< diagonal of D in the  L D L' - decomp'n    */ //
+/**< the right hand side vector			*/ //
+/**< part of the solution vector		*/ //
+/**< the part of the solution vector in the rhs */ //
+/**< q[j]=1 if  b[j] is known; q[j]=0 otherwise	*/ //
+/**< r[j]=1 if  x[j] is known; r[j]=0 otherwise	*/ //
+/**< root-mean-square of residual error	*/ //
+/**< 1: >10% reduction in rms_resid; 0: not	*/ //
+// accumulate the r.h.s. in double precision
 // the residual error
 // update to partial r.h.s. vector, c
 // the RMS error of the mprvd solution
@@ -8713,7 +9528,11 @@ func ldl_dcmp_pm(A [][]float64, n int, d []float64, b []float64, x []float64, c 
 // A_qq in upper triangle only
 // else dx[i] = 0.0; // x[i];
 // solve for the residual error term, A is already factored
-/*  enough improvement    */ /*  update the solution 2014-05-14   */ /* return the new residual   */ /* the solution has improved */
+/*  enough improvement    */ //
+/*  update the solution 2014-05-14   */ //
+/* return the new residual   */ //
+/* the solution has improved */ //
+//
 func ldl_mprove_pm(A [][]float64, n int, d []float64, b []float64, x []float64, c []float64, q []int, r []int, rms_resid []float64, ok []int) {
 	var sdp float64
 	var dx []float64
@@ -8780,7 +9599,13 @@ func ldl_mprove_pm(A [][]float64, n int, d []float64, b []float64, x []float64, 
  *       B = B - (f*d' + d*f') / (d' * d) + f'*d * d*d' / (d' * d)^2 ;
  *
  * H.P. Gavin, Civil Engineering, Duke University, hpgavin@duke.edu  24 Oct 2012
- */ /**< secant stiffness matrix            */ /**< out-of-balance force vector        */ /**< incremental displacement vector    */ /**< matrix dimension is n-by-n         */ /*  update upper triangle of B[i][j] */
+ */ //
+/**< secant stiffness matrix            */ //
+/**< out-of-balance force vector        */ //
+/**< incremental displacement vector    */ //
+/**< matrix dimension is n-by-n         */ //
+/*  update upper triangle of B[i][j] */ //
+//
 func PSB_update(B [][]float64, f []float64, d []float64, n int) {
 	var i int
 	var j int
@@ -8807,7 +9632,19 @@ func PSB_update(B [][]float64, f []float64, d []float64, n int) {
  * 	     Ai = inv ( A'*A + beta * trace(A'*A) * I ) * A'
  *	     beta is a regularization factor, which should be small (1e-10)
  *	     A is m by n      Ai is m by n			      8oct01
- */ /* compute A' * A */ /* make symmetric */ /* trace of AtA */ /* add beta I */ /*  L D L'  decomp */ /* compute inv(AtA) */ /* L D L' bksbtn */ /*improve the solution*/ /* save inv(AtA) */ /* make symmetric */ /* compute inv(A'*A)*A'	*/
+ */ //
+/* compute A' * A */ //
+/* make symmetric */ //
+/* trace of AtA */ //
+/* add beta I */ //
+/*  L D L'  decomp */ //
+/* compute inv(AtA) */ //
+/* L D L' bksbtn */ //
+/*improve the solution*/ //
+/* save inv(AtA) */ //
+/* make symmetric */ //
+/* compute inv(A'*A)*A'	*/ //
+//
 func pseudo_inv(A [][]float64, Ai [][]float64, n int, m int, beta float64, verbose int) {
 	var diag []float64
 	var b []float64
@@ -8915,7 +9752,9 @@ func pseudo_inv(A [][]float64, Ai [][]float64, n int, m int, beta float64, verbo
 /*
  * PRODABj -  matrix-matrix multiplication for symmetric A	      27apr01
  *		 u = A * B(:,j)
- */func prodABj(A [][]float64, B [][]float64, u []float64, n int, j int) {
+ */ //
+//
+func prodABj(A [][]float64, B [][]float64, u []float64, n int, j int) {
 	var i int
 	var k int
 	for i = 1; i <= n; i++ {
@@ -8936,7 +9775,9 @@ func pseudo_inv(A [][]float64, Ai [][]float64, n int, m int, beta float64, verbo
 // prodAB - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/HPGmatrix.c:681
 /*
  * prodAB - matrix-matrix multiplication      C = A * B			27apr01
- */func prodAB(A [][]float64, B [][]float64, C [][]float64, I int, J int, K int) {
+ */ //
+//
+func prodAB(A [][]float64, B [][]float64, C [][]float64, I int, J int, K int) {
 	var i int
 	var j int
 	var k int
@@ -8959,7 +9800,11 @@ func pseudo_inv(A [][]float64, Ai [][]float64, n int, m int, beta float64, verbo
 /*
  * INVAB  -  calculate product inv(A) * B
  *	 A is n by n      B is n by m				    6jun07
- */ /*   L D L'  decomp */ /*   L D L'  bksbtn */ /* improve the solution*/
+ */ //
+/*   L D L'  decomp */ //
+/*   L D L'  bksbtn */ //
+/* improve the solution*/ //
+//
 func invAB(A [][]float64, B [][]float64, n int, m int, AiB [][]float64, ok []int, verbose int) {
 	var diag []float64
 	var b []float64
@@ -9017,7 +9862,11 @@ func invAB(A [][]float64, B [][]float64, n int, m int, AiB [][]float64, ok []int
 /*
  * XTinvAY  -  calculate quadratic form with inverse matrix   X' * inv(A) * Y
  *	   A is n by n    X is n by m     Y is n by m		    15sep01
- */ /*   L D L'  decomp */ /*   L D L'  bksbtn */ /* improve the solution*/
+ */ //
+/*   L D L'  decomp */ //
+/*   L D L'  bksbtn */ //
+/* improve the solution*/ //
+//
 func xtinvAy(X [][]float64, A [][]float64, Y [][]float64, n int, m int, Ac [][]float64, verbose int) {
 	var diag []float64
 	var x []float64
@@ -9075,7 +9924,9 @@ func xtinvAy(X [][]float64, A [][]float64, Y [][]float64, n int, m int, Ac [][]f
 /*  COORD_XFRM - coordinate transform of a matrix of column 2-vectors
  *
  * Rr  = [ cosd(theta) -sind(theta) ; sind(theta) cosd(theta) ]*[ Rx ; Ry ];
- */func coord_xfrm(Rr [][]float32, R [][]float32, theta float32, n int) {
+ */ //
+//
+func coord_xfrm(Rr [][]float32, R [][]float32, theta float32, n int) {
 	var R1 float32
 	var R2 float32
 	var i int
@@ -9092,7 +9943,10 @@ func xtinvAy(X [][]float64, A [][]float64, Y [][]float64, n int, m int, Ac [][]f
 /*
  * xtAx - carry out matrix-matrix-matrix multiplication for symmetric A  7nov02
  *	 C = X' A X     C is J by J      X is N by J     A is N by N
- */ /*  use upper triangle of A */ /*  make  C  symmetric */
+ */ //
+/*  use upper triangle of A */ //
+/*  make  C  symmetric */ //
+//
 func xtAx(A [][]float64, X [][]float64, C [][]float64, N int, J int) {
 	var AX [][]float64
 	var i int
@@ -9140,8 +9994,11 @@ func xtAx(A [][]float64, X [][]float64, C [][]float64, N int, J int) {
 // xtAy - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/HPGmatrix.c:843
 /*
  * xtAy - carry out vector-matrix-vector multiplication for symmetric A  7apr94
- */ /*  d = A y  */ //  A in upper triangle only
-/*  xAy = x' A y  */
+ */ //
+/*  d = A y  */ //
+//  A in upper triangle only
+/*  xAy = x' A y  */ //
+//
 func xtAy(x []float64, A [][]float64, y []float64, n int, d []float64) float64 {
 	var xtAy float64 = 0
 	var i int
@@ -9167,7 +10024,17 @@ func xtAy(x []float64, A [][]float64, y []float64, n int, d []float64) float64 {
  * invAXinvA -  calculate quadratic form with inverse matrix
  *	   replace X with inv(A) * X * inv(A)
  *	   A is n by n and symmetric   X is n by n and symmetric    15sep01
- */ /*   L D L'  decomp */ /*  compute inv(A)  */ /*   L D L'  bksbtn */ /* improve the solution*/ /*  save inv(A) */ /*  make symmetric */ /*  compute X * inv(A)   */ /*  compute inv(A) * X * inv(A)  */ /*  make symmetric */
+ */ //
+/*   L D L'  decomp */ //
+/*  compute inv(A)  */ //
+/*   L D L'  bksbtn */ //
+/* improve the solution*/ //
+/*  save inv(A) */ //
+/*  make symmetric */ //
+/*  compute X * inv(A)   */ //
+/*  compute inv(A) * X * inv(A)  */ //
+/*  make symmetric */ //
+//
 func invAXinvA(A [][]float64, X [][]float64, n int, verbose int) {
 	var diag []float64
 	var b []float64
@@ -9267,7 +10134,9 @@ func invAXinvA(A [][]float64, X [][]float64, n int, verbose int) {
  *       compute the relative 2-norm between two vectors N and D
  *	       return  ( sqrt(sum(N[i]*N[i]) / sqrt(D[i]*D[i]) )
  *
- */func relative_norm(N []float64, D []float64, n int) float64 {
+ */ //
+//
+func relative_norm(N []float64, D []float64, n int) float64 {
 	var nN float64 = 0
 	var nD float64 = 0
 	var i int
@@ -9284,7 +10153,9 @@ func invAXinvA(A [][]float64, X [][]float64, n int, verbose int) {
 /*
  *  Legendre
  *  compute matrix of the Legendre polynomials and its first two derivitives
- */ // save_vector( n, t, "t.dat");
+ */ //
+// save_vector( n, t, "t.dat");
+//
 func Legendre(order int, t []float32, n int, P [][]float32, Pp [][]float32, Ppp [][]float32) {
 	var k int
 	var p int
@@ -9311,7 +10182,8 @@ func Legendre(order int, t []float32, n int, P [][]float32, Pp [][]float32, Ppp 
 }
 
 // color - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:35
-/*  HPGutil.c  ---  library of general-purpose utility functions	*/ /*
+/*  HPGutil.c  ---  library of general-purpose utility functions	*/ //
+/*
  Copyright (C) 2012 Henri P. Gavin
 
     HPGutil is free software: you can redistribute it and/or modify
@@ -9326,14 +10198,17 @@ func Legendre(order int, t []float32, n int, P [][]float32, Pp [][]float32, Ppp 
 
     You should have received a copy of the GNU General Public License
     along with HPGutil.  If not, see <http://www.gnu.org/licenses/>.
-*/ /*
+*/ //
+/*
  * COLOR - change color on the screen ...
  * Screen   Color  Scheme  : 0 = white on black, 1 = bright
  * first digit= 3  for text color	  first digit= 4  for  background color
  * second digit codes:
  * 0=black, 1=red, 2=green, 3=gold, 4=blue, 5=magenta, 6=cyan, 7=white
  * http://en.wikipedia.org/wiki/ANSI_escape_code
- */ /*  change the screen color      */
+ */ //
+/*  change the screen color      */ //
+//
 func color(colorCode int) {
 	noarch.Fprintf(stderr, []byte("\x1b[%02dm\x00"), colorCode)
 	_ = noarch.Fflush(stderr)
@@ -9348,7 +10223,8 @@ func color(colorCode int) {
  * nbf    : 'n' = normal, 'b' = bright/bold, 'f' = faint
  * uline  : 'u' = underline
  * http://en.wikipedia.org/wiki/ANSI_escape_code
- */ // Control Sequence Introducer & reset
+ */ //
+// Control Sequence Introducer & reset
 // background colors
 // black
 // red
@@ -9372,6 +10248,7 @@ func color(colorCode int) {
 // faint
 // underline
 // Select Graphic Rendition (SGR)
+//
 func textColor(tColor byte, bColor byte, nbf byte, uline byte) {
 	noarch.Fprintf(stderr, []byte("\x1b[%02d\x00"), 0)
 	if int(bColor) == int('k') {
@@ -9439,7 +10316,9 @@ func textColor(tColor byte, bColor byte, nbf byte, uline byte) {
 // errorMsg - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:94
 /*
  * ERRORMSG -  write a diagnostic error message in color
- */func errorMsg(errString []byte) {
+ */ //
+//
+func errorMsg(errString []byte) {
 	noarch.Fprintf(stderr, []byte("\n\n\x00"))
 	noarch.Fflush(stderr)
 	color(1)
@@ -9456,7 +10335,9 @@ func textColor(tColor byte, bColor byte, nbf byte, uline byte) {
 // Warning (SwitchStmt):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:126 : Unsupport case
 /*
  * OPENFILE  -  open a file or print a diagnostic error message
- */ // open file
+ */ //
+// open file
+//
 func openFile(path []byte, fileName []byte, mode []byte, usage []byte) (c2goDefaultReturn *noarch.File) {
 	var fp *noarch.File
 	var pathToFile []byte = make([]byte, 512, 512)
@@ -9493,7 +10374,9 @@ func openFile(path []byte, fileName []byte, mode []byte, usage []byte) (c2goDefa
 // scanLine - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:155
 /*
  * SCANLINE -  scan through a line until a 'a' is reached, like getline() 3feb94
- */func scanLine(fp *noarch.File, lim int, s []byte, a byte) int {
+ */ //
+//
+func scanLine(fp *noarch.File, lim int, s []byte, a byte) int {
 	var c int = 0
 	var i int = -1
 	for func() int {
@@ -9518,8 +10401,10 @@ func openFile(path []byte, fileName []byte, mode []byte, usage []byte) (c2goDefa
 // scanLabel - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:168
 /*
  * SCANLABEL -  scan through a line until a '"' is reached, like getline()
- */ // scan to first delimitter char
+ */ //
+// scan to first delimitter char
 // read the label between delimitters
+//
 func scanLabel(fp *noarch.File, lim int, s []byte, a byte) int {
 	var c int = 0
 	var i int = -1
@@ -9554,9 +10439,11 @@ func scanLabel(fp *noarch.File, lim int, s []byte, a byte) int {
 /*
  * SCANFILE -  count the number of lines of multi-column data in a data file,
  * skipping over "head_lines" lines of header information
- */ // scan through the header
+ */ //
+// scan through the header
 // count the number of lines of data
 // printf ("%% %d data points\n", points);
+//
 func scanFile(fp *noarch.File, head_lines int, start_chnl int, stop_chnl int) int {
 	var points int = 0
 	var i int
@@ -9598,7 +10485,9 @@ func scanFile(fp *noarch.File, head_lines int, start_chnl int, stop_chnl int) in
 /*
  * GETLINE -  get line form a stream into a character string, return length
  * from K&R	       3feb94
- */ /*	if (c == '\n')  s[i++] = c;     */
+ */ //
+/*	if (c == '\n')  s[i++] = c;     */ //
+//
 func getLine(fp *noarch.File, lim int, s []byte) int {
 	var c int = 0
 	var i int = 0
@@ -9631,8 +10520,11 @@ func getLine(fp *noarch.File, lim int, s []byte) int {
  * The input variables y, m, d, hr, mn, sc are the indices of the string s[]
  * which start the YYYY, MM, DD, hh, mm, ss sections of the time string.
  * The corresponding time is returned in "time_t" format.
- */ /*  all times are Universal Time never daylight savings time */ // normalize t_tm
+ */ //
+/*  all times are Universal Time never daylight savings time */ //
+// normalize t_tm
 //	printf("%d ... %s", (int) t_time, ctime(&t_time) );
+//
 func getTime(s []byte, y int, m int, d int, hr int, mn int, sc int, os int) noarch.TimeT {
 	var temp []byte = make([]byte, 16, 16)
 	var t_tm noarch.Tm
@@ -9652,7 +10544,9 @@ func getTime(s []byte, y int, m int, d int, hr int, mn int, sc int, os int) noar
 // showProgress - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:265
 /*
  * SHOW_PROGRESS  -   show the progress of long computations
- */func showProgress(i int, n int, count int) {
+ */ //
+//
+func showProgress(i int, n int, count int) {
 	var k int
 	var j int
 	var line_length int = 55
@@ -9677,7 +10571,9 @@ func getTime(s []byte, y int, m int, d int, hr int, mn int, sc int, os int) noar
 // sferr - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:288
 /*
  * SFERR  -  Display error message upon an erronous *scanf operation
- */func sferr(s []byte) {
+ */ //
+//
+func sferr(s []byte) {
 	var errMsg []byte = make([]byte, 512, 512)
 	noarch.Sprintf(errMsg, []byte(">> Input Data file error while reading %s\n\x00"), s)
 	errorMsg(errMsg)
@@ -9695,7 +10591,9 @@ type max_align_t struct {
 Memory allocation functions from Numerical Recipes in C, by Press,
 Cambridge University Press, 1988
 http://www.nr.com/public-domain.html
-*/ /* Numerical Recipes standard error handler */
+*/ //
+/* Numerical Recipes standard error handler */ //
+//
 func NRerror(error_text []byte) {
 	noarch.Fprintf(stderr, []byte("Numerical Recipes run-time error...\n\x00"))
 	noarch.Fprintf(stderr, []byte("%s\n\x00"), error_text)
@@ -9704,7 +10602,8 @@ func NRerror(error_text []byte) {
 }
 
 // vector - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:29
-/* allocate a float vector with subscript range v[nl..nh] */
+/* allocate a float vector with subscript range v[nl..nh] */ //
+//
 func vector(nl int32, nh int32) []float32 {
 	var v []float32
 	v = make([]float32, uint32((uint32(nh-nl+int32(1)+int32(1))*4))/4)
@@ -9715,7 +10614,9 @@ func vector(nl int32, nh int32) []float32 {
 }
 
 // ivector - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:39
-/* allocate an int vector with subscript range v[nl..nh] */ //-nl+NR_END;
+/* allocate an int vector with subscript range v[nl..nh] */ //
+//-nl+NR_END;
+//
 func ivector(nl int32, nh int32) []int {
 	var v []int
 	v = make([]int, uint32((uint32(nh-nl+int32(1)+int32(1))*4))/4)
@@ -9727,7 +10628,10 @@ func ivector(nl int32, nh int32) []int {
 }
 
 // cvector - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:50
-/* allocate an unsigned char vector with subscript range v[nl..nh] */ /* return v-nl+NR_END; */ //-nl+NR_END;
+/* allocate an unsigned char vector with subscript range v[nl..nh] */ //
+/* return v-nl+NR_END; */ //
+//-nl+NR_END;
+//
 func cvector(nl int32, nh int32) []uint8 {
 	var v []uint8
 	v = make([]uint8, uint32((uint32(nh-nl+int32(1)+int32(1))*1))/1)
@@ -9739,7 +10643,8 @@ func cvector(nl int32, nh int32) []uint8 {
 }
 
 // lvector - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:62
-/* allocate an unsigned long vector with subscript range v[nl..nh] */
+/* allocate an unsigned long vector with subscript range v[nl..nh] */ //
+//
 func lvector(nl int32, nh int32) []uint32 {
 	var v []uint32
 	v = make([]uint32, uint32((uint32(nh-nl+int32(1)+int32(1))*8))/8)
@@ -9750,8 +10655,10 @@ func lvector(nl int32, nh int32) []uint32 {
 }
 
 // dvector - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:72
-/* allocate a double vector with subscript range v[nl..nh] */ // return v-nl+NR_END;
+/* allocate a double vector with subscript range v[nl..nh] */ //
+// return v-nl+NR_END;
 //-nl+NR_END;
+//
 func dvector(nl int32, nh int32) []float64 {
 	var v []float64
 	v = make([]float64, uint32((uint32(nh-nl+int32(1)+int32(1))*8))/8)
@@ -9763,7 +10670,11 @@ func dvector(nl int32, nh int32) []float64 {
 }
 
 // matrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:84
-/* allocate a float matrix with subscript range m[nrl..nrh][ncl..nch] */ /* allocate pointers to rows */ /* allocate rows and set pointers to them */ /* return pointer to array of pointers to rows */
+/* allocate a float matrix with subscript range m[nrl..nrh][ncl..nch] */ //
+/* allocate pointers to rows */ //
+/* allocate rows and set pointers to them */ //
+/* return pointer to array of pointers to rows */ //
+//
 func matrix(nrl int32, nrh int32, ncl int32, nch int32) [][]float32 {
 	var i int32
 	var nrow int32 = nrh - nrl + int32(1)
@@ -9788,7 +10699,11 @@ func matrix(nrl int32, nrh int32, ncl int32, nch int32) [][]float32 {
 }
 
 // dmatrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:108
-/* allocate a double matrix with subscript range m[nrl..nrh][ncl..nch] */ /* allocate pointers to rows */ /* allocate rows and set pointers to them */ /* return pointer to array of pointers to rows */
+/* allocate a double matrix with subscript range m[nrl..nrh][ncl..nch] */ //
+/* allocate pointers to rows */ //
+/* allocate rows and set pointers to them */ //
+/* return pointer to array of pointers to rows */ //
+//
 func dmatrix(nrl int32, nrh int32, ncl int32, nch int32) [][]float64 {
 	var i int32
 	var nrow int32 = nrh - nrl + int32(1)
@@ -9813,7 +10728,11 @@ func dmatrix(nrl int32, nrh int32, ncl int32, nch int32) [][]float64 {
 }
 
 // imatrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:132
-/* allocate a int matrix with subscript range m[nrl..nrh][ncl..nch] */ /* allocate pointers to rows */ /* allocate rows and set pointers to them */ /* return pointer to array of pointers to rows */
+/* allocate a int matrix with subscript range m[nrl..nrh][ncl..nch] */ //
+/* allocate pointers to rows */ //
+/* allocate rows and set pointers to them */ //
+/* return pointer to array of pointers to rows */ //
+//
 func imatrix(nrl int32, nrh int32, ncl int32, nch int32) [][]int {
 	var i int32
 	var nrow int32 = nrh - nrl + int32(1)
@@ -9838,7 +10757,11 @@ func imatrix(nrl int32, nrh int32, ncl int32, nch int32) [][]int {
 }
 
 // subMatrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:157
-/* point a subMatrix [newrl..][newcl..] to a[oldrl..oldrh][oldcl..oldch] */ /* allocate array of pointers to rows */ /* set pointers to rows */ /* return pointer to array of pointers to rows */
+/* point a subMatrix [newrl..][newcl..] to a[oldrl..oldrh][oldcl..oldch] */ //
+/* allocate array of pointers to rows */ //
+/* set pointers to rows */ //
+/* return pointer to array of pointers to rows */ //
+//
 func subMatrix(a [][]float32, oldrl int32, oldrh int32, oldcl int32, oldch int32, newrl int32, newcl int32) [][]float32 {
 	var i int32
 	var j int32
@@ -9867,7 +10790,11 @@ func subMatrix(a [][]float32, oldrl int32, oldrh int32, oldcl int32, oldch int32
 /* allocate a float matrix m[nrl..nrh][ncl..nch] that points to the matrix
 declared in the standard C manner as a[nrow][ncol], where nrow=nrh-nrl+1
 and ncol=nch-ncl+1. The routine should be called with the address
-&a[0][0] as the first argument. */ /* allocate pointers to rows */ /* set pointers to rows */ /* return pointer to array of pointers to rows */
+&a[0][0] as the first argument. */ //
+/* allocate pointers to rows */ //
+/* set pointers to rows */ //
+/* return pointer to array of pointers to rows */ //
+//
 func convert_matrix(a []float32, nrl int32, nrh int32, ncl int32, nch int32) [][]float32 {
 	var i int32
 	var j int32
@@ -9894,7 +10821,12 @@ func convert_matrix(a []float32, nrl int32, nrh int32, ncl int32, nch int32) [][
 }
 
 // f3tensor - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:199
-/* allocate a float 3tensor with range t[nrl..nrh][ncl..nch][ndl..ndh] */ /* allocate pointers to pointers to rows */ /* allocate pointers to rows and set pointers to them */ /* allocate rows and set pointers to them */ /* return pointer to array of pointers to rows */
+/* allocate a float 3tensor with range t[nrl..nrh][ncl..nch][ndl..ndh] */ //
+/* allocate pointers to pointers to rows */ //
+/* allocate pointers to rows and set pointers to them */ //
+/* allocate rows and set pointers to them */ //
+/* return pointer to array of pointers to rows */ //
+//
 func f3tensor(nrl int32, nrh int32, ncl int32, nch int32, ndl int32, ndh int32) [][][]float32 {
 	var i int32
 	var j int32
@@ -9934,70 +10866,81 @@ func f3tensor(nrl int32, nrh int32, ncl int32, nch int32, ndl int32, ndh int32) 
 }
 
 // free_vector - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:234
-/* free a float vector allocated with vector() */
+/* free a float vector allocated with vector() */ //
+//
 func free_vector(v []float32, nl int32, nh int32) {
 	_ = ((*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0]))))[:])
 }
 
 // free_ivector - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:240
-/* free an int vector allocated with ivector() */
+/* free an int vector allocated with ivector() */ //
+//
 func free_ivector(v []int, nl int32, nh int32) {
 	_ = ((*(*[1000000000]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0]))))[:])
 }
 
 // free_cvector - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:246
-/* free an unsigned char vector allocated with cvector() */
+/* free an unsigned char vector allocated with cvector() */ //
+//
 func free_cvector(v []uint8, nl int32, nh int32) {
 	_ = ((*(*[1000000000]uint8)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000]uint8)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000]uint8)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0]))))[:])
 }
 
 // free_lvector - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:252
-/* free an unsigned long vector allocated with lvector() */
+/* free an unsigned long vector allocated with lvector() */ //
+//
 func free_lvector(v []uint32, nl int32, nh int32) {
 	_ = ((*(*[1000000000]uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000]uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000]uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0]))))[:])
 }
 
 // free_dvector - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:258
-/* free a double vector allocated with dvector() */
+/* free a double vector allocated with dvector() */ //
+//
 func free_dvector(v []float64, nl int32, nh int32) {
 	_ = ((*(*[1000000000]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0]))))[:])
 }
 
 // free_matrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:264
-/* free a float matrix allocated by matrix() */
+/* free a float matrix allocated by matrix() */ //
+//
 func free_matrix(m [][]float32, nrl int32, nrh int32, ncl int32, nch int32) {
 	_ = ((*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (uintptr)(ncl)*unsafe.Sizeof(m[nrl][0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (uintptr)(ncl)*unsafe.Sizeof(m[nrl][0]))))[:][0]))))[:])
 	_ = ((*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:][0]))))[:])
 }
 
 // free_dmatrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:271
-/* free a double matrix allocated by dmatrix() */
+/* free a double matrix allocated by dmatrix() */ //
+//
 func free_dmatrix(m [][]float64, nrl int32, nrh int32, ncl int32, nch int32) {
 	_ = ((*(*[1000000000]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (uintptr)(ncl)*unsafe.Sizeof(m[nrl][0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (uintptr)(ncl)*unsafe.Sizeof(m[nrl][0]))))[:][0]))))[:])
 	_ = ((*(*[1000000000][]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000][]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000][]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:][0]))))[:])
 }
 
 // free_imatrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:278
-/* free an int matrix allocated by imatrix() */
+/* free an int matrix allocated by imatrix() */ //
+//
 func free_imatrix(m [][]int, nrl int32, nrh int32, ncl int32, nch int32) {
 	_ = ((*(*[1000000000]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (uintptr)(ncl)*unsafe.Sizeof(m[nrl][0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (uintptr)(ncl)*unsafe.Sizeof(m[nrl][0]))))[:][0]))))[:])
 	_ = ((*(*[1000000000][]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000][]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000][]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:][0]))))[:])
 }
 
 // free_subMatrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:285
-/* free a subMatrix allocated by subMatrix() */
+/* free a subMatrix allocated by subMatrix() */ //
+//
 func free_subMatrix(b [][]float32, nrl int32, nrh int32, ncl int32, nch int32) {
 	_ = ((*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&b[0])) + (uintptr)(nrl)*unsafe.Sizeof(b[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&b[0])) + (uintptr)(nrl)*unsafe.Sizeof(b[0]))))[:][0]))))[:])
 }
 
 // free_convert_matrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:291
-/* free a matrix allocated by convert_matrix() */
+/* free a matrix allocated by convert_matrix() */ //
+//
 func free_convert_matrix(b [][]float32, nrl int32, nrh int32, ncl int32, nch int32) {
 	_ = ((*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&b[0])) + (uintptr)(nrl)*unsafe.Sizeof(b[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&b[0])) + (uintptr)(nrl)*unsafe.Sizeof(b[0]))))[:][0]))))[:])
 }
 
 // free_f3tensor - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:297
-/* free a float f3tensor allocated by f3tensor() */
+/* free a float f3tensor allocated by f3tensor() */ //
+//
 func free_f3tensor(t [][][]float32, nrl int32, nrh int32, ncl int32, nch int32, ndl int32, ndh int32) {
 	_ = ((*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][ncl][0])) + (uintptr)(ndl)*unsafe.Sizeof(t[nrl][ncl][0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][ncl][0])) + (uintptr)(ndl)*unsafe.Sizeof(t[nrl][ncl][0]))))[:][0]))))[:])
 	_ = ((*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][0])) + (uintptr)(ncl)*unsafe.Sizeof(t[nrl][0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][0])) + (uintptr)(ncl)*unsafe.Sizeof(t[nrl][0]))))[:][0]))))[:])
@@ -10005,7 +10948,8 @@ func free_f3tensor(t [][][]float32, nrl int32, nrh int32, ncl int32, nch int32, 
 }
 
 // Cvector - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:305
-/* allocate storage for a complex vector	*/
+/* allocate storage for a complex vector	*/ //
+//
 func Cvector(nl int, nh int) []fcomplex {
 	var v []fcomplex
 	v = make([]fcomplex, uint32((nh-nl+1))*8/8)
@@ -10016,7 +10960,8 @@ func Cvector(nl int, nh int) []fcomplex {
 }
 
 // Cmatrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:316
-/* allocate storage for a Complex matrix	*/
+/* allocate storage for a Complex matrix	*/ //
+//
 func Cmatrix(nrl int, nrh int, ncl int, nch int) [][]fcomplex {
 	var i int
 	var m [][]fcomplex
@@ -10036,7 +10981,8 @@ func Cmatrix(nrl int, nrh int, ncl int, nch int) [][]fcomplex {
 }
 
 // D3matrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:334
-/* storage for a 3-D matrix */ /*
+/* storage for a 3-D matrix */ //
+/*
 	m=(float ***) malloc((unsigned) (nrh-nrl+1)*sizeof(float*));
 	if (!m) NRerror("alloc failure 1 in 3Dmatrix()");
 	m -= nrl;
@@ -10051,7 +10997,9 @@ func Cmatrix(nrl int, nrh int, ncl int, nch int) [][]fcomplex {
 			m[i][j] -= nzl;
 		}
 	}
-*/func D3matrix(nrl int, nrh int, ncl int, nch int, nzl int, nzh int) [][][]float32 {
+*/ //
+//
+func D3matrix(nrl int, nrh int, ncl int, nch int, nzl int, nzh int) [][][]float32 {
 	var i int
 	var j int
 	var m [][][]float32
@@ -10066,7 +11014,8 @@ func Cmatrix(nrl int, nrh int, ncl int, nch int) [][]fcomplex {
 }
 
 // D3dmatrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:367
-/* storage for a 3-D matrix */ /*
+/* storage for a 3-D matrix */ //
+/*
 	m=(double ***) malloc((unsigned) (nrh-nrl+1)*sizeof(double*));
 	if (!m) NRerror("alloc failure 1 in 3Ddmatrix()");
 	m -= nrl;
@@ -10081,7 +11030,9 @@ func Cmatrix(nrl int, nrh int, ncl int, nch int) [][]fcomplex {
 			m[i][j] -= nzl;
 		}
 	}
-*/func D3dmatrix(nrl int, nrh int, ncl int, nch int, nzl int, nzh int) [][][]float64 {
+*/ //
+//
+func D3dmatrix(nrl int, nrh int, ncl int, nch int, nzl int, nzh int) [][][]float64 {
 	var i int
 	var j int
 	var m [][][]float64
@@ -10096,29 +11047,50 @@ func Cmatrix(nrl int, nrh int, ncl int, nch int) [][]fcomplex {
 }
 
 // free_Cvector - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:401
-/* free((void*)#<{(|(char*)|)}># (v+nl)); */
+/* free((void*)#<{(|(char*)|)}># (v+nl)); */ //
+//
 func free_Cvector(v []fcomplex, nl int, nh int) {
 }
 
 // free_Cmatrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:406
-/* int	i; */ /*  */ /* for(i=nrh;i>=nrl;i--) free((void*)#<{(|(char*)|)}># (m[i]+ncl)); */ /* free((void*)#<{(|(char*)|)}># (m+nrl)); */
+/* int	i; */ //
+/*  */ //
+/* for(i=nrh;i>=nrl;i--) free((void*)#<{(|(char*)|)}># (m[i]+ncl)); */ //
+/* free((void*)#<{(|(char*)|)}># (m+nrl)); */ //
+//
 func free_Cmatrix(m [][]fcomplex, nrl int, nrh int, ncl int, nch int) {
 }
 
 // free_D3matrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:414
-/* int     i,j; */ /*  */ /* for(i=nrh;i>=nrl;i--) { */ /* 	for(j=nch;j>=ncl;j--) { */ /* 		free((void*)#<{(|(char*)|)}># (m[i][j]+nzl)); */ /* 	} */ /* } */
+/* int     i,j; */ //
+/*  */ //
+/* for(i=nrh;i>=nrl;i--) { */ //
+/* 	for(j=nch;j>=ncl;j--) { */ //
+/* 		free((void*)#<{(|(char*)|)}># (m[i][j]+nzl)); */ //
+/* 	} */ //
+/* } */ //
+//
 func free_D3matrix(m [][][]float32, nrl int, nrh int, ncl int, nch int, nzl int, nzh int) {
 }
 
 // free_D3dmatrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:425
-/* int     i,j; */ /*  */ /* for(i=nrh;i>=nrl;i--) { */ /* 	for(j=nch;j>=ncl;j--) { */ /* 		free((void*)#<{(|(char*)|)}># (m[i][j]+nzl)); */ /* 	} */ /* } */
+/* int     i,j; */ //
+/*  */ //
+/* for(i=nrh;i>=nrl;i--) { */ //
+/* 	for(j=nch;j>=ncl;j--) { */ //
+/* 		free((void*)#<{(|(char*)|)}># (m[i][j]+nzl)); */ //
+/* 	} */ //
+/* } */ //
+//
 func free_D3dmatrix(m [][][]float64, nrl int, nrh int, ncl int, nch int, nzl int, nzh int) {
 }
 
 // show_vector - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:768
 /*
  * SHOW_VECTOR  -  display a vector of dimension [1..n]
- */func show_vector(A []float32, n int) {
+ */ //
+//
+func show_vector(A []float32, n int) {
 	var j int
 	for j = 1; j <= n; j++ {
 		if A[j] != float32(0) {
@@ -10134,7 +11106,9 @@ func free_D3dmatrix(m [][][]float64, nrl int, nrh int, ncl int, nch int, nzl int
 // show_dvector - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:783
 /*
  * SHOW_DVECTOR  -  display a vector of dimension [1..n]
- */func show_dvector(A []float64, n int) {
+ */ //
+//
+func show_dvector(A []float64, n int) {
 	var j int
 	for j = 1; j <= n; j++ {
 		if math.Abs(A[j]) >= 1e-99 {
@@ -10150,7 +11124,9 @@ func free_D3dmatrix(m [][][]float64, nrl int, nrh int, ncl int, nch int, nzl int
 // show_ivector - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:799
 /*
  * SHOW_IVECTOR  -  display a vector of integers of dimension [1..n]
- */func show_ivector(A []int, n int) {
+ */ //
+//
+func show_ivector(A []int, n int) {
 	var j int
 	for j = 1; j <= n; j++ {
 		if A[j] != 0 {
@@ -10166,7 +11142,9 @@ func free_D3dmatrix(m [][][]float64, nrl int, nrh int, ncl int, nch int, nzl int
 // show_matrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:815
 /*
  * SHOW_MATRIX  -  display a matrix of dimension [1..m][1..n]
- */func show_matrix(A [][]float32, m int, n int) {
+ */ //
+//
+func show_matrix(A [][]float32, m int, n int) {
 	var i int
 	var j int
 	for i = 1; i <= m; i++ {
@@ -10189,7 +11167,9 @@ func free_D3dmatrix(m [][][]float64, nrl int, nrh int, ncl int, nch int, nzl int
 // show_dmatrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:833
 /*
  * SHOW_DMATRIX  - display a matrix of dimension [1..m][1..n]
- */func show_dmatrix(A [][]float64, m int, n int) {
+ */ //
+//
+func show_dmatrix(A [][]float64, m int, n int) {
 	var i int
 	var j int
 	for i = 1; i <= m; i++ {
@@ -10212,7 +11192,9 @@ func free_D3dmatrix(m [][][]float64, nrl int, nrh int, ncl int, nch int, nzl int
 // save_vector - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:852
 /*
  * SAVE_VECTOR  -  save a vector of dimension [1..n] to the named file
- */func save_vector(filename []byte, V []float32, nl int, nh int, mode []byte) {
+ */ //
+//
+func save_vector(filename []byte, V []float32, nl int, nh int, mode []byte) {
 	var fp_v *noarch.File
 	var i int
 	var now noarch.TimeT
@@ -10243,7 +11225,9 @@ func free_D3dmatrix(m [][][]float64, nrl int, nrh int, ncl int, nch int, nzl int
 // save_dvector - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:880
 /*
  * SAVE_DVECTOR  -  save a vector of dimension [1..n] to the named file
- */func save_dvector(filename []byte, V []float64, nl int, nh int, mode []byte) {
+ */ //
+//
+func save_dvector(filename []byte, V []float64, nl int, nh int, mode []byte) {
 	var fp_v *noarch.File
 	var i int
 	var now noarch.TimeT
@@ -10274,7 +11258,9 @@ func free_D3dmatrix(m [][][]float64, nrl int, nrh int, ncl int, nch int, nzl int
 // save_ivector - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:908
 /*
  * SAVE_IVECTOR  -  save an integer vector of dimension [1..n] to the named file
- */func save_ivector(filename []byte, V []int, nl int, nh int, mode []byte) {
+ */ //
+//
+func save_ivector(filename []byte, V []int, nl int, nh int, mode []byte) {
 	var fp_v *noarch.File
 	var i int
 	var now noarch.TimeT
@@ -10305,7 +11291,9 @@ func free_D3dmatrix(m [][][]float64, nrl int, nrh int, ncl int, nch int, nzl int
 // save_matrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:936
 /*
  * SAVE_MATRIX  -  save a matrix of dimension [ml..mh][nl..nh] to the named file
- */func save_matrix(filename []byte, A [][]float32, ml int, mh int, nl int, nh int, transpose int, mode []byte) {
+ */ //
+//
+func save_matrix(filename []byte, A [][]float32, ml int, mh int, nl int, nh int, transpose int, mode []byte) {
 	var fp_m *noarch.File
 	var i int
 	var j int
@@ -10364,7 +11352,9 @@ func free_D3dmatrix(m [][][]float64, nrl int, nrh int, ncl int, nch int, nzl int
 // save_dmatrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:979
 /*
  * SAVE_DMATRIX  - save a matrix of dimension [ml..mh][nl..nh] to the named file
- */func save_dmatrix(filename []byte, A [][]float64, ml int, mh int, nl int, nh int, transpose int, mode []byte) {
+ */ //
+//
+func save_dmatrix(filename []byte, A [][]float64, ml int, mh int, nl int, nh int, transpose int, mode []byte) {
 	var fp_m *noarch.File
 	var i int
 	var j int
@@ -10425,7 +11415,9 @@ func free_D3dmatrix(m [][][]float64, nrl int, nrh int, ncl int, nch int, nzl int
  * SAVE_UT_MATRIX  - 						     23apr01
  * save a symmetric matrix of dimension [1..n][1..n] to the named file
  *  use only upper-triangular part
- */func save_ut_matrix(filename []byte, A [][]float32, n int, mode []byte) {
+ */ //
+//
+func save_ut_matrix(filename []byte, A [][]float32, n int, mode []byte) {
 	var fp_m *noarch.File
 	var i int
 	var j int
@@ -10469,7 +11461,9 @@ func free_D3dmatrix(m [][][]float64, nrl int, nrh int, ncl int, nch int, nzl int
  * SAVE_UT_DMATRIX  - 						23apr01
  * save a symetric matrix of dimension [1..n][1..n] to the named file
  * use only upper-triangular part
- */func save_ut_dmatrix(filename []byte, A [][]float64, n int, mode []byte) {
+ */ //
+//
+func save_ut_dmatrix(filename []byte, A [][]float64, n int, mode []byte) {
 	var fp_m *noarch.File
 	var i int
 	var j int

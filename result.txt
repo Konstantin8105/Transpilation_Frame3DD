@@ -1,6 +1,6 @@
 
 Amount lines into file main.go: 
-10519
+11513
 Amount lines into file go_build_result.txt: 
 0
 Amount lines into file govet.txt: 
