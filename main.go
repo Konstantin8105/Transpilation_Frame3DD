@@ -1,5 +1,5 @@
 /*
-	Package main - transpiled by c2go version: v0.21.8 Zinc 2018-02-09
+	Package main - transpiled by c2go version: v0.21.10 Zinc 2018-02-14
 
 	If you have found any issues, please raise an issue at:
 	https://github.com/elliotchance/c2go/
@@ -8,10 +8,10 @@
 // Warning (EnumDecl):  /usr/include/math.h:347 : Add support of continues counter for type : *ast.UnaryExpr
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/waitstatus.h:75 : Error : name of FieldDecl is empty
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/waitstatus.h:89 : Error : name of FieldDecl is empty
-// Warning (TransparentUnionAttr):  /usr/include/stdlib.h:71 : could not parse &{40896656 {/usr/include/stdlib.h 71 0 35 0 } []}
+// Warning (TransparentUnionAttr):  /usr/include/stdlib.h:71 : could not parse &{40450192 {/usr/include/stdlib.h 71 0 35 0 } []}
 // Warning (FieldDecl):  /usr/include/stdlib.h:69 : Avoid struct `union wait *` in FieldDecl
-// Warning (RecordDecl):  :0 : could not determine the size of type `union __WAIT_STATUS` for that reason: Cannot determine sizeof : |union __WAIT_STATUS|. err = Cannot determine sizeof : |union wait *|. err = error in union
-// Error (TranslationUnitDecl):  :0 : Cannot determine sizeof : |union __WAIT_STATUS|. err = Cannot determine sizeof : |union wait *|. err = error in union
+// Warning (RecordDecl):  /usr/include/stdlib.h:67 : could not determine the size of type `union __WAIT_STATUS` for that reason: Cannot determine sizeof : |union __WAIT_STATUS|. err = Cannot determine sizeof : |union wait *|. err = error in union
+// Error (RecordDecl):  /usr/include/stdlib.h:67 : Cannot determine sizeof : |union __WAIT_STATUS|. err = Cannot determine sizeof : |union wait *|. err = error in union
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/timex.h:50 : Error : name of FieldDecl is empty
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/timex.h:51 : Error : name of FieldDecl is empty
 // Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/timex.h:52 : Error : name of FieldDecl is empty
@@ -100,15 +100,14 @@ type __fsword_t int32
 type __ssize_t int32
 type __syscall_slong_t int32
 type __syscall_ulong_t uint32
-type __loff_t int32
-type __qaddr_t []int32
+type __loff_t __off64_t
+type __qaddr_t []__quad_t
 type __caddr_t []byte
 type __intptr_t int32
 type __socklen_t uint32
 type _IO_FILE struct {
 }
-type FILE struct {
-}
+type FILE _IO_FILE
 type __FILE _IO_FILE
 type BSunionSatSSusrSincludeSwcharPhD85D3E struct{ memory unsafe.Pointer }
 
@@ -141,19 +140,18 @@ type __mbstate_t struct {
 	__value BSunionSatSSusrSincludeSwcharPhD85D3E
 }
 type _G_fpos_t struct {
-	__pos   int32
+	__pos   __off_t
 	__state int64
 }
 type _G_fpos64_t struct {
-	__pos   int32
+	__pos   __off64_t
 	__state int64
 }
 type va_list int64
 type __gnuc_va_list int64
 type _IO_jump_t struct {
 }
-type _IO_lock_t struct {
-}
+type _IO_lock_t interface{}
 type _IO_marker struct {
 	_next []_IO_marker
 	_sbuf []_IO_FILE
@@ -170,26 +168,26 @@ const (
 
 type _IO_FILE_plus struct {
 }
-type __io_read_fn func(interface{}, []byte, uint32) int32
-type __io_write_fn func(interface{}, []byte, uint32) int32
-type __io_seek_fn func(interface{}, []int32, int) int
+type __io_read_fn func(interface{}, []byte, size_t) __ssize_t
+type __io_write_fn func(interface{}, []byte, size_t) __ssize_t
+type __io_seek_fn func(interface{}, []__off64_t, int) int
 type __io_close_fn func(interface{}) int
 type cookie_read_function_t __io_read_fn
 type cookie_write_function_t __io_write_fn
 type cookie_seek_function_t __io_seek_fn
 type cookie_close_function_t __io_close_fn
 type _IO_cookie_io_functions_t struct {
-	read  []__io_read_fn
-	write []__io_write_fn
-	seek  []__io_seek_fn
-	close []__io_close_fn
+	read  __io_read_fn
+	write __io_write_fn
+	seek  __io_seek_fn
+	close __io_close_fn
 }
 type cookie_io_functions_t _IO_cookie_io_functions_t
 type _IO_cookie_file struct {
 }
-type off_t int32
-type off64_t int32
-type ssize_t int32
+type off_t __off_t
+type off64_t __off64_t
+type ssize_t __ssize_t
 type fpos_t _G_fpos_t
 type fpos64_t _G_fpos64_t
 
@@ -262,33 +260,34 @@ type lldiv_t struct {
 	quot int64
 	rem  int64
 }
-type locale_t int
-type u_char uint8
-type u_short uint16
-type u_int uint32
-type u_long uint32
-type quad_t int32
-type u_quad_t uint32
+type __locale_t int
+type locale_t __locale_t
+type u_char __u_char
+type u_short __u_short
+type u_int __u_int
+type u_long __u_long
+type quad_t __quad_t
+type u_quad_t __u_quad_t
 type fsid_t __fsid_t
-type loff_t int32
-type ino_t uint32
-type ino64_t uint32
-type dev_t uint32
-type gid_t uint32
-type mode_t uint32
-type nlink_t uint32
-type uid_t uint32
-type pid_t int
-type id_t uint32
-type daddr_t int
-type caddr_t []byte
-type key_t int
-type clock_t int32
-type time_t int32
-type clockid_t int
-type timer_t interface{}
-type useconds_t uint32
-type suseconds_t int32
+type loff_t __loff_t
+type ino_t __ino_t
+type ino64_t __ino64_t
+type dev_t __dev_t
+type gid_t __gid_t
+type mode_t __mode_t
+type nlink_t __nlink_t
+type uid_t __uid_t
+type pid_t __pid_t
+type id_t __id_t
+type daddr_t __daddr_t
+type caddr_t __caddr_t
+type key_t __key_t
+type clock_t __clock_t
+type time_t __time_t
+type clockid_t __clockid_t
+type timer_t __timer_t
+type useconds_t __useconds_t
+type suseconds_t __suseconds_t
 type ulong uint32
 type ushort uint16
 type uint uint32
@@ -307,63 +306,31 @@ type __sigset_t struct {
 }
 type sigset_t __sigset_t
 type timespec struct {
-	tv_sec  int32
-	tv_nsec int32
+	tv_sec  __time_t
+	tv_nsec __syscall_slong_t
 }
 type timeval struct {
-	tv_sec  int32
-	tv_usec int32
+	tv_sec  __time_t
+	tv_usec __suseconds_t
 }
-type __fd_mask struct {
-	tv_sec  int32
-	tv_usec int32
-}
+type __fd_mask int32
 type fd_set struct {
 	fds_bits [16]__fd_mask
 }
 type fd_mask __fd_mask
-type blksize_t int32
-type blkcnt_t int32
-type fsblkcnt_t uint32
-type fsfilcnt_t uint32
-type blkcnt64_t int32
-type fsblkcnt64_t uint32
-type fsfilcnt64_t uint32
+type blksize_t __blksize_t
+type blkcnt_t __blkcnt_t
+type fsblkcnt_t __fsblkcnt_t
+type fsfilcnt_t __fsfilcnt_t
+type blkcnt64_t __blkcnt64_t
+type fsblkcnt64_t __fsblkcnt64_t
+type fsfilcnt64_t __fsfilcnt64_t
 type pthread_t uint32
-type pthread_attr_t struct{ memory unsafe.Pointer }
-
-func (unionVar *pthread_attr_t) copy() pthread_attr_t {
-	var buffer [56]byte
-	for i := range buffer {
-		buffer[i] = (*((*[56]byte)(unionVar.memory)))[i]
-	}
-	var newUnion pthread_attr_t
-	newUnion.memory = unsafe.Pointer(&buffer)
-	return newUnion
-}
-func (unionVar *pthread_attr_t) __size() *[56]byte {
-	if unionVar.memory == nil {
-		var buffer [56]byte
-		unionVar.memory = unsafe.Pointer(&buffer)
-	}
-	return (*[56]byte)(unionVar.memory)
-}
-func (unionVar *pthread_attr_t) __align() *int32 {
-	if unionVar.memory == nil {
-		var buffer [56]byte
-		unionVar.memory = unsafe.Pointer(&buffer)
-	}
-	return (*int32)(unionVar.memory)
-}
-
 type __pthread_internal_list struct {
 	__prev []__pthread_internal_list
 	__next []__pthread_internal_list
 }
-type __pthread_list_t struct {
-	__prev []__pthread_internal_list
-	__next []__pthread_internal_list
-}
+type __pthread_list_t __pthread_internal_list
 type __pthread_mutex_s struct {
 	__lock    int
 	__count   uint32
@@ -631,13 +598,13 @@ func (unionVar *pthread_barrierattr_t) __align() *int {
 }
 
 type random_data struct {
-	fptr      []int
-	rptr      []int
-	state     []int
+	fptr      []int32_t
+	rptr      []int32_t
+	state     []int32_t
 	rand_type int
 	rand_deg  int
 	rand_sep  int
-	end_ptr   []int
+	end_ptr   []int32_t
 }
 type drand48_data struct {
 	__x     [3]uint16
@@ -654,31 +621,27 @@ type vec3_struct struct {
 	y float64
 	z float64
 }
-type vec3 struct {
-	x float64
-	y float64
-	z float64
-}
+type vec3 vec3_struct
 type timex struct {
 	modes     uint32
-	offset    int32
-	freq      int32
-	maxerror  int32
-	esterror  int32
+	offset    __syscall_slong_t
+	freq      __syscall_slong_t
+	maxerror  __syscall_slong_t
+	esterror  __syscall_slong_t
 	status    int
-	constant  int32
-	precision int32
-	tolerance int32
+	constant  __syscall_slong_t
+	precision __syscall_slong_t
+	tolerance __syscall_slong_t
 	time      timeval
-	tick      int32
-	ppsfreq   int32
-	jitter    int32
+	tick      __syscall_slong_t
+	ppsfreq   __syscall_slong_t
+	jitter    __syscall_slong_t
 	shift     int
-	stabil    int32
-	jitcnt    int32
-	calcnt    int32
-	errcnt    int32
-	stbcnt    int32
+	stabil    __syscall_slong_t
+	jitcnt    __syscall_slong_t
+	calcnt    __syscall_slong_t
+	errcnt    __syscall_slong_t
+	stbcnt    __syscall_slong_t
 	tai       int
 }
 type tm struct {
@@ -700,8 +663,8 @@ type itimerspec struct {
 }
 type sigevent struct {
 }
-type intptr_t int32
-type socklen_t uint32
+type intptr_t __intptr_t
+type socklen_t __socklen_t
 
 const _PC_LINK_MAX int = 0
 const _PC_MAX_CANON int = 1
@@ -1008,10 +971,7 @@ type FCOMPLEX struct {
 	r float32
 	i float32
 }
-type fcomplex struct {
-	r float32
-	i float32
-}
+type fcomplex FCOMPLEX
 
 // main - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/main.c:65
 /*
@@ -1661,7 +1621,7 @@ func main() {
 	}
 	write_input_data(fp, title, nN, nE, nL, nD, nR, nF, nU, nW, nP, nT, xyz, rj, N1, N2, Ax, Asy, Asz, Jx, Iy, Iz, E, G, p, d, gX, gY, gZ, F_temp, F_mech, Dp, r, U, W, P, T, shear, anlyz, geom)
 	if anlyz != 0 {
-		rand.Seed(int64(uint32(int32((int32((noarch.Time(nil))))))))
+		rand.Seed(int64(uint32(int32((__time_t((noarch.Time(nil))))))))
 		for lc = 1; lc <= nL; lc++ {
 			if verbose != 0 {
 				noarch.Fprintf(stdout, []byte("\n\x00"))
@@ -2297,12 +2257,12 @@ func equilibrium_error(dF []float64, F []float64, K [][]float64, D []float64, Do
 	}
 	for i = 1; i <= DoF; i++ {
 		if q[i] != 0 {
-			ss_dF += (dF[i] * dF[i])
+			ss_dF += dF[i] * dF[i]
 		}
 	}
 	for i = 1; i <= DoF; i++ {
 		if q[i] != 0 {
-			ss_F += (F[i] * F[i])
+			ss_F += F[i] * F[i]
 		}
 	}
 	return (math.Sqrt(ss_dF) / math.Sqrt(ss_F))
@@ -2470,18 +2430,18 @@ func frame_element_force(s []float64, xyz []vec3, L float64, Le float64, n1 int,
 	f10 = f_t[10] + f_m[10]
 	f11 = f_t[11] + f_m[11]
 	f12 = f_t[12] + f_m[12]
-	s[1] -= (f1*t1 + f2*t2 + f3*t3)
-	s[2] -= (f1*t4 + f2*t5 + f3*t6)
-	s[3] -= (f1*t7 + f2*t8 + f3*t9)
-	s[4] -= (f4*t1 + f5*t2 + f6*t3)
-	s[5] -= (f4*t4 + f5*t5 + f6*t6)
-	s[6] -= (f4*t7 + f5*t8 + f6*t9)
-	s[7] -= (f7*t1 + f8*t2 + f9*t3)
-	s[8] -= (f7*t4 + f8*t5 + f9*t6)
-	s[9] -= (f7*t7 + f8*t8 + f9*t9)
-	s[10] -= (f10*t1 + f11*t2 + f12*t3)
-	s[11] -= (f10*t4 + f11*t5 + f12*t6)
-	s[12] -= (f10*t7 + f11*t8 + f12*t9)
+	s[1] -= f1*t1 + f2*t2 + f3*t3
+	s[2] -= f1*t4 + f2*t5 + f3*t6
+	s[3] -= f1*t7 + f2*t8 + f3*t9
+	s[4] -= f4*t1 + f5*t2 + f6*t3
+	s[5] -= f4*t4 + f5*t5 + f6*t6
+	s[6] -= f4*t7 + f5*t8 + f6*t9
+	s[7] -= f7*t1 + f8*t2 + f9*t3
+	s[8] -= f7*t4 + f8*t5 + f9*t6
+	s[9] -= f7*t7 + f8*t8 + f9*t9
+	s[10] -= f10*t1 + f11*t2 + f12*t3
+	s[11] -= f10*t4 + f11*t5 + f12*t6
+	s[12] -= f10*t7 + f11*t8 + f12*t9
 }
 
 // compute_reaction_forces - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd.c:658
@@ -3027,12 +2987,12 @@ func modal_condensation(M [][]float64, K [][]float64, N int, R []int, p []int, n
 	}
 	for i = 1; i <= n; i++ {
 		for j = 1; j <= n; j++ {
-			Mc[i][j] *= (traceM / traceMc)
+			Mc[i][j] *= traceM / traceMc
 		}
 	}
 	for i = 1; i <= n; i++ {
 		for j = 1; j <= n; j++ {
-			Kc[i][j] *= (traceM / traceMc)
+			Kc[i][j] *= traceM / traceMc
 		}
 	}
 	free_dmatrix(P, int32(1), int32(n), int32(1), int32(n))
@@ -3342,10 +3302,10 @@ func parse_options(argc int, argv [][]byte, IN_file []byte, OUT_file []byte, she
 	axial_sign[0] = 1
 	debug[0] = 0
 	verbose[0] = 1
-	noarch.Strcpy(IN_file, []byte("exA.3dd\x00\x00"))
-	noarch.Strcpy(OUT_file, []byte("exA.3dd.out\x00\x00"))
+	noarch.Strcpy([]byte(IN_file), []byte("exA.3dd\x00\x00"))
+	noarch.Strcpy([]byte(OUT_file), []byte("exA.3dd.out\x00\x00"))
 	if noarch.Strcmp(IN_file, []byte("\x00\x00")) != 0 && noarch.Strcmp(OUT_file, []byte("\x00\x00")) == 0 {
-		noarch.Strcpy(OUT_file, IN_file)
+		noarch.Strcpy([]byte(OUT_file), IN_file)
 		noarch.Strcat(OUT_file, []byte(".out\x00"))
 	}
 }
@@ -3806,7 +3766,7 @@ func output_path(fname []byte, fullpath []byte, len int, default_outdir []byte) 
 			outdir = default_outdir
 		}
 	}
-	res = noarch.Sprintf(fullpath, []byte("%s%c%s\x00"), outdir, int(sep), fname)
+	res = noarch.Sprintf([]byte(fullpath), []byte("%s%c%s\x00"), outdir, int(sep), fname)
 	if res > len {
 		errorMsg([]byte("ERROR: unable to construct output filename: overflow.\n\x00"))
 		os.Exit(16)
@@ -4280,18 +4240,18 @@ func read_and_assemble_loads(fp *noarch.File, nN int, nE int, nL int, DoF int, x
 			n1 = J1[n]
 			n2 = J2[n]
 			coord_trans(xyz, L[n], n1, n2, (*[1]float64)(unsafe.Pointer(&t1))[:], (*[1]float64)(unsafe.Pointer(&t2))[:], (*[1]float64)(unsafe.Pointer(&t3))[:], (*[1]float64)(unsafe.Pointer(&t4))[:], (*[1]float64)(unsafe.Pointer(&t5))[:], (*[1]float64)(unsafe.Pointer(&t6))[:], (*[1]float64)(unsafe.Pointer(&t7))[:], (*[1]float64)(unsafe.Pointer(&t8))[:], (*[1]float64)(unsafe.Pointer(&t9))[:], p[n])
-			eqF_mech[lc][n][1] += (Nx1*t1 + Vy1*t4 + Vz1*t7)
-			eqF_mech[lc][n][2] += (Nx1*t2 + Vy1*t5 + Vz1*t8)
-			eqF_mech[lc][n][3] += (Nx1*t3 + Vy1*t6 + Vz1*t9)
-			eqF_mech[lc][n][4] += (Mx1*t1 + My1*t4 + Mz1*t7)
-			eqF_mech[lc][n][5] += (Mx1*t2 + My1*t5 + Mz1*t8)
-			eqF_mech[lc][n][6] += (Mx1*t3 + My1*t6 + Mz1*t9)
-			eqF_mech[lc][n][7] += (Nx2*t1 + Vy2*t4 + Vz2*t7)
-			eqF_mech[lc][n][8] += (Nx2*t2 + Vy2*t5 + Vz2*t8)
-			eqF_mech[lc][n][9] += (Nx2*t3 + Vy2*t6 + Vz2*t9)
-			eqF_mech[lc][n][10] += (Mx2*t1 + My2*t4 + Mz2*t7)
-			eqF_mech[lc][n][11] += (Mx2*t2 + My2*t5 + Mz2*t8)
-			eqF_mech[lc][n][12] += (Mx2*t3 + My2*t6 + Mz2*t9)
+			eqF_mech[lc][n][1] += Nx1*t1 + Vy1*t4 + Vz1*t7
+			eqF_mech[lc][n][2] += Nx1*t2 + Vy1*t5 + Vz1*t8
+			eqF_mech[lc][n][3] += Nx1*t3 + Vy1*t6 + Vz1*t9
+			eqF_mech[lc][n][4] += Mx1*t1 + My1*t4 + Mz1*t7
+			eqF_mech[lc][n][5] += Mx1*t2 + My1*t5 + Mz1*t8
+			eqF_mech[lc][n][6] += Mx1*t3 + My1*t6 + Mz1*t9
+			eqF_mech[lc][n][7] += Nx2*t1 + Vy2*t4 + Vz2*t7
+			eqF_mech[lc][n][8] += Nx2*t2 + Vy2*t5 + Vz2*t8
+			eqF_mech[lc][n][9] += Nx2*t3 + Vy2*t6 + Vz2*t9
+			eqF_mech[lc][n][10] += Mx2*t1 + My2*t4 + Mz2*t7
+			eqF_mech[lc][n][11] += Mx2*t2 + My2*t5 + Mz2*t8
+			eqF_mech[lc][n][12] += Mx2*t3 + My2*t6 + Mz2*t9
 		}
 		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&nW[lc]))[:])
 		if sfrv != 1 {
@@ -4414,18 +4374,18 @@ func read_and_assemble_loads(fp *noarch.File, nN int, nE int, nL int, DoF int, x
 			n1 = J1[n]
 			n2 = J2[n]
 			coord_trans(xyz, Ln, n1, n2, (*[1]float64)(unsafe.Pointer(&t1))[:], (*[1]float64)(unsafe.Pointer(&t2))[:], (*[1]float64)(unsafe.Pointer(&t3))[:], (*[1]float64)(unsafe.Pointer(&t4))[:], (*[1]float64)(unsafe.Pointer(&t5))[:], (*[1]float64)(unsafe.Pointer(&t6))[:], (*[1]float64)(unsafe.Pointer(&t7))[:], (*[1]float64)(unsafe.Pointer(&t8))[:], (*[1]float64)(unsafe.Pointer(&t9))[:], p[n])
-			eqF_mech[lc][n][1] += (Nx1*t1 + Vy1*t4 + Vz1*t7)
-			eqF_mech[lc][n][2] += (Nx1*t2 + Vy1*t5 + Vz1*t8)
-			eqF_mech[lc][n][3] += (Nx1*t3 + Vy1*t6 + Vz1*t9)
-			eqF_mech[lc][n][4] += (Mx1*t1 + My1*t4 + Mz1*t7)
-			eqF_mech[lc][n][5] += (Mx1*t2 + My1*t5 + Mz1*t8)
-			eqF_mech[lc][n][6] += (Mx1*t3 + My1*t6 + Mz1*t9)
-			eqF_mech[lc][n][7] += (Nx2*t1 + Vy2*t4 + Vz2*t7)
-			eqF_mech[lc][n][8] += (Nx2*t2 + Vy2*t5 + Vz2*t8)
-			eqF_mech[lc][n][9] += (Nx2*t3 + Vy2*t6 + Vz2*t9)
-			eqF_mech[lc][n][10] += (Mx2*t1 + My2*t4 + Mz2*t7)
-			eqF_mech[lc][n][11] += (Mx2*t2 + My2*t5 + Mz2*t8)
-			eqF_mech[lc][n][12] += (Mx2*t3 + My2*t6 + Mz2*t9)
+			eqF_mech[lc][n][1] += Nx1*t1 + Vy1*t4 + Vz1*t7
+			eqF_mech[lc][n][2] += Nx1*t2 + Vy1*t5 + Vz1*t8
+			eqF_mech[lc][n][3] += Nx1*t3 + Vy1*t6 + Vz1*t9
+			eqF_mech[lc][n][4] += Mx1*t1 + My1*t4 + Mz1*t7
+			eqF_mech[lc][n][5] += Mx1*t2 + My1*t5 + Mz1*t8
+			eqF_mech[lc][n][6] += Mx1*t3 + My1*t6 + Mz1*t9
+			eqF_mech[lc][n][7] += Nx2*t1 + Vy2*t4 + Vz2*t7
+			eqF_mech[lc][n][8] += Nx2*t2 + Vy2*t5 + Vz2*t8
+			eqF_mech[lc][n][9] += Nx2*t3 + Vy2*t6 + Vz2*t9
+			eqF_mech[lc][n][10] += Mx2*t1 + My2*t4 + Mz2*t7
+			eqF_mech[lc][n][11] += Mx2*t2 + My2*t5 + Mz2*t8
+			eqF_mech[lc][n][12] += Mx2*t3 + My2*t6 + Mz2*t9
 		}
 		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&nP[lc]))[:])
 		if sfrv != 1 {
@@ -4491,18 +4451,18 @@ func read_and_assemble_loads(fp *noarch.File, nN int, nE int, nL int, DoF int, x
 			n1 = J1[n]
 			n2 = J2[n]
 			coord_trans(xyz, Ln, n1, n2, (*[1]float64)(unsafe.Pointer(&t1))[:], (*[1]float64)(unsafe.Pointer(&t2))[:], (*[1]float64)(unsafe.Pointer(&t3))[:], (*[1]float64)(unsafe.Pointer(&t4))[:], (*[1]float64)(unsafe.Pointer(&t5))[:], (*[1]float64)(unsafe.Pointer(&t6))[:], (*[1]float64)(unsafe.Pointer(&t7))[:], (*[1]float64)(unsafe.Pointer(&t8))[:], (*[1]float64)(unsafe.Pointer(&t9))[:], p[n])
-			eqF_mech[lc][n][1] += (Nx1*t1 + Vy1*t4 + Vz1*t7)
-			eqF_mech[lc][n][2] += (Nx1*t2 + Vy1*t5 + Vz1*t8)
-			eqF_mech[lc][n][3] += (Nx1*t3 + Vy1*t6 + Vz1*t9)
-			eqF_mech[lc][n][4] += (Mx1*t1 + My1*t4 + Mz1*t7)
-			eqF_mech[lc][n][5] += (Mx1*t2 + My1*t5 + Mz1*t8)
-			eqF_mech[lc][n][6] += (Mx1*t3 + My1*t6 + Mz1*t9)
-			eqF_mech[lc][n][7] += (Nx2*t1 + Vy2*t4 + Vz2*t7)
-			eqF_mech[lc][n][8] += (Nx2*t2 + Vy2*t5 + Vz2*t8)
-			eqF_mech[lc][n][9] += (Nx2*t3 + Vy2*t6 + Vz2*t9)
-			eqF_mech[lc][n][10] += (Mx2*t1 + My2*t4 + Mz2*t7)
-			eqF_mech[lc][n][11] += (Mx2*t2 + My2*t5 + Mz2*t8)
-			eqF_mech[lc][n][12] += (Mx2*t3 + My2*t6 + Mz2*t9)
+			eqF_mech[lc][n][1] += Nx1*t1 + Vy1*t4 + Vz1*t7
+			eqF_mech[lc][n][2] += Nx1*t2 + Vy1*t5 + Vz1*t8
+			eqF_mech[lc][n][3] += Nx1*t3 + Vy1*t6 + Vz1*t9
+			eqF_mech[lc][n][4] += Mx1*t1 + My1*t4 + Mz1*t7
+			eqF_mech[lc][n][5] += Mx1*t2 + My1*t5 + Mz1*t8
+			eqF_mech[lc][n][6] += Mx1*t3 + My1*t6 + Mz1*t9
+			eqF_mech[lc][n][7] += Nx2*t1 + Vy2*t4 + Vz2*t7
+			eqF_mech[lc][n][8] += Nx2*t2 + Vy2*t5 + Vz2*t8
+			eqF_mech[lc][n][9] += Nx2*t3 + Vy2*t6 + Vz2*t9
+			eqF_mech[lc][n][10] += Mx2*t1 + My2*t4 + Mz2*t7
+			eqF_mech[lc][n][11] += Mx2*t2 + My2*t5 + Mz2*t8
+			eqF_mech[lc][n][12] += Mx2*t3 + My2*t6 + Mz2*t9
 		}
 		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&nT[lc]))[:])
 		if sfrv != 1 {
@@ -4561,18 +4521,18 @@ func read_and_assemble_loads(fp *noarch.File, nN int, nE int, nL int, DoF int, x
 			n1 = J1[n]
 			n2 = J2[n]
 			coord_trans(xyz, L[n], n1, n2, (*[1]float64)(unsafe.Pointer(&t1))[:], (*[1]float64)(unsafe.Pointer(&t2))[:], (*[1]float64)(unsafe.Pointer(&t3))[:], (*[1]float64)(unsafe.Pointer(&t4))[:], (*[1]float64)(unsafe.Pointer(&t5))[:], (*[1]float64)(unsafe.Pointer(&t6))[:], (*[1]float64)(unsafe.Pointer(&t7))[:], (*[1]float64)(unsafe.Pointer(&t8))[:], (*[1]float64)(unsafe.Pointer(&t9))[:], p[n])
-			eqF_temp[lc][n][1] += (Nx1*t1 + Vy1*t4 + Vz1*t7)
-			eqF_temp[lc][n][2] += (Nx1*t2 + Vy1*t5 + Vz1*t8)
-			eqF_temp[lc][n][3] += (Nx1*t3 + Vy1*t6 + Vz1*t9)
-			eqF_temp[lc][n][4] += (Mx1*t1 + My1*t4 + Mz1*t7)
-			eqF_temp[lc][n][5] += (Mx1*t2 + My1*t5 + Mz1*t8)
-			eqF_temp[lc][n][6] += (Mx1*t3 + My1*t6 + Mz1*t9)
-			eqF_temp[lc][n][7] += (Nx2*t1 + Vy2*t4 + Vz2*t7)
-			eqF_temp[lc][n][8] += (Nx2*t2 + Vy2*t5 + Vz2*t8)
-			eqF_temp[lc][n][9] += (Nx2*t3 + Vy2*t6 + Vz2*t9)
-			eqF_temp[lc][n][10] += (Mx2*t1 + My2*t4 + Mz2*t7)
-			eqF_temp[lc][n][11] += (Mx2*t2 + My2*t5 + Mz2*t8)
-			eqF_temp[lc][n][12] += (Mx2*t3 + My2*t6 + Mz2*t9)
+			eqF_temp[lc][n][1] += Nx1*t1 + Vy1*t4 + Vz1*t7
+			eqF_temp[lc][n][2] += Nx1*t2 + Vy1*t5 + Vz1*t8
+			eqF_temp[lc][n][3] += Nx1*t3 + Vy1*t6 + Vz1*t9
+			eqF_temp[lc][n][4] += Mx1*t1 + My1*t4 + Mz1*t7
+			eqF_temp[lc][n][5] += Mx1*t2 + My1*t5 + Mz1*t8
+			eqF_temp[lc][n][6] += Mx1*t3 + My1*t6 + Mz1*t9
+			eqF_temp[lc][n][7] += Nx2*t1 + Vy2*t4 + Vz2*t7
+			eqF_temp[lc][n][8] += Nx2*t2 + Vy2*t5 + Vz2*t8
+			eqF_temp[lc][n][9] += Nx2*t3 + Vy2*t6 + Vz2*t9
+			eqF_temp[lc][n][10] += Mx2*t1 + My2*t4 + Mz2*t7
+			eqF_temp[lc][n][11] += Mx2*t2 + My2*t5 + Mz2*t8
+			eqF_temp[lc][n][12] += Mx2*t3 + My2*t6 + Mz2*t9
 		}
 		for n = 1; n <= nE; n++ {
 			n1 = J1[n]
@@ -7767,6 +7727,8 @@ func my_itoa(n int, s []byte, k int) {
 		}()] = byte(n%10 + int('0'))
 		if noarch.NotInt((map[bool]int{false: 0, true: 1}[func() int {
 			n /= 10
+			defer func() {
+			}()
 			return n
 		}() > 0])) != 0 {
 			break
@@ -9621,7 +9583,7 @@ func PSB_update(B [][]float64, f []float64, d []float64, n int) {
 	}
 	for i = 1; i <= n; i++ {
 		for j = i; j <= n; j++ {
-			B[i][j] -= ((f[i]*d[j]+f[j]*d[i])/dtd - ftd*d[i]*d[j]/dtd2)
+			B[i][j] -= (f[i]*d[j]+f[j]*d[i])/dtd - ftd*d[i]*d[j]/dtd2
 		}
 	}
 }
@@ -10141,10 +10103,10 @@ func relative_norm(N []float64, D []float64, n int) float64 {
 	var nD float64 = 0
 	var i int
 	for i = 1; i <= n; i++ {
-		nN += (N[i] * N[i])
+		nN += N[i] * N[i]
 	}
 	for i = 1; i <= n; i++ {
-		nD += (D[i] * D[i])
+		nD += D[i] * D[i]
 	}
 	return (math.Sqrt(nN) / math.Sqrt(nD))
 }
@@ -10538,7 +10500,7 @@ func getTime(s []byte, y int, m int, d int, hr int, mn int, sc int, os int) noar
 	t_tm.Tm_sec = noarch.Atoi(noarch.Strncpy(temp, (*(*[1000000000]byte)(unsafe.Pointer(uintptr(unsafe.Pointer(&s[0])) + (uintptr)(sc)*unsafe.Sizeof(s[0]))))[:], int(uint32(2)))) + os
 	t_tm.Tm_isdst = -1
 	t_time = noarch.Mktime((*[1]noarch.Tm)(unsafe.Pointer(&t_tm))[:])
-	return t_time
+	return noarch.TimeT(t_time)
 }
 
 // showProgress - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:265
@@ -10606,7 +10568,7 @@ func NRerror(error_text []byte) {
 //
 func vector(nl int32, nh int32) []float32 {
 	var v []float32
-	v = make([]float32, uint32((uint32(nh-nl+int32(1)+int32(1))*4))/4)
+	v = make([]float32, size_t((uint32(nh-nl+int32(1)+int32(1))*4))/4)
 	if v == nil {
 		NRerror([]byte("allocation failure in vector()\x00"))
 	}
@@ -10619,7 +10581,7 @@ func vector(nl int32, nh int32) []float32 {
 //
 func ivector(nl int32, nh int32) []int {
 	var v []int
-	v = make([]int, uint32((uint32(nh-nl+int32(1)+int32(1))*4))/4)
+	v = make([]int, size_t((uint32(nh-nl+int32(1)+int32(1))*4))/4)
 	if v == nil {
 		NRerror([]byte("allocation failure in ivector()\x00"))
 	}
@@ -10634,7 +10596,7 @@ func ivector(nl int32, nh int32) []int {
 //
 func cvector(nl int32, nh int32) []uint8 {
 	var v []uint8
-	v = make([]uint8, uint32((uint32(nh-nl+int32(1)+int32(1))*1))/1)
+	v = make([]uint8, size_t((uint32(nh-nl+int32(1)+int32(1))*1))/1)
 	if v == nil {
 		NRerror([]byte("allocation failure in cvector()\x00"))
 	}
@@ -10647,7 +10609,7 @@ func cvector(nl int32, nh int32) []uint8 {
 //
 func lvector(nl int32, nh int32) []uint32 {
 	var v []uint32
-	v = make([]uint32, uint32((uint32(nh-nl+int32(1)+int32(1))*8))/8)
+	v = make([]uint32, size_t((uint32(nh-nl+int32(1)+int32(1))*8))/8)
 	if v == nil {
 		NRerror([]byte("allocation failure in lvector()\x00"))
 	}
@@ -10661,7 +10623,7 @@ func lvector(nl int32, nh int32) []uint32 {
 //
 func dvector(nl int32, nh int32) []float64 {
 	var v []float64
-	v = make([]float64, uint32((uint32(nh-nl+int32(1)+int32(1))*8))/8)
+	v = make([]float64, size_t((uint32(nh-nl+int32(1)+int32(1))*8))/8)
 	if v == nil {
 		NRerror([]byte("allocation failure in dvector()\x00"))
 	}
@@ -10680,13 +10642,13 @@ func matrix(nrl int32, nrh int32, ncl int32, nch int32) [][]float32 {
 	var nrow int32 = nrh - nrl + int32(1)
 	var ncol int32 = nch - ncl + int32(1)
 	var m [][]float32
-	m = make([][]float32, uint32((uint32(nrow+int32(1))*8))/8)
+	m = make([][]float32, size_t((uint32(nrow+int32(1))*8))/8)
 	if m == nil {
 		NRerror([]byte("allocation failure 1 in matrix()\x00"))
 	}
 	m = (*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(1)*unsafe.Sizeof(m[0]))))[:]
 	m = (*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) - (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:]
-	m[nrl] = make([]float32, uint32((uint32(nrow*ncol+int32(1))*4))/4)
+	m[nrl] = make([]float32, size_t((uint32(nrow*ncol+int32(1))*4))/4)
 	if m[nrl] == nil {
 		NRerror([]byte("allocation failure 2 in matrix()\x00"))
 	}
@@ -10709,13 +10671,13 @@ func dmatrix(nrl int32, nrh int32, ncl int32, nch int32) [][]float64 {
 	var nrow int32 = nrh - nrl + int32(1)
 	var ncol int32 = nch - ncl + int32(1)
 	var m [][]float64
-	m = make([][]float64, uint32((uint32(nrow+int32(1))*8))/8)
+	m = make([][]float64, size_t((uint32(nrow+int32(1))*8))/8)
 	if m == nil {
 		NRerror([]byte("allocation failure 1 in matrix()\x00"))
 	}
 	m = (*(*[1000000000][]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(1)*unsafe.Sizeof(m[0]))))[:]
 	m = (*(*[1000000000][]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) - (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:]
-	m[nrl] = make([]float64, uint32((uint32(nrow*ncol+int32(1))*8))/8)
+	m[nrl] = make([]float64, size_t((uint32(nrow*ncol+int32(1))*8))/8)
 	if m[nrl] == nil {
 		NRerror([]byte("allocation failure 2 in matrix()\x00"))
 	}
@@ -10738,13 +10700,13 @@ func imatrix(nrl int32, nrh int32, ncl int32, nch int32) [][]int {
 	var nrow int32 = nrh - nrl + int32(1)
 	var ncol int32 = nch - ncl + int32(1)
 	var m [][]int
-	m = make([][]int, uint32((uint32(nrow+int32(1))*8))/8)
+	m = make([][]int, size_t((uint32(nrow+int32(1))*8))/8)
 	if m == nil {
 		NRerror([]byte("allocation failure 1 in matrix()\x00"))
 	}
 	m = (*(*[1000000000][]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(1)*unsafe.Sizeof(m[0]))))[:]
 	m = (*(*[1000000000][]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) - (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:]
-	m[nrl] = make([]int, uint32((uint32(nrow*ncol+int32(1))*4))/4)
+	m[nrl] = make([]int, size_t((uint32(nrow*ncol+int32(1))*4))/4)
 	if m[nrl] == nil {
 		NRerror([]byte("allocation failure 2 in matrix()\x00"))
 	}
@@ -10768,7 +10730,7 @@ func subMatrix(a [][]float32, oldrl int32, oldrh int32, oldcl int32, oldch int32
 	var nrow int32 = oldrh - oldrl + int32(1)
 	var ncol int32 = oldcl - newcl
 	var m [][]float32
-	m = make([][]float32, uint32((uint32(nrow+int32(1))*8))/8)
+	m = make([][]float32, size_t((uint32(nrow+int32(1))*8))/8)
 	if m == nil {
 		NRerror([]byte("allocation failure in subMatrix()\x00"))
 	}
@@ -10801,7 +10763,7 @@ func convert_matrix(a []float32, nrl int32, nrh int32, ncl int32, nch int32) [][
 	var nrow int32 = nrh - nrl + int32(1)
 	var ncol int32 = nch - ncl + int32(1)
 	var m [][]float32
-	m = make([][]float32, uint32((uint32(nrow+int32(1))*8))/8)
+	m = make([][]float32, size_t((uint32(nrow+int32(1))*8))/8)
 	if m == nil {
 		NRerror([]byte("allocation failure in convert_matrix()\x00"))
 	}
@@ -10834,19 +10796,19 @@ func f3tensor(nrl int32, nrh int32, ncl int32, nch int32, ndl int32, ndh int32) 
 	var ncol int32 = nch - ncl + int32(1)
 	var ndep int32 = ndh - ndl + int32(1)
 	var t [][][]float32
-	t = make([][][]float32, uint32((uint32(nrow+int32(1))*8))/8)
+	t = make([][][]float32, size_t((uint32(nrow+int32(1))*8))/8)
 	if t == nil {
 		NRerror([]byte("allocation failure 1 in f3tensor()\x00"))
 	}
 	t = (*(*[1000000000][][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[0])) + (uintptr)(1)*unsafe.Sizeof(t[0]))))[:]
 	t = (*(*[1000000000][][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[0])) - (uintptr)(nrl)*unsafe.Sizeof(t[0]))))[:]
-	t[nrl] = make([][]float32, uint32((uint32(nrow*ncol+int32(1))*8))/8)
+	t[nrl] = make([][]float32, size_t((uint32(nrow*ncol+int32(1))*8))/8)
 	if t[nrl] == nil {
 		NRerror([]byte("allocation failure 2 in f3tensor()\x00"))
 	}
 	t[nrl] = (*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][0])) + (uintptr)(1)*unsafe.Sizeof(t[nrl][0]))))[:]
 	t[nrl] = (*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][0])) - (uintptr)(ncl)*unsafe.Sizeof(t[nrl][0]))))[:]
-	t[nrl][ncl] = make([]float32, uint32((uint32(nrow*ncol*ndep+int32(1))*4))/4)
+	t[nrl][ncl] = make([]float32, size_t((uint32(nrow*ncol*ndep+int32(1))*4))/4)
 	if t[nrl][ncl] == nil {
 		NRerror([]byte("allocation failure 3 in f3tensor()\x00"))
 	}
