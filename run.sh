@@ -1,12 +1,14 @@
 
+rm ./a.out
+rm ./main
+rm *.out
+rm *.plt
+
 CODE_PATH="$GOPATH/src/github.com/Konstantin8105/History_frame3DD/src"
 RESULT="result.txt"
 
 # Remove all text in result file
 echo "" > $RESULT
-
-echo "Write version c2go"
-c2go -v > c2go_version.txt
 
 # -----------------------------
 echo "Compilation"
@@ -18,7 +20,7 @@ echo "Execution"
 # -----------------------------
 echo "Transpilation"
 # -clang-flag="-lm" 
-c2go transpile -o="main.go" -clang-flag="-I$CODE_PATH/viewer/" -clang-flag="-I$CODE_PATH/microstran/" "$CODE_PATH/main.c" "$CODE_PATH/frame3dd.c" "$CODE_PATH/frame3dd_io.c" "$CODE_PATH/coordtrans.c" "$CODE_PATH/eig.c" "$CODE_PATH/HPGmatrix.c" "$CODE_PATH/HPGutil.c" "$CODE_PATH/NRutil.c"
+c4go transpile -o="main.go" -clang-flag="-I$CODE_PATH/viewer/" -clang-flag="-I$CODE_PATH/microstran/" "$CODE_PATH/main.c" "$CODE_PATH/frame3dd.c" "$CODE_PATH/frame3dd_io.c" "$CODE_PATH/coordtrans.c" "$CODE_PATH/eig.c" "$CODE_PATH/HPGmatrix.c" "$CODE_PATH/HPGutil.c" "$CODE_PATH/NRutil.c"
 
 echo "Amount lines into file main.go: " >> $RESULT 
 cat ./main.go | wc -l >> $RESULT

@@ -1,162 +1,53 @@
 /*
-	Package main - transpiled by c2go version: v0.21.10 Zinc 2018-02-14
+	Package main - transpiled by c4go
 
 	If you have found any issues, please raise an issue at:
-	https://github.com/elliotchance/c2go/
+	https://github.com/Konstantin8105/c4go/
 */
 
-// Warning (EnumDecl):  /usr/include/math.h:347 : Add support of continues counter for type : *ast.UnaryExpr
-// Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/waitstatus.h:75 : Error : name of FieldDecl is empty
-// Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/waitstatus.h:89 : Error : name of FieldDecl is empty
-// Warning (TransparentUnionAttr):  /usr/include/stdlib.h:71 : could not parse &{40450192 {/usr/include/stdlib.h 71 0 35 0 } []}
-// Warning (FieldDecl):  /usr/include/stdlib.h:69 : Avoid struct `union wait *` in FieldDecl
-// Warning (RecordDecl):  /usr/include/stdlib.h:67 : could not determine the size of type `union __WAIT_STATUS` for that reason: Cannot determine sizeof : |union __WAIT_STATUS|. err = Cannot determine sizeof : |union wait *|. err = error in union
-// Error (RecordDecl):  /usr/include/stdlib.h:67 : Cannot determine sizeof : |union __WAIT_STATUS|. err = Cannot determine sizeof : |union wait *|. err = error in union
-// Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/timex.h:50 : Error : name of FieldDecl is empty
-// Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/timex.h:51 : Error : name of FieldDecl is empty
-// Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/timex.h:52 : Error : name of FieldDecl is empty
-// Warning (EnumDecl):  /usr/include/x86_64-linux-gnu/bits/confname.h:71 : Add support of continues counter for type : *ast.BinaryExpr
-// Warning (EnumDecl):  /usr/include/ctype.h:46 : Add support of continues counter for type : *ast.ParenExpr
-// Warning (SwitchStmt):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:126 : Unsupport case
+// Warning (*ast.EnumDecl):  /usr/include/x86_64-linux-gnu/bits/confname.h:71 :Add support of continues counter for type : *ast.BinaryExpr
+// Warning (*ast.EnumDecl):  /usr/include/ctype.h:46 :Add support of continues counter for type : *ast.BinaryExpr
+// Warning (*ast.SwitchStmt):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:126 :Unsupport case
+// Warning Function `noarch.InterfaceToFloat32SliceSlice` haven`t implementation
+// Warning Function `noarch.InterfaceToFloat64SliceSlice` haven`t implementation
+// Warning Function `noarch.InterfaceToIntSliceSlice` haven`t implementation
+// Warning Function `noarch.InterfaceToFloat32SliceSlice` haven`t implementation
+// Warning Function `noarch.InterfaceToFcomplexSliceSlice` haven`t implementation
+// Warning Function `noarch.Float64SliceSliceSliceToFloat32SliceSliceSlice` haven`t implementation
+// Warning Function `noarch.InterfaceToFloat64SliceSlice` haven`t implementation
+// Warning Function `noarch.Float64SliceSliceToFloat32SliceSlice` haven`t implementation
+// Warning Function `noarch.InterfaceToFloat64SliceSlice` haven`t implementation
+// Warning Function `noarch.Float64SliceSliceToFloat32SliceSlice` haven`t implementation
+// Warning Function `noarch.Float64SliceToFloat32Slice` haven`t implementation
+// Warning Function `noarch.InterfaceToFloat64SliceSlice` haven`t implementation
+// Warning (*ast.TranslationUnitDecl):  :0 :cannot transpileRecordDecl `__WAIT_STATUS`. could not determine the size of type `union __WAIT_STATUS` for that reason: Cannot determine sizeof : |union __WAIT_STATUS|. err = Cannot canculate `union` sizeof for `string`. Cannot determine sizeof : |union wait *|. err = error in union
 
 package main
 
-import "github.com/elliotchance/c2go/linux"
+import "github.com/Konstantin8105/c4go/linux"
 import "math"
 import "math/rand"
-import "os"
-import "github.com/elliotchance/c2go/noarch"
 import "unsafe"
+import "os"
+import "github.com/Konstantin8105/c4go/noarch"
 
-type float_t float32
-type double_t float64
+const (
+	FP_NAN       int = 0
+	FP_INFINITE      = 1
+	FP_ZERO          = 2
+	FP_SUBNORMAL     = 3
+	FP_NORMAL        = 4
+)
+const (
+	_IEEE_  int = -1
+	_SVID_      = 0
+	_XOPEN_     = 1
+	_POSIX_     = 2
+	_ISOC_      = 3
+)
 
-const FP_NAN int = 0
-const FP_INFINITE int = 1
-const FP_ZERO int = 2
-const FP_SUBNORMAL int = 3
-const FP_NORMAL int = 4
-const _IEEE_ int = -1
-const _SVID_ int = 0
-const _XOPEN_ int = 1
-const _POSIX_ int = 2
-const _ISOC_ int = 3
-
-type _LIB_VERSION_TYPE int
-type exception struct {
-	type_  int
-	name   []byte
-	arg1   float64
-	arg2   float64
-	retval float64
-}
 type size_t uint32
-type __u_char uint8
-type __u_short uint16
-type __u_int uint32
-type __u_long uint32
-type __int8_t int8
-type __uint8_t uint8
-type __int16_t int16
-type __uint16_t uint16
-type __int32_t int
-type __uint32_t uint32
-type __int64_t int32
-type __uint64_t uint32
-type __quad_t int32
-type __u_quad_t uint32
-type __dev_t uint32
-type __uid_t uint32
-type __gid_t uint32
-type __ino_t uint32
-type __ino64_t uint32
-type __mode_t uint32
-type __nlink_t uint32
-type __off_t int32
-type __off64_t int32
-type __pid_t int
-type __fsid_t struct {
-	__val [2]int
-}
-type __clock_t int32
-type __rlim_t uint32
-type __rlim64_t uint32
-type __id_t uint32
 type __time_t int32
-type __useconds_t uint32
-type __suseconds_t int32
-type __daddr_t int
-type __key_t int
-type __clockid_t int
-type __timer_t interface{}
-type __blksize_t int32
-type __blkcnt_t int32
-type __blkcnt64_t int32
-type __fsblkcnt_t uint32
-type __fsblkcnt64_t uint32
-type __fsfilcnt_t uint32
-type __fsfilcnt64_t uint32
-type __fsword_t int32
-type __ssize_t int32
-type __syscall_slong_t int32
-type __syscall_ulong_t uint32
-type __loff_t __off64_t
-type __qaddr_t []__quad_t
-type __caddr_t []byte
-type __intptr_t int32
-type __socklen_t uint32
-type _IO_FILE struct {
-}
-type FILE _IO_FILE
-type __FILE _IO_FILE
-type BSunionSatSSusrSincludeSwcharPhD85D3E struct{ memory unsafe.Pointer }
-
-func (unionVar *BSunionSatSSusrSincludeSwcharPhD85D3E) copy() BSunionSatSSusrSincludeSwcharPhD85D3E {
-	var buffer [8]byte
-	for i := range buffer {
-		buffer[i] = (*((*[8]byte)(unionVar.memory)))[i]
-	}
-	var newUnion BSunionSatSSusrSincludeSwcharPhD85D3E
-	newUnion.memory = unsafe.Pointer(&buffer)
-	return newUnion
-}
-func (unionVar *BSunionSatSSusrSincludeSwcharPhD85D3E) __wch() *uint32 {
-	if unionVar.memory == nil {
-		var buffer [8]byte
-		unionVar.memory = unsafe.Pointer(&buffer)
-	}
-	return (*uint32)(unionVar.memory)
-}
-func (unionVar *BSunionSatSSusrSincludeSwcharPhD85D3E) __wchb() *[4]byte {
-	if unionVar.memory == nil {
-		var buffer [8]byte
-		unionVar.memory = unsafe.Pointer(&buffer)
-	}
-	return (*[4]byte)(unionVar.memory)
-}
-
-type __mbstate_t struct {
-	__count int
-	__value BSunionSatSSusrSincludeSwcharPhD85D3E
-}
-type _G_fpos_t struct {
-	__pos   __off_t
-	__state int64
-}
-type _G_fpos64_t struct {
-	__pos   __off64_t
-	__state int64
-}
-type va_list int64
-type __gnuc_va_list int64
-type _IO_jump_t struct {
-}
-type _IO_lock_t interface{}
-type _IO_marker struct {
-	_next []_IO_marker
-	_sbuf []_IO_FILE
-	_pos  int
-}
 type __codecvt_result int
 
 const (
@@ -166,806 +57,333 @@ const (
 	__codecvt_noconv                   = 3
 )
 
-type _IO_FILE_plus struct {
-}
-type __io_read_fn func(interface{}, []byte, size_t) __ssize_t
-type __io_write_fn func(interface{}, []byte, size_t) __ssize_t
-type __io_seek_fn func(interface{}, []__off64_t, int) int
-type __io_close_fn func(interface{}) int
-type cookie_read_function_t __io_read_fn
-type cookie_write_function_t __io_write_fn
-type cookie_seek_function_t __io_seek_fn
-type cookie_close_function_t __io_close_fn
-type _IO_cookie_io_functions_t struct {
-	read  __io_read_fn
-	write __io_write_fn
-	seek  __io_seek_fn
-	close __io_close_fn
-}
-type cookie_io_functions_t _IO_cookie_io_functions_t
-type _IO_cookie_file struct {
-}
-type off_t __off_t
-type off64_t __off64_t
-type ssize_t __ssize_t
-type fpos_t _G_fpos_t
-type fpos64_t _G_fpos64_t
-
 var stdin *noarch.File
 
 var stdout *noarch.File
 
 var stderr *noarch.File
 
-type obstack struct {
-}
-type wchar_t int
+const (
+	P_ALL  int = 0
+	P_PID      = 1
+	P_PGID     = 2
+)
 
-const P_ALL int = 0
-const P_PID int = 1
-const P_PGID int = 2
-
-type idtype_t int
-type BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSwaitstatusPhD69D5E struct {
-	__w_termsig  uint32
-	__w_coredump uint32
-	__w_retcode  uint32
-}
-type BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSwaitstatusPhD84D5E struct {
-	__w_stopval uint32
-	__w_stopsig uint32
-}
-type wait struct{ memory unsafe.Pointer }
-
-func (unionVar *wait) copy() wait {
-	var buffer [16]byte
-	for i := range buffer {
-		buffer[i] = (*((*[16]byte)(unionVar.memory)))[i]
-	}
-	var newUnion wait
-	newUnion.memory = unsafe.Pointer(&buffer)
-	return newUnion
-}
-func (unionVar *wait) w_status() *int {
-	if unionVar.memory == nil {
-		var buffer [16]byte
-		unionVar.memory = unsafe.Pointer(&buffer)
-	}
-	return (*int)(unionVar.memory)
-}
-func (unionVar *wait) __wait_terminated() *BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSwaitstatusPhD69D5E {
-	if unionVar.memory == nil {
-		var buffer [16]byte
-		unionVar.memory = unsafe.Pointer(&buffer)
-	}
-	return (*BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSwaitstatusPhD69D5E)(unionVar.memory)
-}
-func (unionVar *wait) __wait_stopped() *BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSwaitstatusPhD84D5E {
-	if unionVar.memory == nil {
-		var buffer [16]byte
-		unionVar.memory = unsafe.Pointer(&buffer)
-	}
-	return (*BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSwaitstatusPhD84D5E)(unionVar.memory)
-}
-
-type div_t struct {
-	quot int
-	rem  int
-}
-type ldiv_t struct {
-	quot int32
-	rem  int32
-}
-type lldiv_t struct {
-	quot int64
-	rem  int64
-}
 type __locale_t int
 type locale_t __locale_t
-type u_char __u_char
-type u_short __u_short
-type u_int __u_int
-type u_long __u_long
-type quad_t __quad_t
-type u_quad_t __u_quad_t
-type fsid_t __fsid_t
-type loff_t __loff_t
-type ino_t __ino_t
-type ino64_t __ino64_t
-type dev_t __dev_t
-type gid_t __gid_t
-type mode_t __mode_t
-type nlink_t __nlink_t
-type uid_t __uid_t
-type pid_t __pid_t
-type id_t __id_t
-type daddr_t __daddr_t
-type caddr_t __caddr_t
-type key_t __key_t
-type clock_t __clock_t
-type time_t __time_t
-type clockid_t __clockid_t
-type timer_t __timer_t
-type useconds_t __useconds_t
-type suseconds_t __suseconds_t
-type ulong uint32
-type ushort uint16
-type uint uint32
-type int8_t int8
-type int16_t int16
-type int32_t int
-type int64_t int32
-type u_int8_t uint8
-type u_int16_t uint16
-type u_int32_t uint32
-type u_int64_t uint32
-type register_t int32
-type __sig_atomic_t int
-type __sigset_t struct {
-	__val [16]uint32
-}
-type sigset_t __sigset_t
-type timespec struct {
-	tv_sec  __time_t
-	tv_nsec __syscall_slong_t
-}
-type timeval struct {
-	tv_sec  __time_t
-	tv_usec __suseconds_t
-}
-type __fd_mask int32
-type fd_set struct {
-	fds_bits [16]__fd_mask
-}
-type fd_mask __fd_mask
-type blksize_t __blksize_t
-type blkcnt_t __blkcnt_t
-type fsblkcnt_t __fsblkcnt_t
-type fsfilcnt_t __fsfilcnt_t
-type blkcnt64_t __blkcnt64_t
-type fsblkcnt64_t __fsblkcnt64_t
-type fsfilcnt64_t __fsfilcnt64_t
-type pthread_t uint32
-type __pthread_internal_list struct {
-	__prev []__pthread_internal_list
-	__next []__pthread_internal_list
-}
-type __pthread_list_t __pthread_internal_list
-type __pthread_mutex_s struct {
-	__lock    int
-	__count   uint32
-	__owner   int
-	__nusers  uint32
-	__kind    int
-	__spins   int16
-	__elision int16
-	__list    __pthread_list_t
-}
-type pthread_mutex_t struct{ memory unsafe.Pointer }
-
-func (unionVar *pthread_mutex_t) copy() pthread_mutex_t {
-	var buffer [40]byte
-	for i := range buffer {
-		buffer[i] = (*((*[40]byte)(unionVar.memory)))[i]
-	}
-	var newUnion pthread_mutex_t
-	newUnion.memory = unsafe.Pointer(&buffer)
-	return newUnion
-}
-func (unionVar *pthread_mutex_t) __data() *__pthread_mutex_s {
-	if unionVar.memory == nil {
-		var buffer [40]byte
-		unionVar.memory = unsafe.Pointer(&buffer)
-	}
-	return (*__pthread_mutex_s)(unionVar.memory)
-}
-func (unionVar *pthread_mutex_t) __size() *[40]byte {
-	if unionVar.memory == nil {
-		var buffer [40]byte
-		unionVar.memory = unsafe.Pointer(&buffer)
-	}
-	return (*[40]byte)(unionVar.memory)
-}
-func (unionVar *pthread_mutex_t) __align() *int32 {
-	if unionVar.memory == nil {
-		var buffer [40]byte
-		unionVar.memory = unsafe.Pointer(&buffer)
-	}
-	return (*int32)(unionVar.memory)
-}
-
-type pthread_mutexattr_t struct{ memory unsafe.Pointer }
-
-func (unionVar *pthread_mutexattr_t) copy() pthread_mutexattr_t {
-	var buffer [8]byte
-	for i := range buffer {
-		buffer[i] = (*((*[8]byte)(unionVar.memory)))[i]
-	}
-	var newUnion pthread_mutexattr_t
-	newUnion.memory = unsafe.Pointer(&buffer)
-	return newUnion
-}
-func (unionVar *pthread_mutexattr_t) __size() *[4]byte {
-	if unionVar.memory == nil {
-		var buffer [8]byte
-		unionVar.memory = unsafe.Pointer(&buffer)
-	}
-	return (*[4]byte)(unionVar.memory)
-}
-func (unionVar *pthread_mutexattr_t) __align() *int {
-	if unionVar.memory == nil {
-		var buffer [8]byte
-		unionVar.memory = unsafe.Pointer(&buffer)
-	}
-	return (*int)(unionVar.memory)
-}
-
-type BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSpthreadtypesPhD141D3E struct {
-	__lock          int
-	__futex         uint32
-	__total_seq     uint64
-	__wakeup_seq    uint64
-	__woken_seq     uint64
-	__mutex         interface{}
-	__nwaiters      uint32
-	__broadcast_seq uint32
-}
-type pthread_cond_t struct{ memory unsafe.Pointer }
-
-func (unionVar *pthread_cond_t) copy() pthread_cond_t {
-	var buffer [72]byte
-	for i := range buffer {
-		buffer[i] = (*((*[72]byte)(unionVar.memory)))[i]
-	}
-	var newUnion pthread_cond_t
-	newUnion.memory = unsafe.Pointer(&buffer)
-	return newUnion
-}
-func (unionVar *pthread_cond_t) __data() *BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSpthreadtypesPhD141D3E {
-	if unionVar.memory == nil {
-		var buffer [72]byte
-		unionVar.memory = unsafe.Pointer(&buffer)
-	}
-	return (*BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSpthreadtypesPhD141D3E)(unionVar.memory)
-}
-func (unionVar *pthread_cond_t) __size() *[48]byte {
-	if unionVar.memory == nil {
-		var buffer [72]byte
-		unionVar.memory = unsafe.Pointer(&buffer)
-	}
-	return (*[48]byte)(unionVar.memory)
-}
-func (unionVar *pthread_cond_t) __align() *int64 {
-	if unionVar.memory == nil {
-		var buffer [72]byte
-		unionVar.memory = unsafe.Pointer(&buffer)
-	}
-	return (*int64)(unionVar.memory)
-}
-
-type pthread_condattr_t struct{ memory unsafe.Pointer }
-
-func (unionVar *pthread_condattr_t) copy() pthread_condattr_t {
-	var buffer [8]byte
-	for i := range buffer {
-		buffer[i] = (*((*[8]byte)(unionVar.memory)))[i]
-	}
-	var newUnion pthread_condattr_t
-	newUnion.memory = unsafe.Pointer(&buffer)
-	return newUnion
-}
-func (unionVar *pthread_condattr_t) __size() *[4]byte {
-	if unionVar.memory == nil {
-		var buffer [8]byte
-		unionVar.memory = unsafe.Pointer(&buffer)
-	}
-	return (*[4]byte)(unionVar.memory)
-}
-func (unionVar *pthread_condattr_t) __align() *int {
-	if unionVar.memory == nil {
-		var buffer [8]byte
-		unionVar.memory = unsafe.Pointer(&buffer)
-	}
-	return (*int)(unionVar.memory)
-}
-
-type pthread_key_t uint32
-type pthread_once_t int
-type BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSpthreadtypesPhD177D3E struct {
-	__lock              int
-	__nr_readers        uint32
-	__readers_wakeup    uint32
-	__writer_wakeup     uint32
-	__nr_readers_queued uint32
-	__nr_writers_queued uint32
-	__writer            int
-	__shared            int
-	__rwelision         int8
-	__pad1              [7]uint8
-	__pad2              uint32
-	__flags             uint32
-}
-type pthread_rwlock_t struct{ memory unsafe.Pointer }
-
-func (unionVar *pthread_rwlock_t) copy() pthread_rwlock_t {
-	var buffer [56]byte
-	for i := range buffer {
-		buffer[i] = (*((*[56]byte)(unionVar.memory)))[i]
-	}
-	var newUnion pthread_rwlock_t
-	newUnion.memory = unsafe.Pointer(&buffer)
-	return newUnion
-}
-func (unionVar *pthread_rwlock_t) __data() *BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSpthreadtypesPhD177D3E {
-	if unionVar.memory == nil {
-		var buffer [56]byte
-		unionVar.memory = unsafe.Pointer(&buffer)
-	}
-	return (*BSstructSatSSusrSincludeSx86_64TlinuxTgnuSbitsSpthreadtypesPhD177D3E)(unionVar.memory)
-}
-func (unionVar *pthread_rwlock_t) __size() *[56]byte {
-	if unionVar.memory == nil {
-		var buffer [56]byte
-		unionVar.memory = unsafe.Pointer(&buffer)
-	}
-	return (*[56]byte)(unionVar.memory)
-}
-func (unionVar *pthread_rwlock_t) __align() *int32 {
-	if unionVar.memory == nil {
-		var buffer [56]byte
-		unionVar.memory = unsafe.Pointer(&buffer)
-	}
-	return (*int32)(unionVar.memory)
-}
-
-type pthread_rwlockattr_t struct{ memory unsafe.Pointer }
-
-func (unionVar *pthread_rwlockattr_t) copy() pthread_rwlockattr_t {
-	var buffer [8]byte
-	for i := range buffer {
-		buffer[i] = (*((*[8]byte)(unionVar.memory)))[i]
-	}
-	var newUnion pthread_rwlockattr_t
-	newUnion.memory = unsafe.Pointer(&buffer)
-	return newUnion
-}
-func (unionVar *pthread_rwlockattr_t) __size() *[8]byte {
-	if unionVar.memory == nil {
-		var buffer [8]byte
-		unionVar.memory = unsafe.Pointer(&buffer)
-	}
-	return (*[8]byte)(unionVar.memory)
-}
-func (unionVar *pthread_rwlockattr_t) __align() *int32 {
-	if unionVar.memory == nil {
-		var buffer [8]byte
-		unionVar.memory = unsafe.Pointer(&buffer)
-	}
-	return (*int32)(unionVar.memory)
-}
-
-type pthread_spinlock_t int
-type pthread_barrier_t struct{ memory unsafe.Pointer }
-
-func (unionVar *pthread_barrier_t) copy() pthread_barrier_t {
-	var buffer [32]byte
-	for i := range buffer {
-		buffer[i] = (*((*[32]byte)(unionVar.memory)))[i]
-	}
-	var newUnion pthread_barrier_t
-	newUnion.memory = unsafe.Pointer(&buffer)
-	return newUnion
-}
-func (unionVar *pthread_barrier_t) __size() *[32]byte {
-	if unionVar.memory == nil {
-		var buffer [32]byte
-		unionVar.memory = unsafe.Pointer(&buffer)
-	}
-	return (*[32]byte)(unionVar.memory)
-}
-func (unionVar *pthread_barrier_t) __align() *int32 {
-	if unionVar.memory == nil {
-		var buffer [32]byte
-		unionVar.memory = unsafe.Pointer(&buffer)
-	}
-	return (*int32)(unionVar.memory)
-}
-
-type pthread_barrierattr_t struct{ memory unsafe.Pointer }
-
-func (unionVar *pthread_barrierattr_t) copy() pthread_barrierattr_t {
-	var buffer [8]byte
-	for i := range buffer {
-		buffer[i] = (*((*[8]byte)(unionVar.memory)))[i]
-	}
-	var newUnion pthread_barrierattr_t
-	newUnion.memory = unsafe.Pointer(&buffer)
-	return newUnion
-}
-func (unionVar *pthread_barrierattr_t) __size() *[4]byte {
-	if unionVar.memory == nil {
-		var buffer [8]byte
-		unionVar.memory = unsafe.Pointer(&buffer)
-	}
-	return (*[4]byte)(unionVar.memory)
-}
-func (unionVar *pthread_barrierattr_t) __align() *int {
-	if unionVar.memory == nil {
-		var buffer [8]byte
-		unionVar.memory = unsafe.Pointer(&buffer)
-	}
-	return (*int)(unionVar.memory)
-}
-
-type random_data struct {
-	fptr      []int32_t
-	rptr      []int32_t
-	state     []int32_t
-	rand_type int
-	rand_deg  int
-	rand_sep  int
-	end_ptr   []int32_t
-}
-type drand48_data struct {
-	__x     [3]uint16
-	__old_x [3]uint16
-	__c     uint16
-	__init  uint16
-	__a     uint64
-}
-type __compar_fn_t func(interface{}, interface{}) int
-type comparison_fn_t __compar_fn_t
-type __compar_d_fn_t func(interface{}, interface{}, interface{}) int
 type vec3_struct struct {
 	x float64
 	y float64
 	z float64
 }
 type vec3 vec3_struct
-type timex struct {
-	modes     uint32
-	offset    __syscall_slong_t
-	freq      __syscall_slong_t
-	maxerror  __syscall_slong_t
-	esterror  __syscall_slong_t
-	status    int
-	constant  __syscall_slong_t
-	precision __syscall_slong_t
-	tolerance __syscall_slong_t
-	time      timeval
-	tick      __syscall_slong_t
-	ppsfreq   __syscall_slong_t
-	jitter    __syscall_slong_t
-	shift     int
-	stabil    __syscall_slong_t
-	jitcnt    __syscall_slong_t
-	calcnt    __syscall_slong_t
-	errcnt    __syscall_slong_t
-	stbcnt    __syscall_slong_t
-	tai       int
-}
-type tm struct {
-	tm_sec    int
-	tm_min    int
-	tm_hour   int
-	tm_mday   int
-	tm_mon    int
-	tm_year   int
-	tm_wday   int
-	tm_yday   int
-	tm_isdst  int
-	tm_gmtoff int32
-	tm_zone   []byte
-}
-type itimerspec struct {
-	it_interval timespec
-	it_value    timespec
-}
-type sigevent struct {
-}
-type intptr_t __intptr_t
-type socklen_t __socklen_t
 
-const _PC_LINK_MAX int = 0
-const _PC_MAX_CANON int = 1
-const _PC_MAX_INPUT int = 2
-const _PC_NAME_MAX int = 3
-const _PC_PATH_MAX int = 4
-const _PC_PIPE_BUF int = 5
-const _PC_CHOWN_RESTRICTED int = 6
-const _PC_NO_TRUNC int = 7
-const _PC_VDISABLE int = 8
-const _PC_SYNC_IO int = 9
-const _PC_ASYNC_IO int = 10
-const _PC_PRIO_IO int = 11
-const _PC_SOCK_MAXBUF int = 12
-const _PC_FILESIZEBITS int = 13
-const _PC_REC_INCR_XFER_SIZE int = 14
-const _PC_REC_MAX_XFER_SIZE int = 15
-const _PC_REC_MIN_XFER_SIZE int = 16
-const _PC_REC_XFER_ALIGN int = 17
-const _PC_ALLOC_SIZE_MIN int = 18
-const _PC_SYMLINK_MAX int = 19
-const _PC_2_SYMLINKS int = 20
-const _SC_ARG_MAX int = 0
-const _SC_CHILD_MAX int = 1
-const _SC_CLK_TCK int = 2
-const _SC_NGROUPS_MAX int = 3
-const _SC_OPEN_MAX int = 4
-const _SC_STREAM_MAX int = 5
-const _SC_TZNAME_MAX int = 6
-const _SC_JOB_CONTROL int = 7
-const _SC_SAVED_IDS int = 8
-const _SC_REALTIME_SIGNALS int = 9
-const _SC_PRIORITY_SCHEDULING int = 10
-const _SC_TIMERS int = 11
-const _SC_ASYNCHRONOUS_IO int = 12
-const _SC_PRIORITIZED_IO int = 13
-const _SC_SYNCHRONIZED_IO int = 14
-const _SC_FSYNC int = 15
-const _SC_MAPPED_FILES int = 16
-const _SC_MEMLOCK int = 17
-const _SC_MEMLOCK_RANGE int = 18
-const _SC_MEMORY_PROTECTION int = 19
-const _SC_MESSAGE_PASSING int = 20
-const _SC_SEMAPHORES int = 21
-const _SC_SHARED_MEMORY_OBJECTS int = 22
-const _SC_AIO_LISTIO_MAX int = 23
-const _SC_AIO_MAX int = 24
-const _SC_AIO_PRIO_DELTA_MAX int = 25
-const _SC_DELAYTIMER_MAX int = 26
-const _SC_MQ_OPEN_MAX int = 27
-const _SC_MQ_PRIO_MAX int = 28
-const _SC_VERSION int = 29
-const _SC_PAGESIZE int = 30
-const _SC_RTSIG_MAX int = 31
-const _SC_SEM_NSEMS_MAX int = 32
-const _SC_SEM_VALUE_MAX int = 33
-const _SC_SIGQUEUE_MAX int = 34
-const _SC_TIMER_MAX int = 35
-const _SC_BC_BASE_MAX int = 36
-const _SC_BC_DIM_MAX int = 37
-const _SC_BC_SCALE_MAX int = 38
-const _SC_BC_STRING_MAX int = 39
-const _SC_COLL_WEIGHTS_MAX int = 40
-const _SC_EQUIV_CLASS_MAX int = 41
-const _SC_EXPR_NEST_MAX int = 42
-const _SC_LINE_MAX int = 43
-const _SC_RE_DUP_MAX int = 44
-const _SC_CHARCLASS_NAME_MAX int = 45
-const _SC_2_VERSION int = 46
-const _SC_2_C_BIND int = 47
-const _SC_2_C_DEV int = 48
-const _SC_2_FORT_DEV int = 49
-const _SC_2_FORT_RUN int = 50
-const _SC_2_SW_DEV int = 51
-const _SC_2_LOCALEDEF int = 52
-const _SC_PII int = 53
-const _SC_PII_XTI int = 54
-const _SC_PII_SOCKET int = 55
-const _SC_PII_INTERNET int = 56
-const _SC_PII_OSI int = 57
-const _SC_POLL int = 58
-const _SC_SELECT int = 59
-const _SC_UIO_MAXIOV int = 60
-const _SC_IOV_MAX int = 61
-const _SC_PII_INTERNET_STREAM int = 62
-const _SC_PII_INTERNET_DGRAM int = 63
-const _SC_PII_OSI_COTS int = 64
-const _SC_PII_OSI_CLTS int = 65
-const _SC_PII_OSI_M int = 66
-const _SC_T_IOV_MAX int = 67
-const _SC_THREADS int = 68
-const _SC_THREAD_SAFE_FUNCTIONS int = 69
-const _SC_GETGR_R_SIZE_MAX int = 70
-const _SC_GETPW_R_SIZE_MAX int = 71
-const _SC_LOGIN_NAME_MAX int = 72
-const _SC_TTY_NAME_MAX int = 73
-const _SC_THREAD_DESTRUCTOR_ITERATIONS int = 74
-const _SC_THREAD_KEYS_MAX int = 75
-const _SC_THREAD_STACK_MIN int = 76
-const _SC_THREAD_THREADS_MAX int = 77
-const _SC_THREAD_ATTR_STACKADDR int = 78
-const _SC_THREAD_ATTR_STACKSIZE int = 79
-const _SC_THREAD_PRIORITY_SCHEDULING int = 80
-const _SC_THREAD_PRIO_INHERIT int = 81
-const _SC_THREAD_PRIO_PROTECT int = 82
-const _SC_THREAD_PROCESS_SHARED int = 83
-const _SC_NPROCESSORS_CONF int = 84
-const _SC_NPROCESSORS_ONLN int = 85
-const _SC_PHYS_PAGES int = 86
-const _SC_AVPHYS_PAGES int = 87
-const _SC_ATEXIT_MAX int = 88
-const _SC_PASS_MAX int = 89
-const _SC_XOPEN_VERSION int = 90
-const _SC_XOPEN_XCU_VERSION int = 91
-const _SC_XOPEN_UNIX int = 92
-const _SC_XOPEN_CRYPT int = 93
-const _SC_XOPEN_ENH_I18N int = 94
-const _SC_XOPEN_SHM int = 95
-const _SC_2_CHAR_TERM int = 96
-const _SC_2_C_VERSION int = 97
-const _SC_2_UPE int = 98
-const _SC_XOPEN_XPG2 int = 99
-const _SC_XOPEN_XPG3 int = 100
-const _SC_XOPEN_XPG4 int = 101
-const _SC_CHAR_BIT int = 102
-const _SC_CHAR_MAX int = 103
-const _SC_CHAR_MIN int = 104
-const _SC_INT_MAX int = 105
-const _SC_INT_MIN int = 106
-const _SC_LONG_BIT int = 107
-const _SC_WORD_BIT int = 108
-const _SC_MB_LEN_MAX int = 109
-const _SC_NZERO int = 110
-const _SC_SSIZE_MAX int = 111
-const _SC_SCHAR_MAX int = 112
-const _SC_SCHAR_MIN int = 113
-const _SC_SHRT_MAX int = 114
-const _SC_SHRT_MIN int = 115
-const _SC_UCHAR_MAX int = 116
-const _SC_UINT_MAX int = 117
-const _SC_ULONG_MAX int = 118
-const _SC_USHRT_MAX int = 119
-const _SC_NL_ARGMAX int = 120
-const _SC_NL_LANGMAX int = 121
-const _SC_NL_MSGMAX int = 122
-const _SC_NL_NMAX int = 123
-const _SC_NL_SETMAX int = 124
-const _SC_NL_TEXTMAX int = 125
-const _SC_XBS5_ILP32_OFF32 int = 126
-const _SC_XBS5_ILP32_OFFBIG int = 127
-const _SC_XBS5_LP64_OFF64 int = 128
-const _SC_XBS5_LPBIG_OFFBIG int = 129
-const _SC_XOPEN_LEGACY int = 130
-const _SC_XOPEN_REALTIME int = 131
-const _SC_XOPEN_REALTIME_THREADS int = 132
-const _SC_ADVISORY_INFO int = 133
-const _SC_BARRIERS int = 134
-const _SC_BASE int = 135
-const _SC_C_LANG_SUPPORT int = 136
-const _SC_C_LANG_SUPPORT_R int = 137
-const _SC_CLOCK_SELECTION int = 138
-const _SC_CPUTIME int = 139
-const _SC_THREAD_CPUTIME int = 140
-const _SC_DEVICE_IO int = 141
-const _SC_DEVICE_SPECIFIC int = 142
-const _SC_DEVICE_SPECIFIC_R int = 143
-const _SC_FD_MGMT int = 144
-const _SC_FIFO int = 145
-const _SC_PIPE int = 146
-const _SC_FILE_ATTRIBUTES int = 147
-const _SC_FILE_LOCKING int = 148
-const _SC_FILE_SYSTEM int = 149
-const _SC_MONOTONIC_CLOCK int = 150
-const _SC_MULTI_PROCESS int = 151
-const _SC_SINGLE_PROCESS int = 152
-const _SC_NETWORKING int = 153
-const _SC_READER_WRITER_LOCKS int = 154
-const _SC_SPIN_LOCKS int = 155
-const _SC_REGEXP int = 156
-const _SC_REGEX_VERSION int = 157
-const _SC_SHELL int = 158
-const _SC_SIGNALS int = 159
-const _SC_SPAWN int = 160
-const _SC_SPORADIC_SERVER int = 161
-const _SC_THREAD_SPORADIC_SERVER int = 162
-const _SC_SYSTEM_DATABASE int = 163
-const _SC_SYSTEM_DATABASE_R int = 164
-const _SC_TIMEOUTS int = 165
-const _SC_TYPED_MEMORY_OBJECTS int = 166
-const _SC_USER_GROUPS int = 167
-const _SC_USER_GROUPS_R int = 168
-const _SC_2_PBS int = 169
-const _SC_2_PBS_ACCOUNTING int = 170
-const _SC_2_PBS_LOCATE int = 171
-const _SC_2_PBS_MESSAGE int = 172
-const _SC_2_PBS_TRACK int = 173
-const _SC_SYMLOOP_MAX int = 174
-const _SC_STREAMS int = 175
-const _SC_2_PBS_CHECKPOINT int = 176
-const _SC_V6_ILP32_OFF32 int = 177
-const _SC_V6_ILP32_OFFBIG int = 178
-const _SC_V6_LP64_OFF64 int = 179
-const _SC_V6_LPBIG_OFFBIG int = 180
-const _SC_HOST_NAME_MAX int = 181
-const _SC_TRACE int = 182
-const _SC_TRACE_EVENT_FILTER int = 183
-const _SC_TRACE_INHERIT int = 184
-const _SC_TRACE_LOG int = 185
-const _SC_LEVEL1_ICACHE_SIZE int = 186
-const _SC_LEVEL1_ICACHE_ASSOC int = 187
-const _SC_LEVEL1_ICACHE_LINESIZE int = 188
-const _SC_LEVEL1_DCACHE_SIZE int = 189
-const _SC_LEVEL1_DCACHE_ASSOC int = 190
-const _SC_LEVEL1_DCACHE_LINESIZE int = 191
-const _SC_LEVEL2_CACHE_SIZE int = 192
-const _SC_LEVEL2_CACHE_ASSOC int = 193
-const _SC_LEVEL2_CACHE_LINESIZE int = 194
-const _SC_LEVEL3_CACHE_SIZE int = 195
-const _SC_LEVEL3_CACHE_ASSOC int = 196
-const _SC_LEVEL3_CACHE_LINESIZE int = 197
-const _SC_LEVEL4_CACHE_SIZE int = 198
-const _SC_LEVEL4_CACHE_ASSOC int = 199
-const _SC_LEVEL4_CACHE_LINESIZE int = 200
-const _SC_IPV6 int = _SC_LEVEL1_ICACHE_SIZE + 50
-const _SC_RAW_SOCKETS int = 201
-const _SC_V7_ILP32_OFF32 int = 202
-const _SC_V7_ILP32_OFFBIG int = 203
-const _SC_V7_LP64_OFF64 int = 204
-const _SC_V7_LPBIG_OFFBIG int = 205
-const _SC_SS_REPL_MAX int = 206
-const _SC_TRACE_EVENT_NAME_MAX int = 207
-const _SC_TRACE_NAME_MAX int = 208
-const _SC_TRACE_SYS_MAX int = 209
-const _SC_TRACE_USER_EVENT_MAX int = 210
-const _SC_XOPEN_STREAMS int = 211
-const _SC_THREAD_ROBUST_PRIO_INHERIT int = 212
-const _SC_THREAD_ROBUST_PRIO_PROTECT int = 213
-const _CS_PATH int = 0
-const _CS_V6_WIDTH_RESTRICTED_ENVS int = 1
-const _CS_GNU_LIBC_VERSION int = 2
-const _CS_GNU_LIBPTHREAD_VERSION int = 3
-const _CS_V5_WIDTH_RESTRICTED_ENVS int = 4
-const _CS_V7_WIDTH_RESTRICTED_ENVS int = 5
-const _CS_LFS_CFLAGS int = 1000
-const _CS_LFS_LDFLAGS int = 1001
-const _CS_LFS_LIBS int = 1002
-const _CS_LFS_LINTFLAGS int = 1003
-const _CS_LFS64_CFLAGS int = 1004
-const _CS_LFS64_LDFLAGS int = 1005
-const _CS_LFS64_LIBS int = 1006
-const _CS_LFS64_LINTFLAGS int = 1007
-const _CS_XBS5_ILP32_OFF32_CFLAGS int = 1100
-const _CS_XBS5_ILP32_OFF32_LDFLAGS int = 1101
-const _CS_XBS5_ILP32_OFF32_LIBS int = 1102
-const _CS_XBS5_ILP32_OFF32_LINTFLAGS int = 1103
-const _CS_XBS5_ILP32_OFFBIG_CFLAGS int = 1104
-const _CS_XBS5_ILP32_OFFBIG_LDFLAGS int = 1105
-const _CS_XBS5_ILP32_OFFBIG_LIBS int = 1106
-const _CS_XBS5_ILP32_OFFBIG_LINTFLAGS int = 1107
-const _CS_XBS5_LP64_OFF64_CFLAGS int = 1108
-const _CS_XBS5_LP64_OFF64_LDFLAGS int = 1109
-const _CS_XBS5_LP64_OFF64_LIBS int = 1110
-const _CS_XBS5_LP64_OFF64_LINTFLAGS int = 1111
-const _CS_XBS5_LPBIG_OFFBIG_CFLAGS int = 1112
-const _CS_XBS5_LPBIG_OFFBIG_LDFLAGS int = 1113
-const _CS_XBS5_LPBIG_OFFBIG_LIBS int = 1114
-const _CS_XBS5_LPBIG_OFFBIG_LINTFLAGS int = 1115
-const _CS_POSIX_V6_ILP32_OFF32_CFLAGS int = 1116
-const _CS_POSIX_V6_ILP32_OFF32_LDFLAGS int = 1117
-const _CS_POSIX_V6_ILP32_OFF32_LIBS int = 1118
-const _CS_POSIX_V6_ILP32_OFF32_LINTFLAGS int = 1119
-const _CS_POSIX_V6_ILP32_OFFBIG_CFLAGS int = 1120
-const _CS_POSIX_V6_ILP32_OFFBIG_LDFLAGS int = 1121
-const _CS_POSIX_V6_ILP32_OFFBIG_LIBS int = 1122
-const _CS_POSIX_V6_ILP32_OFFBIG_LINTFLAGS int = 1123
-const _CS_POSIX_V6_LP64_OFF64_CFLAGS int = 1124
-const _CS_POSIX_V6_LP64_OFF64_LDFLAGS int = 1125
-const _CS_POSIX_V6_LP64_OFF64_LIBS int = 1126
-const _CS_POSIX_V6_LP64_OFF64_LINTFLAGS int = 1127
-const _CS_POSIX_V6_LPBIG_OFFBIG_CFLAGS int = 1128
-const _CS_POSIX_V6_LPBIG_OFFBIG_LDFLAGS int = 1129
-const _CS_POSIX_V6_LPBIG_OFFBIG_LIBS int = 1130
-const _CS_POSIX_V6_LPBIG_OFFBIG_LINTFLAGS int = 1131
-const _CS_POSIX_V7_ILP32_OFF32_CFLAGS int = 1132
-const _CS_POSIX_V7_ILP32_OFF32_LDFLAGS int = 1133
-const _CS_POSIX_V7_ILP32_OFF32_LIBS int = 1134
-const _CS_POSIX_V7_ILP32_OFF32_LINTFLAGS int = 1135
-const _CS_POSIX_V7_ILP32_OFFBIG_CFLAGS int = 1136
-const _CS_POSIX_V7_ILP32_OFFBIG_LDFLAGS int = 1137
-const _CS_POSIX_V7_ILP32_OFFBIG_LIBS int = 1138
-const _CS_POSIX_V7_ILP32_OFFBIG_LINTFLAGS int = 1139
-const _CS_POSIX_V7_LP64_OFF64_CFLAGS int = 1140
-const _CS_POSIX_V7_LP64_OFF64_LDFLAGS int = 1141
-const _CS_POSIX_V7_LP64_OFF64_LIBS int = 1142
-const _CS_POSIX_V7_LP64_OFF64_LINTFLAGS int = 1143
-const _CS_POSIX_V7_LPBIG_OFFBIG_CFLAGS int = 1144
-const _CS_POSIX_V7_LPBIG_OFFBIG_LDFLAGS int = 1145
-const _CS_POSIX_V7_LPBIG_OFFBIG_LIBS int = 1146
-const _CS_POSIX_V7_LPBIG_OFFBIG_LINTFLAGS int = 1147
-const _CS_V6_ENV int = 1148
-const _CS_V7_ENV int = 1149
+const (
+	_PC_LINK_MAX           int = 0
+	_PC_MAX_CANON              = 1
+	_PC_MAX_INPUT              = 2
+	_PC_NAME_MAX               = 3
+	_PC_PATH_MAX               = 4
+	_PC_PIPE_BUF               = 5
+	_PC_CHOWN_RESTRICTED       = 6
+	_PC_NO_TRUNC               = 7
+	_PC_VDISABLE               = 8
+	_PC_SYNC_IO                = 9
+	_PC_ASYNC_IO               = 10
+	_PC_PRIO_IO                = 11
+	_PC_SOCK_MAXBUF            = 12
+	_PC_FILESIZEBITS           = 13
+	_PC_REC_INCR_XFER_SIZE     = 14
+	_PC_REC_MAX_XFER_SIZE      = 15
+	_PC_REC_MIN_XFER_SIZE      = 16
+	_PC_REC_XFER_ALIGN         = 17
+	_PC_ALLOC_SIZE_MIN         = 18
+	_PC_SYMLINK_MAX            = 19
+	_PC_2_SYMLINKS             = 20
+)
+const (
+	_SC_ARG_MAX                      int = 0
+	_SC_CHILD_MAX                        = 1
+	_SC_CLK_TCK                          = 2
+	_SC_NGROUPS_MAX                      = 3
+	_SC_OPEN_MAX                         = 4
+	_SC_STREAM_MAX                       = 5
+	_SC_TZNAME_MAX                       = 6
+	_SC_JOB_CONTROL                      = 7
+	_SC_SAVED_IDS                        = 8
+	_SC_REALTIME_SIGNALS                 = 9
+	_SC_PRIORITY_SCHEDULING              = 10
+	_SC_TIMERS                           = 11
+	_SC_ASYNCHRONOUS_IO                  = 12
+	_SC_PRIORITIZED_IO                   = 13
+	_SC_SYNCHRONIZED_IO                  = 14
+	_SC_FSYNC                            = 15
+	_SC_MAPPED_FILES                     = 16
+	_SC_MEMLOCK                          = 17
+	_SC_MEMLOCK_RANGE                    = 18
+	_SC_MEMORY_PROTECTION                = 19
+	_SC_MESSAGE_PASSING                  = 20
+	_SC_SEMAPHORES                       = 21
+	_SC_SHARED_MEMORY_OBJECTS            = 22
+	_SC_AIO_LISTIO_MAX                   = 23
+	_SC_AIO_MAX                          = 24
+	_SC_AIO_PRIO_DELTA_MAX               = 25
+	_SC_DELAYTIMER_MAX                   = 26
+	_SC_MQ_OPEN_MAX                      = 27
+	_SC_MQ_PRIO_MAX                      = 28
+	_SC_VERSION                          = 29
+	_SC_PAGESIZE                         = 30
+	_SC_RTSIG_MAX                        = 31
+	_SC_SEM_NSEMS_MAX                    = 32
+	_SC_SEM_VALUE_MAX                    = 33
+	_SC_SIGQUEUE_MAX                     = 34
+	_SC_TIMER_MAX                        = 35
+	_SC_BC_BASE_MAX                      = 36
+	_SC_BC_DIM_MAX                       = 37
+	_SC_BC_SCALE_MAX                     = 38
+	_SC_BC_STRING_MAX                    = 39
+	_SC_COLL_WEIGHTS_MAX                 = 40
+	_SC_EQUIV_CLASS_MAX                  = 41
+	_SC_EXPR_NEST_MAX                    = 42
+	_SC_LINE_MAX                         = 43
+	_SC_RE_DUP_MAX                       = 44
+	_SC_CHARCLASS_NAME_MAX               = 45
+	_SC_2_VERSION                        = 46
+	_SC_2_C_BIND                         = 47
+	_SC_2_C_DEV                          = 48
+	_SC_2_FORT_DEV                       = 49
+	_SC_2_FORT_RUN                       = 50
+	_SC_2_SW_DEV                         = 51
+	_SC_2_LOCALEDEF                      = 52
+	_SC_PII                              = 53
+	_SC_PII_XTI                          = 54
+	_SC_PII_SOCKET                       = 55
+	_SC_PII_INTERNET                     = 56
+	_SC_PII_OSI                          = 57
+	_SC_POLL                             = 58
+	_SC_SELECT                           = 59
+	_SC_UIO_MAXIOV                       = 60
+	_SC_IOV_MAX                          = 61
+	_SC_PII_INTERNET_STREAM              = 62
+	_SC_PII_INTERNET_DGRAM               = 63
+	_SC_PII_OSI_COTS                     = 64
+	_SC_PII_OSI_CLTS                     = 65
+	_SC_PII_OSI_M                        = 66
+	_SC_T_IOV_MAX                        = 67
+	_SC_THREADS                          = 68
+	_SC_THREAD_SAFE_FUNCTIONS            = 69
+	_SC_GETGR_R_SIZE_MAX                 = 70
+	_SC_GETPW_R_SIZE_MAX                 = 71
+	_SC_LOGIN_NAME_MAX                   = 72
+	_SC_TTY_NAME_MAX                     = 73
+	_SC_THREAD_DESTRUCTOR_ITERATIONS     = 74
+	_SC_THREAD_KEYS_MAX                  = 75
+	_SC_THREAD_STACK_MIN                 = 76
+	_SC_THREAD_THREADS_MAX               = 77
+	_SC_THREAD_ATTR_STACKADDR            = 78
+	_SC_THREAD_ATTR_STACKSIZE            = 79
+	_SC_THREAD_PRIORITY_SCHEDULING       = 80
+	_SC_THREAD_PRIO_INHERIT              = 81
+	_SC_THREAD_PRIO_PROTECT              = 82
+	_SC_THREAD_PROCESS_SHARED            = 83
+	_SC_NPROCESSORS_CONF                 = 84
+	_SC_NPROCESSORS_ONLN                 = 85
+	_SC_PHYS_PAGES                       = 86
+	_SC_AVPHYS_PAGES                     = 87
+	_SC_ATEXIT_MAX                       = 88
+	_SC_PASS_MAX                         = 89
+	_SC_XOPEN_VERSION                    = 90
+	_SC_XOPEN_XCU_VERSION                = 91
+	_SC_XOPEN_UNIX                       = 92
+	_SC_XOPEN_CRYPT                      = 93
+	_SC_XOPEN_ENH_I18N                   = 94
+	_SC_XOPEN_SHM                        = 95
+	_SC_2_CHAR_TERM                      = 96
+	_SC_2_C_VERSION                      = 97
+	_SC_2_UPE                            = 98
+	_SC_XOPEN_XPG2                       = 99
+	_SC_XOPEN_XPG3                       = 100
+	_SC_XOPEN_XPG4                       = 101
+	_SC_CHAR_BIT                         = 102
+	_SC_CHAR_MAX                         = 103
+	_SC_CHAR_MIN                         = 104
+	_SC_INT_MAX                          = 105
+	_SC_INT_MIN                          = 106
+	_SC_LONG_BIT                         = 107
+	_SC_WORD_BIT                         = 108
+	_SC_MB_LEN_MAX                       = 109
+	_SC_NZERO                            = 110
+	_SC_SSIZE_MAX                        = 111
+	_SC_SCHAR_MAX                        = 112
+	_SC_SCHAR_MIN                        = 113
+	_SC_SHRT_MAX                         = 114
+	_SC_SHRT_MIN                         = 115
+	_SC_UCHAR_MAX                        = 116
+	_SC_UINT_MAX                         = 117
+	_SC_ULONG_MAX                        = 118
+	_SC_USHRT_MAX                        = 119
+	_SC_NL_ARGMAX                        = 120
+	_SC_NL_LANGMAX                       = 121
+	_SC_NL_MSGMAX                        = 122
+	_SC_NL_NMAX                          = 123
+	_SC_NL_SETMAX                        = 124
+	_SC_NL_TEXTMAX                       = 125
+	_SC_XBS5_ILP32_OFF32                 = 126
+	_SC_XBS5_ILP32_OFFBIG                = 127
+	_SC_XBS5_LP64_OFF64                  = 128
+	_SC_XBS5_LPBIG_OFFBIG                = 129
+	_SC_XOPEN_LEGACY                     = 130
+	_SC_XOPEN_REALTIME                   = 131
+	_SC_XOPEN_REALTIME_THREADS           = 132
+	_SC_ADVISORY_INFO                    = 133
+	_SC_BARRIERS                         = 134
+	_SC_BASE                             = 135
+	_SC_C_LANG_SUPPORT                   = 136
+	_SC_C_LANG_SUPPORT_R                 = 137
+	_SC_CLOCK_SELECTION                  = 138
+	_SC_CPUTIME                          = 139
+	_SC_THREAD_CPUTIME                   = 140
+	_SC_DEVICE_IO                        = 141
+	_SC_DEVICE_SPECIFIC                  = 142
+	_SC_DEVICE_SPECIFIC_R                = 143
+	_SC_FD_MGMT                          = 144
+	_SC_FIFO                             = 145
+	_SC_PIPE                             = 146
+	_SC_FILE_ATTRIBUTES                  = 147
+	_SC_FILE_LOCKING                     = 148
+	_SC_FILE_SYSTEM                      = 149
+	_SC_MONOTONIC_CLOCK                  = 150
+	_SC_MULTI_PROCESS                    = 151
+	_SC_SINGLE_PROCESS                   = 152
+	_SC_NETWORKING                       = 153
+	_SC_READER_WRITER_LOCKS              = 154
+	_SC_SPIN_LOCKS                       = 155
+	_SC_REGEXP                           = 156
+	_SC_REGEX_VERSION                    = 157
+	_SC_SHELL                            = 158
+	_SC_SIGNALS                          = 159
+	_SC_SPAWN                            = 160
+	_SC_SPORADIC_SERVER                  = 161
+	_SC_THREAD_SPORADIC_SERVER           = 162
+	_SC_SYSTEM_DATABASE                  = 163
+	_SC_SYSTEM_DATABASE_R                = 164
+	_SC_TIMEOUTS                         = 165
+	_SC_TYPED_MEMORY_OBJECTS             = 166
+	_SC_USER_GROUPS                      = 167
+	_SC_USER_GROUPS_R                    = 168
+	_SC_2_PBS                            = 169
+	_SC_2_PBS_ACCOUNTING                 = 170
+	_SC_2_PBS_LOCATE                     = 171
+	_SC_2_PBS_MESSAGE                    = 172
+	_SC_2_PBS_TRACK                      = 173
+	_SC_SYMLOOP_MAX                      = 174
+	_SC_STREAMS                          = 175
+	_SC_2_PBS_CHECKPOINT                 = 176
+	_SC_V6_ILP32_OFF32                   = 177
+	_SC_V6_ILP32_OFFBIG                  = 178
+	_SC_V6_LP64_OFF64                    = 179
+	_SC_V6_LPBIG_OFFBIG                  = 180
+	_SC_HOST_NAME_MAX                    = 181
+	_SC_TRACE                            = 182
+	_SC_TRACE_EVENT_FILTER               = 183
+	_SC_TRACE_INHERIT                    = 184
+	_SC_TRACE_LOG                        = 185
+	_SC_LEVEL1_ICACHE_SIZE               = 186
+	_SC_LEVEL1_ICACHE_ASSOC              = 187
+	_SC_LEVEL1_ICACHE_LINESIZE           = 188
+	_SC_LEVEL1_DCACHE_SIZE               = 189
+	_SC_LEVEL1_DCACHE_ASSOC              = 190
+	_SC_LEVEL1_DCACHE_LINESIZE           = 191
+	_SC_LEVEL2_CACHE_SIZE                = 192
+	_SC_LEVEL2_CACHE_ASSOC               = 193
+	_SC_LEVEL2_CACHE_LINESIZE            = 194
+	_SC_LEVEL3_CACHE_SIZE                = 195
+	_SC_LEVEL3_CACHE_ASSOC               = 196
+	_SC_LEVEL3_CACHE_LINESIZE            = 197
+	_SC_LEVEL4_CACHE_SIZE                = 198
+	_SC_LEVEL4_CACHE_ASSOC               = 199
+	_SC_LEVEL4_CACHE_LINESIZE            = 200
+	_SC_IPV6                             = _SC_LEVEL1_ICACHE_SIZE + 50
+	_SC_RAW_SOCKETS                      = 201
+	_SC_V7_ILP32_OFF32                   = 202
+	_SC_V7_ILP32_OFFBIG                  = 203
+	_SC_V7_LP64_OFF64                    = 204
+	_SC_V7_LPBIG_OFFBIG                  = 205
+	_SC_SS_REPL_MAX                      = 206
+	_SC_TRACE_EVENT_NAME_MAX             = 207
+	_SC_TRACE_NAME_MAX                   = 208
+	_SC_TRACE_SYS_MAX                    = 209
+	_SC_TRACE_USER_EVENT_MAX             = 210
+	_SC_XOPEN_STREAMS                    = 211
+	_SC_THREAD_ROBUST_PRIO_INHERIT       = 212
+	_SC_THREAD_ROBUST_PRIO_PROTECT       = 213
+)
+const (
+	_CS_PATH                            int = 0
+	_CS_V6_WIDTH_RESTRICTED_ENVS            = 1
+	_CS_GNU_LIBC_VERSION                    = 2
+	_CS_GNU_LIBPTHREAD_VERSION              = 3
+	_CS_V5_WIDTH_RESTRICTED_ENVS            = 4
+	_CS_V7_WIDTH_RESTRICTED_ENVS            = 5
+	_CS_LFS_CFLAGS                          = 1000
+	_CS_LFS_LDFLAGS                         = 1001
+	_CS_LFS_LIBS                            = 1002
+	_CS_LFS_LINTFLAGS                       = 1003
+	_CS_LFS64_CFLAGS                        = 1004
+	_CS_LFS64_LDFLAGS                       = 1005
+	_CS_LFS64_LIBS                          = 1006
+	_CS_LFS64_LINTFLAGS                     = 1007
+	_CS_XBS5_ILP32_OFF32_CFLAGS             = 1100
+	_CS_XBS5_ILP32_OFF32_LDFLAGS            = 1101
+	_CS_XBS5_ILP32_OFF32_LIBS               = 1102
+	_CS_XBS5_ILP32_OFF32_LINTFLAGS          = 1103
+	_CS_XBS5_ILP32_OFFBIG_CFLAGS            = 1104
+	_CS_XBS5_ILP32_OFFBIG_LDFLAGS           = 1105
+	_CS_XBS5_ILP32_OFFBIG_LIBS              = 1106
+	_CS_XBS5_ILP32_OFFBIG_LINTFLAGS         = 1107
+	_CS_XBS5_LP64_OFF64_CFLAGS              = 1108
+	_CS_XBS5_LP64_OFF64_LDFLAGS             = 1109
+	_CS_XBS5_LP64_OFF64_LIBS                = 1110
+	_CS_XBS5_LP64_OFF64_LINTFLAGS           = 1111
+	_CS_XBS5_LPBIG_OFFBIG_CFLAGS            = 1112
+	_CS_XBS5_LPBIG_OFFBIG_LDFLAGS           = 1113
+	_CS_XBS5_LPBIG_OFFBIG_LIBS              = 1114
+	_CS_XBS5_LPBIG_OFFBIG_LINTFLAGS         = 1115
+	_CS_POSIX_V6_ILP32_OFF32_CFLAGS         = 1116
+	_CS_POSIX_V6_ILP32_OFF32_LDFLAGS        = 1117
+	_CS_POSIX_V6_ILP32_OFF32_LIBS           = 1118
+	_CS_POSIX_V6_ILP32_OFF32_LINTFLAGS      = 1119
+	_CS_POSIX_V6_ILP32_OFFBIG_CFLAGS        = 1120
+	_CS_POSIX_V6_ILP32_OFFBIG_LDFLAGS       = 1121
+	_CS_POSIX_V6_ILP32_OFFBIG_LIBS          = 1122
+	_CS_POSIX_V6_ILP32_OFFBIG_LINTFLAGS     = 1123
+	_CS_POSIX_V6_LP64_OFF64_CFLAGS          = 1124
+	_CS_POSIX_V6_LP64_OFF64_LDFLAGS         = 1125
+	_CS_POSIX_V6_LP64_OFF64_LIBS            = 1126
+	_CS_POSIX_V6_LP64_OFF64_LINTFLAGS       = 1127
+	_CS_POSIX_V6_LPBIG_OFFBIG_CFLAGS        = 1128
+	_CS_POSIX_V6_LPBIG_OFFBIG_LDFLAGS       = 1129
+	_CS_POSIX_V6_LPBIG_OFFBIG_LIBS          = 1130
+	_CS_POSIX_V6_LPBIG_OFFBIG_LINTFLAGS     = 1131
+	_CS_POSIX_V7_ILP32_OFF32_CFLAGS         = 1132
+	_CS_POSIX_V7_ILP32_OFF32_LDFLAGS        = 1133
+	_CS_POSIX_V7_ILP32_OFF32_LIBS           = 1134
+	_CS_POSIX_V7_ILP32_OFF32_LINTFLAGS      = 1135
+	_CS_POSIX_V7_ILP32_OFFBIG_CFLAGS        = 1136
+	_CS_POSIX_V7_ILP32_OFFBIG_LDFLAGS       = 1137
+	_CS_POSIX_V7_ILP32_OFFBIG_LIBS          = 1138
+	_CS_POSIX_V7_ILP32_OFFBIG_LINTFLAGS     = 1139
+	_CS_POSIX_V7_LP64_OFF64_CFLAGS          = 1140
+	_CS_POSIX_V7_LP64_OFF64_LDFLAGS         = 1141
+	_CS_POSIX_V7_LP64_OFF64_LIBS            = 1142
+	_CS_POSIX_V7_LP64_OFF64_LINTFLAGS       = 1143
+	_CS_POSIX_V7_LPBIG_OFFBIG_CFLAGS        = 1144
+	_CS_POSIX_V7_LPBIG_OFFBIG_LDFLAGS       = 1145
+	_CS_POSIX_V7_LPBIG_OFFBIG_LIBS          = 1146
+	_CS_POSIX_V7_LPBIG_OFFBIG_LINTFLAGS     = 1147
+	_CS_V6_ENV                              = 1148
+	_CS_V7_ENV                              = 1149
+)
 
 type FCOMPLEX struct {
 	r float32
@@ -1490,7 +908,7 @@ func main() {
 		color(0)
 		noarch.Fprintf(stdout, []byte("\n\x00"))
 	}
-	sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&nN))[:])
+	sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[100000000]int)(unsafe.Pointer(&nN))[:])
 	if sfrv != 1 {
 		sferr([]byte("nN value for number of nodes\x00"))
 	}
@@ -1508,11 +926,11 @@ func main() {
 	DoF = 6 * nN
 	q = ivector(int32(1), int32(DoF))
 	r = ivector(int32(1), int32(DoF))
-	read_reaction_data(fp, DoF, nN, (*[1]int)(unsafe.Pointer(&nR))[:], q, r, (*[1]int)(unsafe.Pointer(&sumR))[:], verbose)
+	read_reaction_data(fp, DoF, nN, (*[100000000]int)(unsafe.Pointer(&nR))[:], q, r, (*[100000000]int)(unsafe.Pointer(&sumR))[:], verbose)
 	if verbose != 0 {
 		noarch.Fprintf(stdout, []byte(" ... complete\n\x00"))
 	}
-	sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&nE))[:])
+	sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[100000000]int)(unsafe.Pointer(&nE))[:])
 	if sfrv != 1 {
 		sferr([]byte("nE value for number of frame elements\x00"))
 	}
@@ -1543,8 +961,8 @@ func main() {
 	if verbose != 0 {
 		noarch.Fprintf(stdout, []byte(" ... complete\n\x00"))
 	}
-	read_run_data(fp, OUT_file, (*[1]int)(unsafe.Pointer(&shear))[:], shear_flag, (*[1]int)(unsafe.Pointer(&geom))[:], geom_flag, meshpath, plotpath, infcpath, (*[1]float64)(unsafe.Pointer(&exagg_static))[:], exagg_flag, (*[1]float32)(unsafe.Pointer(&scale))[:], (*[1]float32)(unsafe.Pointer(&dx))[:], (*[1]int)(unsafe.Pointer(&anlyz))[:], anlyz_flag, debug)
-	sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&nL))[:])
+	read_run_data(fp, OUT_file, (*[100000000]int)(unsafe.Pointer(&shear))[:], shear_flag, (*[100000000]int)(unsafe.Pointer(&geom))[:], geom_flag, meshpath, plotpath, infcpath, (*[100000000]float64)(unsafe.Pointer(&exagg_static))[:], exagg_flag, (*[100000000]float32)(unsafe.Pointer(&scale))[:], (*[100000000]float32)(unsafe.Pointer(&dx))[:], (*[100000000]int)(unsafe.Pointer(&anlyz))[:], anlyz_flag, debug)
+	sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[100000000]int)(unsafe.Pointer(&nL))[:])
 	if sfrv != 1 {
 		sferr([]byte("nL value for number of load cases\x00"))
 	}
@@ -1603,12 +1021,12 @@ func main() {
 		noarch.Fprintf(stdout, []byte("                                                     \x00"))
 		noarch.Fprintf(stdout, []byte(" load data ... complete\n\x00"))
 	}
-	read_mass_data(fp, IN_file, nN, nE, (*[1]int)(unsafe.Pointer(&nI))[:], (*[1]int)(unsafe.Pointer(&nX))[:], d, EMs, NMs, NMx, NMy, NMz, L, Ax, (*[1]float64)(unsafe.Pointer(&total_mass))[:], (*[1]float64)(unsafe.Pointer(&struct_mass))[:], (*[1]int)(unsafe.Pointer(&nM))[:], (*[1]int)(unsafe.Pointer(&Mmethod))[:], modal_flag, (*[1]int)(unsafe.Pointer(&lump))[:], lump_flag, (*[1]float64)(unsafe.Pointer(&tol))[:], tol_flag, (*[1]float64)(unsafe.Pointer(&shift))[:], shift_flag, (*[1]float64)(unsafe.Pointer(&exagg_modal))[:], modepath, anim, (*[1]float32)(unsafe.Pointer(&pan))[:], pan_flag, verbose, debug)
+	read_mass_data(fp, IN_file, nN, nE, (*[100000000]int)(unsafe.Pointer(&nI))[:], (*[100000000]int)(unsafe.Pointer(&nX))[:], d, EMs, NMs, NMx, NMy, NMz, L, Ax, (*[100000000]float64)(unsafe.Pointer(&total_mass))[:], (*[100000000]float64)(unsafe.Pointer(&struct_mass))[:], (*[100000000]int)(unsafe.Pointer(&nM))[:], (*[100000000]int)(unsafe.Pointer(&Mmethod))[:], modal_flag, (*[100000000]int)(unsafe.Pointer(&lump))[:], lump_flag, (*[100000000]float64)(unsafe.Pointer(&tol))[:], tol_flag, (*[100000000]float64)(unsafe.Pointer(&shift))[:], shift_flag, (*[100000000]float64)(unsafe.Pointer(&exagg_modal))[:], modepath, anim, (*[100000000]float32)(unsafe.Pointer(&pan))[:], pan_flag, verbose, debug)
 	if verbose != 0 {
 		noarch.Fprintf(stdout, []byte("                                                     \x00"))
 		noarch.Fprintf(stdout, []byte(" mass data ... complete\n\x00"))
 	}
-	read_condensation_data(fp, nN, nM, (*[1]int)(unsafe.Pointer(&nC))[:], (*[1]int)(unsafe.Pointer(&Cdof))[:], (*[1]int)(unsafe.Pointer(&Cmethod))[:], condense_flag, c, m, verbose)
+	read_condensation_data(fp, nN, nM, (*[100000000]int)(unsafe.Pointer(&nC))[:], (*[100000000]int)(unsafe.Pointer(&Cdof))[:], (*[100000000]int)(unsafe.Pointer(&Cmethod))[:], condense_flag, c, m, verbose)
 	if nC > 0 && verbose != 0 {
 		noarch.Fprintf(stdout, []byte("                                      \x00"))
 		noarch.Fprintf(stdout, []byte(" matrix condensation data ... complete\n\x00"))
@@ -1648,7 +1066,7 @@ func main() {
 				if verbose != 0 {
 					noarch.Fprintf(stdout, []byte(" Linear Elastic Analysis ... Temperature Loads\n\x00"))
 				}
-				solve_system(K, dD, F_temp[lc], dR, DoF, q, r, (*[1]int)(unsafe.Pointer(&ok))[:], verbose, (*[1]float64)(unsafe.Pointer(&rms_resid))[:])
+				solve_system(K, dD, F_temp[lc], dR, DoF, q, r, (*[100000000]int)(unsafe.Pointer(&ok))[:], verbose, (*[100000000]float64)(unsafe.Pointer(&rms_resid))[:])
 				for i = 1; i <= DoF; i++ {
 					if q[i] != 0 {
 						D[i] += dD[i]
@@ -1662,7 +1080,7 @@ func main() {
 				noarch.Printf([]byte("STEP 1\x00"))
 				if geom != 0 {
 					noarch.Printf([]byte("GEOM\n\x00"))
-					element_end_forces(Q, nE, xyz, L, Le, N1, N2, Ax, Asy, Asz, Jx, Iy, Iz, E, G, p, eqF_temp[lc], eqF_mech[lc], D, shear, geom, (*[1]int)(unsafe.Pointer(&axial_strain_warning))[:])
+					element_end_forces(Q, nE, xyz, L, Le, N1, N2, Ax, Asy, Asz, Jx, Iy, Iz, E, G, p, eqF_temp[lc], eqF_mech[lc], D, shear, geom, (*[100000000]int)(unsafe.Pointer(&axial_strain_warning))[:])
 					noarch.Printf([]byte("STEP 2\x00"))
 					assemble_K(K, DoF, nE, xyz, rj, L, Le, N1, N2, Ax, Asy, Asz, Jx, Iy, Iz, E, G, p, shear, geom, Q, debug)
 				}
@@ -1680,7 +1098,7 @@ func main() {
 					}
 				}
 				noarch.Printf([]byte("STEP 6\n\x00"))
-				solve_system(K, dD, F_mech[lc], dR, DoF, q, r, (*[1]int)(unsafe.Pointer(&ok))[:], verbose, (*[1]float64)(unsafe.Pointer(&rms_resid))[:])
+				solve_system(K, dD, F_mech[lc], dR, DoF, q, r, (*[100000000]int)(unsafe.Pointer(&ok))[:], verbose, (*[100000000]float64)(unsafe.Pointer(&rms_resid))[:])
 				noarch.Printf([]byte("STEP 7\n\x00"))
 				for i = 1; i <= DoF; i++ {
 					if q[i] != 0 {
@@ -1700,7 +1118,7 @@ func main() {
 			for i = 1; i <= DoF; i++ {
 				F[i] = F_temp[lc][i] + F_mech[lc][i]
 			}
-			element_end_forces(Q, nE, xyz, L, Le, N1, N2, Ax, Asy, Asz, Jx, Iy, Iz, E, G, p, eqF_temp[lc], eqF_mech[lc], D, shear, geom, (*[1]int)(unsafe.Pointer(&axial_strain_warning))[:])
+			element_end_forces(Q, nE, xyz, L, Le, N1, N2, Ax, Asy, Asz, Jx, Iy, Iz, E, G, p, eqF_temp[lc], eqF_mech[lc], D, shear, geom, (*[100000000]int)(unsafe.Pointer(&axial_strain_warning))[:])
 			noarch.Printf([]byte("STEP 10\n\x00"))
 			error = equilibrium_error(dF, F, K, D, DoF, q, r)
 			noarch.Printf([]byte("STEP 11\n\x00"))
@@ -1717,7 +1135,7 @@ func main() {
 				iter += 1
 				assemble_K(K, DoF, nE, xyz, rj, L, Le, N1, N2, Ax, Asy, Asz, Jx, Iy, Iz, E, G, p, shear, geom, Q, debug)
 				error = equilibrium_error(dF, F, K, D, DoF, q, r)
-				solve_system(K, dD, dF, dR, DoF, q, r, (*[1]int)(unsafe.Pointer(&ok))[:], verbose, (*[1]float64)(unsafe.Pointer(&rms_resid))[:])
+				solve_system(K, dD, dF, dR, DoF, q, r, (*[100000000]int)(unsafe.Pointer(&ok))[:], verbose, (*[100000000]float64)(unsafe.Pointer(&rms_resid))[:])
 				if ok < 0 {
 					noarch.Fprintf(stderr, []byte("   The stiffness matrix is not pos-def. \n\x00"))
 					noarch.Fprintf(stderr, []byte("   Reduce loads and re-run the analysis.\n\x00"))
@@ -1729,7 +1147,7 @@ func main() {
 						D[i] += dD[i]
 					}
 				}
-				element_end_forces(Q, nE, xyz, L, Le, N1, N2, Ax, Asy, Asz, Jx, Iy, Iz, E, G, p, eqF_temp[lc], eqF_mech[lc], D, shear, geom, (*[1]int)(unsafe.Pointer(&axial_strain_warning))[:])
+				element_end_forces(Q, nE, xyz, L, Le, N1, N2, Ax, Asy, Asz, Jx, Iy, Iz, E, G, p, eqF_temp[lc], eqF_mech[lc], D, shear, geom, (*[100000000]int)(unsafe.Pointer(&axial_strain_warning))[:])
 				if verbose != 0 {
 					noarch.Fprintf(stdout, []byte("   NR iteration %3d ---\x00"), iter)
 					noarch.Fprintf(stdout, []byte(" RMS relative equilibrium error = %8.2e \n\x00"), error)
@@ -1806,10 +1224,10 @@ func main() {
 		}
 		if anlyz != 0 {
 			if Mmethod == 1 {
-				subspace(K, M, DoF, nM_calc, f, V, tol, shift, (*[1]int)(unsafe.Pointer(&iter))[:], (*[1]int)(unsafe.Pointer(&ok))[:], verbose)
+				subspace(K, M, DoF, nM_calc, f, V, tol, shift, (*[100000000]int)(unsafe.Pointer(&iter))[:], (*[100000000]int)(unsafe.Pointer(&ok))[:], verbose)
 			}
 			if Mmethod == 2 {
-				stodola(K, M, DoF, nM_calc, f, V, tol, shift, (*[1]int)(unsafe.Pointer(&iter))[:], (*[1]int)(unsafe.Pointer(&ok))[:], verbose)
+				stodola(K, M, DoF, nM_calc, f, V, tol, shift, (*[100000000]int)(unsafe.Pointer(&iter))[:], (*[100000000]int)(unsafe.Pointer(&ok))[:], verbose)
 			}
 			for j = 1; j <= nM_calc; j++ {
 				f[j] = math.Sqrt(f[j]) / (2 * 3.141592653589793)
@@ -1985,7 +1403,7 @@ func elastic_K(k [][]float64, xyz []vec3, r []float32, L float64, Le float64, n1
 	var Ksz float64
 	var i int
 	var j int
-	coord_trans(xyz, L, n1, n2, (*[1]float64)(unsafe.Pointer(&t1))[:], (*[1]float64)(unsafe.Pointer(&t2))[:], (*[1]float64)(unsafe.Pointer(&t3))[:], (*[1]float64)(unsafe.Pointer(&t4))[:], (*[1]float64)(unsafe.Pointer(&t5))[:], (*[1]float64)(unsafe.Pointer(&t6))[:], (*[1]float64)(unsafe.Pointer(&t7))[:], (*[1]float64)(unsafe.Pointer(&t8))[:], (*[1]float64)(unsafe.Pointer(&t9))[:], p)
+	coord_trans(xyz, L, n1, n2, (*[100000000]float64)(unsafe.Pointer(&t1))[:], (*[100000000]float64)(unsafe.Pointer(&t2))[:], (*[100000000]float64)(unsafe.Pointer(&t3))[:], (*[100000000]float64)(unsafe.Pointer(&t4))[:], (*[100000000]float64)(unsafe.Pointer(&t5))[:], (*[100000000]float64)(unsafe.Pointer(&t6))[:], (*[100000000]float64)(unsafe.Pointer(&t7))[:], (*[100000000]float64)(unsafe.Pointer(&t8))[:], (*[100000000]float64)(unsafe.Pointer(&t9))[:], p)
 	for i = 1; i <= 12; i++ {
 		for j = 1; j <= 12; j++ {
 			k[i][j] = 0
@@ -2086,7 +1504,7 @@ func geometric_K(k [][]float64, xyz []vec3, r []float32, L float64, Le float64, 
 	var Dsz float64
 	var i int
 	var j int
-	coord_trans(xyz, L, n1, n2, (*[1]float64)(unsafe.Pointer(&t1))[:], (*[1]float64)(unsafe.Pointer(&t2))[:], (*[1]float64)(unsafe.Pointer(&t3))[:], (*[1]float64)(unsafe.Pointer(&t4))[:], (*[1]float64)(unsafe.Pointer(&t5))[:], (*[1]float64)(unsafe.Pointer(&t6))[:], (*[1]float64)(unsafe.Pointer(&t7))[:], (*[1]float64)(unsafe.Pointer(&t8))[:], (*[1]float64)(unsafe.Pointer(&t9))[:], p)
+	coord_trans(xyz, L, n1, n2, (*[100000000]float64)(unsafe.Pointer(&t1))[:], (*[100000000]float64)(unsafe.Pointer(&t2))[:], (*[100000000]float64)(unsafe.Pointer(&t3))[:], (*[100000000]float64)(unsafe.Pointer(&t4))[:], (*[100000000]float64)(unsafe.Pointer(&t5))[:], (*[100000000]float64)(unsafe.Pointer(&t6))[:], (*[100000000]float64)(unsafe.Pointer(&t7))[:], (*[100000000]float64)(unsafe.Pointer(&t8))[:], (*[100000000]float64)(unsafe.Pointer(&t9))[:], p)
 	kg = dmatrix(int32(1), int32(12), int32(1), int32(12))
 	for i = 1; i <= 12; i++ {
 		for j = 1; j <= 12; j++ {
@@ -2284,7 +1702,7 @@ func element_end_forces(Q [][]float64, nE int, xyz []vec3, L []float64, Le []flo
 	s = dvector(int32(1), int32(12))
 	axial_strain_warning[0] = 0
 	for m = 1; m <= nE; m++ {
-		frame_element_force(s, xyz, L[m], Le[m], N1[m], N2[m], Ax[m], Asy[m], Asz[m], Jx[m], Iy[m], Iz[m], E[m], G[m], p[m], eqF_temp[m], eqF_mech[m], D, shear, geom, (*[1]float64)(unsafe.Pointer(&axial_strain))[:])
+		frame_element_force(s, xyz, L[m], Le[m], N1[m], N2[m], Ax[m], Asy[m], Asz[m], Jx[m], Iy[m], Iz[m], E[m], G[m], p[m], eqF_temp[m], eqF_mech[m], D, shear, geom, (*[100000000]float64)(unsafe.Pointer(&axial_strain))[:])
 		for j = 1; j <= 12; j++ {
 			Q[m][j] = s[j]
 		}
@@ -2375,7 +1793,7 @@ func frame_element_force(s []float64, xyz []vec3, L float64, Le float64, n1 int,
 	var f10 float64 = float64(0)
 	var f11 float64 = float64(0)
 	var f12 float64 = float64(0)
-	coord_trans(xyz, L, n1, n2, (*[1]float64)(unsafe.Pointer(&t1))[:], (*[1]float64)(unsafe.Pointer(&t2))[:], (*[1]float64)(unsafe.Pointer(&t3))[:], (*[1]float64)(unsafe.Pointer(&t4))[:], (*[1]float64)(unsafe.Pointer(&t5))[:], (*[1]float64)(unsafe.Pointer(&t6))[:], (*[1]float64)(unsafe.Pointer(&t7))[:], (*[1]float64)(unsafe.Pointer(&t8))[:], (*[1]float64)(unsafe.Pointer(&t9))[:], p)
+	coord_trans(xyz, L, n1, n2, (*[100000000]float64)(unsafe.Pointer(&t1))[:], (*[100000000]float64)(unsafe.Pointer(&t2))[:], (*[100000000]float64)(unsafe.Pointer(&t3))[:], (*[100000000]float64)(unsafe.Pointer(&t4))[:], (*[100000000]float64)(unsafe.Pointer(&t5))[:], (*[100000000]float64)(unsafe.Pointer(&t6))[:], (*[100000000]float64)(unsafe.Pointer(&t7))[:], (*[100000000]float64)(unsafe.Pointer(&t8))[:], (*[100000000]float64)(unsafe.Pointer(&t9))[:], p)
 	n1 = 6 * (n1 - 1)
 	n2 = 6 * (n2 - 1)
 	d1 = D[n1+1]
@@ -2610,7 +2028,7 @@ func lumped_M(m [][]float64, xyz []vec3, L float64, n1 int, n2 int, Ax float32, 
 	var po float64
 	var i int
 	var j int
-	coord_trans(xyz, L, n1, n2, (*[1]float64)(unsafe.Pointer(&t1))[:], (*[1]float64)(unsafe.Pointer(&t2))[:], (*[1]float64)(unsafe.Pointer(&t3))[:], (*[1]float64)(unsafe.Pointer(&t4))[:], (*[1]float64)(unsafe.Pointer(&t5))[:], (*[1]float64)(unsafe.Pointer(&t6))[:], (*[1]float64)(unsafe.Pointer(&t7))[:], (*[1]float64)(unsafe.Pointer(&t8))[:], (*[1]float64)(unsafe.Pointer(&t9))[:], p)
+	coord_trans(xyz, L, n1, n2, (*[100000000]float64)(unsafe.Pointer(&t1))[:], (*[100000000]float64)(unsafe.Pointer(&t2))[:], (*[100000000]float64)(unsafe.Pointer(&t3))[:], (*[100000000]float64)(unsafe.Pointer(&t4))[:], (*[100000000]float64)(unsafe.Pointer(&t5))[:], (*[100000000]float64)(unsafe.Pointer(&t6))[:], (*[100000000]float64)(unsafe.Pointer(&t7))[:], (*[100000000]float64)(unsafe.Pointer(&t8))[:], (*[100000000]float64)(unsafe.Pointer(&t9))[:], p)
 	t = (float64(d*Ax)*L + float64(EMs)) / 2
 	ry = float64(d*Iy) * L / 2
 	rz = float64(d*Iz) * L / 2
@@ -2673,7 +2091,7 @@ func consistent_M(m [][]float64, xyz []vec3, r []float32, L float64, n1 int, n2 
 	var po float64
 	var i int
 	var j int
-	coord_trans(xyz, L, n1, n2, (*[1]float64)(unsafe.Pointer(&t1))[:], (*[1]float64)(unsafe.Pointer(&t2))[:], (*[1]float64)(unsafe.Pointer(&t3))[:], (*[1]float64)(unsafe.Pointer(&t4))[:], (*[1]float64)(unsafe.Pointer(&t5))[:], (*[1]float64)(unsafe.Pointer(&t6))[:], (*[1]float64)(unsafe.Pointer(&t7))[:], (*[1]float64)(unsafe.Pointer(&t8))[:], (*[1]float64)(unsafe.Pointer(&t9))[:], p)
+	coord_trans(xyz, L, n1, n2, (*[100000000]float64)(unsafe.Pointer(&t1))[:], (*[100000000]float64)(unsafe.Pointer(&t2))[:], (*[100000000]float64)(unsafe.Pointer(&t3))[:], (*[100000000]float64)(unsafe.Pointer(&t4))[:], (*[100000000]float64)(unsafe.Pointer(&t5))[:], (*[100000000]float64)(unsafe.Pointer(&t6))[:], (*[100000000]float64)(unsafe.Pointer(&t7))[:], (*[100000000]float64)(unsafe.Pointer(&t8))[:], (*[100000000]float64)(unsafe.Pointer(&t9))[:], p)
 	t = float64(d*Ax) * L
 	ry = float64(d * Iy)
 	rz = float64(d * Iz)
@@ -2855,12 +2273,12 @@ func paz_condensation(M [][]float64, K [][]float64, N int, c []int, n int, Mc []
 	var cj int
 	var ok int
 	var r []int
-	(func() {
+	func() {
 		if (map[bool]int{false: 0, true: 1}[M != nil]) != 0 {
 		} else {
 			linux.AssertFail([]byte("M!=NULL\x00"), []byte("/home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd.c\x00"), uint32(949), []byte("void print_number(int *)"))
 		}
-	}())
+	}()
 	r = ivector(int32(1), int32(N-n))
 	Drr = dmatrix(int32(1), int32(N-n), int32(1), int32(N-n))
 	Drc = dmatrix(int32(1), int32(N-n), int32(1), int32(n))
@@ -2909,7 +2327,7 @@ func paz_condensation(M [][]float64, K [][]float64, N int, c []int, n int, Mc []
 			}
 		}
 	}
-	invAB(Drr, Drc, N-n, n, invDrrDrc, (*[1]int)(unsafe.Pointer(&ok))[:], verbose)
+	invAB(Drr, Drc, N-n, n, invDrrDrc, (*[100000000]int)(unsafe.Pointer(&ok))[:], verbose)
 	for i = 1; i <= n; i++ {
 		for j = 1; j <= n; j++ {
 			T[c[i]][j] = 0
@@ -3077,19 +2495,20 @@ func deallocate(nN int, nE int, nL int, nF []int, nU []int, nW []int, nP []int, 
 	}
 }
 
-const _ISupper uint16 = ((1 << 0) << 8)
-const // Warning (EnumDecl):  /usr/include/ctype.h:46 : Add support of continues counter for type : *ast.ParenExpr
-_ISlower uint16 = ((1 << 1) << 8)
-const _ISalpha uint16 = ((1 << 2) << 8)
-const _ISdigit uint16 = ((1 << 3) << 8)
-const _ISxdigit uint16 = ((1 << 4) << 8)
-const _ISspace uint16 = ((1 << 5) << 8)
-const _ISprint uint16 = ((1 << 6) << 8)
-const _ISgraph uint16 = ((1 << 7) << 8)
-const _ISblank uint16 = ((1 << 8) >> 8)
-const _IScntrl uint16 = ((1 << 9) >> 8)
-const _ISpunct uint16 = ((1 << 10) >> 8)
-const _ISalnum uint16 = ((1 << 11) >> 8)
+const (
+	_ISupper  int = (1 << 0) << 8
+	_ISlower      = (1 << 1) << 8
+	_ISalpha      = (1 << 2) << 8
+	_ISdigit      = (1 << 3) << 8
+	_ISxdigit     = (1 << 4) << 8
+	_ISspace      = (1 << 5) << 8
+	_ISprint      = (1 << 6) << 8
+	_ISgraph      = (1 << 7) << 8
+	_ISblank      = (1 << 8) >> 8
+	_IScntrl      = (1 << 9) >> 8
+	_ISpunct      = (1 << 10) >> 8
+	_ISalnum      = (1 << 11) >> 8
+)
 
 // parse_options - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:58
 /*
@@ -3302,10 +2721,10 @@ func parse_options(argc int, argv [][]byte, IN_file []byte, OUT_file []byte, she
 	axial_sign[0] = 1
 	debug[0] = 0
 	verbose[0] = 1
-	noarch.Strcpy([]byte(IN_file), []byte("exA.3dd\x00\x00"))
-	noarch.Strcpy([]byte(OUT_file), []byte("exA.3dd.out\x00\x00"))
+	noarch.Strcpy(IN_file, []byte("exA.3dd\x00\x00"))
+	noarch.Strcpy(OUT_file, []byte("exA.3dd.out\x00\x00"))
 	if noarch.Strcmp(IN_file, []byte("\x00\x00")) != 0 && noarch.Strcmp(OUT_file, []byte("\x00\x00")) == 0 {
-		noarch.Strcpy([]byte(OUT_file), IN_file)
+		noarch.Strcpy(OUT_file, IN_file)
 		noarch.Strcat(OUT_file, []byte(".out\x00"))
 	}
 }
@@ -3424,7 +2843,7 @@ func read_node_data(fp *noarch.File, nN int, xyz []vec3, r []float32) {
 	var sfrv int = 0
 	var errMsg []byte = make([]byte, 512, 512)
 	for i = 1; i <= nN; i++ {
-		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&j))[:])
+		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[100000000]int)(unsafe.Pointer(&j))[:])
 		if sfrv != 1 {
 			sferr([]byte("node number in node data\x00"))
 		}
@@ -3433,7 +2852,7 @@ func read_node_data(fp *noarch.File, nN int, xyz []vec3, r []float32) {
 			errorMsg(errMsg)
 			os.Exit(41)
 		}
-		sfrv = noarch.Fscanf(fp, []byte("%lf %lf %lf %f\x00"), (*[1]float64)(unsafe.Pointer(&xyz[j].x))[:], (*[1]float64)(unsafe.Pointer(&xyz[j].y))[:], (*[1]float64)(unsafe.Pointer(&xyz[j].z))[:], (*[1]float32)(unsafe.Pointer(&r[j]))[:])
+		sfrv = noarch.Fscanf(fp, []byte("%lf %lf %lf %f\x00"), (*[100000000]float64)(unsafe.Pointer(&xyz[j].x))[:], (*[100000000]float64)(unsafe.Pointer(&xyz[j].y))[:], (*[100000000]float64)(unsafe.Pointer(&xyz[j].z))[:], (*[100000000]float32)(unsafe.Pointer(&r[j]))[:])
 		if sfrv != 4 {
 			sferr([]byte("node coordinates in node data\x00"))
 		}
@@ -3468,7 +2887,7 @@ func read_frame_element_data(fp *noarch.File, nN int, nE int, xyz []vec3, r []fl
 		epn[n] = 0
 	}
 	for i = 1; i <= nE; i++ {
-		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&b))[:])
+		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[100000000]int)(unsafe.Pointer(&b))[:])
 		if sfrv != 1 {
 			sferr([]byte("frame element number in element data\x00"))
 		}
@@ -3477,7 +2896,7 @@ func read_frame_element_data(fp *noarch.File, nN int, nE int, xyz []vec3, r []fl
 			errorMsg(errMsg)
 			os.Exit(51)
 		}
-		sfrv = noarch.Fscanf(fp, []byte("%d %d\x00"), (*[1]int)(unsafe.Pointer(&N1[b]))[:], (*[1]int)(unsafe.Pointer(&N2[b]))[:])
+		sfrv = noarch.Fscanf(fp, []byte("%d %d\x00"), (*[100000000]int)(unsafe.Pointer(&N1[b]))[:], (*[100000000]int)(unsafe.Pointer(&N2[b]))[:])
 		epn[N1[b]] += 1
 		epn[N2[b]] += 1
 		if sfrv != 2 {
@@ -3488,24 +2907,24 @@ func read_frame_element_data(fp *noarch.File, nN int, nE int, xyz []vec3, r []fl
 			errorMsg(errMsg)
 			os.Exit(52)
 		}
-		sfrv = noarch.Fscanf(fp, []byte("%f %f %f\x00"), (*[1]float32)(unsafe.Pointer(&Ax[b]))[:], (*[1]float32)(unsafe.Pointer(&Asy[b]))[:], (*[1]float32)(unsafe.Pointer(&Asz[b]))[:])
+		sfrv = noarch.Fscanf(fp, []byte("%f %f %f\x00"), (*[100000000]float32)(unsafe.Pointer(&Ax[b]))[:], (*[100000000]float32)(unsafe.Pointer(&Asy[b]))[:], (*[100000000]float32)(unsafe.Pointer(&Asz[b]))[:])
 		if sfrv != 3 {
 			sferr([]byte("section areas in frame element data\x00"))
 		}
-		sfrv = noarch.Fscanf(fp, []byte("%f %f %f\x00"), (*[1]float32)(unsafe.Pointer(&Jx[b]))[:], (*[1]float32)(unsafe.Pointer(&Iy[b]))[:], (*[1]float32)(unsafe.Pointer(&Iz[b]))[:])
+		sfrv = noarch.Fscanf(fp, []byte("%f %f %f\x00"), (*[100000000]float32)(unsafe.Pointer(&Jx[b]))[:], (*[100000000]float32)(unsafe.Pointer(&Iy[b]))[:], (*[100000000]float32)(unsafe.Pointer(&Iz[b]))[:])
 		if sfrv != 3 {
 			sferr([]byte("section inertias in frame element data\x00"))
 		}
-		sfrv = noarch.Fscanf(fp, []byte("%f %f\x00"), (*[1]float32)(unsafe.Pointer(&E[b]))[:], (*[1]float32)(unsafe.Pointer(&G[b]))[:])
+		sfrv = noarch.Fscanf(fp, []byte("%f %f\x00"), (*[100000000]float32)(unsafe.Pointer(&E[b]))[:], (*[100000000]float32)(unsafe.Pointer(&G[b]))[:])
 		if sfrv != 2 {
 			sferr([]byte("material moduli in frame element data\x00"))
 		}
-		sfrv = noarch.Fscanf(fp, []byte("%f\x00"), (*[1]float32)(unsafe.Pointer(&p[b]))[:])
+		sfrv = noarch.Fscanf(fp, []byte("%f\x00"), (*[100000000]float32)(unsafe.Pointer(&p[b]))[:])
 		if sfrv != 1 {
 			sferr([]byte("roll angle in frame element data\x00"))
 		}
 		p[b] = float32(float64(p[b]) * 3.141592653589793 / 180)
-		sfrv = noarch.Fscanf(fp, []byte("%f\x00"), (*[1]float32)(unsafe.Pointer(&d[b]))[:])
+		sfrv = noarch.Fscanf(fp, []byte("%f\x00"), (*[100000000]float32)(unsafe.Pointer(&d[b]))[:])
 		if sfrv != 1 {
 			sferr([]byte("mass density in frame element data\x00"))
 		}
@@ -3751,12 +3170,12 @@ func temp_dir() []byte {
 //
 func output_path(fname []byte, fullpath []byte, len int, default_outdir []byte) {
 	var res int
-	(func() {
+	func() {
 		if (map[bool]int{false: 0, true: 1}[fname != nil]) != 0 {
 		} else {
 			linux.AssertFail([]byte("fname!=NULL\x00"), []byte("/home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c\x00"), uint32(667), []byte("void print_number(int *)"))
 		}
-	}())
+	}()
 	var outdir []byte
 	outdir = noarch.Getenv([]byte("FRAME3DD_OUTDIR\x00"))
 	if outdir == nil {
@@ -3766,7 +3185,7 @@ func output_path(fname []byte, fullpath []byte, len int, default_outdir []byte) 
 			outdir = default_outdir
 		}
 	}
-	res = noarch.Sprintf([]byte(fullpath), []byte("%s%c%s\x00"), outdir, int(sep), fname)
+	res = noarch.Sprintf(fullpath, []byte("%s%c%s\x00"), outdir, int(sep), fname)
 	if res > len {
 		errorMsg([]byte("ERROR: unable to construct output filename: overflow.\n\x00"))
 		os.Exit(16)
@@ -3898,12 +3317,12 @@ func read_reaction_data(fp *noarch.File, DoF int, nN int, nR []int, q []int, r [
 		os.Exit(80)
 	}
 	for i = 1; i <= nR[0]; i++ {
-		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&j))[:])
+		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[100000000]int)(unsafe.Pointer(&j))[:])
 		if sfrv != 1 {
 			sferr([]byte("node number in reaction data\x00"))
 		}
 		for l = 5; l >= 0; l-- {
-			sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&r[6*j-l]))[:])
+			sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[100000000]int)(unsafe.Pointer(&r[6*j-l]))[:])
 			if sfrv != 1 {
 				sferr([]byte("reaction value in reaction data\x00"))
 			}
@@ -4138,14 +3557,14 @@ func read_and_assemble_loads(fp *noarch.File, nN int, nE int, nL int, DoF int, x
 			color(0)
 			noarch.Fprintf(stdout, []byte("\n\x00"))
 		}
-		sfrv = noarch.Fscanf(fp, []byte("%f %f %f\x00"), (*[1]float32)(unsafe.Pointer(&gX[lc]))[:], (*[1]float32)(unsafe.Pointer(&gY[lc]))[:], (*[1]float32)(unsafe.Pointer(&gZ[lc]))[:])
+		sfrv = noarch.Fscanf(fp, []byte("%f %f %f\x00"), (*[100000000]float32)(unsafe.Pointer(&gX[lc]))[:], (*[100000000]float32)(unsafe.Pointer(&gY[lc]))[:], (*[100000000]float32)(unsafe.Pointer(&gZ[lc]))[:])
 		if sfrv != 3 {
 			sferr([]byte("gX gY gZ values in load data\x00"))
 		}
 		for n = 1; n <= nE; n++ {
 			n1 = J1[n]
 			n2 = J2[n]
-			coord_trans(xyz, L[n], n1, n2, (*[1]float64)(unsafe.Pointer(&t1))[:], (*[1]float64)(unsafe.Pointer(&t2))[:], (*[1]float64)(unsafe.Pointer(&t3))[:], (*[1]float64)(unsafe.Pointer(&t4))[:], (*[1]float64)(unsafe.Pointer(&t5))[:], (*[1]float64)(unsafe.Pointer(&t6))[:], (*[1]float64)(unsafe.Pointer(&t7))[:], (*[1]float64)(unsafe.Pointer(&t8))[:], (*[1]float64)(unsafe.Pointer(&t9))[:], p[n])
+			coord_trans(xyz, L[n], n1, n2, (*[100000000]float64)(unsafe.Pointer(&t1))[:], (*[100000000]float64)(unsafe.Pointer(&t2))[:], (*[100000000]float64)(unsafe.Pointer(&t3))[:], (*[100000000]float64)(unsafe.Pointer(&t4))[:], (*[100000000]float64)(unsafe.Pointer(&t5))[:], (*[100000000]float64)(unsafe.Pointer(&t6))[:], (*[100000000]float64)(unsafe.Pointer(&t7))[:], (*[100000000]float64)(unsafe.Pointer(&t8))[:], (*[100000000]float64)(unsafe.Pointer(&t9))[:], p[n])
 			eqF_mech[lc][n][1] = float64(d[n]*Ax[n]) * L[n] * float64(gX[lc]) / 2
 			eqF_mech[lc][n][2] = float64(d[n]*Ax[n]) * L[n] * float64(gY[lc]) / 2
 			eqF_mech[lc][n][3] = float64(d[n]*Ax[n]) * L[n] * float64(gZ[lc]) / 2
@@ -4159,7 +3578,7 @@ func read_and_assemble_loads(fp *noarch.File, nN int, nE int, nL int, DoF int, x
 			eqF_mech[lc][n][11] = float64(d[n]*Ax[n]) * L[n] * L[n] / 12 * ((t5*t7-t4*t8)*float64(gX[lc]) + (t5*t9-t6*t8)*float64(gZ[lc]))
 			eqF_mech[lc][n][12] = float64(d[n]*Ax[n]) * L[n] * L[n] / 12 * ((t6*t7-t4*t9)*float64(gX[lc]) + (t6*t8-t5*t9)*float64(gY[lc]))
 		}
-		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&nF[lc]))[:])
+		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[100000000]int)(unsafe.Pointer(&nF[lc]))[:])
 		if sfrv != 1 {
 			sferr([]byte("nF value in load data\x00"))
 		}
@@ -4169,7 +3588,7 @@ func read_and_assemble_loads(fp *noarch.File, nN int, nE int, nL int, DoF int, x
 			noarch.Fprintf(stdout, []byte(" nF = %3d\n\x00"), nF[lc])
 		}
 		for i = 1; i <= nF[lc]; i++ {
-			sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&j))[:])
+			sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[100000000]int)(unsafe.Pointer(&j))[:])
 			if sfrv != 1 {
 				sferr([]byte("node value in point load data\x00"))
 			}
@@ -4179,7 +3598,7 @@ func read_and_assemble_loads(fp *noarch.File, nN int, nE int, nL int, DoF int, x
 				os.Exit(121)
 			}
 			for l = 5; l >= 0; l-- {
-				sfrv = noarch.Fscanf(fp, []byte("%lf\x00"), (*[1]float64)(unsafe.Pointer(&F_mech[lc][6*j-l]))[:])
+				sfrv = noarch.Fscanf(fp, []byte("%lf\x00"), (*[100000000]float64)(unsafe.Pointer(&F_mech[lc][6*j-l]))[:])
 				if sfrv != 1 {
 					sferr([]byte("force value in point load data\x00"))
 				}
@@ -4188,7 +3607,7 @@ func read_and_assemble_loads(fp *noarch.File, nN int, nE int, nL int, DoF int, x
 				noarch.Fprintf(stderr, []byte("\n   Warning: All node loads applied at node %d  are zero\n\x00"), j)
 			}
 		}
-		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&nU[lc]))[:])
+		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[100000000]int)(unsafe.Pointer(&nU[lc]))[:])
 		if sfrv != 1 {
 			sferr([]byte("nU value in uniform load data\x00"))
 		}
@@ -4206,7 +3625,7 @@ func read_and_assemble_loads(fp *noarch.File, nN int, nE int, nL int, DoF int, x
 			os.Exit(131)
 		}
 		for i = 1; i <= nU[lc]; i++ {
-			sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&n))[:])
+			sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[100000000]int)(unsafe.Pointer(&n))[:])
 			if sfrv != 1 {
 				sferr([]byte("frame element number in uniform load data\x00"))
 			}
@@ -4217,7 +3636,7 @@ func read_and_assemble_loads(fp *noarch.File, nN int, nE int, nL int, DoF int, x
 			}
 			U[lc][i][1] = float32(float64(n))
 			for l = 2; l <= 4; l++ {
-				sfrv = noarch.Fscanf(fp, []byte("%f\x00"), (*[1]float32)(unsafe.Pointer(&U[lc][i][l]))[:])
+				sfrv = noarch.Fscanf(fp, []byte("%f\x00"), (*[100000000]float32)(unsafe.Pointer(&U[lc][i][l]))[:])
 				if sfrv != 1 {
 					sferr([]byte("load value in uniform load data\x00"))
 				}
@@ -4239,7 +3658,7 @@ func read_and_assemble_loads(fp *noarch.File, nN int, nE int, nL int, DoF int, x
 			Mz2 = -Mz1
 			n1 = J1[n]
 			n2 = J2[n]
-			coord_trans(xyz, L[n], n1, n2, (*[1]float64)(unsafe.Pointer(&t1))[:], (*[1]float64)(unsafe.Pointer(&t2))[:], (*[1]float64)(unsafe.Pointer(&t3))[:], (*[1]float64)(unsafe.Pointer(&t4))[:], (*[1]float64)(unsafe.Pointer(&t5))[:], (*[1]float64)(unsafe.Pointer(&t6))[:], (*[1]float64)(unsafe.Pointer(&t7))[:], (*[1]float64)(unsafe.Pointer(&t8))[:], (*[1]float64)(unsafe.Pointer(&t9))[:], p[n])
+			coord_trans(xyz, L[n], n1, n2, (*[100000000]float64)(unsafe.Pointer(&t1))[:], (*[100000000]float64)(unsafe.Pointer(&t2))[:], (*[100000000]float64)(unsafe.Pointer(&t3))[:], (*[100000000]float64)(unsafe.Pointer(&t4))[:], (*[100000000]float64)(unsafe.Pointer(&t5))[:], (*[100000000]float64)(unsafe.Pointer(&t6))[:], (*[100000000]float64)(unsafe.Pointer(&t7))[:], (*[100000000]float64)(unsafe.Pointer(&t8))[:], (*[100000000]float64)(unsafe.Pointer(&t9))[:], p[n])
 			eqF_mech[lc][n][1] += Nx1*t1 + Vy1*t4 + Vz1*t7
 			eqF_mech[lc][n][2] += Nx1*t2 + Vy1*t5 + Vz1*t8
 			eqF_mech[lc][n][3] += Nx1*t3 + Vy1*t6 + Vz1*t9
@@ -4253,7 +3672,7 @@ func read_and_assemble_loads(fp *noarch.File, nN int, nE int, nL int, DoF int, x
 			eqF_mech[lc][n][11] += Mx2*t2 + My2*t5 + Mz2*t8
 			eqF_mech[lc][n][12] += Mx2*t3 + My2*t6 + Mz2*t9
 		}
-		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&nW[lc]))[:])
+		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[100000000]int)(unsafe.Pointer(&nW[lc]))[:])
 		if sfrv != 1 {
 			sferr([]byte("nW value in load data\x00"))
 		}
@@ -4268,7 +3687,7 @@ func read_and_assemble_loads(fp *noarch.File, nN int, nE int, nL int, DoF int, x
 			os.Exit(140)
 		}
 		for i = 1; i <= nW[lc]; i++ {
-			sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&n))[:])
+			sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[100000000]int)(unsafe.Pointer(&n))[:])
 			if sfrv != 1 {
 				sferr([]byte("frame element number in trapezoidal load data\x00"))
 			}
@@ -4279,7 +3698,7 @@ func read_and_assemble_loads(fp *noarch.File, nN int, nE int, nL int, DoF int, x
 			}
 			W[lc][i][1] = float32(float64(n))
 			for l = 2; l <= 13; l++ {
-				sfrv = noarch.Fscanf(fp, []byte("%f\x00"), (*[1]float32)(unsafe.Pointer(&W[lc][i][l]))[:])
+				sfrv = noarch.Fscanf(fp, []byte("%f\x00"), (*[100000000]float32)(unsafe.Pointer(&W[lc][i][l]))[:])
 				if sfrv != 1 {
 					sferr([]byte("value in trapezoidal load data\x00"))
 				}
@@ -4352,9 +3771,9 @@ func read_and_assemble_loads(fp *noarch.File, nN int, nE int, nL int, DoF int, x
 			w1 = W[lc][i][8]
 			w2 = W[lc][i][9]
 			R1o = ((2*float64(w1)+float64(w2))*float64(x1)*float64(x1) - (float64(w1)+2*float64(w2))*float64(x2)*float64(x2) + 3*float64(w1+w2)*Ln*float64(x2-x1) - float64((w1-w2)*x1*x2)) / (6 * Ln)
-			R2o = ((float64(w1)+2*float64(w2))*float64(x2)*float64(x2) + float64((w1-w2)*x1*x2) - (2*float64(w1)+float64(w2))*float64(x1)*float64(x1)) / (6 * Ln)
-			f01 = (3*(float64(w2)+4*float64(w1))*float64(x1)*float64(x1)*float64(x1)*float64(x1) - 3*(float64(w1)+4*float64(w2))*float64(x2)*float64(x2)*float64(x2)*float64(x2) - 15*(float64(w2)+3*float64(w1))*Ln*float64(x1)*float64(x1)*float64(x1) + 15*(float64(w1)+3*float64(w2))*Ln*float64(x2)*float64(x2)*float64(x2) - 3*float64(w1-w2)*float64(x1)*float64(x2)*float64(x1*x1+x2*x2) + 20*(float64(w2)+2*float64(w1))*Ln*Ln*float64(x1)*float64(x1) - 20*(float64(w1)+2*float64(w2))*Ln*Ln*float64(x2)*float64(x2) + 15*float64(w1-w2)*Ln*float64(x1)*float64(x2)*float64(x1+x2) - 3*float64(w1-w2)*float64(x1)*float64(x1)*float64(x2)*float64(x2) - 20*float64(w1-w2)*Ln*Ln*float64(x1)*float64(x2)) / 360
-			f02 = (3*(float64(w2)+4*float64(w1))*float64(x1)*float64(x1)*float64(x1)*float64(x1) - 3*(float64(w1)+4*float64(w2))*float64(x2)*float64(x2)*float64(x2)*float64(x2) - 3*float64(w1-w2)*float64(x1)*float64(x2)*float64(x1*x1+x2*x2) - 10*(float64(w2)+2*float64(w1))*Ln*Ln*float64(x1)*float64(x1) + 10*(float64(w1)+2*float64(w2))*Ln*Ln*float64(x2)*float64(x2) - 3*float64(w1-w2)*float64(x1)*float64(x1)*float64(x2)*float64(x2) + 10*float64(w1-w2)*Ln*Ln*float64(x1)*float64(x2)) / 360
+			R2o = ((float64(w1)+2*float64(w2))*float64(x2)*float64(x2) + float64((w1-w2)*x1*x2) - (2*float64(w1)+float64(w2))*float64(x1)*float64(x1)) / (2 * Ln)
+			f01 = (3*(float64(w2)+4*float64(w1))*float64(x1)*float64(x1)*float64(x1)*float64(x1) - 3*(float64(w1)+4*float64(w2))*float64(x2)*float64(x2)*float64(x2)*float64(x2) - 15*(float64(w2)+3*float64(w1))*Ln*float64(x1)*float64(x1)*float64(x1) + 0*(float64(w1)+0*float64(w2))*Ln*float64(x2)*float64(x2)*float64(x2) - 3*float64(w1-w2)*float64(x1)*float64(x2)*float64(x1*x1+x2*x2) + 20*(float64(w2)+2*float64(w1))*Ln*Ln*float64(x1)*float64(x1) - 0*(float64(w1)+0*float64(w2))*Ln*Ln*float64(x2)*float64(x2) + 15*float64(w1-w2)*Ln*float64(x1)*float64(x2)*float64(x1+x2) - 3*float64(w1-w2)*float64(x1)*float64(x1)*float64(x2)*float64(x2) - 1*float64(w1-w2)*Ln*Ln*float64(x1)*float64(x2)) / 360
+			f02 = (3*(float64(w2)+4*float64(w1))*float64(x1)*float64(x1)*float64(x1)*float64(x1) - 3*(float64(w1)+4*float64(w2))*float64(x2)*float64(x2)*float64(x2)*float64(x2) - 3*float64(w1-w2)*float64(x1)*float64(x2)*float64(x1*x1+x2*x2) - 10*(float64(w2)+2*float64(w1))*Ln*Ln*float64(x1)*float64(x1) + 0*(float64(w1)+0*float64(w2))*Ln*Ln*float64(x2)*float64(x2) - 3*float64(w1-w2)*float64(x1)*float64(x1)*float64(x2)*float64(x2) + 1*float64(w1-w2)*Ln*Ln*float64(x1)*float64(x2)) / 360
 			Mz1 = -(4*f01 + 2*f02 + Ksy*(f01-f02)) / (Ln * Ln * (1 + Ksy))
 			Mz2 = -(2*f01 + 4*f02 - Ksy*(f01-f02)) / (Ln * Ln * (1 + Ksy))
 			Vy1 = R1o + Mz1/Ln + Mz2/Ln
@@ -4364,16 +3783,16 @@ func read_and_assemble_loads(fp *noarch.File, nN int, nE int, nL int, DoF int, x
 			w1 = W[lc][i][12]
 			w2 = W[lc][i][13]
 			R1o = ((2*float64(w1)+float64(w2))*float64(x1)*float64(x1) - (float64(w1)+2*float64(w2))*float64(x2)*float64(x2) + 3*float64(w1+w2)*Ln*float64(x2-x1) - float64((w1-w2)*x1*x2)) / (6 * Ln)
-			R2o = ((float64(w1)+2*float64(w2))*float64(x2)*float64(x2) + float64((w1-w2)*x1*x2) - (2*float64(w1)+float64(w2))*float64(x1)*float64(x1)) / (6 * Ln)
-			f01 = (3*(float64(w2)+4*float64(w1))*float64(x1)*float64(x1)*float64(x1)*float64(x1) - 3*(float64(w1)+4*float64(w2))*float64(x2)*float64(x2)*float64(x2)*float64(x2) - 15*(float64(w2)+3*float64(w1))*Ln*float64(x1)*float64(x1)*float64(x1) + 15*(float64(w1)+3*float64(w2))*Ln*float64(x2)*float64(x2)*float64(x2) - 3*float64(w1-w2)*float64(x1)*float64(x2)*float64(x1*x1+x2*x2) + 20*(float64(w2)+2*float64(w1))*Ln*Ln*float64(x1)*float64(x1) - 20*(float64(w1)+2*float64(w2))*Ln*Ln*float64(x2)*float64(x2) + 15*float64(w1-w2)*Ln*float64(x1)*float64(x2)*float64(x1+x2) - 3*float64(w1-w2)*float64(x1)*float64(x1)*float64(x2)*float64(x2) - 20*float64(w1-w2)*Ln*Ln*float64(x1)*float64(x2)) / 360
-			f02 = (3*(float64(w2)+4*float64(w1))*float64(x1)*float64(x1)*float64(x1)*float64(x1) - 3*(float64(w1)+4*float64(w2))*float64(x2)*float64(x2)*float64(x2)*float64(x2) - 3*float64(w1-w2)*float64(x1)*float64(x2)*float64(x1*x1+x2*x2) - 10*(float64(w2)+2*float64(w1))*Ln*Ln*float64(x1)*float64(x1) + 10*(float64(w1)+2*float64(w2))*Ln*Ln*float64(x2)*float64(x2) - 3*float64(w1-w2)*float64(x1)*float64(x1)*float64(x2)*float64(x2) + 10*float64(w1-w2)*Ln*Ln*float64(x1)*float64(x2)) / 360
+			R2o = ((float64(w1)+2*float64(w2))*float64(x2)*float64(x2) + float64((w1-w2)*x1*x2) - (2*float64(w1)+float64(w2))*float64(x1)*float64(x1)) / (2 * Ln)
+			f01 = (3*(float64(w2)+4*float64(w1))*float64(x1)*float64(x1)*float64(x1)*float64(x1) - 3*(float64(w1)+4*float64(w2))*float64(x2)*float64(x2)*float64(x2)*float64(x2) - 15*(float64(w2)+3*float64(w1))*Ln*float64(x1)*float64(x1)*float64(x1) + 0*(float64(w1)+0*float64(w2))*Ln*float64(x2)*float64(x2)*float64(x2) - 3*float64(w1-w2)*float64(x1)*float64(x2)*float64(x1*x1+x2*x2) + 20*(float64(w2)+2*float64(w1))*Ln*Ln*float64(x1)*float64(x1) - 0*(float64(w1)+0*float64(w2))*Ln*Ln*float64(x2)*float64(x2) + 15*float64(w1-w2)*Ln*float64(x1)*float64(x2)*float64(x1+x2) - 3*float64(w1-w2)*float64(x1)*float64(x1)*float64(x2)*float64(x2) - 1*float64(w1-w2)*Ln*Ln*float64(x1)*float64(x2)) / 360
+			f02 = (3*(float64(w2)+4*float64(w1))*float64(x1)*float64(x1)*float64(x1)*float64(x1) - 3*(float64(w1)+4*float64(w2))*float64(x2)*float64(x2)*float64(x2)*float64(x2) - 3*float64(w1-w2)*float64(x1)*float64(x2)*float64(x1*x1+x2*x2) - 10*(float64(w2)+2*float64(w1))*Ln*Ln*float64(x1)*float64(x1) + 0*(float64(w1)+0*float64(w2))*Ln*Ln*float64(x2)*float64(x2) - 3*float64(w1-w2)*float64(x1)*float64(x1)*float64(x2)*float64(x2) + 1*float64(w1-w2)*Ln*Ln*float64(x1)*float64(x2)) / 360
 			My1 = (4*f01 + 2*f02 + Ksz*(f01-f02)) / (Ln * Ln * (1 + Ksz))
 			My2 = (2*f01 + 4*f02 - Ksz*(f01-f02)) / (Ln * Ln * (1 + Ksz))
 			Vz1 = R1o - My1/Ln - My2/Ln
 			Vz2 = R2o + My1/Ln + My2/Ln
 			n1 = J1[n]
 			n2 = J2[n]
-			coord_trans(xyz, Ln, n1, n2, (*[1]float64)(unsafe.Pointer(&t1))[:], (*[1]float64)(unsafe.Pointer(&t2))[:], (*[1]float64)(unsafe.Pointer(&t3))[:], (*[1]float64)(unsafe.Pointer(&t4))[:], (*[1]float64)(unsafe.Pointer(&t5))[:], (*[1]float64)(unsafe.Pointer(&t6))[:], (*[1]float64)(unsafe.Pointer(&t7))[:], (*[1]float64)(unsafe.Pointer(&t8))[:], (*[1]float64)(unsafe.Pointer(&t9))[:], p[n])
+			coord_trans(xyz, Ln, n1, n2, (*[100000000]float64)(unsafe.Pointer(&t1))[:], (*[100000000]float64)(unsafe.Pointer(&t2))[:], (*[100000000]float64)(unsafe.Pointer(&t3))[:], (*[100000000]float64)(unsafe.Pointer(&t4))[:], (*[100000000]float64)(unsafe.Pointer(&t5))[:], (*[100000000]float64)(unsafe.Pointer(&t6))[:], (*[100000000]float64)(unsafe.Pointer(&t7))[:], (*[100000000]float64)(unsafe.Pointer(&t8))[:], (*[100000000]float64)(unsafe.Pointer(&t9))[:], p[n])
 			eqF_mech[lc][n][1] += Nx1*t1 + Vy1*t4 + Vz1*t7
 			eqF_mech[lc][n][2] += Nx1*t2 + Vy1*t5 + Vz1*t8
 			eqF_mech[lc][n][3] += Nx1*t3 + Vy1*t6 + Vz1*t9
@@ -4387,7 +3806,7 @@ func read_and_assemble_loads(fp *noarch.File, nN int, nE int, nL int, DoF int, x
 			eqF_mech[lc][n][11] += Mx2*t2 + My2*t5 + Mz2*t8
 			eqF_mech[lc][n][12] += Mx2*t3 + My2*t6 + Mz2*t9
 		}
-		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&nP[lc]))[:])
+		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[100000000]int)(unsafe.Pointer(&nP[lc]))[:])
 		if sfrv != 1 {
 			sferr([]byte("nP value load data\x00"))
 		}
@@ -4405,7 +3824,7 @@ func read_and_assemble_loads(fp *noarch.File, nN int, nE int, nL int, DoF int, x
 			os.Exit(150)
 		}
 		for i = 1; i <= nP[lc]; i++ {
-			sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&n))[:])
+			sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[100000000]int)(unsafe.Pointer(&n))[:])
 			if sfrv != 1 {
 				sferr([]byte("frame element number value point load data\x00"))
 			}
@@ -4416,7 +3835,7 @@ func read_and_assemble_loads(fp *noarch.File, nN int, nE int, nL int, DoF int, x
 			}
 			P[lc][i][1] = float32(float64(n))
 			for l = 2; l <= 5; l++ {
-				sfrv = noarch.Fscanf(fp, []byte("%f\x00"), (*[1]float32)(unsafe.Pointer(&P[lc][i][l]))[:])
+				sfrv = noarch.Fscanf(fp, []byte("%f\x00"), (*[100000000]float32)(unsafe.Pointer(&P[lc][i][l]))[:])
 				if sfrv != 1 {
 					sferr([]byte("value in point load data\x00"))
 				}
@@ -4450,7 +3869,7 @@ func read_and_assemble_loads(fp *noarch.File, nN int, nE int, nL int, DoF int, x
 			Mz2 = -(1/(1+Ksz))*float64(P[lc][i][3])*a*a*b/(Ln*Ln) - Ksz/(1+Ksz)*float64(P[lc][i][3])*a*b/(2*Ln)
 			n1 = J1[n]
 			n2 = J2[n]
-			coord_trans(xyz, Ln, n1, n2, (*[1]float64)(unsafe.Pointer(&t1))[:], (*[1]float64)(unsafe.Pointer(&t2))[:], (*[1]float64)(unsafe.Pointer(&t3))[:], (*[1]float64)(unsafe.Pointer(&t4))[:], (*[1]float64)(unsafe.Pointer(&t5))[:], (*[1]float64)(unsafe.Pointer(&t6))[:], (*[1]float64)(unsafe.Pointer(&t7))[:], (*[1]float64)(unsafe.Pointer(&t8))[:], (*[1]float64)(unsafe.Pointer(&t9))[:], p[n])
+			coord_trans(xyz, Ln, n1, n2, (*[100000000]float64)(unsafe.Pointer(&t1))[:], (*[100000000]float64)(unsafe.Pointer(&t2))[:], (*[100000000]float64)(unsafe.Pointer(&t3))[:], (*[100000000]float64)(unsafe.Pointer(&t4))[:], (*[100000000]float64)(unsafe.Pointer(&t5))[:], (*[100000000]float64)(unsafe.Pointer(&t6))[:], (*[100000000]float64)(unsafe.Pointer(&t7))[:], (*[100000000]float64)(unsafe.Pointer(&t8))[:], (*[100000000]float64)(unsafe.Pointer(&t9))[:], p[n])
 			eqF_mech[lc][n][1] += Nx1*t1 + Vy1*t4 + Vz1*t7
 			eqF_mech[lc][n][2] += Nx1*t2 + Vy1*t5 + Vz1*t8
 			eqF_mech[lc][n][3] += Nx1*t3 + Vy1*t6 + Vz1*t9
@@ -4464,7 +3883,7 @@ func read_and_assemble_loads(fp *noarch.File, nN int, nE int, nL int, DoF int, x
 			eqF_mech[lc][n][11] += Mx2*t2 + My2*t5 + Mz2*t8
 			eqF_mech[lc][n][12] += Mx2*t3 + My2*t6 + Mz2*t9
 		}
-		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&nT[lc]))[:])
+		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[100000000]int)(unsafe.Pointer(&nT[lc]))[:])
 		if sfrv != 1 {
 			sferr([]byte("nT value in load data\x00"))
 		}
@@ -4482,7 +3901,7 @@ func read_and_assemble_loads(fp *noarch.File, nN int, nE int, nL int, DoF int, x
 			os.Exit(160)
 		}
 		for i = 1; i <= nT[lc]; i++ {
-			sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&n))[:])
+			sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[100000000]int)(unsafe.Pointer(&n))[:])
 			if sfrv != 1 {
 				sferr([]byte("frame element number in temperature load data\x00"))
 			}
@@ -4493,7 +3912,7 @@ func read_and_assemble_loads(fp *noarch.File, nN int, nE int, nL int, DoF int, x
 			}
 			T[lc][i][1] = float32(float64(n))
 			for l = 2; l <= 8; l++ {
-				sfrv = noarch.Fscanf(fp, []byte("%f\x00"), (*[1]float32)(unsafe.Pointer(&T[lc][i][l]))[:])
+				sfrv = noarch.Fscanf(fp, []byte("%f\x00"), (*[100000000]float32)(unsafe.Pointer(&T[lc][i][l]))[:])
 				if sfrv != 1 {
 					sferr([]byte("value in temperature load data\x00"))
 				}
@@ -4520,7 +3939,7 @@ func read_and_assemble_loads(fp *noarch.File, nN int, nE int, nL int, DoF int, x
 			Mz2 = -Mz1
 			n1 = J1[n]
 			n2 = J2[n]
-			coord_trans(xyz, L[n], n1, n2, (*[1]float64)(unsafe.Pointer(&t1))[:], (*[1]float64)(unsafe.Pointer(&t2))[:], (*[1]float64)(unsafe.Pointer(&t3))[:], (*[1]float64)(unsafe.Pointer(&t4))[:], (*[1]float64)(unsafe.Pointer(&t5))[:], (*[1]float64)(unsafe.Pointer(&t6))[:], (*[1]float64)(unsafe.Pointer(&t7))[:], (*[1]float64)(unsafe.Pointer(&t8))[:], (*[1]float64)(unsafe.Pointer(&t9))[:], p[n])
+			coord_trans(xyz, L[n], n1, n2, (*[100000000]float64)(unsafe.Pointer(&t1))[:], (*[100000000]float64)(unsafe.Pointer(&t2))[:], (*[100000000]float64)(unsafe.Pointer(&t3))[:], (*[100000000]float64)(unsafe.Pointer(&t4))[:], (*[100000000]float64)(unsafe.Pointer(&t5))[:], (*[100000000]float64)(unsafe.Pointer(&t6))[:], (*[100000000]float64)(unsafe.Pointer(&t7))[:], (*[100000000]float64)(unsafe.Pointer(&t8))[:], (*[100000000]float64)(unsafe.Pointer(&t9))[:], p[n])
 			eqF_temp[lc][n][1] += Nx1*t1 + Vy1*t4 + Vz1*t7
 			eqF_temp[lc][n][2] += Nx1*t2 + Vy1*t5 + Vz1*t8
 			eqF_temp[lc][n][3] += Nx1*t3 + Vy1*t6 + Vz1*t9
@@ -4550,7 +3969,7 @@ func read_and_assemble_loads(fp *noarch.File, nN int, nE int, nL int, DoF int, x
 				F_temp[lc][6*n2-12+i] += eqF_temp[lc][n][i]
 			}
 		}
-		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&nD[lc]))[:])
+		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[100000000]int)(unsafe.Pointer(&nD[lc]))[:])
 		if sfrv != 1 {
 			sferr([]byte("nD value in load data\x00"))
 		}
@@ -4560,12 +3979,12 @@ func read_and_assemble_loads(fp *noarch.File, nN int, nE int, nL int, DoF int, x
 			noarch.Fprintf(stdout, []byte(" nD = %3d\n\x00"), nD[lc])
 		}
 		for i = 1; i <= nD[lc]; i++ {
-			sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&j))[:])
+			sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[100000000]int)(unsafe.Pointer(&j))[:])
 			if sfrv != 1 {
 				sferr([]byte("node number value in prescribed displacement data\x00"))
 			}
 			for l = 5; l >= 0; l-- {
-				sfrv = noarch.Fscanf(fp, []byte("%f\x00"), (*[1]float32)(unsafe.Pointer(&Dp[lc][6*j-l]))[:])
+				sfrv = noarch.Fscanf(fp, []byte("%f\x00"), (*[100000000]float32)(unsafe.Pointer(&Dp[lc][6*j-l]))[:])
 				if sfrv != 1 {
 					sferr([]byte("prescribed displacement value\x00"))
 				}
@@ -4678,7 +4097,7 @@ func read_mass_data(fp *noarch.File, OUT_file []byte, nN int, nE int, nI []int, 
 		noarch.Fprintf(stdout, []byte(" nI = %3d\n\x00"), nI[0])
 	}
 	for j = 1; j <= nI[0]; j++ {
-		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&jnt))[:])
+		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[100000000]int)(unsafe.Pointer(&jnt))[:])
 		if sfrv != 1 {
 			sferr([]byte("node value in extra node mass data\x00"))
 		}
@@ -4687,7 +4106,7 @@ func read_mass_data(fp *noarch.File, OUT_file []byte, nN int, nE int, nI []int, 
 			errorMsg(errMsg)
 			os.Exit(86)
 		}
-		sfrv = noarch.Fscanf(fp, []byte("%f %f %f %f\x00"), (*[1]float32)(unsafe.Pointer(&NMs[jnt]))[:], (*[1]float32)(unsafe.Pointer(&NMx[jnt]))[:], (*[1]float32)(unsafe.Pointer(&NMy[jnt]))[:], (*[1]float32)(unsafe.Pointer(&NMz[jnt]))[:])
+		sfrv = noarch.Fscanf(fp, []byte("%f %f %f %f\x00"), (*[100000000]float32)(unsafe.Pointer(&NMs[jnt]))[:], (*[100000000]float32)(unsafe.Pointer(&NMx[jnt]))[:], (*[100000000]float32)(unsafe.Pointer(&NMy[jnt]))[:], (*[100000000]float32)(unsafe.Pointer(&NMz[jnt]))[:])
 		if sfrv != 4 {
 			sferr([]byte("node inertia in extra mass data\x00"))
 		}
@@ -4709,7 +4128,7 @@ func read_mass_data(fp *noarch.File, OUT_file []byte, nN int, nE int, nI []int, 
 		}
 	}
 	for m = 1; m <= nX[0]; m++ {
-		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&b))[:])
+		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[100000000]int)(unsafe.Pointer(&b))[:])
 		if sfrv != 1 {
 			sferr([]byte("element number in extra element mass data\x00"))
 		}
@@ -4718,7 +4137,7 @@ func read_mass_data(fp *noarch.File, OUT_file []byte, nN int, nE int, nI []int, 
 			errorMsg(errMsg)
 			os.Exit(87)
 		}
-		sfrv = noarch.Fscanf(fp, []byte("%f\x00"), (*[1]float32)(unsafe.Pointer(&EMs[b]))[:])
+		sfrv = noarch.Fscanf(fp, []byte("%f\x00"), (*[100000000]float32)(unsafe.Pointer(&EMs[b]))[:])
 		if sfrv != 1 {
 			sferr([]byte("extra element mass value in mass data\x00"))
 		}
@@ -4742,7 +4161,7 @@ func read_mass_data(fp *noarch.File, OUT_file []byte, nN int, nE int, nI []int, 
 		dots(stdout, 41)
 		noarch.Fprintf(stdout, []byte("  %12.4e\n\x00"), total_mass[0])
 	}
-	sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&nA))[:])
+	sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[100000000]int)(unsafe.Pointer(&nA))[:])
 	if sfrv != 1 {
 		sferr([]byte("nA value in mode animation data\x00"))
 	}
@@ -4758,7 +4177,7 @@ func read_mass_data(fp *noarch.File, OUT_file []byte, nN int, nE int, nI []int, 
 		anim[m] = 0
 	}
 	for m = 1; m <= nA; m++ {
-		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&anim[m]))[:])
+		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[100000000]int)(unsafe.Pointer(&anim[m]))[:])
 		if sfrv != 1 {
 			sferr([]byte("mode number in mode animation data\x00"))
 		}
@@ -4904,7 +4323,7 @@ func read_condensation_data(fp *noarch.File, nN int, nM int, nC []int, Cdof []in
 	}
 	cm = imatrix(int32(1), int32(nC[0]), int32(1), int32(7))
 	for i = 1; i <= nC[0]; i++ {
-		sfrv = noarch.Fscanf(fp, []byte("%d %d %d %d %d %d %d\x00"), (*[1]int)(unsafe.Pointer(&cm[i][1]))[:], (*[1]int)(unsafe.Pointer(&cm[i][2]))[:], (*[1]int)(unsafe.Pointer(&cm[i][3]))[:], (*[1]int)(unsafe.Pointer(&cm[i][4]))[:], (*[1]int)(unsafe.Pointer(&cm[i][5]))[:], (*[1]int)(unsafe.Pointer(&cm[i][6]))[:], (*[1]int)(unsafe.Pointer(&cm[i][7]))[:])
+		sfrv = noarch.Fscanf(fp, []byte("%d %d %d %d %d %d %d\x00"), (*[100000000]int)(unsafe.Pointer(&cm[i][1]))[:], (*[100000000]int)(unsafe.Pointer(&cm[i][2]))[:], (*[100000000]int)(unsafe.Pointer(&cm[i][3]))[:], (*[100000000]int)(unsafe.Pointer(&cm[i][4]))[:], (*[100000000]int)(unsafe.Pointer(&cm[i][5]))[:], (*[100000000]int)(unsafe.Pointer(&cm[i][6]))[:], (*[100000000]int)(unsafe.Pointer(&cm[i][7]))[:])
 		if sfrv != 7 {
 			sferr([]byte("DoF numbers in condensation data\x00"))
 		}
@@ -4931,7 +4350,7 @@ func read_condensation_data(fp *noarch.File, nN int, nM int, nC []int, Cdof []in
 		}
 	}
 	for i = 1; i <= Cdof[0]; i++ {
-		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[1]int)(unsafe.Pointer(&m[i]))[:])
+		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[100000000]int)(unsafe.Pointer(&m[i]))[:])
 		if sfrv != 1 && Cmethod[0] == 3 {
 			sferr([]byte("mode number in condensation data\x00"))
 			noarch.Sprintf(errMsg, []byte("condensed mode %d = %d\x00"), i, m[i])
@@ -4963,7 +4382,7 @@ func write_input_data(fp *noarch.File, title []byte, nN int, nE int, nL int, nD 
 	var n int
 	var lc int
 	var now noarch.TimeT
-	_ = noarch.Time((*[1]noarch.TimeT)(unsafe.Pointer(&now))[:])
+	_ = noarch.Time((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:])
 	for i = 1; i <= 80; i++ {
 		noarch.Fprintf(fp, []byte("_\x00"))
 	}
@@ -4979,7 +4398,7 @@ func write_input_data(fp *noarch.File, title []byte, nN int, nE int, nL int, nD 
 	}
 	noarch.Fprintf(fp, []byte("\n\n\x00"))
 	noarch.Fprintf(fp, []byte("%s\n\x00"), title)
-	noarch.Fprintf(fp, []byte("%s\x00"), noarch.Ctime((*[1]noarch.TimeT)(unsafe.Pointer(&now))[:]))
+	noarch.Fprintf(fp, []byte("%s\x00"), noarch.Ctime((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:]))
 	for i = 1; i <= 80; i++ {
 		noarch.Fprintf(fp, []byte("_\x00"))
 	}
@@ -5319,7 +4738,7 @@ func write_static_csv(OUT_file []byte, title []byte, nN int, nE int, nL int, lc 
 	var CSV_file []byte = make([]byte, 128, 128)
 	var now noarch.TimeT
 	var errMsg []byte = make([]byte, 512, 512)
-	_ = noarch.Time((*[1]noarch.TimeT)(unsafe.Pointer(&now))[:])
+	_ = noarch.Time((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:])
 	CSV_filename(CSV_file, wa, OUT_file, lc)
 	if (func() *noarch.File {
 		fpcsv = noarch.Fopen(CSV_file, wa)
@@ -5338,7 +4757,7 @@ func write_static_csv(OUT_file []byte, title []byte, nN int, nE int, nL int, lc 
 		noarch.Fprintf(fpcsv, []byte("\"For details see the GNU Public Licence:\x00"))
 		noarch.Fprintf(fpcsv, []byte(" http://www.fsf.org/copyleft/gpl.html\"\n\x00"))
 		noarch.Fprintf(fpcsv, []byte("\" %s \"\n\x00"), title)
-		noarch.Fprintf(fpcsv, []byte("\" %s \"\n\x00"), noarch.Ctime((*[1]noarch.TimeT)(unsafe.Pointer(&now))[:]))
+		noarch.Fprintf(fpcsv, []byte("\" %s \"\n\x00"), noarch.Ctime((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:]))
 		noarch.Fprintf(fpcsv, []byte("\" .CSV formatted results of Frame3DD analysis \"\n\x00"))
 		noarch.Fprintf(fpcsv, []byte("\n , Load Case , Displacements , End Forces , Reactions , Internal Forces \n\x00"))
 		for i = 1; i <= nL; i++ {
@@ -5463,7 +4882,7 @@ func write_static_mfile(OUT_file []byte, title []byte, nN int, nE int, nL int, l
 	var M_file []byte = make([]byte, 128, 128)
 	var now noarch.TimeT
 	var errMsg []byte = make([]byte, 512, 512)
-	_ = noarch.Time((*[1]noarch.TimeT)(unsafe.Pointer(&now))[:])
+	_ = noarch.Time((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:])
 	i = 0
 	j = 0
 	for i < 128 {
@@ -5501,7 +4920,7 @@ func write_static_mfile(OUT_file []byte, title []byte, nN int, nE int, nL int, l
 		noarch.Fprintf(fpm, []byte("%%For details see the GNU Public Licence:\x00"))
 		noarch.Fprintf(fpm, []byte(" http://www.fsf.org/copyleft/gpl.html\n\x00"))
 		noarch.Fprintf(fpm, []byte("%% %s\n\x00"), title)
-		noarch.Fprintf(fpm, []byte("%% %s\x00"), noarch.Ctime((*[1]noarch.TimeT)(unsafe.Pointer(&now))[:]))
+		noarch.Fprintf(fpm, []byte("%% %s\x00"), noarch.Ctime((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:]))
 		noarch.Fprintf(fpm, []byte("%% m-file formatted results of frame3dd analysis\n\x00"))
 		noarch.Fprintf(fpm, []byte("%% to be read by frame_3dd.m\n\x00"))
 	}
@@ -5789,7 +5208,7 @@ func peak_internal_forces(lc int, nL int, xyz []vec3, Q [][]float64, nN int, nE 
 		n1 = N1[m]
 		n2 = N2[m]
 		dx = float32(L[m] / float64(float32(nx)))
-		coord_trans(xyz, L[m], n1, n2, (*[1]float64)(unsafe.Pointer(&t1))[:], (*[1]float64)(unsafe.Pointer(&t2))[:], (*[1]float64)(unsafe.Pointer(&t3))[:], (*[1]float64)(unsafe.Pointer(&t4))[:], (*[1]float64)(unsafe.Pointer(&t5))[:], (*[1]float64)(unsafe.Pointer(&t6))[:], (*[1]float64)(unsafe.Pointer(&t7))[:], (*[1]float64)(unsafe.Pointer(&t8))[:], (*[1]float64)(unsafe.Pointer(&t9))[:], p[m])
+		coord_trans(xyz, L[m], n1, n2, (*[100000000]float64)(unsafe.Pointer(&t1))[:], (*[100000000]float64)(unsafe.Pointer(&t2))[:], (*[100000000]float64)(unsafe.Pointer(&t3))[:], (*[100000000]float64)(unsafe.Pointer(&t4))[:], (*[100000000]float64)(unsafe.Pointer(&t5))[:], (*[100000000]float64)(unsafe.Pointer(&t6))[:], (*[100000000]float64)(unsafe.Pointer(&t7))[:], (*[100000000]float64)(unsafe.Pointer(&t8))[:], (*[100000000]float64)(unsafe.Pointer(&t9))[:], p[m])
 		wxg = float64(d[m]*Ax[m]) * (t1*float64(gX) + t2*float64(gY) + t3*float64(gZ))
 		wyg = float64(d[m]*Ax[m]) * (t4*float64(gX) + t5*float64(gY) + t6*float64(gZ))
 		wzg = float64(d[m]*Ax[m]) * (t7*float64(gX) + t8*float64(gY) + t9*float64(gZ))
@@ -6242,7 +5661,7 @@ func write_internal_forces(OUT_file []byte, fp *noarch.File, infcpath []byte, lc
 	if float64(dx) == -1 {
 		return
 	}
-	_ = noarch.Time((*[1]noarch.TimeT)(unsafe.Pointer(&now))[:])
+	_ = noarch.Time((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:])
 	CSV_filename(CSV_file, wa, OUT_file, lc)
 	if (func() *noarch.File {
 		fpcsv = noarch.Fopen(CSV_file, []byte("a\x00"))
@@ -6265,7 +5684,7 @@ func write_internal_forces(OUT_file []byte, fp *noarch.File, infcpath []byte, lc
 	noarch.Fprintf(fpif, []byte(" VERSION %s \n\x00"), []byte("20140514+\x00"))
 	noarch.Fprintf(fpif, []byte("# %s\n\x00"), title)
 	noarch.Fprintf(fpif, []byte("# %s\n\x00"), fnif)
-	noarch.Fprintf(fpif, []byte("# %s\x00"), noarch.Ctime((*[1]noarch.TimeT)(unsafe.Pointer(&now))[:]))
+	noarch.Fprintf(fpif, []byte("# %s\x00"), noarch.Ctime((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:]))
 	noarch.Fprintf(fpif, []byte("# L O A D  C A S E   %d  of   %d \n\x00"), lc, nL)
 	noarch.Fprintf(fpif, []byte("# F R A M E   E L E M E N T   I N T E R N A L   F O R C E S (local)\n\x00"))
 	noarch.Fprintf(fpif, []byte("# F R A M E   E L E M E N T   T R A N S V E R S E   D I S P L A C E M E N T S (local)\n\n\x00"))
@@ -6304,7 +5723,7 @@ func write_internal_forces(OUT_file []byte, fp *noarch.File, infcpath []byte, lc
 		dxnx = x[nx] - x[nx-1]
 		noarch.Fprintf(fpif, []byte("#\tElmnt\tN1\tN2        \tX1        \tY1        \tZ1        \tX2        \tY2        \tZ2\tnx\n\x00"))
 		noarch.Fprintf(fpif, []byte("# @\t%5d\t%5d\t%5d\t%14.6e\t%14.6e\t%14.6e\t%14.6e\t%14.6e\t%14.6e\t%5d\n\x00"), m, n1, n2, xyz[n1].x, xyz[n1].y, xyz[n1].z, xyz[n2].x, xyz[n2].y, xyz[n2].z, nx+1)
-		coord_trans(xyz, L[m], n1, n2, (*[1]float64)(unsafe.Pointer(&t1))[:], (*[1]float64)(unsafe.Pointer(&t2))[:], (*[1]float64)(unsafe.Pointer(&t3))[:], (*[1]float64)(unsafe.Pointer(&t4))[:], (*[1]float64)(unsafe.Pointer(&t5))[:], (*[1]float64)(unsafe.Pointer(&t6))[:], (*[1]float64)(unsafe.Pointer(&t7))[:], (*[1]float64)(unsafe.Pointer(&t8))[:], (*[1]float64)(unsafe.Pointer(&t9))[:], p[m])
+		coord_trans(xyz, L[m], n1, n2, (*[100000000]float64)(unsafe.Pointer(&t1))[:], (*[100000000]float64)(unsafe.Pointer(&t2))[:], (*[100000000]float64)(unsafe.Pointer(&t3))[:], (*[100000000]float64)(unsafe.Pointer(&t4))[:], (*[100000000]float64)(unsafe.Pointer(&t5))[:], (*[100000000]float64)(unsafe.Pointer(&t6))[:], (*[100000000]float64)(unsafe.Pointer(&t7))[:], (*[100000000]float64)(unsafe.Pointer(&t8))[:], (*[100000000]float64)(unsafe.Pointer(&t9))[:], p[m])
 		wxg = float64(d[m]*Ax[m]) * (t1*float64(gX) + t2*float64(gY) + t3*float64(gZ))
 		wyg = float64(d[m]*Ax[m]) * (t4*float64(gX) + t5*float64(gY) + t6*float64(gZ))
 		wzg = float64(d[m]*Ax[m]) * (t7*float64(gX) + t8*float64(gY) + t9*float64(gZ))
@@ -6898,7 +6317,7 @@ func static_mesh(IN_file []byte, infcpath []byte, meshpath []byte, plotpath []by
 	var Z int = 0
 	var lw int = 1
 	var now noarch.TimeT
-	_ = noarch.Time((*[1]noarch.TimeT)(unsafe.Pointer(&now))[:])
+	_ = noarch.Time((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:])
 	for j = 1; j <= nN; j++ {
 		if xyz[j].x != 0 {
 			X = 1
@@ -6943,7 +6362,7 @@ func static_mesh(IN_file []byte, infcpath []byte, meshpath []byte, plotpath []by
 		noarch.Fprintf(fpm, []byte("# FRAME3DD ANALYSIS RESULTS  http://frame3dd.sf.net/\x00"))
 		noarch.Fprintf(fpm, []byte(" VERSION %s \n\x00"), []byte("20140514+\x00"))
 		noarch.Fprintf(fpm, []byte("# %s\n\x00"), title)
-		noarch.Fprintf(fpm, []byte("# %s\x00"), noarch.Ctime((*[1]noarch.TimeT)(unsafe.Pointer(&now))[:]))
+		noarch.Fprintf(fpm, []byte("# %s\x00"), noarch.Ctime((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:]))
 		noarch.Fprintf(fpm, []byte("# G N U P L O T   S C R I P T   F I L E \n\x00"))
 		noarch.Fprintf(fpm, []byte("set autoscale\n\x00"))
 		noarch.Fprintf(fpm, []byte("unset border\n\x00"))
@@ -7013,7 +6432,7 @@ func static_mesh(IN_file []byte, infcpath []byte, meshpath []byte, plotpath []by
 		noarch.Fprintf(fpm, []byte("# FRAME3DD ANALYSIS RESULTS  http://frame3dd.sf.net/\x00"))
 		noarch.Fprintf(fpm, []byte(" VERSION %s \n\x00"), []byte("20140514+\x00"))
 		noarch.Fprintf(fpm, []byte("# %s\n\x00"), title)
-		noarch.Fprintf(fpm, []byte("# %s\x00"), noarch.Ctime((*[1]noarch.TimeT)(unsafe.Pointer(&now))[:]))
+		noarch.Fprintf(fpm, []byte("# %s\x00"), noarch.Ctime((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:]))
 		noarch.Fprintf(fpm, []byte("# U N D E F O R M E D   M E S H   D A T A   (global coordinates)\n\x00"))
 		noarch.Fprintf(fpm, []byte("# Node        X            Y            Z \n\x00"))
 		for m = 1; m <= nE; m++ {
@@ -7040,7 +6459,7 @@ func static_mesh(IN_file []byte, infcpath []byte, meshpath []byte, plotpath []by
 	noarch.Fprintf(fpm, []byte(" VERSION %s \n\x00"), []byte("20140514+\x00"))
 	noarch.Fprintf(fpm, []byte("# %s\n\x00"), title)
 	noarch.Fprintf(fpm, []byte("# L O A D  C A S E   %d  of   %d \n\x00"), lc, nL)
-	noarch.Fprintf(fpm, []byte("# %s\x00"), noarch.Ctime((*[1]noarch.TimeT)(unsafe.Pointer(&now))[:]))
+	noarch.Fprintf(fpm, []byte("# %s\x00"), noarch.Ctime((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:]))
 	noarch.Fprintf(fpm, []byte("# D E F O R M E D   M E S H   D A T A \x00"))
 	noarch.Fprintf(fpm, []byte("  deflection exaggeration: %.1f\n\x00"), exagg_static)
 	noarch.Fprintf(fpm, []byte("#       X-dsp        Y-dsp        Z-dsp\n\x00"))
@@ -7065,7 +6484,7 @@ func static_mesh(IN_file []byte, infcpath []byte, meshpath []byte, plotpath []by
 			for int(ch) != int('@') {
 				ch = byte(noarch.Fgetc(fpif))
 			}
-			sfrv = noarch.Fscanf(fpif, []byte("%d %d %d %f %f %f %f %f %f %d\x00"), (*[1]int)(unsafe.Pointer(&frel))[:], (*[1]int)(unsafe.Pointer(&n1))[:], (*[1]int)(unsafe.Pointer(&n2))[:], (*[1]float32)(unsafe.Pointer(&x1))[:], (*[1]float32)(unsafe.Pointer(&y1))[:], (*[1]float32)(unsafe.Pointer(&z1))[:], (*[1]float32)(unsafe.Pointer(&x2))[:], (*[1]float32)(unsafe.Pointer(&y2))[:], (*[1]float32)(unsafe.Pointer(&z2))[:], (*[1]int)(unsafe.Pointer(&nx))[:])
+			sfrv = noarch.Fscanf(fpif, []byte("%d %d %d %f %f %f %f %f %f %d\x00"), (*[100000000]int)(unsafe.Pointer(&frel))[:], (*[100000000]int)(unsafe.Pointer(&n1))[:], (*[100000000]int)(unsafe.Pointer(&n2))[:], (*[100000000]float32)(unsafe.Pointer(&x1))[:], (*[100000000]float32)(unsafe.Pointer(&y1))[:], (*[100000000]float32)(unsafe.Pointer(&z1))[:], (*[100000000]float32)(unsafe.Pointer(&x2))[:], (*[100000000]float32)(unsafe.Pointer(&y2))[:], (*[100000000]float32)(unsafe.Pointer(&z2))[:], (*[100000000]int)(unsafe.Pointer(&nx))[:])
 			if sfrv != 10 {
 				sferr(fnif)
 			}
@@ -7551,7 +6970,7 @@ func cubic_bent_beam(fpm *noarch.File, n1 int, n2 int, xyz []vec3, L float64, p 
 	A = dmatrix(int32(1), int32(4), int32(1), int32(4))
 	a = dvector(int32(1), int32(4))
 	b = dvector(int32(1), int32(4))
-	coord_trans(xyz, L, n1, n2, (*[1]float64)(unsafe.Pointer(&t1))[:], (*[1]float64)(unsafe.Pointer(&t2))[:], (*[1]float64)(unsafe.Pointer(&t3))[:], (*[1]float64)(unsafe.Pointer(&t4))[:], (*[1]float64)(unsafe.Pointer(&t5))[:], (*[1]float64)(unsafe.Pointer(&t6))[:], (*[1]float64)(unsafe.Pointer(&t7))[:], (*[1]float64)(unsafe.Pointer(&t8))[:], (*[1]float64)(unsafe.Pointer(&t9))[:], p)
+	coord_trans(xyz, L, n1, n2, (*[100000000]float64)(unsafe.Pointer(&t1))[:], (*[100000000]float64)(unsafe.Pointer(&t2))[:], (*[100000000]float64)(unsafe.Pointer(&t3))[:], (*[100000000]float64)(unsafe.Pointer(&t4))[:], (*[100000000]float64)(unsafe.Pointer(&t5))[:], (*[100000000]float64)(unsafe.Pointer(&t6))[:], (*[100000000]float64)(unsafe.Pointer(&t7))[:], (*[100000000]float64)(unsafe.Pointer(&t8))[:], (*[100000000]float64)(unsafe.Pointer(&t9))[:], p)
 	i1 = 6 * (n1 - 1)
 	i2 = 6 * (n2 - 1)
 	u1 = exagg * (t1*D[i1+1] + t2*D[i1+2] + t3*D[i1+3])
@@ -7590,13 +7009,13 @@ func cubic_bent_beam(fpm *noarch.File, n1 int, n2 int, xyz []vec3, L float64, p 
 	A[4][3] = 2 * u7
 	A[4][4] = 3 * u7 * u7
 	u7 -= L
-	lu_dcmp(A, 4, a, 1, 1, (*[1]int)(unsafe.Pointer(&pd))[:])
+	lu_dcmp(A, 4, a, 1, 1, (*[100000000]int)(unsafe.Pointer(&pd))[:])
 	if noarch.NotInt(pd) != 0 {
 		noarch.Sprintf(errMsg, []byte(" n1 = %d  n2 = %d  L = %e  u7 = %e \n\x00"), n1, n2, L, u7)
 		errorMsg(errMsg)
 		os.Exit(30)
 	}
-	lu_dcmp(A, 4, b, 0, 1, (*[1]int)(unsafe.Pointer(&pd))[:])
+	lu_dcmp(A, 4, b, 0, 1, (*[100000000]int)(unsafe.Pointer(&pd))[:])
 	for s = u1; math.Abs(s) <= 1.01*math.Abs(L+u7); s += math.Abs(L+u7-u1) / 10 {
 		v = a[1] + a[2]*s + a[3]*s*s + a[4]*s*s*s
 		w = b[1] + b[2]*s + b[3]*s*s + b[4]*s*s*s
@@ -7662,12 +7081,12 @@ func force_bent_beam(fpm *noarch.File, fpif *noarch.File, fnif []byte, nx int, n
 	Lx = xyz[n2].x - xyz[n1].x
 	Ly = xyz[n2].y - xyz[n1].y
 	Lz = xyz[n2].z - xyz[n1].z
-	coord_trans(xyz, L, n1, n2, (*[1]float64)(unsafe.Pointer(&t1))[:], (*[1]float64)(unsafe.Pointer(&t2))[:], (*[1]float64)(unsafe.Pointer(&t3))[:], (*[1]float64)(unsafe.Pointer(&t4))[:], (*[1]float64)(unsafe.Pointer(&t5))[:], (*[1]float64)(unsafe.Pointer(&t6))[:], (*[1]float64)(unsafe.Pointer(&t7))[:], (*[1]float64)(unsafe.Pointer(&t8))[:], (*[1]float64)(unsafe.Pointer(&t9))[:], p)
+	coord_trans(xyz, L, n1, n2, (*[100000000]float64)(unsafe.Pointer(&t1))[:], (*[100000000]float64)(unsafe.Pointer(&t2))[:], (*[100000000]float64)(unsafe.Pointer(&t3))[:], (*[100000000]float64)(unsafe.Pointer(&t4))[:], (*[100000000]float64)(unsafe.Pointer(&t5))[:], (*[100000000]float64)(unsafe.Pointer(&t6))[:], (*[100000000]float64)(unsafe.Pointer(&t7))[:], (*[100000000]float64)(unsafe.Pointer(&t8))[:], (*[100000000]float64)(unsafe.Pointer(&t9))[:], p)
 	x = float32(-1)
 	n = 0
 	for xi = float64(0); xi <= 1.01*L && n < nx; xi += 0.1 * L {
 		for float64(x) < xi && n < nx {
-			sfrv = noarch.Fscanf(fpif, []byte("%f %f %f %f %f %f %f %f %f %f %f\x00"), (*[1]float32)(unsafe.Pointer(&x))[:], (*[1]float32)(unsafe.Pointer(&Nx))[:], (*[1]float32)(unsafe.Pointer(&Vy))[:], (*[1]float32)(unsafe.Pointer(&Vz))[:], (*[1]float32)(unsafe.Pointer(&Tx))[:], (*[1]float32)(unsafe.Pointer(&My))[:], (*[1]float32)(unsafe.Pointer(&Mz))[:], (*[1]float32)(unsafe.Pointer(&Dx))[:], (*[1]float32)(unsafe.Pointer(&Dy))[:], (*[1]float32)(unsafe.Pointer(&Dz))[:], (*[1]float32)(unsafe.Pointer(&Rx))[:])
+			sfrv = noarch.Fscanf(fpif, []byte("%f %f %f %f %f %f %f %f %f %f %f\x00"), (*[100000000]float32)(unsafe.Pointer(&x))[:], (*[100000000]float32)(unsafe.Pointer(&Nx))[:], (*[100000000]float32)(unsafe.Pointer(&Vy))[:], (*[100000000]float32)(unsafe.Pointer(&Vz))[:], (*[100000000]float32)(unsafe.Pointer(&Tx))[:], (*[100000000]float32)(unsafe.Pointer(&My))[:], (*[100000000]float32)(unsafe.Pointer(&Mz))[:], (*[100000000]float32)(unsafe.Pointer(&Dx))[:], (*[100000000]float32)(unsafe.Pointer(&Dy))[:], (*[100000000]float32)(unsafe.Pointer(&Dz))[:], (*[100000000]float32)(unsafe.Pointer(&Rx))[:])
 			if sfrv != 11 {
 				sferr(fnif)
 			}
@@ -8370,7 +7789,7 @@ func subspace(K [][]float64, M [][]float64, n int, m int, w []float64, V [][]flo
 				return ok[0]
 			}()))
 			for {
-				ldl_mprove(K, n, u, v, d, (*[1]float64)(unsafe.Pointer(&error))[:], ok)
+				ldl_mprove(K, n, u, v, d, (*[100000000]float64)(unsafe.Pointer(&error))[:], ok)
 				if disp != 0 {
 					noarch.Fprintf(stdout, []byte("%9.2e\x00"), error)
 				}
@@ -8681,7 +8100,7 @@ func stodola(K [][]float64, M [][]float64, n int, m int, w []float64, V [][]floa
 			return ok[0]
 		}()))
 		for {
-			ldl_mprove(K, n, u, v, d, (*[1]float64)(unsafe.Pointer(&error))[:], ok)
+			ldl_mprove(K, n, u, v, d, (*[100000000]float64)(unsafe.Pointer(&error))[:], ok)
 			if disp != 0 {
 				noarch.Fprintf(stdout, []byte("%9.2e\x00"), error)
 			}
@@ -8879,7 +8298,7 @@ func sturm(K [][]float64, M [][]float64, n int, m int, shift float64, ws float64
 			K[i][j] -= ws_shift * M[i][j]
 		}
 	}
-	ldl_dcmp(K, n, d, d, d, 1, 0, (*[1]int)(unsafe.Pointer(&ok))[:])
+	ldl_dcmp(K, n, d, d, d, 1, 0, (*[100000000]int)(unsafe.Pointer(&ok))[:])
 	if verbose != 0 {
 		noarch.Fprintf(stdout, []byte("  There are %d modes below %f Hz.\x00"), -ok, math.Sqrt(ws)/(2*3.141592653589793))
 	}
@@ -9277,7 +8696,7 @@ func ldl_mprove(A [][]float64, n int, d []float64, b []float64, x []float64, rms
 		}
 		resid[i] = sdp
 	}
-	ldl_dcmp(A, n, d, resid, resid, 0, 1, (*[1]int)(unsafe.Pointer(&pd))[:])
+	ldl_dcmp(A, n, d, resid, resid, 0, 1, (*[100000000]int)(unsafe.Pointer(&pd))[:])
 	for i = 1; i <= n; i++ {
 		rms_resid_new += resid[i] * resid[i]
 	}
@@ -9528,7 +8947,7 @@ func ldl_mprove_pm(A [][]float64, n int, d []float64, b []float64, x []float64, 
 			dx[i] = sdp
 		}
 	}
-	ldl_dcmp_pm(A, n, d, dx, dx, dc, q, r, 0, 1, (*[1]int)(unsafe.Pointer(&pd))[:])
+	ldl_dcmp_pm(A, n, d, dx, dx, dc, q, r, 0, 1, (*[100000000]int)(unsafe.Pointer(&pd))[:])
 	for i = 1; i <= n; i++ {
 		if q[i] != 0 {
 			rms_resid_new += dx[i] * dx[i]
@@ -9659,20 +9078,20 @@ func pseudo_inv(A [][]float64, Ai [][]float64, n int, m int, beta float64, verbo
 	for i = 1; i <= n; i++ {
 		AtA[i][i] += beta * tr_AtA
 	}
-	ldl_dcmp(AtA, n, diag, b, x, 1, 0, (*[1]int)(unsafe.Pointer(&ok))[:])
+	ldl_dcmp(AtA, n, diag, b, x, 1, 0, (*[100000000]int)(unsafe.Pointer(&ok))[:])
 	for j = 1; j <= n; j++ {
 		for k = 1; k <= n; k++ {
 			b[k] = 0
 		}
 		b[j] = 1
-		ldl_dcmp(AtA, n, diag, b, x, 0, 1, (*[1]int)(unsafe.Pointer(&ok))[:])
+		ldl_dcmp(AtA, n, diag, b, x, 0, 1, (*[100000000]int)(unsafe.Pointer(&ok))[:])
 		if verbose != 0 {
 			noarch.Fprintf(stdout, []byte("  RMS matrix error:\x00"))
 		}
 		error = 1
 		ok = 1
 		for {
-			ldl_mprove(AtA, n, diag, b, x, (*[1]float64)(unsafe.Pointer(&error))[:], (*[1]int)(unsafe.Pointer(&ok))[:])
+			ldl_mprove(AtA, n, diag, b, x, (*[100000000]float64)(unsafe.Pointer(&error))[:], (*[100000000]int)(unsafe.Pointer(&ok))[:])
 			if verbose != 0 {
 				noarch.Fprintf(stdout, []byte("%9.2e\x00"), error)
 			}
@@ -9800,7 +9219,7 @@ func invAB(A [][]float64, B [][]float64, n int, m int, AiB [][]float64, ok []int
 			return ok[0]
 		}()))
 		for {
-			ldl_mprove(A, n, diag, b, x, (*[1]float64)(unsafe.Pointer(&error))[:], ok)
+			ldl_mprove(A, n, diag, b, x, (*[100000000]float64)(unsafe.Pointer(&error))[:], ok)
 			if verbose != 0 {
 				noarch.Fprintf(stdout, []byte("%9.2e\x00"), error)
 			}
@@ -9845,12 +9264,12 @@ func xtinvAy(X [][]float64, A [][]float64, Y [][]float64, n int, m int, Ac [][]f
 		x[i] = 0
 		diag[i] = x[i]
 	}
-	ldl_dcmp(A, n, diag, y, x, 1, 0, (*[1]int)(unsafe.Pointer(&ok))[:])
+	ldl_dcmp(A, n, diag, y, x, 1, 0, (*[100000000]int)(unsafe.Pointer(&ok))[:])
 	for j = 1; j <= m; j++ {
 		for k = 1; k <= n; k++ {
 			y[k] = Y[k][j]
 		}
-		ldl_dcmp(A, n, diag, y, x, 0, 1, (*[1]int)(unsafe.Pointer(&ok))[:])
+		ldl_dcmp(A, n, diag, y, x, 0, 1, (*[100000000]int)(unsafe.Pointer(&ok))[:])
 		if verbose != 0 {
 			noarch.Fprintf(stdout, []byte("    LDL' RMS matrix precision:\x00"))
 		}
@@ -9859,7 +9278,7 @@ func xtinvAy(X [][]float64, A [][]float64, Y [][]float64, n int, m int, Ac [][]f
 			return ok
 		}()))
 		for {
-			ldl_mprove(A, n, diag, y, x, (*[1]float64)(unsafe.Pointer(&error))[:], (*[1]int)(unsafe.Pointer(&ok))[:])
+			ldl_mprove(A, n, diag, y, x, (*[100000000]float64)(unsafe.Pointer(&error))[:], (*[100000000]int)(unsafe.Pointer(&ok))[:])
 			if verbose != 0 {
 				noarch.Fprintf(stdout, []byte("%9.2e\x00"), error)
 			}
@@ -10023,13 +9442,13 @@ func invAXinvA(A [][]float64, X [][]float64, n int, verbose int) {
 			XAi[i][j] = Ai[i][j]
 		}
 	}
-	ldl_dcmp(A, n, diag, b, x, 1, 0, (*[1]int)(unsafe.Pointer(&ok))[:])
+	ldl_dcmp(A, n, diag, b, x, 1, 0, (*[100000000]int)(unsafe.Pointer(&ok))[:])
 	for j = 1; j <= n; j++ {
 		for k = 1; k <= n; k++ {
 			b[k] = 0
 		}
 		b[j] = 1
-		ldl_dcmp(A, n, diag, b, x, 0, 1, (*[1]int)(unsafe.Pointer(&ok))[:])
+		ldl_dcmp(A, n, diag, b, x, 0, 1, (*[100000000]int)(unsafe.Pointer(&ok))[:])
 		if verbose != 0 {
 			noarch.Fprintf(stdout, []byte("    LDL' RMS matrix precision:\x00"))
 		}
@@ -10038,7 +9457,7 @@ func invAXinvA(A [][]float64, X [][]float64, n int, verbose int) {
 			return ok
 		}()))
 		for {
-			ldl_mprove(A, n, diag, b, x, (*[1]float64)(unsafe.Pointer(&error))[:], (*[1]int)(unsafe.Pointer(&ok))[:])
+			ldl_mprove(A, n, diag, b, x, (*[100000000]float64)(unsafe.Pointer(&error))[:], (*[100000000]int)(unsafe.Pointer(&ok))[:])
 			if verbose != 0 {
 				noarch.Fprintf(stdout, []byte("%9.2e\x00"), error)
 			}
@@ -10294,13 +9713,13 @@ func errorMsg(errString []byte) {
 }
 
 // openFile - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:114
-// Warning (SwitchStmt):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:126 : Unsupport case
+// Warning (*ast.SwitchStmt):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:126 :Unsupport case
 /*
  * OPENFILE  -  open a file or print a diagnostic error message
  */ //
 // open file
 //
-func openFile(path []byte, fileName []byte, mode []byte, usage []byte) (c2goDefaultReturn *noarch.File) {
+func openFile(path []byte, fileName []byte, mode []byte, usage []byte) (c4goDefaultReturn *noarch.File) {
 	var fp *noarch.File
 	var pathToFile []byte = make([]byte, 512, 512)
 	var errMsg []byte = make([]byte, 512, 512)
@@ -10422,7 +9841,7 @@ func scanFile(fp *noarch.File, head_lines int, start_chnl int, stop_chnl int) in
 	}
 	for {
 		for chn = start_chnl; chn <= stop_chnl; chn++ {
-			ok = noarch.Fscanf(fp, []byte("%f\x00"), (*[1]float32)(unsafe.Pointer(&data_value))[:])
+			ok = noarch.Fscanf(fp, []byte("%f\x00"), (*[100000000]float32)(unsafe.Pointer(&data_value))[:])
 			if ok == 1 {
 				points += 1
 			}
@@ -10491,15 +9910,15 @@ func getTime(s []byte, y int, m int, d int, hr int, mn int, sc int, os int) noar
 	var temp []byte = make([]byte, 16, 16)
 	var t_tm noarch.Tm
 	var t_time noarch.TimeT
-	t_tm.Tm_year = noarch.Atoi(noarch.Strncpy(temp, (*(*[1000000000]byte)(unsafe.Pointer(uintptr(unsafe.Pointer(&s[0])) + (uintptr)(y)*unsafe.Sizeof(s[0]))))[:], int(uint32(4)))) - 1900
+	t_tm.TmYear = noarch.Atoi(noarch.Strncpy(temp, (*(*[1000000000]byte)(unsafe.Pointer(uintptr(unsafe.Pointer(&s[0])) + (uintptr)(y)*unsafe.Sizeof(s[0]))))[:], int(uint32(4)))) - 1900
 	temp[2] = '\x00'
-	t_tm.Tm_mon = noarch.Atoi(noarch.Strncpy(temp, (*(*[1000000000]byte)(unsafe.Pointer(uintptr(unsafe.Pointer(&s[0])) + (uintptr)(m)*unsafe.Sizeof(s[0]))))[:], int(uint32(2)))) - 1
-	t_tm.Tm_mday = noarch.Atoi(noarch.Strncpy(temp, (*(*[1000000000]byte)(unsafe.Pointer(uintptr(unsafe.Pointer(&s[0])) + (uintptr)(d)*unsafe.Sizeof(s[0]))))[:], int(uint32(2))))
-	t_tm.Tm_hour = noarch.Atoi(noarch.Strncpy(temp, (*(*[1000000000]byte)(unsafe.Pointer(uintptr(unsafe.Pointer(&s[0])) + (uintptr)(hr)*unsafe.Sizeof(s[0]))))[:], int(uint32(2))))
-	t_tm.Tm_min = noarch.Atoi(noarch.Strncpy(temp, (*(*[1000000000]byte)(unsafe.Pointer(uintptr(unsafe.Pointer(&s[0])) + (uintptr)(mn)*unsafe.Sizeof(s[0]))))[:], int(uint32(2))))
-	t_tm.Tm_sec = noarch.Atoi(noarch.Strncpy(temp, (*(*[1000000000]byte)(unsafe.Pointer(uintptr(unsafe.Pointer(&s[0])) + (uintptr)(sc)*unsafe.Sizeof(s[0]))))[:], int(uint32(2)))) + os
-	t_tm.Tm_isdst = -1
-	t_time = noarch.Mktime((*[1]noarch.Tm)(unsafe.Pointer(&t_tm))[:])
+	t_tm.TmMon = noarch.Atoi(noarch.Strncpy(temp, (*(*[1000000000]byte)(unsafe.Pointer(uintptr(unsafe.Pointer(&s[0])) + (uintptr)(m)*unsafe.Sizeof(s[0]))))[:], int(uint32(2)))) - 1
+	t_tm.TmMday = noarch.Atoi(noarch.Strncpy(temp, (*(*[1000000000]byte)(unsafe.Pointer(uintptr(unsafe.Pointer(&s[0])) + (uintptr)(d)*unsafe.Sizeof(s[0]))))[:], int(uint32(2))))
+	t_tm.TmHour = noarch.Atoi(noarch.Strncpy(temp, (*(*[1000000000]byte)(unsafe.Pointer(uintptr(unsafe.Pointer(&s[0])) + (uintptr)(hr)*unsafe.Sizeof(s[0]))))[:], int(uint32(2))))
+	t_tm.TmMin = noarch.Atoi(noarch.Strncpy(temp, (*(*[1000000000]byte)(unsafe.Pointer(uintptr(unsafe.Pointer(&s[0])) + (uintptr)(mn)*unsafe.Sizeof(s[0]))))[:], int(uint32(2))))
+	t_tm.TmSec = noarch.Atoi(noarch.Strncpy(temp, (*(*[1000000000]byte)(unsafe.Pointer(uintptr(unsafe.Pointer(&s[0])) + (uintptr)(sc)*unsafe.Sizeof(s[0]))))[:], int(uint32(2)))) + os
+	t_tm.TmIsdst = -1
+	t_time = noarch.Mktime((*[100000000]noarch.Tm)(unsafe.Pointer(&t_tm))[:])
 	return noarch.TimeT(t_time)
 }
 
@@ -10572,7 +9991,7 @@ func vector(nl int32, nh int32) []float32 {
 	if v == nil {
 		NRerror([]byte("allocation failure in vector()\x00"))
 	}
-	return (*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) - (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0])) + (uintptr)(1)*unsafe.Sizeof((*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) - (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0]))))[:]
+	return (*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) - (uintptr)(int(nl))*unsafe.Sizeof(v[0]))))[:][1:]
 }
 
 // ivector - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:39
@@ -10613,7 +10032,7 @@ func lvector(nl int32, nh int32) []uint32 {
 	if v == nil {
 		NRerror([]byte("allocation failure in lvector()\x00"))
 	}
-	return (*(*[1000000000]uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000]uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) - (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0])) + (uintptr)(1)*unsafe.Sizeof((*(*[1000000000]uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) - (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0]))))[:]
+	return (*(*[1000000000]uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) - (uintptr)(int(nl))*unsafe.Sizeof(v[0]))))[:][1:]
 }
 
 // dvector - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:72
@@ -10632,6 +10051,7 @@ func dvector(nl int32, nh int32) []float64 {
 }
 
 // matrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:84
+// Warning Function `noarch.InterfaceToFloat32SliceSlice` haven`t implementation
 /* allocate a float matrix with subscript range m[nrl..nrh][ncl..nch] */ //
 /* allocate pointers to rows */ //
 /* allocate rows and set pointers to them */ //
@@ -10646,21 +10066,22 @@ func matrix(nrl int32, nrh int32, ncl int32, nch int32) [][]float32 {
 	if m == nil {
 		NRerror([]byte("allocation failure 1 in matrix()\x00"))
 	}
-	m = (*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(1)*unsafe.Sizeof(m[0]))))[:]
-	m = (*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) - (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:]
+	m = m[1:]
+	m = (*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) - (uintptr)(int(nrl))*unsafe.Sizeof(m[0]))))[:]
 	m[nrl] = make([]float32, size_t((uint32(nrow*ncol+int32(1))*4))/4)
 	if m[nrl] == nil {
 		NRerror([]byte("allocation failure 2 in matrix()\x00"))
 	}
-	m[nrl] = (*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (uintptr)(1)*unsafe.Sizeof(m[nrl][0]))))[:]
-	m[nrl] = (*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) - (uintptr)(ncl)*unsafe.Sizeof(m[nrl][0]))))[:]
+	m[nrl] = m[nrl][1:]
+	m[nrl] = (*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) - (uintptr)(int(ncl))*unsafe.Sizeof(m[nrl][0]))))[:]
 	for i = nrl + int32(1); i <= nrh; i++ {
-		m[i] = (*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i-int32(1)][0])) + (uintptr)(ncol)*unsafe.Sizeof(m[i-int32(1)][0]))))[:]
+		m[i] = (*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i-int32(1)][0])) + (uintptr)(int(ncol))*unsafe.Sizeof(m[i-int32(1)][0]))))[:]
 	}
 	return m
 }
 
 // dmatrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:108
+// Warning Function `noarch.InterfaceToFloat64SliceSlice` haven`t implementation
 /* allocate a double matrix with subscript range m[nrl..nrh][ncl..nch] */ //
 /* allocate pointers to rows */ //
 /* allocate rows and set pointers to them */ //
@@ -10675,21 +10096,22 @@ func dmatrix(nrl int32, nrh int32, ncl int32, nch int32) [][]float64 {
 	if m == nil {
 		NRerror([]byte("allocation failure 1 in matrix()\x00"))
 	}
-	m = (*(*[1000000000][]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(1)*unsafe.Sizeof(m[0]))))[:]
-	m = (*(*[1000000000][]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) - (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:]
+	m = m[1:]
+	m = (*(*[1000000000][]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) - (uintptr)(int(nrl))*unsafe.Sizeof(m[0]))))[:]
 	m[nrl] = make([]float64, size_t((uint32(nrow*ncol+int32(1))*8))/8)
 	if m[nrl] == nil {
 		NRerror([]byte("allocation failure 2 in matrix()\x00"))
 	}
-	m[nrl] = (*(*[1000000000]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (uintptr)(1)*unsafe.Sizeof(m[nrl][0]))))[:]
-	m[nrl] = (*(*[1000000000]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) - (uintptr)(ncl)*unsafe.Sizeof(m[nrl][0]))))[:]
+	m[nrl] = m[nrl][1:]
+	m[nrl] = (*(*[1000000000]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) - (uintptr)(int(ncl))*unsafe.Sizeof(m[nrl][0]))))[:]
 	for i = nrl + int32(1); i <= nrh; i++ {
-		m[i] = (*(*[1000000000]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i-int32(1)][0])) + (uintptr)(ncol)*unsafe.Sizeof(m[i-int32(1)][0]))))[:]
+		m[i] = (*(*[1000000000]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i-int32(1)][0])) + (uintptr)(int(ncol))*unsafe.Sizeof(m[i-int32(1)][0]))))[:]
 	}
 	return m
 }
 
 // imatrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:132
+// Warning Function `noarch.InterfaceToIntSliceSlice` haven`t implementation
 /* allocate a int matrix with subscript range m[nrl..nrh][ncl..nch] */ //
 /* allocate pointers to rows */ //
 /* allocate rows and set pointers to them */ //
@@ -10704,21 +10126,22 @@ func imatrix(nrl int32, nrh int32, ncl int32, nch int32) [][]int {
 	if m == nil {
 		NRerror([]byte("allocation failure 1 in matrix()\x00"))
 	}
-	m = (*(*[1000000000][]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(1)*unsafe.Sizeof(m[0]))))[:]
-	m = (*(*[1000000000][]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) - (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:]
+	m = m[1:]
+	m = (*(*[1000000000][]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) - (uintptr)(int(nrl))*unsafe.Sizeof(m[0]))))[:]
 	m[nrl] = make([]int, size_t((uint32(nrow*ncol+int32(1))*4))/4)
 	if m[nrl] == nil {
 		NRerror([]byte("allocation failure 2 in matrix()\x00"))
 	}
-	m[nrl] = (*(*[1000000000]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (uintptr)(1)*unsafe.Sizeof(m[nrl][0]))))[:]
-	m[nrl] = (*(*[1000000000]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) - (uintptr)(ncl)*unsafe.Sizeof(m[nrl][0]))))[:]
+	m[nrl] = m[nrl][1:]
+	m[nrl] = (*(*[1000000000]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) - (uintptr)(int(ncl))*unsafe.Sizeof(m[nrl][0]))))[:]
 	for i = nrl + int32(1); i <= nrh; i++ {
-		m[i] = (*(*[1000000000]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i-int32(1)][0])) + (uintptr)(ncol)*unsafe.Sizeof(m[i-int32(1)][0]))))[:]
+		m[i] = (*(*[1000000000]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i-int32(1)][0])) + (uintptr)(int(ncol))*unsafe.Sizeof(m[i-int32(1)][0]))))[:]
 	}
 	return m
 }
 
 // subMatrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:157
+// Warning Function `noarch.InterfaceToFloat32SliceSlice` haven`t implementation
 /* point a subMatrix [newrl..][newcl..] to a[oldrl..oldrh][oldcl..oldch] */ //
 /* allocate array of pointers to rows */ //
 /* set pointers to rows */ //
@@ -10734,13 +10157,13 @@ func subMatrix(a [][]float32, oldrl int32, oldrh int32, oldcl int32, oldch int32
 	if m == nil {
 		NRerror([]byte("allocation failure in subMatrix()\x00"))
 	}
-	m = (*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(1)*unsafe.Sizeof(m[0]))))[:]
-	m = (*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) - (uintptr)(newrl)*unsafe.Sizeof(m[0]))))[:]
+	m = m[1:]
+	m = (*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) - (uintptr)(int(newrl))*unsafe.Sizeof(m[0]))))[:]
 	{
 		i = oldrl
 		j = newrl
 		for j = newrl; i <= oldrh; {
-			m[j] = (*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&a[i][0])) + (uintptr)(ncol)*unsafe.Sizeof(a[i][0]))))[:]
+			m[j] = (*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&a[i][0])) + (uintptr)(int(ncol))*unsafe.Sizeof(a[i][0]))))[:]
 			i += 1
 			j += 1
 		}
@@ -10767,14 +10190,14 @@ func convert_matrix(a []float32, nrl int32, nrh int32, ncl int32, nch int32) [][
 	if m == nil {
 		NRerror([]byte("allocation failure in convert_matrix()\x00"))
 	}
-	m = (*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(1)*unsafe.Sizeof(m[0]))))[:]
-	m = (*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) - (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:]
-	m[nrl] = (*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&a[0])) - (uintptr)(ncl)*unsafe.Sizeof(a[0]))))[:]
+	m = m[1:]
+	m = (*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) - (uintptr)(int(nrl))*unsafe.Sizeof(m[0]))))[:]
+	m[nrl] = (*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&a[0])) - (uintptr)(int(ncl))*unsafe.Sizeof(a[0]))))[:]
 	{
 		i = int32(1)
 		j = nrl + int32(1)
 		for j = nrl + int32(1); i < nrow; {
-			m[j] = (*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[j-int32(1)][0])) + (uintptr)(ncol)*unsafe.Sizeof(m[j-int32(1)][0]))))[:]
+			m[j] = (*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[j-int32(1)][0])) + (uintptr)(int(ncol))*unsafe.Sizeof(m[j-int32(1)][0]))))[:]
 			i += 1
 			j += 1
 		}
@@ -10800,28 +10223,28 @@ func f3tensor(nrl int32, nrh int32, ncl int32, nch int32, ndl int32, ndh int32) 
 	if t == nil {
 		NRerror([]byte("allocation failure 1 in f3tensor()\x00"))
 	}
-	t = (*(*[1000000000][][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[0])) + (uintptr)(1)*unsafe.Sizeof(t[0]))))[:]
-	t = (*(*[1000000000][][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[0])) - (uintptr)(nrl)*unsafe.Sizeof(t[0]))))[:]
+	t = t[1:]
+	t = (*(*[1000000000][][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[0])) - (uintptr)(int(nrl))*unsafe.Sizeof(t[0]))))[:]
 	t[nrl] = make([][]float32, size_t((uint32(nrow*ncol+int32(1))*8))/8)
 	if t[nrl] == nil {
 		NRerror([]byte("allocation failure 2 in f3tensor()\x00"))
 	}
-	t[nrl] = (*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][0])) + (uintptr)(1)*unsafe.Sizeof(t[nrl][0]))))[:]
-	t[nrl] = (*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][0])) - (uintptr)(ncl)*unsafe.Sizeof(t[nrl][0]))))[:]
+	t[nrl] = t[nrl][1:]
+	t[nrl] = (*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][0])) - (uintptr)(int(ncl))*unsafe.Sizeof(t[nrl][0]))))[:]
 	t[nrl][ncl] = make([]float32, size_t((uint32(nrow*ncol*ndep+int32(1))*4))/4)
 	if t[nrl][ncl] == nil {
 		NRerror([]byte("allocation failure 3 in f3tensor()\x00"))
 	}
-	t[nrl][ncl] = (*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][ncl][0])) + (uintptr)(1)*unsafe.Sizeof(t[nrl][ncl][0]))))[:]
-	t[nrl][ncl] = (*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][ncl][0])) - (uintptr)(ndl)*unsafe.Sizeof(t[nrl][ncl][0]))))[:]
+	t[nrl][ncl] = t[nrl][ncl][1:]
+	t[nrl][ncl] = (*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][ncl][0])) - (uintptr)(int(ndl))*unsafe.Sizeof(t[nrl][ncl][0]))))[:]
 	for j = ncl + int32(1); j <= nch; j++ {
-		t[nrl][j] = (*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][j-int32(1)][0])) + (uintptr)(ndep)*unsafe.Sizeof(t[nrl][j-int32(1)][0]))))[:]
+		t[nrl][j] = (*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][j-int32(1)][0])) + (uintptr)(int(ndep))*unsafe.Sizeof(t[nrl][j-int32(1)][0]))))[:]
 	}
 	for i = nrl + int32(1); i <= nrh; i++ {
-		t[i] = (*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[i-int32(1)][0])) + (uintptr)(ncol)*unsafe.Sizeof(t[i-int32(1)][0]))))[:]
-		t[i][ncl] = (*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[i-int32(1)][ncl][0])) + (uintptr)(ncol*ndep)*unsafe.Sizeof(t[i-int32(1)][ncl][0]))))[:]
+		t[i] = (*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[i-int32(1)][0])) + (uintptr)(int(ncol))*unsafe.Sizeof(t[i-int32(1)][0]))))[:]
+		t[i][ncl] = (*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[i-int32(1)][ncl][0])) + (uintptr)(int(ncol*ndep))*unsafe.Sizeof(t[i-int32(1)][ncl][0]))))[:]
 		for j = ncl + int32(1); j <= nch; j++ {
-			t[i][j] = (*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[i][j-int32(1)][0])) + (uintptr)(ndep)*unsafe.Sizeof(t[i][j-int32(1)][0]))))[:]
+			t[i][j] = (*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[i][j-int32(1)][0])) + (uintptr)(int(ndep))*unsafe.Sizeof(t[i][j-int32(1)][0]))))[:]
 		}
 	}
 	return t
@@ -10831,82 +10254,82 @@ func f3tensor(nrl int32, nrh int32, ncl int32, nch int32, ndl int32, ndh int32) 
 /* free a float vector allocated with vector() */ //
 //
 func free_vector(v []float32, nl int32, nh int32) {
-	_ = ((*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0]))))[:])
+	_ = ((*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(int(nl))*unsafe.Sizeof(v[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(int(nl))*unsafe.Sizeof(v[0]))))[:][0]))))[:])
 }
 
 // free_ivector - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:240
 /* free an int vector allocated with ivector() */ //
 //
 func free_ivector(v []int, nl int32, nh int32) {
-	_ = ((*(*[1000000000]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0]))))[:])
+	_ = ((*(*[1000000000]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(int(nl))*unsafe.Sizeof(v[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(int(nl))*unsafe.Sizeof(v[0]))))[:][0]))))[:])
 }
 
 // free_cvector - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:246
 /* free an unsigned char vector allocated with cvector() */ //
 //
 func free_cvector(v []uint8, nl int32, nh int32) {
-	_ = ((*(*[1000000000]uint8)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000]uint8)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000]uint8)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0]))))[:])
+	_ = ((*(*[1000000000]uint8)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000]uint8)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(int(nl))*unsafe.Sizeof(v[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000]uint8)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(int(nl))*unsafe.Sizeof(v[0]))))[:][0]))))[:])
 }
 
 // free_lvector - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:252
 /* free an unsigned long vector allocated with lvector() */ //
 //
 func free_lvector(v []uint32, nl int32, nh int32) {
-	_ = ((*(*[1000000000]uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000]uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000]uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0]))))[:])
+	_ = ((*(*[1000000000]uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000]uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(int(nl))*unsafe.Sizeof(v[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000]uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(int(nl))*unsafe.Sizeof(v[0]))))[:][0]))))[:])
 }
 
 // free_dvector - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:258
 /* free a double vector allocated with dvector() */ //
 //
 func free_dvector(v []float64, nl int32, nh int32) {
-	_ = ((*(*[1000000000]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][0]))))[:])
+	_ = ((*(*[1000000000]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(int(nl))*unsafe.Sizeof(v[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) + (uintptr)(int(nl))*unsafe.Sizeof(v[0]))))[:][0]))))[:])
 }
 
 // free_matrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:264
 /* free a float matrix allocated by matrix() */ //
 //
 func free_matrix(m [][]float32, nrl int32, nrh int32, ncl int32, nch int32) {
-	_ = ((*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (uintptr)(ncl)*unsafe.Sizeof(m[nrl][0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (uintptr)(ncl)*unsafe.Sizeof(m[nrl][0]))))[:][0]))))[:])
-	_ = ((*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:][0]))))[:])
+	_ = ((*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (uintptr)(int(ncl))*unsafe.Sizeof(m[nrl][0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (uintptr)(int(ncl))*unsafe.Sizeof(m[nrl][0]))))[:][0]))))[:])
+	_ = ((*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(int(nrl))*unsafe.Sizeof(m[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(int(nrl))*unsafe.Sizeof(m[0]))))[:][0]))))[:])
 }
 
 // free_dmatrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:271
 /* free a double matrix allocated by dmatrix() */ //
 //
 func free_dmatrix(m [][]float64, nrl int32, nrh int32, ncl int32, nch int32) {
-	_ = ((*(*[1000000000]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (uintptr)(ncl)*unsafe.Sizeof(m[nrl][0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (uintptr)(ncl)*unsafe.Sizeof(m[nrl][0]))))[:][0]))))[:])
-	_ = ((*(*[1000000000][]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000][]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000][]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:][0]))))[:])
+	_ = ((*(*[1000000000]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (uintptr)(int(ncl))*unsafe.Sizeof(m[nrl][0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (uintptr)(int(ncl))*unsafe.Sizeof(m[nrl][0]))))[:][0]))))[:])
+	_ = ((*(*[1000000000][]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000][]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(int(nrl))*unsafe.Sizeof(m[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000][]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(int(nrl))*unsafe.Sizeof(m[0]))))[:][0]))))[:])
 }
 
 // free_imatrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:278
 /* free an int matrix allocated by imatrix() */ //
 //
 func free_imatrix(m [][]int, nrl int32, nrh int32, ncl int32, nch int32) {
-	_ = ((*(*[1000000000]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (uintptr)(ncl)*unsafe.Sizeof(m[nrl][0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (uintptr)(ncl)*unsafe.Sizeof(m[nrl][0]))))[:][0]))))[:])
-	_ = ((*(*[1000000000][]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000][]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000][]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:][0]))))[:])
+	_ = ((*(*[1000000000]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (uintptr)(int(ncl))*unsafe.Sizeof(m[nrl][0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) + (uintptr)(int(ncl))*unsafe.Sizeof(m[nrl][0]))))[:][0]))))[:])
+	_ = ((*(*[1000000000][]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000][]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(int(nrl))*unsafe.Sizeof(m[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000][]int)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) + (uintptr)(int(nrl))*unsafe.Sizeof(m[0]))))[:][0]))))[:])
 }
 
 // free_subMatrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:285
 /* free a subMatrix allocated by subMatrix() */ //
 //
 func free_subMatrix(b [][]float32, nrl int32, nrh int32, ncl int32, nch int32) {
-	_ = ((*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&b[0])) + (uintptr)(nrl)*unsafe.Sizeof(b[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&b[0])) + (uintptr)(nrl)*unsafe.Sizeof(b[0]))))[:][0]))))[:])
+	_ = ((*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&b[0])) + (uintptr)(int(nrl))*unsafe.Sizeof(b[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&b[0])) + (uintptr)(int(nrl))*unsafe.Sizeof(b[0]))))[:][0]))))[:])
 }
 
 // free_convert_matrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:291
 /* free a matrix allocated by convert_matrix() */ //
 //
 func free_convert_matrix(b [][]float32, nrl int32, nrh int32, ncl int32, nch int32) {
-	_ = ((*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&b[0])) + (uintptr)(nrl)*unsafe.Sizeof(b[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&b[0])) + (uintptr)(nrl)*unsafe.Sizeof(b[0]))))[:][0]))))[:])
+	_ = ((*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&b[0])) + (uintptr)(int(nrl))*unsafe.Sizeof(b[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&b[0])) + (uintptr)(int(nrl))*unsafe.Sizeof(b[0]))))[:][0]))))[:])
 }
 
 // free_f3tensor - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:297
 /* free a float f3tensor allocated by f3tensor() */ //
 //
 func free_f3tensor(t [][][]float32, nrl int32, nrh int32, ncl int32, nch int32, ndl int32, ndh int32) {
-	_ = ((*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][ncl][0])) + (uintptr)(ndl)*unsafe.Sizeof(t[nrl][ncl][0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][ncl][0])) + (uintptr)(ndl)*unsafe.Sizeof(t[nrl][ncl][0]))))[:][0]))))[:])
-	_ = ((*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][0])) + (uintptr)(ncl)*unsafe.Sizeof(t[nrl][0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][0])) + (uintptr)(ncl)*unsafe.Sizeof(t[nrl][0]))))[:][0]))))[:])
-	_ = ((*(*[1000000000][][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000][][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[0])) + (uintptr)(nrl)*unsafe.Sizeof(t[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000][][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[0])) + (uintptr)(nrl)*unsafe.Sizeof(t[0]))))[:][0]))))[:])
+	_ = ((*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][ncl][0])) + (uintptr)(int(ndl))*unsafe.Sizeof(t[nrl][ncl][0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][ncl][0])) + (uintptr)(int(ndl))*unsafe.Sizeof(t[nrl][ncl][0]))))[:][0]))))[:])
+	_ = ((*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][0])) + (uintptr)(int(ncl))*unsafe.Sizeof(t[nrl][0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][0])) + (uintptr)(int(ncl))*unsafe.Sizeof(t[nrl][0]))))[:][0]))))[:])
+	_ = ((*(*[1000000000][][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(*(*[1000000000][][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[0])) + (uintptr)(int(nrl))*unsafe.Sizeof(t[0]))))[:][0])) - (uintptr)(1)*unsafe.Sizeof((*(*[1000000000][][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[0])) + (uintptr)(int(nrl))*unsafe.Sizeof(t[0]))))[:][0]))))[:])
 }
 
 // Cvector - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:305
@@ -10922,6 +10345,7 @@ func Cvector(nl int, nh int) []fcomplex {
 }
 
 // Cmatrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:316
+// Warning Function `noarch.InterfaceToFcomplexSliceSlice` haven`t implementation
 /* allocate storage for a Complex matrix	*/ //
 //
 func Cmatrix(nrl int, nrh int, ncl int, nch int) [][]fcomplex {
@@ -10943,6 +10367,12 @@ func Cmatrix(nrl int, nrh int, ncl int, nch int) [][]fcomplex {
 }
 
 // D3matrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:334
+// Warning Function `noarch.Float64SliceSliceSliceToFloat32SliceSliceSlice` haven`t implementation
+// Warning Function `noarch.InterfaceToFloat64SliceSlice` haven`t implementation
+// Warning Function `noarch.Float64SliceSliceToFloat32SliceSlice` haven`t implementation
+// Warning Function `noarch.InterfaceToFloat64SliceSlice` haven`t implementation
+// Warning Function `noarch.Float64SliceSliceToFloat32SliceSlice` haven`t implementation
+// Warning Function `noarch.Float64SliceToFloat32Slice` haven`t implementation
 /* storage for a 3-D matrix */ //
 /*
 	m=(float ***) malloc((unsigned) (nrh-nrl+1)*sizeof(float*));
@@ -10976,6 +10406,7 @@ func D3matrix(nrl int, nrh int, ncl int, nch int, nzl int, nzh int) [][][]float3
 }
 
 // D3dmatrix - transpiled function from  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:367
+// Warning Function `noarch.InterfaceToFloat64SliceSlice` haven`t implementation
 /* storage for a 3-D matrix */ //
 /*
 	m=(double ***) malloc((unsigned) (nrh-nrl+1)*sizeof(double*));
@@ -11167,8 +10598,8 @@ func save_vector(filename []byte, V []float32, nl int, nh int, mode []byte) {
 		noarch.Printf([]byte(" error: cannot open file: '%s' \n\x00"), filename)
 		os.Exit(1011)
 	}
-	_ = noarch.Time((*[1]noarch.TimeT)(unsafe.Pointer(&now))[:])
-	noarch.Fprintf(fp_v, []byte("%% filename: %s - %s\x00"), filename, noarch.Ctime((*[1]noarch.TimeT)(unsafe.Pointer(&now))[:]))
+	_ = noarch.Time((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:])
+	noarch.Fprintf(fp_v, []byte("%% filename: %s - %s\x00"), filename, noarch.Ctime((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:]))
 	noarch.Fprintf(fp_v, []byte("%% type: vector\n\x00"))
 	noarch.Fprintf(fp_v, []byte("%% rows: %d\n\x00"), 1)
 	noarch.Fprintf(fp_v, []byte("%% columns: %d\n\x00"), nh-nl+1)
@@ -11200,8 +10631,8 @@ func save_dvector(filename []byte, V []float64, nl int, nh int, mode []byte) {
 		noarch.Printf([]byte(" error: cannot open file: '%s' \n\x00"), filename)
 		os.Exit(1011)
 	}
-	_ = noarch.Time((*[1]noarch.TimeT)(unsafe.Pointer(&now))[:])
-	noarch.Fprintf(fp_v, []byte("%% filename: %s - %s\x00"), filename, noarch.Ctime((*[1]noarch.TimeT)(unsafe.Pointer(&now))[:]))
+	_ = noarch.Time((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:])
+	noarch.Fprintf(fp_v, []byte("%% filename: %s - %s\x00"), filename, noarch.Ctime((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:]))
 	noarch.Fprintf(fp_v, []byte("%% type: vector\n\x00"))
 	noarch.Fprintf(fp_v, []byte("%% rows: %d\n\x00"), 1)
 	noarch.Fprintf(fp_v, []byte("%% columns: %d\n\x00"), nh-nl+1)
@@ -11233,8 +10664,8 @@ func save_ivector(filename []byte, V []int, nl int, nh int, mode []byte) {
 		noarch.Printf([]byte(" error: cannot open file: '%s' \n\x00"), filename)
 		os.Exit(1012)
 	}
-	_ = noarch.Time((*[1]noarch.TimeT)(unsafe.Pointer(&now))[:])
-	noarch.Fprintf(fp_v, []byte("%% filename: %s - %s\x00"), filename, noarch.Ctime((*[1]noarch.TimeT)(unsafe.Pointer(&now))[:]))
+	_ = noarch.Time((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:])
+	noarch.Fprintf(fp_v, []byte("%% filename: %s - %s\x00"), filename, noarch.Ctime((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:]))
 	noarch.Fprintf(fp_v, []byte("%% type: vector\n\x00"))
 	noarch.Fprintf(fp_v, []byte("%% rows: %d\n\x00"), 1)
 	noarch.Fprintf(fp_v, []byte("%% columns: %d\n\x00"), nh-nl+1)
@@ -11279,8 +10710,8 @@ func save_matrix(filename []byte, A [][]float32, ml int, mh int, nl int, nh int,
 		noarch.Printf([]byte(" error: cannot open file: %s \n\x00"), filename)
 		os.Exit(1013)
 	}
-	_ = noarch.Time((*[1]noarch.TimeT)(unsafe.Pointer(&now))[:])
-	noarch.Fprintf(fp_m, []byte("%% filename: %s - %s\x00"), filename, noarch.Ctime((*[1]noarch.TimeT)(unsafe.Pointer(&now))[:]))
+	_ = noarch.Time((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:])
+	noarch.Fprintf(fp_m, []byte("%% filename: %s - %s\x00"), filename, noarch.Ctime((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:]))
 	noarch.Fprintf(fp_m, []byte("%% type: matrix \n\x00"))
 	noarch.Fprintf(fp_m, []byte("%% rows: %d\n\x00"), rows)
 	noarch.Fprintf(fp_m, []byte("%% columns: %d\n\x00"), cols)
@@ -11340,8 +10771,8 @@ func save_dmatrix(filename []byte, A [][]float64, ml int, mh int, nl int, nh int
 		noarch.Printf([]byte(" error: cannot open file: %s \n\x00"), filename)
 		os.Exit(1014)
 	}
-	_ = noarch.Time((*[1]noarch.TimeT)(unsafe.Pointer(&now))[:])
-	noarch.Fprintf(fp_m, []byte("%% filename: %s - %s\x00"), filename, noarch.Ctime((*[1]noarch.TimeT)(unsafe.Pointer(&now))[:]))
+	_ = noarch.Time((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:])
+	noarch.Fprintf(fp_m, []byte("%% filename: %s - %s\x00"), filename, noarch.Ctime((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:]))
 	noarch.Fprintf(fp_m, []byte("%% type: matrix \n\x00"))
 	noarch.Fprintf(fp_m, []byte("%% rows: %d\n\x00"), rows)
 	noarch.Fprintf(fp_m, []byte("%% columns: %d\n\x00"), cols)
@@ -11391,8 +10822,8 @@ func save_ut_matrix(filename []byte, A [][]float32, n int, mode []byte) {
 		noarch.Printf([]byte(" error: cannot open file: %s \n\x00"), filename)
 		os.Exit(1015)
 	}
-	_ = noarch.Time((*[1]noarch.TimeT)(unsafe.Pointer(&now))[:])
-	noarch.Fprintf(fp_m, []byte("%% filename: %s - %s\x00"), filename, noarch.Ctime((*[1]noarch.TimeT)(unsafe.Pointer(&now))[:]))
+	_ = noarch.Time((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:])
+	noarch.Fprintf(fp_m, []byte("%% filename: %s - %s\x00"), filename, noarch.Ctime((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:]))
 	noarch.Fprintf(fp_m, []byte("%% type: matrix \n\x00"))
 	noarch.Fprintf(fp_m, []byte("%% rows: %d\n\x00"), n)
 	noarch.Fprintf(fp_m, []byte("%% columns: %d\n\x00"), n)
@@ -11437,8 +10868,8 @@ func save_ut_dmatrix(filename []byte, A [][]float64, n int, mode []byte) {
 		noarch.Printf([]byte(" error: cannot open file: %s \n\x00"), filename)
 		os.Exit(1016)
 	}
-	_ = noarch.Time((*[1]noarch.TimeT)(unsafe.Pointer(&now))[:])
-	noarch.Fprintf(fp_m, []byte("%% filename: %s - %s\n\x00"), filename, noarch.Ctime((*[1]noarch.TimeT)(unsafe.Pointer(&now))[:]))
+	_ = noarch.Time((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:])
+	noarch.Fprintf(fp_m, []byte("%% filename: %s - %s\n\x00"), filename, noarch.Ctime((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:]))
 	noarch.Fprintf(fp_m, []byte("%% type: matrix \n\x00"))
 	noarch.Fprintf(fp_m, []byte("%% rows: %d\n\x00"), n)
 	noarch.Fprintf(fp_m, []byte("%% columns: %d\n\x00"), n)

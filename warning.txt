@@ -1,14 +1,29 @@
-// Warning (EnumDecl):  /usr/include/math.h:347 : Add support of continues counter for type : *ast.UnaryExpr
-// Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/waitstatus.h:75 : Error : name of FieldDecl is empty
-// Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/waitstatus.h:89 : Error : name of FieldDecl is empty
-// Warning (TransparentUnionAttr):  /usr/include/stdlib.h:71 : could not parse &{40450192 {/usr/include/stdlib.h 71 0 35 0 } []}
-// Warning (FieldDecl):  /usr/include/stdlib.h:69 : Avoid struct `union wait *` in FieldDecl
-// Warning (RecordDecl):  /usr/include/stdlib.h:67 : could not determine the size of type `union __WAIT_STATUS` for that reason: Cannot determine sizeof : |union __WAIT_STATUS|. err = Cannot determine sizeof : |union wait *|. err = error in union
-// Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/timex.h:50 : Error : name of FieldDecl is empty
-// Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/timex.h:51 : Error : name of FieldDecl is empty
-// Warning (FieldDecl):  /usr/include/x86_64-linux-gnu/bits/timex.h:52 : Error : name of FieldDecl is empty
-// Warning (EnumDecl):  /usr/include/x86_64-linux-gnu/bits/confname.h:71 : Add support of continues counter for type : *ast.BinaryExpr
-// Warning (EnumDecl):  /usr/include/ctype.h:46 : Add support of continues counter for type : *ast.ParenExpr
-// Warning (SwitchStmt):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:126 : Unsupport case
-const // Warning (EnumDecl):  /usr/include/ctype.h:46 : Add support of continues counter for type : *ast.ParenExpr
-// Warning (SwitchStmt):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:126 : Unsupport case
+// Warning (*ast.EnumDecl):  /usr/include/x86_64-linux-gnu/bits/confname.h:71 :Add support of continues counter for type : *ast.BinaryExpr
+// Warning (*ast.EnumDecl):  /usr/include/ctype.h:46 :Add support of continues counter for type : *ast.BinaryExpr
+// Warning (*ast.SwitchStmt):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:126 :Unsupport case
+// Warning Function `noarch.InterfaceToFloat32SliceSlice` haven`t implementation
+// Warning Function `noarch.InterfaceToFloat64SliceSlice` haven`t implementation
+// Warning Function `noarch.InterfaceToIntSliceSlice` haven`t implementation
+// Warning Function `noarch.InterfaceToFloat32SliceSlice` haven`t implementation
+// Warning Function `noarch.InterfaceToFcomplexSliceSlice` haven`t implementation
+// Warning Function `noarch.Float64SliceSliceSliceToFloat32SliceSliceSlice` haven`t implementation
+// Warning Function `noarch.InterfaceToFloat64SliceSlice` haven`t implementation
+// Warning Function `noarch.Float64SliceSliceToFloat32SliceSlice` haven`t implementation
+// Warning Function `noarch.InterfaceToFloat64SliceSlice` haven`t implementation
+// Warning Function `noarch.Float64SliceSliceToFloat32SliceSlice` haven`t implementation
+// Warning Function `noarch.Float64SliceToFloat32Slice` haven`t implementation
+// Warning Function `noarch.InterfaceToFloat64SliceSlice` haven`t implementation
+// Warning (*ast.TranslationUnitDecl):  :0 :cannot transpileRecordDecl `__WAIT_STATUS`. could not determine the size of type `union __WAIT_STATUS` for that reason: Cannot determine sizeof : |union __WAIT_STATUS|. err = Cannot canculate `union` sizeof for `string`. Cannot determine sizeof : |union wait *|. err = error in union
+// Warning (*ast.SwitchStmt):  /home/lepricon/go/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:126 :Unsupport case
+// Warning Function `noarch.InterfaceToFloat32SliceSlice` haven`t implementation
+// Warning Function `noarch.InterfaceToFloat64SliceSlice` haven`t implementation
+// Warning Function `noarch.InterfaceToIntSliceSlice` haven`t implementation
+// Warning Function `noarch.InterfaceToFloat32SliceSlice` haven`t implementation
+// Warning Function `noarch.InterfaceToFcomplexSliceSlice` haven`t implementation
+// Warning Function `noarch.Float64SliceSliceSliceToFloat32SliceSliceSlice` haven`t implementation
+// Warning Function `noarch.InterfaceToFloat64SliceSlice` haven`t implementation
+// Warning Function `noarch.Float64SliceSliceToFloat32SliceSlice` haven`t implementation
+// Warning Function `noarch.InterfaceToFloat64SliceSlice` haven`t implementation
+// Warning Function `noarch.Float64SliceSliceToFloat32SliceSlice` haven`t implementation
+// Warning Function `noarch.Float64SliceToFloat32Slice` haven`t implementation
+// Warning Function `noarch.InterfaceToFloat64SliceSlice` haven`t implementation
