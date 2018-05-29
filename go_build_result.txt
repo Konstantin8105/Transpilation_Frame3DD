@@ -1,2 +1,0 @@
-# command-line-arguments
-./main.go:80:15: undefined: __intptr_t

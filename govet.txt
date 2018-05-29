@@ -1,2 +1,0 @@
-# github.com/Konstantin8105/Transpilation_Frame3DD
-./main.go:80:15: undefined: __intptr_t
