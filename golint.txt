@@ -38,114 +38,74 @@ main.go:857:17: should omit type int from declaration of var axial_sign; it will
 main.go:858:20: should omit type int from declaration of var condense_flag; it will be inferred from the right-hand side
 main.go:863:15: should omit type float32 from declaration of var pan_flag; it will be inferred from the right-hand side
 main.go:864:11: should omit type []byte from declaration of var extn; it will be inferred from the right-hand side
-main.go:1199:11: if block ends with a return statement, so drop this else and outdent its block
-main.go:1344:19: should omit type []byte from declaration of var stiffness_fn; it will be inferred from the right-hand side
-main.go:1951:14: should omit type []byte from declaration of var mass_fn; it will be inferred from the right-hand side
-main.go:2847:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
-main.go:2886:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
-main.go:3016:16: should omit type []byte from declaration of var base_file; it will be inferred from the right-hand side
-main.go:3017:16: should omit type []byte from declaration of var mesh_file; it will be inferred from the right-hand side
-main.go:3146:10: should omit type []byte from declaration of var tmp; it will be inferred from the right-hand side
-main.go:3205:11: should omit type []byte from declaration of var line; it will be inferred from the right-hand side
-main.go:3206:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
-main.go:3297:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
-main.go:3521:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
-main.go:4026:16: should omit type []byte from declaration of var base_file; it will be inferred from the right-hand side
-main.go:4027:16: should omit type []byte from declaration of var mode_file; it will be inferred from the right-hand side
-main.go:4028:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
-main.go:4253:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
-main.go:4730:9: should omit type []byte from declaration of var wa; it will be inferred from the right-hand side
-main.go:4731:15: should omit type []byte from declaration of var CSV_file; it will be inferred from the right-hand side
-main.go:4733:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
-main.go:4874:13: should omit type []byte from declaration of var M_file; it will be inferred from the right-hand side
-main.go:4876:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
-main.go:5173:9: should omit type int from declaration of var nx; it will be inferred from the right-hand side
-main.go:5329:12: if block ends with a return statement, so drop this else and outdent its block
-main.go:5336:12: if block ends with a return statement, so drop this else and outdent its block
-main.go:5343:12: if block ends with a return statement, so drop this else and outdent its block
-main.go:5350:12: if block ends with a return statement, so drop this else and outdent its block
-main.go:5357:12: if block ends with a return statement, so drop this else and outdent its block
-main.go:5364:12: if block ends with a return statement, so drop this else and outdent its block
-main.go:5371:12: if block ends with a return statement, so drop this else and outdent its block
-main.go:5378:12: if block ends with a return statement, so drop this else and outdent its block
-main.go:5385:12: if block ends with a return statement, so drop this else and outdent its block
-main.go:5392:12: if block ends with a return statement, so drop this else and outdent its block
-main.go:5399:12: if block ends with a return statement, so drop this else and outdent its block
-main.go:5406:12: if block ends with a return statement, so drop this else and outdent its block
-main.go:5645:11: should omit type []byte from declaration of var fnif; it will be inferred from the right-hand side
-main.go:5646:15: should omit type []byte from declaration of var CSV_file; it will be inferred from the right-hand side
-main.go:5647:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
-main.go:5648:9: should omit type []byte from declaration of var wa; it will be inferred from the right-hand side
-main.go:5920:12: if block ends with a return statement, so drop this else and outdent its block
-main.go:5927:12: if block ends with a return statement, so drop this else and outdent its block
-main.go:5934:12: if block ends with a return statement, so drop this else and outdent its block
-main.go:5941:12: if block ends with a return statement, so drop this else and outdent its block
-main.go:5948:12: if block ends with a return statement, so drop this else and outdent its block
-main.go:5955:12: if block ends with a return statement, so drop this else and outdent its block
-main.go:5962:12: if block ends with a return statement, so drop this else and outdent its block
-main.go:5969:12: if block ends with a return statement, so drop this else and outdent its block
-main.go:5976:12: if block ends with a return statement, so drop this else and outdent its block
-main.go:5983:12: if block ends with a return statement, so drop this else and outdent its block
-main.go:5990:12: if block ends with a return statement, so drop this else and outdent its block
-main.go:5997:12: if block ends with a return statement, so drop this else and outdent its block
-main.go:6006:12: if block ends with a return statement, so drop this else and outdent its block
-main.go:6013:12: if block ends with a return statement, so drop this else and outdent its block
-main.go:6020:12: if block ends with a return statement, so drop this else and outdent its block
-main.go:6027:12: if block ends with a return statement, so drop this else and outdent its block
-main.go:6034:12: if block ends with a return statement, so drop this else and outdent its block
-main.go:6041:12: if block ends with a return statement, so drop this else and outdent its block
-main.go:6048:12: if block ends with a return statement, so drop this else and outdent its block
-main.go:6055:12: if block ends with a return statement, so drop this else and outdent its block
-main.go:6062:12: if block ends with a return statement, so drop this else and outdent its block
-main.go:6069:12: if block ends with a return statement, so drop this else and outdent its block
-main.go:6076:12: if block ends with a return statement, so drop this else and outdent its block
-main.go:6083:12: if block ends with a return statement, so drop this else and outdent its block
-main.go:6285:11: should omit type []byte from declaration of var fnif; it will be inferred from the right-hand side
-main.go:6286:13: should omit type []byte from declaration of var meshfl; it will be inferred from the right-hand side
-main.go:6289:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
-main.go:6308:9: should omit type int from declaration of var lw; it will be inferred from the right-hand side
-main.go:6528:9: should omit type int from declaration of var lw; it will be inferred from the right-hand side
-main.go:6531:13: should omit type []byte from declaration of var modefl; it will be inferred from the right-hand side
-main.go:6532:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
-main.go:6703:16: should omit type float32 from declaration of var zoom_init; it will be inferred from the right-hand side
-main.go:6704:17: should omit type float32 from declaration of var zoom_final; it will be inferred from the right-hand side
-main.go:6717:13: should omit type int from declaration of var CYCLES; it will be inferred from the right-hand side
-main.go:6719:9: should omit type int from declaration of var lw; it will be inferred from the right-hand side
-main.go:6724:13: should omit type []byte from declaration of var modefl; it will be inferred from the right-hand side
-main.go:6725:14: should omit type []byte from declaration of var framefl; it will be inferred from the right-hand side
-main.go:6726:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
-main.go:6957:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
-main.go:7653:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
-main.go:7687:10: if block ends with a return statement, so drop this else and outdent its block
-main.go:8041:11: should omit type int from declaration of var i_ex; it will be inferred from the right-hand side
-main.go:8047:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
-main.go:8056:10: if block ends with a return statement, so drop this else and outdent its block
-main.go:8270:10: if block ends with a return statement, so drop this else and outdent its block
-main.go:8379:11: should omit type int from declaration of var icol; it will be inferred from the right-hand side
-main.go:8380:11: should omit type int from declaration of var irow; it will be inferred from the right-hand side
-main.go:9689:17: should omit type []byte from declaration of var pathToFile; it will be inferred from the right-hand side
-main.go:9690:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
-main.go:9727:8: should omit type int from declaration of var i; it will be inferred from the right-hand side
-main.go:9756:8: should omit type int from declaration of var i; it will be inferred from the right-hand side
-main.go:9797:9: should omit type int from declaration of var ok; it will be inferred from the right-hand side
-main.go:9875:11: should omit type []byte from declaration of var temp; it will be inferred from the right-hand side
-main.go:9898:18: should omit type int from declaration of var line_length; it will be inferred from the right-hand side
-main.go:9922:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
-main.go:9970:8: should omit type int from declaration of var e; it will be inferred from the right-hand side
-main.go:9985:8: should omit type int from declaration of var e; it will be inferred from the right-hand side
-main.go:10012:8: should omit type int from declaration of var e; it will be inferred from the right-hand side
-main.go:10025:11: should omit type int32 from declaration of var nrow; it will be inferred from the right-hand side
-main.go:10026:11: should omit type int32 from declaration of var ncol; it will be inferred from the right-hand side
-main.go:10055:11: should omit type int32 from declaration of var nrow; it will be inferred from the right-hand side
-main.go:10056:11: should omit type int32 from declaration of var ncol; it will be inferred from the right-hand side
-main.go:10085:11: should omit type int32 from declaration of var nrow; it will be inferred from the right-hand side
-main.go:10086:11: should omit type int32 from declaration of var ncol; it will be inferred from the right-hand side
-main.go:10116:11: should omit type int32 from declaration of var nrow; it will be inferred from the right-hand side
-main.go:10117:11: should omit type int32 from declaration of var ncol; it will be inferred from the right-hand side
-main.go:10149:11: should omit type int32 from declaration of var nrow; it will be inferred from the right-hand side
-main.go:10150:11: should omit type int32 from declaration of var ncol; it will be inferred from the right-hand side
-main.go:10181:11: should omit type int32 from declaration of var nrow; it will be inferred from the right-hand side
-main.go:10182:11: should omit type int32 from declaration of var ncol; it will be inferred from the right-hand side
-main.go:10183:11: should omit type int32 from declaration of var ndep; it will be inferred from the right-hand side
-main.go:10301:30: exported func Cvector returns unexported type []main.fcomplex, which can be annoying to use
-main.go:10314:50: exported func Cmatrix returns unexported type [][]main.fcomplex, which can be annoying to use
+main.go:1343:19: should omit type []byte from declaration of var stiffness_fn; it will be inferred from the right-hand side
+main.go:1950:14: should omit type []byte from declaration of var mass_fn; it will be inferred from the right-hand side
+main.go:2846:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
+main.go:2885:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
+main.go:3015:16: should omit type []byte from declaration of var base_file; it will be inferred from the right-hand side
+main.go:3016:16: should omit type []byte from declaration of var mesh_file; it will be inferred from the right-hand side
+main.go:3145:10: should omit type []byte from declaration of var tmp; it will be inferred from the right-hand side
+main.go:3204:11: should omit type []byte from declaration of var line; it will be inferred from the right-hand side
+main.go:3205:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
+main.go:3296:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
+main.go:3520:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
+main.go:4025:16: should omit type []byte from declaration of var base_file; it will be inferred from the right-hand side
+main.go:4026:16: should omit type []byte from declaration of var mode_file; it will be inferred from the right-hand side
+main.go:4027:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
+main.go:4252:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
+main.go:4729:9: should omit type []byte from declaration of var wa; it will be inferred from the right-hand side
+main.go:4730:15: should omit type []byte from declaration of var CSV_file; it will be inferred from the right-hand side
+main.go:4732:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
+main.go:4873:13: should omit type []byte from declaration of var M_file; it will be inferred from the right-hand side
+main.go:4875:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
+main.go:5172:9: should omit type int from declaration of var nx; it will be inferred from the right-hand side
+main.go:5632:11: should omit type []byte from declaration of var fnif; it will be inferred from the right-hand side
+main.go:5633:15: should omit type []byte from declaration of var CSV_file; it will be inferred from the right-hand side
+main.go:5634:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
+main.go:5635:9: should omit type []byte from declaration of var wa; it will be inferred from the right-hand side
+main.go:6248:11: should omit type []byte from declaration of var fnif; it will be inferred from the right-hand side
+main.go:6249:13: should omit type []byte from declaration of var meshfl; it will be inferred from the right-hand side
+main.go:6252:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
+main.go:6271:9: should omit type int from declaration of var lw; it will be inferred from the right-hand side
+main.go:6491:9: should omit type int from declaration of var lw; it will be inferred from the right-hand side
+main.go:6494:13: should omit type []byte from declaration of var modefl; it will be inferred from the right-hand side
+main.go:6495:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
+main.go:6666:16: should omit type float32 from declaration of var zoom_init; it will be inferred from the right-hand side
+main.go:6667:17: should omit type float32 from declaration of var zoom_final; it will be inferred from the right-hand side
+main.go:6680:13: should omit type int from declaration of var CYCLES; it will be inferred from the right-hand side
+main.go:6682:9: should omit type int from declaration of var lw; it will be inferred from the right-hand side
+main.go:6687:13: should omit type []byte from declaration of var modefl; it will be inferred from the right-hand side
+main.go:6688:14: should omit type []byte from declaration of var framefl; it will be inferred from the right-hand side
+main.go:6689:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
+main.go:6920:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
+main.go:7616:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
+main.go:8003:11: should omit type int from declaration of var i_ex; it will be inferred from the right-hand side
+main.go:8009:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
+main.go:8339:11: should omit type int from declaration of var icol; it will be inferred from the right-hand side
+main.go:8340:11: should omit type int from declaration of var irow; it will be inferred from the right-hand side
+main.go:9649:17: should omit type []byte from declaration of var pathToFile; it will be inferred from the right-hand side
+main.go:9650:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
+main.go:9687:8: should omit type int from declaration of var i; it will be inferred from the right-hand side
+main.go:9716:8: should omit type int from declaration of var i; it will be inferred from the right-hand side
+main.go:9757:9: should omit type int from declaration of var ok; it will be inferred from the right-hand side
+main.go:9835:11: should omit type []byte from declaration of var temp; it will be inferred from the right-hand side
+main.go:9858:18: should omit type int from declaration of var line_length; it will be inferred from the right-hand side
+main.go:9882:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
+main.go:9930:8: should omit type int from declaration of var e; it will be inferred from the right-hand side
+main.go:9945:8: should omit type int from declaration of var e; it will be inferred from the right-hand side
+main.go:9972:8: should omit type int from declaration of var e; it will be inferred from the right-hand side
+main.go:9985:11: should omit type int32 from declaration of var nrow; it will be inferred from the right-hand side
+main.go:9986:11: should omit type int32 from declaration of var ncol; it will be inferred from the right-hand side
+main.go:10015:11: should omit type int32 from declaration of var nrow; it will be inferred from the right-hand side
+main.go:10016:11: should omit type int32 from declaration of var ncol; it will be inferred from the right-hand side
+main.go:10045:11: should omit type int32 from declaration of var nrow; it will be inferred from the right-hand side
+main.go:10046:11: should omit type int32 from declaration of var ncol; it will be inferred from the right-hand side
+main.go:10076:11: should omit type int32 from declaration of var nrow; it will be inferred from the right-hand side
+main.go:10077:11: should omit type int32 from declaration of var ncol; it will be inferred from the right-hand side
+main.go:10109:11: should omit type int32 from declaration of var nrow; it will be inferred from the right-hand side
+main.go:10110:11: should omit type int32 from declaration of var ncol; it will be inferred from the right-hand side
+main.go:10141:11: should omit type int32 from declaration of var nrow; it will be inferred from the right-hand side
+main.go:10142:11: should omit type int32 from declaration of var ncol; it will be inferred from the right-hand side
+main.go:10143:11: should omit type int32 from declaration of var ndep; it will be inferred from the right-hand side
+main.go:10261:30: exported func Cvector returns unexported type []main.fcomplex, which can be annoying to use
+main.go:10274:50: exported func Cmatrix returns unexported type [][]main.fcomplex, which can be annoying to use

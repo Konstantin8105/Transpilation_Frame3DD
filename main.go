@@ -726,10 +726,10 @@ func main() {
 	for _, argvSingle := range os.Args {
 		argv = append(argv, []byte(argvSingle))
 	}
-	var IN_file []byte = make([]byte, 128, 128)
-	var OUT_file []byte = make([]byte, 128, 128)
-	var title []byte = make([]byte, 512, 512)
-	var errMsg []byte = make([]byte, 512, 512)
+	var IN_file []byte = make([]byte, 128)
+	var OUT_file []byte = make([]byte, 128)
+	var title []byte = make([]byte, 512)
+	var errMsg []byte = make([]byte, 512)
 	var meshpath []byte = []byte("EMPTY_MESH\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00")
 	var plotpath []byte = []byte("EMPTY_PLOT\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00")
 	var infcpath []byte = []byte("EMPTY_INFC\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00")
@@ -758,9 +758,9 @@ func main() {
 	var NMx []float32
 	var NMy []float32
 	var NMz []float32
-	var gX []float32 = make([]float32, 32, 32)
-	var gY []float32 = make([]float32, 32, 32)
-	var gZ []float32 = make([]float32, 32, 32)
+	var gX []float32 = make([]float32, 32)
+	var gY []float32 = make([]float32, 32)
+	var gZ []float32 = make([]float32, 32)
 	var pan float32 = float32(1)
 	var scale float32 = float32(1)
 	var dx float32 = float32(1)
@@ -814,12 +814,12 @@ func main() {
 	var i int
 	var j int
 	var nR int
-	var nD []int = make([]int, 32, 32)
-	var nF []int = make([]int, 32, 32)
-	var nU []int = make([]int, 32, 32)
-	var nW []int = make([]int, 32, 32)
-	var nP []int = make([]int, 32, 32)
-	var nT []int = make([]int, 32, 32)
+	var nD []int = make([]int, 32)
+	var nF []int = make([]int, 32)
+	var nU []int = make([]int, 32)
+	var nW []int = make([]int, 32)
+	var nP []int = make([]int, 32)
+	var nT []int = make([]int, 32)
 	var nI int
 	var nX int
 	var nC int
@@ -837,7 +837,7 @@ func main() {
 	var lump int = 1
 	var iter int
 	var ok int = 1
-	var anim []int = make([]int, 128, 128)
+	var anim []int = make([]int, 128)
 	var Cdof int
 	var Cmethod int
 	var c []int
@@ -861,7 +861,7 @@ func main() {
 	var tol_flag float64 = -1
 	var shift_flag float64 = -1
 	var pan_flag float32 = float32(-1)
-	var extn []byte = make([]byte, 16, 16)
+	var extn []byte = make([]byte, 16)
 	noarch.Strcpy(IN_file, []byte("exJ.3dd\x00\x00"))
 	noarch.Strcpy(OUT_file, []byte("exJ.3dd.out\x00\x00"))
 	if verbose != 0 {
@@ -1196,9 +1196,8 @@ func main() {
 		nM_calc = func() int {
 			if nM+8 < 2*nM {
 				return nM + 8
-			} else {
-				return 2 * nM
 			}
+			return 2 * nM
 		}()
 		M = dmatrix(1, int32(DoF), 1, int32(DoF))
 		f = dvector(1, int32(nM_calc))
@@ -1341,7 +1340,7 @@ func assemble_K(K [][]float64, DoF int, nE int, xyz []vec3, r []float32, L []flo
 	var jj int
 	var l int
 	var ll int
-	var stiffness_fn []byte = make([]byte, 128, 128)
+	var stiffness_fn []byte = make([]byte, 128)
 	for i = 1; i <= DoF; i++ {
 		for j = 1; j <= DoF; j++ {
 			K[i][j] = 0
@@ -1948,7 +1947,7 @@ func assemble_M(M [][]float64, DoF int, nN int, nE int, xyz []vec3, r []float32,
 	var jj int
 	var l int
 	var ll int
-	var mass_fn []byte = make([]byte, 128, 128)
+	var mass_fn []byte = make([]byte, 128)
 	for i = 1; i <= DoF; i++ {
 		for j = 1; j <= DoF; j++ {
 			M[i][j] = 0
@@ -2277,7 +2276,7 @@ func paz_condensation(M [][]float64, K [][]float64, N int, c []int, n int, Mc []
 	var ok int
 	var r []int
 	func() {
-		if (map[bool]int{false: 0, true: 1}[M != nil]) != 0 {
+		if M != nil {
 		} else {
 			linux.AssertFail([]byte("M!=NULL\x00"), []byte("/home/konstantin/go/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd.c\x00"), 949, []byte("void print_number(int *)"))
 		}
@@ -2844,7 +2843,7 @@ func read_node_data(fp *noarch.File, nN int, xyz []vec3, r []float32) {
 	var i int
 	var j int
 	var sfrv int
-	var errMsg []byte = make([]byte, 512, 512)
+	var errMsg []byte = make([]byte, 512)
 	for i = 1; i <= nN; i++ {
 		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[100000000]int)(unsafe.Pointer(&j))[:])
 		if sfrv != 1 {
@@ -2883,7 +2882,7 @@ func read_frame_element_data(fp *noarch.File, nN int, nE int, xyz []vec3, r []fl
 	var epn []int
 	var epn0 int
 	var sfrv int
-	var errMsg []byte = make([]byte, 512, 512)
+	var errMsg []byte = make([]byte, 512)
 	epn = ivector(1, int32(nN))
 	for n = 1; n <= nN; n++ {
 		epn[n] = 0
@@ -3171,7 +3170,7 @@ func temp_dir() []byte {
 func output_path(fname []byte, fullpath []byte, len int, default_outdir []byte) {
 	var res int
 	func() {
-		if (map[bool]int{false: 0, true: 1}[fname != nil]) != 0 {
+		if fname != nil {
 		} else {
 			linux.AssertFail([]byte("fname!=NULL\x00"), []byte("/home/konstantin/go/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c\x00"), 667, []byte("void print_number(int *)"))
 		}
@@ -3202,8 +3201,8 @@ func output_path(fname []byte, fullpath []byte, len int, default_outdir []byte) 
 //
 func parse_input(fp *noarch.File, tpath []byte) {
 	var fpc *noarch.File
-	var line []byte = make([]byte, 256, 256)
-	var errMsg []byte = make([]byte, 512, 512)
+	var line []byte = make([]byte, 256)
+	var errMsg []byte = make([]byte, 512)
 	if (func() *noarch.File {
 		fpc = noarch.Fopen(tpath, []byte("w\x00"))
 		return fpc
@@ -3215,7 +3214,7 @@ func parse_input(fp *noarch.File, tpath []byte) {
 	for {
 		getline_no_comment(fp, line, 256)
 		noarch.Fprintf(fpc, []byte("%s \n\x00"), line)
-		if noarch.NotInt((map[bool]int{false: 0, true: 1}[int(line[0]) != int('_') && int(line[0]) != -1+256])) != 0 {
+		if !(int(line[0]) != int('_') && int(line[0]) != -1+256) {
 			break
 		}
 	}
@@ -3294,7 +3293,7 @@ func read_reaction_data(fp *noarch.File, DoF int, nN int, nR []int, q []int, r [
 	var j int
 	var l int
 	var sfrv int
-	var errMsg []byte = make([]byte, 512, 512)
+	var errMsg []byte = make([]byte, 512)
 	for i = 1; i <= DoF; i++ {
 		r[i] = 0
 	}
@@ -3518,7 +3517,7 @@ func read_and_assemble_loads(fp *noarch.File, nN int, nE int, nL int, DoF int, x
 	var n1 int
 	var n2 int
 	var sfrv int
-	var errMsg []byte = make([]byte, 512, 512)
+	var errMsg []byte = make([]byte, 512)
 	for j = 1; j <= DoF; j++ {
 		Fo[j] = 0
 	}
@@ -4025,7 +4024,7 @@ func read_mass_data(fp *noarch.File, OUT_file []byte, nN int, nE int, nI []int, 
 	var sfrv int
 	var base_file []byte = []byte("EMPTY_BASE\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00")
 	var mode_file []byte = []byte("EMPTY_MODE\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00")
-	var errMsg []byte = make([]byte, 512, 512)
+	var errMsg []byte = make([]byte, 512)
 	struct_mass[0] = 0
 	total_mass[0] = struct_mass[0]
 	sfrv = noarch.Fscanf(fp, []byte("%d\x00"), nM)
@@ -4250,7 +4249,7 @@ func read_condensation_data(fp *noarch.File, nN int, nM int, nC []int, Cdof []in
 	var k int
 	var cm [][]int
 	var sfrv int
-	var errMsg []byte = make([]byte, 512, 512)
+	var errMsg []byte = make([]byte, 512)
 	Cdof[0] = 0
 	nC[0] = Cdof[0]
 	Cmethod[0] = nC[0]
@@ -4727,10 +4726,10 @@ func write_static_csv(OUT_file []byte, title []byte, nN int, nE int, nL int, lc 
 	var i int
 	var j int
 	var n int
-	var wa []byte = make([]byte, 4, 4)
-	var CSV_file []byte = make([]byte, 128, 128)
+	var wa []byte = make([]byte, 4)
+	var CSV_file []byte = make([]byte, 128)
 	var now noarch.TimeT
-	var errMsg []byte = make([]byte, 512, 512)
+	var errMsg []byte = make([]byte, 512)
 	_ = noarch.Time((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:])
 	CSV_filename(CSV_file, wa, OUT_file, lc)
 	if (func() *noarch.File {
@@ -4871,9 +4870,9 @@ func write_static_mfile(OUT_file []byte, title []byte, nN int, nE int, nL int, l
 	var j int
 	var n int
 	var wa []byte
-	var M_file []byte = make([]byte, 128, 128)
+	var M_file []byte = make([]byte, 128)
 	var now noarch.TimeT
-	var errMsg []byte = make([]byte, 512, 512)
+	var errMsg []byte = make([]byte, 512)
 	_ = noarch.Time((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:])
 	i = 0
 	j = 0
@@ -5324,88 +5323,76 @@ func peak_internal_forces(lc int, nL int, xyz []vec3, Q [][]float64, nN int, nE 
 			Sy_ = Sy
 			Sz_ = Sz
 			pkNx[lc][m] = func() float64 {
-				if (map[bool]int{false: 0, true: 1}[math.Abs(Nx) > pkNx[lc][m]]) != 0 {
+				if math.Abs(Nx) > pkNx[lc][m] {
 					return math.Abs(Nx)
-				} else {
-					return pkNx[lc][m]
 				}
+				return pkNx[lc][m]
 			}()
 			pkVy[lc][m] = func() float64 {
-				if (map[bool]int{false: 0, true: 1}[math.Abs(Vy) > pkVy[lc][m]]) != 0 {
+				if math.Abs(Vy) > pkVy[lc][m] {
 					return math.Abs(Vy)
-				} else {
-					return pkVy[lc][m]
 				}
+				return pkVy[lc][m]
 			}()
 			pkVz[lc][m] = func() float64 {
-				if (map[bool]int{false: 0, true: 1}[math.Abs(Vz) > pkVz[lc][m]]) != 0 {
+				if math.Abs(Vz) > pkVz[lc][m] {
 					return math.Abs(Vz)
-				} else {
-					return pkVz[lc][m]
 				}
+				return pkVz[lc][m]
 			}()
 			pkTx[lc][m] = func() float64 {
-				if (map[bool]int{false: 0, true: 1}[math.Abs(Tx) > pkTx[lc][m]]) != 0 {
+				if math.Abs(Tx) > pkTx[lc][m] {
 					return math.Abs(Tx)
-				} else {
-					return pkTx[lc][m]
 				}
+				return pkTx[lc][m]
 			}()
 			pkMy[lc][m] = func() float64 {
-				if (map[bool]int{false: 0, true: 1}[math.Abs(My) > pkMy[lc][m]]) != 0 {
+				if math.Abs(My) > pkMy[lc][m] {
 					return math.Abs(My)
-				} else {
-					return pkMy[lc][m]
 				}
+				return pkMy[lc][m]
 			}()
 			pkMz[lc][m] = func() float64 {
-				if (map[bool]int{false: 0, true: 1}[math.Abs(Mz) > pkMz[lc][m]]) != 0 {
+				if math.Abs(Mz) > pkMz[lc][m] {
 					return math.Abs(Mz)
-				} else {
-					return pkMz[lc][m]
 				}
+				return pkMz[lc][m]
 			}()
 			pkDx[lc][m] = func() float64 {
-				if (map[bool]int{false: 0, true: 1}[math.Abs(Dx) > pkDx[lc][m]]) != 0 {
+				if math.Abs(Dx) > pkDx[lc][m] {
 					return math.Abs(Dx)
-				} else {
-					return pkDx[lc][m]
 				}
+				return pkDx[lc][m]
 			}()
 			pkDy[lc][m] = func() float64 {
-				if (map[bool]int{false: 0, true: 1}[math.Abs(Dy) > pkDy[lc][m]]) != 0 {
+				if math.Abs(Dy) > pkDy[lc][m] {
 					return math.Abs(Dy)
-				} else {
-					return pkDy[lc][m]
 				}
+				return pkDy[lc][m]
 			}()
 			pkDz[lc][m] = func() float64 {
-				if (map[bool]int{false: 0, true: 1}[math.Abs(Dz) > pkDz[lc][m]]) != 0 {
+				if math.Abs(Dz) > pkDz[lc][m] {
 					return math.Abs(Dz)
-				} else {
-					return pkDz[lc][m]
 				}
+				return pkDz[lc][m]
 			}()
 			pkRx[lc][m] = func() float64 {
-				if (map[bool]int{false: 0, true: 1}[math.Abs(Rx) > pkRx[lc][m]]) != 0 {
+				if math.Abs(Rx) > pkRx[lc][m] {
 					return math.Abs(Rx)
-				} else {
-					return pkRx[lc][m]
 				}
+				return pkRx[lc][m]
 			}()
 			pkSy[lc][m] = func() float64 {
-				if (map[bool]int{false: 0, true: 1}[math.Abs(Sy) > pkSy[lc][m]]) != 0 {
+				if math.Abs(Sy) > pkSy[lc][m] {
 					return math.Abs(Sy)
-				} else {
-					return pkSy[lc][m]
 				}
+				return pkSy[lc][m]
 			}()
 			pkSz[lc][m] = func() float64 {
-				if (map[bool]int{false: 0, true: 1}[math.Abs(Sz) > pkSz[lc][m]]) != 0 {
+				if math.Abs(Sz) > pkSz[lc][m] {
 					return math.Abs(Sz)
-				} else {
-					return pkSz[lc][m]
 				}
+				return pkSz[lc][m]
 			}()
 		}
 	}
@@ -5642,10 +5629,10 @@ func write_internal_forces(OUT_file []byte, fp *noarch.File, infcpath []byte, lc
 	var n2 int
 	var i1 int
 	var i2 int
-	var fnif []byte = make([]byte, 128, 128)
-	var CSV_file []byte = make([]byte, 128, 128)
-	var errMsg []byte = make([]byte, 512, 512)
-	var wa []byte = make([]byte, 4, 4)
+	var fnif []byte = make([]byte, 128)
+	var CSV_file []byte = make([]byte, 128)
+	var errMsg []byte = make([]byte, 512)
+	var wa []byte = make([]byte, 4)
 	var fpif *noarch.File
 	var fpcsv *noarch.File
 	var now noarch.TimeT
@@ -5915,174 +5902,150 @@ func write_internal_forces(OUT_file []byte, fp *noarch.File, infcpath []byte, lc
 		maxSz = minSz
 		for i = 1; i <= nx; i++ {
 			maxNx = func() float64 {
-				if (map[bool]int{false: 0, true: 1}[Nx[i] > maxNx]) != 0 {
+				if Nx[i] > maxNx {
 					return Nx[i]
-				} else {
-					return maxNx
 				}
+				return maxNx
 			}()
 			minNx = func() float64 {
-				if (map[bool]int{false: 0, true: 1}[Nx[i] < minNx]) != 0 {
+				if Nx[i] < minNx {
 					return Nx[i]
-				} else {
-					return minNx
 				}
+				return minNx
 			}()
 			maxVy = func() float64 {
-				if (map[bool]int{false: 0, true: 1}[Vy[i] > maxVy]) != 0 {
+				if Vy[i] > maxVy {
 					return Vy[i]
-				} else {
-					return maxVy
 				}
+				return maxVy
 			}()
 			minVy = func() float64 {
-				if (map[bool]int{false: 0, true: 1}[Vy[i] < minVy]) != 0 {
+				if Vy[i] < minVy {
 					return Vy[i]
-				} else {
-					return minVy
 				}
+				return minVy
 			}()
 			maxVz = func() float64 {
-				if (map[bool]int{false: 0, true: 1}[Vz[i] > maxVz]) != 0 {
+				if Vz[i] > maxVz {
 					return Vz[i]
-				} else {
-					return maxVz
 				}
+				return maxVz
 			}()
 			minVz = func() float64 {
-				if (map[bool]int{false: 0, true: 1}[Vz[i] < minVz]) != 0 {
+				if Vz[i] < minVz {
 					return Vz[i]
-				} else {
-					return minVz
 				}
+				return minVz
 			}()
 			maxTx = func() float64 {
-				if (map[bool]int{false: 0, true: 1}[Tx[i] > maxTx]) != 0 {
+				if Tx[i] > maxTx {
 					return Tx[i]
-				} else {
-					return maxTx
 				}
+				return maxTx
 			}()
 			minTx = func() float64 {
-				if (map[bool]int{false: 0, true: 1}[Tx[i] < minTx]) != 0 {
+				if Tx[i] < minTx {
 					return Tx[i]
-				} else {
-					return minTx
 				}
+				return minTx
 			}()
 			maxMy = func() float64 {
-				if (map[bool]int{false: 0, true: 1}[My[i] > maxMy]) != 0 {
+				if My[i] > maxMy {
 					return My[i]
-				} else {
-					return maxMy
 				}
+				return maxMy
 			}()
 			minMy = func() float64 {
-				if (map[bool]int{false: 0, true: 1}[My[i] < minMy]) != 0 {
+				if My[i] < minMy {
 					return My[i]
-				} else {
-					return minMy
 				}
+				return minMy
 			}()
 			maxMz = func() float64 {
-				if (map[bool]int{false: 0, true: 1}[Mz[i] > maxMz]) != 0 {
+				if Mz[i] > maxMz {
 					return Mz[i]
-				} else {
-					return maxMz
 				}
+				return maxMz
 			}()
 			minMz = func() float64 {
-				if (map[bool]int{false: 0, true: 1}[Mz[i] < minMz]) != 0 {
+				if Mz[i] < minMz {
 					return Mz[i]
-				} else {
-					return minMz
 				}
+				return minMz
 			}()
 		}
 		for i = 1; i <= nx; i++ {
 			maxDx = func() float64 {
-				if (map[bool]int{false: 0, true: 1}[Dx[i] > maxDx]) != 0 {
+				if Dx[i] > maxDx {
 					return Dx[i]
-				} else {
-					return maxDx
 				}
+				return maxDx
 			}()
 			minDx = func() float64 {
-				if (map[bool]int{false: 0, true: 1}[Dx[i] < minDx]) != 0 {
+				if Dx[i] < minDx {
 					return Dx[i]
-				} else {
-					return minDx
 				}
+				return minDx
 			}()
 			maxDy = func() float64 {
-				if (map[bool]int{false: 0, true: 1}[Dy[i] > maxDy]) != 0 {
+				if Dy[i] > maxDy {
 					return Dy[i]
-				} else {
-					return maxDy
 				}
+				return maxDy
 			}()
 			minDy = func() float64 {
-				if (map[bool]int{false: 0, true: 1}[Dy[i] < minDy]) != 0 {
+				if Dy[i] < minDy {
 					return Dy[i]
-				} else {
-					return minDy
 				}
+				return minDy
 			}()
 			maxDz = func() float64 {
-				if (map[bool]int{false: 0, true: 1}[Dz[i] > maxDz]) != 0 {
+				if Dz[i] > maxDz {
 					return Dz[i]
-				} else {
-					return maxDz
 				}
+				return maxDz
 			}()
 			minDz = func() float64 {
-				if (map[bool]int{false: 0, true: 1}[Dz[i] < minDz]) != 0 {
+				if Dz[i] < minDz {
 					return Dz[i]
-				} else {
-					return minDz
 				}
+				return minDz
 			}()
 			maxRx = func() float64 {
-				if (map[bool]int{false: 0, true: 1}[Rx[i] > maxRx]) != 0 {
+				if Rx[i] > maxRx {
 					return Rx[i]
-				} else {
-					return maxRx
 				}
+				return maxRx
 			}()
 			minRx = func() float64 {
-				if (map[bool]int{false: 0, true: 1}[Rx[i] < minRx]) != 0 {
+				if Rx[i] < minRx {
 					return Rx[i]
-				} else {
-					return minRx
 				}
+				return minRx
 			}()
 			maxSy = func() float64 {
-				if (map[bool]int{false: 0, true: 1}[Sy[i] > maxSy]) != 0 {
+				if Sy[i] > maxSy {
 					return Sy[i]
-				} else {
-					return maxSy
 				}
+				return maxSy
 			}()
 			minSy = func() float64 {
-				if (map[bool]int{false: 0, true: 1}[Sy[i] < minSy]) != 0 {
+				if Sy[i] < minSy {
 					return Sy[i]
-				} else {
-					return minSy
 				}
+				return minSy
 			}()
 			maxSz = func() float64 {
-				if (map[bool]int{false: 0, true: 1}[Sz[i] > maxSz]) != 0 {
+				if Sz[i] > maxSz {
 					return Sz[i]
-				} else {
-					return maxSz
 				}
+				return maxSz
 			}()
 			minSz = func() float64 {
-				if (map[bool]int{false: 0, true: 1}[Sz[i] < minSz]) != 0 {
+				if Sz[i] < minSz {
 					return Sz[i]
-				} else {
-					return minSz
 				}
+				return minSz
 			}()
 		}
 		noarch.Fprintf(fpif, []byte("#                \tNx        \tVy        \tVz        \tTx        \tMy        \tMz        \tDx        \tDy        \tDz         \tRx\t*\n\x00"))
@@ -6282,11 +6245,11 @@ func static_mesh(IN_file []byte, infcpath []byte, meshpath []byte, plotpath []by
 	var mx float64
 	var my float64
 	var mz float64
-	var fnif []byte = make([]byte, 128, 128)
-	var meshfl []byte = make([]byte, 128, 128)
+	var fnif []byte = make([]byte, 128)
+	var meshfl []byte = make([]byte, 128)
 	var D2 byte = '#'
 	var D3 byte = '#'
-	var errMsg []byte = make([]byte, 512, 512)
+	var errMsg []byte = make([]byte, 512)
 	var ch byte = 'a'
 	var sfrv int
 	var frel int
@@ -6528,8 +6491,8 @@ func modal_mesh(IN_file []byte, meshpath []byte, modepath []byte, plotpath []byt
 	var lw int = 1
 	var D2 byte = '#'
 	var D3 byte = '#'
-	var modefl []byte = make([]byte, 128, 128)
-	var errMsg []byte = make([]byte, 512, 512)
+	var modefl []byte = make([]byte, 128)
+	var errMsg []byte = make([]byte, 512)
 	msX = dvector(1, int32(DoF))
 	msY = dvector(1, int32(DoF))
 	msZ = dvector(1, int32(DoF))
@@ -6721,9 +6684,9 @@ func animate(IN_file []byte, meshpath []byte, modepath []byte, plotpath []byte, 
 	var D2 byte = '#'
 	var D3 byte = '#'
 	var Movie byte = '#'
-	var modefl []byte = make([]byte, 128, 128)
-	var framefl []byte = make([]byte, 128, 128)
-	var errMsg []byte = make([]byte, 512, 512)
+	var modefl []byte = make([]byte, 128)
+	var framefl []byte = make([]byte, 128)
+	var errMsg []byte = make([]byte, 512)
 	for j = 1; j <= nN; j++ {
 		if xyz[j].x != 0 {
 			X = 1
@@ -6954,7 +6917,7 @@ func cubic_bent_beam(fpm *noarch.File, n1 int, n2 int, xyz []vec3, L float64, p 
 	var i1 int
 	var i2 int
 	var pd int
-	var errMsg []byte = make([]byte, 512, 512)
+	var errMsg []byte = make([]byte, 512)
 	A = dmatrix(1, 4, 1, 4)
 	a = dvector(1, 4)
 	b = dvector(1, 4)
@@ -7130,12 +7093,12 @@ func my_itoa(n int, s []byte, k int) {
 			}()
 			return i
 		}()] = byte(n%10 + int('0'))
-		if noarch.NotInt((map[bool]int{false: 0, true: 1}[func() int {
+		if !(func() int {
 			n /= 10
 			defer func() {
 			}()
 			return n
-		}() > 0])) != 0 {
+		}() > 0) {
 			break
 		}
 	}
@@ -7650,7 +7613,7 @@ func subspace(K [][]float64, M [][]float64, n int, m int, w []float64, V [][]flo
 	var modes int
 	var disp int
 	var idx []int
-	var errMsg []byte = make([]byte, 512, 512)
+	var errMsg []byte = make([]byte, 512)
 	if m > n {
 		noarch.Sprintf(errMsg, []byte("subspace: Number of eigen-values must be less than the problem dimension.\n Desired number of eigen-values=%d \n Dimension of the problem= %d \n\x00"), m, n)
 		errorMsg(errMsg)
@@ -7684,9 +7647,8 @@ func subspace(K [][]float64, M [][]float64, n int, m int, w []float64, V [][]flo
 	modes = (func() int {
 		if (0.5 * float64(m)) > (float64(m) - 8) {
 			return int((float64(m) / 2))
-		} else {
-			return m - 8
 		}
+		return m - 8
 	}())
 	for i = 1; i <= n; i++ {
 		for j = i; j <= n; j++ {
@@ -7809,7 +7771,7 @@ func subspace(K [][]float64, M [][]float64, n int, m int, w []float64, V [][]flo
 			errorMsg(errMsg)
 			os.Exit(32)
 		}
-		if noarch.NotInt((map[bool]int{false: 0, true: 1}[error > tol])) != 0 {
+		if !(error > tol) {
 			break
 		}
 	}
@@ -8044,7 +8006,7 @@ func stodola(K [][]float64, M [][]float64, n int, m int, w []float64, V [][]floa
 	var i int
 	var j int
 	var k int
-	var errMsg []byte = make([]byte, 512, 512)
+	var errMsg []byte = make([]byte, 512)
 	D = dmatrix(1, int32(n), 1, int32(n))
 	d = dvector(1, int32(n))
 	u = dvector(1, int32(n))
@@ -8053,9 +8015,8 @@ func stodola(K [][]float64, M [][]float64, n int, m int, w []float64, V [][]floa
 	modes = (func() int {
 		if (0.5 * float64(m)) > float64((m - 8)) {
 			return int((float64(m) / 2))
-		} else {
-			return m - 8
 		}
+		return m - 8
 	}())
 	for i = 1; i <= n; i++ {
 		for j = i; j <= n; j++ {
@@ -8175,7 +8136,7 @@ func stodola(K [][]float64, M [][]float64, n int, m int, w []float64, V [][]floa
 				errorMsg(errMsg)
 				os.Exit(32)
 			}
-			if noarch.NotInt((map[bool]int{false: 0, true: 1}[math.Abs(RQ-RQold)/RQ > tol])) != 0 {
+			if !(math.Abs(RQ-RQold)/RQ > tol) {
 				break
 			}
 		}
@@ -8267,9 +8228,8 @@ func sturm(K [][]float64, M [][]float64, n int, m int, shift float64, ws float64
 	modes = (func() int {
 		if float32((0.5 * float64(m))) > float32((float64(m) - 8)) {
 			return int((float64(m) / 2))
-		} else {
-			return m - 8
 		}
+		return m - 8
 	}())
 	ws_shift = ws + shift
 	for i = 1; i <= n; i++ {
@@ -9686,8 +9646,8 @@ func errorMsg(errString []byte) {
 //
 func openFile(path []byte, fileName []byte, mode []byte, usage []byte) (c4goDefaultReturn *noarch.File) {
 	var fp *noarch.File
-	var pathToFile []byte = make([]byte, 512, 512)
-	var errMsg []byte = make([]byte, 512, 512)
+	var pathToFile []byte = make([]byte, 512)
+	var errMsg []byte = make([]byte, 512)
 	if mode == nil {
 		return nil
 	}
@@ -9818,7 +9778,7 @@ func scanFile(fp *noarch.File, head_lines int, start_chnl int, stop_chnl int) in
 			}())) != int('\n') {
 			}
 		}
-		if noarch.NotInt((map[bool]int{false: 0, true: 1}[ok == 1])) != 0 {
+		if !(ok == 1) {
 			break
 		}
 	}
@@ -9872,7 +9832,7 @@ func getLine(fp *noarch.File, lim int, s []byte) int {
 //	printf("%d ... %s", (int) t_time, ctime(&t_time) );
 //
 func getTime(s []byte, y int, m int, d int, hr int, mn int, sc int, os int) noarch.TimeT {
-	var temp []byte = make([]byte, 16, 16)
+	var temp []byte = make([]byte, 16)
 	var t_tm noarch.Tm
 	var t_time noarch.TimeT
 	t_tm.TmYear = noarch.Atoi(noarch.Strncpy(temp, (*(*[1000000000]byte)(unsafe.Pointer(uintptr(unsafe.Pointer(&s[0])) + (uintptr)(y)*unsafe.Sizeof(s[0]))))[:], int(4))) - 1900
@@ -9919,7 +9879,7 @@ func showProgress(i int, n int, count int) {
  */ //
 //
 func sferr(s []byte) {
-	var errMsg []byte = make([]byte, 512, 512)
+	var errMsg []byte = make([]byte, 512)
 	noarch.Sprintf(errMsg, []byte(">> Input Data file error while reading %s\n\x00"), s)
 	errorMsg(errMsg)
 }
