@@ -16,6 +16,7 @@
 #Project files
 *.3dd
 *.plt
+*.out.expected
 *.if*
 *.CSV
 main

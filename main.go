@@ -862,8 +862,8 @@ func main() {
 	var shift_flag float64 = -1
 	var pan_flag float32 = float32(-1)
 	var extn []byte = make([]byte, 16)
-	noarch.Strcpy(IN_file, []byte("exJ.3dd\x00\x00"))
-	noarch.Strcpy(OUT_file, []byte("exJ.3dd.out\x00\x00"))
+	noarch.Strcpy(IN_file, []byte("exB.3dd\x00\x00"))
+	noarch.Strcpy(OUT_file, []byte("exB.3dd.out\x00\x00"))
 	if verbose != 0 {
 		textColor('w', 'b', 'b', 'x')
 		noarch.Fprintf(stdout, []byte("\n FRAME3DD version: %s\n\x00"), []byte("20140514+\x00"))

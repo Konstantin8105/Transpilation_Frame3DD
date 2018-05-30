@@ -4,6 +4,11 @@ rm ./main
 rm *.out
 rm *.plt
 
+IN="./exB.3dd"
+
+rm "$IN.out" 
+rm "$IN.out.expected" 
+
 CODE_PATH="$GOPATH/src/github.com/Konstantin8105/History_frame3DD/src"
 RESULT="result.txt"
 
@@ -17,6 +22,10 @@ gcc "-I$CODE_PATH/viewer/" "-I$CODE_PATH/microstran/" "$CODE_PATH/main.c" "$CODE
 
 echo "Execution"
 ./a.out
+
+# Expected
+cp "$IN.out" "$IN.out.expected" 
+
 # -----------------------------
 echo "Transpilation"
 # -clang-flag="-lm" 
@@ -68,3 +77,10 @@ cat ./main.go | grep "// Warning" | wc -l > warning_amount.txt
 echo "Amount lines into file warning.txt: " >> $RESULT 
 cat ./warning.txt | wc -l >> $RESULT
 # -----------------------------
+
+# Run
+cat "" > "$IN.out" 
+./main
+
+diff "$IN.out" "$IN.out.expected" 
+diff "$IN.out" "$IN.out.expected" > result_diff.txt
