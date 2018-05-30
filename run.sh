@@ -1,13 +1,15 @@
 
+
+IN="./exB.3dd"
+
 rm ./a.out
 rm ./main
 rm *.out
 rm *.plt
-
-IN="./exB.3dd"
-
-rm "$IN.out" 
-rm "$IN.out.expected" 
+rm *.out.expected 
+rm Kd
+rm Ks
+rm Md
 
 CODE_PATH="$GOPATH/src/github.com/Konstantin8105/History_frame3DD/src"
 RESULT="result.txt"
@@ -79,6 +81,13 @@ cat ./warning.txt | wc -l >> $RESULT
 # -----------------------------
 
 # Run
+rm ./a.out
+rm *.out
+rm *.plt
+rm Kd
+rm Ks
+rm Md
+
 cat "" > "$IN.out" 
 ./main
 
