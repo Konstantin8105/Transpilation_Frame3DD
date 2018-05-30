@@ -1,12 +1,16 @@
 
 
-IN="./exB.3dd"
+IN="./exB"
 
 rm ./a.out
 rm ./main
 rm *.out
 rm *.plt
+rm *.out
 rm *.out.expected 
+rm *.if*
+rm *.CSV
+rm *.csv
 rm Kd
 rm Ks
 rm Md
@@ -23,10 +27,12 @@ echo "Compilation"
 gcc "-I$CODE_PATH/viewer/" "-I$CODE_PATH/microstran/" "$CODE_PATH/main.c" "$CODE_PATH/frame3dd.c" "$CODE_PATH/frame3dd_io.c" "$CODE_PATH/coordtrans.c" "$CODE_PATH/eig.c" "$CODE_PATH/HPGmatrix.c" "$CODE_PATH/HPGutil.c" "$CODE_PATH/NRutil.c" -lm
 
 echo "Execution"
+touch "$IN.3dd.out" 
+touch "exB_out.CSV" 
 ./a.out
 
 # Expected
-cp "$IN.out" "$IN.out.expected" 
+mv "$IN.3dd.out" "$IN.3dd.out.expected" 
 
 # -----------------------------
 echo "Transpilation"
@@ -81,15 +87,16 @@ cat ./warning.txt | wc -l >> $RESULT
 # -----------------------------
 
 # Run
-rm ./a.out
-rm *.out
 rm *.plt
+rm *.if*
+rm *.csv
 rm Kd
 rm Ks
 rm Md
 
-cat "" > "$IN.out" 
+touch "$IN.3dd.out" 
+touch "exB_out.CSV" 
 ./main
 
-diff "$IN.out" "$IN.out.expected" 
-diff "$IN.out" "$IN.out.expected" > result_diff.txt
+diff "$IN.3dd.out" "$IN.3dd.out.expected" 
+diff "$IN.3dd.out" "$IN.3dd.out.expected" > result_diff.txt
