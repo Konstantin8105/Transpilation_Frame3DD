@@ -9,45 +9,13 @@ main.go:734:15: should omit type []byte from declaration of var plotpath; it wil
 main.go:735:15: should omit type []byte from declaration of var infcpath; it will be inferred from the right-hand side
 main.go:736:15: should omit type []byte from declaration of var modepath; it will be inferred from the right-hand side
 main.go:737:24: should omit type []byte from declaration of var strippedInputFile; it will be inferred from the right-hand side
-main.go:740:21: should drop = nil from declaration of var rj; it is the zero value
-main.go:747:20: should drop = nil from declaration of var E; it is the zero value
-main.go:748:20: should drop = nil from declaration of var G; it is the zero value
-main.go:749:20: should drop = nil from declaration of var p; it is the zero value
-main.go:750:24: should drop = nil from declaration of var U; it is the zero value
-main.go:751:24: should drop = nil from declaration of var W; it is the zero value
-main.go:752:24: should drop = nil from declaration of var P; it is the zero value
-main.go:753:24: should drop = nil from declaration of var T; it is the zero value
-main.go:754:23: should drop = nil from declaration of var Dp; it is the zero value
-main.go:756:22: should drop = nil from declaration of var EMs; it is the zero value
-main.go:757:22: should drop = nil from declaration of var NMs; it is the zero value
 main.go:761:9: should omit type []float32 from declaration of var gX; it will be inferred from the right-hand side
 main.go:762:9: should omit type []float32 from declaration of var gY; it will be inferred from the right-hand side
 main.go:763:9: should omit type []float32 from declaration of var gZ; it will be inferred from the right-hand side
 main.go:764:10: should omit type float32 from declaration of var pan; it will be inferred from the right-hand side
 main.go:765:12: should omit type float32 from declaration of var scale; it will be inferred from the right-hand side
 main.go:766:9: should omit type float32 from declaration of var dx; it will be inferred from the right-hand side
-main.go:767:22: should drop = nil from declaration of var K; it is the zero value
-main.go:768:23: should drop = 0 from declaration of var traceK; it is the zero value
-main.go:769:22: should drop = nil from declaration of var M; it is the zero value
-main.go:770:23: should drop = 0 from declaration of var traceM; it is the zero value
-main.go:771:31: should drop = nil from declaration of var eqF_mech; it is the zero value
-main.go:772:31: should drop = nil from declaration of var eqF_temp; it is the zero value
-main.go:773:27: should drop = nil from declaration of var F_mech; it is the zero value
-main.go:774:27: should drop = nil from declaration of var F_temp; it is the zero value
-main.go:775:20: should drop = nil from declaration of var F; it is the zero value
-main.go:776:20: should drop = nil from declaration of var R; it is the zero value
-main.go:777:21: should drop = nil from declaration of var dR; it is the zero value
-main.go:778:20: should drop = nil from declaration of var D; it is the zero value
-main.go:779:21: should drop = nil from declaration of var dD; it is the zero value
-main.go:780:21: should drop = nil from declaration of var dF; it is the zero value
-main.go:781:20: should drop = nil from declaration of var L; it is the zero value
-main.go:782:21: should drop = nil from declaration of var Le; it is the zero value
-main.go:783:22: should drop = nil from declaration of var Q; it is the zero value
 main.go:784:10: should omit type float64 from declaration of var tol; it will be inferred from the right-hand side
-main.go:785:22: should drop = 0 from declaration of var shift; it is the zero value
-main.go:788:20: should drop = nil from declaration of var f; it is the zero value
-main.go:789:22: should drop = nil from declaration of var V; it is the zero value
-main.go:792:22: should drop = 0 from declaration of var Cfreq; it is the zero value
 main.go:817:9: should omit type []int from declaration of var nD; it will be inferred from the right-hand side
 main.go:818:9: should omit type []int from declaration of var nF; it will be inferred from the right-hand side
 main.go:819:9: should omit type []int from declaration of var nU; it will be inferred from the right-hand side
@@ -55,13 +23,9 @@ main.go:820:9: should omit type []int from declaration of var nW; it will be inf
 main.go:821:9: should omit type []int from declaration of var nP; it will be inferred from the right-hand side
 main.go:822:9: should omit type []int from declaration of var nT; it will be inferred from the right-hand side
 main.go:830:12: should omit type int from declaration of var anlyz; it will be inferred from the right-hand side
-main.go:831:16: should drop = nil from declaration of var q; it is the zero value
-main.go:832:16: should drop = nil from declaration of var r; it is the zero value
 main.go:837:11: should omit type int from declaration of var lump; it will be inferred from the right-hand side
 main.go:839:9: should omit type int from declaration of var ok; it will be inferred from the right-hand side
 main.go:840:11: should omit type []int from declaration of var anim; it will be inferred from the right-hand side
-main.go:843:16: should drop = nil from declaration of var c; it is the zero value
-main.go:844:16: should drop = nil from declaration of var m; it is the zero value
 main.go:847:14: should omit type int from declaration of var verbose; it will be inferred from the right-hand side
 main.go:850:17: should omit type int from declaration of var shear_flag; it will be inferred from the right-hand side
 main.go:851:16: should omit type int from declaration of var geom_flag; it will be inferred from the right-hand side
@@ -76,11 +40,6 @@ main.go:863:15: should omit type float32 from declaration of var pan_flag; it wi
 main.go:864:11: should omit type []byte from declaration of var extn; it will be inferred from the right-hand side
 main.go:1199:11: if block ends with a return statement, so drop this else and outdent its block
 main.go:1344:19: should omit type []byte from declaration of var stiffness_fn; it will be inferred from the right-hand side
-main.go:1653:22: should drop = 0 from declaration of var ss_dF; it is the zero value
-main.go:1654:21: should drop = 0 from declaration of var ss_F; it is the zero value
-main.go:1655:21: should drop = 0 from declaration of var errF; it is the zero value
-main.go:1781:22: should drop = 0 from declaration of var delta; it is the zero value
-main.go:1786:18: should drop = 0 from declaration of var T; it is the zero value
 main.go:1951:14: should omit type []byte from declaration of var mass_fn; it will be inferred from the right-hand side
 main.go:2847:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
 main.go:2886:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
@@ -90,12 +49,6 @@ main.go:3146:10: should omit type []byte from declaration of var tmp; it will be
 main.go:3205:11: should omit type []byte from declaration of var line; it will be inferred from the right-hand side
 main.go:3206:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
 main.go:3297:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
-main.go:3491:20: should drop = 0 from declaration of var Mx1; it is the zero value
-main.go:3492:20: should drop = 0 from declaration of var My1; it is the zero value
-main.go:3493:20: should drop = 0 from declaration of var Mz1; it is the zero value
-main.go:3497:20: should drop = 0 from declaration of var Mx2; it is the zero value
-main.go:3498:20: should drop = 0 from declaration of var My2; it is the zero value
-main.go:3499:20: should drop = 0 from declaration of var Mz2; it is the zero value
 main.go:3521:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
 main.go:4026:16: should omit type []byte from declaration of var base_file; it will be inferred from the right-hand side
 main.go:4027:16: should omit type []byte from declaration of var mode_file; it will be inferred from the right-hand side
@@ -106,8 +59,6 @@ main.go:4731:15: should omit type []byte from declaration of var CSV_file; it wi
 main.go:4733:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
 main.go:4874:13: should omit type []byte from declaration of var M_file; it will be inferred from the right-hand side
 main.go:4876:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
-main.go:5147:19: should drop = 0 from declaration of var tx; it is the zero value
-main.go:5148:20: should drop = 0 from declaration of var tx_; it is the zero value
 main.go:5173:9: should omit type int from declaration of var nx; it will be inferred from the right-hand side
 main.go:5329:12: if block ends with a return statement, so drop this else and outdent its block
 main.go:5336:12: if block ends with a return statement, so drop this else and outdent its block
@@ -121,8 +72,6 @@ main.go:5385:12: if block ends with a return statement, so drop this else and ou
 main.go:5392:12: if block ends with a return statement, so drop this else and outdent its block
 main.go:5399:12: if block ends with a return statement, so drop this else and outdent its block
 main.go:5406:12: if block ends with a return statement, so drop this else and outdent its block
-main.go:5592:19: should drop = 0 from declaration of var tx; it is the zero value
-main.go:5593:20: should drop = 0 from declaration of var tx_; it is the zero value
 main.go:5645:11: should omit type []byte from declaration of var fnif; it will be inferred from the right-hand side
 main.go:5646:15: should omit type []byte from declaration of var CSV_file; it will be inferred from the right-hand side
 main.go:5647:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
@@ -151,8 +100,6 @@ main.go:6062:12: if block ends with a return statement, so drop this else and ou
 main.go:6069:12: if block ends with a return statement, so drop this else and outdent its block
 main.go:6076:12: if block ends with a return statement, so drop this else and outdent its block
 main.go:6083:12: if block ends with a return statement, so drop this else and outdent its block
-main.go:6280:26: should drop = nil from declaration of var fpif; it is the zero value
-main.go:6281:25: should drop = nil from declaration of var fpm; it is the zero value
 main.go:6285:11: should omit type []byte from declaration of var fnif; it will be inferred from the right-hand side
 main.go:6286:13: should omit type []byte from declaration of var meshfl; it will be inferred from the right-hand side
 main.go:6289:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
@@ -160,17 +107,6 @@ main.go:6308:9: should omit type int from declaration of var lw; it will be infe
 main.go:6528:9: should omit type int from declaration of var lw; it will be inferred from the right-hand side
 main.go:6531:13: should omit type []byte from declaration of var modefl; it will be inferred from the right-hand side
 main.go:6532:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
-main.go:6692:12: should omit type float32 from declaration of var x_min; it will be inferred from the right-hand side
-main.go:6693:12: should omit type float32 from declaration of var x_max; it will be inferred from the right-hand side
-main.go:6694:12: should omit type float32 from declaration of var y_min; it will be inferred from the right-hand side
-main.go:6695:12: should omit type float32 from declaration of var y_max; it will be inferred from the right-hand side
-main.go:6696:12: should omit type float32 from declaration of var z_min; it will be inferred from the right-hand side
-main.go:6697:12: should omit type float32 from declaration of var z_max; it will be inferred from the right-hand side
-main.go:6698:11: should omit type float32 from declaration of var Dxyz; it will be inferred from the right-hand side
-main.go:6699:17: should omit type float32 from declaration of var rot_x_init; it will be inferred from the right-hand side
-main.go:6700:18: should omit type float32 from declaration of var rot_x_final; it will be inferred from the right-hand side
-main.go:6701:17: should omit type float32 from declaration of var rot_z_init; it will be inferred from the right-hand side
-main.go:6702:18: should omit type float32 from declaration of var rot_z_final; it will be inferred from the right-hand side
 main.go:6703:16: should omit type float32 from declaration of var zoom_init; it will be inferred from the right-hand side
 main.go:6704:17: should omit type float32 from declaration of var zoom_final; it will be inferred from the right-hand side
 main.go:6717:13: should omit type int from declaration of var CYCLES; it will be inferred from the right-hand side
@@ -179,28 +115,14 @@ main.go:6724:13: should omit type []byte from declaration of var modefl; it will
 main.go:6725:14: should omit type []byte from declaration of var framefl; it will be inferred from the right-hand side
 main.go:6726:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
 main.go:6957:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
-main.go:7646:22: should drop = 0 from declaration of var w_old; it is the zero value
 main.go:7653:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
 main.go:7687:10: if block ends with a return statement, so drop this else and outdent its block
-main.go:7887:20: should drop = 0 from declaration of var tol; it is the zero value
-main.go:8030:22: should drop = 0 from declaration of var d_min; it is the zero value
-main.go:8031:22: should drop = 0 from declaration of var d_max; it is the zero value
-main.go:8032:22: should drop = 0 from declaration of var d_old; it is the zero value
-main.go:8039:22: should drop = 0 from declaration of var RQold; it is the zero value
 main.go:8041:11: should omit type int from declaration of var i_ex; it will be inferred from the right-hand side
 main.go:8047:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
 main.go:8056:10: if block ends with a return statement, so drop this else and outdent its block
 main.go:8270:10: if block ends with a return statement, so drop this else and outdent its block
 main.go:8379:11: should omit type int from declaration of var icol; it will be inferred from the right-hand side
 main.go:8380:11: should omit type int from declaration of var irow; it will be inferred from the right-hand side
-main.go:8896:30: should drop = 0 from declaration of var rms_resid_new; it is the zero value
-main.go:8967:20: should drop = 0 from declaration of var dtd; it is the zero value
-main.go:8968:20: should drop = 0 from declaration of var ftd; it is the zero value
-main.go:8969:21: should drop = 0 from declaration of var dtd2; it is the zero value
-main.go:9010:23: should drop = 0 from declaration of var tr_AtA; it is the zero value
-main.go:9353:21: should drop = 0 from declaration of var xtAy; it is the zero value
-main.go:9490:19: should drop = 0 from declaration of var nN; it is the zero value
-main.go:9491:19: should drop = 0 from declaration of var nD; it is the zero value
 main.go:9689:17: should omit type []byte from declaration of var pathToFile; it will be inferred from the right-hand side
 main.go:9690:13: should omit type []byte from declaration of var errMsg; it will be inferred from the right-hand side
 main.go:9727:8: should omit type int from declaration of var i; it will be inferred from the right-hand side

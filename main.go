@@ -737,24 +737,24 @@ func main() {
 	var strippedInputFile []byte = []byte("EMPTY_TEMP\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00")
 	var fp *noarch.File
 	var xyz []vec3
-	var rj []float32 = nil
+	var rj []float32
 	var Ax []float32
 	var Asy []float32
 	var Asz []float32
 	var Jx []float32
 	var Iy []float32
 	var Iz []float32
-	var E []float32 = nil
-	var G []float32 = nil
-	var p []float32 = nil
-	var U [][][]float32 = nil
-	var W [][][]float32 = nil
-	var P [][][]float32 = nil
-	var T [][][]float32 = nil
-	var Dp [][]float32 = nil
+	var E []float32
+	var G []float32
+	var p []float32
+	var U [][][]float32
+	var W [][][]float32
+	var P [][][]float32
+	var T [][][]float32
+	var Dp [][]float32
 	var d []float32
-	var EMs []float32 = nil
-	var NMs []float32 = nil
+	var EMs []float32
+	var NMs []float32
 	var NMx []float32
 	var NMy []float32
 	var NMz []float32
@@ -764,32 +764,32 @@ func main() {
 	var pan float32 = float32(1)
 	var scale float32 = float32(1)
 	var dx float32 = float32(1)
-	var K [][]float64 = nil
-	var traceK float64 = 0
-	var M [][]float64 = nil
-	var traceM float64 = 0
-	var eqF_mech [][][]float64 = nil
-	var eqF_temp [][][]float64 = nil
-	var F_mech [][]float64 = nil
-	var F_temp [][]float64 = nil
-	var F []float64 = nil
-	var R []float64 = nil
-	var dR []float64 = nil
-	var D []float64 = nil
-	var dD []float64 = nil
-	var dF []float64 = nil
-	var L []float64 = nil
-	var Le []float64 = nil
-	var Q [][]float64 = nil
+	var K [][]float64
+	var traceK float64
+	var M [][]float64
+	var traceM float64
+	var eqF_mech [][][]float64
+	var eqF_temp [][][]float64
+	var F_mech [][]float64
+	var F_temp [][]float64
+	var F []float64
+	var R []float64
+	var dR []float64
+	var D []float64
+	var dD []float64
+	var dF []float64
+	var L []float64
+	var Le []float64
+	var Q [][]float64
 	var tol float64 = 1e-09
-	var shift float64 = 0
+	var shift float64
 	var struct_mass float64
 	var total_mass float64
-	var f []float64 = nil
-	var V [][]float64 = nil
+	var f []float64
+	var V [][]float64
 	var rms_resid float64 = 1
 	var error float64 = 1
-	var Cfreq float64 = 0
+	var Cfreq float64
 	var Kc [][]float64
 	var Mc [][]float64
 	var exagg_static float64 = 10
@@ -828,8 +828,8 @@ func main() {
 	var shear int
 	var geom int
 	var anlyz int = 1
-	var q []int = nil
-	var r []int = nil
+	var q []int
+	var r []int
 	var sumR int
 	var nM int
 	var Mmethod int
@@ -840,8 +840,8 @@ func main() {
 	var anim []int = make([]int, 128, 128)
 	var Cdof int
 	var Cmethod int
-	var c []int = nil
-	var m []int = nil
+	var c []int
+	var m []int
 	var filetype int
 	var debug int
 	var verbose int = 1
@@ -1650,9 +1650,9 @@ func solve_system(K [][]float64, D []float64, F []float64, R []float64, DoF int,
 // convergence criterion
 //
 func equilibrium_error(dF []float64, F []float64, K [][]float64, D []float64, DoF int, q []int, r []int) float64 {
-	var ss_dF float64 = 0
-	var ss_F float64 = 0
-	var errF float64 = 0
+	var ss_dF float64
+	var ss_F float64
+	var errF float64
 	var i int
 	var j int
 	for i = 1; i <= DoF; i++ {
@@ -1778,12 +1778,12 @@ func frame_element_force(s []float64, xyz []vec3, L float64, Le float64, n1 int,
 	var d10 float64
 	var d11 float64
 	var d12 float64
-	var delta float64 = 0
+	var delta float64
 	var Ksy float64
 	var Ksz float64
 	var Dsy float64
 	var Dsz float64
-	var T float64 = 0
+	var T float64
 	var f1 float64
 	var f2 float64
 	var f3 float64
@@ -3488,15 +3488,15 @@ func read_and_assemble_loads(fp *noarch.File, nN int, nE int, nL int, DoF int, x
 	var Nx1 float64
 	var Vy1 float64
 	var Vz1 float64
-	var Mx1 float64 = 0
-	var My1 float64 = 0
-	var Mz1 float64 = 0
+	var Mx1 float64
+	var My1 float64
+	var Mz1 float64
 	var Nx2 float64
 	var Vy2 float64
 	var Vz2 float64
-	var Mx2 float64 = 0
-	var My2 float64 = 0
-	var Mz2 float64 = 0
+	var Mx2 float64
+	var My2 float64
+	var Mz2 float64
 	var Ksy float64
 	var Ksz float64
 	var a float64
@@ -5144,8 +5144,8 @@ func peak_internal_forces(lc int, nL int, xyz []vec3, Q [][]float64, nN int, nE 
 	var wxg float64
 	var wyg float64
 	var wzg float64
-	var tx float64 = 0
-	var tx_ float64 = 0
+	var tx float64
+	var tx_ float64
 	var xp float64
 	var x float64
 	var Nx_ float64
@@ -5589,8 +5589,8 @@ func write_internal_forces(OUT_file []byte, fp *noarch.File, infcpath []byte, lc
 	var wxg float64
 	var wyg float64
 	var wzg float64
-	var tx float64 = 0
-	var tx_ float64 = 0
+	var tx float64
+	var tx_ float64
 	var xp float64
 	var x []float64
 	var dx_ float64
@@ -6277,8 +6277,8 @@ printf("  frel = %3d; m = %3d; n1 =%4d; n2 = %4d; nx = %3d L = %f \n", frel,m,n1
 */ //
 //
 func static_mesh(IN_file []byte, infcpath []byte, meshpath []byte, plotpath []byte, title []byte, nN int, nE int, nL int, lc int, DoF int, xyz []vec3, L []float64, N1 []int, N2 []int, p []float32, D []float64, exagg_static float64, D3_flag int, anlyz int, dx float32, scale float32) {
-	var fpif *noarch.File = nil
-	var fpm *noarch.File = nil
+	var fpif *noarch.File
+	var fpm *noarch.File
 	var mx float64
 	var my float64
 	var mz float64
@@ -6689,17 +6689,17 @@ func modal_mesh(IN_file []byte, meshpath []byte, modepath []byte, plotpath []byt
 //
 func animate(IN_file []byte, meshpath []byte, modepath []byte, plotpath []byte, title []byte, anim []int, nN int, nE int, DoF int, nM int, xyz []vec3, L []float64, p []float32, J1 []int, J2 []int, f []float64, V [][]float64, exagg_modal float64, D3_flag int, pan float32, scale float32) {
 	var fpm *noarch.File
-	var x_min float32 = float32(0)
-	var x_max float32 = float32(0)
-	var y_min float32 = float32(0)
-	var y_max float32 = float32(0)
-	var z_min float32 = float32(0)
-	var z_max float32 = float32(0)
-	var Dxyz float32 = float32(0)
-	var rot_x_init float32 = float32(0)
-	var rot_x_final float32 = float32(0)
-	var rot_z_init float32 = float32(0)
-	var rot_z_final float32 = float32(0)
+	var x_min float32
+	var x_max float32
+	var y_min float32
+	var y_max float32
+	var z_min float32
+	var z_max float32
+	var Dxyz float32
+	var rot_x_init float32
+	var rot_x_final float32
+	var rot_z_init float32
+	var rot_z_final float32
 	var zoom_init float32 = float32(0 * float64(scale))
 	var zoom_final float32 = float32(0 * float64(scale))
 	var frames float32 = 25
@@ -7643,7 +7643,7 @@ func subspace(K [][]float64, M [][]float64, n int, m int, w []float64, V [][]flo
 	var km float64
 	var km_old float64
 	var error float64 = 1
-	var w_old float64 = 0
+	var w_old float64
 	var i int
 	var j int
 	var k int
@@ -7884,7 +7884,7 @@ func jacobi(K [][]float64, M [][]float64, E []float64, V [][]float64, n int) {
 	var beta float64
 	var gamma float64
 	var s float64
-	var tol float64 = 0
+	var tol float64
 	Vkj = 0
 	Vki = Vkj
 	Mij = Vki
@@ -8027,16 +8027,16 @@ with shifting. 								15oct98
 //
 func stodola(K [][]float64, M [][]float64, n int, m int, w []float64, V [][]float64, tol float64, shift float64, iter []int, ok []int, verbose int) {
 	var D [][]float64
-	var d_min float64 = 0
-	var d_max float64 = 0
-	var d_old float64 = 0
+	var d_min float64
+	var d_max float64
+	var d_old float64
 	var d []float64
 	var u []float64
 	var v []float64
 	var c []float64
 	var vMv float64
 	var RQ float64
-	var RQold float64 = 0
+	var RQold float64
 	var error float64 = 1
 	var i_ex int = 9999
 	var modes int
@@ -8893,7 +8893,7 @@ func ldl_mprove_pm(A [][]float64, n int, d []float64, b []float64, x []float64, 
 	var sdp float64
 	var dx []float64
 	var dc []float64
-	var rms_resid_new float64 = 0
+	var rms_resid_new float64
 	var j int
 	var i int
 	var pd int
@@ -8964,9 +8964,9 @@ func ldl_mprove_pm(A [][]float64, n int, d []float64, b []float64, x []float64, 
 func PSB_update(B [][]float64, f []float64, d []float64, n int) {
 	var i int
 	var j int
-	var dtd float64 = 0
-	var ftd float64 = 0
-	var dtd2 float64 = 0
+	var dtd float64
+	var ftd float64
+	var dtd2 float64
 	for i = 1; i <= n; i++ {
 		dtd += d[i] * d[i]
 	}
@@ -9007,7 +9007,7 @@ func pseudo_inv(A [][]float64, Ai [][]float64, n int, m int, beta float64, verbo
 	var AtA [][]float64
 	var AtAi [][]float64
 	var tmp float64
-	var tr_AtA float64 = 0
+	var tr_AtA float64
 	var error float64
 	var i int
 	var j int
@@ -9350,7 +9350,7 @@ func xtAx(A [][]float64, X [][]float64, C [][]float64, N int, J int) {
 /*  xAy = x' A y  */ //
 //
 func xtAy(x []float64, A [][]float64, y []float64, n int, d []float64) float64 {
-	var xtAy float64 = 0
+	var xtAy float64
 	var i int
 	var j int
 	for i = 1; i <= n; i++ {
@@ -9487,8 +9487,8 @@ func invAXinvA(A [][]float64, X [][]float64, n int, verbose int) {
  */ //
 //
 func relative_norm(N []float64, D []float64, n int) float64 {
-	var nN float64 = 0
-	var nD float64 = 0
+	var nN float64
+	var nD float64
 	var i int
 	for i = 1; i <= n; i++ {
 		nN += N[i] * N[i]
