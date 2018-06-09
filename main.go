@@ -5,9 +5,15 @@
 	https://github.com/Konstantin8105/c4go/
 */
 
-// Warning (*ast.EnumDecl):  /usr/include/x86_64-linux-gnu/bits/confname.h:71 :Add support of continues counter for type : *ast.BinaryExpr
 // Warning (*ast.EnumDecl):  /usr/include/ctype.h:46 :Add support of continues counter for type : *ast.BinaryExpr
-// Warning (*ast.SwitchStmt):  /home/konstantin/go/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:126 :Unsupport case
+// Warning (*ast.SwitchStmt):  $GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:126 :Unsupport case
+// Warning (*ast.MemberExpr):  $GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:242 :cannot determine type for LHS 'struct tm', will use 'void *' for all fields. Is lvalue = true. n.Name = tm_year
+// Warning (*ast.MemberExpr):  $GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:244 :cannot determine type for LHS 'struct tm', will use 'void *' for all fields. Is lvalue = true. n.Name = tm_mon
+// Warning (*ast.MemberExpr):  $GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:245 :cannot determine type for LHS 'struct tm', will use 'void *' for all fields. Is lvalue = true. n.Name = tm_mday
+// Warning (*ast.MemberExpr):  $GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:246 :cannot determine type for LHS 'struct tm', will use 'void *' for all fields. Is lvalue = true. n.Name = tm_hour
+// Warning (*ast.MemberExpr):  $GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:247 :cannot determine type for LHS 'struct tm', will use 'void *' for all fields. Is lvalue = true. n.Name = tm_min
+// Warning (*ast.MemberExpr):  $GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:248 :cannot determine type for LHS 'struct tm', will use 'void *' for all fields. Is lvalue = true. n.Name = tm_sec
+// Warning (*ast.MemberExpr):  $GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:251 :cannot determine type for LHS 'struct tm', will use 'void *' for all fields. Is lvalue = true. n.Name = tm_isdst
 // Warning Function `noarch.InterfaceToFloat32SliceSlice` haven`t implementation
 // Warning Function `noarch.InterfaceToFloat64SliceSlice` haven`t implementation
 // Warning Function `noarch.InterfaceToIntSliceSlice` haven`t implementation
@@ -20,7 +26,6 @@
 // Warning Function `noarch.Float64SliceSliceToFloat32SliceSlice` haven`t implementation
 // Warning Function `noarch.Float64SliceToFloat32Slice` haven`t implementation
 // Warning Function `noarch.InterfaceToFloat64SliceSlice` haven`t implementation
-// Warning (*ast.TranslationUnitDecl):  :0 :cannot transpileRecordDecl `__WAIT_STATUS`. could not determine the size of type `union __WAIT_STATUS` for that reason: Cannot determine sizeof : |union __WAIT_STATUS|. err = Cannot canculate `union` sizeof for `string`. Cannot determine sizeof : |union wait *|. err = error in union
 
 package main
 
@@ -28,36 +33,14 @@ import "github.com/Konstantin8105/c4go/linux"
 import "math"
 import "math/rand"
 import "unsafe"
+import "fmt"
 import "os"
 import "github.com/Konstantin8105/c4go/noarch"
-
-const (
-	FP_NAN       int = 0
-	FP_INFINITE      = 1
-	FP_ZERO          = 2
-	FP_SUBNORMAL     = 3
-	FP_NORMAL        = 4
-)
-const (
-	_IEEE_  int = -1
-	_SVID_      = 0
-	_XOPEN_     = 1
-	_POSIX_     = 2
-	_ISOC_      = 3
-)
 
 type size_t uint32
 type __time_t int32
 type va_list int64
 type __gnuc_va_list int64
-type __codecvt_result int
-
-const (
-	__codecvt_ok      __codecvt_result = 0
-	__codecvt_partial                  = 1
-	__codecvt_error                    = 2
-	__codecvt_noconv                   = 3
-)
 
 var stdin *noarch.File
 
@@ -66,13 +49,6 @@ var stdout *noarch.File
 var stderr *noarch.File
 
 type wchar_t int
-
-const (
-	P_ALL  int = 0
-	P_PID      = 1
-	P_PGID     = 2
-)
-
 type __locale_t int
 type locale_t __locale_t
 type vec3_struct struct {
@@ -81,314 +57,6 @@ type vec3_struct struct {
 	z float64
 }
 type vec3 vec3_struct
-
-const (
-	_PC_LINK_MAX           int = 0
-	_PC_MAX_CANON              = 1
-	_PC_MAX_INPUT              = 2
-	_PC_NAME_MAX               = 3
-	_PC_PATH_MAX               = 4
-	_PC_PIPE_BUF               = 5
-	_PC_CHOWN_RESTRICTED       = 6
-	_PC_NO_TRUNC               = 7
-	_PC_VDISABLE               = 8
-	_PC_SYNC_IO                = 9
-	_PC_ASYNC_IO               = 10
-	_PC_PRIO_IO                = 11
-	_PC_SOCK_MAXBUF            = 12
-	_PC_FILESIZEBITS           = 13
-	_PC_REC_INCR_XFER_SIZE     = 14
-	_PC_REC_MAX_XFER_SIZE      = 15
-	_PC_REC_MIN_XFER_SIZE      = 16
-	_PC_REC_XFER_ALIGN         = 17
-	_PC_ALLOC_SIZE_MIN         = 18
-	_PC_SYMLINK_MAX            = 19
-	_PC_2_SYMLINKS             = 20
-)
-const (
-	_SC_ARG_MAX                      int = 0
-	_SC_CHILD_MAX                        = 1
-	_SC_CLK_TCK                          = 2
-	_SC_NGROUPS_MAX                      = 3
-	_SC_OPEN_MAX                         = 4
-	_SC_STREAM_MAX                       = 5
-	_SC_TZNAME_MAX                       = 6
-	_SC_JOB_CONTROL                      = 7
-	_SC_SAVED_IDS                        = 8
-	_SC_REALTIME_SIGNALS                 = 9
-	_SC_PRIORITY_SCHEDULING              = 10
-	_SC_TIMERS                           = 11
-	_SC_ASYNCHRONOUS_IO                  = 12
-	_SC_PRIORITIZED_IO                   = 13
-	_SC_SYNCHRONIZED_IO                  = 14
-	_SC_FSYNC                            = 15
-	_SC_MAPPED_FILES                     = 16
-	_SC_MEMLOCK                          = 17
-	_SC_MEMLOCK_RANGE                    = 18
-	_SC_MEMORY_PROTECTION                = 19
-	_SC_MESSAGE_PASSING                  = 20
-	_SC_SEMAPHORES                       = 21
-	_SC_SHARED_MEMORY_OBJECTS            = 22
-	_SC_AIO_LISTIO_MAX                   = 23
-	_SC_AIO_MAX                          = 24
-	_SC_AIO_PRIO_DELTA_MAX               = 25
-	_SC_DELAYTIMER_MAX                   = 26
-	_SC_MQ_OPEN_MAX                      = 27
-	_SC_MQ_PRIO_MAX                      = 28
-	_SC_VERSION                          = 29
-	_SC_PAGESIZE                         = 30
-	_SC_RTSIG_MAX                        = 31
-	_SC_SEM_NSEMS_MAX                    = 32
-	_SC_SEM_VALUE_MAX                    = 33
-	_SC_SIGQUEUE_MAX                     = 34
-	_SC_TIMER_MAX                        = 35
-	_SC_BC_BASE_MAX                      = 36
-	_SC_BC_DIM_MAX                       = 37
-	_SC_BC_SCALE_MAX                     = 38
-	_SC_BC_STRING_MAX                    = 39
-	_SC_COLL_WEIGHTS_MAX                 = 40
-	_SC_EQUIV_CLASS_MAX                  = 41
-	_SC_EXPR_NEST_MAX                    = 42
-	_SC_LINE_MAX                         = 43
-	_SC_RE_DUP_MAX                       = 44
-	_SC_CHARCLASS_NAME_MAX               = 45
-	_SC_2_VERSION                        = 46
-	_SC_2_C_BIND                         = 47
-	_SC_2_C_DEV                          = 48
-	_SC_2_FORT_DEV                       = 49
-	_SC_2_FORT_RUN                       = 50
-	_SC_2_SW_DEV                         = 51
-	_SC_2_LOCALEDEF                      = 52
-	_SC_PII                              = 53
-	_SC_PII_XTI                          = 54
-	_SC_PII_SOCKET                       = 55
-	_SC_PII_INTERNET                     = 56
-	_SC_PII_OSI                          = 57
-	_SC_POLL                             = 58
-	_SC_SELECT                           = 59
-	_SC_UIO_MAXIOV                       = 60
-	_SC_IOV_MAX                          = 61
-	_SC_PII_INTERNET_STREAM              = 62
-	_SC_PII_INTERNET_DGRAM               = 63
-	_SC_PII_OSI_COTS                     = 64
-	_SC_PII_OSI_CLTS                     = 65
-	_SC_PII_OSI_M                        = 66
-	_SC_T_IOV_MAX                        = 67
-	_SC_THREADS                          = 68
-	_SC_THREAD_SAFE_FUNCTIONS            = 69
-	_SC_GETGR_R_SIZE_MAX                 = 70
-	_SC_GETPW_R_SIZE_MAX                 = 71
-	_SC_LOGIN_NAME_MAX                   = 72
-	_SC_TTY_NAME_MAX                     = 73
-	_SC_THREAD_DESTRUCTOR_ITERATIONS     = 74
-	_SC_THREAD_KEYS_MAX                  = 75
-	_SC_THREAD_STACK_MIN                 = 76
-	_SC_THREAD_THREADS_MAX               = 77
-	_SC_THREAD_ATTR_STACKADDR            = 78
-	_SC_THREAD_ATTR_STACKSIZE            = 79
-	_SC_THREAD_PRIORITY_SCHEDULING       = 80
-	_SC_THREAD_PRIO_INHERIT              = 81
-	_SC_THREAD_PRIO_PROTECT              = 82
-	_SC_THREAD_PROCESS_SHARED            = 83
-	_SC_NPROCESSORS_CONF                 = 84
-	_SC_NPROCESSORS_ONLN                 = 85
-	_SC_PHYS_PAGES                       = 86
-	_SC_AVPHYS_PAGES                     = 87
-	_SC_ATEXIT_MAX                       = 88
-	_SC_PASS_MAX                         = 89
-	_SC_XOPEN_VERSION                    = 90
-	_SC_XOPEN_XCU_VERSION                = 91
-	_SC_XOPEN_UNIX                       = 92
-	_SC_XOPEN_CRYPT                      = 93
-	_SC_XOPEN_ENH_I18N                   = 94
-	_SC_XOPEN_SHM                        = 95
-	_SC_2_CHAR_TERM                      = 96
-	_SC_2_C_VERSION                      = 97
-	_SC_2_UPE                            = 98
-	_SC_XOPEN_XPG2                       = 99
-	_SC_XOPEN_XPG3                       = 100
-	_SC_XOPEN_XPG4                       = 101
-	_SC_CHAR_BIT                         = 102
-	_SC_CHAR_MAX                         = 103
-	_SC_CHAR_MIN                         = 104
-	_SC_INT_MAX                          = 105
-	_SC_INT_MIN                          = 106
-	_SC_LONG_BIT                         = 107
-	_SC_WORD_BIT                         = 108
-	_SC_MB_LEN_MAX                       = 109
-	_SC_NZERO                            = 110
-	_SC_SSIZE_MAX                        = 111
-	_SC_SCHAR_MAX                        = 112
-	_SC_SCHAR_MIN                        = 113
-	_SC_SHRT_MAX                         = 114
-	_SC_SHRT_MIN                         = 115
-	_SC_UCHAR_MAX                        = 116
-	_SC_UINT_MAX                         = 117
-	_SC_ULONG_MAX                        = 118
-	_SC_USHRT_MAX                        = 119
-	_SC_NL_ARGMAX                        = 120
-	_SC_NL_LANGMAX                       = 121
-	_SC_NL_MSGMAX                        = 122
-	_SC_NL_NMAX                          = 123
-	_SC_NL_SETMAX                        = 124
-	_SC_NL_TEXTMAX                       = 125
-	_SC_XBS5_ILP32_OFF32                 = 126
-	_SC_XBS5_ILP32_OFFBIG                = 127
-	_SC_XBS5_LP64_OFF64                  = 128
-	_SC_XBS5_LPBIG_OFFBIG                = 129
-	_SC_XOPEN_LEGACY                     = 130
-	_SC_XOPEN_REALTIME                   = 131
-	_SC_XOPEN_REALTIME_THREADS           = 132
-	_SC_ADVISORY_INFO                    = 133
-	_SC_BARRIERS                         = 134
-	_SC_BASE                             = 135
-	_SC_C_LANG_SUPPORT                   = 136
-	_SC_C_LANG_SUPPORT_R                 = 137
-	_SC_CLOCK_SELECTION                  = 138
-	_SC_CPUTIME                          = 139
-	_SC_THREAD_CPUTIME                   = 140
-	_SC_DEVICE_IO                        = 141
-	_SC_DEVICE_SPECIFIC                  = 142
-	_SC_DEVICE_SPECIFIC_R                = 143
-	_SC_FD_MGMT                          = 144
-	_SC_FIFO                             = 145
-	_SC_PIPE                             = 146
-	_SC_FILE_ATTRIBUTES                  = 147
-	_SC_FILE_LOCKING                     = 148
-	_SC_FILE_SYSTEM                      = 149
-	_SC_MONOTONIC_CLOCK                  = 150
-	_SC_MULTI_PROCESS                    = 151
-	_SC_SINGLE_PROCESS                   = 152
-	_SC_NETWORKING                       = 153
-	_SC_READER_WRITER_LOCKS              = 154
-	_SC_SPIN_LOCKS                       = 155
-	_SC_REGEXP                           = 156
-	_SC_REGEX_VERSION                    = 157
-	_SC_SHELL                            = 158
-	_SC_SIGNALS                          = 159
-	_SC_SPAWN                            = 160
-	_SC_SPORADIC_SERVER                  = 161
-	_SC_THREAD_SPORADIC_SERVER           = 162
-	_SC_SYSTEM_DATABASE                  = 163
-	_SC_SYSTEM_DATABASE_R                = 164
-	_SC_TIMEOUTS                         = 165
-	_SC_TYPED_MEMORY_OBJECTS             = 166
-	_SC_USER_GROUPS                      = 167
-	_SC_USER_GROUPS_R                    = 168
-	_SC_2_PBS                            = 169
-	_SC_2_PBS_ACCOUNTING                 = 170
-	_SC_2_PBS_LOCATE                     = 171
-	_SC_2_PBS_MESSAGE                    = 172
-	_SC_2_PBS_TRACK                      = 173
-	_SC_SYMLOOP_MAX                      = 174
-	_SC_STREAMS                          = 175
-	_SC_2_PBS_CHECKPOINT                 = 176
-	_SC_V6_ILP32_OFF32                   = 177
-	_SC_V6_ILP32_OFFBIG                  = 178
-	_SC_V6_LP64_OFF64                    = 179
-	_SC_V6_LPBIG_OFFBIG                  = 180
-	_SC_HOST_NAME_MAX                    = 181
-	_SC_TRACE                            = 182
-	_SC_TRACE_EVENT_FILTER               = 183
-	_SC_TRACE_INHERIT                    = 184
-	_SC_TRACE_LOG                        = 185
-	_SC_LEVEL1_ICACHE_SIZE               = 186
-	_SC_LEVEL1_ICACHE_ASSOC              = 187
-	_SC_LEVEL1_ICACHE_LINESIZE           = 188
-	_SC_LEVEL1_DCACHE_SIZE               = 189
-	_SC_LEVEL1_DCACHE_ASSOC              = 190
-	_SC_LEVEL1_DCACHE_LINESIZE           = 191
-	_SC_LEVEL2_CACHE_SIZE                = 192
-	_SC_LEVEL2_CACHE_ASSOC               = 193
-	_SC_LEVEL2_CACHE_LINESIZE            = 194
-	_SC_LEVEL3_CACHE_SIZE                = 195
-	_SC_LEVEL3_CACHE_ASSOC               = 196
-	_SC_LEVEL3_CACHE_LINESIZE            = 197
-	_SC_LEVEL4_CACHE_SIZE                = 198
-	_SC_LEVEL4_CACHE_ASSOC               = 199
-	_SC_LEVEL4_CACHE_LINESIZE            = 200
-	_SC_IPV6                             = _SC_LEVEL1_ICACHE_SIZE + 50
-	_SC_RAW_SOCKETS                      = 201
-	_SC_V7_ILP32_OFF32                   = 202
-	_SC_V7_ILP32_OFFBIG                  = 203
-	_SC_V7_LP64_OFF64                    = 204
-	_SC_V7_LPBIG_OFFBIG                  = 205
-	_SC_SS_REPL_MAX                      = 206
-	_SC_TRACE_EVENT_NAME_MAX             = 207
-	_SC_TRACE_NAME_MAX                   = 208
-	_SC_TRACE_SYS_MAX                    = 209
-	_SC_TRACE_USER_EVENT_MAX             = 210
-	_SC_XOPEN_STREAMS                    = 211
-	_SC_THREAD_ROBUST_PRIO_INHERIT       = 212
-	_SC_THREAD_ROBUST_PRIO_PROTECT       = 213
-)
-const (
-	_CS_PATH                            int = 0
-	_CS_V6_WIDTH_RESTRICTED_ENVS            = 1
-	_CS_GNU_LIBC_VERSION                    = 2
-	_CS_GNU_LIBPTHREAD_VERSION              = 3
-	_CS_V5_WIDTH_RESTRICTED_ENVS            = 4
-	_CS_V7_WIDTH_RESTRICTED_ENVS            = 5
-	_CS_LFS_CFLAGS                          = 1000
-	_CS_LFS_LDFLAGS                         = 1001
-	_CS_LFS_LIBS                            = 1002
-	_CS_LFS_LINTFLAGS                       = 1003
-	_CS_LFS64_CFLAGS                        = 1004
-	_CS_LFS64_LDFLAGS                       = 1005
-	_CS_LFS64_LIBS                          = 1006
-	_CS_LFS64_LINTFLAGS                     = 1007
-	_CS_XBS5_ILP32_OFF32_CFLAGS             = 1100
-	_CS_XBS5_ILP32_OFF32_LDFLAGS            = 1101
-	_CS_XBS5_ILP32_OFF32_LIBS               = 1102
-	_CS_XBS5_ILP32_OFF32_LINTFLAGS          = 1103
-	_CS_XBS5_ILP32_OFFBIG_CFLAGS            = 1104
-	_CS_XBS5_ILP32_OFFBIG_LDFLAGS           = 1105
-	_CS_XBS5_ILP32_OFFBIG_LIBS              = 1106
-	_CS_XBS5_ILP32_OFFBIG_LINTFLAGS         = 1107
-	_CS_XBS5_LP64_OFF64_CFLAGS              = 1108
-	_CS_XBS5_LP64_OFF64_LDFLAGS             = 1109
-	_CS_XBS5_LP64_OFF64_LIBS                = 1110
-	_CS_XBS5_LP64_OFF64_LINTFLAGS           = 1111
-	_CS_XBS5_LPBIG_OFFBIG_CFLAGS            = 1112
-	_CS_XBS5_LPBIG_OFFBIG_LDFLAGS           = 1113
-	_CS_XBS5_LPBIG_OFFBIG_LIBS              = 1114
-	_CS_XBS5_LPBIG_OFFBIG_LINTFLAGS         = 1115
-	_CS_POSIX_V6_ILP32_OFF32_CFLAGS         = 1116
-	_CS_POSIX_V6_ILP32_OFF32_LDFLAGS        = 1117
-	_CS_POSIX_V6_ILP32_OFF32_LIBS           = 1118
-	_CS_POSIX_V6_ILP32_OFF32_LINTFLAGS      = 1119
-	_CS_POSIX_V6_ILP32_OFFBIG_CFLAGS        = 1120
-	_CS_POSIX_V6_ILP32_OFFBIG_LDFLAGS       = 1121
-	_CS_POSIX_V6_ILP32_OFFBIG_LIBS          = 1122
-	_CS_POSIX_V6_ILP32_OFFBIG_LINTFLAGS     = 1123
-	_CS_POSIX_V6_LP64_OFF64_CFLAGS          = 1124
-	_CS_POSIX_V6_LP64_OFF64_LDFLAGS         = 1125
-	_CS_POSIX_V6_LP64_OFF64_LIBS            = 1126
-	_CS_POSIX_V6_LP64_OFF64_LINTFLAGS       = 1127
-	_CS_POSIX_V6_LPBIG_OFFBIG_CFLAGS        = 1128
-	_CS_POSIX_V6_LPBIG_OFFBIG_LDFLAGS       = 1129
-	_CS_POSIX_V6_LPBIG_OFFBIG_LIBS          = 1130
-	_CS_POSIX_V6_LPBIG_OFFBIG_LINTFLAGS     = 1131
-	_CS_POSIX_V7_ILP32_OFF32_CFLAGS         = 1132
-	_CS_POSIX_V7_ILP32_OFF32_LDFLAGS        = 1133
-	_CS_POSIX_V7_ILP32_OFF32_LIBS           = 1134
-	_CS_POSIX_V7_ILP32_OFF32_LINTFLAGS      = 1135
-	_CS_POSIX_V7_ILP32_OFFBIG_CFLAGS        = 1136
-	_CS_POSIX_V7_ILP32_OFFBIG_LDFLAGS       = 1137
-	_CS_POSIX_V7_ILP32_OFFBIG_LIBS          = 1138
-	_CS_POSIX_V7_ILP32_OFFBIG_LINTFLAGS     = 1139
-	_CS_POSIX_V7_LP64_OFF64_CFLAGS          = 1140
-	_CS_POSIX_V7_LP64_OFF64_LDFLAGS         = 1141
-	_CS_POSIX_V7_LP64_OFF64_LIBS            = 1142
-	_CS_POSIX_V7_LP64_OFF64_LINTFLAGS       = 1143
-	_CS_POSIX_V7_LPBIG_OFFBIG_CFLAGS        = 1144
-	_CS_POSIX_V7_LPBIG_OFFBIG_LDFLAGS       = 1145
-	_CS_POSIX_V7_LPBIG_OFFBIG_LIBS          = 1146
-	_CS_POSIX_V7_LPBIG_OFFBIG_LINTFLAGS     = 1147
-	_CS_V6_ENV                              = 1148
-	_CS_V7_ENV                              = 1149
-)
-
 type FCOMPLEX struct {
 	r float32
 	i float32
@@ -890,9 +558,9 @@ func main() {
 		}
 		os.Exit(11)
 	}
-	noarch.Printf([]byte("strat filetype\x00"))
+	fmt.Printf("strat filetype")
 	filetype = get_file_ext(IN_file, extn)
-	noarch.Printf([]byte("ed of filetype\n\x00"))
+	fmt.Printf("ed of filetype\n")
 	output_path([]byte("frame3dd.3dd\x00"), strippedInputFile, 512, nil)
 	parse_input(fp, strippedInputFile)
 	noarch.Fclose(fp)
@@ -925,7 +593,7 @@ func main() {
 	xyz = make([]vec3, 24*uint32(1+nN)/24)
 	read_node_data(fp, nN, xyz, rj)
 	if verbose != 0 {
-		noarch.Printf([]byte(" ... complete\n\x00"))
+		fmt.Printf(" ... complete\n")
 	}
 	DoF = 6 * nN
 	q = ivector(1, int32(DoF))
@@ -1081,29 +749,29 @@ func main() {
 						R[i] += dR[i]
 					}
 				}
-				noarch.Printf([]byte("STEP 1\x00"))
+				fmt.Printf("STEP 1")
 				if geom != 0 {
-					noarch.Printf([]byte("GEOM\n\x00"))
+					fmt.Printf("GEOM\n")
 					element_end_forces(Q, nE, xyz, L, Le, N1, N2, Ax, Asy, Asz, Jx, Iy, Iz, E, G, p, eqF_temp[lc], eqF_mech[lc], D, shear, geom, (*[100000000]int)(unsafe.Pointer(&axial_strain_warning))[:])
-					noarch.Printf([]byte("STEP 2\x00"))
+					fmt.Printf("STEP 2")
 					assemble_K(K, DoF, nE, xyz, rj, L, Le, N1, N2, Ax, Asy, Asz, Jx, Iy, Iz, E, G, p, shear, geom, Q, debug)
 				}
-				noarch.Printf([]byte("STEP 3\x00"))
+				fmt.Printf("STEP 3")
 			}
-			noarch.Printf([]byte("STEP 4\n\x00"))
+			fmt.Printf("STEP 4\n")
 			if nF[lc] > 0 || nU[lc] > 0 || nW[lc] > 0 || nP[lc] > 0 || nD[lc] > 0 || gX[lc] != 0 || gY[lc] != 0 || gZ[lc] != 0 {
 				if verbose != 0 {
 					noarch.Fprintf(stdout, []byte(" Linear Elastic Analysis ... Mechanical Loads\n\x00"))
 				}
-				noarch.Printf([]byte("STEP 5\n\x00"))
+				fmt.Printf("STEP 5\n")
 				for i = 1; i <= DoF; i++ {
 					if r[i] != 0 {
 						dD[i] = float64(Dp[lc][i])
 					}
 				}
-				noarch.Printf([]byte("STEP 6\n\x00"))
+				fmt.Printf("STEP 6\n")
 				solve_system(K, dD, F_mech[lc], dR, DoF, q, r, (*[100000000]int)(unsafe.Pointer(&ok))[:], verbose, (*[100000000]float64)(unsafe.Pointer(&rms_resid))[:])
-				noarch.Printf([]byte("STEP 7\n\x00"))
+				fmt.Printf("STEP 7\n")
 				for i = 1; i <= DoF; i++ {
 					if q[i] != 0 {
 						D[i] += dD[i]
@@ -1117,19 +785,19 @@ func main() {
 						R[i] += dR[i]
 					}
 				}
-				noarch.Printf([]byte("STEP 8\n\x00"))
+				fmt.Printf("STEP 8\n")
 			}
 			for i = 1; i <= DoF; i++ {
 				F[i] = F_temp[lc][i] + F_mech[lc][i]
 			}
 			element_end_forces(Q, nE, xyz, L, Le, N1, N2, Ax, Asy, Asz, Jx, Iy, Iz, E, G, p, eqF_temp[lc], eqF_mech[lc], D, shear, geom, (*[100000000]int)(unsafe.Pointer(&axial_strain_warning))[:])
-			noarch.Printf([]byte("STEP 10\n\x00"))
+			fmt.Printf("STEP 10\n")
 			error = equilibrium_error(dF, F, K, D, DoF, q, r)
-			noarch.Printf([]byte("STEP 11\n\x00"))
+			fmt.Printf("STEP 11\n")
 			if geom != 0 && verbose != 0 {
 				noarch.Fprintf(stdout, []byte("\n Non-Linear Elastic Analysis ...\n\x00"))
 			}
-			noarch.Printf([]byte("STEP 12\n\x00"))
+			fmt.Printf("STEP 12\n")
 			if geom != 0 {
 				error = 1
 				ok = 0
@@ -1998,7 +1666,7 @@ func assemble_M(M [][]float64, DoF int, nN int, nE int, xyz []vec3, r []float32,
 	for i = 1; i <= DoF; i++ {
 		if M[i][i] <= 0 {
 			noarch.Fprintf(stderr, []byte("  error: Non pos-def mass matrix\n\x00"))
-			noarch.Fprintf(stderr, []byte("  M[%d][%d] = %lf\n\x00"), i, i, M[i][i])
+			noarch.Fprintf(stderr, []byte("  M[%d][%d] = %f\n\x00\x00"), i, i, M[i][i])
 		}
 	}
 	free_dmatrix(m, 1, 12, 1, 12)
@@ -2854,7 +2522,7 @@ func read_node_data(fp *noarch.File, nN int, xyz []vec3, r []float32) {
 			errorMsg(errMsg)
 			os.Exit(41)
 		}
-		sfrv = noarch.Fscanf(fp, []byte("%lf %lf %lf %f\x00"), (*[100000000]float64)(unsafe.Pointer(&xyz[j].x))[:], (*[100000000]float64)(unsafe.Pointer(&xyz[j].y))[:], (*[100000000]float64)(unsafe.Pointer(&xyz[j].z))[:], (*[100000000]float32)(unsafe.Pointer(&r[j]))[:])
+		sfrv = noarch.Fscanf(fp, []byte("%f %f %f %f\x00\x00\x00\x00"), (*[100000000]float64)(unsafe.Pointer(&xyz[j].x))[:], (*[100000000]float64)(unsafe.Pointer(&xyz[j].y))[:], (*[100000000]float64)(unsafe.Pointer(&xyz[j].z))[:], (*[100000000]float32)(unsafe.Pointer(&r[j]))[:])
 		if sfrv != 4 {
 			sferr([]byte("node coordinates in node data\x00"))
 		}
@@ -3069,7 +2737,7 @@ func read_run_data(fp *noarch.File, OUT_file []byte, shear []int, shear_flag int
 		noarch.Fprintf(stderr, []byte("MESH_FILE = %s \n\x00"), mesh_file)
 		noarch.Fprintf(stderr, []byte("MESHPATH  = %s \n\x00"), meshpath)
 	}
-	sfrv = noarch.Fscanf(fp, []byte("%d %d %lf %f %f\x00"), shear, geom, exagg_static, scale, dx)
+	sfrv = noarch.Fscanf(fp, []byte("%d %d %f %f %f\x00\x00"), shear, geom, exagg_static, scale, dx)
 	if sfrv != 5 {
 		sferr([]byte("shear, geom, exagg_static, scale, or dx variables\x00"))
 	}
@@ -3595,7 +3263,7 @@ func read_and_assemble_loads(fp *noarch.File, nN int, nE int, nL int, DoF int, x
 				os.Exit(121)
 			}
 			for l = 5; l >= 0; l-- {
-				sfrv = noarch.Fscanf(fp, []byte("%lf\x00"), (*[100000000]float64)(unsafe.Pointer(&F_mech[lc][6*j-l]))[:])
+				sfrv = noarch.Fscanf(fp, []byte("%f\x00\x00"), (*[100000000]float64)(unsafe.Pointer(&F_mech[lc][6*j-l]))[:])
 				if sfrv != 1 {
 					sferr([]byte("force value in point load data\x00"))
 				}
@@ -3840,7 +3508,7 @@ func read_and_assemble_loads(fp *noarch.File, nN int, nE int, nL int, DoF int, x
 			a = float64(P[lc][i][5])
 			b = L[n] - a
 			if a < 0 || L[n] < a || b < 0 || L[n] < b {
-				noarch.Sprintf(errMsg, []byte("\n  error in point load data: Point load coord. out of range\n   Frame element number: %d  L: %lf  load coord.: %lf\n\x00"), n, L[n], float64(P[lc][i][5]))
+				noarch.Sprintf(errMsg, []byte("\n  error in point load data: Point load coord. out of range\n   Frame element number: %d  L: %f  load coord.: %f\n\x00\x00\x00"), n, L[n], float64(P[lc][i][5]))
 				errorMsg(errMsg)
 				os.Exit(152)
 			}
@@ -4062,15 +3730,15 @@ func read_mass_data(fp *noarch.File, OUT_file []byte, nN int, nE int, nI []int, 
 	if sfrv != 1 {
 		sferr([]byte("lump value in mass data\x00"))
 	}
-	sfrv = noarch.Fscanf(fp, []byte("%lf\x00"), tol)
+	sfrv = noarch.Fscanf(fp, []byte("%f\x00\x00"), tol)
 	if sfrv != 1 {
 		sferr([]byte("tol value in mass data\x00"))
 	}
-	sfrv = noarch.Fscanf(fp, []byte("%lf\x00"), shift)
+	sfrv = noarch.Fscanf(fp, []byte("%f\x00\x00"), shift)
 	if sfrv != 1 {
 		sferr([]byte("shift value in mass data\x00"))
 	}
-	sfrv = noarch.Fscanf(fp, []byte("%lf\x00"), exagg_modal)
+	sfrv = noarch.Fscanf(fp, []byte("%f\x00\x00"), exagg_modal)
 	if sfrv != 1 {
 		sferr([]byte("exagg_modal value in mass data\x00"))
 	}
@@ -6159,7 +5827,7 @@ func write_modal_results(fp *noarch.File, nN int, nE int, nI int, DoF int, M [][
 		for i = 1; i <= DoF; i++ {
 			mpfZ += V[i][m] * msZ[i]
 		}
-		noarch.Fprintf(fp, []byte("  MODE %5d:   f= %lf Hz,  T= %lf sec\n\x00"), m, f[m], 1/f[m])
+		noarch.Fprintf(fp, []byte("  MODE %5d:   f= %f Hz,  T= %f sec\n\x00\x00\x00"), m, f[m], 1/f[m])
 		noarch.Fprintf(fp, []byte("\t\tX- modal participation factor = %12.4e \n\x00"), mpfX)
 		noarch.Fprintf(fp, []byte("\t\tY- modal participation factor = %12.4e \n\x00"), mpfY)
 		noarch.Fprintf(fp, []byte("\t\tZ- modal participation factor = %12.4e \n\x00"), mpfZ)
@@ -6542,7 +6210,7 @@ func modal_mesh(IN_file []byte, meshpath []byte, modepath []byte, plotpath []byt
 		for i = 1; i <= DoF; i++ {
 			mpfZ += V[i][m] * msZ[i]
 		}
-		noarch.Fprintf(fpm, []byte("# MODE %5d:   f= %lf Hz, T= %lf sec\n\x00"), m, f[m], 1/f[m])
+		noarch.Fprintf(fpm, []byte("# MODE %5d:   f= %f Hz, T= %f sec\n\x00\x00\x00"), m, f[m], 1/f[m])
 		noarch.Fprintf(fpm, []byte("#\t\tX- modal participation factor = %12.4e \n\x00"), mpfX)
 		noarch.Fprintf(fpm, []byte("#\t\tY- modal participation factor = %12.4e \n\x00"), mpfY)
 		noarch.Fprintf(fpm, []byte("#\t\tZ- modal participation factor = %12.4e \n\x00"), mpfZ)
@@ -6586,7 +6254,7 @@ func modal_mesh(IN_file []byte, meshpath []byte, modepath []byte, plotpath []byt
 			noarch.Fprintf(fpm, []byte("unset label\n\x00"))
 			noarch.Fprintf(fpm, []byte("%c unset key\n\x00"), int(D3))
 		}
-		noarch.Fprintf(fpm, []byte("set title '%s     mode %d     %lf Hz'\n\x00"), IN_file, m, f[m])
+		noarch.Fprintf(fpm, []byte("set title '%s     mode %d     %f Hz'\n\x00\x00"), IN_file, m, f[m])
 		noarch.Fprintf(fpm, []byte("%c plot '%s' u 2:3 t 'undeformed mesh' w l \x00"), int(D2), meshpath)
 		if noarch.NotInt(anlyz) != 0 {
 			noarch.Fprintf(fpm, []byte(" lw %d lt 1 \n\x00"), lw)
@@ -6766,9 +6434,9 @@ func animate(IN_file []byte, meshpath []byte, modepath []byte, plotpath []byte, 
 			noarch.Fprintf(fpm, []byte("# y_min = %12.5e     y_max = %12.5e \n\x00"), float64(y_min), float64(y_max))
 			noarch.Fprintf(fpm, []byte("# z_min = %12.5e     z_max = %12.5e \n\x00"), float64(z_min), float64(z_max))
 			noarch.Fprintf(fpm, []byte("# Dxyz = %12.5e \n\x00"), float64(Dxyz))
-			noarch.Fprintf(fpm, []byte("set xrange [ %lf : %lf ] \n\x00"), float64(x_min)-0.2*float64(Dxyz), float64(x_max)+0.1*float64(Dxyz))
-			noarch.Fprintf(fpm, []byte("set yrange [ %lf : %lf ] \n\x00"), float64(y_min)-0.2*float64(Dxyz), float64(y_max)+0.1*float64(Dxyz))
-			noarch.Fprintf(fpm, []byte("set zrange [ %lf : %lf ] \n\x00"), float64(z_min)-0.2*float64(Dxyz), float64(z_max)+0.1*float64(Dxyz))
+			noarch.Fprintf(fpm, []byte("set xrange [ %f : %f ] \n\x00\x00\x00"), float64(x_min)-0.2*float64(Dxyz), float64(x_max)+0.1*float64(Dxyz))
+			noarch.Fprintf(fpm, []byte("set yrange [ %f : %f ] \n\x00\x00\x00"), float64(y_min)-0.2*float64(Dxyz), float64(y_max)+0.1*float64(Dxyz))
+			noarch.Fprintf(fpm, []byte("set zrange [ %f : %f ] \n\x00\x00\x00"), float64(z_min)-0.2*float64(Dxyz), float64(z_max)+0.1*float64(Dxyz))
 			noarch.Fprintf(fpm, []byte("unset xzeroaxis; unset yzeroaxis; unset zzeroaxis\n\x00"))
 			noarch.Fprintf(fpm, []byte("unset xtics; unset ytics; unset ztics; \n\x00"))
 			noarch.Fprintf(fpm, []byte("%c set view 60, 70, %5.2f \n\x00"), int(D3), float64(scale))
@@ -6776,7 +6444,7 @@ func animate(IN_file []byte, meshpath []byte, modepath []byte, plotpath []byte, 
 			noarch.Fprintf(fpm, []byte("%c set view equal xyz # 1:1 3D axis scaling \n\x00"), int(D3))
 		}
 		noarch.Fprintf(fpm, []byte("pause -1 \n\x00"))
-		noarch.Fprintf(fpm, []byte("set title '%s     mode %d      %lf Hz'\n\x00"), IN_file, m, f[m])
+		noarch.Fprintf(fpm, []byte("set title '%s     mode %d      %f Hz'\n\x00\x00"), IN_file, m, f[m])
 		frame_number = 0
 		total_frames = int(float32(2*CYCLES) * frames)
 		for c = 1; c <= CYCLES; c++ {
@@ -6846,7 +6514,7 @@ func animate(IN_file []byte, meshpath []byte, modepath []byte, plotpath []byte, 
 			noarch.Fprintf(fpm, []byte("# %s\n\x00"), title)
 			noarch.Fprintf(fpm, []byte("# A N I M A T E D   M O D E   S H A P E   D A T A \n\x00"))
 			noarch.Fprintf(fpm, []byte("# deflection exaggeration: %.1f\n\x00"), ex)
-			noarch.Fprintf(fpm, []byte("# MODE %5d: f= %lf Hz  T= %lf sec\n\n\x00"), m, f[m], 1/f[m])
+			noarch.Fprintf(fpm, []byte("# MODE %5d: f= %f Hz  T= %f sec\n\n\x00\x00\x00"), m, f[m], 1/f[m])
 			for j = 1; j <= DoF; j++ {
 				v[j] = V[j][m]
 			}
@@ -7149,11 +6817,11 @@ printf(" Is .CSV? ... = %d \n", !strcmp(ext,".csv") );
 */ //
 //
 func get_file_ext(filename []byte, ext []byte) int {
-	noarch.Printf([]byte("0001\x00"))
+	fmt.Printf("0001")
 	var i int
 	var full_len int
 	var len int
-	noarch.Printf([]byte("0002\x00"))
+	fmt.Printf("0002")
 	for int(filename[func() int {
 		defer func() {
 			len++
@@ -7162,7 +6830,7 @@ func get_file_ext(filename []byte, ext []byte) int {
 	}()]) != int('\x00') {
 	}
 	full_len = len
-	noarch.Printf([]byte("0003\x00"))
+	fmt.Printf("0003")
 	for int(filename[func() int {
 		defer func() {
 			len--
@@ -7173,23 +6841,23 @@ func get_file_ext(filename []byte, ext []byte) int {
 	if len == 0 {
 		len = full_len
 	}
-	noarch.Printf([]byte("0004\x00"))
+	fmt.Printf("0004")
 	len++
-	noarch.Printf([]byte("0005\x00"))
+	fmt.Printf("0005")
 	for i = 0; len < full_len; {
 		ext[i] = byte(linux.ToLower(int(filename[len])))
 		i++
 		len++
 	}
-	noarch.Printf([]byte("0006\x00"))
+	fmt.Printf("0006")
 	if noarch.NotInt(noarch.Strcmp(ext, []byte(".csv\x00"))) != 0 {
 		return (1)
 	}
-	noarch.Printf([]byte("0007\x00"))
+	fmt.Printf("0007")
 	if noarch.NotInt(noarch.Strcmp(ext, []byte(".fmm\x00"))) != 0 {
 		return (2)
 	}
-	noarch.Printf([]byte("0008\n\x00"))
+	fmt.Printf("0008\n")
 	return (0)
 }
 
@@ -7785,7 +7453,7 @@ func subspace(K [][]float64, M [][]float64, n int, m int, w []float64, V [][]flo
 	if verbose != 0 {
 		noarch.Fprintf(stdout, []byte(" %4d sub-space iterations,   error: %.4e \n\x00"), iter[0], error)
 		for k = 1; k <= m; k++ {
-			noarch.Fprintf(stdout, []byte("  mode: %2d\tDoF: %5d\t %9.4lf Hz\n\x00"), k, idx[k], math.Sqrt(w[k])/(2*3.141592653589793))
+			noarch.Fprintf(stdout, []byte("  mode: %2d\tDoF: %5d\t %9.4f Hz\n\x00\x00"), k, idx[k], math.Sqrt(w[k])/(2*3.141592653589793))
 		}
 	}
 	ok[0] = sturm(K, M, n, m, shift, w[modes]+tol, verbose)
@@ -8979,7 +8647,7 @@ func pseudo_inv(A [][]float64, Ai [][]float64, n int, m int, beta float64, verbo
 	AtA = dmatrix(1, int32(n), 1, int32(n))
 	AtAi = dmatrix(1, int32(n), 1, int32(n))
 	if beta > 1 {
-		noarch.Fprintf(stderr, []byte(" pseudo_inv: warning beta = %lf\n\x00"), beta)
+		noarch.Fprintf(stderr, []byte(" pseudo_inv: warning beta = %f\n\x00\x00"), beta)
 	}
 	for i = 1; i <= n; i++ {
 		b[i] = 0
@@ -9638,7 +9306,7 @@ func errorMsg(errString []byte) {
 }
 
 // openFile - transpiled function from  $GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:114
-// Warning (*ast.SwitchStmt):  /home/konstantin/go/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:126 :Unsupport case
+// Warning (*ast.SwitchStmt):  $GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:126 :Unsupport case
 /*
  * OPENFILE  -  open a file or print a diagnostic error message
  */ //
@@ -9821,6 +9489,13 @@ func getLine(fp *noarch.File, lim int, s []byte) int {
 }
 
 // getTime - transpiled function from  $GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:235
+// Warning (*ast.MemberExpr):  $GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:242 :cannot determine type for LHS 'struct tm', will use 'void *' for all fields. Is lvalue = true. n.Name = tm_year
+// Warning (*ast.MemberExpr):  $GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:244 :cannot determine type for LHS 'struct tm', will use 'void *' for all fields. Is lvalue = true. n.Name = tm_mon
+// Warning (*ast.MemberExpr):  $GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:245 :cannot determine type for LHS 'struct tm', will use 'void *' for all fields. Is lvalue = true. n.Name = tm_mday
+// Warning (*ast.MemberExpr):  $GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:246 :cannot determine type for LHS 'struct tm', will use 'void *' for all fields. Is lvalue = true. n.Name = tm_hour
+// Warning (*ast.MemberExpr):  $GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:247 :cannot determine type for LHS 'struct tm', will use 'void *' for all fields. Is lvalue = true. n.Name = tm_min
+// Warning (*ast.MemberExpr):  $GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:248 :cannot determine type for LHS 'struct tm', will use 'void *' for all fields. Is lvalue = true. n.Name = tm_sec
+// Warning (*ast.MemberExpr):  $GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:251 :cannot determine type for LHS 'struct tm', will use 'void *' for all fields. Is lvalue = true. n.Name = tm_isdst
 /*
  * getTime  parse a numeric time string similar to YYYYMMDDhhmmss
  * The input variables y, m, d, hr, mn, sc are the indices of the string s[]
@@ -9831,7 +9506,7 @@ func getLine(fp *noarch.File, lim int, s []byte) int {
 // normalize t_tm
 //	printf("%d ... %s", (int) t_time, ctime(&t_time) );
 //
-func getTime(s []byte, y int, m int, d int, hr int, mn int, sc int, os int) noarch.TimeT {
+func getTime(s []byte, y int, m int, d int, hr int, mn int, sc int, os_ int) noarch.TimeT {
 	var temp []byte = make([]byte, 16)
 	var t_tm noarch.Tm
 	var t_time noarch.TimeT
@@ -9841,7 +9516,7 @@ func getTime(s []byte, y int, m int, d int, hr int, mn int, sc int, os int) noar
 	t_tm.TmMday = noarch.Atoi(noarch.Strncpy(temp, (*(*[1000000000]byte)(unsafe.Pointer(uintptr(unsafe.Pointer(&s[0])) + (uintptr)(d)*unsafe.Sizeof(s[0]))))[:], int(2)))
 	t_tm.TmHour = noarch.Atoi(noarch.Strncpy(temp, (*(*[1000000000]byte)(unsafe.Pointer(uintptr(unsafe.Pointer(&s[0])) + (uintptr)(hr)*unsafe.Sizeof(s[0]))))[:], int(2)))
 	t_tm.TmMin = noarch.Atoi(noarch.Strncpy(temp, (*(*[1000000000]byte)(unsafe.Pointer(uintptr(unsafe.Pointer(&s[0])) + (uintptr)(mn)*unsafe.Sizeof(s[0]))))[:], int(2)))
-	t_tm.TmSec = noarch.Atoi(noarch.Strncpy(temp, (*(*[1000000000]byte)(unsafe.Pointer(uintptr(unsafe.Pointer(&s[0])) + (uintptr)(sc)*unsafe.Sizeof(s[0]))))[:], int(2))) + os
+	t_tm.TmSec = noarch.Atoi(noarch.Strncpy(temp, (*(*[1000000000]byte)(unsafe.Pointer(uintptr(unsafe.Pointer(&s[0])) + (uintptr)(sc)*unsafe.Sizeof(s[0]))))[:], int(2))) + os_
 	t_tm.TmIsdst = -1
 	t_time = noarch.Mktime((*[100000000]noarch.Tm)(unsafe.Pointer(&t_tm))[:])
 	return noarch.TimeT(t_time)
@@ -9885,10 +9560,6 @@ func sferr(s []byte) {
 }
 
 type ptrdiff_t int32
-type max_align_t struct {
-	__clang_max_align_nonce1 int64
-	__clang_max_align_nonce2 float64
-}
 
 // NRerror - transpiled function from  $GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:20
 /** @file

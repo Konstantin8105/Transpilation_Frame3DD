@@ -1,7 +1,7 @@
 9c9
-< Wed May 30 15:17:17 2018
+< Sat Jun  9 14:59:47 2018
 ---
-> Wed May 30 15:17:12 2018
+> Sat Jun  9 14:59:41 2018
 59c59
 <      1      12.795      50.218      78.624   -4059.556    9286.065   22523.647
 ---
@@ -169,7 +169,7 @@
 >      4   max     -19.392      26.306    -17.326   3205.241  22426.938  16171.611
 >      4   min     -22.163      26.306    -21.483   3205.241 -12554.999 -31252.765
 219,222c219,222
-<   MODE     1:   f= %!l(float64=19.33645802786402)f Hz,  T= %!l(float64=0.05171577951654799)f sec
+<   MODE     1:   f= 19.336458 Hz,  T= 0.051716 sec
 < 		X- modal participation factor =  -2.7770e-02 
 < 		Y- modal participation factor =  -1.3137e-11 
 < 		Z- modal participation factor =  -4.7432e-07 
@@ -184,7 +184,7 @@
 <      3  -5.276e-09   2.104e-09  -6.235e-10  -8.159e-07  -1.515e-06   6.808e-07
 <      4  -5.297e-09  -2.105e-09  -6.496e-10   8.163e-07  -1.514e-06  -6.803e-07
 <      5  -5.298e-09   2.105e-09   6.495e-10  -8.163e-07  -1.514e-06  -6.803e-07
-<   MODE     2:   f= %!l(float64=19.54393926476181)f Hz,  T= %!l(float64=0.05116675745114619)f sec
+<   MODE     2:   f= 19.543939 Hz,  T= 0.051167 sec
 < 		X- modal participation factor =   9.2067e-06 
 < 		Y- modal participation factor =   7.7379e-07 
 < 		Z- modal participation factor =  -1.5258e-10 
@@ -204,7 +204,7 @@
 <      3   2.361e-09   3.124e-09  -1.056e-11  -9.558e-07   7.164e-07  -1.448e-06
 <      4  -2.358e-09   3.170e-09  -1.135e-11  -9.555e-07  -7.170e-07  -1.448e-06
 <      5  -2.359e-09  -3.170e-09   1.056e-11   9.555e-07  -7.170e-07  -1.448e-06
-<   MODE     3:   f= %!l(float64=20.154340620694967)f Hz,  T= %!l(float64=0.04961710327417885)f sec
+<   MODE     3:   f= 20.154341 Hz,  T= 0.049617 sec
 < 		X- modal participation factor =   5.9846e-11 
 < 		Y- modal participation factor =   3.8072e-02 
 < 		Z- modal participation factor =  -2.7036e-05 
@@ -224,7 +224,7 @@
 <      3  -6.407e-09   7.847e-09   2.607e-09  -1.278e-06  -9.895e-07  -1.101e-06
 <      4   6.448e-09   7.902e-09  -2.618e-09  -1.278e-06   9.895e-07  -1.101e-06
 <      5  -6.448e-09   7.903e-09  -2.618e-09  -1.278e-06  -9.895e-07   1.101e-06
-<   MODE     4:   f= %!l(float64=31.713696194616194)f Hz,  T= %!l(float64=0.03153211766497791)f sec
+<   MODE     4:   f= 31.713696 Hz,  T= 0.031532 sec
 < 		X- modal participation factor =  -5.3484e-11 
 < 		Y- modal participation factor =   3.1625e-01 
 < 		Z- modal participation factor =   1.7021e-06 
@@ -238,22 +238,22 @@
 > 		X- modal participation factor =   4.2361e-09 
 > 		Y- modal participation factor =   3.1636e-01 
 > 		Z- modal participation factor =   1.4729e-06 
-254,261c254,261
+254,258c254,258
 <      1  -5.485e-10   3.154e+00   1.684e-05  -1.460e-02  -6.346e-13  -3.244e-07
 <      2   2.161e-07   1.620e-07   1.806e-07   1.105e-07  -1.559e-07  -3.206e-08
 <      3  -2.161e-07   1.620e-07   1.806e-07   1.105e-07   1.559e-07   3.209e-08
 <      4   2.161e-07   1.620e-07  -1.806e-07   1.100e-07  -1.559e-07   3.152e-08
 <      5  -2.161e-07   1.620e-07  -1.806e-07   1.100e-07   1.559e-07  -3.149e-08
-<   MODE     5:   f= %!l(float64=35.15916548813573)f Hz,  T= %!l(float64=0.028442085758191408)f sec
-< 		X- modal participation factor =  -2.5403e-08 
-< 		Y- modal participation factor =   1.5433e-06 
 ---
 >      1   1.515e-08   3.155e+00   1.458e-05  -1.416e-02  -1.592e-08  -2.734e-06
 >      2   2.269e-07   1.701e-07   1.896e-07   1.107e-07  -1.600e-07  -2.947e-08
 >      3  -2.269e-07   1.701e-07   1.896e-07   1.107e-07   1.599e-07   2.954e-08
 >      4   2.269e-07   1.701e-07  -1.896e-07   1.089e-07  -1.591e-07   2.803e-08
 >      5  -2.269e-07   1.701e-07  -1.896e-07   1.089e-07   1.592e-07  -2.795e-08
->   MODE     5:   f= 35.159165 Hz,  T= 0.028442 sec
+260,261c260,261
+< 		X- modal participation factor =  -2.5403e-08 
+< 		Y- modal participation factor =   1.5433e-06 
+---
 > 		X- modal participation factor =   4.1028e-08 
 > 		Y- modal participation factor =   1.6832e-06 
 264,272c264,272
@@ -262,7 +262,7 @@
 <      3  -2.398e-07   1.799e-07   2.004e-07   1.265e-07   1.688e-07  -1.973e-10
 <      4  -2.398e-07  -1.799e-07   2.004e-07  -1.275e-07   1.698e-07  -2.019e-10
 <      5   2.398e-07  -1.799e-07   2.004e-07  -1.275e-07  -1.698e-07   1.973e-10
-<   MODE     6:   f= %!l(float64=42.249699260751925)f Hz,  T= %!l(float64=0.023668807529926138)f sec
+<   MODE     6:   f= 42.249699 Hz,  T= 0.023669 sec
 < 		X- modal participation factor =   3.1737e-01 
 < 		Y- modal participation factor =   3.0256e-11 
 < 		Z- modal participation factor =  -1.6032e-08 
@@ -272,7 +272,7 @@
 >      3  -2.519e-07   1.889e-07   2.105e-07   1.328e-07   1.773e-07  -2.137e-10
 >      4  -2.519e-07  -1.889e-07   2.105e-07  -1.339e-07   1.783e-07  -2.047e-10
 >      5   2.519e-07  -1.889e-07   2.105e-07  -1.338e-07  -1.783e-07   2.128e-10
->   MODE     6:   f= 42.248953 Hz,  T= 0.023669 sec
+>   MODE     6:   f= 42.248952 Hz,  T= 0.023669 sec
 > 		X- modal participation factor =   3.1739e-01 
 > 		Y- modal participation factor =  -2.7044e-11 
 > 		Z- modal participation factor =   2.8853e-08 
@@ -291,4 +291,4 @@
 280c280
 < There are 6 modes below 42.249699 Hz. ... All 6 modes were found.
 ---
-> There are 6 modes below 42.248953 Hz. ... All 6 modes were found.
+> There are 6 modes below 42.248952 Hz. ... All 6 modes were found.

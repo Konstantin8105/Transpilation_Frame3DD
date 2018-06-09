@@ -1,6 +1,12 @@
-// Warning (*ast.EnumDecl):  /usr/include/x86_64-linux-gnu/bits/confname.h:71 :Add support of continues counter for type : *ast.BinaryExpr
 // Warning (*ast.EnumDecl):  /usr/include/ctype.h:46 :Add support of continues counter for type : *ast.BinaryExpr
-// Warning (*ast.SwitchStmt):  /home/konstantin/go/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:126 :Unsupport case
+// Warning (*ast.SwitchStmt):  $GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:126 :Unsupport case
+// Warning (*ast.MemberExpr):  $GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:242 :cannot determine type for LHS 'struct tm', will use 'void *' for all fields. Is lvalue = true. n.Name = tm_year
+// Warning (*ast.MemberExpr):  $GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:244 :cannot determine type for LHS 'struct tm', will use 'void *' for all fields. Is lvalue = true. n.Name = tm_mon
+// Warning (*ast.MemberExpr):  $GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:245 :cannot determine type for LHS 'struct tm', will use 'void *' for all fields. Is lvalue = true. n.Name = tm_mday
+// Warning (*ast.MemberExpr):  $GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:246 :cannot determine type for LHS 'struct tm', will use 'void *' for all fields. Is lvalue = true. n.Name = tm_hour
+// Warning (*ast.MemberExpr):  $GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:247 :cannot determine type for LHS 'struct tm', will use 'void *' for all fields. Is lvalue = true. n.Name = tm_min
+// Warning (*ast.MemberExpr):  $GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:248 :cannot determine type for LHS 'struct tm', will use 'void *' for all fields. Is lvalue = true. n.Name = tm_sec
+// Warning (*ast.MemberExpr):  $GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:251 :cannot determine type for LHS 'struct tm', will use 'void *' for all fields. Is lvalue = true. n.Name = tm_isdst
 // Warning Function `noarch.InterfaceToFloat32SliceSlice` haven`t implementation
 // Warning Function `noarch.InterfaceToFloat64SliceSlice` haven`t implementation
 // Warning Function `noarch.InterfaceToIntSliceSlice` haven`t implementation
@@ -13,8 +19,14 @@
 // Warning Function `noarch.Float64SliceSliceToFloat32SliceSlice` haven`t implementation
 // Warning Function `noarch.Float64SliceToFloat32Slice` haven`t implementation
 // Warning Function `noarch.InterfaceToFloat64SliceSlice` haven`t implementation
-// Warning (*ast.TranslationUnitDecl):  :0 :cannot transpileRecordDecl `__WAIT_STATUS`. could not determine the size of type `union __WAIT_STATUS` for that reason: Cannot determine sizeof : |union __WAIT_STATUS|. err = Cannot canculate `union` sizeof for `string`. Cannot determine sizeof : |union wait *|. err = error in union
-// Warning (*ast.SwitchStmt):  /home/konstantin/go/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:126 :Unsupport case
+// Warning (*ast.SwitchStmt):  $GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:126 :Unsupport case
+// Warning (*ast.MemberExpr):  $GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:242 :cannot determine type for LHS 'struct tm', will use 'void *' for all fields. Is lvalue = true. n.Name = tm_year
+// Warning (*ast.MemberExpr):  $GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:244 :cannot determine type for LHS 'struct tm', will use 'void *' for all fields. Is lvalue = true. n.Name = tm_mon
+// Warning (*ast.MemberExpr):  $GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:245 :cannot determine type for LHS 'struct tm', will use 'void *' for all fields. Is lvalue = true. n.Name = tm_mday
+// Warning (*ast.MemberExpr):  $GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:246 :cannot determine type for LHS 'struct tm', will use 'void *' for all fields. Is lvalue = true. n.Name = tm_hour
+// Warning (*ast.MemberExpr):  $GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:247 :cannot determine type for LHS 'struct tm', will use 'void *' for all fields. Is lvalue = true. n.Name = tm_min
+// Warning (*ast.MemberExpr):  $GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:248 :cannot determine type for LHS 'struct tm', will use 'void *' for all fields. Is lvalue = true. n.Name = tm_sec
+// Warning (*ast.MemberExpr):  $GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:251 :cannot determine type for LHS 'struct tm', will use 'void *' for all fields. Is lvalue = true. n.Name = tm_isdst
 // Warning Function `noarch.InterfaceToFloat32SliceSlice` haven`t implementation
 // Warning Function `noarch.InterfaceToFloat64SliceSlice` haven`t implementation
 // Warning Function `noarch.InterfaceToIntSliceSlice` haven`t implementation
