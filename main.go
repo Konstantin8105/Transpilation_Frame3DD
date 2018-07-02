@@ -3436,9 +3436,9 @@ func read_and_assemble_loads(fp *noarch.File, nN int, nE int, nL int, DoF int, x
 			w1 = W[lc][i][8]
 			w2 = W[lc][i][9]
 			R1o = ((2*float64(w1)+float64(w2))*float64(x1)*float64(x1) - (float64(w1)+2*float64(w2))*float64(x2)*float64(x2) + 3*float64(w1+w2)*Ln*float64(x2-x1) - float64((w1-w2)*x1*x2)) / (6 * Ln)
-			R2o = ((float64(w1)+2*float64(w2))*float64(x2)*float64(x2) + float64((w1-w2)*x1*x2) - (2*float64(w1)+float64(w2))*float64(x1)*float64(x1)) / (2 * Ln)
-			f01 = (3*(float64(w2)+4*float64(w1))*float64(x1)*float64(x1)*float64(x1)*float64(x1) - 3*(float64(w1)+4*float64(w2))*float64(x2)*float64(x2)*float64(x2)*float64(x2) - 15*(float64(w2)+3*float64(w1))*Ln*float64(x1)*float64(x1)*float64(x1) + 0*(float64(w1)+0*float64(w2))*Ln*float64(x2)*float64(x2)*float64(x2) - 3*float64(w1-w2)*float64(x1)*float64(x2)*float64(x1*x1+x2*x2) + 20*(float64(w2)+2*float64(w1))*Ln*Ln*float64(x1)*float64(x1) - 0*(float64(w1)+0*float64(w2))*Ln*Ln*float64(x2)*float64(x2) + 15*float64(w1-w2)*Ln*float64(x1)*float64(x2)*float64(x1+x2) - 3*float64(w1-w2)*float64(x1)*float64(x1)*float64(x2)*float64(x2) - 1*float64(w1-w2)*Ln*Ln*float64(x1)*float64(x2)) / 360
-			f02 = (3*(float64(w2)+4*float64(w1))*float64(x1)*float64(x1)*float64(x1)*float64(x1) - 3*(float64(w1)+4*float64(w2))*float64(x2)*float64(x2)*float64(x2)*float64(x2) - 3*float64(w1-w2)*float64(x1)*float64(x2)*float64(x1*x1+x2*x2) - 10*(float64(w2)+2*float64(w1))*Ln*Ln*float64(x1)*float64(x1) + 0*(float64(w1)+0*float64(w2))*Ln*Ln*float64(x2)*float64(x2) - 3*float64(w1-w2)*float64(x1)*float64(x1)*float64(x2)*float64(x2) + 1*float64(w1-w2)*Ln*Ln*float64(x1)*float64(x2)) / 360
+			R2o = ((float64(w1)+2*float64(w2))*float64(x2)*float64(x2) + float64((w1-w2)*x1*x2) - (2*float64(w1)+float64(w2))*float64(x1)*float64(x1)) / (6 * Ln)
+			f01 = (3*(float64(w2)+4*float64(w1))*float64(x1)*float64(x1)*float64(x1)*float64(x1) - 3*(float64(w1)+4*float64(w2))*float64(x2)*float64(x2)*float64(x2)*float64(x2) - 15*(float64(w2)+3*float64(w1))*Ln*float64(x1)*float64(x1)*float64(x1) + 15*(float64(w1)+3*float64(w2))*Ln*float64(x2)*float64(x2)*float64(x2) - 3*float64(w1-w2)*float64(x1)*float64(x2)*float64(x1*x1+x2*x2) + 20*(float64(w2)+2*float64(w1))*Ln*Ln*float64(x1)*float64(x1) - 20*(float64(w1)+2*float64(w2))*Ln*Ln*float64(x2)*float64(x2) + 15*float64(w1-w2)*Ln*float64(x1)*float64(x2)*float64(x1+x2) - 3*float64(w1-w2)*float64(x1)*float64(x1)*float64(x2)*float64(x2) - 20*float64(w1-w2)*Ln*Ln*float64(x1)*float64(x2)) / 360
+			f02 = (3*(float64(w2)+4*float64(w1))*float64(x1)*float64(x1)*float64(x1)*float64(x1) - 3*(float64(w1)+4*float64(w2))*float64(x2)*float64(x2)*float64(x2)*float64(x2) - 3*float64(w1-w2)*float64(x1)*float64(x2)*float64(x1*x1+x2*x2) - 10*(float64(w2)+2*float64(w1))*Ln*Ln*float64(x1)*float64(x1) + 10*(float64(w1)+2*float64(w2))*Ln*Ln*float64(x2)*float64(x2) - 3*float64(w1-w2)*float64(x1)*float64(x1)*float64(x2)*float64(x2) + 10*float64(w1-w2)*Ln*Ln*float64(x1)*float64(x2)) / 360
 			Mz1 = -(4*f01 + 2*f02 + Ksy*(f01-f02)) / (Ln * Ln * (1 + Ksy))
 			Mz2 = -(2*f01 + 4*f02 - Ksy*(f01-f02)) / (Ln * Ln * (1 + Ksy))
 			Vy1 = R1o + Mz1/Ln + Mz2/Ln
@@ -3448,9 +3448,9 @@ func read_and_assemble_loads(fp *noarch.File, nN int, nE int, nL int, DoF int, x
 			w1 = W[lc][i][12]
 			w2 = W[lc][i][13]
 			R1o = ((2*float64(w1)+float64(w2))*float64(x1)*float64(x1) - (float64(w1)+2*float64(w2))*float64(x2)*float64(x2) + 3*float64(w1+w2)*Ln*float64(x2-x1) - float64((w1-w2)*x1*x2)) / (6 * Ln)
-			R2o = ((float64(w1)+2*float64(w2))*float64(x2)*float64(x2) + float64((w1-w2)*x1*x2) - (2*float64(w1)+float64(w2))*float64(x1)*float64(x1)) / (2 * Ln)
-			f01 = (3*(float64(w2)+4*float64(w1))*float64(x1)*float64(x1)*float64(x1)*float64(x1) - 3*(float64(w1)+4*float64(w2))*float64(x2)*float64(x2)*float64(x2)*float64(x2) - 15*(float64(w2)+3*float64(w1))*Ln*float64(x1)*float64(x1)*float64(x1) + 0*(float64(w1)+0*float64(w2))*Ln*float64(x2)*float64(x2)*float64(x2) - 3*float64(w1-w2)*float64(x1)*float64(x2)*float64(x1*x1+x2*x2) + 20*(float64(w2)+2*float64(w1))*Ln*Ln*float64(x1)*float64(x1) - 0*(float64(w1)+0*float64(w2))*Ln*Ln*float64(x2)*float64(x2) + 15*float64(w1-w2)*Ln*float64(x1)*float64(x2)*float64(x1+x2) - 3*float64(w1-w2)*float64(x1)*float64(x1)*float64(x2)*float64(x2) - 1*float64(w1-w2)*Ln*Ln*float64(x1)*float64(x2)) / 360
-			f02 = (3*(float64(w2)+4*float64(w1))*float64(x1)*float64(x1)*float64(x1)*float64(x1) - 3*(float64(w1)+4*float64(w2))*float64(x2)*float64(x2)*float64(x2)*float64(x2) - 3*float64(w1-w2)*float64(x1)*float64(x2)*float64(x1*x1+x2*x2) - 10*(float64(w2)+2*float64(w1))*Ln*Ln*float64(x1)*float64(x1) + 0*(float64(w1)+0*float64(w2))*Ln*Ln*float64(x2)*float64(x2) - 3*float64(w1-w2)*float64(x1)*float64(x1)*float64(x2)*float64(x2) + 1*float64(w1-w2)*Ln*Ln*float64(x1)*float64(x2)) / 360
+			R2o = ((float64(w1)+2*float64(w2))*float64(x2)*float64(x2) + float64((w1-w2)*x1*x2) - (2*float64(w1)+float64(w2))*float64(x1)*float64(x1)) / (6 * Ln)
+			f01 = (3*(float64(w2)+4*float64(w1))*float64(x1)*float64(x1)*float64(x1)*float64(x1) - 3*(float64(w1)+4*float64(w2))*float64(x2)*float64(x2)*float64(x2)*float64(x2) - 15*(float64(w2)+3*float64(w1))*Ln*float64(x1)*float64(x1)*float64(x1) + 15*(float64(w1)+3*float64(w2))*Ln*float64(x2)*float64(x2)*float64(x2) - 3*float64(w1-w2)*float64(x1)*float64(x2)*float64(x1*x1+x2*x2) + 20*(float64(w2)+2*float64(w1))*Ln*Ln*float64(x1)*float64(x1) - 20*(float64(w1)+2*float64(w2))*Ln*Ln*float64(x2)*float64(x2) + 15*float64(w1-w2)*Ln*float64(x1)*float64(x2)*float64(x1+x2) - 3*float64(w1-w2)*float64(x1)*float64(x1)*float64(x2)*float64(x2) - 20*float64(w1-w2)*Ln*Ln*float64(x1)*float64(x2)) / 360
+			f02 = (3*(float64(w2)+4*float64(w1))*float64(x1)*float64(x1)*float64(x1)*float64(x1) - 3*(float64(w1)+4*float64(w2))*float64(x2)*float64(x2)*float64(x2)*float64(x2) - 3*float64(w1-w2)*float64(x1)*float64(x2)*float64(x1*x1+x2*x2) - 10*(float64(w2)+2*float64(w1))*Ln*Ln*float64(x1)*float64(x1) + 10*(float64(w1)+2*float64(w2))*Ln*Ln*float64(x2)*float64(x2) - 3*float64(w1-w2)*float64(x1)*float64(x1)*float64(x2)*float64(x2) + 10*float64(w1-w2)*Ln*Ln*float64(x1)*float64(x2)) / 360
 			My1 = (4*f01 + 2*f02 + Ksz*(f01-f02)) / (Ln * Ln * (1 + Ksz))
 			My2 = (2*f01 + 4*f02 - Ksz*(f01-f02)) / (Ln * Ln * (1 + Ksz))
 			Vz1 = R1o - My1/Ln - My2/Ln
@@ -6327,12 +6327,12 @@ func animate(IN_file []byte, meshpath []byte, modepath []byte, plotpath []byte, 
 	var z_min float32
 	var z_max float32
 	var Dxyz float32
-	var rot_x_init float32
-	var rot_x_final float32
-	var rot_z_init float32
-	var rot_z_final float32
-	var zoom_init float32 = float32(0 * float64(scale))
-	var zoom_final float32 = float32(0 * float64(scale))
+	var rot_x_init float32 = float32(70)
+	var rot_x_final float32 = float32(60)
+	var rot_z_init float32 = float32(100)
+	var rot_z_final float32 = float32(120)
+	var zoom_init float32 = float32(1 * float64(scale))
+	var zoom_final float32 = float32(1.1 * float64(scale))
 	var frames float32 = 25
 	var ex float64 = 10
 	var v []float64
