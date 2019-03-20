@@ -1,7 +1,7 @@
 9c9
-< Tue Oct 16 11:10:20 2018
+< Wed Mar 20 10:48:07 2019
 ---
-> Tue Oct 16 11:10:15 2018
+> Wed Mar 20 10:47:45 2019
 108c108
 <      1    0.014127   -0.050228   -0.022374    0.000036    0.000008   -0.000000
 ---
@@ -158,32 +158,16 @@
 >      3   min     -23.488      18.537    -31.944    353.607 -36078.979 -11413.344
 >      4   max     -19.392      26.306    -17.326   3205.241  22426.938  16171.611
 >      4   min     -22.163      26.306    -21.483   3205.241 -12554.999 -31252.765
-207c207
-<   Total Mass:  1.020379e-01     Structural Mass:  2.037857e-03 
----
->   Total Mass:  3.253015e+34     Structural Mass:  2.037857e-03 
-210,214c210,214
-<      1 1.00723e-01 1.00738e-01 1.00733e-01 3.51392e+01 4.73634e+01 4.36768e+01
-<      2 1.26482e+02 1.26482e+02 1.26482e+02 1.26482e+02 1.26482e+02 1.26482e+02
-<      3 1.26482e+02 1.26482e+02 1.26482e+02 1.26482e+02 1.26482e+02 1.26482e+02
-<      4 1.26482e+02 1.26482e+02 1.26482e+02 1.26482e+02 1.26482e+02 1.26482e+02
-<      5 1.26482e+02 1.26482e+02 1.26482e+02 1.26482e+02 1.26482e+02 1.26482e+02
----
->      1 1.62651e+34 1.62651e+34 1.62651e+34 3.51392e+01 4.73634e+01 4.36768e+01
->      2 4.87952e+34 4.87952e+34 4.87952e+34 4.87952e+34 4.87952e+34 4.87952e+34
->      3 4.87952e+34 4.87952e+34 4.87952e+34 4.87952e+34 4.87952e+34 4.87952e+34
->      4 4.87952e+34 4.87952e+34 4.87952e+34 4.87952e+34 4.87952e+34 4.87952e+34
->      5 4.87952e+34 4.87952e+34 4.87952e+34 4.87952e+34 4.87952e+34 4.87952e+34
 219,222c219,222
 <   MODE     1:   f= 19.336458 Hz,  T= 0.051716 sec
 < 		X- modal participation factor =  -2.7770e-02 
 < 		Y- modal participation factor =  -1.3137e-11 
 < 		Z- modal participation factor =  -4.7432e-07 
 ---
->   MODE     1:   f= -nan Hz,  T= -nan sec
-> 		X- modal participation factor =         -nan 
-> 		Y- modal participation factor =         -nan 
-> 		Z- modal participation factor =         -nan 
+>   MODE     1:   f= 18.807943 Hz,  T= 0.053169 sec
+> 		X- modal participation factor =  -2.5467e-02 
+> 		Y- modal participation factor =   6.6618e-05 
+> 		Z- modal participation factor =   6.9752e-07 
 224,232c224,232
 <      1  -3.073e-02  -9.618e-10  -4.695e-06   4.948e-10   1.452e-01  -2.777e-05
 <      2  -5.277e-09  -2.104e-09   6.233e-10   8.159e-07  -1.515e-06   6.808e-07
@@ -195,15 +179,15 @@
 < 		Y- modal participation factor =   7.7379e-07 
 < 		Z- modal participation factor =  -1.5258e-10 
 ---
->      1        -nan        -nan        -nan        -nan        -nan        -nan
->      2        -nan        -nan        -nan        -nan        -nan        -nan
->      3        -nan        -nan        -nan        -nan        -nan        -nan
->      4        -nan        -nan        -nan        -nan        -nan        -nan
->      5        -nan        -nan        -nan        -nan        -nan        -nan
->   MODE     2:   f= -nan Hz,  T= -nan sec
-> 		X- modal participation factor =         -nan 
-> 		Y- modal participation factor =         -nan 
-> 		Z- modal participation factor =         -nan 
+>      1  -2.609e-02   1.369e-04   6.904e-06   3.108e-04   1.344e-01  -5.727e-02
+>      2  -5.684e-09  -6.833e-10   6.882e-10   4.093e-07  -1.721e-06   1.211e-06
+>      3  -5.706e-09   7.092e-10  -6.812e-10  -4.137e-07  -1.724e-06   1.206e-06
+>      4  -3.930e-09  -3.054e-09  -7.138e-10   1.137e-06  -1.151e-06  -9.706e-08
+>      5  -3.948e-09   3.079e-09   7.073e-10  -1.142e-06  -1.155e-06  -9.307e-08
+>   MODE     2:   f= 19.105451 Hz,  T= 0.052341 sec
+> 		X- modal participation factor =  -1.0453e-02 
+> 		Y- modal participation factor =  -2.4639e-04 
+> 		Z- modal participation factor =   4.8560e-07 
 234,242c234,242
 <      1   1.366e-04   6.999e-06  -1.510e-09   3.926e-07   2.704e-05   1.513e-01
 <      2   2.362e-09  -3.124e-09   1.135e-11   9.558e-07   7.164e-07  -1.448e-06
@@ -215,15 +199,15 @@
 < 		Y- modal participation factor =   3.8072e-02 
 < 		Z- modal participation factor =  -2.7036e-05 
 ---
->      1        -nan        -nan        -nan        -nan        -nan        -nan
->      2        -nan        -nan        -nan        -nan        -nan        -nan
->      3        -nan        -nan        -nan        -nan        -nan        -nan
->      4        -nan        -nan        -nan        -nan        -nan        -nan
->      5        -nan        -nan        -nan        -nan        -nan        -nan
->   MODE     3:   f= -nan Hz,  T= -nan sec
-> 		X- modal participation factor =         -nan 
-> 		Y- modal participation factor =         -nan 
-> 		Z- modal participation factor =         -nan 
+>      1  -1.106e-02  -5.259e-04   4.806e-06  -1.138e-03   5.497e-02   1.401e-01
+>      2   1.483e-10  -3.792e-09   2.602e-10   1.253e-06   8.000e-08  -1.126e-06
+>      3   2.234e-10   3.697e-09  -2.869e-10  -1.235e-06   9.346e-08  -1.111e-06
+>      4  -4.305e-09   2.132e-09  -2.706e-10  -5.802e-07  -1.285e-06  -1.633e-06
+>      5  -4.228e-09  -2.229e-09   2.977e-10   5.972e-07  -1.272e-06  -1.648e-06
+>   MODE     3:   f= 19.690439 Hz,  T= 0.050786 sec
+> 		X- modal participation factor =  -2.3633e-05 
+> 		Y- modal participation factor =   3.7251e-02 
+> 		Z- modal participation factor =  -2.6883e-05 
 244,252c244,252
 <      1  -2.624e-10   9.385e-02  -2.676e-04   1.683e-01  -5.084e-10  -3.811e-07
 <      2   6.407e-09   7.847e-09   2.607e-09  -1.278e-06   9.895e-07   1.101e-06
@@ -235,35 +219,33 @@
 < 		Y- modal participation factor =   3.1625e-01 
 < 		Z- modal participation factor =   1.7021e-06 
 ---
->      1        -nan        -nan        -nan        -nan        -nan        -nan
->      2        -nan        -nan        -nan        -nan        -nan        -nan
->      3        -nan        -nan        -nan        -nan        -nan        -nan
->      4        -nan        -nan        -nan        -nan        -nan        -nan
->      5        -nan        -nan        -nan        -nan        -nan        -nan
->   MODE     4:   f= -nan Hz,  T= -nan sec
-> 		X- modal participation factor =         -nan 
-> 		Y- modal participation factor =         -nan 
-> 		Z- modal participation factor =         -nan 
-254,262c254,262
+>      1  -2.664e-05   8.567e-02  -2.661e-04   1.684e-01   1.233e-04   1.052e-03
+>      2   6.152e-09   7.668e-09   2.342e-09  -1.313e-06   1.031e-06   1.133e-06
+>      3  -6.127e-09   7.719e-09   2.341e-09  -1.328e-06  -1.023e-06  -1.153e-06
+>      4   6.160e-09   7.774e-09  -2.353e-09  -1.310e-06   1.010e-06  -1.143e-06
+>      5  -6.204e-09   7.730e-09  -2.352e-09  -1.298e-06  -1.024e-06   1.121e-06
+>   MODE     4:   f= 31.711570 Hz,  T= 0.031534 sec
+> 		X- modal participation factor =   4.2361e-09 
+> 		Y- modal participation factor =   3.1636e-01 
+> 		Z- modal participation factor =   1.4729e-06 
+254,258c254,258
 <      1  -5.485e-10   3.154e+00   1.684e-05  -1.460e-02  -6.346e-13  -3.244e-07
 <      2   2.161e-07   1.620e-07   1.806e-07   1.105e-07  -1.559e-07  -3.206e-08
 <      3  -2.161e-07   1.620e-07   1.806e-07   1.105e-07   1.559e-07   3.209e-08
 <      4   2.161e-07   1.620e-07  -1.806e-07   1.100e-07  -1.559e-07   3.152e-08
 <      5  -2.161e-07   1.620e-07  -1.806e-07   1.100e-07   1.559e-07  -3.149e-08
-<   MODE     5:   f= 35.159165 Hz,  T= 0.028442 sec
+---
+>      1   1.515e-08   3.155e+00   1.458e-05  -1.416e-02  -1.592e-08  -2.734e-06
+>      2   2.269e-07   1.701e-07   1.896e-07   1.107e-07  -1.600e-07  -2.947e-08
+>      3  -2.269e-07   1.701e-07   1.896e-07   1.107e-07   1.599e-07   2.954e-08
+>      4   2.269e-07   1.701e-07  -1.896e-07   1.089e-07  -1.591e-07   2.803e-08
+>      5  -2.269e-07   1.701e-07  -1.896e-07   1.089e-07   1.592e-07  -2.795e-08
+260,261c260,261
 < 		X- modal participation factor =  -2.5403e-08 
 < 		Y- modal participation factor =   1.5433e-06 
-< 		Z- modal participation factor =   3.1839e-01 
 ---
->      1        -nan        -nan        -nan        -nan        -nan        -nan
->      2        -nan        -nan        -nan        -nan        -nan        -nan
->      3        -nan        -nan        -nan        -nan        -nan        -nan
->      4        -nan        -nan        -nan        -nan        -nan        -nan
->      5        -nan        -nan        -nan        -nan        -nan        -nan
->   MODE     5:   f= -nan Hz,  T= -nan sec
-> 		X- modal participation factor =         -nan 
-> 		Y- modal participation factor =         -nan 
-> 		Z- modal participation factor =         -nan 
+> 		X- modal participation factor =   4.1028e-08 
+> 		Y- modal participation factor =   1.6832e-06 
 264,272c264,272
 <      1   1.131e-07  -8.893e-06   3.151e+00   1.437e-05   2.168e-07   1.748e-13
 <      2   2.398e-07   1.799e-07   2.004e-07   1.265e-07  -1.688e-07   2.019e-10
@@ -275,28 +257,28 @@
 < 		Y- modal participation factor =   3.0256e-11 
 < 		Z- modal participation factor =  -1.6032e-08 
 ---
->      1        -nan        -nan        -nan        -nan        -nan        -nan
->      2        -nan        -nan        -nan        -nan        -nan        -nan
->      3        -nan        -nan        -nan        -nan        -nan        -nan
->      4        -nan        -nan        -nan        -nan        -nan        -nan
->      5        -nan        -nan        -nan        -nan        -nan        -nan
->   MODE     6:   f= -nan Hz,  T= -nan sec
-> 		X- modal participation factor =         -nan 
-> 		Y- modal participation factor =         -nan 
-> 		Z- modal participation factor =         -nan 
-274,280c274,280
+>      1  -2.140e-07  -7.358e-06   3.151e+00   1.428e-05  -3.688e-07   6.963e-10
+>      2   2.519e-07   1.889e-07   2.105e-07   1.328e-07  -1.773e-07   2.056e-10
+>      3  -2.519e-07   1.889e-07   2.105e-07   1.328e-07   1.773e-07  -2.137e-10
+>      4  -2.519e-07  -1.889e-07   2.105e-07  -1.339e-07   1.783e-07  -2.047e-10
+>      5   2.519e-07  -1.889e-07   2.105e-07  -1.338e-07  -1.783e-07   2.128e-10
+>   MODE     6:   f= 42.248953 Hz,  T= 0.023669 sec
+> 		X- modal participation factor =   3.1739e-01 
+> 		Y- modal participation factor =  -2.7044e-11 
+> 		Z- modal participation factor =   2.8853e-08 
+274,278c274,278
 <      1   3.155e+00   2.442e-10  -1.587e-07  -1.220e-12   8.525e-03  -6.821e-06
 <      2   2.885e-07   2.162e-07   2.408e-07   1.442e-07  -1.100e-07  -5.654e-08
 <      3   2.885e-07  -2.162e-07  -2.408e-07  -1.442e-07  -1.100e-07  -5.654e-08
 <      4   2.885e-07   2.162e-07  -2.408e-07   1.444e-07  -1.093e-07   5.741e-08
 <      5   2.885e-07  -2.162e-07   2.408e-07  -1.444e-07  -1.093e-07   5.742e-08
-< M A T R I X    I T E R A T I O N S: 2
+---
+>      1   3.155e+00  -4.261e-09   2.854e-07   2.336e-09   8.414e-03   1.752e-05
+>      2   3.029e-07   2.270e-07   2.529e-07   1.506e-07  -1.125e-07  -6.127e-08
+>      3   3.029e-07  -2.270e-07  -2.529e-07  -1.506e-07  -1.125e-07  -6.130e-08
+>      4   3.029e-07   2.270e-07  -2.529e-07   1.494e-07  -1.114e-07   6.094e-08
+>      5   3.029e-07  -2.270e-07   2.529e-07  -1.494e-07  -1.114e-07   6.092e-08
+280c280
 < There are 6 modes below 42.249699 Hz. ... All 6 modes were found.
 ---
->      1        -nan        -nan        -nan        -nan        -nan        -nan
->      2        -nan        -nan        -nan        -nan        -nan        -nan
->      3        -nan        -nan        -nan        -nan        -nan        -nan
->      4        -nan        -nan        -nan        -nan        -nan        -nan
->      5        -nan        -nan        -nan        -nan        -nan        -nan
-> M A T R I X    I T E R A T I O N S: 3
-> There are 0 modes below -nan Hz. ... All 6 modes were found.
+> There are 6 modes below 42.248953 Hz. ... All 6 modes were found.
