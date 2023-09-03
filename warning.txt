@@ -1,2 +1,0 @@
-// Warning (*ast.SwitchStmt):  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:126 :Unsupport case
-		// Warning (*ast.SwitchStmt):  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:126 :Unsupport case

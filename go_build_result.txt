@@ -1,0 +1,1 @@
+main.go:212:8: no required module provides package github.com/Konstantin8105/c4go/noarch: go.mod file not found in current directory or any parent directory; see 'go help modules'

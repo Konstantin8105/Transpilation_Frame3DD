@@ -5,19 +5,213 @@
 //	https://github.com/Konstantin8105/c4go/
 //
 
-// Warning (*ast.SwitchStmt):  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:126 :Unsupport case
+/* AST Error :
+unknown node type: `value: Int 256`
+*/
+/* AST Error :
+unknown node type: `value: Int 512`
+*/
+/* AST Error :
+unknown node type: `value: Int 1024`
+*/
+/* AST Error :
+unknown node type: `value: Int 2048`
+*/
+/* AST Error :
+unknown node type: `value: Int 4096`
+*/
+/* AST Error :
+unknown node type: `value: Int 8192`
+*/
+/* AST Error :
+unknown node type: `value: Int 16384`
+*/
+/* AST Error :
+unknown node type: `value: Int 32768`
+*/
+/* AST Error :
+unknown node type: `value: Int 1`
+*/
+/* AST Error :
+unknown node type: `value: Int 2`
+*/
+/* AST Error :
+unknown node type: `value: Int 4`
+*/
+/* AST Error :
+unknown node type: `value: Int 8`
+*/
+/* AST Error :
+unknown node type: `value: Int 0`
+*/
+/* AST Error :
+unknown node type: `value: Int 1`
+*/
+/* AST Error :
+unknown node type: `value: Int 2`
+*/
+/* AST Error :
+unknown node type: `value: Int 3`
+*/
+/* AST Error :
+unknown node type: `value: Int 4`
+*/
+/* AST Error :
+cannot parse line: `AllocSizeAttr 0x55605e5158c8 <col:14> Implicit 1`. could not match regexp with string
+^(?P<address>[0-9a-fx]+) <(?P<position>.*)>(?P<inherited> Inherited)?(?P<a> \d+)(?P<b> \d+)?[\s]*$
+0x55605e5158c8 <col:14> Implicit 1
+
+*/
+/* AST Error :
+cannot parse line: `AllocSizeAttr 0x55605e515a48 <col:14> Inherited Implicit 1`. could not match regexp with string
+^(?P<address>[0-9a-fx]+) <(?P<position>.*)>(?P<inherited> Inherited)?(?P<a> \d+)(?P<b> \d+)?[\s]*$
+0x55605e515a48 <col:14> Inherited Implicit 1
+
+*/
+/* AST Error :
+cannot parse line: `AllocSizeAttr 0x55605e515a78 <col:14> Implicit 1`. could not match regexp with string
+^(?P<address>[0-9a-fx]+) <(?P<position>.*)>(?P<inherited> Inherited)?(?P<a> \d+)(?P<b> \d+)?[\s]*$
+0x55605e515a78 <col:14> Implicit 1
+
+*/
+/* AST Error :
+cannot parse line: `AllocSizeAttr 0x55605e515e28 <col:14> Implicit 1 2`. could not match regexp with string
+^(?P<address>[0-9a-fx]+) <(?P<position>.*)>(?P<inherited> Inherited)?(?P<a> \d+)(?P<b> \d+)?[\s]*$
+0x55605e515e28 <col:14> Implicit 1 2
+
+*/
+/* AST Error :
+cannot parse line: `AllocSizeAttr 0x55605e515fb0 <col:14> Inherited Implicit 1 2`. could not match regexp with string
+^(?P<address>[0-9a-fx]+) <(?P<position>.*)>(?P<inherited> Inherited)?(?P<a> \d+)(?P<b> \d+)?[\s]*$
+0x55605e515fb0 <col:14> Inherited Implicit 1 2
+
+*/
+/* AST Error :
+cannot parse line: `AllocSizeAttr 0x55605e515fe0 <line:556:14> Implicit 1 2`. could not match regexp with string
+^(?P<address>[0-9a-fx]+) <(?P<position>.*)>(?P<inherited> Inherited)?(?P<a> \d+)(?P<b> \d+)?[\s]*$
+0x55605e515fe0 <line:556:14> Implicit 1 2
+
+*/
+/* AST Error :
+cannot parse line: `AllocSizeAttr 0x55605e516398 <col:14> Implicit 2`. could not match regexp with string
+^(?P<address>[0-9a-fx]+) <(?P<position>.*)>(?P<inherited> Inherited)?(?P<a> \d+)(?P<b> \d+)?[\s]*$
+0x55605e516398 <col:14> Implicit 2
+
+*/
+/* AST Error :
+cannot parse line: `AllocSizeAttr 0x55605e516528 <col:14> Inherited Implicit 2`. could not match regexp with string
+^(?P<address>[0-9a-fx]+) <(?P<position>.*)>(?P<inherited> Inherited)?(?P<a> \d+)(?P<b> \d+)?[\s]*$
+0x55605e516528 <col:14> Inherited Implicit 2
+
+*/
+/* AST Error :
+cannot parse line: `AllocSizeAttr 0x55605e516558 <line:564:14> Implicit 2`. could not match regexp with string
+^(?P<address>[0-9a-fx]+) <(?P<position>.*)>(?P<inherited> Inherited)?(?P<a> \d+)(?P<b> \d+)?[\s]*$
+0x55605e516558 <line:564:14> Implicit 2
+
+*/
+/* AST Error :
+cannot parse line: `AllocSizeAttr 0x55605e517ba0 <col:14> Implicit 2`. could not match regexp with string
+^(?P<address>[0-9a-fx]+) <(?P<position>.*)>(?P<inherited> Inherited)?(?P<a> \d+)(?P<b> \d+)?[\s]*$
+0x55605e517ba0 <col:14> Implicit 2
+
+*/
+/* AST Error :
+cannot parse line: `AllocSizeAttr 0x55605e517d50 <col:14> Inherited Implicit 2`. could not match regexp with string
+^(?P<address>[0-9a-fx]+) <(?P<position>.*)>(?P<inherited> Inherited)?(?P<a> \d+)(?P<b> \d+)?[\s]*$
+0x55605e517d50 <col:14> Inherited Implicit 2
+
+*/
+/* AST Error :
+cannot parse line: `AllocSizeAttr 0x55605e517d80 <line:605:14> Implicit 2`. could not match regexp with string
+^(?P<address>[0-9a-fx]+) <(?P<position>.*)>(?P<inherited> Inherited)?(?P<a> \d+)(?P<b> \d+)?[\s]*$
+0x55605e517d80 <line:605:14> Implicit 2
+
+*/
+/* AST Error :
+unknown node type: `value: Int 32`
+*/
+/* AST Error :
+unknown node type: `value: Int 32`
+*/
+/* AST Error :
+unknown node type: `value: Int 32`
+*/
+/* AST Error :
+unknown node type: `value: Int 32`
+*/
+/* AST Error :
+unknown node type: `value: Int 32`
+*/
+/* AST Error :
+unknown node type: `value: Int 32`
+*/
+/* AST Error :
+unknown node type: `value: Int 32`
+*/
+/* AST Error :
+unknown node type: `value: Int 32`
+*/
+/* AST Error :
+unknown node type: `value: Int 32`
+*/
+/* AST Error :
+unknown node type: `value: Int 32`
+*/
+/* AST Error :
+unknown node type: `value: Int 32`
+*/
+/* AST Error :
+unknown node type: `value: Int 60`
+*/
+/* AST Error :
+unknown node type: `value: Int 0`
+*/
+/* AST Error :
+unknown node type: `value: Int 1`
+*/
+/* AST Error :
+unknown node type: `value: Int 2`
+*/
+/* AST Error :
+unknown node type: `value: Int 3`
+*/
+/* AST Error :
+unknown node type: `value: Int 4`
+*/
+/* AST Error :
+unknown node type: `value: Int 8`
+*/
+/* AST Error :
+unknown node type: `value: Int 16`
+*/
+/* AST Error :
+unknown node type: `value: Int 235`
+*/
+/* AST Error :
+unknown node type: `value: Int 1000`
+*/
+/* AST Error :
+unknown node type: `value: Int 1100`
+*/
 
 package main
 
-import "github.com/Konstantin8105/c4go/linux"
+// #cgo CFLAGS : -I../History_frame3DD/src/microstran/ -I../History_frame3DD/src/viewer/
+// #include </usr/include/unistd.h>
+import "C"
+
+import "unicode"
+import "reflect"
+import "runtime"
 import "os"
 import "math"
 import "math/rand"
-import "unsafe"
 import "fmt"
+import "unsafe"
 import "github.com/Konstantin8105/c4go/noarch"
 
-// vec3_struct - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/microstran/vec3.h:34
+// vec3_struct - transpiled function from  GOPATH/History_frame3DD/src/microstran/vec3.h:34
 //	FRAME3DD: Static and dynamic structural analysis of 2D & 3D frames and trusses
 //	Copyright (C) 2007-2008 John Pye
 //
@@ -41,17 +235,156 @@ import "github.com/Konstantin8105/c4go/noarch"
 //
 //	3D vector type used by the microstran parser
 //
-type vec3_struct struct {
+/* AST Error :
+unknown node type: `value: Int 256`
+*/ /* AST Error :
+unknown node type: `value: Int 512`
+*/ /* AST Error :
+unknown node type: `value: Int 1024`
+*/ /* AST Error :
+unknown node type: `value: Int 2048`
+*/ /* AST Error :
+unknown node type: `value: Int 4096`
+*/ /* AST Error :
+unknown node type: `value: Int 8192`
+*/ /* AST Error :
+unknown node type: `value: Int 16384`
+*/ /* AST Error :
+unknown node type: `value: Int 32768`
+*/ /* AST Error :
+unknown node type: `value: Int 1`
+*/ /* AST Error :
+unknown node type: `value: Int 2`
+*/ /* AST Error :
+unknown node type: `value: Int 4`
+*/ /* AST Error :
+unknown node type: `value: Int 8`
+*/ /* AST Error :
+unknown node type: `value: Int 0`
+*/ /* AST Error :
+unknown node type: `value: Int 1`
+*/ /* AST Error :
+unknown node type: `value: Int 2`
+*/ /* AST Error :
+unknown node type: `value: Int 3`
+*/ /* AST Error :
+unknown node type: `value: Int 4`
+*/ /* AST Error :
+cannot parse line: `AllocSizeAttr 0x55605e5158c8 <col:14> Implicit 1`. could not match regexp with string
+^(?P<address>[0-9a-fx]+) <(?P<position>.*)>(?P<inherited> Inherited)?(?P<a> \d+)(?P<b> \d+)?[\s]*$
+0x55605e5158c8 <col:14> Implicit 1
+
+*/ /* AST Error :
+cannot parse line: `AllocSizeAttr 0x55605e515a48 <col:14> Inherited Implicit 1`. could not match regexp with string
+^(?P<address>[0-9a-fx]+) <(?P<position>.*)>(?P<inherited> Inherited)?(?P<a> \d+)(?P<b> \d+)?[\s]*$
+0x55605e515a48 <col:14> Inherited Implicit 1
+
+*/ /* AST Error :
+cannot parse line: `AllocSizeAttr 0x55605e515a78 <col:14> Implicit 1`. could not match regexp with string
+^(?P<address>[0-9a-fx]+) <(?P<position>.*)>(?P<inherited> Inherited)?(?P<a> \d+)(?P<b> \d+)?[\s]*$
+0x55605e515a78 <col:14> Implicit 1
+
+*/ /* AST Error :
+cannot parse line: `AllocSizeAttr 0x55605e515e28 <col:14> Implicit 1 2`. could not match regexp with string
+^(?P<address>[0-9a-fx]+) <(?P<position>.*)>(?P<inherited> Inherited)?(?P<a> \d+)(?P<b> \d+)?[\s]*$
+0x55605e515e28 <col:14> Implicit 1 2
+
+*/ /* AST Error :
+cannot parse line: `AllocSizeAttr 0x55605e515fb0 <col:14> Inherited Implicit 1 2`. could not match regexp with string
+^(?P<address>[0-9a-fx]+) <(?P<position>.*)>(?P<inherited> Inherited)?(?P<a> \d+)(?P<b> \d+)?[\s]*$
+0x55605e515fb0 <col:14> Inherited Implicit 1 2
+
+*/ /* AST Error :
+cannot parse line: `AllocSizeAttr 0x55605e515fe0 <line:556:14> Implicit 1 2`. could not match regexp with string
+^(?P<address>[0-9a-fx]+) <(?P<position>.*)>(?P<inherited> Inherited)?(?P<a> \d+)(?P<b> \d+)?[\s]*$
+0x55605e515fe0 <line:556:14> Implicit 1 2
+
+*/ /* AST Error :
+cannot parse line: `AllocSizeAttr 0x55605e516398 <col:14> Implicit 2`. could not match regexp with string
+^(?P<address>[0-9a-fx]+) <(?P<position>.*)>(?P<inherited> Inherited)?(?P<a> \d+)(?P<b> \d+)?[\s]*$
+0x55605e516398 <col:14> Implicit 2
+
+*/ /* AST Error :
+cannot parse line: `AllocSizeAttr 0x55605e516528 <col:14> Inherited Implicit 2`. could not match regexp with string
+^(?P<address>[0-9a-fx]+) <(?P<position>.*)>(?P<inherited> Inherited)?(?P<a> \d+)(?P<b> \d+)?[\s]*$
+0x55605e516528 <col:14> Inherited Implicit 2
+
+*/ /* AST Error :
+cannot parse line: `AllocSizeAttr 0x55605e516558 <line:564:14> Implicit 2`. could not match regexp with string
+^(?P<address>[0-9a-fx]+) <(?P<position>.*)>(?P<inherited> Inherited)?(?P<a> \d+)(?P<b> \d+)?[\s]*$
+0x55605e516558 <line:564:14> Implicit 2
+
+*/ /* AST Error :
+cannot parse line: `AllocSizeAttr 0x55605e517ba0 <col:14> Implicit 2`. could not match regexp with string
+^(?P<address>[0-9a-fx]+) <(?P<position>.*)>(?P<inherited> Inherited)?(?P<a> \d+)(?P<b> \d+)?[\s]*$
+0x55605e517ba0 <col:14> Implicit 2
+
+*/ /* AST Error :
+cannot parse line: `AllocSizeAttr 0x55605e517d50 <col:14> Inherited Implicit 2`. could not match regexp with string
+^(?P<address>[0-9a-fx]+) <(?P<position>.*)>(?P<inherited> Inherited)?(?P<a> \d+)(?P<b> \d+)?[\s]*$
+0x55605e517d50 <col:14> Inherited Implicit 2
+
+*/ /* AST Error :
+cannot parse line: `AllocSizeAttr 0x55605e517d80 <line:605:14> Implicit 2`. could not match regexp with string
+^(?P<address>[0-9a-fx]+) <(?P<position>.*)>(?P<inherited> Inherited)?(?P<a> \d+)(?P<b> \d+)?[\s]*$
+0x55605e517d80 <line:605:14> Implicit 2
+
+*/ /* AST Error :
+unknown node type: `value: Int 32`
+*/ /* AST Error :
+unknown node type: `value: Int 32`
+*/ /* AST Error :
+unknown node type: `value: Int 32`
+*/ /* AST Error :
+unknown node type: `value: Int 32`
+*/ /* AST Error :
+unknown node type: `value: Int 32`
+*/ /* AST Error :
+unknown node type: `value: Int 32`
+*/ /* AST Error :
+unknown node type: `value: Int 32`
+*/ /* AST Error :
+unknown node type: `value: Int 32`
+*/ /* AST Error :
+unknown node type: `value: Int 32`
+*/ /* AST Error :
+unknown node type: `value: Int 32`
+*/ /* AST Error :
+unknown node type: `value: Int 32`
+*/ /* AST Error :
+unknown node type: `value: Int 60`
+*/ /* AST Error :
+unknown node type: `value: Int 0`
+*/ /* AST Error :
+unknown node type: `value: Int 1`
+*/ /* AST Error :
+unknown node type: `value: Int 2`
+*/ /* AST Error :
+unknown node type: `value: Int 3`
+*/ /* AST Error :
+unknown node type: `value: Int 4`
+*/ /* AST Error :
+unknown node type: `value: Int 8`
+*/ /* AST Error :
+unknown node type: `value: Int 16`
+*/ /* AST Error :
+unknown node type: `value: Int 235`
+*/ /* AST Error :
+unknown node type: `value: Int 1000`
+*/ /* AST Error :
+unknown node type: `value: Int 1100`
+*/type vec3_struct struct {
 	x float64
 	y float64
 	z float64
 }
 
-// vec3 - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/microstran/vec3.h:34
+// vec3 - transpiled function from  GOPATH/History_frame3DD/src/microstran/vec3.h:34
 type vec3 = vec3_struct
 
-// FCOMPLEX - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.h:10
+// FCOMPLEX - transpiled function from  GOPATH/History_frame3DD/src/NRutil.h:10
 // @file
+//
 //	Memory allocation functions from Numerical Recipes in C, by Press,
 //	Cambridge University Press, 1988
 //	http://www.nr.com/public-domain.html
@@ -62,10 +395,10 @@ type FCOMPLEX struct {
 	i float32
 }
 
-// fcomplex - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.h:10
+// fcomplex - transpiled function from  GOPATH/History_frame3DD/src/NRutil.h:10
 type fcomplex = FCOMPLEX
 
-// main - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/main.c:65
+// main - transpiled function from  GOPATH/History_frame3DD/src/main.c:65
 func main() {
 	argc := int32(len(os.Args))
 	argv := [][]byte{}
@@ -73,142 +406,6 @@ func main() {
 		argv = append(argv, []byte(argvSingle))
 	}
 	defer noarch.AtexitRun()
-	var IN_file []byte = make([]byte, 128)
-	var OUT_file []byte = make([]byte, 128)
-	var title []byte = make([]byte, 512)
-	var errMsg []byte = make([]byte, 512)
-	var meshpath []byte = []byte("EMPTY_MESH\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00")
-	var plotpath []byte = []byte("EMPTY_PLOT\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00")
-	var infcpath []byte = []byte("EMPTY_INFC\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00")
-	var modepath []byte = []byte("EMPTY_MODE\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00")
-	var strippedInputFile []byte = []byte("EMPTY_TEMP\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00")
-	var fp *noarch.File
-	var xyz []vec3
-	var rj []float32
-	var Ax []float32
-	var Asy []float32
-	var Asz []float32
-	var Jx []float32
-	var Iy []float32
-	var Iz []float32
-	var E []float32
-	var G []float32
-	var p []float32
-	var U [][][]float32
-	var W [][][]float32
-	var P [][][]float32
-	var T [][][]float32
-	var Dp [][]float32
-	var d []float32
-	var EMs []float32
-	var NMs []float32
-	var NMx []float32
-	var NMy []float32
-	var NMz []float32
-	var gX []float32 = make([]float32, 32)
-	var gY []float32 = make([]float32, 32)
-	var gZ []float32 = make([]float32, 32)
-	var pan float32 = float32(1)
-	var scale float32 = float32(1)
-	var dx float32 = float32(1)
-	var K [][]float64
-	var traceK float64
-	var M [][]float64
-	var traceM float64
-	var eqF_mech [][][]float64
-	var eqF_temp [][][]float64
-	var F_mech [][]float64
-	var F_temp [][]float64
-	var F []float64
-	var R []float64
-	var dR []float64
-	var D []float64
-	var dD []float64
-	var dF []float64
-	var L []float64
-	var Le []float64
-	var Q [][]float64
-	var tol float64 = 1e-09
-	var shift float64
-	var struct_mass float64
-	var total_mass float64
-	var f []float64
-	var V [][]float64
-	var rms_resid float64 = 1
-	var error float64 = 1
-	var Cfreq float64
-	var Kc [][]float64
-	var Mc [][]float64
-	var exagg_static float64 = 10
-	var exagg_modal float64 = 10
-	var pkNx [][]float64
-	var pkVy [][]float64
-	var pkVz [][]float64
-	var pkTx [][]float64
-	var pkMy [][]float64
-	var pkMz [][]float64
-	var pkDx [][]float64
-	var pkDy [][]float64
-	var pkDz [][]float64
-	var pkRx [][]float64
-	var pkSy [][]float64
-	var pkSz [][]float64
-	var nN int32
-	var nE int32
-	var nL int32
-	var lc int32
-	var DoF int32
-	var i int32
-	var j int32
-	var nR int32
-	var nD []int32 = make([]int32, 32)
-	var nF []int32 = make([]int32, 32)
-	var nU []int32 = make([]int32, 32)
-	var nW []int32 = make([]int32, 32)
-	var nP []int32 = make([]int32, 32)
-	var nT []int32 = make([]int32, 32)
-	var nI int32
-	var nX int32
-	var nC int32
-	var N1 []int32
-	var N2 []int32
-	var shear int32
-	var geom int32
-	var anlyz int32 = 1
-	var q []int32
-	var r []int32
-	var sumR int32
-	var nM int32
-	var Mmethod int32
-	var nM_calc int32
-	var lump int32 = 1
-	var iter int32
-	var ok int32 = 1
-	var anim []int32 = make([]int32, 128)
-	var Cdof int32
-	var Cmethod int32
-	var c []int32
-	var m []int32
-	var filetype int32
-	var debug int32
-	var verbose int32 = 1
-	var axial_strain_warning int32
-	var ExitCode int32
-	var shear_flag int32 = -1
-	var geom_flag int32 = -1
-	var anlyz_flag int32 = -1
-	var D3_flag int32 = -1
-	var lump_flag int32 = -1
-	var modal_flag int32 = -1
-	var write_matrix int32 = -1
-	var axial_sign int32 = -1
-	var condense_flag int32 = -1
-	var sfrv int32
-	var exagg_flag float64 = -1
-	var tol_flag float64 = -1
-	var shift_flag float64 = -1
-	var pan_flag float32 = float32(-1)
-	var extn []byte = make([]byte, 16)
 	//
 	//   This file is part of FRAME3DD:
 	// Static and dynamic structural analysis of 2D and 3D frames and trusses with
@@ -257,6 +454,15 @@ func main() {
 	// compile the Frame3DD analysis into another code, such as a GUI
 	// compile Frame3DD to run as a stand-alone code through the terminal
 	// the input  data filename
+	var IN_file []byte = make([]byte, 128)
+	var OUT_file []byte = make([]byte, 128)
+	var title []byte = make([]byte, 512)
+	var errMsg []byte = make([]byte, 512)
+	var meshpath []byte = []byte("EMPTY_MESH\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00")
+	var plotpath []byte = []byte("EMPTY_PLOT\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00")
+	var infcpath []byte = []byte("EMPTY_INFC\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00")
+	var modepath []byte = []byte("EMPTY_MODE\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00")
+	var strippedInputFile []byte = []byte("EMPTY_TEMP\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00")
 	// the output data filename
 	// the title of the analysis
 	// the text of an error message
@@ -266,8 +472,37 @@ func main() {
 	// mode data path
 	// temp data path
 	// input and output file pointer
+	var fp *noarch.File
 	// X,Y,Z node coordinates (global)
+	var xyz []vec3
 	// node size radius, for finite sizes
+	var rj []float32
+	var Ax []float32
+	var Asy []float32
+	var Asz []float32
+	var Jx []float32
+	var Iy []float32
+	var Iz []float32
+	var E []float32
+	var G []float32
+	var p []float32
+	var U [][][]float32
+	var W [][][]float32
+	var P [][][]float32
+	var T [][][]float32
+	var Dp [][]float32
+	var d []float32
+	var EMs []float32
+	var NMs []float32
+	var NMx []float32
+	var NMy []float32
+	var NMz []float32
+	var gX []float32 = make([]float32, 32)
+	var gY []float32 = make([]float32, 32)
+	var gZ []float32 = make([]float32, 32)
+	var pan float32 = float32(1)
+	var scale float32 = float32(1)
+	var dx float32 = float32(1)
 	// cross section areas, incl. shear
 	// section inertias
 	// elastic modulus and shear moduli
@@ -287,6 +522,36 @@ func main() {
 	// zoom scale for 3D plotting in Gnuplot
 	// x-increment for internal force data
 	// equilibrium stiffness matrix
+	var K [][]float64
+	var traceK float64
+	var M [][]float64
+	var traceM float64
+	var eqF_mech [][][]float64
+	var eqF_temp [][][]float64
+	var F_mech [][]float64
+	var F_temp [][]float64
+	var F []float64
+	var R []float64
+	var dR []float64
+	var D []float64
+	var dD []float64
+	var dF []float64
+	var L []float64
+	var Le []float64
+	var Q [][]float64
+	var tol float64 = 1e-09
+	var shift float64
+	var struct_mass float64
+	var total_mass float64
+	var f []float64
+	var V [][]float64
+	var rms_resid float64 = 1
+	var error_ float64 = 1
+	var Cfreq float64
+	var Kc [][]float64
+	var Mc [][]float64
+	var exagg_static float64 = 10
+	var exagg_modal float64 = 10
 	// **Ks=NULL, // Broyden secant stiffness matrix
 	// trace of the global stiffness matrix
 	// global mass matrix
@@ -319,7 +584,60 @@ func main() {
 	// exaggerate modal displ. in mesh data
 	// peak internal forces, moments, and displacments
 	// in each frame element and each load case
+	var pkNx [][]float64
+	var pkVy [][]float64
+	var pkVz [][]float64
+	var pkTx [][]float64
+	var pkMy [][]float64
+	var pkMz [][]float64
+	var pkDx [][]float64
+	var pkDy [][]float64
+	var pkDz [][]float64
+	var pkRx [][]float64
+	var pkSy [][]float64
+	var pkSz [][]float64
 	// number of Nodes
+	var nN int32
+	var nE int32
+	var nL int32
+	var lc int32
+	var DoF int32
+	var i int32
+	var j int32
+	var nR int32
+	var nD []int32 = make([]int32, 32)
+	var nF []int32 = make([]int32, 32)
+	var nU []int32 = make([]int32, 32)
+	var nW []int32 = make([]int32, 32)
+	var nP []int32 = make([]int32, 32)
+	var nT []int32 = make([]int32, 32)
+	var nI int32
+	var nX int32
+	var nC int32
+	var N1 []int32
+	var N2 []int32
+	var shear int32
+	var geom int32
+	var anlyz int32 = 1
+	var q []int32
+	var r []int32
+	var sumR int32
+	var nM int32
+	var Mmethod int32
+	var nM_calc int32
+	var lump int32 = 1
+	var iter int32
+	var ok int32 = 1
+	var anim []int32 = make([]int32, 128)
+	var Cdof int32
+	var Cmethod int32
+	var c []int32
+	var m []int32
+	var filetype int32
+	var debug int32
+	var verbose int32 = 1
+	var axial_strain_warning int32
+	var ExitCode int32
 	// number of frame Elements
 	// number of Load cases
 	// number of Degrees of Freedom
@@ -355,6 +673,15 @@ func main() {
 	// 0: "ok", 1: strain > 0.001
 	// error code returned by Frame3DD
 	//   over-ride input file value
+	var shear_flag int32 = -1
+	var geom_flag int32 = -1
+	var anlyz_flag int32 = -1
+	var D3_flag int32 = -1
+	var lump_flag int32 = -1
+	var modal_flag int32 = -1
+	var write_matrix int32 = -1
+	var axial_sign int32 = -1
+	var condense_flag int32 = -1
 	//   over-ride input file value
 	//   over-ride input file value
 	//   over-ride 3D plotting check
@@ -364,21 +691,18 @@ func main() {
 	//   suppress 't' or 'c' in output data
 	// over-ride input file value
 	// *scanf return value for err checking
+	var sfrv int32
+	// over-ride input file value
+	var exagg_flag float64 = -1
+	var tol_flag float64 = -1
+	var shift_flag float64 = -1
 	// over-ride input file value
 	// over-ride input file value
 	// over-ride input file value
-	// over-ride input file value
+	var pan_flag float32 = float32(-1)
 	// Input Data file name extension
-	//
-	// parse_options ( argc, argv, IN_file, OUT_file,
-	//   &shear_flag, &geom_flag, &anlyz_flag, &exagg_flag,
-	//   &D3_flag,
-	//   &lump_flag, &modal_flag, &tol_flag, &shift_flag,
-	//   &pan_flag, &write_matrix, &axial_sign, &condense_flag,
-	//   &verbose, &debug);
-	//
-	noarch.Strcpy(IN_file, []byte("exB.3dd\x00\x00"))
-	noarch.Strcpy(OUT_file, []byte("exB.3dd.out\x00\x00"))
+	var extn []byte = make([]byte, 16)
+	parse_options(argc, argv, IN_file, OUT_file, c4goUnsafeConvert_int32(&shear_flag), c4goUnsafeConvert_int32(&geom_flag), c4goUnsafeConvert_int32(&anlyz_flag), c4goUnsafeConvert_float64(&exagg_flag), c4goUnsafeConvert_int32(&D3_flag), c4goUnsafeConvert_int32(&lump_flag), c4goUnsafeConvert_int32(&modal_flag), c4goUnsafeConvert_float64(&tol_flag), c4goUnsafeConvert_float64(&shift_flag), c4goUnsafeConvert_float32(&pan_flag), c4goUnsafeConvert_int32(&write_matrix), c4goUnsafeConvert_int32(&axial_sign), c4goUnsafeConvert_int32(&condense_flag), c4goUnsafeConvert_int32(&verbose), c4goUnsafeConvert_int32(&debug))
 	if verbose != 0 {
 		//  display program name, version and license type
 		textColor('w', 'b', 'b', 'x')
@@ -406,15 +730,13 @@ func main() {
 			// clear the buffer ??
 			_ = noarch.Getchar()
 			// wait for the Enter key
-			for noarch.NotInt32(noarch.Getchar()) != 0 {
+			for noarch.Not(noarch.Getchar()) {
 			}
 		}
 		noarch.Exit(11)
 	}
-	fmt.Printf("strat filetype")
 	// .CSV or .FMM or other?
 	filetype = get_file_ext(IN_file, extn)
-	fmt.Printf("ed of filetype\n")
 	// temp_file_location("frame3dd.3dd",strippedInputFile,FRAME3DD_PATHMAX);
 	output_path([]byte("frame3dd.3dd\x00"), strippedInputFile, 512, nil)
 	// strip comments from input data
@@ -439,7 +761,7 @@ func main() {
 		noarch.Fprintf(noarch.Stdout, []byte("\n\x00"))
 	}
 	// number of nodes
-	sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[100000000]int32)(unsafe.Pointer(&nN))[:])
+	sfrv = noarch.Fscanf(fp, []byte("%d\x00"), c4goUnsafeConvert_int32(&nN))
 	if sfrv != 1 {
 		sferr([]byte("nN value for number of nodes\x00"))
 	}
@@ -453,7 +775,7 @@ func main() {
 	// rigid radius around each node
 	rj = vector(1, nN)
 	// node coordinates
-	xyz = make([]vec3, 24*uint32(1+nN)*1/24)
+	xyz = make([]vec3, 1*int32(uint32(1+nN)))
 	read_node_data(fp, nN, xyz, rj)
 	if verbose != 0 {
 		fmt.Printf(" ... complete\n")
@@ -464,12 +786,12 @@ func main() {
 	q = ivector(1, DoF)
 	// allocate memory for reaction data ...
 	r = ivector(1, DoF)
-	read_reaction_data(fp, DoF, nN, (*[100000000]int32)(unsafe.Pointer(&nR))[:], q, r, (*[100000000]int32)(unsafe.Pointer(&sumR))[:], verbose)
+	read_reaction_data(fp, DoF, nN, c4goUnsafeConvert_int32(&nR), q, r, c4goUnsafeConvert_int32(&sumR), verbose)
 	if verbose != 0 {
 		noarch.Fprintf(noarch.Stdout, []byte(" ... complete\n\x00"))
 	}
 	// number of frame elements
-	sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[100000000]int32)(unsafe.Pointer(&nE))[:])
+	sfrv = noarch.Fscanf(fp, []byte("%d\x00"), c4goUnsafeConvert_int32(&nE))
 	if sfrv != 1 {
 		sferr([]byte("nE value for number of frame elements\x00"))
 	}
@@ -517,9 +839,9 @@ func main() {
 	if verbose != 0 {
 		noarch.Fprintf(noarch.Stdout, []byte(" ... complete\n\x00"))
 	}
-	read_run_data(fp, OUT_file, (*[100000000]int32)(unsafe.Pointer(&shear))[:], shear_flag, (*[100000000]int32)(unsafe.Pointer(&geom))[:], geom_flag, meshpath, plotpath, infcpath, (*[100000000]float64)(unsafe.Pointer(&exagg_static))[:], exagg_flag, (*[100000000]float32)(unsafe.Pointer(&scale))[:], (*[100000000]float32)(unsafe.Pointer(&dx))[:], (*[100000000]int32)(unsafe.Pointer(&anlyz))[:], anlyz_flag, debug)
+	read_run_data(fp, OUT_file, c4goUnsafeConvert_int32(&shear), shear_flag, c4goUnsafeConvert_int32(&geom), geom_flag, meshpath, plotpath, infcpath, c4goUnsafeConvert_float64(&exagg_static), exagg_flag, c4goUnsafeConvert_float32(&scale), c4goUnsafeConvert_float32(&dx), c4goUnsafeConvert_int32(&anlyz), anlyz_flag, debug)
 	// number of load cases
-	sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[100000000]int32)(unsafe.Pointer(&nL))[:])
+	sfrv = noarch.Fscanf(fp, []byte("%d\x00"), c4goUnsafeConvert_int32(&nL))
 	if sfrv != 1 {
 		sferr([]byte("nL value for number of load cases\x00"))
 	}
@@ -609,13 +931,13 @@ func main() {
 		noarch.Fprintf(noarch.Stdout, []byte("                                                     \x00"))
 		noarch.Fprintf(noarch.Stdout, []byte(" load data ... complete\n\x00"))
 	}
-	read_mass_data(fp, IN_file, nN, nE, (*[100000000]int32)(unsafe.Pointer(&nI))[:], (*[100000000]int32)(unsafe.Pointer(&nX))[:], d, EMs, NMs, NMx, NMy, NMz, L, Ax, (*[100000000]float64)(unsafe.Pointer(&total_mass))[:], (*[100000000]float64)(unsafe.Pointer(&struct_mass))[:], (*[100000000]int32)(unsafe.Pointer(&nM))[:], (*[100000000]int32)(unsafe.Pointer(&Mmethod))[:], modal_flag, (*[100000000]int32)(unsafe.Pointer(&lump))[:], lump_flag, (*[100000000]float64)(unsafe.Pointer(&tol))[:], tol_flag, (*[100000000]float64)(unsafe.Pointer(&shift))[:], shift_flag, (*[100000000]float64)(unsafe.Pointer(&exagg_modal))[:], modepath, anim, (*[100000000]float32)(unsafe.Pointer(&pan))[:], pan_flag, verbose, debug)
+	read_mass_data(fp, IN_file, nN, nE, c4goUnsafeConvert_int32(&nI), c4goUnsafeConvert_int32(&nX), d, EMs, NMs, NMx, NMy, NMz, L, Ax, c4goUnsafeConvert_float64(&total_mass), c4goUnsafeConvert_float64(&struct_mass), c4goUnsafeConvert_int32(&nM), c4goUnsafeConvert_int32(&Mmethod), modal_flag, c4goUnsafeConvert_int32(&lump), lump_flag, c4goUnsafeConvert_float64(&tol), tol_flag, c4goUnsafeConvert_float64(&shift), shift_flag, c4goUnsafeConvert_float64(&exagg_modal), modepath, anim, c4goUnsafeConvert_float32(&pan), pan_flag, verbose, debug)
 	if verbose != 0 {
 		// display mass data complete
 		noarch.Fprintf(noarch.Stdout, []byte("                                                     \x00"))
 		noarch.Fprintf(noarch.Stdout, []byte(" mass data ... complete\n\x00"))
 	}
-	read_condensation_data(fp, nN, nM, (*[100000000]int32)(unsafe.Pointer(&nC))[:], (*[100000000]int32)(unsafe.Pointer(&Cdof))[:], (*[100000000]int32)(unsafe.Pointer(&Cmethod))[:], condense_flag, c, m, verbose)
+	read_condensation_data(fp, nN, nM, c4goUnsafeConvert_int32(&nC), c4goUnsafeConvert_int32(&Cdof), c4goUnsafeConvert_int32(&Cmethod), condense_flag, c, m, verbose)
 	if nC > 0 && verbose != 0 {
 		//  display condensation data complete
 		noarch.Fprintf(noarch.Stdout, []byte("                                      \x00"))
@@ -673,7 +995,7 @@ func main() {
 						noarch.Fprintf(noarch.Stdout, []byte(" Linear Elastic Analysis ... Temperature Loads\n\x00"))
 					}
 					//  solve {F_t} = [K({D=0})] * {D_t}
-					solve_system(K, dD, F_temp[lc], dR, DoF, q, r, (*[100000000]int32)(unsafe.Pointer(&ok))[:], verbose, (*[100000000]float64)(unsafe.Pointer(&rms_resid))[:])
+					solve_system(K, dD, F_temp[lc], dR, DoF, q, r, c4goUnsafeConvert_int32(&ok), verbose, c4goUnsafeConvert_float64(&rms_resid))
 					{
 						// increment {D_t} = {0} + {D_t} temp.-induced displ
 						for i = 1; i <= DoF; i++ {
@@ -690,25 +1012,19 @@ func main() {
 							}
 						}
 					}
-					fmt.Printf("STEP 1")
 					if geom != 0 {
 						// assemble K = Ke + Kg
 						// compute   {Q}={Q_t} ... temp.-induced forces
-						fmt.Printf("GEOM\n")
-						element_end_forces(Q, nE, xyz, L, Le, N1, N2, Ax, Asy, Asz, Jx, Iy, Iz, E, G, p, eqF_temp[lc], eqF_mech[lc], D, shear, geom, (*[100000000]int32)(unsafe.Pointer(&axial_strain_warning))[:])
-						fmt.Printf("STEP 2")
+						element_end_forces(Q, nE, xyz, L, Le, N1, N2, Ax, Asy, Asz, Jx, Iy, Iz, E, G, p, eqF_temp[lc], eqF_mech[lc], D, shear, geom, c4goUnsafeConvert_int32(&axial_strain_warning))
 						// assemble temp.-stressed stiffness [K({D_t})]
 						assemble_K(K, DoF, nE, xyz, rj, L, Le, N1, N2, Ax, Asy, Asz, Jx, Iy, Iz, E, G, p, shear, geom, Q, debug)
 					}
-					fmt.Printf("STEP 3")
 				}
-				fmt.Printf("STEP 4\n")
 				if nF[lc] > 0 || nU[lc] > 0 || nW[lc] > 0 || nP[lc] > 0 || nD[lc] > 0 || gX[lc] != 0 || gY[lc] != 0 || gZ[lc] != 0 {
 					if verbose != 0 {
 						// ... then apply mechanical loads only, if there are any ...
 						noarch.Fprintf(noarch.Stdout, []byte(" Linear Elastic Analysis ... Mechanical Loads\n\x00"))
 					}
-					fmt.Printf("STEP 5\n")
 					{
 						// incremental displ at react'ns = prescribed displ
 						for i = 1; i <= DoF; i++ {
@@ -717,10 +1033,8 @@ func main() {
 							}
 						}
 					}
-					fmt.Printf("STEP 6\n")
 					//  solve {F_m} = [K({D_t})] * {D_m}
-					solve_system(K, dD, F_mech[lc], dR, DoF, q, r, (*[100000000]int32)(unsafe.Pointer(&ok))[:], verbose, (*[100000000]float64)(unsafe.Pointer(&rms_resid))[:])
-					fmt.Printf("STEP 7\n")
+					solve_system(K, dD, F_mech[lc], dR, DoF, q, r, c4goUnsafeConvert_int32(&ok), verbose, c4goUnsafeConvert_float64(&rms_resid))
 					{
 						// combine {D} = {D_t} + {D_m}
 						for i = 1; i <= DoF; i++ {
@@ -740,7 +1054,6 @@ func main() {
 							}
 						}
 					}
-					fmt.Printf("STEP 8\n")
 				}
 				{
 					//  combine {F} = {F_t} + {F_m}
@@ -749,15 +1062,12 @@ func main() {
 					}
 				}
 				//  element forces {Q} for displacements {D}
-				element_end_forces(Q, nE, xyz, L, Le, N1, N2, Ax, Asy, Asz, Jx, Iy, Iz, E, G, p, eqF_temp[lc], eqF_mech[lc], D, shear, geom, (*[100000000]int32)(unsafe.Pointer(&axial_strain_warning))[:])
-				fmt.Printf("STEP 10\n")
+				element_end_forces(Q, nE, xyz, L, Le, N1, N2, Ax, Asy, Asz, Jx, Iy, Iz, E, G, p, eqF_temp[lc], eqF_mech[lc], D, shear, geom, c4goUnsafeConvert_int32(&axial_strain_warning))
 				//  check the equilibrium error
-				error = equilibrium_error(dF, F, K, D, DoF, q, r)
-				fmt.Printf("STEP 11\n")
+				error_ = equilibrium_error(dF, F, K, D, DoF, q, r)
 				if geom != 0 && verbose != 0 {
 					noarch.Fprintf(noarch.Stdout, []byte("\n Non-Linear Elastic Analysis ...\n\x00"))
 				}
-				fmt.Printf("STEP 12\n")
 				if geom != 0 {
 					//
 					// *   if ( geom ) { // initialize Broyden secant stiffness matrix, Ks
@@ -771,22 +1081,22 @@ func main() {
 					//
 					// quasi Newton-Raphson iteration for geometric nonlinearity
 					// re-initialize
-					error = 1
+					error_ = 1
 					ok = 0
 					iter = 0
 				}
-				for geom != 0 && error > tol && iter < 500 && ok >= 0 {
+				for geom != 0 && error_ > tol && iter < 500 && ok >= 0 {
 					iter++
 					//  assemble stiffness matrix [K({D}^(i))]
 					assemble_K(K, DoF, nE, xyz, rj, L, Le, N1, N2, Ax, Asy, Asz, Jx, Iy, Iz, E, G, p, shear, geom, Q, debug)
 					//  compute equilibrium error, {dF}, at iteration i
 					//  {dF}^(i) = {F} - [K({D}^(i))]*{D}^(i)
 					//  convergence criteria = || {dF}^(i) ||  /  || F ||
-					error = equilibrium_error(dF, F, K, D, DoF, q, r)
+					error_ = equilibrium_error(dF, F, K, D, DoF, q, r)
 					//  Powell-Symmetric-Broyden secant stiffness update
 					// PSB_update ( Ks, dF, dD, DoF );  /* not helpful?   */
 					//  solve {dF}^(i) = [K({D}^(i))] * {dD}^(i)
-					solve_system(K, dD, dF, dR, DoF, q, r, (*[100000000]int32)(unsafe.Pointer(&ok))[:], verbose, (*[100000000]float64)(unsafe.Pointer(&rms_resid))[:])
+					solve_system(K, dD, dF, dR, DoF, q, r, c4goUnsafeConvert_int32(&ok), verbose, c4goUnsafeConvert_float64(&rms_resid))
 					if ok < 0 {
 						//  K is not positive definite
 						noarch.Fprintf(noarch.Stderr, []byte("   The stiffness matrix is not pos-def. \n\x00"))
@@ -803,11 +1113,11 @@ func main() {
 						}
 					}
 					//  element forces {Q} for displacements {D}^(i)
-					element_end_forces(Q, nE, xyz, L, Le, N1, N2, Ax, Asy, Asz, Jx, Iy, Iz, E, G, p, eqF_temp[lc], eqF_mech[lc], D, shear, geom, (*[100000000]int32)(unsafe.Pointer(&axial_strain_warning))[:])
+					element_end_forces(Q, nE, xyz, L, Le, N1, N2, Ax, Asy, Asz, Jx, Iy, Iz, E, G, p, eqF_temp[lc], eqF_mech[lc], D, shear, geom, c4goUnsafeConvert_int32(&axial_strain_warning))
 					if verbose != 0 {
 						//  display equilibrium error
 						noarch.Fprintf(noarch.Stdout, []byte("   NR iteration %3d ---\x00"), iter)
-						noarch.Fprintf(noarch.Stdout, []byte(" RMS relative equilibrium error = %8.2e \n\x00"), error)
+						noarch.Fprintf(noarch.Stdout, []byte(" RMS relative equilibrium error = %8.2e \n\x00"), error_)
 					}
 				}
 				if axial_strain_warning > 0 && ExitCode == 0 {
@@ -830,16 +1140,16 @@ func main() {
 				}
 				if verbose != 0 && ok >= 0 {
 					//  display RMS equilibrium error
-					evaluate(float32(error), float32(rms_resid), float32(tol), geom)
+					evaluate(float32(error_), float32(rms_resid), float32(tol), geom)
 				}
 				write_static_results(fp, nN, nE, nL, lc, DoF, N1, N2, F, D, R, r, Q, rms_resid, ok, axial_sign)
 				if filetype == 1 {
 					// .CSV format output
-					write_static_csv(OUT_file, title, nN, nE, nL, lc, DoF, N1, N2, F, D, R, r, Q, error, ok)
+					write_static_csv(OUT_file, title, nN, nE, nL, lc, DoF, N1, N2, F, D, R, r, Q, error_, ok)
 				}
 				if filetype == 2 {
 					// .m matlab format output
-					write_static_mfile(OUT_file, title, nN, nE, nL, lc, DoF, N1, N2, F, D, R, r, Q, error, ok)
+					write_static_mfile(OUT_file, title, nN, nE, nL, lc, DoF, N1, N2, F, D, R, r, Q, error_, ok)
 				}
 				//
 				// *  if ( verbose )
@@ -848,7 +1158,7 @@ func main() {
 				// *   "    reduce exagg_static in the Input Data,"
 				// *   " and re-run the analysis. \n");
 				//
-				write_internal_forces(OUT_file, fp, infcpath, lc, nL, title, dx, xyz, Q, nN, nE, L, N1, N2, Ax, Asy, Asz, Jx, Iy, Iz, E, G, p, d, gX[lc], gY[lc], gZ[lc], nU[lc], U[lc], nW[lc], W[lc], nP[lc], P[lc], D, shear, error)
+				write_internal_forces(OUT_file, fp, infcpath, lc, nL, title, dx, xyz, Q, nN, nE, L, N1, N2, Ax, Asy, Asz, Jx, Iy, Iz, E, G, p, d, gX[lc], gY[lc], gZ[lc], nU[lc], U[lc], nW[lc], W[lc], nP[lc], P[lc], D, shear, error_)
 				static_mesh(IN_file, infcpath, meshpath, plotpath, title, nN, nE, nL, lc, DoF, xyz, L, N1, N2, p, D, exagg_static, D3_flag, anlyz, dx, scale)
 			}
 		}
@@ -868,12 +1178,11 @@ func main() {
 			noarch.Fprintf(noarch.Stdout, []byte("\n\n Modal Analysis ...\n\x00"))
 		}
 		// Bathe
-		nM_calc = func() int32 {
-			if nM+8 < 2*nM {
-				return nM + 8
-			}
-			return 2 * nM
-		}()
+		if nM+8 < 2*nM {
+			nM_calc = nM + 8
+		} else {
+			nM_calc = 2 * nM
+		}
 		M = dmatrix(1, DoF, 1, DoF)
 		f = dvector(1, nM_calc)
 		V = dmatrix(1, DoF, 1, nM_calc)
@@ -881,7 +1190,7 @@ func main() {
 		{
 			//  compute traceK and traceM
 			for j = 1; j <= DoF; j++ {
-				if noarch.NotInt32(r[j]) != 0 {
+				if noarch.Not(r[j]) {
 					traceK += K[j][j]
 					traceM += M[j][j]
 				}
@@ -913,10 +1222,10 @@ func main() {
 		if anlyz != 0 {
 			if Mmethod == 1 {
 				// subspace or stodola methods
-				subspace(K, M, DoF, nM_calc, f, V, tol, shift, (*[100000000]int32)(unsafe.Pointer(&iter))[:], (*[100000000]int32)(unsafe.Pointer(&ok))[:], verbose)
+				subspace(K, M, DoF, nM_calc, f, V, tol, shift, c4goUnsafeConvert_int32(&iter), c4goUnsafeConvert_int32(&ok), verbose)
 			}
 			if Mmethod == 2 {
-				stodola(K, M, DoF, nM_calc, f, V, tol, shift, (*[100000000]int32)(unsafe.Pointer(&iter))[:], (*[100000000]int32)(unsafe.Pointer(&ok))[:], verbose)
+				stodola(K, M, DoF, nM_calc, f, V, tol, shift, c4goUnsafeConvert_int32(&iter), c4goUnsafeConvert_int32(&ok), verbose)
 			}
 			for j = 1; j <= nM_calc; j++ {
 				f[j] = math.Sqrt(f[j]) / (2 * 3.141592653589793)
@@ -984,17 +1293,51 @@ func main() {
 		noarch.Fprintf(noarch.Stderr, []byte(" The Output Data was appended to %s \n\x00"), OUT_file)
 		noarch.Fprintf(noarch.Stderr, []byte(" A Gnuplot script was written to %s \n\x00"), plotpath)
 		noarch.Fprintf(noarch.Stderr, []byte(" Press the 'Enter' key to close.\n\x00"))
+		// clear the buffer ??
+		_ = noarch.Getchar()
+		// wait for the Enter key to be hit
+		for noarch.Not(noarch.Getchar()) {
+		}
 	}
-	// (void) getchar();     // clear the buffer ??
-	// while( !getchar() ) ; // wait for the Enter key to be hit
 	color(0)
 	noarch.Exit(int32(ExitCode))
 }
 
-// assemble_K - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd.c:87
+// assemble_K - transpiled function from  GOPATH/History_frame3DD/src/frame3dd.c:87
 func assemble_K(K [][]float64, DoF int32, nE int32, xyz []vec3, r []float32, L []float64, Le []float64, N1 []int32, N2 []int32, Ax []float32, Asy []float32, Asz []float32, Jx []float32, Iy []float32, Iz []float32, E []float32, G []float32, p []float32, shear int32, geom int32, Q [][]float64, debug int32) {
+	//
+	// This file is part of FRAME3DD:
+	// Static and dynamic structural analysis of 2D and 3D frames and trusses with
+	// elastic and geometric stiffness.
+	// ---------------------------------------------------------------------------
+	// http://frame3dd.sourceforge.net/
+	// ---------------------------------------------------------------------------
+	// Copyright (C) 1992-2014  Henri P. Gavin
+	//
+	//    FRAME3DD is free software: you can redistribute it and/or modify
+	//    it under the terms of the GNU General Public License as published by
+	//    the Free Software Foundation, either version 3 of the License, or
+	//    (at your option) any later version.
+	//
+	//    FRAME3DD is distributed in the hope that it will be useful,
+	//    but WITHOUT ANY WARRANTY; without even the implied warranty of
+	//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	//    GNU General Public License for more details.
+	//
+	//    You should have received a copy of the GNU General Public License
+	//    along with FRAME3DD.  If not, see <http://www.gnu.org/licenses/>.
+	//
+	// NOTE main 'driver' routine is now moved to main.c
+	// #define MATRIX_DEBUG
+	// forward declarations
+	//
+	// * ASSEMBLE_K  -  assemble global stiffness matrix from individual elements 23feb94
+	//
+	// element stiffness matrix in global coord
 	var k [][]float64
+	// member-structure DoF index table
 	var ind [][]int32
+	var res int32
 	var i int32
 	var j int32
 	var ii int32
@@ -1002,42 +1345,9 @@ func assemble_K(K [][]float64, DoF int32, nE int32, xyz []vec3, r []float32, L [
 	var l int32
 	var ll int32
 	var stiffness_fn []byte = make([]byte, 128)
-	{
-		//
-		// This file is part of FRAME3DD:
-		// Static and dynamic structural analysis of 2D and 3D frames and trusses with
-		// elastic and geometric stiffness.
-		// ---------------------------------------------------------------------------
-		// http://frame3dd.sourceforge.net/
-		// ---------------------------------------------------------------------------
-		// Copyright (C) 1992-2014  Henri P. Gavin
-		//
-		//    FRAME3DD is free software: you can redistribute it and/or modify
-		//    it under the terms of the GNU General Public License as published by
-		//    the Free Software Foundation, either version 3 of the License, or
-		//    (at your option) any later version.
-		//
-		//    FRAME3DD is distributed in the hope that it will be useful,
-		//    but WITHOUT ANY WARRANTY; without even the implied warranty of
-		//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-		//    GNU General Public License for more details.
-		//
-		//    You should have received a copy of the GNU General Public License
-		//    along with FRAME3DD.  If not, see <http://www.gnu.org/licenses/>.
-		//
-		// NOTE main 'driver' routine is now moved to main.c
-		// #define MATRIX_DEBUG
-		// forward declarations
-		//
-		// * ASSEMBLE_K  -  assemble global stiffness matrix from individual elements 23feb94
-		//
-		// element stiffness matrix in global coord
-		// member-structure DoF index table
-		// res=0,
-		for i = 1; i <= DoF; i++ {
-			for j = 1; j <= DoF; j++ {
-				K[i][j] = 0
-			}
+	for i = 1; i <= DoF; i++ {
+		for j = 1; j <= DoF; j++ {
+			K[i][j] = 0
 		}
 	}
 	k = dmatrix(1, 12, 1, 12)
@@ -1062,7 +1372,7 @@ func assemble_K(K [][]float64, DoF int32, nE int32, xyz []vec3, r []float32, L [
 			geometric_K(k, xyz, r, L[i], Le[i], N1[i], N2[i], Ax[i], Asy[i], Asz[i], Jx[i], Iy[i], Iz[i], E[i], G[i], p[i], -Q[i][1], shear)
 		}
 		if debug != 0 {
-			// res = sprintf(stiffness_fn,"k_%03d",i);
+			res = noarch.Sprintf(stiffness_fn, []byte("k_%03d\x00"), i)
 			save_dmatrix(stiffness_fn, k, 1, 12, 1, 12, 0, []byte("w\x00"))
 		}
 		for l = 1; l <= 12; l++ {
@@ -1077,8 +1387,12 @@ func assemble_K(K [][]float64, DoF int32, nE int32, xyz []vec3, r []float32, L [
 	free_imatrix(ind, 1, 12, 1, nE)
 }
 
-// elastic_K - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd.c:151
+// elastic_K - transpiled function from  GOPATH/History_frame3DD/src/frame3dd.c:151
 func elastic_K(k [][]float64, xyz []vec3, r []float32, L float64, Le float64, n1 int32, n2 int32, Ax float32, Asy float32, Asz float32, J float32, Iy float32, Iz float32, E float32, G float32, p float32, shear int32) {
+	//
+	// * ELASTIC_K - space frame elastic stiffness matrix in global coordnates 22oct02
+	//
+	// coord Xformn
 	var t1 float64
 	var t2 float64
 	var t3 float64
@@ -1090,14 +1404,10 @@ func elastic_K(k [][]float64, xyz []vec3, r []float32, L float64, Le float64, n1
 	var t9 float64
 	var Ksy float64
 	var Ksz float64
+	// shear deformatn coefficients
 	var i int32
 	var j int32
-	//
-	// * ELASTIC_K - space frame elastic stiffness matrix in global coordnates 22oct02
-	//
-	// coord Xformn
-	// shear deformatn coefficients
-	coord_trans(xyz, L, n1, n2, (*[100000000]float64)(unsafe.Pointer(&t1))[:], (*[100000000]float64)(unsafe.Pointer(&t2))[:], (*[100000000]float64)(unsafe.Pointer(&t3))[:], (*[100000000]float64)(unsafe.Pointer(&t4))[:], (*[100000000]float64)(unsafe.Pointer(&t5))[:], (*[100000000]float64)(unsafe.Pointer(&t6))[:], (*[100000000]float64)(unsafe.Pointer(&t7))[:], (*[100000000]float64)(unsafe.Pointer(&t8))[:], (*[100000000]float64)(unsafe.Pointer(&t9))[:], p)
+	coord_trans(xyz, L, n1, n2, c4goUnsafeConvert_float64(&t1), c4goUnsafeConvert_float64(&t2), c4goUnsafeConvert_float64(&t3), c4goUnsafeConvert_float64(&t4), c4goUnsafeConvert_float64(&t5), c4goUnsafeConvert_float64(&t6), c4goUnsafeConvert_float64(&t7), c4goUnsafeConvert_float64(&t8), c4goUnsafeConvert_float64(&t9), p)
 	for i = 1; i <= 12; i++ {
 		for j = 1; j <= 12; j++ {
 			k[i][j] = 0
@@ -1173,8 +1483,12 @@ func elastic_K(k [][]float64, xyz []vec3, r []float32, L float64, Le float64, n1
 	}
 }
 
-// geometric_K - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd.c:232
+// geometric_K - transpiled function from  GOPATH/History_frame3DD/src/frame3dd.c:232
 func geometric_K(k [][]float64, xyz []vec3, r []float32, L float64, Le float64, n1 int32, n2 int32, Ax float32, Asy float32, Asz float32, J float32, Iy float32, Iz float32, E float32, G float32, p float32, T float64, shear int32) {
+	//
+	// * GEOMETRIC_K - space frame geometric stiffness matrix, global coordnates 20dec07
+	//
+	// coord Xformn
 	var t1 float64
 	var t2 float64
 	var t3 float64
@@ -1185,18 +1499,14 @@ func geometric_K(k [][]float64, xyz []vec3, r []float32, L float64, Le float64, 
 	var t8 float64
 	var t9 float64
 	var kg [][]float64
+	// shear deformation coefficients
 	var Ksy float64
 	var Ksz float64
 	var Dsy float64
 	var Dsz float64
 	var i int32
 	var j int32
-	//
-	// * GEOMETRIC_K - space frame geometric stiffness matrix, global coordnates 20dec07
-	//
-	// coord Xformn
-	// shear deformation coefficients
-	coord_trans(xyz, L, n1, n2, (*[100000000]float64)(unsafe.Pointer(&t1))[:], (*[100000000]float64)(unsafe.Pointer(&t2))[:], (*[100000000]float64)(unsafe.Pointer(&t3))[:], (*[100000000]float64)(unsafe.Pointer(&t4))[:], (*[100000000]float64)(unsafe.Pointer(&t5))[:], (*[100000000]float64)(unsafe.Pointer(&t6))[:], (*[100000000]float64)(unsafe.Pointer(&t7))[:], (*[100000000]float64)(unsafe.Pointer(&t8))[:], (*[100000000]float64)(unsafe.Pointer(&t9))[:], p)
+	coord_trans(xyz, L, n1, n2, c4goUnsafeConvert_float64(&t1), c4goUnsafeConvert_float64(&t2), c4goUnsafeConvert_float64(&t3), c4goUnsafeConvert_float64(&t4), c4goUnsafeConvert_float64(&t5), c4goUnsafeConvert_float64(&t6), c4goUnsafeConvert_float64(&t7), c4goUnsafeConvert_float64(&t8), c4goUnsafeConvert_float64(&t9), p)
 	kg = dmatrix(1, 12, 1, 12)
 	for i = 1; i <= 12; i++ {
 		for j = 1; j <= 12; j++ {
@@ -1288,14 +1598,14 @@ func geometric_K(k [][]float64, xyz []vec3, r []float32, L float64, Le float64, 
 	free_dmatrix(kg, 1, 12, 1, 12)
 }
 
-// solve_system - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd.c:352
+// solve_system - transpiled function from  GOPATH/History_frame3DD/src/frame3dd.c:352
 func solve_system(K [][]float64, D []float64, F []float64, R []float64, DoF int32, q []int32, r []int32, ok []int32, verbose int32, rms_resid []float64) {
-	var diag []float64
 	//
 	// * SOLVE_SYSTEM  -  solve {F} =   [K]{D} via L D L' decomposition        27dec01
 	// * Prescribed displacements are "mechanical loads" not "temperature loads"
 	//
 	// diagonal vector of the L D L' decomp.
+	var diag []float64
 	// suppress verbose output
 	verbose = 0
 	diag = dvector(1, DoF)
@@ -1312,17 +1622,15 @@ func solve_system(K [][]float64, D []float64, F []float64, R []float64, DoF int3
 		if verbose != 0 {
 			noarch.Fprintf(noarch.Stdout, []byte("    LDL' RMS residual:\x00"))
 		}
-		rms_resid[0] = float64((func() int32 {
-			ok[0] = 1
-			return ok[0]
-		}()))
+		ok[0] = 1
+		rms_resid[0] = float64(ok[0])
 		for {
 			// improve solution for D[q] and R[r]
 			ldl_mprove_pm(K, DoF, diag, F, D, R, q, r, rms_resid, ok)
 			if verbose != 0 {
 				noarch.Fprintf(noarch.Stdout, []byte("%9.2e\x00"), rms_resid[0])
 			}
-			if noarch.NotInt32(ok[0]) != 0 {
+			if noarch.Not(ok[0]) {
 				break
 			}
 		}
@@ -1333,22 +1641,22 @@ func solve_system(K [][]float64, D []float64, F []float64, R []float64, DoF int3
 	free_dvector(diag, 1, DoF)
 }
 
-// equilibrium_error - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd.c:390
+// equilibrium_error - transpiled function from  GOPATH/History_frame3DD/src/frame3dd.c:390
 func equilibrium_error(dF []float64, F []float64, K [][]float64, D []float64, DoF int32, q []int32, r []int32) float64 {
+	//
+	// * EQUILIBRIUM_ERROR -  compute {dF_q} =   {F_q} - [K_qq]{D_q} - [K_qr]{D_r}
+	// * use only the upper-triangle of [K_qq]
+	// * return ||dF||/||F||
+	// * 2014-05-16
+	//
+	//  sum of squares of dF
 	var ss_dF float64
 	var ss_F float64
 	var errF float64
+	//  sum of squares of F
 	var i int32
 	var j int32
 	{
-		//
-		// * EQUILIBRIUM_ERROR -  compute {dF_q} =   {F_q} - [K_qq]{D_q} - [K_qr]{D_r}
-		// * use only the upper-triangle of [K_qq]
-		// * return ||dF||/||F||
-		// * 2014-05-16
-		//
-		//  sum of squares of dF
-		//  sum of squares of F
 		// compute equilibrium error at free coord's (q)
 		for i = 1; i <= DoF; i++ {
 			errF = 0
@@ -1387,22 +1695,22 @@ func equilibrium_error(dF []float64, F []float64, K [][]float64, D []float64, Do
 	return math.Sqrt(ss_dF) / math.Sqrt(ss_F)
 }
 
-// element_end_forces - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd.c:425
+// element_end_forces - transpiled function from  GOPATH/History_frame3DD/src/frame3dd.c:425
 func element_end_forces(Q [][]float64, nE int32, xyz []vec3, L []float64, Le []float64, N1 []int32, N2 []int32, Ax []float32, Asy []float32, Asz []float32, Jx []float32, Iy []float32, Iz []float32, E []float32, G []float32, p []float32, eqF_temp [][]float64, eqF_mech [][]float64, D []float64, shear int32, geom int32, axial_strain_warning []int32) {
-	var s []float64
-	var axial_strain float64
-	var m int32
-	var j int32
 	//
 	// * ELEMENT_END_FORCES  -  evaluate the end forces for all elements
 	// * 23feb94
 	//
 	// equivalent element end forces from temp loads
 	// equivalent element end forces from mech loads
+	var s []float64
+	var axial_strain float64
+	var m int32
+	var j int32
 	s = dvector(1, 12)
 	axial_strain_warning[0] = 0
 	for m = 1; m <= nE; m++ {
-		frame_element_force(s, xyz, L[m], Le[m], N1[m], N2[m], Ax[m], Asy[m], Asz[m], Jx[m], Iy[m], Iz[m], E[m], G[m], p[m], eqF_temp[m], eqF_mech[m], D, shear, geom, (*[100000000]float64)(unsafe.Pointer(&axial_strain))[:])
+		frame_element_force(s, xyz, L[m], Le[m], N1[m], N2[m], Ax[m], Asy[m], Asz[m], Jx[m], Iy[m], Iz[m], E[m], G[m], p[m], eqF_temp[m], eqF_mech[m], D, shear, geom, c4goUnsafeConvert_float64(&axial_strain))
 		for j = 1; j <= 12; j++ {
 			Q[m][j] = s[j]
 		}
@@ -1414,8 +1722,13 @@ func element_end_forces(Q [][]float64, nE int32, xyz []vec3, L []float64, Le []f
 	free_dvector(s, 1, 12)
 }
 
-// frame_element_force - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd.c:464
+// frame_element_force - transpiled function from  GOPATH/History_frame3DD/src/frame3dd.c:464
 func frame_element_force(s []float64, xyz []vec3, L float64, Le float64, n1 int32, n2 int32, Ax float32, Asy float32, Asz float32, J float32, Iy float32, Iz float32, E float32, G float32, p float32, f_t []float64, f_m []float64, D []float64, shear int32, geom int32, axial_strain []float64) {
+	//
+	// * FRAME_ELEMENT_FORCE  -  evaluate the end forces in local coord's
+	// * 12nov02
+	//
+	// coord Xformn
 	var t1 float64
 	var t2 float64
 	var t3 float64
@@ -1443,6 +1756,11 @@ func frame_element_force(s []float64, xyz []vec3, L float64, Le float64, n1 int3
 	var Dsy float64
 	var Dsz float64
 	var T float64
+	// x1, y1, z1, x2, y2, z2, /* node coordinates */
+	//  Ls,                                         /* stretched length of element */
+	// stretch in the frame element
+	// shear deformation coeff's
+	// axial force for geometric stiffness
 	var f1 float64
 	var f2 float64
 	var f3 float64
@@ -1455,17 +1773,7 @@ func frame_element_force(s []float64, xyz []vec3, L float64, Le float64, n1 int3
 	var f10 float64
 	var f11 float64
 	var f12 float64
-	//
-	// * FRAME_ELEMENT_FORCE  -  evaluate the end forces in local coord's
-	// * 12nov02
-	//
-	// coord Xformn
-	// x1, y1, z1, x2, y2, z2, /* node coordinates */
-	//  Ls,                                         /* stretched length of element */
-	// stretch in the frame element
-	// shear deformation coeff's
-	// axial force for geometric stiffness
-	coord_trans(xyz, L, n1, n2, (*[100000000]float64)(unsafe.Pointer(&t1))[:], (*[100000000]float64)(unsafe.Pointer(&t2))[:], (*[100000000]float64)(unsafe.Pointer(&t3))[:], (*[100000000]float64)(unsafe.Pointer(&t4))[:], (*[100000000]float64)(unsafe.Pointer(&t5))[:], (*[100000000]float64)(unsafe.Pointer(&t6))[:], (*[100000000]float64)(unsafe.Pointer(&t7))[:], (*[100000000]float64)(unsafe.Pointer(&t8))[:], (*[100000000]float64)(unsafe.Pointer(&t9))[:], p)
+	coord_trans(xyz, L, n1, n2, c4goUnsafeConvert_float64(&t1), c4goUnsafeConvert_float64(&t2), c4goUnsafeConvert_float64(&t3), c4goUnsafeConvert_float64(&t4), c4goUnsafeConvert_float64(&t5), c4goUnsafeConvert_float64(&t6), c4goUnsafeConvert_float64(&t7), c4goUnsafeConvert_float64(&t8), c4goUnsafeConvert_float64(&t9), p)
 	n1 = 6 * (n1 - 1)
 	n2 = 6 * (n2 - 1)
 	d1 = D[n1+1]
@@ -1561,95 +1869,91 @@ func frame_element_force(s []float64, xyz []vec3, L float64, Le float64, n1 int3
 	s[12] -= f10*t7 + f11*t8 + f12*t9
 }
 
-// compute_reaction_forces - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd.c:658
+// compute_reaction_forces - transpiled function from  GOPATH/History_frame3DD/src/frame3dd.c:658
 func compute_reaction_forces(R []float64, F []float64, K [][]float64, D []float64, DoF int32, r []int32) {
+	//
+	//void add_feF(  // DISUSED CODE
+	//              vec3 *xyz,
+	//              double *L, int *N1, int *N2, float *p,
+	//              double **Q,
+	//int nE, int DoF,
+	// int verbose
+	//){
+	// double  t1, t2, t3, t4, t5, t6, t7, t8, t9, // 3D coord Xformn
+	// int                                         m, n1, n2, i1, i2; //, J, x;
+	//
+	// for (m=1; m <= nE; m++) { // loop over all frame elements
+	//
+	//  n1 = N1[m]; n2 = N2[m];
+	//
+	// * reaction calculations removed from Frame3DD on 2014-05-14 ...
+	// * these calculations are now in solve_system()
+	// *  // add fixed-end forces to reaction forces
+	// *  for (i=1; i<=6; i++) {
+	// *   i1 = 6*(n1-1) + i;
+	// *   if (r[i1])
+	// *    F[i1] -= ( f_t[m][i] + f_m[m][i] );
+	// *  }
+	// *  for (i=1; i<=6; i++) {
+	// *   i2 = 6*(n2-1) + i;
+	// *   if (r[i2])
+	// *    F[i2] -= ( f_t[m][i+6] + f_m[m][i+6] );
+	// *  }
+	// *
+	//
+	//  coord_trans ( xyz, L[m], n1, n2,
+	//   &t1, &t2, &t3, &t4, &t5, &t6, &t7, &t8, &t9, p[m] );
+	//
+	//  // n1 = 6*(n1-1); n2 = 6*(n2-1); // ??
+	//
+	//
+	// }
+	//}
+	//
+	//
+	// * COMPUTE_REACTION_FORCES : R(r) = [K(r,q)]*{D(q)} + [K(r,r)]*{D(r)} - F(r)
+	// * reaction forces satisfy equilibrium in the solved system
+	// * only really needed for geometric-nonlinear problems
+	// * 2012-10-12  , 2014-05-16
+	//
 	var i int32
 	var j int32
-	{
-		//
-		//void add_feF(  // DISUSED CODE
-		//              vec3 *xyz,
-		//              double *L, int *N1, int *N2, float *p,
-		//              double **Q,
-		//int nE, int DoF,
-		// int verbose
-		//){
-		// double  t1, t2, t3, t4, t5, t6, t7, t8, t9, // 3D coord Xformn
-		// int                                         m, n1, n2, i1, i2; //, J, x;
-		//
-		// for (m=1; m <= nE; m++) { // loop over all frame elements
-		//
-		//  n1 = N1[m]; n2 = N2[m];
-		//
-		// * reaction calculations removed from Frame3DD on 2014-05-14 ...
-		// * these calculations are now in solve_system()
-		// *  // add fixed-end forces to reaction forces
-		// *  for (i=1; i<=6; i++) {
-		// *   i1 = 6*(n1-1) + i;
-		// *   if (r[i1])
-		// *    F[i1] -= ( f_t[m][i] + f_m[m][i] );
-		// *  }
-		// *  for (i=1; i<=6; i++) {
-		// *   i2 = 6*(n2-1) + i;
-		// *   if (r[i2])
-		// *    F[i2] -= ( f_t[m][i+6] + f_m[m][i+6] );
-		// *  }
-		// *
-		//
-		//  coord_trans ( xyz, L[m], n1, n2,
-		//   &t1, &t2, &t3, &t4, &t5, &t6, &t7, &t8, &t9, p[m] );
-		//
-		//  // n1 = 6*(n1-1); n2 = 6*(n2-1); // ??
-		//
-		//
-		// }
-		//}
-		//
-		//
-		// * COMPUTE_REACTION_FORCES : R(r) = [K(r,q)]*{D(q)} + [K(r,r)]*{D(r)} - F(r)
-		// * reaction forces satisfy equilibrium in the solved system
-		// * only really needed for geometric-nonlinear problems
-		// * 2012-10-12  , 2014-05-16
-		//
-		for i = 1; i <= DoF; i++ {
-			R[i] = 0
-			if r[i] != 0 {
-				// coordinate "i" is a reaction coord.
-				// negative of equiv loads at coord i
-				R[i] = -F[i]
-				{
-					// reactions are relaxed through system deformations
-					for j = 1; j <= DoF; j++ {
-						R[i] += K[i][j] * D[j]
-					}
+	for i = 1; i <= DoF; i++ {
+		R[i] = 0
+		if r[i] != 0 {
+			// coordinate "i" is a reaction coord.
+			// negative of equiv loads at coord i
+			R[i] = -F[i]
+			{
+				// reactions are relaxed through system deformations
+				for j = 1; j <= DoF; j++ {
+					R[i] += K[i][j] * D[j]
 				}
 			}
 		}
 	}
 }
 
-// assemble_M - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd.c:677
+// assemble_M - transpiled function from  GOPATH/History_frame3DD/src/frame3dd.c:677
 func assemble_M(M [][]float64, DoF int32, nN int32, nE int32, xyz []vec3, r []float32, L []float64, N1 []int32, N2 []int32, Ax []float32, Jx []float32, Iy []float32, Iz []float32, p []float32, d []float32, EMs []float32, NMs []float32, NMx []float32, NMy []float32, NMz []float32, lump int32, debug int32) {
-	var m [][]float64
-	var ind [][]int32
-	var i int32
-	var j int32
-	var ii int32
-	var jj int32
-	var l int32
-	var ll int32
+	//
+	// * ASSEMBLE_M  -  assemble global mass matrix from element mass & inertia  24nov98
+	//
+	// element mass matrix in global coord
+	var m [][]float64 // ind - transpiled function from  GOPATH/History_frame3DD/src/frame3dd.c:688
+	// member-structure DoF index table
+	var ind [][]int32 // res - transpiled function from  GOPATH/History_frame3DD/src/frame3dd.c:688
+	var res int32     // i - transpiled function from  GOPATH/History_frame3DD/src/frame3dd.c:688
+	var i int32       // j - transpiled function from  GOPATH/History_frame3DD/src/frame3dd.c:688
+	var j int32       // ii - transpiled function from  GOPATH/History_frame3DD/src/frame3dd.c:688
+	var ii int32      // jj - transpiled function from  GOPATH/History_frame3DD/src/frame3dd.c:688
+	var jj int32      // l - transpiled function from  GOPATH/History_frame3DD/src/frame3dd.c:688
+	var l int32       // ll - transpiled function from  GOPATH/History_frame3DD/src/frame3dd.c:688
+	var ll int32      // mass_fn - transpiled function from  GOPATH/History_frame3DD/src/frame3dd.c:692
 	var mass_fn []byte = make([]byte, 128)
-	{
-		//
-		// * ASSEMBLE_M  -  assemble global mass matrix from element mass & inertia  24nov98
-		//
-		// element mass matrix in global coord
-		// member-structure DoF index table
-		// res=0,
-		for i = 1; i <= DoF; i++ {
-			for j = 1; j <= DoF; j++ {
-				M[i][j] = 0
-			}
+	for i = 1; i <= DoF; i++ {
+		for j = 1; j <= DoF; j++ {
+			M[i][j] = 0
 		}
 	}
 	m = dmatrix(1, 12, 1, 12)
@@ -1675,7 +1979,7 @@ func assemble_M(M [][]float64, DoF int32, nN int32, nE int32, xyz []vec3, r []fl
 			consistent_M(m, xyz, r, L[i], N1[i], N2[i], Ax[i], Jx[i], Iy[i], Iz[i], p[i], d[i], EMs[i])
 		}
 		if debug != 0 {
-			// res = sprintf(mass_fn,"m_%03d",i);
+			res = noarch.Sprintf(mass_fn, []byte("m_%03d\x00"), i)
 			save_dmatrix(mass_fn, m, 1, 12, 1, 12, 0, []byte("w\x00"))
 		}
 		for l = 1; l <= 12; l++ {
@@ -1708,8 +2012,12 @@ func assemble_M(M [][]float64, DoF int32, nN int32, nE int32, xyz []vec3, r []fl
 	free_imatrix(ind, 1, 12, 1, nE)
 }
 
-// lumped_M - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd.c:754
+// lumped_M - transpiled function from  GOPATH/History_frame3DD/src/frame3dd.c:754
 func lumped_M(m [][]float64, xyz []vec3, L float64, n1 int32, n2 int32, Ax float32, J float32, Iy float32, Iz float32, p float32, d float32, EMs float32) {
+	//
+	// * LUMPED_M  -  space frame element lumped mass matrix in global coordnates 7apr94
+	//
+	// coord Xformn
 	var t1 float64
 	var t2 float64
 	var t3 float64
@@ -1723,14 +2031,10 @@ func lumped_M(m [][]float64, xyz []vec3, L float64, n1 int32, n2 int32, Ax float
 	var ry float64
 	var rz float64
 	var po float64
+	// translational, rotational & polar inertia
 	var i int32
 	var j int32
-	//
-	// * LUMPED_M  -  space frame element lumped mass matrix in global coordnates 7apr94
-	//
-	// coord Xformn
-	// translational, rotational & polar inertia
-	coord_trans(xyz, L, n1, n2, (*[100000000]float64)(unsafe.Pointer(&t1))[:], (*[100000000]float64)(unsafe.Pointer(&t2))[:], (*[100000000]float64)(unsafe.Pointer(&t3))[:], (*[100000000]float64)(unsafe.Pointer(&t4))[:], (*[100000000]float64)(unsafe.Pointer(&t5))[:], (*[100000000]float64)(unsafe.Pointer(&t6))[:], (*[100000000]float64)(unsafe.Pointer(&t7))[:], (*[100000000]float64)(unsafe.Pointer(&t8))[:], (*[100000000]float64)(unsafe.Pointer(&t9))[:], p)
+	coord_trans(xyz, L, n1, n2, c4goUnsafeConvert_float64(&t1), c4goUnsafeConvert_float64(&t2), c4goUnsafeConvert_float64(&t3), c4goUnsafeConvert_float64(&t4), c4goUnsafeConvert_float64(&t5), c4goUnsafeConvert_float64(&t6), c4goUnsafeConvert_float64(&t7), c4goUnsafeConvert_float64(&t8), c4goUnsafeConvert_float64(&t9), p)
 	// rotatory inertia of extra mass is neglected
 	t = (float64(d*Ax)*L + float64(EMs)) / 2
 	ry = float64(d*Iy) * L / 2
@@ -1768,8 +2072,13 @@ func lumped_M(m [][]float64, xyz []vec3, L float64, n1 int32, n2 int32, Ax float
 	m[5][6] = m[6][5]
 }
 
-// consistent_M - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd.c:791
+// consistent_M - transpiled function from  GOPATH/History_frame3DD/src/frame3dd.c:791
 func consistent_M(m [][]float64, xyz []vec3, r []float32, L float64, n1 int32, n2 int32, Ax float32, J float32, Iy float32, Iz float32, p float32, d float32, EMs float32) {
+	//
+	// * CONSISTENT_M  -  space frame consistent mass matrix in global coordnates 2oct97
+	// *   does not include shear deformations
+	//
+	// coord Xformn
 	var t1 float64
 	var t2 float64
 	var t3 float64
@@ -1783,15 +2092,10 @@ func consistent_M(m [][]float64, xyz []vec3, r []float32, L float64, n1 int32, n
 	var ry float64
 	var rz float64
 	var po float64
+	// translational, rotational & polar inertia
 	var i int32
 	var j int32
-	//
-	// * CONSISTENT_M  -  space frame consistent mass matrix in global coordnates 2oct97
-	// *   does not include shear deformations
-	//
-	// coord Xformn
-	// translational, rotational & polar inertia
-	coord_trans(xyz, L, n1, n2, (*[100000000]float64)(unsafe.Pointer(&t1))[:], (*[100000000]float64)(unsafe.Pointer(&t2))[:], (*[100000000]float64)(unsafe.Pointer(&t3))[:], (*[100000000]float64)(unsafe.Pointer(&t4))[:], (*[100000000]float64)(unsafe.Pointer(&t5))[:], (*[100000000]float64)(unsafe.Pointer(&t6))[:], (*[100000000]float64)(unsafe.Pointer(&t7))[:], (*[100000000]float64)(unsafe.Pointer(&t8))[:], (*[100000000]float64)(unsafe.Pointer(&t9))[:], p)
+	coord_trans(xyz, L, n1, n2, c4goUnsafeConvert_float64(&t1), c4goUnsafeConvert_float64(&t2), c4goUnsafeConvert_float64(&t3), c4goUnsafeConvert_float64(&t4), c4goUnsafeConvert_float64(&t5), c4goUnsafeConvert_float64(&t6), c4goUnsafeConvert_float64(&t7), c4goUnsafeConvert_float64(&t8), c4goUnsafeConvert_float64(&t9), p)
 	t = float64(d*Ax) * L
 	ry = float64(d * Iy)
 	rz = float64(d * Iz)
@@ -1873,8 +2177,11 @@ func consistent_M(m [][]float64, xyz []vec3, r []float32, L float64, n1 int32, n
 	}
 }
 
-// static_condensation - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd.c:879
+// static_condensation - transpiled function from  GOPATH/History_frame3DD/src/frame3dd.c:879
 func static_condensation(A [][]float64, N int32, c []int32, n int32, Ac [][]float64, verbose int32) {
+	//
+	// * STATIC_CONDENSATION - of stiffness matrix from NxN to nxn    30aug01
+	//
 	var Arr [][]float64
 	var Arc [][]float64
 	var i int32
@@ -1886,9 +2193,6 @@ func static_condensation(A [][]float64, N int32, c []int32, n int32, Ac [][]floa
 	var cj int32
 	var ok int32
 	var r []int32
-	//
-	// * STATIC_CONDENSATION - of stiffness matrix from NxN to nxn    30aug01
-	//
 	r = ivector(1, N-n)
 	Arr = dmatrix(1, N-n, 1, N-n)
 	Arc = dmatrix(1, N-n, 1, n)
@@ -1956,8 +2260,12 @@ func static_condensation(A [][]float64, N int32, c []int32, n int32, Ac [][]floa
 	free_dmatrix(Arc, 1, N-n, 1, n)
 }
 
-// paz_condensation - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd.c:939
+// paz_condensation - transpiled function from  GOPATH/History_frame3DD/src/frame3dd.c:939
 func paz_condensation(M [][]float64, K [][]float64, N int32, c []int32, n int32, Mc [][]float64, Kc [][]float64, w2 float64, verbose int32) {
+	//
+	// * PAZ_CONDENSATION -   Paz condensation of mass and stiffness matrices 6jun07
+	// *          Paz M. Dynamic condensation. AIAA J 1984;22(5):724-727.
+	//
 	var Drr [][]float64
 	var Drc [][]float64
 	var invDrrDrc [][]float64
@@ -1970,14 +2278,11 @@ func paz_condensation(M [][]float64, K [][]float64, N int32, c []int32, n int32,
 	var cj int32
 	var ok int32
 	var r []int32
-	//
-	// * PAZ_CONDENSATION -   Paz condensation of mass and stiffness matrices 6jun07
-	// *          Paz M. Dynamic condensation. AIAA J 1984;22(5):724-727.
-	//
+	_ = 4
 	func() {
-		if M != nil {
+		if len(M) != 0 {
 		} else {
-			linux.AssertFail([]byte("M!=NULL\x00"), []byte("/home/konstantin/go/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd.c\x00"), 949, []byte("void paz_condensation(double **, double **, int, int *, int, double **, double **, double, int)\x00"))
+			__assert_fail([]byte("M!=NULL\x00"), []byte("/mnt/hdd1/go/History_frame3DD/src/frame3dd.c\x00"), 949, []byte("void paz_condensation(double **, double **, int, int *, int, double **, double **, double, int)\x00"))
 		}
 	}()
 	r = ivector(1, N-n)
@@ -2039,7 +2344,7 @@ func paz_condensation(M [][]float64, K [][]float64, N int32, c []int32, n int32,
 		}
 	}
 	// inv(Drr) * Drc
-	invAB(Drr, Drc, N-n, n, invDrrDrc, (*[100000000]int32)(unsafe.Pointer(&ok))[:], verbose)
+	invAB(Drr, Drc, N-n, n, invDrrDrc, c4goUnsafeConvert_int32(&ok), verbose)
 	{
 		// coordinate transformation matrix
 		for i = 1; i <= n; i++ {
@@ -2065,23 +2370,23 @@ func paz_condensation(M [][]float64, K [][]float64, N int32, c []int32, n int32,
 	free_dmatrix(T, 1, N-n, 1, n)
 }
 
-// modal_condensation - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd.c:1019
+// modal_condensation - transpiled function from  GOPATH/History_frame3DD/src/frame3dd.c:1019
 func modal_condensation(M [][]float64, K [][]float64, N int32, R []int32, p []int32, n int32, Mc [][]float64, Kc [][]float64, V [][]float64, f []float64, m []int32, verbose int32) {
-	var P [][]float64
-	var invP [][]float64
-	var traceM float64
-	var traceMc float64
-	var Aij float64
-	var i int32
-	var j int32
-	var k int32
 	//
 	// * MODAL_CONDENSATION -
 	// *      dynamic condensation of mass and stiffness matrices    8oct01
 	// *   matches the response at a set of frequencies and modes
 	// * WARNING: Kc and Mc may be ill-conditioned, and xyzsibly non-positive def.
 	//
+	var P [][]float64
+	var invP [][]float64
+	var traceM float64
+	var traceMc float64
+	var Aij float64
 	// temporary storage for matrix mult.
+	var i int32
+	var j int32
+	var k int32
 	P = dmatrix(1, n, 1, n)
 	invP = dmatrix(1, n, 1, n)
 	{
@@ -2094,7 +2399,7 @@ func modal_condensation(M [][]float64, K [][]float64, N int32, R []int32, p []in
 	}
 	pseudo_inv(P, invP, n, n, 1e-09, verbose)
 	for i = 1; i <= N; i++ {
-		if noarch.NotInt32(R[i]) != 0 {
+		if noarch.Not(R[i]) {
 			traceM += M[i][i]
 		}
 	}
@@ -2139,12 +2444,12 @@ func modal_condensation(M [][]float64, K [][]float64, N int32, R []int32, p []in
 	free_dmatrix(invP, 1, n, 1, n)
 }
 
-// deallocate - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd.c:1076
+// deallocate - transpiled function from  GOPATH/History_frame3DD/src/frame3dd.c:1076
 func deallocate(nN int32, nE int32, nL int32, nF []int32, nU []int32, nW []int32, nP []int32, nT []int32, DoF int32, nM int32, xyz []vec3, rj []float32, L []float64, Le []float64, N1 []int32, N2 []int32, q []int32, r []int32, Ax []float32, Asy []float32, Asz []float32, J []float32, Iy []float32, Iz []float32, E []float32, G []float32, p []float32, U [][][]float32, W [][][]float32, P [][][]float32, T [][][]float32, Dp [][]float32, F_mech [][]float64, F_temp [][]float64, eqF_mech [][][]float64, eqF_temp [][][]float64, F []float64, dF []float64, K [][]float64, Q [][]float64, D []float64, dD []float64, R []float64, dR []float64, d []float32, EMs []float32, NMs []float32, NMx []float32, NMy []float32, NMz []float32, M [][]float64, f []float64, V [][]float64, c []int32, m []int32, pkNx [][]float64, pkVy [][]float64, pkVz [][]float64, pkTx [][]float64, pkMy [][]float64, pkMz [][]float64, pkDx [][]float64, pkDy [][]float64, pkDz [][]float64, pkRx [][]float64, pkSy [][]float64, pkSz [][]float64) {
-	_ = xyz
 	//
 	// * DEALLOCATE  -  release allocated memory     9sep08
 	//
+	_ = xyz
 	free_vector(rj, 1, nN)
 	free_dvector(L, 1, nE)
 	free_dvector(Le, 1, nE)
@@ -2216,12 +2521,8 @@ func deallocate(nN int32, nE int32, nL int32, nF []int32, nU []int32, nW []int32
 	}
 }
 
-// parse_options - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:58
+// parse_options - transpiled function from  GOPATH/History_frame3DD/src/frame3dd_io.c:58
 func parse_options(argc int32, argv [][]byte, IN_file []byte, OUT_file []byte, shear_flag []int32, geom_flag []int32, anlyz_flag []int32, exagg_flag []float64, D3_flag []int32, lump_flag []int32, modal_flag []int32, tol_flag []float64, shift_flag []float64, pan_flag []float32, write_matrix []int32, axial_sign []int32, condense_flag []int32, verbose []int32, debug []int32) {
-	modal_flag[0] = -1
-	lump_flag[0] = modal_flag[0]
-	anlyz_flag[0] = lump_flag[0]
-	geom_flag[0] = anlyz_flag[0]
 	//
 	// This file is part of FRAME3DD:
 	// Static and dynamic structural analysis of 2D and 3D frames and trusses with
@@ -2260,9 +2561,14 @@ func parse_options(argc int32, argv [][]byte, IN_file []byte, OUT_file []byte, s
 	// * command line options over-ride values in the input data file
 	// * 04 Mar 2009, 22 Sep 2009
 	//
-	// char option;
-	// char errMsg[MAXL];
-	// int  sfrv=0;  #<{(| *scanf return value |)}>#
+	var option byte
+	var errMsg []byte = make([]byte, 512)
+	// *scanf return value
+	var sfrv int32
+	modal_flag[0] = -1
+	lump_flag[0] = modal_flag[0]
+	anlyz_flag[0] = lump_flag[0]
+	geom_flag[0] = anlyz_flag[0]
 	// default values
 	shear_flag[0] = geom_flag[0]
 	shift_flag[0] = -1
@@ -2275,166 +2581,175 @@ func parse_options(argc int32, argv [][]byte, IN_file []byte, OUT_file []byte, s
 	axial_sign[0] = 1
 	debug[0] = 0
 	verbose[0] = 1
-	//
-	// strcpy(  IN_file , "\0" );
-	// strcpy( OUT_file , "\0" );
-	//
-	// set up file names for the the input data and the output data
-	//
-	// switch ( argc ) {
-	//  case 1: {
-	//  fprintf(stderr,"\n Frame3DD version: %s\n", VERSION);
-	//  fprintf(stderr," Analysis of 2D and 3D structural frames with elastic and geometric stiffness.\n");
-	//  fprintf(stderr," http://frame3dd.sourceforge.net\n\n");
-	//  fprintf (stderr," Please enter the  input data file name: ");
-	//  sfrv=scanf("%s", IN_file );
-	//  if (sfrv != 1) sferr("IN_file");
-	//  fprintf (stderr," Please enter the output data file name: ");
-	//  sfrv=scanf("%s", OUT_file );
-	//  if (sfrv != 1) sferr("OUT_file");
-	//  return;
-	//  }
-	//  case 3: {
-	//  if ( argv[1][0] != '-' ) {
-	//   strcpy(  IN_file , argv[1] );
-	//   strcpy( OUT_file , argv[2] );
-	//   return;
-	//  }
-	//  }
-	// }
-	//
-	// // remaining unused flags ... b j k n u y
-	//
-	// while ((option=getopt(argc,argv, "i:o:acdhqvwxzs:e:f:g:l:m:p:r:t:")) != -1){
-	//  switch ( option ) {
-	//   case 'i':  #<{(| input data file name |)}>#
-	//             strcpy(IN_file,optarg);
-	//             break;
-	//   case 'o':  #<{(| output data file name |)}>#
-	//             strcpy(OUT_file,optarg);
-	//             break;
-	//   case 'h':  #<{(| help |)}>#
-	//             display_help();
-	//             exit(0);
-	//   case 'v':  #<{(| version |)}>#
-	//             display_version();
-	//             exit(0);
-	//   case 'a':  #<{(| about |)}>#
-	//             display_version_about();
-	//             exit(0);
-	//   case 'q':  #<{(| quiet |)}>#
-	//             *verbose = 0;
-	//             break;
-	//   case 'c':  #<{(| data check only |)}>#
-	//             *anlyz_flag = 0;
-	//             break;
-	//   case 'd':  #<{(| debug |)}>#
-	//             *debug = 1;
-	//             break;
-	//   case 'w':  #<{(| write stiffness and mass |)}>#
-	//             *write_matrix = 1;
-	//             break;
-	//   case 'x':  #<{(| write sign of axial forces |)}>#
-	//             *axial_sign = 0;
-	//             break;
-	//   case 's':  #<{(| shear deformation |)}>#
-	//             if (strcmp(optarg,"Off")==0)
-	//              *shear_flag = 0;
-	//             else if (strcmp(optarg,"On")==0)
-	//              *shear_flag = 1;
-	//             else {
-	//              errorMsg("\n frame3dd command-line error: argument to -s option should be either On or Off\n");
-	//              exit(3);
-	//             }
-	//             break;
-	//   case 'g':  #<{(| geometric stiffness |)}>#
-	//             if (strcmp(optarg,"Off")==0)
-	//              *geom_flag = 0;
-	//             else if (strcmp(optarg,"On")==0)
-	//              *geom_flag = 1;
-	//             else {
-	//              errorMsg("\n frame3dd command-line error: argument to -g option should be either On or Off\n");
-	//              exit(4);
-	//             }
-	//             break;
-	//   case 'e':  #<{(| static mesh exagg. factor |)}>#
-	//             *exagg_flag = atof(optarg);
-	//             break;
-	//   case 'z':  #<{(| force 3D plotting |)}>#
-	//             *D3_flag = 1;
-	//             break;
-	//   case 'l':  #<{(| lumped or consistent mass |)}>#
-	//             if (strcmp(optarg,"Off")==0)
-	//              *lump_flag = 0;
-	//             else if (strcmp(optarg,"On")==0)
-	//              *lump_flag = 1;
-	//             else {
-	//              errorMsg("\n frame3dd command-line error: argument to -l option should be either On or Off\n");
-	//              exit(5);
-	//             }
-	//             break;
-	//   case 'm':  #<{(| modal analysis method |)}>#
-	//             if (strcmp(optarg,"J")==0)
-	//              *modal_flag = 1;
-	//             else if (strcmp(optarg,"S")==0)
-	//              *modal_flag = 2;
-	//             else {
-	//              errorMsg("\n frame3dd command-line error: argument to -m option should be either J or S\n");
-	//              exit(6);
-	//             }
-	//             break;
-	//   case 't':  #<{(| modal analysis tolerence |)}>#
-	//             *tol_flag = atof(optarg);
-	//             if (*tol_flag == 0.0) {
-	//              errorMsg("\n frame3dd command-line error: argument to -t option should be a number.\n");
-	//              exit(7);
-	//             }
-	//             break;
-	//   case 'f':  #<{(| modal analysis freq. shift |)}>#
-	//             *shift_flag = atof(optarg);
-	//             if (*shift_flag == 0.0) {
-	//              errorMsg("\n frame3dd command-line error: argument to -f option should be a number.\n");
-	//              exit(8);
-	//             }
-	//             break;
-	//   case 'p':  #<{(| pan rate |)}>#
-	//             *pan_flag = atof(optarg);
-	//             if (*pan_flag < 0.0) {
-	//              errorMsg("\n frame3dd command-line error: argument to -p option should be a positive number.\n");
-	//              exit(9);
-	//             }
-	//             break;
-	//   case 'r':  #<{(| matrix condensation method |)}>#
-	//             *condense_flag = atoi(optarg);
-	//             if (*condense_flag < 0 || *condense_flag > 3) {
-	//              errorMsg("\n frame3dd command-line error: argument to -r option should be 0, 1, or 2.\n");
-	//              exit(10);
-	//             }
-	//             break;
-	//   case '?':
-	//    sprintf(errMsg,"  Missing argument or Unknown option: -%c\n\n", option );
-	//    errorMsg(errMsg);
-	//    display_help();
-	//    exit(2);
-	//  }
-	// }
-	noarch.Strcpy(IN_file, []byte("exA.3dd\x00\x00"))
-	noarch.Strcpy(OUT_file, []byte("exA.3dd.out\x00\x00"))
+	noarch.Strcpy(IN_file, []byte("\x00\x00"))
+	noarch.Strcpy(OUT_file, []byte("\x00\x00"))
+	switch argc {
+	case 1:
+		// set up file names for the the input data and the output data
+		noarch.Fprintf(noarch.Stderr, []byte("\n Frame3DD version: %s\n\x00"), []byte("20140514+\x00"))
+		noarch.Fprintf(noarch.Stderr, []byte(" Analysis of 2D and 3D structural frames with elastic and geometric stiffness.\n\x00"))
+		//frame3dd.sourceforge.net\n\n");
+		noarch.Fprintf(noarch.Stderr, []byte(" http://frame3dd.sourceforge.net\n\n\x00"))
+		noarch.Fprintf(noarch.Stderr, []byte(" Please enter the  input data file name: \x00"))
+		sfrv = noarch.Scanf([]byte("%s\x00"), IN_file)
+		if sfrv != 1 {
+			sferr([]byte("IN_file\x00"))
+		}
+		noarch.Fprintf(noarch.Stderr, []byte(" Please enter the output data file name: \x00"))
+		sfrv = noarch.Scanf([]byte("%s\x00"), OUT_file)
+		if sfrv != 1 {
+			sferr([]byte("OUT_file\x00"))
+		}
+		return
+	case 3:
+		if int32(argv[1][0]) != int32('-') {
+			noarch.Strcpy(IN_file, argv[1])
+			noarch.Strcpy(OUT_file, argv[2])
+			return
+		}
+	}
+	for int32((func() byte {
+		option = byte(getopt(argc, argv, []byte("i:o:acdhqvwxzs:e:f:g:l:m:p:r:t:\x00")))
+		return option
+	}())) != -1 {
+		switch int32(option) {
+		case 'i':
+			// remaining unused flags ... b j k n u y
+			// input data file name
+			noarch.Strcpy(IN_file, optarg)
+		case 'o':
+			// output data file name
+			noarch.Strcpy(OUT_file, optarg)
+		case 'h':
+			// help
+			display_help()
+			noarch.Exit(0)
+			fallthrough
+		case 'v':
+			// version
+			display_version()
+			noarch.Exit(0)
+			fallthrough
+		case 'a':
+			// about
+			display_version_about()
+			noarch.Exit(0)
+			fallthrough
+		case 'q':
+			// quiet
+			verbose[0] = 0
+		case 'c':
+			// data check only
+			anlyz_flag[0] = 0
+		case 'd':
+			// debug
+			debug[0] = 1
+		case 'w':
+			// write stiffness and mass
+			write_matrix[0] = 1
+		case 'x':
+			// write sign of axial forces
+			axial_sign[0] = 0
+		case 's':
+			if noarch.Strcmp(optarg, []byte("Off\x00")) == 0 {
+				// shear deformation
+				shear_flag[0] = 0
+			} else if noarch.Strcmp(optarg, []byte("On\x00")) == 0 {
+				shear_flag[0] = 1
+			} else {
+				errorMsg([]byte("\n frame3dd command-line error: argument to -s option should be either On or Off\n\x00"))
+				noarch.Exit(3)
+			}
+		case 'g':
+			if noarch.Strcmp(optarg, []byte("Off\x00")) == 0 {
+				// geometric stiffness
+				geom_flag[0] = 0
+			} else if noarch.Strcmp(optarg, []byte("On\x00")) == 0 {
+				geom_flag[0] = 1
+			} else {
+				errorMsg([]byte("\n frame3dd command-line error: argument to -g option should be either On or Off\n\x00"))
+				noarch.Exit(4)
+			}
+		case 'e':
+			// static mesh exagg. factor
+			exagg_flag[0] = noarch.Atof(optarg)
+		case 'z':
+			// force 3D plotting
+			D3_flag[0] = 1
+		case 'l':
+			if noarch.Strcmp(optarg, []byte("Off\x00")) == 0 {
+				// lumped or consistent mass
+				lump_flag[0] = 0
+			} else if noarch.Strcmp(optarg, []byte("On\x00")) == 0 {
+				lump_flag[0] = 1
+			} else {
+				errorMsg([]byte("\n frame3dd command-line error: argument to -l option should be either On or Off\n\x00"))
+				noarch.Exit(5)
+			}
+		case 'm':
+			if noarch.Strcmp(optarg, []byte("J\x00")) == 0 {
+				// modal analysis method
+				modal_flag[0] = 1
+			} else if noarch.Strcmp(optarg, []byte("S\x00")) == 0 {
+				modal_flag[0] = 2
+			} else {
+				errorMsg([]byte("\n frame3dd command-line error: argument to -m option should be either J or S\n\x00"))
+				noarch.Exit(6)
+			}
+		case 't':
+			// modal analysis tolerence
+			tol_flag[0] = noarch.Atof(optarg)
+			if tol_flag[0] == 0 {
+				errorMsg([]byte("\n frame3dd command-line error: argument to -t option should be a number.\n\x00"))
+				noarch.Exit(7)
+			}
+		case 'f':
+			// modal analysis freq. shift
+			shift_flag[0] = noarch.Atof(optarg)
+			if shift_flag[0] == 0 {
+				errorMsg([]byte("\n frame3dd command-line error: argument to -f option should be a number.\n\x00"))
+				noarch.Exit(8)
+			}
+		case 'p':
+			// pan rate
+			pan_flag[0] = float32(noarch.Atof(optarg))
+			if float64(pan_flag[0]) < 0 {
+				errorMsg([]byte("\n frame3dd command-line error: argument to -p option should be a positive number.\n\x00"))
+				noarch.Exit(9)
+			}
+		case 'r':
+			// matrix condensation method
+			condense_flag[0] = noarch.Atoi(optarg)
+			if condense_flag[0] < 0 || condense_flag[0] > 3 {
+				errorMsg([]byte("\n frame3dd command-line error: argument to -r option should be 0, 1, or 2.\n\x00"))
+				noarch.Exit(10)
+			}
+		case '?':
+			noarch.Sprintf(errMsg, []byte("  Missing argument or Unknown option: -%c\n\n\x00"), int32(option))
+			errorMsg(errMsg)
+			display_help()
+			noarch.Exit(2)
+		}
+	}
+	if noarch.Strcmp(IN_file, []byte("\x00\x00")) == 0 {
+		noarch.Fprintf(noarch.Stderr, []byte(" Please enter the  input data file name: \x00"))
+		sfrv = noarch.Scanf([]byte("%s\x00"), IN_file)
+		if sfrv != 1 {
+			sferr([]byte("IN_file\x00"))
+		}
+		noarch.Fprintf(noarch.Stderr, []byte(" Please enter the output data file name: \x00"))
+		sfrv = noarch.Scanf([]byte("%s\x00"), OUT_file)
+		if sfrv != 1 {
+			sferr([]byte("OUT_file\x00"))
+		}
+	}
 	if noarch.Strcmp(IN_file, []byte("\x00\x00")) != 0 && noarch.Strcmp(OUT_file, []byte("\x00\x00")) == 0 {
-		// if ( strcmp(IN_file,"\0") == 0 ) {
-		//  fprintf (stderr," Please enter the  input data file name: ");
-		//  sfrv=scanf("%s", IN_file );
-		//  if (sfrv != 1) sferr("IN_file");
-		//  fprintf (stderr," Please enter the output data file name: ");
-		//  sfrv=scanf("%s", OUT_file );
-		//  if (sfrv != 1) sferr("OUT_file");
-		// }
 		noarch.Strcpy(OUT_file, IN_file)
 		noarch.Strcat(OUT_file, []byte(".out\x00"))
 	}
 }
 
-// display_help - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:257
+// display_help - transpiled function from  GOPATH/History_frame3DD/src/frame3dd_io.c:255
 func display_help() {
 	//
 	// * DISPLAY_HELP -  display help information to stderr
@@ -2479,7 +2794,7 @@ func display_help() {
 	color(0)
 }
 
-// display_usage - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:306
+// display_usage - transpiled function from  GOPATH/History_frame3DD/src/frame3dd_io.c:304
 func display_usage() {
 	//
 	// * DISPLAY_USAGE -  display usage information to stderr
@@ -2495,7 +2810,7 @@ func display_usage() {
 	noarch.Fprintf(noarch.Stderr, []byte("  Type ...   frame3dd -h   ... for additional help information.\n\n\x00"))
 }
 
-// display_version - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:323
+// display_version - transpiled function from  GOPATH/History_frame3DD/src/frame3dd_io.c:321
 func display_version() {
 	//
 	// * DISPLAY_VERSION_HELP -  display version, website, and brief help info. to stderr
@@ -2509,7 +2824,7 @@ func display_version() {
 	noarch.Fprintf(noarch.Stderr, []byte("  Type ...   frame3dd -h   ... for additional help information.\n\n\x00"))
 }
 
-// display_version_about - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:341
+// display_version_about - transpiled function from  GOPATH/History_frame3DD/src/frame3dd_io.c:339
 func display_version_about() {
 	//
 	// * DISPLAY_VERSION_ABOUT-  display version and website to stderr for
@@ -2529,21 +2844,21 @@ func display_version_about() {
 	noarch.Fprintf(noarch.Stderr, []byte(" http://www.fsf.org/copyleft/gpl.html\n\x00"))
 }
 
-// read_node_data - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:358
+// read_node_data - transpiled function from  GOPATH/History_frame3DD/src/frame3dd_io.c:356
 func read_node_data(fp *noarch.File, nN int32, xyz []vec3, r []float32) {
+	//
+	// * READ_NODE_DATA  -  read node location data
+	// * 04 Jan 2009
+	//
 	var i int32
 	var j int32
 	var sfrv int32
+	// *scanf return value
 	var errMsg []byte = make([]byte, 512)
 	{
-		//
-		// * READ_NODE_DATA  -  read node location data
-		// * 04 Jan 2009
-		//
-		// *scanf return value
 		// read node coordinates
 		for i = 1; i <= nN; i++ {
-			sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[100000000]int32)(unsafe.Pointer(&j))[:])
+			sfrv = noarch.Fscanf(fp, []byte("%d\x00"), c4goUnsafeConvert_int32(&j))
 			if sfrv != 1 {
 				sferr([]byte("node number in node data\x00"))
 			}
@@ -2552,7 +2867,7 @@ func read_node_data(fp *noarch.File, nN int32, xyz []vec3, r []float32) {
 				errorMsg(errMsg)
 				noarch.Exit(41)
 			}
-			sfrv = noarch.Fscanf(fp, []byte("%f %f %f %f\x00\x00\x00\x00"), (*[100000000]float64)(unsafe.Pointer(&xyz[j].x))[:], (*[100000000]float64)(unsafe.Pointer(&xyz[j].y))[:], (*[100000000]float64)(unsafe.Pointer(&xyz[j].z))[:], r[j:])
+			sfrv = noarch.Fscanf(fp, []byte("%f %f %f %f\x00\x00\x00\x00"), (*[1000000]float64)(unsafe.Pointer(&xyz[j].x))[:], (*[1000000]float64)(unsafe.Pointer(&xyz[j].y))[:], (*[1000000]float64)(unsafe.Pointer(&xyz[j].z))[:], r[j:])
 			if sfrv != 4 {
 				sferr([]byte("node coordinates in node data\x00"))
 			}
@@ -2562,23 +2877,23 @@ func read_node_data(fp *noarch.File, nN int32, xyz []vec3, r []float32) {
 	}
 }
 
-// read_frame_element_data - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:385
+// read_frame_element_data - transpiled function from  GOPATH/History_frame3DD/src/frame3dd_io.c:383
 func read_frame_element_data(fp *noarch.File, nN int32, nE int32, xyz []vec3, r []float32, L []float64, Le []float64, N1 []int32, N2 []int32, Ax []float32, Asy []float32, Asz []float32, Jx []float32, Iy []float32, Iz []float32, E []float32, G []float32, p []float32, d []float32) {
+	//
+	// * READ_FRAME_ELEMENT_DATA  -  read frame element property data
+	// * 04 Jan 2009
+	//
 	var n1 int32
 	var n2 int32
 	var i int32
 	var n int32
 	var b int32
+	// vector of elements per node
 	var epn []int32
 	var epn0 int32
+	// *scanf return value
 	var sfrv int32
 	var errMsg []byte = make([]byte, 512)
-	//
-	// * READ_FRAME_ELEMENT_DATA  -  read frame element property data
-	// * 04 Jan 2009
-	//
-	// vector of elements per node
-	// *scanf return value
 	epn = ivector(1, nN)
 	for n = 1; n <= nN; n++ {
 		epn[n] = 0
@@ -2586,7 +2901,7 @@ func read_frame_element_data(fp *noarch.File, nN int32, nE int32, xyz []vec3, r 
 	{
 		// read frame element properties
 		for i = 1; i <= nE; i++ {
-			sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[100000000]int32)(unsafe.Pointer(&b))[:])
+			sfrv = noarch.Fscanf(fp, []byte("%d\x00"), c4goUnsafeConvert_int32(&b))
 			if sfrv != 1 {
 				sferr([]byte("frame element number in element data\x00"))
 			}
@@ -2698,56 +3013,56 @@ func read_frame_element_data(fp *noarch.File, nN int32, nE int32, xyz []vec3, r 
 	}
 }
 
-// read_run_data - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:519
+// read_run_data - transpiled function from  GOPATH/History_frame3DD/src/frame3dd_io.c:517
 func read_run_data(fp *noarch.File, OUT_file []byte, shear []int32, shear_flag int32, geom []int32, geom_flag int32, meshpath []byte, plotpath []byte, infcpath []byte, exagg_static []float64, exagg_flag float64, scale []float32, dx []float32, anlyz []int32, anlyz_flag int32, debug int32) {
-	var full_len int32
-	var len int32
-	var i int32
-	var base_file []byte = []byte("EMPTY_BASE\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00")
-	var mesh_file []byte = []byte("EMPTY_MESH\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00")
-	var sfrv int32
 	//
 	// * READ_RUN_DATA  -  read information for analysis
 	// * 29 Dec 2008
 	//
 	// output data file name
+	var full_len int32
+	var len_ int32
+	var i int32
+	var base_file []byte = []byte("EMPTY_BASE\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00")
+	var mesh_file []byte = []byte("EMPTY_MESH\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00")
 	// *scanf return value
+	var sfrv int32
 	noarch.Strcpy(base_file, OUT_file)
 	for int32(base_file[func() int32 {
 		defer func() {
-			len++
+			len_++
 		}()
-		return len
+		return len_
 	}()]) != int32('\x00') {
 	}
 	// the length of the base_file
-	full_len = len
+	full_len = len_
 	for int32(base_file[func() int32 {
 		defer func() {
-			len--
+			len_--
 		}()
-		return len
-	}()]) != int32('.') && len > 0 {
+		return len_
+	}()]) != int32('.') && len_ > 0 {
 	}
-	if len == 0 {
+	if len_ == 0 {
 		// find the last '.' in base_file
-		len = full_len
+		len_ = full_len
 	}
 	// end base_file at the last '.'
 	base_file[func() int32 {
-		len++
-		return len
+		len_++
+		return len_
 	}()] = '\x00'
 	noarch.Strcpy(plotpath, base_file)
 	noarch.Strcat(plotpath, []byte(".plt\x00"))
 	noarch.Strcpy(infcpath, base_file)
 	noarch.Strcat(infcpath, []byte(".if\x00"))
-	for int32(base_file[len]) != int32('/') && int32(base_file[len]) != int32('\\') && len > 0 {
+	for int32(base_file[len_]) != int32('/') && int32(base_file[len_]) != int32('\\') && len_ > 0 {
 		// find the last '/' or '\' in base_file
-		len--
+		len_--
 	}
 	i = 0
-	for int32(base_file[len]) != int32('\x00') {
+	for int32(base_file[len_]) != int32('\x00') {
 		mesh_file[func() int32 {
 			defer func() {
 				i++
@@ -2755,9 +3070,9 @@ func read_run_data(fp *noarch.File, OUT_file []byte, shear []int32, shear_flag i
 			return i
 		}()] = base_file[func() int32 {
 			defer func() {
-				len++
+				len_++
 			}()
-			return len
+			return len_
 		}()]
 	}
 	mesh_file[i] = '\x00'
@@ -2805,8 +3120,11 @@ func read_run_data(fp *noarch.File, OUT_file []byte, shear []int32, shear_flag i
 	}
 }
 
-// frame3dd_getline - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:612
+// frame3dd_getline - transpiled function from  GOPATH/History_frame3DD/src/frame3dd_io.c:610
 func frame3dd_getline(fp *noarch.File, s []byte, lim int32) int32 {
+	//
+	// * FRAME3DD_GETLINE -  get line into a character string. from K&R        03feb94
+	//
 	var c int32
 	var i int32
 	for func() int32 {
@@ -2816,9 +3134,6 @@ func frame3dd_getline(fp *noarch.File, s []byte, lim int32) int32 {
 		c = noarch.Fgetc(fp)
 		return c
 	}()) != -1 && c != int32('\n') {
-		//
-		// * FRAME3DD_GETLINE -  get line into a character string. from K&R        03feb94
-		//
 		s[func() int32 {
 			defer func() {
 				i++
@@ -2831,38 +3146,38 @@ func frame3dd_getline(fp *noarch.File, s []byte, lim int32) int32 {
 	return i
 }
 
-// sep - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:632
+// sep - transpiled function from  GOPATH/History_frame3DD/src/frame3dd_io.c:630
 // platform-dependent path sperator character ...
 var sep byte = '/'
 
-// temp_dir - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:640
+// temp_dir - transpiled function from  GOPATH/History_frame3DD/src/frame3dd_io.c:638
 func temp_dir() []byte {
-	var tmp []byte = []byte("/tmp\x00")
 	//
 	// * TEMP_DIR
 	// * return platform-specific temp file location --
 	// * John Pye, Feb 2009
 	//
 	// Linux, Unix, OS X
+	var tmp []byte = []byte("/tmp\x00")
 	return tmp
 }
 
-// output_path - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:665
-func output_path(fname []byte, fullpath []byte, len int32, default_outdir []byte) {
-	var res int32
+// output_path - transpiled function from  GOPATH/History_frame3DD/src/frame3dd_io.c:663
+func output_path(fname []byte, fullpath []byte, len_ int32, default_outdir []byte) {
 	//
 	// * OUTPUT_PATH
 	// * return path for output files using either current directory, or FRAME3DD_OUTDIR
 	// * if specified. --
 	// * John Pye, Feb 2009.
 	//
+	var res int32
+	_ = 4
 	func() {
-		if fname != nil {
+		if len(fname) != 0 {
 		} else {
-			linux.AssertFail([]byte("fname!=NULL\x00"), []byte("/home/konstantin/go/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c\x00"), 667, []byte("void output_path(const char *, char *, const int, const char *)\x00"))
+			__assert_fail([]byte("fname!=NULL\x00"), []byte("/mnt/hdd1/go/History_frame3DD/src/frame3dd_io.c\x00"), 665, []byte("void output_path(const char *, char *, const int, const char *)\x00"))
 		}
 	}()
-	var outdir []byte
 	//                           deprecated code, January 15 2010 ...
 	//   if ( fname[0]==sep ) { in Win32 absolute path starts with C:\ not \ ??
 	//                          // absolute output path specified
@@ -2871,9 +3186,10 @@ func output_path(fname []byte, fullpath []byte, len int32, default_outdir []byte
 	//   } else {
 	//
 	//    fprintf(stderr,"Generating output path for file '%s'\n",fname);
+	var outdir []byte
 	outdir = noarch.Getenv([]byte("FRAME3DD_OUTDIR\x00"))
-	if outdir == nil {
-		if default_outdir == nil {
+	if len(outdir) == 0 {
+		if len(default_outdir) == 0 {
 			outdir = temp_dir()
 		} else {
 			outdir = default_outdir
@@ -2881,7 +3197,7 @@ func output_path(fname []byte, fullpath []byte, len int32, default_outdir []byte
 	}
 	//  res = snprintf(fullpath,len,"%s%c%s",outdir,sep,fname);
 	res = noarch.Sprintf(fullpath, []byte("%s%c%s\x00"), outdir, int32(sep), fname)
-	if res > len {
+	if res > len_ {
 		//   closing bracket for deprecated code "if"
 		// }
 		//
@@ -2890,8 +3206,15 @@ func output_path(fname []byte, fullpath []byte, len int32, default_outdir []byte
 	}
 }
 
-// parse_input - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:706
+// parse_input - transpiled function from  GOPATH/History_frame3DD/src/frame3dd_io.c:704
 func parse_input(fp *noarch.File, tpath []byte) {
+	// printf("Output file path generated: %s\n",fullpath); /* debug */
+	//
+	// * PARSE_INPUT
+	// * strip comments from the input file, and write a stripped input file
+	// * 07 May 2003
+	//
+	// stripped input file pointer
 	var fpc *noarch.File
 	var line []byte = make([]byte, 256)
 	var errMsg []byte = make([]byte, 512)
@@ -2899,13 +3222,6 @@ func parse_input(fp *noarch.File, tpath []byte) {
 		fpc = noarch.Fopen(tpath, []byte("w\x00"))
 		return fpc
 	}()) == nil {
-		// printf("Output file path generated: %s\n",fullpath); /* debug */
-		//
-		// * PARSE_INPUT
-		// * strip comments from the input file, and write a stripped input file
-		// * 07 May 2003
-		//
-		// stripped input file pointer
 		noarch.Sprintf(errMsg, []byte("\n  error: cannot open parsed input data file: '%s' \n\x00"), tpath)
 		errorMsg(errMsg)
 		noarch.Exit(12)
@@ -2920,8 +3236,20 @@ func parse_input(fp *noarch.File, tpath []byte) {
 	noarch.Fclose(fpc)
 }
 
-// getline_no_comment - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:736
+// getline_no_comment - transpiled function from  GOPATH/History_frame3DD/src/frame3dd_io.c:734
 func getline_no_comment(fp *noarch.File, s []byte, lim int32) {
+	//
+	// * GETLINE_NO_COMMENT
+	// * get a line into a character string. from K&R
+	// * get the line only up to one of the following characters:  \n  %  #  ?
+	// * ignore all comma (,) characters
+	// * ignore all double quote (") characters
+	// * ignore all semi-colon (;) characters
+	// * 09 Feb 2009
+	//
+	//< pointer to the file from which to read
+	//< pointer to the string to which to write
+	//< the longest anticipated line length
 	var c int32
 	var i int32
 	for func() int32 {
@@ -2932,18 +3260,6 @@ func getline_no_comment(fp *noarch.File, s []byte, lim int32) {
 		return c
 	}()) != -1 && c != int32('\n') && c != int32('%') && c != int32('#') && c != int32('?') {
 		if c != int32(',') && c != int32('"') && c != int32(';') {
-			//
-			// * GETLINE_NO_COMMENT
-			// * get a line into a character string. from K&R
-			// * get the line only up to one of the following characters:  \n  %  #  ?
-			// * ignore all comma (,) characters
-			// * ignore all double quote (") characters
-			// * ignore all semi-colon (;) characters
-			// * 09 Feb 2009
-			//
-			//< pointer to the file from which to read
-			//< pointer to the string to which to write
-			//< the longest anticipated line length
 			s[func() int32 {
 				defer func() {
 					i++
@@ -2977,22 +3293,20 @@ func getline_no_comment(fp *noarch.File, s []byte, lim int32) {
 	}
 }
 
-// read_reaction_data - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:766
+// read_reaction_data - transpiled function from  GOPATH/History_frame3DD/src/frame3dd_io.c:764
 func read_reaction_data(fp *noarch.File, DoF int32, nN int32, nR []int32, q []int32, r []int32, sumR []int32, verbose int32) {
+	//
+	// * READ_REACTION_DATA - Read fixed node displacement boundary conditions
+	// * 29 Dec 2009
+	//
 	var i int32
 	var j int32
 	var l int32
+	// *scanf return value
 	var sfrv int32
 	var errMsg []byte = make([]byte, 512)
-	{
-		//
-		// * READ_REACTION_DATA - Read fixed node displacement boundary conditions
-		// * 29 Dec 2009
-		//
-		// *scanf return value
-		for i = 1; i <= DoF; i++ {
-			r[i] = 0
-		}
+	for i = 1; i <= DoF; i++ {
+		r[i] = 0
 	}
 	// read restrained degrees of freedom
 	sfrv = noarch.Fscanf(fp, []byte("%d\x00"), nR)
@@ -3013,7 +3327,7 @@ func read_reaction_data(fp *noarch.File, DoF int32, nN int32, nR []int32, q []in
 		noarch.Exit(80)
 	}
 	for i = 1; i <= nR[0]; i++ {
-		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[100000000]int32)(unsafe.Pointer(&j))[:])
+		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), c4goUnsafeConvert_int32(&j))
 		if sfrv != 1 {
 			sferr([]byte("node number in reaction data\x00"))
 		}
@@ -3066,8 +3380,20 @@ func read_reaction_data(fp *noarch.File, DoF int32, nN int32, nR []int32, q []in
 	}
 }
 
-// read_and_assemble_loads - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:846
+// read_and_assemble_loads - transpiled function from  GOPATH/History_frame3DD/src/frame3dd_io.c:844
 func read_and_assemble_loads(fp *noarch.File, nN int32, nE int32, nL int32, DoF int32, xyz []vec3, L []float64, Le []float64, J1 []int32, J2 []int32, Ax []float32, Asy []float32, Asz []float32, Iy []float32, Iz []float32, E []float32, G []float32, p []float32, d []float32, gX []float32, gY []float32, gZ []float32, r []int32, shear int32, nF []int32, nU []int32, nW []int32, nP []int32, nT []int32, nD []int32, Q [][]float64, F_temp [][]float64, F_mech [][]float64, Fo []float64, U [][][]float32, W [][][]float32, P [][][]float32, T [][][]float32, Dp [][]float32, eqF_mech [][][]float64, eqF_temp [][][]float64, verbose int32) {
+	//
+	// * READ_AND_ASSEMBLE_LOADS
+	// * Read load information data, assemble load vectors in global coordinates
+	// * Returns vector of equivalent loadal forces F_temp and F_mech and
+	// * a matrix of equivalent element end forces eqF_temp and eqF_mech from
+	// * distributed internal and temperature loadings.
+	// * eqF_temp and eqF_mech are computed for the global coordinate system
+	// * 2008-09-09, 2015-05-15
+	//
+	// equivalent mech loads, global coord
+	// equivalent temp loads, global coord
+	// section dimensions in local coords
 	var hy float32
 	var hz float32
 	var x1 float32
@@ -3079,6 +3405,7 @@ func read_and_assemble_loads(fp *noarch.File, nN int32, nE int32, nL int32, DoF 
 	var R2o float64
 	var f01 float64
 	var f02 float64
+	// equivalent element end forces from distributed and thermal loads
 	var Nx1 float64
 	var Vy1 float64
 	var Vz1 float64
@@ -3091,6 +3418,7 @@ func read_and_assemble_loads(fp *noarch.File, nN int32, nE int32, nL int32, DoF 
 	var Mx2 float64
 	var My2 float64
 	var Mz2 float64
+	// shear deformatn coefficients
 	var Ksy float64
 	var Ksz float64
 	var a float64
@@ -3104,6 +3432,8 @@ func read_and_assemble_loads(fp *noarch.File, nN int32, nE int32, nL int32, DoF 
 	var t7 float64
 	var t8 float64
 	var t9 float64
+	// point load locations
+	// 3D coord Xfrm coeffs
 	var i int32
 	var j int32
 	var l int32
@@ -3111,26 +3441,10 @@ func read_and_assemble_loads(fp *noarch.File, nN int32, nE int32, nL int32, DoF 
 	var n int32
 	var n1 int32
 	var n2 int32
+	// *scanf return value
 	var sfrv int32
 	var errMsg []byte = make([]byte, 512)
 	{
-		//
-		// * READ_AND_ASSEMBLE_LOADS
-		// * Read load information data, assemble load vectors in global coordinates
-		// * Returns vector of equivalent loadal forces F_temp and F_mech and
-		// * a matrix of equivalent element end forces eqF_temp and eqF_mech from
-		// * distributed internal and temperature loadings.
-		// * eqF_temp and eqF_mech are computed for the global coordinate system
-		// * 2008-09-09, 2015-05-15
-		//
-		// equivalent mech loads, global coord
-		// equivalent temp loads, global coord
-		// section dimensions in local coords
-		// equivalent element end forces from distributed and thermal loads
-		// shear deformatn coefficients
-		// point load locations
-		// 3D coord Xfrm coeffs
-		// *scanf return value
 		// initialize load data vectors and matrices to zero
 		for j = 1; j <= DoF; j++ {
 			Fo[j] = 0
@@ -3180,7 +3494,7 @@ func read_and_assemble_loads(fp *noarch.File, nN int32, nE int32, nL int32, DoF 
 			for n = 1; n <= nE; n++ {
 				n1 = J1[n]
 				n2 = J2[n]
-				coord_trans(xyz, L[n], n1, n2, (*[100000000]float64)(unsafe.Pointer(&t1))[:], (*[100000000]float64)(unsafe.Pointer(&t2))[:], (*[100000000]float64)(unsafe.Pointer(&t3))[:], (*[100000000]float64)(unsafe.Pointer(&t4))[:], (*[100000000]float64)(unsafe.Pointer(&t5))[:], (*[100000000]float64)(unsafe.Pointer(&t6))[:], (*[100000000]float64)(unsafe.Pointer(&t7))[:], (*[100000000]float64)(unsafe.Pointer(&t8))[:], (*[100000000]float64)(unsafe.Pointer(&t9))[:], p[n])
+				coord_trans(xyz, L[n], n1, n2, c4goUnsafeConvert_float64(&t1), c4goUnsafeConvert_float64(&t2), c4goUnsafeConvert_float64(&t3), c4goUnsafeConvert_float64(&t4), c4goUnsafeConvert_float64(&t5), c4goUnsafeConvert_float64(&t6), c4goUnsafeConvert_float64(&t7), c4goUnsafeConvert_float64(&t8), c4goUnsafeConvert_float64(&t9), p[n])
 				eqF_mech[lc][n][1] = float64(d[n]*Ax[n]) * L[n] * float64(gX[lc]) / 2
 				eqF_mech[lc][n][2] = float64(d[n]*Ax[n]) * L[n] * float64(gY[lc]) / 2
 				eqF_mech[lc][n][3] = float64(d[n]*Ax[n]) * L[n] * float64(gZ[lc]) / 2
@@ -3216,7 +3530,7 @@ func read_and_assemble_loads(fp *noarch.File, nN int32, nE int32, nL int32, DoF 
 			{
 				// ! global structural coordinates !
 				for i = 1; i <= nF[lc]; i++ {
-					sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[100000000]int32)(unsafe.Pointer(&j))[:])
+					sfrv = noarch.Fscanf(fp, []byte("%d\x00"), c4goUnsafeConvert_int32(&j))
 					if sfrv != 1 {
 						sferr([]byte("node value in point load data\x00"))
 					}
@@ -3258,7 +3572,7 @@ func read_and_assemble_loads(fp *noarch.File, nN int32, nE int32, nL int32, DoF 
 			{
 				// ! local element coordinates !
 				for i = 1; i <= nU[lc]; i++ {
-					sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[100000000]int32)(unsafe.Pointer(&n))[:])
+					sfrv = noarch.Fscanf(fp, []byte("%d\x00"), c4goUnsafeConvert_int32(&n))
 					if sfrv != 1 {
 						sferr([]byte("frame element number in uniform load data\x00"))
 					}
@@ -3295,7 +3609,7 @@ func read_and_assemble_loads(fp *noarch.File, nN int32, nE int32, nL int32, DoF 
 					//
 					n1 = J1[n]
 					n2 = J2[n]
-					coord_trans(xyz, L[n], n1, n2, (*[100000000]float64)(unsafe.Pointer(&t1))[:], (*[100000000]float64)(unsafe.Pointer(&t2))[:], (*[100000000]float64)(unsafe.Pointer(&t3))[:], (*[100000000]float64)(unsafe.Pointer(&t4))[:], (*[100000000]float64)(unsafe.Pointer(&t5))[:], (*[100000000]float64)(unsafe.Pointer(&t6))[:], (*[100000000]float64)(unsafe.Pointer(&t7))[:], (*[100000000]float64)(unsafe.Pointer(&t8))[:], (*[100000000]float64)(unsafe.Pointer(&t9))[:], p[n])
+					coord_trans(xyz, L[n], n1, n2, c4goUnsafeConvert_float64(&t1), c4goUnsafeConvert_float64(&t2), c4goUnsafeConvert_float64(&t3), c4goUnsafeConvert_float64(&t4), c4goUnsafeConvert_float64(&t5), c4goUnsafeConvert_float64(&t6), c4goUnsafeConvert_float64(&t7), c4goUnsafeConvert_float64(&t8), c4goUnsafeConvert_float64(&t9), p[n])
 					// debugging ... check coordinate transform coefficients
 					//  printf("t1=%5.2f t2=%5.2f t3=%5.2f \n", t1, t2, t3 );
 					//  printf("t4=%5.2f t5=%5.2f t6=%5.2f \n", t4, t5, t6 );
@@ -3343,7 +3657,7 @@ func read_and_assemble_loads(fp *noarch.File, nN int32, nE int32, nL int32, DoF 
 			{
 				// ! local element coordinates !
 				for i = 1; i <= nW[lc]; i++ {
-					sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[100000000]int32)(unsafe.Pointer(&n))[:])
+					sfrv = noarch.Fscanf(fp, []byte("%d\x00"), c4goUnsafeConvert_int32(&n))
 					if sfrv != 1 {
 						sferr([]byte("frame element number in trapezoidal load data\x00"))
 					}
@@ -3456,7 +3770,7 @@ func read_and_assemble_loads(fp *noarch.File, nN int32, nE int32, nL int32, DoF 
 					//
 					n1 = J1[n]
 					n2 = J2[n]
-					coord_trans(xyz, Ln, n1, n2, (*[100000000]float64)(unsafe.Pointer(&t1))[:], (*[100000000]float64)(unsafe.Pointer(&t2))[:], (*[100000000]float64)(unsafe.Pointer(&t3))[:], (*[100000000]float64)(unsafe.Pointer(&t4))[:], (*[100000000]float64)(unsafe.Pointer(&t5))[:], (*[100000000]float64)(unsafe.Pointer(&t6))[:], (*[100000000]float64)(unsafe.Pointer(&t7))[:], (*[100000000]float64)(unsafe.Pointer(&t8))[:], (*[100000000]float64)(unsafe.Pointer(&t9))[:], p[n])
+					coord_trans(xyz, Ln, n1, n2, c4goUnsafeConvert_float64(&t1), c4goUnsafeConvert_float64(&t2), c4goUnsafeConvert_float64(&t3), c4goUnsafeConvert_float64(&t4), c4goUnsafeConvert_float64(&t5), c4goUnsafeConvert_float64(&t6), c4goUnsafeConvert_float64(&t7), c4goUnsafeConvert_float64(&t8), c4goUnsafeConvert_float64(&t9), p[n])
 					// debugging ... check coordinate transformation coefficients
 					//  printf("t1=%5.2f t2=%5.2f t3=%5.2f \n", t1, t2, t3 );
 					//  printf("t4=%5.2f t5=%5.2f t6=%5.2f \n", t4, t5, t6 );
@@ -3509,7 +3823,7 @@ func read_and_assemble_loads(fp *noarch.File, nN int32, nE int32, nL int32, DoF 
 			{
 				// ! local element coordinates !
 				for i = 1; i <= nP[lc]; i++ {
-					sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[100000000]int32)(unsafe.Pointer(&n))[:])
+					sfrv = noarch.Fscanf(fp, []byte("%d\x00"), c4goUnsafeConvert_int32(&n))
 					if sfrv != 1 {
 						sferr([]byte("frame element number value point load data\x00"))
 					}
@@ -3554,7 +3868,7 @@ func read_and_assemble_loads(fp *noarch.File, nN int32, nE int32, nL int32, DoF 
 					Mz2 = -(1/(1+Ksz))*float64(P[lc][i][3])*a*a*b/(Ln*Ln) - Ksz/(1+Ksz)*float64(P[lc][i][3])*a*b/(2*Ln)
 					n1 = J1[n]
 					n2 = J2[n]
-					coord_trans(xyz, Ln, n1, n2, (*[100000000]float64)(unsafe.Pointer(&t1))[:], (*[100000000]float64)(unsafe.Pointer(&t2))[:], (*[100000000]float64)(unsafe.Pointer(&t3))[:], (*[100000000]float64)(unsafe.Pointer(&t4))[:], (*[100000000]float64)(unsafe.Pointer(&t5))[:], (*[100000000]float64)(unsafe.Pointer(&t6))[:], (*[100000000]float64)(unsafe.Pointer(&t7))[:], (*[100000000]float64)(unsafe.Pointer(&t8))[:], (*[100000000]float64)(unsafe.Pointer(&t9))[:], p[n])
+					coord_trans(xyz, Ln, n1, n2, c4goUnsafeConvert_float64(&t1), c4goUnsafeConvert_float64(&t2), c4goUnsafeConvert_float64(&t3), c4goUnsafeConvert_float64(&t4), c4goUnsafeConvert_float64(&t5), c4goUnsafeConvert_float64(&t6), c4goUnsafeConvert_float64(&t7), c4goUnsafeConvert_float64(&t8), c4goUnsafeConvert_float64(&t9), p[n])
 					// {F} = [T]'{Q}
 					eqF_mech[lc][n][1] += Nx1*t1 + Vy1*t4 + Vz1*t7
 					eqF_mech[lc][n][2] += Nx1*t2 + Vy1*t5 + Vz1*t8
@@ -3592,7 +3906,7 @@ func read_and_assemble_loads(fp *noarch.File, nN int32, nE int32, nL int32, DoF 
 			{
 				// ! local element coordinates !
 				for i = 1; i <= nT[lc]; i++ {
-					sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[100000000]int32)(unsafe.Pointer(&n))[:])
+					sfrv = noarch.Fscanf(fp, []byte("%d\x00"), c4goUnsafeConvert_int32(&n))
 					if sfrv != 1 {
 						sferr([]byte("frame element number in temperature load data\x00"))
 					}
@@ -3630,7 +3944,7 @@ func read_and_assemble_loads(fp *noarch.File, nN int32, nE int32, nL int32, DoF 
 					Mz2 = -Mz1
 					n1 = J1[n]
 					n2 = J2[n]
-					coord_trans(xyz, L[n], n1, n2, (*[100000000]float64)(unsafe.Pointer(&t1))[:], (*[100000000]float64)(unsafe.Pointer(&t2))[:], (*[100000000]float64)(unsafe.Pointer(&t3))[:], (*[100000000]float64)(unsafe.Pointer(&t4))[:], (*[100000000]float64)(unsafe.Pointer(&t5))[:], (*[100000000]float64)(unsafe.Pointer(&t6))[:], (*[100000000]float64)(unsafe.Pointer(&t7))[:], (*[100000000]float64)(unsafe.Pointer(&t8))[:], (*[100000000]float64)(unsafe.Pointer(&t9))[:], p[n])
+					coord_trans(xyz, L[n], n1, n2, c4goUnsafeConvert_float64(&t1), c4goUnsafeConvert_float64(&t2), c4goUnsafeConvert_float64(&t3), c4goUnsafeConvert_float64(&t4), c4goUnsafeConvert_float64(&t5), c4goUnsafeConvert_float64(&t6), c4goUnsafeConvert_float64(&t7), c4goUnsafeConvert_float64(&t8), c4goUnsafeConvert_float64(&t9), p[n])
 					// {F} = [T]'{Q}
 					eqF_temp[lc][n][1] += Nx1*t1 + Vy1*t4 + Vz1*t7
 					eqF_temp[lc][n][2] += Nx1*t2 + Vy1*t5 + Vz1*t8
@@ -3688,7 +4002,7 @@ func read_and_assemble_loads(fp *noarch.File, nN int32, nE int32, nL int32, DoF 
 				noarch.Fprintf(noarch.Stdout, []byte(" nD = %3d\n\x00"), nD[lc])
 			}
 			for i = 1; i <= nD[lc]; i++ {
-				sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[100000000]int32)(unsafe.Pointer(&j))[:])
+				sfrv = noarch.Fscanf(fp, []byte("%d\x00"), c4goUnsafeConvert_int32(&j))
 				if sfrv != 1 {
 					sferr([]byte("node number value in prescribed displacement data\x00"))
 				}
@@ -3709,8 +4023,12 @@ func read_and_assemble_loads(fp *noarch.File, nN int32, nE int32, nL int32, DoF 
 	// end load-case loop
 }
 
-// read_mass_data - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:1465
+// read_mass_data - transpiled function from  GOPATH/History_frame3DD/src/frame3dd_io.c:1463
 func read_mass_data(fp *noarch.File, OUT_file []byte, nN int32, nE int32, nI []int32, nX []int32, d []float32, EMs []float32, NMs []float32, NMx []float32, NMy []float32, NMz []float32, L []float64, Ax []float32, total_mass []float64, struct_mass []float64, nM []int32, Mmethod []int32, modal_flag int32, lump []int32, lump_flag int32, tol []float64, tol_flag float64, shift []float64, shift_flag float64, exagg_modal []float64, modepath []byte, anim []int32, pan []float32, pan_flag float32, verbose int32, debug int32) {
+	//
+	// * READ_MASS_DATA  -  read element densities and extra inertial mass data 16aug01
+	//
+	// double ms = 0.0;
 	var i int32
 	var j int32
 	var jnt int32
@@ -3718,17 +4036,13 @@ func read_mass_data(fp *noarch.File, OUT_file []byte, nN int32, nE int32, nI []i
 	var b int32
 	var nA int32
 	var full_len int32
-	var len int32
+	var len_ int32
+	// *scanf return value
 	var sfrv int32
 	var base_file []byte = []byte("EMPTY_BASE\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00")
 	var mode_file []byte = []byte("EMPTY_MODE\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00")
 	var errMsg []byte = make([]byte, 512)
 	struct_mass[0] = 0
-	//
-	// * READ_MASS_DATA  -  read element densities and extra inertial mass data 16aug01
-	//
-	//                     double ms = 0.0;
-	// *scanf return value
 	total_mass[0] = struct_mass[0]
 	sfrv = noarch.Fscanf(fp, []byte("%d\x00"), nM)
 	if sfrv != 1 {
@@ -3797,7 +4111,7 @@ func read_mass_data(fp *noarch.File, OUT_file []byte, nN int32, nE int32, nI []i
 		noarch.Fprintf(noarch.Stdout, []byte(" nI = %3d\n\x00"), nI[0])
 	}
 	for j = 1; j <= nI[0]; j++ {
-		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[100000000]int32)(unsafe.Pointer(&jnt))[:])
+		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), c4goUnsafeConvert_int32(&jnt))
 		if sfrv != 1 {
 			sferr([]byte("node value in extra node mass data\x00"))
 		}
@@ -3829,7 +4143,7 @@ func read_mass_data(fp *noarch.File, OUT_file []byte, nN int32, nE int32, nI []i
 		}
 	}
 	for m = 1; m <= nX[0]; m++ {
-		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[100000000]int32)(unsafe.Pointer(&b))[:])
+		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), c4goUnsafeConvert_int32(&b))
 		if sfrv != 1 {
 			sferr([]byte("element number in extra element mass data\x00"))
 		}
@@ -3870,7 +4184,7 @@ func read_mass_data(fp *noarch.File, OUT_file []byte, nN int32, nE int32, nI []i
 		dots(noarch.Stdout, 41)
 		noarch.Fprintf(noarch.Stdout, []byte("  %12.4e\n\x00"), total_mass[0])
 	}
-	sfrv = noarch.Fscanf(fp, []byte("%d\x00"), (*[100000000]int32)(unsafe.Pointer(&nA))[:])
+	sfrv = noarch.Fscanf(fp, []byte("%d\x00"), c4goUnsafeConvert_int32(&nA))
 	if sfrv != 1 {
 		sferr([]byte("nA value in mode animation data\x00"))
 	}
@@ -3906,35 +4220,35 @@ func read_mass_data(fp *noarch.File, OUT_file []byte, nN int32, nE int32, nI []i
 	noarch.Strcpy(base_file, OUT_file)
 	for int32(base_file[func() int32 {
 		defer func() {
-			len++
+			len_++
 		}()
-		return len
+		return len_
 	}()]) != int32('\x00') {
 	}
 	// the length of the base_file
-	full_len = len
+	full_len = len_
 	for int32(base_file[func() int32 {
 		defer func() {
-			len--
+			len_--
 		}()
-		return len
-	}()]) != int32('.') && len > 0 {
+		return len_
+	}()]) != int32('.') && len_ > 0 {
 	}
-	if len == 0 {
+	if len_ == 0 {
 		// find the last '.' in base_file
-		len = full_len
+		len_ = full_len
 	}
 	// end base_file at the last '.'
 	base_file[func() int32 {
-		len++
-		return len
+		len_++
+		return len_
 	}()] = '\x00'
-	for int32(base_file[len]) != int32('/') && int32(base_file[len]) != int32('\\') && len > 0 {
+	for int32(base_file[len_]) != int32('/') && int32(base_file[len_]) != int32('\\') && len_ > 0 {
 		// find the last '/' or '\' in base_file
-		len--
+		len_--
 	}
 	i = 0
-	for int32(base_file[len]) != int32('\x00') {
+	for int32(base_file[len_]) != int32('\x00') {
 		mode_file[func() int32 {
 			defer func() {
 				i++
@@ -3942,9 +4256,9 @@ func read_mass_data(fp *noarch.File, OUT_file []byte, nN int32, nE int32, nI []i
 			return i
 		}()] = base_file[func() int32 {
 			defer func() {
-				len++
+				len_++
 			}()
-			return len
+			return len_
 		}()]
 	}
 	mode_file[i] = '\x00'
@@ -3952,20 +4266,20 @@ func read_mass_data(fp *noarch.File, OUT_file []byte, nN int32, nE int32, nI []i
 	output_path(mode_file, modepath, 512, nil)
 }
 
-// read_condensation_data - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:1668
+// read_condensation_data - transpiled function from  GOPATH/History_frame3DD/src/frame3dd_io.c:1666
 func read_condensation_data(fp *noarch.File, nN int32, nM int32, nC []int32, Cdof []int32, Cmethod []int32, condense_flag int32, c []int32, m []int32, verbose int32) {
+	//
+	// * READ_CONDENSE   -  read matrix condensation information          30aug01
+	//
 	var i int32
 	var j int32
 	var k int32
 	var cm [][]int32
+	// *scanf return value
 	var sfrv int32
 	var errMsg []byte = make([]byte, 512)
 	Cdof[0] = 0
 	nC[0] = Cdof[0]
-	//
-	// * READ_CONDENSE   -  read matrix condensation information          30aug01
-	//
-	// *scanf return value
 	Cmethod[0] = nC[0]
 	if (func() int32 {
 		sfrv = noarch.Fscanf(fp, []byte("%d\x00"), Cmethod)
@@ -4076,18 +4390,18 @@ func read_condensation_data(fp *noarch.File, nN int32, nM int32, nC []int32, Cdo
 	free_imatrix(cm, 1, nC[0], 1, 7)
 }
 
-// write_input_data - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:1773
+// write_input_data - transpiled function from  GOPATH/History_frame3DD/src/frame3dd_io.c:1771
 func write_input_data(fp *noarch.File, title []byte, nN int32, nE int32, nL int32, nD []int32, nR int32, nF []int32, nU []int32, nW []int32, nP []int32, nT []int32, xyz []vec3, r []float32, J1 []int32, J2 []int32, Ax []float32, Asy []float32, Asz []float32, Jx []float32, Iy []float32, Iz []float32, E []float32, G []float32, p []float32, d []float32, gX []float32, gY []float32, gZ []float32, Ft [][]float64, Fm [][]float64, Dp [][]float32, R []int32, U [][][]float32, W [][][]float32, P [][][]float32, T [][][]float32, shear int32, anlyz int32, geom int32) {
+	//
+	// * WRITE_INPUT_DATA  -  save input data     07nov02
+	//
 	var i int32
 	var j int32
 	var n int32
 	var lc int32
-	var now noarch.TimeT
-	//
-	// * WRITE_INPUT_DATA  -  save input data     07nov02
-	//
 	// modern time variable type
-	_ = noarch.Time((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:])
+	var now noarch.TimeT
+	_ = noarch.Time((*[1000000]noarch.TimeT)(unsafe.Pointer(&now))[:])
 	for i = 1; i <= 80; i++ {
 		noarch.Fprintf(fp, []byte("_\x00"))
 	}
@@ -4105,7 +4419,7 @@ func write_input_data(fp *noarch.File, title []byte, nN int32, nE int32, nL int3
 	}
 	noarch.Fprintf(fp, []byte("\n\n\x00"))
 	noarch.Fprintf(fp, []byte("%s\n\x00"), title)
-	noarch.Fprintf(fp, []byte("%s\x00"), noarch.Ctime((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:]))
+	noarch.Fprintf(fp, []byte("%s\x00"), noarch.Ctime((*[1000000]noarch.TimeT)(unsafe.Pointer(&now))[:]))
 	for i = 1; i <= 80; i++ {
 		noarch.Fprintf(fp, []byte("_\x00"))
 	}
@@ -4199,7 +4513,7 @@ func write_input_data(fp *noarch.File, title []byte, nN int32, nE int32, nL int3
 				noarch.Fprintf(fp, []byte("\t\t\t\t\t\t(local)\n\x00"))
 				noarch.Fprintf(fp, []byte("  Elmnt       Ux               Uy               Uz\n\x00"))
 				for n = 1; n <= nU[lc]; n++ {
-					noarch.Fprintf(fp, []byte(" %5d\x00"), int32((U[lc][n][1])))
+					noarch.Fprintf(fp, []byte(" %5d\x00"), int32(U[lc][n][1]))
 					for i = 2; i <= 4; i++ {
 						noarch.Fprintf(fp, []byte(" %16.8f\x00"), float64(U[lc][n][i]))
 					}
@@ -4211,17 +4525,17 @@ func write_input_data(fp *noarch.File, title []byte, nN int32, nE int32, nL int3
 				noarch.Fprintf(fp, []byte("\t\t\t\t\t(local)\n\x00"))
 				noarch.Fprintf(fp, []byte("  Elmnt       x1               x2               W1               W2\n\x00"))
 				for n = 1; n <= nW[lc]; n++ {
-					noarch.Fprintf(fp, []byte(" %5d\x00"), int32((W[lc][n][1])))
+					noarch.Fprintf(fp, []byte(" %5d\x00"), int32(W[lc][n][1]))
 					for i = 2; i <= 5; i++ {
 						noarch.Fprintf(fp, []byte(" %16.8f\x00"), float64(W[lc][n][i]))
 					}
 					noarch.Fprintf(fp, []byte("  (x)\n\x00"))
-					noarch.Fprintf(fp, []byte(" %5d\x00"), int32((W[lc][n][1])))
+					noarch.Fprintf(fp, []byte(" %5d\x00"), int32(W[lc][n][1]))
 					for i = 6; i <= 9; i++ {
 						noarch.Fprintf(fp, []byte(" %16.8f\x00"), float64(W[lc][n][i]))
 					}
 					noarch.Fprintf(fp, []byte("  (y)\n\x00"))
-					noarch.Fprintf(fp, []byte(" %5d\x00"), int32((W[lc][n][1])))
+					noarch.Fprintf(fp, []byte(" %5d\x00"), int32(W[lc][n][1]))
 					for i = 10; i <= 13; i++ {
 						noarch.Fprintf(fp, []byte(" %16.8f\x00"), float64(W[lc][n][i]))
 					}
@@ -4233,7 +4547,7 @@ func write_input_data(fp *noarch.File, title []byte, nN int32, nE int32, nL int3
 				noarch.Fprintf(fp, []byte("\t\t\t\t(local)\n\x00"))
 				noarch.Fprintf(fp, []byte("  Elmnt       Px          Py          Pz          x\n\x00"))
 				for n = 1; n <= nP[lc]; n++ {
-					noarch.Fprintf(fp, []byte(" %5d\x00"), int32((P[lc][n][1])))
+					noarch.Fprintf(fp, []byte(" %5d\x00"), int32(P[lc][n][1]))
 					for i = 2; i <= 5; i++ {
 						noarch.Fprintf(fp, []byte(" %11.3f\x00"), float64(P[lc][n][i]))
 					}
@@ -4246,7 +4560,7 @@ func write_input_data(fp *noarch.File, title []byte, nN int32, nE int32, nL int3
 				noarch.Fprintf(fp, []byte("  Elmnt     coef      hy        hz\x00"))
 				noarch.Fprintf(fp, []byte("        Ty+       Ty-       Tz+       Tz-\n\x00"))
 				for n = 1; n <= nT[lc]; n++ {
-					noarch.Fprintf(fp, []byte(" %5d\x00"), int32((T[lc][n][1])))
+					noarch.Fprintf(fp, []byte(" %5d\x00"), int32(T[lc][n][1]))
 					noarch.Fprintf(fp, []byte(" %9.2e\x00"), float64(T[lc][n][2]))
 					for i = 3; i <= 8; i++ {
 						noarch.Fprintf(fp, []byte(" %9.3f\x00"), float64(T[lc][n][i]))
@@ -4282,17 +4596,17 @@ func write_input_data(fp *noarch.File, title []byte, nN int32, nE int32, nL int3
 	noarch.Fflush(fp)
 }
 
-// write_static_results - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:1964
+// write_static_results - transpiled function from  GOPATH/History_frame3DD/src/frame3dd_io.c:1962
 func write_static_results(fp *noarch.File, nN int32, nE int32, nL int32, lc int32, DoF int32, J1 []int32, J2 []int32, F []float64, D []float64, R []float64, r []int32, Q [][]float64, err float64, ok int32, axial_sign int32) {
+	//
+	// * WRITE_STATIC_RESULTS -  save node displacements and frame element end forces
+	// * 09 Sep 2008 , 2015-05-15
+	//
 	var disp float64
 	var i int32
 	var j int32
 	var n int32
 	if ok < 0 {
-		//
-		// * WRITE_STATIC_RESULTS -  save node displacements and frame element end forces
-		// * 09 Sep 2008 , 2015-05-15
-		//
 		noarch.Fprintf(fp, []byte("  * The Stiffness Matrix is not positive-definite *\n\x00"))
 		noarch.Fprintf(fp, []byte("    Check that all six rigid-body translations are restrained\n\x00"))
 		noarch.Fprintf(fp, []byte("    If geometric stiffness is included, reduce the loads.\n\x00"))
@@ -4337,7 +4651,7 @@ func write_static_results(fp *noarch.File, nN int32, nE int32, nL int32, lc int3
 		if Q[n][1] <= -0.0001 && axial_sign != 0 {
 			noarch.Fprintf(fp, []byte("t\x00"))
 		}
-		if noarch.NotInt32(axial_sign) != 0 {
+		if noarch.Not(axial_sign) {
 			noarch.Fprintf(fp, []byte(" \x00"))
 		}
 		for i = 2; i <= 6; i++ {
@@ -4360,7 +4674,7 @@ func write_static_results(fp *noarch.File, nN int32, nE int32, nL int32, lc int3
 		if Q[n][7] <= -0.0001 && axial_sign != 0 {
 			noarch.Fprintf(fp, []byte("c\x00"))
 		}
-		if noarch.NotInt32(axial_sign) != 0 {
+		if noarch.Not(axial_sign) {
 			noarch.Fprintf(fp, []byte(" \x00"))
 		}
 		for i = 8; i <= 12; i++ {
@@ -4393,15 +4707,15 @@ func write_static_results(fp *noarch.File, nN int32, nE int32, nL int32, lc int3
 	noarch.Fflush(fp)
 }
 
-// CSV_filename - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:2058
+// CSV_filename - transpiled function from  GOPATH/History_frame3DD/src/frame3dd_io.c:2056
 func CSV_filename(CSV_file []byte, wa []byte, OUT_file []byte, lc int32) {
-	var i int32
-	var j int32
 	//
 	// * CSV_filename - return the file name for the .CSV file and
 	// * whether the file should be written or appended (wa)
 	// * 1 Nov 2015
 	//
+	var i int32
+	var j int32
 	i = 0
 	j = 0
 	for i < 128 {
@@ -4425,23 +4739,23 @@ func CSV_filename(CSV_file []byte, wa []byte, OUT_file []byte, lc int32) {
 	wa[1] = '\x00'
 }
 
-// write_static_csv - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:2093
+// write_static_csv - transpiled function from  GOPATH/History_frame3DD/src/frame3dd_io.c:2091
 func write_static_csv(OUT_file []byte, title []byte, nN int32, nE int32, nL int32, lc int32, DoF int32, J1 []int32, J2 []int32, F []float64, D []float64, R []float64, r []int32, Q [][]float64, err float64, ok int32) {
+	// fprintf(stderr," 1. CSV_file = %s  wa = %s \n", CSV_file, wa );
+	//
+	// * WRITE_STATIC_CSV -  save node displacements and frame element end forces
+	// * 31 Dec 2008
+	//
 	var fpcsv *noarch.File
 	var i int32
 	var j int32
 	var n int32
 	var wa []byte = make([]byte, 4)
 	var CSV_file []byte = make([]byte, 128)
+	// modern time variable type
 	var now noarch.TimeT
 	var errMsg []byte = make([]byte, 512)
-	// fprintf(stderr," 1. CSV_file = %s  wa = %s \n", CSV_file, wa );
-	//
-	// * WRITE_STATIC_CSV -  save node displacements and frame element end forces
-	// * 31 Dec 2008
-	//
-	// modern time variable type
-	_ = noarch.Time((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:])
+	_ = noarch.Time((*[1000000]noarch.TimeT)(unsafe.Pointer(&now))[:])
 	CSV_filename(CSV_file, wa, OUT_file, lc)
 	if (func() *noarch.File {
 		fpcsv = noarch.Fopen(CSV_file, wa)
@@ -4462,7 +4776,7 @@ func write_static_csv(OUT_file []byte, title []byte, nN int32, nE int32, nL int3
 		//www.fsf.org/copyleft/gpl.html\"\n");
 		noarch.Fprintf(fpcsv, []byte(" http://www.fsf.org/copyleft/gpl.html\"\n\x00"))
 		noarch.Fprintf(fpcsv, []byte("\" %s \"\n\x00"), title)
-		noarch.Fprintf(fpcsv, []byte("\" %s \"\n\x00"), noarch.Ctime((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:]))
+		noarch.Fprintf(fpcsv, []byte("\" %s \"\n\x00"), noarch.Ctime((*[1000000]noarch.TimeT)(unsafe.Pointer(&now))[:]))
 		noarch.Fprintf(fpcsv, []byte("\" .CSV formatted results of Frame3DD analysis \"\n\x00"))
 		noarch.Fprintf(fpcsv, []byte("\n , Load Case , Displacements , End Forces , Reactions , Internal Forces \n\x00"))
 		for i = 1; i <= nL; i++ {
@@ -4545,16 +4859,8 @@ func write_static_csv(OUT_file []byte, title []byte, nN int32, nE int32, nL int3
 	noarch.Fclose(fpcsv)
 }
 
-// write_static_mfile - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:2248
+// write_static_mfile - transpiled function from  GOPATH/History_frame3DD/src/frame3dd_io.c:2246
 func write_static_mfile(OUT_file []byte, title []byte, nN int32, nE int32, nL int32, lc int32, DoF int32, J1 []int32, J2 []int32, F []float64, D []float64, R []float64, r []int32, Q [][]float64, err float64, ok int32) {
-	var fpm *noarch.File
-	var i int32
-	var j int32
-	var n int32
-	var wa []byte
-	var M_file []byte = make([]byte, 128)
-	var now noarch.TimeT
-	var errMsg []byte = make([]byte, 512)
 	//
 	// * WRITE_VALUE - write a value in %f or %e notation depending on numerical values
 	// * and the number of available significant figures
@@ -4582,8 +4888,16 @@ func write_static_mfile(OUT_file []byte, title []byte, nN int32, nE int32, nL in
 	// * this function interacts with frame_3dd.m, an m-file interface to frame3dd
 	// * 09 Sep 2008
 	//
+	var fpm *noarch.File
+	var i int32
+	var j int32
+	var n int32
+	var wa []byte
+	var M_file []byte = make([]byte, 128)
 	// modern time variable type
-	_ = noarch.Time((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:])
+	var now noarch.TimeT
+	var errMsg []byte = make([]byte, 512)
+	_ = noarch.Time((*[1000000]noarch.TimeT)(unsafe.Pointer(&now))[:])
 	i = 0
 	j = 0
 	for i < 128 {
@@ -4623,7 +4937,7 @@ func write_static_mfile(OUT_file []byte, title []byte, nN int32, nE int32, nL in
 		//www.fsf.org/copyleft/gpl.html\n");
 		noarch.Fprintf(fpm, []byte(" http://www.fsf.org/copyleft/gpl.html\n\x00"))
 		noarch.Fprintf(fpm, []byte("%% %s\n\x00"), title)
-		noarch.Fprintf(fpm, []byte("%% %s\x00"), noarch.Ctime((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:]))
+		noarch.Fprintf(fpm, []byte("%% %s\x00"), noarch.Ctime((*[1000000]noarch.TimeT)(unsafe.Pointer(&now))[:]))
 		noarch.Fprintf(fpm, []byte("%% m-file formatted results of frame3dd analysis\n\x00"))
 		noarch.Fprintf(fpm, []byte("%% to be read by frame_3dd.m\n\x00"))
 	}
@@ -4694,7 +5008,7 @@ func write_static_mfile(OUT_file []byte, title []byte, nN int32, nE int32, nL in
 	for j = 1; j <= nN; j++ {
 		i = 6 * (j - 1)
 		for i = 5; i >= 0; i-- {
-			if noarch.NotInt32(r[6*j-i]) != 0 || math.Abs(R[6*j-i]) < 0.0001 {
+			if noarch.Not(r[6*j-i]) || math.Abs(R[6*j-i]) < 0.0001 {
 				noarch.Fprintf(fpm, []byte("\t0.0\t\x00"))
 			} else {
 				noarch.Fprintf(fpm, []byte("\t%13.6e\x00"), R[6*j-i])
@@ -4711,8 +5025,22 @@ func write_static_mfile(OUT_file []byte, title []byte, nN int32, nE int32, nL in
 	noarch.Fclose(fpm)
 }
 
-// peak_internal_forces - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:2387
+// peak_internal_forces - transpiled function from  GOPATH/History_frame3DD/src/frame3dd_io.c:2385
 func peak_internal_forces(lc int32, nL int32, xyz []vec3, Q [][]float64, nN int32, nE int32, L []float64, N1 []int32, N2 []int32, Ax []float32, Asy []float32, Asz []float32, Jx []float32, Iy []float32, Iz []float32, E []float32, G []float32, p []float32, d []float32, gX float32, gY float32, gZ float32, nU int32, U [][]float32, nW int32, W [][]float32, nP int32, P [][]float32, D []float64, shear int32, dx float32, pkNx [][]float64, pkVy [][]float64, pkVz [][]float64, pkTx [][]float64, pkMy [][]float64, pkMz [][]float64, pkDx [][]float64, pkDy [][]float64, pkDz [][]float64, pkRx [][]float64, pkSy [][]float64, pkSz [][]float64) {
+	//
+	// * PEAK_INTERNAL_FORCES
+	// * calculate frame element internal forces, Nx, Vy, Vz, Tx, My, Mz
+	// * calculate frame element local displacements, Rx, Dx, Dy, Dz
+	// * return the peak values of the internal forces, moments, slopes, and displacements
+	// * 18jun13
+	//
+	// load case number
+	// total number of load cases
+	// node locations
+	// x-axis increment along frame element
+	// vectors of peak forces, moments, displacements and slopes
+	// for each frame element, for load case "lc"
+	// coord transformation
 	var t1 float64
 	var t2 float64
 	var t3 float64
@@ -4728,6 +5056,14 @@ func peak_internal_forces(lc int32, nL int32, xyz []vec3, Q [][]float64, nN int3
 	var u4 float64
 	var u5 float64
 	var u6 float64
+	var u7 float64
+	var u8 float64
+	var u9 float64
+	var u10 float64
+	var u11 float64
+	var u12 float64
+	// displ.
+	// trapz load data, local x dir
 	var xx1 float64
 	var xx2 float64
 	var wx1 float64
@@ -4740,6 +5076,9 @@ func peak_internal_forces(lc int32, nL int32, xyz []vec3, Q [][]float64, nN int3
 	var xz2 float64
 	var wz1 float64
 	var wz2 float64
+	// trapz load data, local y dir
+	// trapz load data, local z dir
+	// distributed loads in local coords at x[i]
 	var wx float64
 	var wy float64
 	var wz float64
@@ -4751,7 +5090,12 @@ func peak_internal_forces(lc int32, nL int32, xyz []vec3, Q [][]float64, nN int3
 	var wzg float64
 	var tx float64
 	var tx_ float64
+	// distributed loads in local coords at x[i-1]
+	// gravity loads in local x, y, z coord's
+	// distributed torque about local x coord
+	// location of internal point loads
 	var xp float64
+	// distance along frame element
 	var x float64
 	var Nx_ float64
 	var Nx float64
@@ -4773,6 +5117,16 @@ func peak_internal_forces(lc int32, nL int32, xyz []vec3, Q [][]float64, nN int3
 	var Dy float64
 	var Dz float64
 	var Rx float64
+	// underscored "_" variables correspond to x=(i-1)*dx;
+	// non-underscored variables correspond to x=i*dx;
+	// axial force within frame el.
+	// shear forces within frame el.
+	// torsional moment within frame el.
+	// bending moments within frame el.
+	// transverse slopes of frame el.
+	// frame el. displ. in local x,y,z, dir's
+	// twist rotation about the local x-axis
+	// frame element number
 	var n int32
 	var m int32
 	var nx int32 = 1000
@@ -4783,46 +5137,11 @@ func peak_internal_forces(lc int32, nL int32, xyz []vec3, Q [][]float64, nN int3
 	var n1 int32
 	var n2 int32
 	var i1 int32
+	var i2 int32
 	if float64(dx) == -1 {
-		//
-		// * PEAK_INTERNAL_FORCES
-		// * calculate frame element internal forces, Nx, Vy, Vz, Tx, My, Mz
-		// * calculate frame element local displacements, Rx, Dx, Dy, Dz
-		// * return the peak values of the internal forces, moments, slopes, and displacements
-		// * 18jun13
-		//
-		// load case number
-		// total number of load cases
-		// node locations
-		// x-axis increment along frame element
-		// vectors of peak forces, moments, displacements and slopes
-		// for each frame element, for load case "lc"
-		// coord transformation
-		//, u7, u8, u9, u10, u11, u12
-		// displ.
-		// trapz load data, local x dir
-		// trapz load data, local y dir
-		// trapz load data, local z dir
-		// distributed loads in local coords at x[i]
-		// distributed loads in local coords at x[i-1]
-		// gravity loads in local x, y, z coord's
-		// distributed torque about local x coord
-		// location of internal point loads
-		// distance along frame element
-		// underscored "_" variables correspond to x=(i-1)*dx;
-		// non-underscored variables correspond to x=i*dx;
-		// axial force within frame el.
-		// shear forces within frame el.
-		// torsional moment within frame el.
-		// bending moments within frame el.
-		// transverse slopes of frame el.
-		// frame el. displ. in local x,y,z, dir's
-		// twist rotation about the local x-axis
-		// frame element number
 		// number of sections alont x axis
 		// counters for U, W, and P loads
 		// counter along x axis from node N1 to node N2
-		//,i2
 		// starting and stopping node numbers
 		// skip calculation of internal forces and displ
 		return
@@ -4854,7 +5173,7 @@ func peak_internal_forces(lc int32, nL int32, xyz []vec3, Q [][]float64, nN int3
 			dx = float32(L[m] / float64(float32(nx)))
 			// no need to allocate memory for interior force or displacement data
 			// find interior axial force, shear forces, torsion and bending moments
-			coord_trans(xyz, L[m], n1, n2, (*[100000000]float64)(unsafe.Pointer(&t1))[:], (*[100000000]float64)(unsafe.Pointer(&t2))[:], (*[100000000]float64)(unsafe.Pointer(&t3))[:], (*[100000000]float64)(unsafe.Pointer(&t4))[:], (*[100000000]float64)(unsafe.Pointer(&t5))[:], (*[100000000]float64)(unsafe.Pointer(&t6))[:], (*[100000000]float64)(unsafe.Pointer(&t7))[:], (*[100000000]float64)(unsafe.Pointer(&t8))[:], (*[100000000]float64)(unsafe.Pointer(&t9))[:], p[m])
+			coord_trans(xyz, L[m], n1, n2, c4goUnsafeConvert_float64(&t1), c4goUnsafeConvert_float64(&t2), c4goUnsafeConvert_float64(&t3), c4goUnsafeConvert_float64(&t4), c4goUnsafeConvert_float64(&t5), c4goUnsafeConvert_float64(&t6), c4goUnsafeConvert_float64(&t7), c4goUnsafeConvert_float64(&t8), c4goUnsafeConvert_float64(&t9), p[m])
 			// distributed gravity load in local x, y, z coordinates
 			wxg = float64(d[m]*Ax[m]) * (t1*float64(gX) + t2*float64(gY) + t3*float64(gZ))
 			wyg = float64(d[m]*Ax[m]) * (t4*float64(gX) + t5*float64(gY) + t6*float64(gZ))
@@ -4890,8 +5209,8 @@ func peak_internal_forces(lc int32, nL int32, xyz []vec3, Q [][]float64, nN int3
 			Mz = -Q[m][6]
 			// positive Mz -> positive x-y curvature
 			Mz_ = Mz
-			// i2 = 6*(n2-1);
 			i1 = 6 * (n1 - 1)
+			i2 = 6 * (n2 - 1)
 			// compute end deflections in local coordinates
 			u1 = t1*D[i1+1] + t2*D[i1+2] + t3*D[i1+3]
 			u2 = t4*D[i1+1] + t5*D[i1+2] + t6*D[i1+3]
@@ -4899,13 +5218,12 @@ func peak_internal_forces(lc int32, nL int32, xyz []vec3, Q [][]float64, nN int3
 			u4 = t1*D[i1+4] + t2*D[i1+5] + t3*D[i1+6]
 			u5 = t4*D[i1+4] + t5*D[i1+5] + t6*D[i1+6]
 			u6 = t7*D[i1+4] + t8*D[i1+5] + t9*D[i1+6]
-			// u7  = t1*D[i2+1] + t2*D[i2+2] + t3*D[i2+3];
-			// u8  = t4*D[i2+1] + t5*D[i2+2] + t6*D[i2+3];
-			// u9  = t7*D[i2+1] + t8*D[i2+2] + t9*D[i2+3];
-			//
-			// u10 = t1*D[i2+4] + t2*D[i2+5] + t3*D[i2+6];
-			// u11 = t4*D[i2+4] + t5*D[i2+5] + t6*D[i2+6];
-			// u12 = t7*D[i2+4] + t8*D[i2+5] + t9*D[i2+6];
+			u7 = t1*D[i2+1] + t2*D[i2+2] + t3*D[i2+3]
+			u8 = t4*D[i2+1] + t5*D[i2+2] + t6*D[i2+3]
+			u9 = t7*D[i2+1] + t8*D[i2+2] + t9*D[i2+3]
+			u10 = t1*D[i2+4] + t2*D[i2+5] + t3*D[i2+6]
+			u11 = t4*D[i2+4] + t5*D[i2+5] + t6*D[i2+6]
+			u12 = t7*D[i2+4] + t8*D[i2+5] + t9*D[i2+6]
 			// rotations and displacements for frame element "m" at (x=0)
 			// displacement in  local x dir  at node N1
 			Dx = u1
@@ -5030,78 +5348,66 @@ func peak_internal_forces(lc int32, nL int32, xyz []vec3, Q [][]float64, nN int3
 					Sz_ = Sz
 					// update the peak forces, moments, slopes and displacements
 					// and their locations along the frame element
-					pkNx[lc][m] = func() float64 {
-						if math.Abs(Nx) > pkNx[lc][m] {
-							return math.Abs(Nx)
-						}
-						return pkNx[lc][m]
-					}()
-					pkVy[lc][m] = func() float64 {
-						if math.Abs(Vy) > pkVy[lc][m] {
-							return math.Abs(Vy)
-						}
-						return pkVy[lc][m]
-					}()
-					pkVz[lc][m] = func() float64 {
-						if math.Abs(Vz) > pkVz[lc][m] {
-							return math.Abs(Vz)
-						}
-						return pkVz[lc][m]
-					}()
-					pkTx[lc][m] = func() float64 {
-						if math.Abs(Tx) > pkTx[lc][m] {
-							return math.Abs(Tx)
-						}
-						return pkTx[lc][m]
-					}()
-					pkMy[lc][m] = func() float64 {
-						if math.Abs(My) > pkMy[lc][m] {
-							return math.Abs(My)
-						}
-						return pkMy[lc][m]
-					}()
-					pkMz[lc][m] = func() float64 {
-						if math.Abs(Mz) > pkMz[lc][m] {
-							return math.Abs(Mz)
-						}
-						return pkMz[lc][m]
-					}()
-					pkDx[lc][m] = func() float64 {
-						if math.Abs(Dx) > pkDx[lc][m] {
-							return math.Abs(Dx)
-						}
-						return pkDx[lc][m]
-					}()
-					pkDy[lc][m] = func() float64 {
-						if math.Abs(Dy) > pkDy[lc][m] {
-							return math.Abs(Dy)
-						}
-						return pkDy[lc][m]
-					}()
-					pkDz[lc][m] = func() float64 {
-						if math.Abs(Dz) > pkDz[lc][m] {
-							return math.Abs(Dz)
-						}
-						return pkDz[lc][m]
-					}()
-					pkRx[lc][m] = func() float64 {
-						if math.Abs(Rx) > pkRx[lc][m] {
-							return math.Abs(Rx)
-						}
-						return pkRx[lc][m]
-					}()
-					pkSy[lc][m] = func() float64 {
-						if math.Abs(Sy) > pkSy[lc][m] {
-							return math.Abs(Sy)
-						}
-						return pkSy[lc][m]
-					}()
-					pkSz[lc][m] = func() float64 {
-						if math.Abs(Sz) > pkSz[lc][m] {
-							return math.Abs(Sz)
-						}
-						return pkSz[lc][m]
-					}()
+					if math.Abs(Nx) > pkNx[lc][m] {
+						pkNx[lc][m] = math.Abs(Nx)
+					} else {
+						pkNx[lc][m] = pkNx[lc][m]
+					}
+					if math.Abs(Vy) > pkVy[lc][m] {
+						pkVy[lc][m] = math.Abs(Vy)
+					} else {
+						pkVy[lc][m] = pkVy[lc][m]
+					}
+					if math.Abs(Vz) > pkVz[lc][m] {
+						pkVz[lc][m] = math.Abs(Vz)
+					} else {
+						pkVz[lc][m] = pkVz[lc][m]
+					}
+					if math.Abs(Tx) > pkTx[lc][m] {
+						pkTx[lc][m] = math.Abs(Tx)
+					} else {
+						pkTx[lc][m] = pkTx[lc][m]
+					}
+					if math.Abs(My) > pkMy[lc][m] {
+						pkMy[lc][m] = math.Abs(My)
+					} else {
+						pkMy[lc][m] = pkMy[lc][m]
+					}
+					if math.Abs(Mz) > pkMz[lc][m] {
+						pkMz[lc][m] = math.Abs(Mz)
+					} else {
+						pkMz[lc][m] = pkMz[lc][m]
+					}
+					if math.Abs(Dx) > pkDx[lc][m] {
+						pkDx[lc][m] = math.Abs(Dx)
+					} else {
+						pkDx[lc][m] = pkDx[lc][m]
+					}
+					if math.Abs(Dy) > pkDy[lc][m] {
+						pkDy[lc][m] = math.Abs(Dy)
+					} else {
+						pkDy[lc][m] = pkDy[lc][m]
+					}
+					if math.Abs(Dz) > pkDz[lc][m] {
+						pkDz[lc][m] = math.Abs(Dz)
+					} else {
+						pkDz[lc][m] = pkDz[lc][m]
+					}
+					if math.Abs(Rx) > pkRx[lc][m] {
+						pkRx[lc][m] = math.Abs(Rx)
+					} else {
+						pkRx[lc][m] = pkRx[lc][m]
+					}
+					if math.Abs(Sy) > pkSy[lc][m] {
+						pkSy[lc][m] = math.Abs(Sy)
+					} else {
+						pkSy[lc][m] = pkSy[lc][m]
+					}
+					if math.Abs(Sz) > pkSz[lc][m] {
+						pkSz[lc][m] = math.Abs(Sz)
+					} else {
+						pkSz[lc][m] = pkSz[lc][m]
+					}
 				}
 			}
 		}
@@ -5135,8 +5441,16 @@ func peak_internal_forces(lc int32, nL int32, xyz []vec3, Q [][]float64, nN int3
 	}
 }
 
-// write_internal_forces - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:2674
-func write_internal_forces(OUT_file []byte, fp *noarch.File, infcpath []byte, lc int32, nL int32, title []byte, dx float32, xyz []vec3, Q [][]float64, nN int32, nE int32, L []float64, J1 []int32, J2 []int32, Ax []float32, Asy []float32, Asz []float32, Jx []float32, Iy []float32, Iz []float32, E []float32, G []float32, p []float32, d []float32, gX float32, gY float32, gZ float32, nU int32, U [][]float32, nW int32, W [][]float32, nP int32, P [][]float32, D []float64, shear int32, error float64) {
+// write_internal_forces - transpiled function from  GOPATH/History_frame3DD/src/frame3dd_io.c:2672
+func write_internal_forces(OUT_file []byte, fp *noarch.File, infcpath []byte, lc int32, nL int32, title []byte, dx float32, xyz []vec3, Q [][]float64, nN int32, nE int32, L []float64, J1 []int32, J2 []int32, Ax []float32, Asy []float32, Asz []float32, Jx []float32, Iy []float32, Iz []float32, E []float32, G []float32, p []float32, d []float32, gX float32, gY float32, gZ float32, nU int32, U [][]float32, nW int32, W [][]float32, nP int32, P [][]float32, D []float64, shear int32, error_ float64) {
+	//
+	// * WRITE_INTERNAL_FORCES -
+	// * calculate frame element internal forces, Nx, Vy, Vz, Tx, My, Mz
+	// * calculate frame element local displacements, Rx, Dx, Dy, Dz
+	// * write internal forces and local displacements to an output data file
+	// * 4jan10, 7mar11, 21jan14
+	//
+	// coord transformation
 	var t1 float64
 	var t2 float64
 	var t3 float64
@@ -5158,6 +5472,8 @@ func write_internal_forces(OUT_file []byte, fp *noarch.File, infcpath []byte, lc
 	var u10 float64
 	var u11 float64
 	var u12 float64
+	// displ.
+	// trapz load data, local x dir
 	var xx1 float64
 	var xx2 float64
 	var wx1 float64
@@ -5170,6 +5486,9 @@ func write_internal_forces(OUT_file []byte, fp *noarch.File, infcpath []byte, lc
 	var xz2 float64
 	var wz1 float64
 	var wz2 float64
+	// trapz load data, local y dir
+	// trapz load data, local z dir
+	// distributed loads in local coords at x[i]
 	var wx float64
 	var wy float64
 	var wz float64
@@ -5181,7 +5500,12 @@ func write_internal_forces(OUT_file []byte, fp *noarch.File, infcpath []byte, lc
 	var wzg float64
 	var tx float64
 	var tx_ float64
+	// distributed loads in local coords at x[i-1]
+	// gravity loads in local x, y, z coord's
+	// distributed torque about local x coord
+	// location of internal point loads
 	var xp float64
+	// distance along frame element
 	var x []float64
 	var dx_ float64
 	var dxnx float64
@@ -5197,6 +5521,14 @@ func write_internal_forces(OUT_file []byte, fp *noarch.File, infcpath []byte, lc
 	var Dy []float64
 	var Dz []float64
 	var Rx []float64
+	// axial force within frame el.
+	// shear forces within frame el.
+	// torsional moment within frame el.
+	// bending moments within frame el.
+	// transverse slopes of frame el.
+	// frame el. displ. in local x,y,z, dir's
+	// twist rotation about the local x-axis
+	//  maximum internal forces
 	var maxNx float64
 	var maxVy float64
 	var maxVz float64
@@ -5209,6 +5541,10 @@ func write_internal_forces(OUT_file []byte, fp *noarch.File, infcpath []byte, lc
 	var maxRx float64
 	var maxSy float64
 	var maxSz float64
+	//  maximum internal moments
+	//  maximum element displacements
+	//  maximum element rotations
+	//  minimum internal forces
 	var minNx float64
 	var minVy float64
 	var minVz float64
@@ -5221,6 +5557,10 @@ func write_internal_forces(OUT_file []byte, fp *noarch.File, infcpath []byte, lc
 	var minRx float64
 	var minSy float64
 	var minSz float64
+	//  minimum internal moments
+	//  minimum element displacements
+	//  minimum element rotations
+	// frame element number
 	var n int32
 	var m int32
 	var cU int32
@@ -5232,60 +5572,26 @@ func write_internal_forces(OUT_file []byte, fp *noarch.File, infcpath []byte, lc
 	var n2 int32
 	var i1 int32
 	var i2 int32
+	// counters for U, W, and P loads
+	// number of sections alont x axis
+	// starting and stopping node no's
+	// file name    for internal force data
 	var fnif []byte = make([]byte, 128)
 	var CSV_file []byte = make([]byte, 128)
 	var errMsg []byte = make([]byte, 512)
+	// indicate 'write' or 'append' to file
 	var wa []byte = make([]byte, 4)
+	// file pointer for internal force data
 	var fpif *noarch.File
 	var fpcsv *noarch.File
+	// file pointer to .CSV output data file
+	// modern time variable type
 	var now noarch.TimeT
 	if float64(dx) == -1 {
-		//
-		// * WRITE_INTERNAL_FORCES -
-		// * calculate frame element internal forces, Nx, Vy, Vz, Tx, My, Mz
-		// * calculate frame element local displacements, Rx, Dx, Dy, Dz
-		// * write internal forces and local displacements to an output data file
-		// * 4jan10, 7mar11, 21jan14
-		//
-		// coord transformation
-		// displ.
-		// trapz load data, local x dir
-		// trapz load data, local y dir
-		// trapz load data, local z dir
-		// distributed loads in local coords at x[i]
-		// distributed loads in local coords at x[i-1]
-		// gravity loads in local x, y, z coord's
-		// distributed torque about local x coord
-		// location of internal point loads
-		// distance along frame element
-		// axial force within frame el.
-		// shear forces within frame el.
-		// torsional moment within frame el.
-		// bending moments within frame el.
-		// transverse slopes of frame el.
-		// frame el. displ. in local x,y,z, dir's
-		// twist rotation about the local x-axis
-		//  maximum internal forces
-		//  maximum internal moments
-		//  maximum element displacements
-		//  maximum element rotations
-		//  minimum internal forces
-		//  minimum internal moments
-		//  minimum element displacements
-		//  minimum element rotations
-		// frame element number
-		// counters for U, W, and P loads
-		// number of sections alont x axis
-		// starting and stopping node no's
-		// file name    for internal force data
-		// indicate 'write' or 'append' to file
-		// file pointer for internal force data
-		// file pointer to .CSV output data file
-		// modern time variable type
 		// skip calculation of internal forces and displ
 		return
 	}
-	_ = noarch.Time((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:])
+	_ = noarch.Time((*[1000000]noarch.TimeT)(unsafe.Pointer(&now))[:])
 	CSV_filename(CSV_file, wa, OUT_file, lc)
 	if (func() *noarch.File {
 		fpcsv = noarch.Fopen(CSV_file, []byte("a\x00"))
@@ -5311,7 +5617,7 @@ func write_internal_forces(OUT_file []byte, fp *noarch.File, infcpath []byte, lc
 	noarch.Fprintf(fpif, []byte(" VERSION %s \n\x00"), []byte("20140514+\x00"))
 	noarch.Fprintf(fpif, []byte("# %s\n\x00"), title)
 	noarch.Fprintf(fpif, []byte("# %s\n\x00"), fnif)
-	noarch.Fprintf(fpif, []byte("# %s\x00"), noarch.Ctime((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:]))
+	noarch.Fprintf(fpif, []byte("# %s\x00"), noarch.Ctime((*[1000000]noarch.TimeT)(unsafe.Pointer(&now))[:]))
 	noarch.Fprintf(fpif, []byte("# L O A D  C A S E   %d  of   %d \n\x00"), lc, nL)
 	noarch.Fprintf(fpif, []byte("# F R A M E   E L E M E N T   I N T E R N A L   F O R C E S (local)\n\x00"))
 	noarch.Fprintf(fpif, []byte("# F R A M E   E L E M E N T   T R A N S V E R S E   D I S P L A C E M E N T S (local)\n\n\x00"))
@@ -5368,7 +5674,7 @@ func write_internal_forces(OUT_file []byte, fp *noarch.File, infcpath []byte, lc
 			noarch.Fprintf(fpif, []byte("#\tElmnt\tN1\tN2        \tX1        \tY1        \tZ1        \tX2        \tY2        \tZ2\tnx\n\x00"))
 			noarch.Fprintf(fpif, []byte("# @\t%5d\t%5d\t%5d\t%14.6e\t%14.6e\t%14.6e\t%14.6e\t%14.6e\t%14.6e\t%5d\n\x00"), m, n1, n2, xyz[n1].x, xyz[n1].y, xyz[n1].z, xyz[n2].x, xyz[n2].y, xyz[n2].z, nx+1)
 			// find interior axial force, shear forces, torsion and bending moments
-			coord_trans(xyz, L[m], n1, n2, (*[100000000]float64)(unsafe.Pointer(&t1))[:], (*[100000000]float64)(unsafe.Pointer(&t2))[:], (*[100000000]float64)(unsafe.Pointer(&t3))[:], (*[100000000]float64)(unsafe.Pointer(&t4))[:], (*[100000000]float64)(unsafe.Pointer(&t5))[:], (*[100000000]float64)(unsafe.Pointer(&t6))[:], (*[100000000]float64)(unsafe.Pointer(&t7))[:], (*[100000000]float64)(unsafe.Pointer(&t8))[:], (*[100000000]float64)(unsafe.Pointer(&t9))[:], p[m])
+			coord_trans(xyz, L[m], n1, n2, c4goUnsafeConvert_float64(&t1), c4goUnsafeConvert_float64(&t2), c4goUnsafeConvert_float64(&t3), c4goUnsafeConvert_float64(&t4), c4goUnsafeConvert_float64(&t5), c4goUnsafeConvert_float64(&t6), c4goUnsafeConvert_float64(&t7), c4goUnsafeConvert_float64(&t8), c4goUnsafeConvert_float64(&t9), p[m])
 			// distributed gravity load in local x, y, z coordinates
 			wxg = float64(d[m]*Ax[m]) * (t1*float64(gX) + t2*float64(gY) + t3*float64(gZ))
 			wyg = float64(d[m]*Ax[m]) * (t4*float64(gX) + t5*float64(gY) + t6*float64(gZ))
@@ -5581,12 +5887,10 @@ func write_internal_forces(OUT_file []byte, fp *noarch.File, infcpath []byte, lc
 				}
 			}
 			if shear != 0 {
-				{
-					// add-in slope due to shear deformation
-					for i = 0; i <= nx; i++ {
-						Sy[i] += Vy[i] / float64(G[m]*Asy[m])
-						Sz[i] += Vz[i] / float64(G[m]*Asz[m])
-					}
+				// add-in slope due to shear deformation
+				for i = 0; i <= nx; i++ {
+					Sy[i] += Vy[i] / float64(G[m]*Asy[m])
+					Sz[i] += Vz[i] / float64(G[m]*Asz[m])
 				}
 			}
 			// displacement along frame element "m"
@@ -5637,155 +5941,131 @@ func write_internal_forces(OUT_file []byte, fp *noarch.File, infcpath []byte, lc
 			{
 				// find maximum and minimum internal element forces
 				for i = 1; i <= nx; i++ {
-					maxNx = func() float64 {
-						if Nx[i] > maxNx {
-							return Nx[i]
-						}
-						return maxNx
-					}()
-					minNx = func() float64 {
-						if Nx[i] < minNx {
-							return Nx[i]
-						}
-						return minNx
-					}()
-					maxVy = func() float64 {
-						if Vy[i] > maxVy {
-							return Vy[i]
-						}
-						return maxVy
-					}()
-					minVy = func() float64 {
-						if Vy[i] < minVy {
-							return Vy[i]
-						}
-						return minVy
-					}()
-					maxVz = func() float64 {
-						if Vz[i] > maxVz {
-							return Vz[i]
-						}
-						return maxVz
-					}()
-					minVz = func() float64 {
-						if Vz[i] < minVz {
-							return Vz[i]
-						}
-						return minVz
-					}()
-					maxTx = func() float64 {
-						if Tx[i] > maxTx {
-							return Tx[i]
-						}
-						return maxTx
-					}()
-					minTx = func() float64 {
-						if Tx[i] < minTx {
-							return Tx[i]
-						}
-						return minTx
-					}()
-					maxMy = func() float64 {
-						if My[i] > maxMy {
-							return My[i]
-						}
-						return maxMy
-					}()
-					minMy = func() float64 {
-						if My[i] < minMy {
-							return My[i]
-						}
-						return minMy
-					}()
-					maxMz = func() float64 {
-						if Mz[i] > maxMz {
-							return Mz[i]
-						}
-						return maxMz
-					}()
-					minMz = func() float64 {
-						if Mz[i] < minMz {
-							return Mz[i]
-						}
-						return minMz
-					}()
+					if Nx[i] > maxNx {
+						maxNx = Nx[i]
+					} else {
+						maxNx = maxNx
+					}
+					if Nx[i] < minNx {
+						minNx = Nx[i]
+					} else {
+						minNx = minNx
+					}
+					if Vy[i] > maxVy {
+						maxVy = Vy[i]
+					} else {
+						maxVy = maxVy
+					}
+					if Vy[i] < minVy {
+						minVy = Vy[i]
+					} else {
+						minVy = minVy
+					}
+					if Vz[i] > maxVz {
+						maxVz = Vz[i]
+					} else {
+						maxVz = maxVz
+					}
+					if Vz[i] < minVz {
+						minVz = Vz[i]
+					} else {
+						minVz = minVz
+					}
+					if Tx[i] > maxTx {
+						maxTx = Tx[i]
+					} else {
+						maxTx = maxTx
+					}
+					if Tx[i] < minTx {
+						minTx = Tx[i]
+					} else {
+						minTx = minTx
+					}
+					if My[i] > maxMy {
+						maxMy = My[i]
+					} else {
+						maxMy = maxMy
+					}
+					if My[i] < minMy {
+						minMy = My[i]
+					} else {
+						minMy = minMy
+					}
+					if Mz[i] > maxMz {
+						maxMz = Mz[i]
+					} else {
+						maxMz = maxMz
+					}
+					if Mz[i] < minMz {
+						minMz = Mz[i]
+					} else {
+						minMz = minMz
+					}
 				}
 			}
 			{
 				// find maximum and minimum internal element displacements
 				for i = 1; i <= nx; i++ {
-					maxDx = func() float64 {
-						if Dx[i] > maxDx {
-							return Dx[i]
-						}
-						return maxDx
-					}()
-					minDx = func() float64 {
-						if Dx[i] < minDx {
-							return Dx[i]
-						}
-						return minDx
-					}()
-					maxDy = func() float64 {
-						if Dy[i] > maxDy {
-							return Dy[i]
-						}
-						return maxDy
-					}()
-					minDy = func() float64 {
-						if Dy[i] < minDy {
-							return Dy[i]
-						}
-						return minDy
-					}()
-					maxDz = func() float64 {
-						if Dz[i] > maxDz {
-							return Dz[i]
-						}
-						return maxDz
-					}()
-					minDz = func() float64 {
-						if Dz[i] < minDz {
-							return Dz[i]
-						}
-						return minDz
-					}()
-					maxRx = func() float64 {
-						if Rx[i] > maxRx {
-							return Rx[i]
-						}
-						return maxRx
-					}()
-					minRx = func() float64 {
-						if Rx[i] < minRx {
-							return Rx[i]
-						}
-						return minRx
-					}()
-					maxSy = func() float64 {
-						if Sy[i] > maxSy {
-							return Sy[i]
-						}
-						return maxSy
-					}()
-					minSy = func() float64 {
-						if Sy[i] < minSy {
-							return Sy[i]
-						}
-						return minSy
-					}()
-					maxSz = func() float64 {
-						if Sz[i] > maxSz {
-							return Sz[i]
-						}
-						return maxSz
-					}()
-					minSz = func() float64 {
-						if Sz[i] < minSz {
-							return Sz[i]
-						}
-						return minSz
-					}()
+					if Dx[i] > maxDx {
+						maxDx = Dx[i]
+					} else {
+						maxDx = maxDx
+					}
+					if Dx[i] < minDx {
+						minDx = Dx[i]
+					} else {
+						minDx = minDx
+					}
+					if Dy[i] > maxDy {
+						maxDy = Dy[i]
+					} else {
+						maxDy = maxDy
+					}
+					if Dy[i] < minDy {
+						minDy = Dy[i]
+					} else {
+						minDy = minDy
+					}
+					if Dz[i] > maxDz {
+						maxDz = Dz[i]
+					} else {
+						maxDz = maxDz
+					}
+					if Dz[i] < minDz {
+						minDz = Dz[i]
+					} else {
+						minDz = minDz
+					}
+					if Rx[i] > maxRx {
+						maxRx = Rx[i]
+					} else {
+						maxRx = maxRx
+					}
+					if Rx[i] < minRx {
+						minRx = Rx[i]
+					} else {
+						minRx = minRx
+					}
+					if Sy[i] > maxSy {
+						maxSy = Sy[i]
+					} else {
+						maxSy = maxSy
+					}
+					if Sy[i] < minSy {
+						minSy = Sy[i]
+					} else {
+						minSy = minSy
+					}
+					if Sz[i] > maxSz {
+						maxSz = Sz[i]
+					} else {
+						maxSz = maxSz
+					}
+					if Sz[i] < minSz {
+						minSz = Sz[i]
+					} else {
+						minSz = minSz
+					}
 				}
 			}
 			// write max and min element forces to the internal frame element force output data file
@@ -5834,13 +6114,18 @@ func write_internal_forces(OUT_file []byte, fp *noarch.File, infcpath []byte, lc
 	noarch.Fclose(fpcsv)
 }
 
-// write_modal_results - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:3120
+// write_modal_results - transpiled function from  GOPATH/History_frame3DD/src/frame3dd_io.c:3118
 func write_modal_results(fp *noarch.File, nN int32, nE int32, nI int32, DoF int32, M [][]float64, f []float64, V [][]float64, total_mass float64, struct_mass float64, iter int32, sumR int32, nM int32, shift float64, lump int32, tol float64, ok int32) {
+	//
+	// * WRITE_MODAL_RESULTS -  save modal frequencies and mode shapes
+	// * 16 Aug 2001
+	//
 	var i int32
 	var j int32
 	var k int32
 	var m int32
 	var num_modes int32
+	// mode participation factors
 	var mpfX float64
 	var mpfY float64
 	var mpfZ float64
@@ -5848,11 +6133,6 @@ func write_modal_results(fp *noarch.File, nN int32, nE int32, nI int32, DoF int3
 	var msY []float64
 	var msZ []float64
 	var fs float64
-	//
-	// * WRITE_MODAL_RESULTS -  save modal frequencies and mode shapes
-	// * 16 Aug 2001
-	//
-	// mode participation factors
 	msX = dvector(1, DoF)
 	msY = dvector(1, DoF)
 	msZ = dvector(1, DoF)
@@ -5941,38 +6221,8 @@ func write_modal_results(fp *noarch.File, nN int32, nE int32, nI int32, DoF int3
 	noarch.Fflush(fp)
 }
 
-// static_mesh - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:3213
+// static_mesh - transpiled function from  GOPATH/History_frame3DD/src/frame3dd_io.c:3211
 func static_mesh(IN_file []byte, infcpath []byte, meshpath []byte, plotpath []byte, title []byte, nN int32, nE int32, nL int32, lc int32, DoF int32, xyz []vec3, L []float64, N1 []int32, N2 []int32, p []float32, D []float64, exagg_static float64, D3_flag int32, anlyz int32, dx float32, scale float32) {
-	var fpif *noarch.File
-	var fpm *noarch.File
-	var mx float64
-	var my float64
-	var mz float64
-	var fnif []byte = make([]byte, 128)
-	var meshfl []byte = make([]byte, 128)
-	var D2 byte = '#'
-	var D3 byte = '#'
-	var errMsg []byte = make([]byte, 512)
-	var ch byte = 'a'
-	var sfrv int32
-	var frel int32
-	var nx int32
-	var n1 int32
-	var n2 int32
-	var x1 float32
-	var y1 float32
-	var z1 float32
-	var x2 float32
-	var y2 float32
-	var z2 float32
-	var j int32
-	var m int32
-	var n int32
-	var X int32
-	var Y int32
-	var Z int32
-	var lw int32 = 1
-	var now noarch.TimeT
 	//
 	// * STATIC_MESH  - create mesh data of deformed and undeformed mesh  22 Feb 1999
 	// * use gnuplot
@@ -5982,16 +6232,46 @@ func static_mesh(IN_file []byte, infcpath []byte, meshpath []byte, plotpath []by
 	// * to plot deformed meshes, internal axial force, internal shear force, internal
 	// * torsion, and internal bending moment diagrams.
 	//
+	var fpif *noarch.File
+	var fpm *noarch.File
 	// coordinates of the frame element number labels
+	var mx float64
+	var my float64
+	var mz float64
+	var fnif []byte = make([]byte, 128)
+	var meshfl []byte = make([]byte, 128)
+	var D2 byte = '#'
+	var D3 byte = '#'
+	var errMsg []byte = make([]byte, 512)
+	var ch byte = 'a'
 	// indicates plotting in 2D or 3D
 	// *scanf return value
+	var sfrv int32
+	var frel int32
+	var nx int32
+	var n1 int32
+	var n2 int32
 	// frame element number, number of increments
 	// node numbers
 	// coordinates of node n1
+	var x1 float32
+	var y1 float32
+	var z1 float32
+	var x2 float32
+	var y2 float32
+	var z2 float32
 	// coordinates of node n2
+	var j int32
+	var m int32
+	var n int32
+	var X int32
+	var Y int32
+	var Z int32
+	var lw int32 = 1
 	//  line width of deformed mesh
 	// modern time variable type
-	_ = noarch.Time((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:])
+	var now noarch.TimeT
+	_ = noarch.Time((*[1000000]noarch.TimeT)(unsafe.Pointer(&now))[:])
 	{
 		// write gnuplot plotting script commands
 		// check for three-dimensional frame
@@ -6046,7 +6326,7 @@ func static_mesh(IN_file []byte, infcpath []byte, meshpath []byte, plotpath []by
 		noarch.Fprintf(fpm, []byte("# FRAME3DD ANALYSIS RESULTS  http://frame3dd.sf.net/\x00"))
 		noarch.Fprintf(fpm, []byte(" VERSION %s \n\x00"), []byte("20140514+\x00"))
 		noarch.Fprintf(fpm, []byte("# %s\n\x00"), title)
-		noarch.Fprintf(fpm, []byte("# %s\x00"), noarch.Ctime((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:]))
+		noarch.Fprintf(fpm, []byte("# %s\x00"), noarch.Ctime((*[1000000]noarch.TimeT)(unsafe.Pointer(&now))[:]))
 		noarch.Fprintf(fpm, []byte("# G N U P L O T   S C R I P T   F I L E \n\x00"))
 		// fprintf(fpm,"#  X=%d , Y=%d , Z=%d, D3=%d  \n", X,Y,Z,D3_flag);
 		noarch.Fprintf(fpm, []byte("set autoscale\n\x00"))
@@ -6095,14 +6375,14 @@ func static_mesh(IN_file []byte, infcpath []byte, meshpath []byte, plotpath []by
 	noarch.Fprintf(fpm, []byte("set xyplane 0 \n\x00"))
 	// 2D plot command
 	noarch.Fprintf(fpm, []byte("%c plot '%s' u 2:3 t 'undeformed mesh' w lp \x00"), int32(D2), meshpath)
-	if noarch.NotInt32(anlyz) != 0 {
+	if noarch.Not(anlyz) {
 		noarch.Fprintf(fpm, []byte("lw %d lt 1 pt 6 \n\x00"), lw)
 	} else {
 		noarch.Fprintf(fpm, []byte("lw 1 lt 5 pt 6, '%s' u 1:2 t 'load case %d of %d' w l lw %d lt 3\n\x00"), meshfl, lc, nL, lw)
 	}
 	// 3D plot command
 	noarch.Fprintf(fpm, []byte("%c splot '%s' u 2:3:4 t 'load case %d of %d' w lp \x00"), int32(D3), meshpath, lc, nL)
-	if noarch.NotInt32(anlyz) != 0 {
+	if noarch.Not(anlyz) {
 		noarch.Fprintf(fpm, []byte(" lw %d lt 1 pt 6 \n\x00"), lw)
 	} else {
 		noarch.Fprintf(fpm, []byte(" lw 1 lt 5 pt 6, '%s' u 1:2:3 t 'load case %d of %d' w l lw %d lt 3\n\x00"), meshfl, lc, nL, lw)
@@ -6126,7 +6406,7 @@ func static_mesh(IN_file []byte, infcpath []byte, meshpath []byte, plotpath []by
 		noarch.Fprintf(fpm, []byte("# FRAME3DD ANALYSIS RESULTS  http://frame3dd.sf.net/\x00"))
 		noarch.Fprintf(fpm, []byte(" VERSION %s \n\x00"), []byte("20140514+\x00"))
 		noarch.Fprintf(fpm, []byte("# %s\n\x00"), title)
-		noarch.Fprintf(fpm, []byte("# %s\x00"), noarch.Ctime((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:]))
+		noarch.Fprintf(fpm, []byte("# %s\x00"), noarch.Ctime((*[1000000]noarch.TimeT)(unsafe.Pointer(&now))[:]))
 		noarch.Fprintf(fpm, []byte("# U N D E F O R M E D   M E S H   D A T A   (global coordinates)\n\x00"))
 		noarch.Fprintf(fpm, []byte("# Node        X            Y            Z \n\x00"))
 		for m = 1; m <= nE; m++ {
@@ -6140,7 +6420,7 @@ func static_mesh(IN_file []byte, infcpath []byte, meshpath []byte, plotpath []by
 		}
 		noarch.Fclose(fpm)
 	}
-	if noarch.NotInt32(anlyz) != 0 {
+	if noarch.Not(anlyz) {
 		// no deformed mesh
 		return
 	}
@@ -6159,7 +6439,7 @@ func static_mesh(IN_file []byte, infcpath []byte, meshpath []byte, plotpath []by
 	noarch.Fprintf(fpm, []byte(" VERSION %s \n\x00"), []byte("20140514+\x00"))
 	noarch.Fprintf(fpm, []byte("# %s\n\x00"), title)
 	noarch.Fprintf(fpm, []byte("# L O A D  C A S E   %d  of   %d \n\x00"), lc, nL)
-	noarch.Fprintf(fpm, []byte("# %s\x00"), noarch.Ctime((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:]))
+	noarch.Fprintf(fpm, []byte("# %s\x00"), noarch.Ctime((*[1000000]noarch.TimeT)(unsafe.Pointer(&now))[:]))
 	noarch.Fprintf(fpm, []byte("# D E F O R M E D   M E S H   D A T A \x00"))
 	noarch.Fprintf(fpm, []byte("  deflection exaggeration: %.1f\n\x00"), exagg_static)
 	noarch.Fprintf(fpm, []byte("#       X-dsp        Y-dsp        Z-dsp\n\x00"))
@@ -6188,7 +6468,7 @@ func static_mesh(IN_file []byte, infcpath []byte, meshpath []byte, plotpath []by
 				for int32(ch) != int32('@') {
 					ch = byte(noarch.Fgetc(fpif))
 				}
-				sfrv = noarch.Fscanf(fpif, []byte("%d %d %d %f %f %f %f %f %f %d\x00"), (*[100000000]int32)(unsafe.Pointer(&frel))[:], (*[100000000]int32)(unsafe.Pointer(&n1))[:], (*[100000000]int32)(unsafe.Pointer(&n2))[:], (*[100000000]float32)(unsafe.Pointer(&x1))[:], (*[100000000]float32)(unsafe.Pointer(&y1))[:], (*[100000000]float32)(unsafe.Pointer(&z1))[:], (*[100000000]float32)(unsafe.Pointer(&x2))[:], (*[100000000]float32)(unsafe.Pointer(&y2))[:], (*[100000000]float32)(unsafe.Pointer(&z2))[:], (*[100000000]int32)(unsafe.Pointer(&nx))[:])
+				sfrv = noarch.Fscanf(fpif, []byte("%d %d %d %f %f %f %f %f %f %d\x00"), c4goUnsafeConvert_int32(&frel), c4goUnsafeConvert_int32(&n1), c4goUnsafeConvert_int32(&n2), c4goUnsafeConvert_float32(&x1), c4goUnsafeConvert_float32(&y1), c4goUnsafeConvert_float32(&z1), c4goUnsafeConvert_float32(&x2), c4goUnsafeConvert_float32(&y2), c4goUnsafeConvert_float32(&z2), c4goUnsafeConvert_int32(&nx))
 				if sfrv != 10 {
 					sferr(fnif)
 				}
@@ -6212,15 +6492,21 @@ func static_mesh(IN_file []byte, infcpath []byte, meshpath []byte, plotpath []by
 	noarch.Fclose(fpm)
 }
 
-// modal_mesh - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:3449
+// modal_mesh - transpiled function from  GOPATH/History_frame3DD/src/frame3dd_io.c:3447
 func modal_mesh(IN_file []byte, meshpath []byte, modepath []byte, plotpath []byte, title []byte, nN int32, nE int32, DoF int32, nM int32, xyz []vec3, L []float64, J1 []int32, J2 []int32, p []float32, M [][]float64, f []float64, V [][]float64, exagg_modal float64, D3_flag int32, anlyz int32) {
+	//
+	// * MODAL_MESH  -  create mesh data of the mode-shape meshes, use gnuplot 19oct98
+	// * useful gnuplot options: unset xtics ytics ztics border view key
+	//
 	var fpm *noarch.File
+	// mode participation factors
 	var mpfX float64
 	var mpfY float64
 	var mpfZ float64
 	var msX []float64
 	var msY []float64
 	var msZ []float64
+	// a mode-shape vector
 	var v []float64
 	var i int32
 	var j int32
@@ -6229,19 +6515,13 @@ func modal_mesh(IN_file []byte, meshpath []byte, modepath []byte, plotpath []byt
 	var X int32
 	var Y int32
 	var Z int32
+	//  line thickness of deformed mesh
 	var lw int32 = 1
+	// indicate 2D or 3D frame
 	var D2 byte = '#'
 	var D3 byte = '#'
 	var modefl []byte = make([]byte, 128)
 	var errMsg []byte = make([]byte, 512)
-	//
-	// * MODAL_MESH  -  create mesh data of the mode-shape meshes, use gnuplot 19oct98
-	// * useful gnuplot options: unset xtics ytics ztics border view key
-	//
-	// mode participation factors
-	// a mode-shape vector
-	//  line thickness of deformed mesh
-	// indicate 2D or 3D frame
 	msX = dvector(1, DoF)
 	msY = dvector(1, DoF)
 	msZ = dvector(1, DoF)
@@ -6263,7 +6543,7 @@ func modal_mesh(IN_file []byte, meshpath []byte, modepath []byte, plotpath []byt
 			}
 		}
 	}
-	if noarch.NotInt32(anlyz) != 0 {
+	if noarch.Not(anlyz) {
 		exagg_modal = 0
 	}
 	for m = 1; m <= nM; m++ {
@@ -6345,14 +6625,14 @@ func modal_mesh(IN_file []byte, meshpath []byte, modepath []byte, plotpath []byt
 		noarch.Fprintf(fpm, []byte("set title '%s     mode %d     %f Hz'\n\x00\x00"), IN_file, m, f[m])
 		// 2D plot command
 		noarch.Fprintf(fpm, []byte("%c plot '%s' u 2:3 t 'undeformed mesh' w l \x00"), int32(D2), meshpath)
-		if noarch.NotInt32(anlyz) != 0 {
+		if noarch.Not(anlyz) {
 			noarch.Fprintf(fpm, []byte(" lw %d lt 1 \n\x00"), lw)
 		} else {
 			noarch.Fprintf(fpm, []byte(" lw 1 lt 5 , '%s' u 1:2 t 'mode-shape %d' w l lw %d lt 3\n\x00"), modefl, m, lw)
 		}
 		// 3D plot command
 		noarch.Fprintf(fpm, []byte("%c splot '%s' u 2:3:4 t 'undeformed mesh' w l \x00"), int32(D3), meshpath)
-		if noarch.NotInt32(anlyz) != 0 {
+		if noarch.Not(anlyz) {
 			noarch.Fprintf(fpm, []byte(" lw %d lt 1 \n\x00"), lw)
 		} else {
 			noarch.Fprintf(fpm, []byte(" lw 1 lt 5 , '%s' u 1:2:3 t 'mode-shape %d' w l lw %d lt 3\n\x00"), modefl, m, lw)
@@ -6365,8 +6645,16 @@ func modal_mesh(IN_file []byte, meshpath []byte, modepath []byte, plotpath []byt
 	free_dvector(v, 1, DoF)
 }
 
-// animate - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:3577
+// animate - transpiled function from  GOPATH/History_frame3DD/src/frame3dd_io.c:3575
 func animate(IN_file []byte, meshpath []byte, modepath []byte, plotpath []byte, title []byte, anim []int32, nN int32, nE int32, DoF int32, nM int32, xyz []vec3, L []float64, p []float32, J1 []int32, J2 []int32, f []float64, V [][]float64, exagg_modal float64, D3_flag int32, pan float32, scale float32) {
+	//
+	// * ANIMATE -  create mesh data of animated mode-shape meshes, use gnuplot 16dec98
+	// * useful gnuplot options: unset xtics ytics ztics border view key
+	// * mpeg movie example:   % convert mesh_file-03-f-*.ps mode-03.mpeg
+	// * ... requires ImageMagick and mpeg2vidcodec packages
+	//
+	// pan rate for animation
+	// inital zoom scale in 3D animation
 	var fpm *noarch.File
 	var x_min float32
 	var x_max float32
@@ -6382,6 +6670,15 @@ func animate(IN_file []byte, meshpath []byte, modepath []byte, plotpath []byte, 
 	var zoom_init float32 = float32(1 * float64(scale))
 	var zoom_final float32 = float32(1.1 * float64(scale))
 	var frames float32 = 25
+	// "diameter" of the structure
+	// inital x-rotation in 3D animation
+	// final  x-rotation in 3D animation
+	// inital z-rotation in 3D animation
+	// final  z-rotation in 3D animation
+	// init.  zoom scale in 3D animation
+	// final  zoom scale in 3D animation
+	// number of frames in animation
+	// an exageration factor, for animation
 	var ex float64 = 10
 	var v []float64
 	var fr int32
@@ -6397,34 +6694,17 @@ func animate(IN_file []byte, meshpath []byte, modepath []byte, plotpath []byte, 
 	var frame_number int32
 	var lw int32 = 1
 	var total_frames int32
+	//  line thickness of deformed mesh
+	// total number of frames in animation
+	// indicate 2D or 3D frame
 	var D2 byte = '#'
 	var D3 byte = '#'
 	var Movie byte = '#'
 	var modefl []byte = make([]byte, 128)
 	var framefl []byte = make([]byte, 128)
+	// use '#' for no-movie  -OR-  ' ' for movie
 	var errMsg []byte = make([]byte, 512)
 	{
-		//
-		// * ANIMATE -  create mesh data of animated mode-shape meshes, use gnuplot 16dec98
-		// * useful gnuplot options: unset xtics ytics ztics border view key
-		// * mpeg movie example:   % convert mesh_file-03-f-*.ps mode-03.mpeg
-		// * ... requires ImageMagick and mpeg2vidcodec packages
-		//
-		// pan rate for animation
-		// inital zoom scale in 3D animation
-		// "diameter" of the structure
-		// inital x-rotation in 3D animation
-		// final  x-rotation in 3D animation
-		// inital z-rotation in 3D animation
-		// final  z-rotation in 3D animation
-		// init.  zoom scale in 3D animation
-		// final  zoom scale in 3D animation
-		// number of frames in animation
-		// an exageration factor, for animation
-		//  line thickness of deformed mesh
-		// total number of frames in animation
-		// indicate 2D or 3D frame
-		// use '#' for no-movie  -OR-  ' ' for movie
 		// check for three-dimensional frame
 		for j = 1; j <= nN; j++ {
 			if xyz[j].x != 0 {
@@ -6623,8 +6903,15 @@ func animate(IN_file []byte, meshpath []byte, modepath []byte, plotpath []byte, 
 	free_dvector(v, 1, DoF)
 }
 
-// cubic_bent_beam - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:3816
+// cubic_bent_beam - transpiled function from  GOPATH/History_frame3DD/src/frame3dd_io.c:3814
 func cubic_bent_beam(fpm *noarch.File, n1 int32, n2 int32, xyz []vec3, L float64, p float32, D []float64, exagg float64) {
+	//
+	// * CUBIC_BENT_BEAM  -  computes cubic deflection functions from end deflections
+	// * and end rotations.  Saves deflected shapes to a file.  These bent shapes
+	// * are exact for mode-shapes, and for frames loaded at their nodes.
+	// * 15 May 2009
+	//
+	// coord xfmn
 	var t1 float64
 	var t2 float64
 	var t3 float64
@@ -6637,11 +6924,13 @@ func cubic_bent_beam(fpm *noarch.File, n1 int32, n2 int32, xyz []vec3, L float64
 	var u1 float64
 	var u2 float64
 	var u3 float64
+	var u4 float64
 	var u5 float64
 	var u6 float64
 	var u7 float64
 	var u8 float64
 	var u9 float64
+	var u10 float64
 	var u11 float64
 	var u12 float64
 	var a []float64
@@ -6657,32 +6946,23 @@ func cubic_bent_beam(fpm *noarch.File, n1 int32, n2 int32, xyz []vec3, L float64
 	var i2 int32
 	var pd int32
 	var errMsg []byte = make([]byte, 512)
-	//
-	// * CUBIC_BENT_BEAM  -  computes cubic deflection functions from end deflections
-	// * and end rotations.  Saves deflected shapes to a file.  These bent shapes
-	// * are exact for mode-shapes, and for frames loaded at their nodes.
-	// * 15 May 2009
-	//
-	// coord xfmn
-	// u4,
-	// u10,
 	A = dmatrix(1, 4, 1, 4)
 	a = dvector(1, 4)
 	b = dvector(1, 4)
-	coord_trans(xyz, L, n1, n2, (*[100000000]float64)(unsafe.Pointer(&t1))[:], (*[100000000]float64)(unsafe.Pointer(&t2))[:], (*[100000000]float64)(unsafe.Pointer(&t3))[:], (*[100000000]float64)(unsafe.Pointer(&t4))[:], (*[100000000]float64)(unsafe.Pointer(&t5))[:], (*[100000000]float64)(unsafe.Pointer(&t6))[:], (*[100000000]float64)(unsafe.Pointer(&t7))[:], (*[100000000]float64)(unsafe.Pointer(&t8))[:], (*[100000000]float64)(unsafe.Pointer(&t9))[:], p)
+	coord_trans(xyz, L, n1, n2, c4goUnsafeConvert_float64(&t1), c4goUnsafeConvert_float64(&t2), c4goUnsafeConvert_float64(&t3), c4goUnsafeConvert_float64(&t4), c4goUnsafeConvert_float64(&t5), c4goUnsafeConvert_float64(&t6), c4goUnsafeConvert_float64(&t7), c4goUnsafeConvert_float64(&t8), c4goUnsafeConvert_float64(&t9), p)
 	i1 = 6 * (n1 - 1)
 	i2 = 6 * (n2 - 1)
 	// compute end deflections in local coordinates
 	u1 = exagg * (t1*D[i1+1] + t2*D[i1+2] + t3*D[i1+3])
 	u2 = exagg * (t4*D[i1+1] + t5*D[i1+2] + t6*D[i1+3])
 	u3 = exagg * (t7*D[i1+1] + t8*D[i1+2] + t9*D[i1+3])
-	// u4  = exagg*(t1*D[i1+4] + t2*D[i1+5] + t3*D[i1+6]);
+	u4 = exagg * (t1*D[i1+4] + t2*D[i1+5] + t3*D[i1+6])
 	u5 = exagg * (t4*D[i1+4] + t5*D[i1+5] + t6*D[i1+6])
 	u6 = exagg * (t7*D[i1+4] + t8*D[i1+5] + t9*D[i1+6])
 	u7 = exagg * (t1*D[i2+1] + t2*D[i2+2] + t3*D[i2+3])
 	u8 = exagg * (t4*D[i2+1] + t5*D[i2+2] + t6*D[i2+3])
 	u9 = exagg * (t7*D[i2+1] + t8*D[i2+2] + t9*D[i2+3])
-	// u10 = exagg*(t1*D[i2+4] + t2*D[i2+5] + t3*D[i2+6]);
+	u10 = exagg * (t1*D[i2+4] + t2*D[i2+5] + t3*D[i2+6])
 	u11 = exagg * (t4*D[i2+4] + t5*D[i2+5] + t6*D[i2+6])
 	u12 = exagg * (t7*D[i2+4] + t8*D[i2+5] + t9*D[i2+6])
 	// curve-fitting problem for a cubic polynomial
@@ -6713,14 +6993,14 @@ func cubic_bent_beam(fpm *noarch.File, n1 int32, n2 int32, xyz []vec3, L float64
 	A[4][4] = 3 * u7 * u7
 	u7 -= L
 	// solve for cubic coef's
-	lu_dcmp(A, 4, a, 1, 1, (*[100000000]int32)(unsafe.Pointer(&pd))[:])
-	if noarch.NotInt32(pd) != 0 {
+	lu_dcmp(A, 4, a, 1, 1, c4goUnsafeConvert_int32(&pd))
+	if noarch.Not(pd) {
 		noarch.Sprintf(errMsg, []byte(" n1 = %d  n2 = %d  L = %e  u7 = %e \n\x00"), n1, n2, L, u7)
 		errorMsg(errMsg)
 		noarch.Exit(30)
 	}
 	// solve for cubic coef's
-	lu_dcmp(A, 4, b, 0, 1, (*[100000000]int32)(unsafe.Pointer(&pd))[:])
+	lu_dcmp(A, 4, b, 0, 1, c4goUnsafeConvert_int32(&pd))
 	{
 		// debug ... if deformed mesh exageration is too big, some elements
 		// may not be plotted.
@@ -6743,8 +7023,17 @@ func cubic_bent_beam(fpm *noarch.File, n1 int32, n2 int32, xyz []vec3, L float64
 	free_dvector(b, 1, 4)
 }
 
-// force_bent_beam - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:3914
+// force_bent_beam - transpiled function from  GOPATH/History_frame3DD/src/frame3dd_io.c:3912
 func force_bent_beam(fpm *noarch.File, fpif *noarch.File, fnif []byte, nx int32, n1 int32, n2 int32, xyz []vec3, L float64, p float32, D []float64, exagg float64) {
+	//
+	// * FORCE_BENT_BEAM  -  reads internal frame element forces and deflections
+	// * from the internal force and deflection data file.
+	// * Saves deflected shapes to a file.  These bent shapes are exact.
+	// * Note: It would not be difficult to adapt this function to plot
+	// * internal axial force, shear force, torques, or bending moments.
+	// * 9 Jan 2010
+	//
+	// coord xfmn
 	var t1 float64
 	var t2 float64
 	var t3 float64
@@ -6773,27 +7062,18 @@ func force_bent_beam(fpm *noarch.File, fpif *noarch.File, fnif []byte, nx int32,
 	var Ly float64
 	var Lz float64
 	var n int32
-	var sfrv int32
-	//
-	// * FORCE_BENT_BEAM  -  reads internal frame element forces and deflections
-	// * from the internal force and deflection data file.
-	// * Saves deflected shapes to a file.  These bent shapes are exact.
-	// * Note: It would not be difficult to adapt this function to plot
-	// * internal axial force, shear force, torques, or bending moments.
-	// * 9 Jan 2010
-	//
-	// coord xfmn
 	// *scanf return value
+	var sfrv int32
 	Lx = xyz[n2].x - xyz[n1].x
 	Ly = xyz[n2].y - xyz[n1].y
 	Lz = xyz[n2].z - xyz[n1].z
-	coord_trans(xyz, L, n1, n2, (*[100000000]float64)(unsafe.Pointer(&t1))[:], (*[100000000]float64)(unsafe.Pointer(&t2))[:], (*[100000000]float64)(unsafe.Pointer(&t3))[:], (*[100000000]float64)(unsafe.Pointer(&t4))[:], (*[100000000]float64)(unsafe.Pointer(&t5))[:], (*[100000000]float64)(unsafe.Pointer(&t6))[:], (*[100000000]float64)(unsafe.Pointer(&t7))[:], (*[100000000]float64)(unsafe.Pointer(&t8))[:], (*[100000000]float64)(unsafe.Pointer(&t9))[:], p)
+	coord_trans(xyz, L, n1, n2, c4goUnsafeConvert_float64(&t1), c4goUnsafeConvert_float64(&t2), c4goUnsafeConvert_float64(&t3), c4goUnsafeConvert_float64(&t4), c4goUnsafeConvert_float64(&t5), c4goUnsafeConvert_float64(&t6), c4goUnsafeConvert_float64(&t7), c4goUnsafeConvert_float64(&t8), c4goUnsafeConvert_float64(&t9), p)
 	x = float32(-1)
 	n = 0
 	for xi = 0; xi <= 1.01*L && n < nx; xi += 0.1 * L {
 		for float64(x) < xi && n < nx {
 			// read the deformed shape in local coordinates
-			sfrv = noarch.Fscanf(fpif, []byte("%f %f %f %f %f %f %f %f %f %f %f\x00"), (*[100000000]float32)(unsafe.Pointer(&x))[:], (*[100000000]float32)(unsafe.Pointer(&Nx))[:], (*[100000000]float32)(unsafe.Pointer(&Vy))[:], (*[100000000]float32)(unsafe.Pointer(&Vz))[:], (*[100000000]float32)(unsafe.Pointer(&Tx))[:], (*[100000000]float32)(unsafe.Pointer(&My))[:], (*[100000000]float32)(unsafe.Pointer(&Mz))[:], (*[100000000]float32)(unsafe.Pointer(&Dx))[:], (*[100000000]float32)(unsafe.Pointer(&Dy))[:], (*[100000000]float32)(unsafe.Pointer(&Dz))[:], (*[100000000]float32)(unsafe.Pointer(&Rx))[:])
+			sfrv = noarch.Fscanf(fpif, []byte("%f %f %f %f %f %f %f %f %f %f %f\x00"), c4goUnsafeConvert_float32(&x), c4goUnsafeConvert_float32(&Nx), c4goUnsafeConvert_float32(&Vy), c4goUnsafeConvert_float32(&Vz), c4goUnsafeConvert_float32(&Tx), c4goUnsafeConvert_float32(&My), c4goUnsafeConvert_float32(&Mz), c4goUnsafeConvert_float32(&Dx), c4goUnsafeConvert_float32(&Dy), c4goUnsafeConvert_float32(&Dz), c4goUnsafeConvert_float32(&Rx))
 			if sfrv != 11 {
 				//      printf("x = %12.4f\n", x );  /* debug */
 				sferr(fnif)
@@ -6811,8 +7091,22 @@ func force_bent_beam(fpm *noarch.File, fpif *noarch.File, fnif []byte, nx int32,
 	noarch.Fprintf(fpm, []byte("\n\n\x00"))
 }
 
-// my_itoa - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:3982
+// my_itoa - transpiled function from  GOPATH/History_frame3DD/src/frame3dd_io.c:3980
 func my_itoa(n int32, s []byte, k int32) {
+	//
+	// * SFERR  -  Display error message upon an erronous *scanf operation
+	// *
+	//void sferr ( char s[] ) {
+	// char errMsg[MAXL];
+	// sprintf(errMsg,">> Input Data file error while reading %s\n",s);
+	// errorMsg(errMsg);
+	// return;
+	//}
+	//
+	//
+	// * MY_ITOA  -  Convert an integer n to charcters in s, from K&R, 1978,   p. 59-60
+	// * ... specialized for portability between GNU GCC and DJGPP GCC
+	//
 	var c int32
 	var i int32
 	var j int32
@@ -6821,20 +7115,6 @@ func my_itoa(n int32, s []byte, k int32) {
 		sign = n
 		return sign
 	}()) < 0 {
-		//
-		// * SFERR  -  Display error message upon an erronous *scanf operation
-		// *
-		//void sferr ( char s[] ) {
-		// char errMsg[MAXL];
-		// sprintf(errMsg,">> Input Data file error while reading %s\n",s);
-		// errorMsg(errMsg);
-		// return;
-		//}
-		//
-		//
-		// * MY_ITOA  -  Convert an integer n to charcters in s, from K&R, 1978,   p. 59-60
-		// * ... specialized for portability between GNU GCC and DJGPP GCC
-		//
 		// record sign
 		// make n positive
 		n = -n
@@ -6891,7 +7171,7 @@ func my_itoa(n int32, s []byte, k int32) {
 	}
 }
 
-// get_file_ext - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:4015
+// get_file_ext - transpiled function from  GOPATH/History_frame3DD/src/frame3dd_io.c:4013
 func get_file_ext(filename []byte, ext []byte) int32 {
 	//
 	// * GET_FILE_EXT  -  get the file extension,
@@ -6899,42 +7179,36 @@ func get_file_ext(filename []byte, ext []byte) int32 {
 	// *  return 2 if the extension is ".fmm"
 	// *  return 0 otherwise
 	//
-	fmt.Printf("0001")
 	var i int32
 	var full_len int32
-	var len int32
-	fmt.Printf("0002")
+	var len_ int32
 	// the length of file filename
 	for int32(filename[func() int32 {
 		defer func() {
-			len++
+			len_++
 		}()
-		return len
+		return len_
 	}()]) != int32('\x00') {
 	}
-	full_len = len
-	fmt.Printf("0003")
+	full_len = len_
 	// the last '.' in filename
 	for int32(filename[func() int32 {
 		defer func() {
-			len--
+			len_--
 		}()
-		return len
-	}()]) != int32('.') && len > 0 {
+		return len_
+	}()]) != int32('.') && len_ > 0 {
 	}
-	if len == 0 {
-		len = full_len
+	if len_ == 0 {
+		len_ = full_len
 	}
-	fmt.Printf("0004")
-	len++
-	fmt.Printf("0005")
-	for i = 0; len < full_len; {
-		ext[i] = byte(linux.ToLower(int32(filename[len])))
+	len_++
+	for i = 0; len_ < full_len; {
+		ext[i] = byte(tolower(int32(filename[len_])))
 		i++
-		len++
+		len_++
 	}
-	fmt.Printf("0006")
-	if noarch.NotInt32(noarch.Strcmp(ext, []byte(".csv\x00"))) != 0 {
+	if noarch.Not(noarch.Strcmp(ext, []byte(".csv\x00"))) {
 		// debugging ... check file names
 		// printf(" filename '%s' has length %d and extension = '%s' \n",
 		//       filename, len, ext);
@@ -6942,43 +7216,39 @@ func get_file_ext(filename []byte, ext []byte) int32 {
 		//
 		return 1
 	}
-	fmt.Printf("0007")
-	if noarch.NotInt32(noarch.Strcmp(ext, []byte(".fmm\x00"))) != 0 {
+	if noarch.Not(noarch.Strcmp(ext, []byte(".fmm\x00"))) {
 		return 2
 	}
-	fmt.Printf("0008\n")
 	return 0
 }
 
-// dots - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:4050
+// dots - transpiled function from  GOPATH/History_frame3DD/src/frame3dd_io.c:4040
 func dots(fp *noarch.File, n int32) {
+	//
+	// * DOTS  -  print a set of dots (periods)
+	//
 	var i int32
-	{
-		//
-		// * DOTS  -  print a set of dots (periods)
-		//
-		for i = 1; i <= n; i++ {
-			noarch.Fprintf(fp, []byte(".\x00"))
-		}
+	for i = 1; i <= n; i++ {
+		noarch.Fprintf(fp, []byte(".\x00"))
 	}
 }
 
-// evaluate - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/frame3dd_io.c:4059
-func evaluate(error float32, rms_resid float32, tol float32, geom int32) {
-	var r int32
+// evaluate - transpiled function from  GOPATH/History_frame3DD/src/frame3dd_io.c:4049
+func evaluate(error_ float32, rms_resid float32, tol float32, geom int32) {
 	//
 	// * EVALUATE -  displays a randomly-generated goodbye message.
 	//
+	var r int32
 	r = noarch.Int32() % 10
 	color(0)
-	noarch.Fprintf(noarch.Stdout, []byte("  RMS relative equilibrium error  = %9.3e \x00"), float64(error))
-	if error < tol {
+	noarch.Fprintf(noarch.Stdout, []byte("  RMS relative equilibrium error  = %9.3e \x00"), float64(error_))
+	if error_ < tol {
 		noarch.Fprintf(noarch.Stdout, []byte(" < tol = %7.1e \x00"), float64(tol))
 		_ = noarch.Fflush(noarch.Stdout)
 		textColor('y', 'b', 'b', 'x')
 		noarch.Fprintf(noarch.Stdout, []byte(" ** converged ** \x00"))
 	}
-	if error > tol {
+	if error_ > tol {
 		noarch.Fprintf(noarch.Stdout, []byte(" > tol = %7.1e \x00"), float64(tol))
 		_ = noarch.Fflush(noarch.Stdout)
 		textColor('y', 'r', 'b', 'x')
@@ -7012,10 +7282,8 @@ func evaluate(error float32, rms_resid float32, tol float32, geom int32) {
 		case 8:
 			noarch.Fprintf(noarch.Stdout, []byte(" *  sweet as!  * \x00"))
 		case 9:
-			{
-				noarch.Fprintf(noarch.Stdout, []byte(" *good as gold!* \x00"))
-				break
-			}
+			noarch.Fprintf(noarch.Stdout, []byte(" *good as gold!* \x00"))
+			break
 		}
 		_ = noarch.Fflush(noarch.Stdout)
 		color(0)
@@ -7044,10 +7312,8 @@ func evaluate(error float32, rms_resid float32, tol float32, geom int32) {
 		case 8:
 			noarch.Fprintf(noarch.Stdout, []byte("      nice!      \x00"))
 		case 9:
-			{
-				noarch.Fprintf(noarch.Stdout, []byte("     choice!     \x00"))
-				break
-			}
+			noarch.Fprintf(noarch.Stdout, []byte("     choice!     \x00"))
+			break
 		}
 		_ = noarch.Fflush(noarch.Stdout)
 		color(0)
@@ -7076,10 +7342,8 @@ func evaluate(error float32, rms_resid float32, tol float32, geom int32) {
 		case 8:
 			noarch.Fprintf(noarch.Stdout, []byte(" tolerable. \x00"))
 		case 9:
-			{
-				noarch.Fprintf(noarch.Stdout, []byte(" just ok. \x00"))
-				break
-			}
+			noarch.Fprintf(noarch.Stdout, []byte(" just ok. \x00"))
+			break
 		}
 		_ = noarch.Fflush(noarch.Stdout)
 		color(0)
@@ -7108,10 +7372,8 @@ func evaluate(error float32, rms_resid float32, tol float32, geom int32) {
 		case 8:
 			noarch.Fprintf(noarch.Stdout, []byte(" munted! \x00"))
 		case 9:
-			{
-				noarch.Fprintf(noarch.Stdout, []byte(" awful! \x00"))
-				break
-			}
+			noarch.Fprintf(noarch.Stdout, []byte(" awful! \x00"))
+			break
 		}
 		_ = noarch.Fflush(noarch.Stdout)
 		color(0)
@@ -7120,14 +7382,8 @@ func evaluate(error float32, rms_resid float32, tol float32, geom int32) {
 	}
 }
 
-// coord_trans - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/coordtrans.c:51
+// coord_trans - transpiled function from  GOPATH/History_frame3DD/src/coordtrans.c:51
 func coord_trans(xyz []vec3, L float64, n1 int32, n2 int32, t1 []float64, t2 []float64, t3 []float64, t4 []float64, t5 []float64, t6 []float64, t7 []float64, t8 []float64, t9 []float64, p float32) {
-	var Cx float64
-	var Cy float64
-	var Cz float64
-	var den float64
-	var Cp float64
-	var Sp float64
 	//
 	// This file is part of FRAME3DD:
 	// Static and dynamic structural analysis of 2D and 3D frames and trusses with
@@ -7174,6 +7430,12 @@ func coord_trans(xyz []vec3, L float64, n1 int32, n2 int32, t1 []float64, t2 []f
 	//-------------------------------------------------------------------------
 	//< the roll angle (radians)
 	// direction cosines
+	var Cx float64
+	var Cy float64
+	var Cz float64
+	var den float64
+	var Cp float64
+	var Sp float64
 	// cosine and sine of roll angle
 	Cx = (xyz[n2].x - xyz[n1].x) / L
 	Cy = (xyz[n2].y - xyz[n1].y) / L
@@ -7209,17 +7471,17 @@ func coord_trans(xyz []vec3, L float64, n1 int32, n2 int32, t1 []float64, t2 []f
 	}
 }
 
-// atma - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/coordtrans.c:131
+// atma - transpiled function from  GOPATH/History_frame3DD/src/coordtrans.c:131
 func atma(t1 float64, t2 float64, t3 float64, t4 float64, t5 float64, t6 float64, t7 float64, t8 float64, t9 float64, m [][]float64, r1 float32, r2 float32) {
-	var a [][]float64
-	var ma [][]float64
-	var i int32
-	var j int32
-	var k int32
 	// ------------------------------------------------------------------------------
 	// * ATMA  -  perform the coordinate transformation from local to global     6jan96
 	// *   include effects of a finite node radii, r1 and r2.     9dec04
 	// *   ------------------------------------------------------------------------------
+	var a [][]float64
+	var ma [][]float64 // i - transpiled function from  GOPATH/History_frame3DD/src/coordtrans.c:138
+	var i int32        // j - transpiled function from  GOPATH/History_frame3DD/src/coordtrans.c:138
+	var j int32        // k - transpiled function from  GOPATH/History_frame3DD/src/coordtrans.c:138
+	var k int32
 	a = dmatrix(1, 12, 1, 12)
 	ma = dmatrix(1, 12, 1, 12)
 	for i = 1; i <= 12; i++ {
@@ -7288,8 +7550,56 @@ func atma(t1 float64, t2 float64, t3 float64, t4 float64, t5 float64, t6 float64
 	free_dmatrix(ma, 1, 12, 1, 12)
 }
 
-// subspace - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/eig.c:66
+// subspace - transpiled function from  GOPATH/History_frame3DD/src/eig.c:66
 func subspace(K [][]float64, M [][]float64, n int32, m int32, w []float64, V [][]float64, tol float64, shift float64, iter []int32, ok []int32, verbose int32) {
+	//
+	// This file is part of FRAME3DD:
+	// Static and dynamic structural analysis of 2D and 3D frames and trusses with
+	// elastic and geometric stiffness.
+	// ---------------------------------------------------------------------------
+	// http://frame3dd.sourceforge.net/
+	// ---------------------------------------------------------------------------
+	// Copyright (C) 1992-2009  Henri P. Gavin
+	//
+	//    FRAME3DD is free software: you can redistribute it and/or modify
+	//    it under the terms of the GNU General Public License as published by
+	//    the Free Software Foundation, either version 3 of the License, or
+	//    (at your option) any later version.
+	//
+	//    FRAME3DD is distributed in the hope that it will be useful,
+	//    but WITHOUT ANY WARRANTY; without even the implied warranty of
+	//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	//    GNU General Public License for more details.
+	//
+	//    You should have received a copy of the GNU General Public License
+	//    along with FRAME3DD.  If not, see <http://www.gnu.org/licenses/>.
+	//
+	//
+	// @file
+	// Routines to solve the generalized eigenvalue problem
+	//
+	// Henri P. Gavin                                             hpgavin@duke.edu
+	// Department of Civil and Environmental Engineering
+	// Duke University, Box 90287
+	// Durham, NC  27708--0287
+	//
+	// #define EIG_DEBUG
+	// forward declarations
+	//-----------------------------------------------------------------------------
+	//SUBSPACE - Find the lowest m eigen-values, w, and eigen-vectors, V, of the
+	//general eigen-problem  ...       K V = w M V using sub-space / Jacobi iteration
+	//where
+	//  K is an n by n  symmetric real (stiffness) matrix
+	//  M is an n by n  symmetric positive definate real (mass) matrix
+	//  w is a diagonal matrix of eigen-values
+	//  V is a  rectangular matrix of eigen-vectors
+	//
+	// H.P. Gavin, Civil Engineering, Duke University, hpgavin@duke.edu  1 March 2007
+	// Bathe, Finite Element Procecures in Engineering Analysis, Prentice Hall, 1982
+	//-----------------------------------------------------------------------------
+	//< DoF and number of required modes
+	//< sub-space iterations
+	//< Sturm check result
 	var Kb [][]float64
 	var Mb [][]float64
 	var Xb [][]float64
@@ -7299,7 +7609,7 @@ func subspace(K [][]float64, M [][]float64, n int32, m int32, w []float64, V [][
 	var v []float64
 	var km float64
 	var km_old float64
-	var error float64 = 1
+	var error_ float64 = 1
 	var w_old float64
 	var i int32
 	var j int32
@@ -7307,57 +7617,9 @@ func subspace(K [][]float64, M [][]float64, n int32, m int32, w []float64, V [][
 	var modes int32
 	var disp int32
 	var idx []int32
+	// display convergence info.
 	var errMsg []byte = make([]byte, 512)
 	if m > n {
-		//
-		// This file is part of FRAME3DD:
-		// Static and dynamic structural analysis of 2D and 3D frames and trusses with
-		// elastic and geometric stiffness.
-		// ---------------------------------------------------------------------------
-		// http://frame3dd.sourceforge.net/
-		// ---------------------------------------------------------------------------
-		// Copyright (C) 1992-2009  Henri P. Gavin
-		//
-		//    FRAME3DD is free software: you can redistribute it and/or modify
-		//    it under the terms of the GNU General Public License as published by
-		//    the Free Software Foundation, either version 3 of the License, or
-		//    (at your option) any later version.
-		//
-		//    FRAME3DD is distributed in the hope that it will be useful,
-		//    but WITHOUT ANY WARRANTY; without even the implied warranty of
-		//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-		//    GNU General Public License for more details.
-		//
-		//    You should have received a copy of the GNU General Public License
-		//    along with FRAME3DD.  If not, see <http://www.gnu.org/licenses/>.
-		//
-		//
-		// @file
-		// Routines to solve the generalized eigenvalue problem
-		//
-		// Henri P. Gavin                                             hpgavin@duke.edu
-		// Department of Civil and Environmental Engineering
-		// Duke University, Box 90287
-		// Durham, NC  27708--0287
-		//
-		// #define EIG_DEBUG
-		// forward declarations
-		//-----------------------------------------------------------------------------
-		//SUBSPACE - Find the lowest m eigen-values, w, and eigen-vectors, V, of the
-		//general eigen-problem  ...       K V = w M V using sub-space / Jacobi iteration
-		//where
-		//  K is an n by n  symmetric real (stiffness) matrix
-		//  M is an n by n  symmetric positive definate real (mass) matrix
-		//  w is a diagonal matrix of eigen-values
-		//  V is a  rectangular matrix of eigen-vectors
-		//
-		// H.P. Gavin, Civil Engineering, Duke University, hpgavin@duke.edu  1 March 2007
-		// Bathe, Finite Element Procecures in Engineering Analysis, Prentice Hall, 1982
-		//-----------------------------------------------------------------------------
-		//< DoF and number of required modes
-		//< sub-space iterations
-		//< Sturm check result
-		// display convergence info.
 		noarch.Sprintf(errMsg, []byte("subspace: Number of eigen-values must be less than the problem dimension.\n Desired number of eigen-values=%d \n Dimension of the problem= %d \n\x00"), m, n)
 		errorMsg(errMsg)
 		noarch.Exit(32)
@@ -7387,12 +7649,11 @@ func subspace(K [][]float64, M [][]float64, n int32, m int32, w []float64, V [][
 			Xb[i][j] = V[i][j]
 		}
 	}
-	modes = (func() int32 {
-		if (0.5 * float64(m)) > (float64(m) - 8) {
-			return int32((float64(m) / 2))
-		}
-		return m - 8
-	}())
+	if 0.5*float64(m) > float64(m)-8 {
+		modes = int32(float64(m) / 2)
+	} else {
+		modes = m - 8
+	}
 	{
 		// shift eigen-values by this much
 		for i = 1; i <= n; i++ {
@@ -7463,11 +7724,9 @@ func subspace(K [][]float64, M [][]float64, n int32, m int32, w []float64, V [][
 				i = -1
 				j = 1
 			case 0:
-				{
-					i = -1
-					j = -2
-					break
-				}
+				i = -1
+				j = -2
+				break
 			}
 			V[idx[k]+i][k] = 0.2
 			V[idx[k]+j][k] = 0.2
@@ -7487,16 +7746,14 @@ func subspace(K [][]float64, M [][]float64, n int32, m int32, w []float64, V [][
 					// improve the solution iteratively
 					noarch.Fprintf(noarch.Stdout, []byte("  RMS matrix error:\x00"))
 				}
-				error = float64((func() int32 {
-					ok[0] = 1
-					return ok[0]
-				}()))
+				ok[0] = 1
+				error_ = float64(ok[0])
 				for {
-					ldl_mprove(K, n, u, v, d, (*[100000000]float64)(unsafe.Pointer(&error))[:], ok)
+					ldl_mprove(K, n, u, v, d, c4goUnsafeConvert_float64(&error_), ok)
 					if disp != 0 {
-						noarch.Fprintf(noarch.Stdout, []byte("%9.2e\x00"), error)
+						noarch.Fprintf(noarch.Stdout, []byte("%9.2e\x00"), error_)
 					}
-					if noarch.NotInt32(ok[0]) != 0 {
+					if noarch.Not(ok[0]) {
 						break
 					}
 				}
@@ -7522,18 +7779,18 @@ func subspace(K [][]float64, M [][]float64, n int32, m int32, w []float64, V [][
 			errorMsg(errMsg)
 			noarch.Exit(32)
 		}
-		error = math.Abs(w[modes]-w_old) / w[modes]
+		error_ = math.Abs(w[modes]-w_old) / w[modes]
 		iter[0]++
 		if disp != 0 {
-			noarch.Fprintf(noarch.Stdout, []byte(" iter = %d  w[%d] = %f error = %e\n\x00"), iter[0], modes, w[modes], error)
+			noarch.Fprintf(noarch.Stdout, []byte(" iter = %d  w[%d] = %f error = %e\n\x00"), iter[0], modes, w[modes], error_)
 		}
 		w_old = w[modes]
 		if iter[0] > 1000 {
-			noarch.Sprintf(errMsg, []byte("  subspace: Iteration limit exceeded\n rel. error = %e > %e\n\x00"), error, tol)
+			noarch.Sprintf(errMsg, []byte("  subspace: Iteration limit exceeded\n rel. error = %e > %e\n\x00"), error_, tol)
 			errorMsg(errMsg)
 			noarch.Exit(32)
 		}
-		if !(error > tol) {
+		if !(error_ > tol) {
 			break
 		}
 	}
@@ -7549,7 +7806,7 @@ func subspace(K [][]float64, M [][]float64, n int32, m int32, w []float64, V [][
 		}
 	}
 	if verbose != 0 {
-		noarch.Fprintf(noarch.Stdout, []byte(" %4d sub-space iterations,   error: %.4e \n\x00"), iter[0], error)
+		noarch.Fprintf(noarch.Stdout, []byte(" %4d sub-space iterations,   error: %.4e \n\x00"), iter[0], error_)
 		for k = 1; k <= m; k++ {
 			noarch.Fprintf(noarch.Stdout, []byte("  mode: %2d\tDoF: %5d\t %9.4f Hz\n\x00\x00"), k, idx[k], math.Sqrt(w[k])/(2*3.141592653589793))
 		}
@@ -7566,8 +7823,20 @@ func subspace(K [][]float64, M [][]float64, n int32, m int32, w []float64, V [][
 	free_dmatrix(Qb, 1, m, 1, m)
 }
 
-// jacobi - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/eig.c:250
+// jacobi - transpiled function from  GOPATH/History_frame3DD/src/eig.c:250
 func jacobi(K [][]float64, M [][]float64, E []float64, V [][]float64, n int32) {
+	//-----------------------------------------------------------------------------
+	// JACOBI - Find all eigen-values, E, and eigen-vectors, V,
+	// of the general eigen-problem  K V = E M V
+	// using Jacobi iteration, with efficient matrix rotations.
+	// K is a symmetric real (stiffness) matrix
+	// M is a symmetric positive definate real (mass) matrix
+	// E is a diagonal matrix of eigen-values
+	// V is a  square  matrix of eigen-vectors
+	//
+	// H.P. Gavin, Civil Engineering, Duke University, hpgavin@duke.edu  1 March 2007
+	// Bathe, Finite Element Procecures in Engineering Analysis, Prentice Hall, 1982
+	//-----------------------------------------------------------------------------
 	var iter int32
 	var d int32
 	var i int32
@@ -7593,18 +7862,6 @@ func jacobi(K [][]float64, M [][]float64, E []float64, V [][]float64, n int32) {
 	Mii = Mjj
 	Kij = Mii
 	Kjj = Kij
-	//-----------------------------------------------------------------------------
-	// JACOBI - Find all eigen-values, E, and eigen-vectors, V,
-	// of the general eigen-problem  K V = E M V
-	// using Jacobi iteration, with efficient matrix rotations.
-	// K is a symmetric real (stiffness) matrix
-	// M is a symmetric positive definate real (mass) matrix
-	// E is a diagonal matrix of eigen-values
-	// V is a  square  matrix of eigen-vectors
-	//
-	// H.P. Gavin, Civil Engineering, Duke University, hpgavin@duke.edu  1 March 2007
-	// Bathe, Finite Element Procecures in Engineering Analysis, Prentice Hall, 1982
-	//-----------------------------------------------------------------------------
 	Kii = Kjj
 	for i = 1; i <= n; i++ {
 		for j = i + 1; j <= n; j++ {
@@ -7681,21 +7938,21 @@ func jacobi(K [][]float64, M [][]float64, E []float64, V [][]float64, n int32) {
 	}
 }
 
-// rotate - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/eig.c:319
+// rotate - transpiled function from  GOPATH/History_frame3DD/src/eig.c:319
 func rotate(A [][]float64, n int32, alpha float64, beta float64, i int32, j int32) {
-	var Aii float64
-	var Ajj float64
-	var Aij float64
-	var Ai []float64
-	var Aj []float64
-	var k int32
 	//-----------------------------------------------------------------------------
 	//ROTATE - rotate an n by n symmetric matrix A such that A[i][j] = A[j][i] = 0
 	//     A = P' * A * P  where diag(P) = 1 and P[i][j] = alpha and P[j][i] = beta.
 	//     Since P is sparse, this matrix multiplcation can be done efficiently.
 	//-----------------------------------------------------------------------------
 	// elements of A
+	var Aii float64
+	var Ajj float64
+	var Aij float64
+	var Ai []float64
+	var Aj []float64
 	// i-th and j-th rows of A
+	var k int32
 	Ai = dvector(1, n)
 	Aj = dvector(1, n)
 	for k = 1; k <= n; k++ {
@@ -7721,8 +7978,18 @@ func rotate(A [][]float64, n int32, alpha float64, beta float64, i int32, j int3
 	free_dvector(Aj, 1, n)
 }
 
-// stodola - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/eig.c:363
+// stodola - transpiled function from  GOPATH/History_frame3DD/src/eig.c:363
 func stodola(K [][]float64, M [][]float64, n int32, m int32, w []float64, V [][]float64, tol float64, shift float64, iter []int32, ok []int32, verbose int32) {
+	//------------------------------------------------------------------------------
+	//STODOLA  -  calculate the lowest m eigen-values and eigen-vectors of the
+	//generalized eigen-problem, K v = w M v, using a matrix iteration approach
+	//with shifting.         15oct98
+	//
+	// H.P. Gavin, Civil Engineering, Duke University, hpgavin@duke.edu  12 Jul 2001
+	//------------------------------------------------------------------------------
+	// stiffness and mass matrices
+	// DoF and number of required modes
+	// the dynamics matrix, D = K^(-1) M
 	var D [][]float64
 	var d_min float64
 	var d_max float64
@@ -7734,24 +8001,7 @@ func stodola(K [][]float64, M [][]float64, n int32, m int32, w []float64, V [][]
 	var vMv float64
 	var RQ float64
 	var RQold float64
-	var error float64 = 1
-	var i_ex int32 = 9999
-	var modes int32
-	var disp int32
-	var i int32
-	var j int32
-	var k int32
-	var errMsg []byte = make([]byte, 512)
-	//------------------------------------------------------------------------------
-	//STODOLA  -  calculate the lowest m eigen-values and eigen-vectors of the
-	//generalized eigen-problem, K v = w M v, using a matrix iteration approach
-	//with shifting.         15oct98
-	//
-	// H.P. Gavin, Civil Engineering, Duke University, hpgavin@duke.edu  12 Jul 2001
-	//------------------------------------------------------------------------------
-	// stiffness and mass matrices
-	// DoF and number of required modes
-	// the dynamics matrix, D = K^(-1) M
+	var error_ float64 = 1
 	// minimum value of D[i][i]
 	// maximum value of D[i][i]
 	// previous extreme value of D[i][i]
@@ -7761,19 +8011,25 @@ func stodola(K [][]float64, M [][]float64, n int32, m int32, w []float64, V [][]
 	// factor for mass normalization
 	// Raliegh quotient
 	// location of minimum value of D[i][i]
+	var i_ex int32 = 9999
+	var modes int32
+	var disp int32
+	var i int32
+	var j int32
+	var k int32
 	// number of desired modes
 	// 1: display convergence error; 0: dont
+	var errMsg []byte = make([]byte, 512)
 	D = dmatrix(1, n, 1, n)
 	d = dvector(1, n)
 	u = dvector(1, n)
 	v = dvector(1, n)
 	c = dvector(1, m)
-	modes = (func() int32 {
-		if (0.5 * float64(m)) > float64((m - 8)) {
-			return int32((float64(m) / 2))
-		}
-		return m - 8
-	}())
+	if 0.5*float64(m) > float64(m-8) {
+		modes = int32(float64(m) / 2)
+	} else {
+		modes = m - 8
+	}
 	{
 		// shift eigen-values by this much
 		for i = 1; i <= n; i++ {
@@ -7801,16 +8057,14 @@ func stodola(K [][]float64, M [][]float64, n int32, m int32, w []float64, V [][]
 				// improve the solution iteratively
 				noarch.Fprintf(noarch.Stdout, []byte("  RMS matrix error:\x00"))
 			}
-			error = float64((func() int32 {
-				ok[0] = 1
-				return ok[0]
-			}()))
+			ok[0] = 1
+			error_ = float64(ok[0])
 			for {
-				ldl_mprove(K, n, u, v, d, (*[100000000]float64)(unsafe.Pointer(&error))[:], ok)
+				ldl_mprove(K, n, u, v, d, c4goUnsafeConvert_float64(&error_), ok)
 				if disp != 0 {
-					noarch.Fprintf(noarch.Stdout, []byte("%9.2e\x00"), error)
+					noarch.Fprintf(noarch.Stdout, []byte("%9.2e\x00"), error_)
 				}
-				if noarch.NotInt32(ok[0]) != 0 {
+				if noarch.Not(ok[0]) {
 					break
 				}
 			}
@@ -7948,56 +8202,48 @@ func stodola(K [][]float64, M [][]float64, n int32, m int32, w []float64, V [][]
 	free_dvector(c, 1, m)
 }
 
-// eigsort - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/eig.c:524
+// eigsort - transpiled function from  GOPATH/History_frame3DD/src/eig.c:524
 func eigsort(e []float64, v [][]float64, n int32, m int32) {
+	//------------------------------------------------------------------------------
+	//EIGSORT  -  Given the eigenvallues e[1..m] and eigenvectors v[1..n][1..m],
+	//this routine sorts the eigenvalues into ascending order, and rearranges
+	//the columns of v correspondingly.  The method is straight insertion.
+	//Adapted from Numerical Recipes in C, Ch 11
+	//------------------------------------------------------------------------------
 	var k int32
 	var j int32
 	var i int32
 	var p float64
-	{
-		//------------------------------------------------------------------------------
-		//EIGSORT  -  Given the eigenvallues e[1..m] and eigenvectors v[1..n][1..m],
-		//this routine sorts the eigenvalues into ascending order, and rearranges
-		//the columns of v correspondingly.  The method is straight insertion.
-		//Adapted from Numerical Recipes in C, Ch 11
-		//------------------------------------------------------------------------------
-		for i = 1; i < m; i++ {
-			k = i
-			p = e[k]
-			for j = i + 1; j <= m; j++ {
-				if e[j] <= p {
-					// find smallest eigen-value
-					p = e[(func() int32 {
-						k = j
-						return k
-					}())]
-				}
+	for i = 1; i < m; i++ {
+		k = i
+		p = e[k]
+		for j = i + 1; j <= m; j++ {
+			if e[j] <= p {
+				// find smallest eigen-value
+				p = e[(func() int32 {
+					k = j
+					return k
+				}())]
 			}
-			if k != i {
-				// swap eigen-values
-				e[k] = e[i]
-				e[i] = p
-				{
-					// swap eigen-vectors
-					for j = 1; j <= n; j++ {
-						p = v[j][i]
-						v[j][i] = v[j][k]
-						v[j][k] = p
-					}
+		}
+		if k != i {
+			// swap eigen-values
+			e[k] = e[i]
+			e[i] = p
+			{
+				// swap eigen-vectors
+				for j = 1; j <= n; j++ {
+					p = v[j][i]
+					v[j][i] = v[j][k]
+					v[j][k] = p
 				}
 			}
 		}
 	}
 }
 
-// sturm - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/eig.c:563
+// sturm - transpiled function from  GOPATH/History_frame3DD/src/eig.c:563
 func sturm(K [][]float64, M [][]float64, n int32, m int32, shift float64, ws float64, verbose int32) int32 {
-	var ws_shift float64
-	var d []float64
-	var ok int32
-	var i int32
-	var j int32
-	var modes int32
 	//-----------------------------------------------------------------------------
 	//STURM  -  Determine the number of eigenvalues, w, of the general eigen-problem
 	//  K V = w M V which are below the value ws,
@@ -8012,13 +8258,18 @@ func sturm(K [][]float64, M [][]float64, n int32, m int32, shift float64, ws flo
 	// H.P. Gavin, Civil Engineering, Duke University, hpgavin@duke.edu  30 Aug 2001
 	// Bathe, Finite Element Procecures in Engineering Analysis, Prentice Hall, 1982
 	//-----------------------------------------------------------------------------
+	var ws_shift float64
+	var d []float64
+	var ok int32
+	var i int32
+	var j int32
+	var modes int32
 	d = dvector(1, n)
-	modes = (func() int32 {
-		if float32((0.5 * float64(m))) > float32((float64(m) - 8)) {
-			return int32((float64(m) / 2))
-		}
-		return m - 8
-	}())
+	if float32(0.5*float64(m)) > float32(float64(m)-8) {
+		modes = int32(float64(m) / 2)
+	} else {
+		modes = m - 8
+	}
 	// shift [K]
 	ws_shift = ws + shift
 	for i = 1; i <= n; i++ {
@@ -8026,7 +8277,7 @@ func sturm(K [][]float64, M [][]float64, n int32, m int32, shift float64, ws flo
 			K[i][j] -= ws_shift * M[i][j]
 		}
 	}
-	ldl_dcmp(K, n, d, d, d, 1, 0, (*[100000000]int32)(unsafe.Pointer(&ok))[:])
+	ldl_dcmp(K, n, d, d, d, 1, 0, c4goUnsafeConvert_int32(&ok))
 	if verbose != 0 {
 		noarch.Fprintf(noarch.Stdout, []byte("  There are %d modes below %f Hz.\x00"), -ok, math.Sqrt(ws)/(2*3.141592653589793))
 	}
@@ -8046,7 +8297,7 @@ func sturm(K [][]float64, M [][]float64, n int32, m int32, shift float64, ws flo
 	return ok
 }
 
-// check_non_negative - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/eig.c:601
+// check_non_negative - transpiled function from  GOPATH/History_frame3DD/src/eig.c:601
 func check_non_negative(x float64, i int32) {
 	if x <= 1e-100 {
 		//----------------------------------------------------------------------------
@@ -8059,22 +8310,8 @@ func check_non_negative(x float64, i int32) {
 	}
 }
 
-// gaussj - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGmatrix.c:55
+// gaussj - transpiled function from  GOPATH/History_frame3DD/src/HPGmatrix.c:55
 func gaussj(A [][]float32, n int32, B [][]float32, m int32) {
-	var indxc []int32
-	var indxr []int32
-	var ipiv []int32
-	var i int32
-	var icol int32 = 1
-	var irow int32 = 1
-	var j int32
-	var k int32
-	var l int32
-	var ll int32
-	var big float32
-	var dum float32
-	var pivinv float32
-	var temp float32
 	//
 	// * ==========================================================================
 	// *
@@ -8115,6 +8352,20 @@ func gaussj(A [][]float32, n int32, B [][]float32, m int32) {
 	// * output, a is replaced by its matrix inverse, and B is replaced by the corresponding set of solution
 	// * vectors.
 	//
+	var indxc []int32
+	var indxr []int32
+	var ipiv []int32
+	var i int32
+	var icol int32 = 1
+	var irow int32 = 1
+	var j int32
+	var k int32
+	var l int32
+	var ll int32
+	var big float32
+	var dum float32
+	var pivinv float32
+	var temp float32
 	// The integer arrays ipiv, indxr, and indxc are used for bookkeeping on the pivoting.
 	indxc = ivector(1, n)
 	indxr = ivector(1, n)
@@ -8219,12 +8470,8 @@ func gaussj(A [][]float32, n int32, B [][]float32, m int32) {
 	free_ivector(indxc, 1, n)
 }
 
-// lu_dcmp - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGmatrix.c:154
+// lu_dcmp - transpiled function from  GOPATH/History_frame3DD/src/HPGmatrix.c:154
 func lu_dcmp(A [][]float64, n int32, b []float64, reduce int32, solve int32, pd []int32) {
-	var pivot float64
-	var i int32
-	var j int32
-	var k int32
 	//
 	// * LU_DCMP
 	// * Solves [A]{x} = {b} simply and efficiently by performing an
@@ -8245,25 +8492,27 @@ func lu_dcmp(A [][]float64, n int32, b []float64, reduce int32, solve int32, pd 
 	// 1: do a back substitution for {x};  0: do no bk-sub'n
 	// 1: positive diagonal  and  successful LU decomp'n
 	// a diagonal element of [A]
+	var pivot float64
+	var i int32
+	var j int32
+	var k int32
 	pd[0] = 1
 	if reduce != 0 {
-		{
-			// forward reduction of [A]
-			for k = 1; k <= n; k++ {
-				if 0 == (func() float64 {
-					pivot = A[k][k]
-					return pivot
-				}()) {
-					noarch.Fprintf(noarch.Stderr, []byte(" lu_dcmp: zero found on the diagonal\n\x00"))
-					noarch.Fprintf(noarch.Stderr, []byte(" A[%d][%d] = %11.4e\n\x00"), k, k, A[k][k])
-					pd[0] = 0
-					return
-				}
-				for i = k + 1; i <= n; i++ {
-					A[i][k] /= pivot
-					for j = k + 1; j <= n; j++ {
-						A[i][j] -= A[i][k] * A[k][j]
-					}
+		// forward reduction of [A]
+		for k = 1; k <= n; k++ {
+			if 0 == (func() float64 {
+				pivot = A[k][k]
+				return pivot
+			}()) {
+				noarch.Fprintf(noarch.Stderr, []byte(" lu_dcmp: zero found on the diagonal\n\x00"))
+				noarch.Fprintf(noarch.Stderr, []byte(" A[%d][%d] = %11.4e\n\x00"), k, k, A[k][k])
+				pd[0] = 0
+				return
+			}
+			for i = k + 1; i <= n; i++ {
+				A[i][k] /= pivot
+				for j = k + 1; j <= n; j++ {
+					A[i][j] -= A[i][k] * A[k][j]
 				}
 			}
 		}
@@ -8297,12 +8546,8 @@ func lu_dcmp(A [][]float64, n int32, b []float64, reduce int32, solve int32, pd 
 	// TAA DAAAAAAAA! {b} is now {x} and is ready to be returned
 }
 
-// ldl_dcmp - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGmatrix.c:222
+// ldl_dcmp - transpiled function from  GOPATH/History_frame3DD/src/HPGmatrix.c:222
 func ldl_dcmp(A [][]float64, n int32, d []float64, b []float64, x []float64, reduce int32, solve int32, pd []int32) {
-	var i int32
-	var j int32
-	var k int32
-	var m int32
 	//
 	// * LDL_DCMP  -  Solves [A]{x} = {b} simply and efficiently by performing an
 	// * L D L' - decomposition of [A].  No pivoting is performed.
@@ -8328,45 +8573,47 @@ func ldl_dcmp(A [][]float64, n int32, d []float64, b []float64, x []float64, red
 	// 1: do a forward reduction of A; 0: don't
 	// 1: do a back substitution for {x}; 0: don't
 	// 1: definite matrix and successful L D L' decomp'n
+	var i int32
+	var j int32
+	var k int32
+	var m int32
 	// number of negative elements on the diagonal of D
 	pd[0] = 0
 	if reduce != 0 {
-		{
-			// forward column-wise reduction of [A]
-			for j = 1; j <= n; j++ {
-				{
-					// scan the sky-line
-					m = 1
-					i = 1
-					for i = 1; i < j; i++ {
-						if A[i][j] == 0 {
-							m++
-						} else {
-							break
-						}
+		// forward column-wise reduction of [A]
+		for j = 1; j <= n; j++ {
+			{
+				// scan the sky-line
+				m = 1
+				i = 1
+				for i = 1; i < j; i++ {
+					if A[i][j] == 0 {
+						m++
+					} else {
+						break
 					}
 				}
-				for i = m; i < j; i++ {
-					A[j][i] = A[i][j]
-					for k = m; k < i; k++ {
-						A[j][i] -= A[j][k] * A[i][k]
-					}
+			}
+			for i = m; i < j; i++ {
+				A[j][i] = A[i][j]
+				for k = m; k < i; k++ {
+					A[j][i] -= A[j][k] * A[i][k]
 				}
-				d[j] = A[j][j]
-				for i = m; i < j; i++ {
-					d[j] -= A[j][i] * A[j][i] / d[i]
-				}
-				for i = m; i < j; i++ {
-					A[j][i] /= d[i]
-				}
-				if d[j] == 0 {
-					noarch.Fprintf(noarch.Stderr, []byte(" ldl_dcmp(): zero found on diagonal ...\n\x00"))
-					noarch.Fprintf(noarch.Stderr, []byte(" d[%d] = %11.4e\n\x00"), j, d[j])
-					return
-				}
-				if d[j] < 0 {
-					pd[0]--
-				}
+			}
+			d[j] = A[j][j]
+			for i = m; i < j; i++ {
+				d[j] -= A[j][i] * A[j][i] / d[i]
+			}
+			for i = m; i < j; i++ {
+				A[j][i] /= d[i]
+			}
+			if d[j] == 0 {
+				noarch.Fprintf(noarch.Stderr, []byte(" ldl_dcmp(): zero found on diagonal ...\n\x00"))
+				noarch.Fprintf(noarch.Stderr, []byte(" d[%d] = %11.4e\n\x00"), j, d[j])
+				return
+			}
+			if d[j] < 0 {
+				pd[0]--
 			}
 		}
 	}
@@ -8396,14 +8643,8 @@ func ldl_dcmp(A [][]float64, n int32, d []float64, b []float64, x []float64, red
 	}
 }
 
-// ldl_mprove - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGmatrix.c:295
+// ldl_mprove - transpiled function from  GOPATH/History_frame3DD/src/HPGmatrix.c:295
 func ldl_mprove(A [][]float64, n int32, d []float64, b []float64, x []float64, rms_resid []float64, ok []int32) {
-	var sdp float64
-	var resid []float64
-	var rms_resid_new float64
-	var j int32
-	var i int32
-	var pd int32
 	//
 	// * LDL_MPROVE  Improves a solution vector x[1..n] of the linear set of equations
 	// * [A]{x} = {b}.  The matrix A[1..n][1..n], and the vectors b[1..n] and x[1..n]
@@ -8419,9 +8660,15 @@ func ldl_mprove(A [][]float64, n int32, d []float64, b []float64, x []float64, r
 	// * H.P. Gavin, Civil Engineering, Duke University, hpgavin@duke.edu  4 May 2001
 	//
 	// accumulate the r.h.s. in double precision
+	var sdp float64
 	// the residual error
+	var resid []float64
+	var rms_resid_new float64 // j - transpiled function from  GOPATH/History_frame3DD/src/HPGmatrix.c:303
 	// the RMS error of the mprvd solution
-	// allocate memory for a vector        of doubles
+	// allocate memory for a vector	of doubles
+	var j int32 // i - transpiled function from  GOPATH/History_frame3DD/src/HPGmatrix.c:303
+	var i int32 // pd - transpiled function from  GOPATH/History_frame3DD/src/HPGmatrix.c:303
+	var pd int32
 	resid = dvector(1, n)
 	{
 		// calculate the r.h.s. of
@@ -8442,7 +8689,7 @@ func ldl_mprove(A [][]float64, n int32, d []float64, b []float64, x []float64, r
 		}
 	}
 	// solve for the error term
-	ldl_dcmp(A, n, d, resid, resid, 0, 1, (*[100000000]int32)(unsafe.Pointer(&pd))[:])
+	ldl_dcmp(A, n, d, resid, resid, 0, 1, c4goUnsafeConvert_int32(&pd))
 	for i = 1; i <= n; i++ {
 		rms_resid_new += resid[i] * resid[i]
 	}
@@ -8463,12 +8710,8 @@ func ldl_mprove(A [][]float64, n int32, d []float64, b []float64, x []float64, r
 	free_dvector(resid, 1, n)
 }
 
-// ldl_dcmp_pm - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGmatrix.c:366
+// ldl_dcmp_pm - transpiled function from  GOPATH/History_frame3DD/src/HPGmatrix.c:366
 func ldl_dcmp_pm(A [][]float64, n int32, d []float64, b []float64, x []float64, c []float64, q []int32, r []int32, reduce int32, solve int32, pd []int32) {
-	var i int32
-	var j int32
-	var k int32
-	var m int32
 	//
 	// * LDL_DCMP_PM  -  Solves partitioned matrix equations
 	// *
@@ -8507,56 +8750,58 @@ func ldl_dcmp_pm(A [][]float64, n int32, d []float64, b []float64, x []float64, 
 	//< 1: do a forward reduction of A; 0: don't
 	//< 1: do a back substitution for {x}; 0: don't
 	//< 1: definite matrix and successful L D L' decomp'n
+	var i int32
+	var j int32
+	var k int32
+	var m int32
 	// number of negative elements on the diagonal of D
 	pd[0] = 0
 	if reduce != 0 {
-		{
-			// forward column-wise reduction of [A]
-			for j = 1; j <= n; j++ {
-				d[j] = 0
-				if q[j] != 0 {
-					{
-						// reduce column j, except where q[i]==0
-						// scan the sky-line
-						m = 1
-						i = 1
-						for i = 1; i < j; i++ {
-							if A[i][j] == 0 {
-								m++
-							} else {
-								break
+		// forward column-wise reduction of [A]
+		for j = 1; j <= n; j++ {
+			d[j] = 0
+			if q[j] != 0 {
+				{
+					// reduce column j, except where q[i]==0
+					// scan the sky-line
+					m = 1
+					i = 1
+					for i = 1; i < j; i++ {
+						if A[i][j] == 0 {
+							m++
+						} else {
+							break
+						}
+					}
+				}
+				for i = m; i < j; i++ {
+					if q[i] != 0 {
+						A[j][i] = A[i][j]
+						for k = m; k < i; k++ {
+							if q[k] != 0 {
+								A[j][i] -= A[j][k] * A[i][k]
 							}
 						}
 					}
-					for i = m; i < j; i++ {
-						if q[i] != 0 {
-							A[j][i] = A[i][j]
-							for k = m; k < i; k++ {
-								if q[k] != 0 {
-									A[j][i] -= A[j][k] * A[i][k]
-								}
-							}
-						}
+				}
+				d[j] = A[j][j]
+				for i = m; i < j; i++ {
+					if q[i] != 0 {
+						d[j] -= A[j][i] * A[j][i] / d[i]
 					}
-					d[j] = A[j][j]
-					for i = m; i < j; i++ {
-						if q[i] != 0 {
-							d[j] -= A[j][i] * A[j][i] / d[i]
-						}
+				}
+				for i = m; i < j; i++ {
+					if q[i] != 0 {
+						A[j][i] /= d[i]
 					}
-					for i = m; i < j; i++ {
-						if q[i] != 0 {
-							A[j][i] /= d[i]
-						}
-					}
-					if d[j] == 0 {
-						noarch.Fprintf(noarch.Stderr, []byte(" ldl_dcmp_pm(): zero found on diagonal ...\n\x00"))
-						noarch.Fprintf(noarch.Stderr, []byte(" d[%d] = %11.4e\n\x00"), j, d[j])
-						return
-					}
-					if d[j] < 0 {
-						pd[0]--
-					}
+				}
+				if d[j] == 0 {
+					noarch.Fprintf(noarch.Stderr, []byte(" ldl_dcmp_pm(): zero found on diagonal ...\n\x00"))
+					noarch.Fprintf(noarch.Stderr, []byte(" d[%d] = %11.4e\n\x00"), j, d[j])
+					return
+				}
+				if d[j] < 0 {
+					pd[0]--
 				}
 			}
 		}
@@ -8621,15 +8866,8 @@ func ldl_dcmp_pm(A [][]float64, n int32, d []float64, b []float64, x []float64, 
 	}
 }
 
-// ldl_mprove_pm - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGmatrix.c:479
+// ldl_mprove_pm - transpiled function from  GOPATH/History_frame3DD/src/HPGmatrix.c:479
 func ldl_mprove_pm(A [][]float64, n int32, d []float64, b []float64, x []float64, c []float64, q []int32, r []int32, rms_resid []float64, ok []int32) {
-	var sdp float64
-	var dx []float64
-	var dc []float64
-	var rms_resid_new float64
-	var j int32
-	var i int32
-	var pd int32
 	//
 	// * LDL_MPROVE_PM
 	// * Improves a solution vector x[1..n] of the partitioned set of linear equations
@@ -8665,10 +8903,17 @@ func ldl_mprove_pm(A [][]float64, n int32, d []float64, b []float64, x []float64
 	//< root-mean-square of residual error
 	//< 1: >10% reduction in rms_resid; 0: not
 	// accumulate the r.h.s. in double precision
+	var sdp float64
 	// the residual error
+	var dx []float64
+	var dc []float64
+	var rms_resid_new float64 // j - transpiled function from  GOPATH/History_frame3DD/src/HPGmatrix.c:496
 	// update to partial r.h.s. vector, c
 	// the RMS error of the mprvd solution
-	// allocate memory for a vector of doubles
+	// allocate memory for a vector	of doubles
+	var j int32 // i - transpiled function from  GOPATH/History_frame3DD/src/HPGmatrix.c:496
+	var i int32 // pd - transpiled function from  GOPATH/History_frame3DD/src/HPGmatrix.c:496
+	var pd int32
 	dx = dvector(1, n)
 	dc = dvector(1, n)
 	for i = 1; i <= n; i++ {
@@ -8702,7 +8947,7 @@ func ldl_mprove_pm(A [][]float64, n int32, d []float64, b []float64, x []float64
 	}
 	// else dx[i] = 0.0; // x[i];
 	// solve for the residual error term, A is already factored
-	ldl_dcmp_pm(A, n, d, dx, dx, dc, q, r, 0, 1, (*[100000000]int32)(unsafe.Pointer(&pd))[:])
+	ldl_dcmp_pm(A, n, d, dx, dx, dc, q, r, 0, 1, c4goUnsafeConvert_int32(&pd))
 	for i = 1; i <= n; i++ {
 		if q[i] != 0 {
 			rms_resid_new += dx[i] * dx[i]
@@ -8732,29 +8977,27 @@ func ldl_mprove_pm(A [][]float64, n int32, d []float64, b []float64, x []float64
 	free_dvector(dc, 1, n)
 }
 
-// PSB_update - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGmatrix.c:553
+// PSB_update - transpiled function from  GOPATH/History_frame3DD/src/HPGmatrix.c:553
 func PSB_update(B [][]float64, f []float64, d []float64, n int32) {
+	//
+	// * PSB_UPDATE
+	// * Update secant stiffness matrix via the Powell-Symmetric-Broyden update eqn.
+	// *
+	// *       B = B - (f*d' + d*f') / (d' * d) + f'*d * d*d' / (d' * d)^2 ;
+	// *
+	// * H.P. Gavin, Civil Engineering, Duke University, hpgavin@duke.edu  24 Oct 2012
+	//
+	//< secant stiffness matrix
+	//< out-of-balance force vector
+	//< incremental displacement vector
+	//< matrix dimension is n-by-n
 	var i int32
 	var j int32
 	var dtd float64
 	var ftd float64
 	var dtd2 float64
-	{
-		//
-		// * PSB_UPDATE
-		// * Update secant stiffness matrix via the Powell-Symmetric-Broyden update eqn.
-		// *
-		// *       B = B - (f*d' + d*f') / (d' * d) + f'*d * d*d' / (d' * d)^2 ;
-		// *
-		// * H.P. Gavin, Civil Engineering, Duke University, hpgavin@duke.edu  24 Oct 2012
-		//
-		//< secant stiffness matrix
-		//< out-of-balance force vector
-		//< incremental displacement vector
-		//< matrix dimension is n-by-n
-		for i = 1; i <= n; i++ {
-			dtd += d[i] * d[i]
-		}
+	for i = 1; i <= n; i++ {
+		dtd += d[i] * d[i]
 	}
 	dtd2 = dtd * dtd
 	for i = 1; i <= n; i++ {
@@ -8770,7 +9013,7 @@ func PSB_update(B [][]float64, f []float64, d []float64, n int32) {
 	}
 }
 
-// pseudo_inv - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGmatrix.c:580
+// pseudo_inv - transpiled function from  GOPATH/History_frame3DD/src/HPGmatrix.c:580
 func pseudo_inv(A [][]float64, Ai [][]float64, n int32, m int32, beta float64, verbose int32) {
 	var diag []float64
 	var b []float64
@@ -8778,18 +9021,18 @@ func pseudo_inv(A [][]float64, Ai [][]float64, n int32, m int32, beta float64, v
 	var AtA [][]float64
 	var AtAi [][]float64
 	var tmp float64
-	var tr_AtA float64
-	var error float64
-	var i int32
-	var j int32
-	var k int32
-	var ok int32
+	var tr_AtA float64 // error_ - transpiled function from  GOPATH/History_frame3DD/src/HPGmatrix.c:583
 	//
 	// * PSEUDO_INV - calculate the pseudo-inverse of A ,
-	// *       Ai = inv ( A'*A + beta * trace(A'*A) * I ) * A'
-	// *       beta is a regularization factor, which should be small (1e-10)
-	// *       A is m by n      Ai is m by n         8oct01
+	// * 	     Ai = inv ( A'*A + beta * trace(A'*A) * I ) * A'
+	// *	     beta is a regularization factor, which should be small (1e-10)
+	// *	     A is m by n      Ai is m by n			      8oct01
 	//
+	var error_ float64 // i - transpiled function from  GOPATH/History_frame3DD/src/HPGmatrix.c:585
+	var i int32        // j - transpiled function from  GOPATH/History_frame3DD/src/HPGmatrix.c:585
+	var j int32        // k - transpiled function from  GOPATH/History_frame3DD/src/HPGmatrix.c:585
+	var k int32        // ok - transpiled function from  GOPATH/History_frame3DD/src/HPGmatrix.c:585
+	var ok int32
 	diag = dvector(1, n)
 	b = dvector(1, n)
 	x = dvector(1, n)
@@ -8842,7 +9085,7 @@ func pseudo_inv(A [][]float64, Ai [][]float64, n int32, m int32, beta float64, v
 		}
 	}
 	//  L D L'  decomp
-	ldl_dcmp(AtA, n, diag, b, x, 1, 0, (*[100000000]int32)(unsafe.Pointer(&ok))[:])
+	ldl_dcmp(AtA, n, diag, b, x, 1, 0, c4goUnsafeConvert_int32(&ok))
 	{
 		// compute inv(AtA)
 		for j = 1; j <= n; j++ {
@@ -8851,19 +9094,19 @@ func pseudo_inv(A [][]float64, Ai [][]float64, n int32, m int32, beta float64, v
 			}
 			b[j] = 1
 			// L D L' bksbtn
-			ldl_dcmp(AtA, n, diag, b, x, 0, 1, (*[100000000]int32)(unsafe.Pointer(&ok))[:])
+			ldl_dcmp(AtA, n, diag, b, x, 0, 1, c4goUnsafeConvert_int32(&ok))
 			if verbose != 0 {
 				//improve the solution
 				noarch.Fprintf(noarch.Stdout, []byte("  RMS matrix error:\x00"))
 			}
-			error = 1
+			error_ = 1
 			ok = 1
 			for {
-				ldl_mprove(AtA, n, diag, b, x, (*[100000000]float64)(unsafe.Pointer(&error))[:], (*[100000000]int32)(unsafe.Pointer(&ok))[:])
+				ldl_mprove(AtA, n, diag, b, x, c4goUnsafeConvert_float64(&error_), c4goUnsafeConvert_int32(&ok))
 				if verbose != 0 {
-					noarch.Fprintf(noarch.Stdout, []byte("%9.2e\x00"), error)
+					noarch.Fprintf(noarch.Stdout, []byte("%9.2e\x00"), error_)
 				}
-				if noarch.NotInt32(ok) != 0 {
+				if noarch.Not(ok) {
 					break
 				}
 			}
@@ -8906,18 +9149,16 @@ func pseudo_inv(A [][]float64, Ai [][]float64, n int32, m int32, beta float64, v
 	free_dvector(diag, 1, n)
 }
 
-// prodABj - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGmatrix.c:662
+// prodABj - transpiled function from  GOPATH/History_frame3DD/src/HPGmatrix.c:662
 func prodABj(A [][]float64, B [][]float64, u []float64, n int32, j int32) {
+	//
+	// * PRODABj -  matrix-matrix multiplication for symmetric A       27apr01
+	// *                                                           u = A * B(:,j)
+	//
 	var i int32
 	var k int32
-	{
-		//
-		// * PRODABj -  matrix-matrix multiplication for symmetric A       27apr01
-		// *                                                           u = A * B(:,j)
-		//
-		for i = 1; i <= n; i++ {
-			u[i] = 0
-		}
+	for i = 1; i <= n; i++ {
+		u[i] = 0
 	}
 	for i = 1; i <= n; i++ {
 		for k = 1; k <= n; k++ {
@@ -8930,19 +9171,17 @@ func prodABj(A [][]float64, B [][]float64, u []float64, n int32, j int32) {
 	}
 }
 
-// prodAB - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGmatrix.c:681
+// prodAB - transpiled function from  GOPATH/History_frame3DD/src/HPGmatrix.c:681
 func prodAB(A [][]float64, B [][]float64, C [][]float64, I int32, J int32, K int32) {
+	//
+	// * prodAB - matrix-matrix multiplication      C = A * B   27apr01
+	//
 	var i int32
 	var j int32
 	var k int32
-	{
-		//
-		// * prodAB - matrix-matrix multiplication      C = A * B   27apr01
-		//
-		for i = 1; i <= I; i++ {
-			for k = 1; k <= K; k++ {
-				C[i][k] = 0
-			}
+	for i = 1; i <= I; i++ {
+		for k = 1; k <= K; k++ {
+			C[i][k] = 0
 		}
 	}
 	for i = 1; i <= I; i++ {
@@ -8954,19 +9193,19 @@ func prodAB(A [][]float64, B [][]float64, C [][]float64, I int32, J int32, K int
 	}
 }
 
-// invAB - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGmatrix.c:701
+// invAB - transpiled function from  GOPATH/History_frame3DD/src/HPGmatrix.c:701
 func invAB(A [][]float64, B [][]float64, n int32, m int32, AiB [][]float64, ok []int32, verbose int32) {
-	var diag []float64
-	var b []float64
-	var x []float64
-	var error float64
-	var i int32
-	var j int32
-	var k int32
 	//
 	// * INVAB  -  calculate product inv(A) * B
 	// *  A is n by n      B is n by m        6jun07
 	//
+	var diag []float64
+	var b []float64
+	var x []float64
+	var error_ float64
+	var i int32
+	var j int32
+	var k int32
 	diag = dvector(1, n)
 	x = dvector(1, n)
 	b = dvector(1, n)
@@ -8989,17 +9228,15 @@ func invAB(A [][]float64, B [][]float64, n int32, m int32, AiB [][]float64, ok [
 		if verbose != 0 {
 			noarch.Fprintf(noarch.Stdout, []byte("    LDL' RMS matrix precision:\x00"))
 		}
-		error = float64((func() int32 {
-			ok[0] = 1
-			return ok[0]
-		}()))
+		ok[0] = 1
+		error_ = float64(ok[0])
 		for {
 			// improve the solution
-			ldl_mprove(A, n, diag, b, x, (*[100000000]float64)(unsafe.Pointer(&error))[:], ok)
+			ldl_mprove(A, n, diag, b, x, c4goUnsafeConvert_float64(&error_), ok)
 			if verbose != 0 {
-				noarch.Fprintf(noarch.Stdout, []byte("%9.2e\x00"), error)
+				noarch.Fprintf(noarch.Stdout, []byte("%9.2e\x00"), error_)
 			}
-			if noarch.NotInt32(ok[0]) != 0 {
+			if noarch.Not(ok[0]) {
 				break
 			}
 		}
@@ -9015,20 +9252,20 @@ func invAB(A [][]float64, B [][]float64, n int32, m int32, AiB [][]float64, ok [
 	free_dvector(b, 1, n)
 }
 
-// xtinvAy - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGmatrix.c:744
+// xtinvAy - transpiled function from  GOPATH/History_frame3DD/src/HPGmatrix.c:744
 func xtinvAy(X [][]float64, A [][]float64, Y [][]float64, n int32, m int32, Ac [][]float64, verbose int32) {
-	var diag []float64
-	var x []float64
-	var y []float64
-	var error float64
-	var i int32
-	var j int32
-	var k int32
-	var ok int32
 	//
 	// * XTinvAY  -  calculate quadratic form with inverse matrix   X' * inv(A) * Y
 	// *    A is n by n    X is n by m     Y is n by m      15sep01
 	//
+	var diag []float64
+	var x []float64
+	var y []float64
+	var error_ float64
+	var i int32
+	var j int32
+	var k int32
+	var ok int32
 	diag = dvector(1, n)
 	x = dvector(1, n)
 	y = dvector(1, n)
@@ -9037,27 +9274,25 @@ func xtinvAy(X [][]float64, A [][]float64, Y [][]float64, n int32, m int32, Ac [
 		diag[i] = x[i]
 	}
 	//   L D L'  decomp
-	ldl_dcmp(A, n, diag, y, x, 1, 0, (*[100000000]int32)(unsafe.Pointer(&ok))[:])
+	ldl_dcmp(A, n, diag, y, x, 1, 0, c4goUnsafeConvert_int32(&ok))
 	for j = 1; j <= m; j++ {
 		for k = 1; k <= n; k++ {
 			y[k] = Y[k][j]
 		}
 		//   L D L'  bksbtn
-		ldl_dcmp(A, n, diag, y, x, 0, 1, (*[100000000]int32)(unsafe.Pointer(&ok))[:])
+		ldl_dcmp(A, n, diag, y, x, 0, 1, c4goUnsafeConvert_int32(&ok))
 		if verbose != 0 {
 			noarch.Fprintf(noarch.Stdout, []byte("    LDL' RMS matrix precision:\x00"))
 		}
-		error = float64((func() int32 {
-			ok = 1
-			return ok
-		}()))
+		ok = 1
+		error_ = float64(ok)
 		for {
 			// improve the solution
-			ldl_mprove(A, n, diag, y, x, (*[100000000]float64)(unsafe.Pointer(&error))[:], (*[100000000]int32)(unsafe.Pointer(&ok))[:])
+			ldl_mprove(A, n, diag, y, x, c4goUnsafeConvert_float64(&error_), c4goUnsafeConvert_int32(&ok))
 			if verbose != 0 {
-				noarch.Fprintf(noarch.Stdout, []byte("%9.2e\x00"), error)
+				noarch.Fprintf(noarch.Stdout, []byte("%9.2e\x00"), error_)
 			}
-			if noarch.NotInt32(ok) != 0 {
+			if noarch.Not(ok) {
 				break
 			}
 		}
@@ -9076,35 +9311,33 @@ func xtinvAy(X [][]float64, A [][]float64, Y [][]float64, n int32, m int32, Ac [
 	free_dvector(y, 1, n)
 }
 
-// coord_xfrm - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGmatrix.c:787
+// coord_xfrm - transpiled function from  GOPATH/History_frame3DD/src/HPGmatrix.c:787
 func coord_xfrm(Rr [][]float32, R [][]float32, theta float32, n int32) {
+	//  COORD_XFRM - coordinate transform of a matrix of column 2-vectors
+	// *
+	// * Rr  = [ cosd(theta) -sind(theta) ; sind(theta) cosd(theta) ]*[ Rx ; Ry ];
+	//
 	var R1 float32
 	var R2 float32
 	var i int32
-	{
-		//  COORD_XFRM - coordinate transform of a matrix of column 2-vectors
-		// *
-		// * Rr  = [ cosd(theta) -sind(theta) ; sind(theta) cosd(theta) ]*[ Rx ; Ry ];
-		//
-		for i = 1; i <= n; i++ {
-			R1 = float32(math.Cos(math.Mod(float64(theta), 360)*3.141592653589793/180)*float64(R[1][i]) - math.Sin(math.Mod(float64(theta), 360)*3.141592653589793/180)*float64(R[2][i]))
-			R2 = float32(math.Sin(math.Mod(float64(theta), 360)*3.141592653589793/180)*float64(R[1][i]) + math.Cos(math.Mod(float64(theta), 360)*3.141592653589793/180)*float64(R[2][i]))
-			Rr[1][i] = R1
-			Rr[2][i] = R2
-		}
+	for i = 1; i <= n; i++ {
+		R1 = float32(math.Cos(math.Mod(float64(theta), 360)*3.141592653589793/180)*float64(R[1][i]) - math.Sin(math.Mod(float64(theta), 360)*3.141592653589793/180)*float64(R[2][i]))
+		R2 = float32(math.Sin(math.Mod(float64(theta), 360)*3.141592653589793/180)*float64(R[1][i]) + math.Cos(math.Mod(float64(theta), 360)*3.141592653589793/180)*float64(R[2][i]))
+		Rr[1][i] = R1
+		Rr[2][i] = R2
 	}
 }
 
-// xtAx - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGmatrix.c:806
+// xtAx - transpiled function from  GOPATH/History_frame3DD/src/HPGmatrix.c:806
 func xtAx(A [][]float64, X [][]float64, C [][]float64, N int32, J int32) {
-	var AX [][]float64
-	var i int32
-	var j int32
-	var k int32
 	//
 	// * xtAx - carry out matrix-matrix-matrix multiplication for symmetric A  7nov02
 	// *  C = X' A X     C is J by J      X is N by J     A is N by N
 	//
+	var AX [][]float64
+	var i int32
+	var j int32
+	var k int32
 	AX = dmatrix(1, N, 1, J)
 	for i = 1; i <= J; i++ {
 		for j = 1; j <= J; j++ {
@@ -9149,15 +9382,15 @@ func xtAx(A [][]float64, X [][]float64, C [][]float64, N int32, J int32) {
 	free_dmatrix(AX, 1, N, 1, J)
 }
 
-// xtAy - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGmatrix.c:843
+// xtAy - transpiled function from  GOPATH/History_frame3DD/src/HPGmatrix.c:843
 func xtAy(x []float64, A [][]float64, y []float64, n int32, d []float64) float64 {
+	//
+	// * xtAy - carry out vector-matrix-vector multiplication for symmetric A  7apr94
+	//
 	var xtAy float64
 	var i int32
 	var j int32
 	{
-		//
-		// * xtAy - carry out vector-matrix-vector multiplication for symmetric A  7apr94
-		//
 		//  d = A y
 		for i = 1; i <= n; i++ {
 			d[i] = 0
@@ -9182,24 +9415,24 @@ func xtAy(x []float64, A [][]float64, y []float64, n int32, d []float64) float64
 	return xtAy
 }
 
-// invAXinvA - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGmatrix.c:866
+// invAXinvA - transpiled function from  GOPATH/History_frame3DD/src/HPGmatrix.c:866
 func invAXinvA(A [][]float64, X [][]float64, n int32, verbose int32) {
+	//
+	// * invAXinvA -  calculate quadratic form with inverse matrix
+	// *    replace X with inv(A) * X * inv(A)
+	// *    A is n by n and symmetric   X is n by n and symmetric    15sep01
+	//
 	var diag []float64
 	var b []float64
 	var x []float64
 	var Ai [][]float64
 	var XAi [][]float64
 	var Aij float64
-	var error float64
+	var error_ float64
 	var i int32
 	var j int32
 	var k int32
 	var ok int32
-	//
-	// * invAXinvA -  calculate quadratic form with inverse matrix
-	// *    replace X with inv(A) * X * inv(A)
-	// *    A is n by n and symmetric   X is n by n and symmetric    15sep01
-	//
 	diag = dvector(1, n)
 	x = dvector(1, n)
 	b = dvector(1, n)
@@ -9215,7 +9448,7 @@ func invAXinvA(A [][]float64, X [][]float64, n int32, verbose int32) {
 		}
 	}
 	//   L D L'  decomp
-	ldl_dcmp(A, n, diag, b, x, 1, 0, (*[100000000]int32)(unsafe.Pointer(&ok))[:])
+	ldl_dcmp(A, n, diag, b, x, 1, 0, c4goUnsafeConvert_int32(&ok))
 	{
 		//  compute inv(A)
 		for j = 1; j <= n; j++ {
@@ -9224,21 +9457,19 @@ func invAXinvA(A [][]float64, X [][]float64, n int32, verbose int32) {
 			}
 			b[j] = 1
 			//   L D L'  bksbtn
-			ldl_dcmp(A, n, diag, b, x, 0, 1, (*[100000000]int32)(unsafe.Pointer(&ok))[:])
+			ldl_dcmp(A, n, diag, b, x, 0, 1, c4goUnsafeConvert_int32(&ok))
 			if verbose != 0 {
 				noarch.Fprintf(noarch.Stdout, []byte("    LDL' RMS matrix precision:\x00"))
 			}
-			error = float64((func() int32 {
-				ok = 1
-				return ok
-			}()))
+			ok = 1
+			error_ = float64(ok)
 			for {
 				// improve the solution
-				ldl_mprove(A, n, diag, b, x, (*[100000000]float64)(unsafe.Pointer(&error))[:], (*[100000000]int32)(unsafe.Pointer(&ok))[:])
+				ldl_mprove(A, n, diag, b, x, c4goUnsafeConvert_float64(&error_), c4goUnsafeConvert_int32(&ok))
 				if verbose != 0 {
-					noarch.Fprintf(noarch.Stdout, []byte("%9.2e\x00"), error)
+					noarch.Fprintf(noarch.Stdout, []byte("%9.2e\x00"), error_)
 				}
-				if noarch.NotInt32(ok) != 0 {
+				if noarch.Not(ok) {
 					break
 				}
 			}
@@ -9302,21 +9533,19 @@ func invAXinvA(A [][]float64, X [][]float64, n int32, verbose int32) {
 	free_dmatrix(XAi, 1, n, 1, n)
 }
 
-// relative_norm - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGmatrix.c:939
+// relative_norm - transpiled function from  GOPATH/History_frame3DD/src/HPGmatrix.c:939
 func relative_norm(N []float64, D []float64, n int32) float64 {
+	//
+	// *  RELATIVE_NORM -  compute the relative 2-norm between two vectors       26dec01
+	// *       compute the relative 2-norm between two vectors N and D
+	// *        return  ( sqrt(sum(N[i]*N[i]) / sqrt(D[i]*D[i]) )
+	// *
+	//
 	var nN float64
 	var nD float64
 	var i int32
-	{
-		//
-		// *  RELATIVE_NORM -  compute the relative 2-norm between two vectors       26dec01
-		// *       compute the relative 2-norm between two vectors N and D
-		// *        return  ( sqrt(sum(N[i]*N[i]) / sqrt(D[i]*D[i]) )
-		// *
-		//
-		for i = 1; i <= n; i++ {
-			nN += N[i] * N[i]
-		}
+	for i = 1; i <= n; i++ {
+		nN += N[i] * N[i]
 	}
 	for i = 1; i <= n; i++ {
 		nD += D[i] * D[i]
@@ -9324,15 +9553,15 @@ func relative_norm(N []float64, D []float64, n int32) float64 {
 	return math.Sqrt(nN) / math.Sqrt(nD)
 }
 
-// Legendre - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGmatrix.c:955
+// Legendre - transpiled function from  GOPATH/History_frame3DD/src/HPGmatrix.c:955
 func Legendre(order int32, t []float32, n int32, P [][]float32, Pp [][]float32, Ppp [][]float32) {
+	//
+	// *  Legendre
+	// *  compute matrix of the Legendre polynomials and its first two derivitives
+	//
 	var k int32
 	var p int32
 	{
-		//
-		// *  Legendre
-		// *  compute matrix of the Legendre polynomials and its first two derivitives
-		//
 		// save_vector( n, t, "t.dat");
 		for p = 1; p <= n; p++ {
 			P[0][p] = float32(1)
@@ -9356,7 +9585,7 @@ func Legendre(order int32, t []float32, n int32, P [][]float32, Pp [][]float32, 
 	}
 }
 
-// color - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:35
+// color - transpiled function from  GOPATH/History_frame3DD/src/HPGutil.c:35
 func color(colorCode int32) {
 	//  HPGutil.c  ---  library of general-purpose utility functions
 	//
@@ -9388,7 +9617,7 @@ func color(colorCode int32) {
 	_ = noarch.Fflush(noarch.Stderr)
 }
 
-// textColor - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:53
+// textColor - transpiled function from  GOPATH/History_frame3DD/src/HPGutil.c:53
 func textColor(tColor byte, bColor byte, nbf byte, uline byte) {
 	//
 	// * TEXTCOLOR - change color of text and background
@@ -9484,7 +9713,7 @@ func textColor(tColor byte, bColor byte, nbf byte, uline byte) {
 	_ = noarch.Fflush(noarch.Stderr)
 }
 
-// errorMsg - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:94
+// errorMsg - transpiled function from  GOPATH/History_frame3DD/src/HPGutil.c:94
 func errorMsg(errString []byte) {
 	//
 	// * ERRORMSG -  write a diagnostic error message in color
@@ -9500,15 +9729,15 @@ func errorMsg(errString []byte) {
 	noarch.Fprintf(noarch.Stderr, []byte("\n\n\x00"))
 }
 
-// openFile - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:114
+// openFile - transpiled function from  GOPATH/History_frame3DD/src/HPGutil.c:114
 func openFile(path []byte, fileName []byte, mode []byte, usage []byte) (c4goDefaultReturn *noarch.File) {
+	//
+	// * OPENFILE  -  open a file or print a diagnostic error message
+	//
 	var fp *noarch.File
 	var pathToFile []byte = make([]byte, 512)
 	var errMsg []byte = make([]byte, 512)
-	if mode == nil {
-		//
-		// * OPENFILE  -  open a file or print a diagnostic error message
-		//
+	if len(mode) == 0 {
 		return nil
 	}
 	noarch.Sprintf(pathToFile, []byte("%s%s\x00"), path, fileName)
@@ -9517,7 +9746,6 @@ func openFile(path []byte, fileName []byte, mode []byte, usage []byte) (c4goDefa
 		return fp
 	}()) == nil {
 		// open file
-		// Warning (*ast.SwitchStmt):  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:126 :Unsupport case
 		noarch.Sprintf(errMsg, []byte(" openFile: \x00"))
 		switch int32(mode[0]) {
 		case 'w':
@@ -9527,9 +9755,7 @@ func openFile(path []byte, fileName []byte, mode []byte, usage []byte) (c4goDefa
 		case 'a':
 			noarch.Sprintf(errMsg, []byte("%s%s\n  usage: %s\x00"), []byte("cannot append to file: \x00"), pathToFile, usage)
 		default:
-			{
-				noarch.Sprintf(errMsg, []byte("%s%s\n  usage: %s\x00"), []byte("cannot open file: \x00"), pathToFile, usage)
-			}
+			noarch.Sprintf(errMsg, []byte("%s%s\n  usage: %s\x00"), []byte("cannot open file: \x00"), pathToFile, usage)
 		}
 		errorMsg(errMsg)
 		noarch.Exit(1)
@@ -9539,8 +9765,11 @@ func openFile(path []byte, fileName []byte, mode []byte, usage []byte) (c4goDefa
 	return
 }
 
-// scanLine - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:155
+// scanLine - transpiled function from  GOPATH/History_frame3DD/src/HPGutil.c:155
 func scanLine(fp *noarch.File, lim int32, s []byte, a byte) int32 {
+	//
+	// * SCANLINE -  scan through a line until a 'a' is reached, like getline() 3feb94
+	//
 	var c int32
 	var i int32 = -1
 	for func() int32 {
@@ -9550,9 +9779,6 @@ func scanLine(fp *noarch.File, lim int32, s []byte, a byte) int32 {
 		c = noarch.Fgetc(fp)
 		return c
 	}()) != -1 && c != int32(a) {
-		//
-		// * SCANLINE -  scan through a line until a 'a' is reached, like getline() 3feb94
-		//
 		s[func() int32 {
 			i++
 			return i
@@ -9565,13 +9791,13 @@ func scanLine(fp *noarch.File, lim int32, s []byte, a byte) int32 {
 	return i
 }
 
-// scanLabel - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:168
+// scanLabel - transpiled function from  GOPATH/History_frame3DD/src/HPGutil.c:168
 func scanLabel(fp *noarch.File, lim int32, s []byte, a byte) int32 {
-	var c int32
-	var i int32 = -1
 	//
 	// * SCANLABEL -  scan through a line until a '"' is reached, like getline()
 	//
+	var c int32
+	var i int32 = -1
 	for func() int32 {
 		lim--
 		return lim
@@ -9601,8 +9827,12 @@ func scanLabel(fp *noarch.File, lim int32, s []byte, a byte) int32 {
 	return i
 }
 
-// scanFile - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:185
+// scanFile - transpiled function from  GOPATH/History_frame3DD/src/HPGutil.c:185
 func scanFile(fp *noarch.File, head_lines int32, start_chnl int32, stop_chnl int32) int32 {
+	//
+	// * SCANFILE -  count the number of lines of multi-column data in a data file,
+	// * skipping over "head_lines" lines of header information
+	//
 	var points int32
 	var i int32
 	var chn int32
@@ -9610,10 +9840,6 @@ func scanFile(fp *noarch.File, head_lines int32, start_chnl int32, stop_chnl int
 	var data_value float32
 	var ch byte
 	{
-		//
-		// * SCANFILE -  count the number of lines of multi-column data in a data file,
-		// * skipping over "head_lines" lines of header information
-		//
 		// scan through the header
 		for i = 1; i <= head_lines; i++ {
 			for int32((func() byte {
@@ -9627,7 +9853,7 @@ func scanFile(fp *noarch.File, head_lines int32, start_chnl int32, stop_chnl int
 		{
 			// count the number of lines of data
 			for chn = start_chnl; chn <= stop_chnl; chn++ {
-				ok = noarch.Fscanf(fp, []byte("%f\x00"), (*[100000000]float32)(unsafe.Pointer(&data_value))[:])
+				ok = noarch.Fscanf(fp, []byte("%f\x00"), c4goUnsafeConvert_float32(&data_value))
 				if ok == 1 {
 					points++
 				}
@@ -9644,14 +9870,18 @@ func scanFile(fp *noarch.File, head_lines int32, start_chnl int32, stop_chnl int
 			break
 		}
 	}
-	points = (points / (stop_chnl - start_chnl + 1))
+	points = points / (stop_chnl - start_chnl + 1)
 	// printf ("%% %d data points\n", points);
 	noarch.Rewind(fp)
 	return points
 }
 
-// getLine - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:217
+// getLine - transpiled function from  GOPATH/History_frame3DD/src/HPGutil.c:217
 func getLine(fp *noarch.File, lim int32, s []byte) int32 {
+	//
+	// * GETLINE -  get line form a stream into a character string, return length
+	// * from K&R        3feb94
+	//
 	var c int32
 	var i int32
 	for func() int32 {
@@ -9661,10 +9891,6 @@ func getLine(fp *noarch.File, lim int32, s []byte) int32 {
 		c = noarch.Fgetc(fp)
 		return c
 	}()) != -1 && c != int32('\n') {
-		//
-		// * GETLINE -  get line form a stream into a character string, return length
-		// * from K&R        3feb94
-		//
 		s[func() int32 {
 			defer func() {
 				i++
@@ -9682,17 +9908,17 @@ func getLine(fp *noarch.File, lim int32, s []byte) int32 {
 	return i
 }
 
-// getTime - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:235
+// getTime - transpiled function from  GOPATH/History_frame3DD/src/HPGutil.c:235
 func getTime(s []byte, y int32, m int32, d int32, hr int32, mn int32, sc int32, os_ int32) noarch.TimeT {
-	var temp []byte = make([]byte, 16)
-	var t_tm noarch.Tm
-	var t_time noarch.TimeT
 	//
 	// * getTime  parse a numeric time string similar to YYYYMMDDhhmmss
 	// * The input variables y, m, d, hr, mn, sc are the indices of the string s[]
 	// * which start the YYYY, MM, DD, hh, mm, ss sections of the time string.
 	// * The corresponding time is returned in "time_t" format.
 	//
+	var temp []byte = make([]byte, 16)
+	var t_tm noarch.Tm
+	var t_time noarch.TimeT
 	t_tm.TmYear = noarch.Atoi(noarch.Strncpy(temp, s[0+y:], int32(4))) - 1900
 	temp[2] = '\x00'
 	t_tm.TmMon = noarch.Atoi(noarch.Strncpy(temp, s[0+m:], int32(2))) - 1
@@ -9703,21 +9929,21 @@ func getTime(s []byte, y int32, m int32, d int32, hr int32, mn int32, sc int32, 
 	//  all times are Universal Time never daylight savings time
 	t_tm.TmIsdst = -1
 	// normalize t_tm
-	t_time = noarch.Mktime((*[100000000]noarch.Tm)(unsafe.Pointer(&t_tm))[:])
+	t_time = noarch.Mktime((*[1000000]noarch.Tm)(unsafe.Pointer(&t_tm))[:])
 	// printf("%d ... %s", (int) t_time, ctime(&t_time) );
 	return t_time
 }
 
-// showProgress - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:265
+// showProgress - transpiled function from  GOPATH/History_frame3DD/src/HPGutil.c:265
 func showProgress(i int32, n int32, count int32) {
+	//
+	// * SHOW_PROGRESS  -   show the progress of long computations
+	//
 	var k int32
 	var j int32
 	var line_length int32 = 55
 	var percent_done float32
-	//
-	// * SHOW_PROGRESS  -   show the progress of long computations
-	//
-	percent_done = float32((i)) / float32((n))
+	percent_done = float32(i) / float32(n)
 	j = int32(math.Ceil(float64(percent_done * float32(line_length))))
 	for k = 1; k <= line_length+13; k++ {
 		noarch.Fprintf(noarch.Stderr, []byte("\b\x00"))
@@ -9733,17 +9959,17 @@ func showProgress(i int32, n int32, count int32) {
 	noarch.Fflush(noarch.Stderr)
 }
 
-// sferr - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/HPGutil.c:288
+// sferr - transpiled function from  GOPATH/History_frame3DD/src/HPGutil.c:288
 func sferr(s []byte) {
-	var errMsg []byte = make([]byte, 512)
 	//
 	// * SFERR  -  Display error message upon an erronous *scanf operation
 	//
+	var errMsg []byte = make([]byte, 512)
 	noarch.Sprintf(errMsg, []byte(">> Input Data file error while reading %s\n\x00"), s)
 	errorMsg(errMsg)
 }
 
-// NRerror - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:20
+// NRerror - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:20
 func NRerror(error_text []byte) {
 	// @file
 	// Memory allocation functions from Numerical Recipes in C, by Press,
@@ -9757,168 +9983,163 @@ func NRerror(error_text []byte) {
 	noarch.Exit(1000)
 }
 
-// vector - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:29
+// vector - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:29
 func vector(nl int32, nh int32) []float32 {
-	var v []float32
 	// allocate a float vector with subscript range v[nl..nh]
-	v = make([]float32, uint((uint32(nh-nl+1+1)*4))*uint(1)/4)
+	var v []float32
+	v = make([]float32, uint32(uint32(nh-nl+1+1)*uint32(1)))
 	if v == nil {
 		NRerror([]byte("allocation failure in vector()\x00"))
 	}
-	return (*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) - (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][1:]
+	return c4goPointerArithFloat32Slice(c4goPointerArithFloat32Slice(v, int(-nl)), int(1))
 }
 
-// ivector - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:39
+// ivector - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:39
 func ivector(nl int32, nh int32) []int32 {
-	var v []int32
 	// allocate an int vector with subscript range v[nl..nh]
-	v = make([]int32, uint((uint32(nh-nl+1+1)*4))*uint(1)/4)
+	var v []int32
+	v = make([]int32, uint32(uint32(nh-nl+1+1)*uint32(1)))
 	if v == nil {
 		NRerror([]byte("allocation failure in ivector()\x00"))
 	}
-	var e int32 = -nl + 1
-	//-nl+NR_END;
-	return v[0+e:]
+	return c4goPointerArithInt32Slice(c4goPointerArithInt32Slice(v, int(-nl)), int(1))
 }
 
-// cvector - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:50
+// cvector - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:49
 func cvector(nl int32, nh int32) []uint8 {
-	var v []uint8
 	// allocate an unsigned char vector with subscript range v[nl..nh]
-	v = make([]uint8, uint((uint32(nh-nl+1+1)*1))*uint(1)/1)
+	var v []uint8
+	v = make([]uint8, uint32(uint32(nh-nl+1+1)*uint32(1)))
 	if v == nil {
 		NRerror([]byte("allocation failure in cvector()\x00"))
 	}
-	var e int32 = -nl + 1
-	// return v-nl+NR_END;
-	//-nl+NR_END;
-	return v[0+e:]
+	return c4goPointerArithUint8Slice(c4goPointerArithUint8Slice(v, int(-nl)), int(1))
 }
 
-// lvector - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:62
+// lvector - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:59
 func lvector(nl int32, nh int32) []uint32 {
-	var v []uint32
 	// allocate an unsigned long vector with subscript range v[nl..nh]
-	v = make([]uint32, uint((uint32(nh-nl+1+1)*8))*uint(1)/8)
+	var v []uint32
+	v = (*[1000000]uint32)(unsafe.Pointer(uintptr(func() int64 {
+		c4go_temp_name := make([]int32, uint32(uint32(nh-nl+1+1)*uint32(1)))
+		return int64(uintptr(unsafe.Pointer(*(**byte)(unsafe.Pointer(&c4go_temp_name)))))
+	}())))[:]
 	if v == nil {
 		NRerror([]byte("allocation failure in lvector()\x00"))
 	}
-	return (*(*[1000000000]uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) - (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:][1:]
+	return c4goPointerArithUint32Slice(c4goPointerArithUint32Slice(v, int(-nl)), int(1))
 }
 
-// dvector - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:72
+// dvector - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:69
 func dvector(nl int32, nh int32) []float64 {
-	var v []float64
 	// allocate a double vector with subscript range v[nl..nh]
-	v = make([]float64, uint((uint32(nh-nl+1+1)*8))*uint(1)/8)
+	var v []float64
+	v = make([]float64, uint32(uint32(nh-nl+1+1)*uint32(1)))
 	if v == nil {
 		NRerror([]byte("allocation failure in dvector()\x00"))
 	}
-	var e int32 = -nl + 1
-	// return v-nl+NR_END;
-	//-nl+NR_END;
-	return v[0+e:]
+	return c4goPointerArithFloat64Slice(c4goPointerArithFloat64Slice(v, int(-nl)), int(1))
 }
 
-// matrix - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:84
+// matrix - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:79
 func matrix(nrl int32, nrh int32, ncl int32, nch int32) [][]float32 {
+	// allocate a float matrix with subscript range m[nrl..nrh][ncl..nch]
 	var i int32
 	var nrow int32 = nrh - nrl + 1
 	var ncol int32 = nch - ncl + 1
 	var m [][]float32
-	// allocate a float matrix with subscript range m[nrl..nrh][ncl..nch]
 	// allocate pointers to rows
-	m = make([][]float32, uint((uint32(nrow+1)*8))*uint(1)/8)
+	m = make([][]float32, uint32(uint32(nrow+1)*uint32(1)))
 	if m == nil {
 		NRerror([]byte("allocation failure 1 in matrix()\x00"))
 	}
 	m = m[0+1:]
-	m = (*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) - (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:]
+	m = c4goPointerArithFloat32SliceSlice(m, int(-nrl))
 	// allocate rows and set pointers to them
-	m[nrl] = make([]float32, uint((uint32(nrow*ncol+1)*4))*uint(1)/4)
+	m[nrl] = make([]float32, uint32(uint32(nrow*ncol+1)*uint32(1)))
 	if m[nrl] == nil {
 		NRerror([]byte("allocation failure 2 in matrix()\x00"))
 	}
 	m[nrl] = (m[nrl])[0+1:]
-	m[nrl] = (*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) - (uintptr)(ncl)*unsafe.Sizeof(m[nrl][0]))))[:]
+	m[nrl] = c4goPointerArithFloat32Slice(m[nrl], int(-ncl))
 	for i = nrl + 1; i <= nrh; i++ {
-		m[i] = (*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i-1][0])) + (uintptr)(ncol)*unsafe.Sizeof(m[i-1][0]))))[:]
+		m[i] = c4goPointerArithFloat32Slice(m[i-1], int(ncol))
 	}
 	// return pointer to array of pointers to rows
 	return m
 }
 
-// dmatrix - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:108
+// dmatrix - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:103
 func dmatrix(nrl int32, nrh int32, ncl int32, nch int32) [][]float64 {
+	// allocate a double matrix with subscript range m[nrl..nrh][ncl..nch]
 	var i int32
 	var nrow int32 = nrh - nrl + 1
 	var ncol int32 = nch - ncl + 1
 	var m [][]float64
-	// allocate a double matrix with subscript range m[nrl..nrh][ncl..nch]
 	// allocate pointers to rows
-	m = make([][]float64, uint((uint32(nrow+1)*8))*uint(1)/8)
+	m = make([][]float64, uint32(uint32(nrow+1)*uint32(1)))
 	if m == nil {
 		NRerror([]byte("allocation failure 1 in matrix()\x00"))
 	}
 	m = m[0+1:]
-	m = (*(*[1000000000][]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) - (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:]
+	m = c4goPointerArithFloat64SliceSlice(m, int(-nrl))
 	// allocate rows and set pointers to them
-	m[nrl] = make([]float64, uint((uint32(nrow*ncol+1)*8))*uint(1)/8)
+	m[nrl] = make([]float64, uint32(uint32(nrow*ncol+1)*uint32(1)))
 	if m[nrl] == nil {
 		NRerror([]byte("allocation failure 2 in matrix()\x00"))
 	}
 	m[nrl] = (m[nrl])[0+1:]
-	m[nrl] = (*(*[1000000000]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) - (uintptr)(ncl)*unsafe.Sizeof(m[nrl][0]))))[:]
+	m[nrl] = c4goPointerArithFloat64Slice(m[nrl], int(-ncl))
 	for i = nrl + 1; i <= nrh; i++ {
-		m[i] = (*(*[1000000000]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i-1][0])) + (uintptr)(ncol)*unsafe.Sizeof(m[i-1][0]))))[:]
+		m[i] = c4goPointerArithFloat64Slice(m[i-1], int(ncol))
 	}
 	// return pointer to array of pointers to rows
 	return m
 }
 
-// imatrix - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:132
+// imatrix - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:127
 func imatrix(nrl int32, nrh int32, ncl int32, nch int32) [][]int32 {
+	// allocate a int matrix with subscript range m[nrl..nrh][ncl..nch]
 	var i int32
 	var nrow int32 = nrh - nrl + 1
 	var ncol int32 = nch - ncl + 1
 	var m [][]int32
-	// allocate a int matrix with subscript range m[nrl..nrh][ncl..nch]
 	// allocate pointers to rows
-	m = make([][]int32, uint((uint32(nrow+1)*8))*uint(1)/8)
+	m = make([][]int32, uint32(uint32(nrow+1)*uint32(1)))
 	if m == nil {
 		NRerror([]byte("allocation failure 1 in matrix()\x00"))
 	}
 	m = m[0+1:]
-	m = (*(*[1000000000][]int32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) - (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:]
+	m = c4goPointerArithInt32SliceSlice(m, int(-nrl))
 	// allocate rows and set pointers to them
-	m[nrl] = make([]int32, uint((uint32(nrow*ncol+1)*4))*uint(1)/4)
+	m[nrl] = make([]int32, uint32(uint32(nrow*ncol+1)*uint32(1)))
 	if m[nrl] == nil {
 		NRerror([]byte("allocation failure 2 in matrix()\x00"))
 	}
 	m[nrl] = (m[nrl])[0+1:]
-	m[nrl] = (*(*[1000000000]int32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[nrl][0])) - (uintptr)(ncl)*unsafe.Sizeof(m[nrl][0]))))[:]
+	m[nrl] = c4goPointerArithInt32Slice(m[nrl], int(-ncl))
 	for i = nrl + 1; i <= nrh; i++ {
-		m[i] = (*(*[1000000000]int32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i-1][0])) + (uintptr)(ncol)*unsafe.Sizeof(m[i-1][0]))))[:]
+		m[i] = c4goPointerArithInt32Slice(m[i-1], int(ncol))
 	}
 	// return pointer to array of pointers to rows
 	return m
 }
 
-// subMatrix - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:157
+// subMatrix - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:152
 func subMatrix(a [][]float32, oldrl int32, oldrh int32, oldcl int32, oldch int32, newrl int32, newcl int32) [][]float32 {
+	// point a subMatrix [newrl..][newcl..] to a[oldrl..oldrh][oldcl..oldch]
 	var i int32
 	var j int32
 	var nrow int32 = oldrh - oldrl + 1
 	var ncol int32 = oldcl - newcl
 	var m [][]float32
-	// point a subMatrix [newrl..][newcl..] to a[oldrl..oldrh][oldcl..oldch]
 	// allocate array of pointers to rows
-	m = make([][]float32, uint((uint32(nrow+1)*8))*uint(1)/8)
+	m = make([][]float32, uint32(uint32(nrow+1)*uint32(1)))
 	if m == nil {
 		NRerror([]byte("allocation failure in subMatrix()\x00"))
 	}
 	m = m[0+1:]
-	m = (*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) - (uintptr)(newrl)*unsafe.Sizeof(m[0]))))[:]
+	m = c4goPointerArithFloat32SliceSlice(m, int(-newrl))
 	{
 		// set pointers to rows
 		i = oldrl
@@ -9933,31 +10154,31 @@ func subMatrix(a [][]float32, oldrl int32, oldrh int32, oldcl int32, oldch int32
 	return m
 }
 
-// convert_matrix - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:177
+// convert_matrix - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:172
 func convert_matrix(a []float32, nrl int32, nrh int32, ncl int32, nch int32) [][]float32 {
+	// allocate a float matrix m[nrl..nrh][ncl..nch] that points to the matrix
+	//declared in the standard C manner as a[nrow][ncol], where nrow=nrh-nrl+1
+	//and ncol=nch-ncl+1. The routine should be called with the address
+	//&a[0][0] as the first argument.
 	var i int32
 	var j int32
 	var nrow int32 = nrh - nrl + 1
 	var ncol int32 = nch - ncl + 1
 	var m [][]float32
-	// allocate a float matrix m[nrl..nrh][ncl..nch] that points to the matrix
-	//declared in the standard C manner as a[nrow][ncol], where nrow=nrh-nrl+1
-	//and ncol=nch-ncl+1. The routine should be called with the address
-	//&a[0][0] as the first argument.
 	// allocate pointers to rows
-	m = make([][]float32, uint((uint32(nrow+1)*8))*uint(1)/8)
+	m = make([][]float32, uint32(uint32(nrow+1)*uint32(1)))
 	if m == nil {
 		NRerror([]byte("allocation failure in convert_matrix()\x00"))
 	}
 	m = m[0+1:]
-	m = (*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) - (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:]
+	m = c4goPointerArithFloat32SliceSlice(m, int(-nrl))
 	// set pointers to rows
-	m[nrl] = (*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&a[0])) - (uintptr)(ncl)*unsafe.Sizeof(a[0]))))[:]
+	m[nrl] = c4goPointerArithFloat32Slice(a, int(-ncl))
 	{
 		i = 1
 		j = nrl + 1
 		for j = nrl + 1; i < nrow; {
-			m[j] = (*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[j-1][0])) + (uintptr)(ncol)*unsafe.Sizeof(m[j-1][0]))))[:]
+			m[j] = c4goPointerArithFloat32Slice(m[j-1], int(ncol))
 			i++
 			j++
 		}
@@ -9966,378 +10187,411 @@ func convert_matrix(a []float32, nrl int32, nrh int32, ncl int32, nch int32) [][
 	return m
 }
 
-// f3tensor - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:199
+// f3tensor - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:194
 func f3tensor(nrl int32, nrh int32, ncl int32, nch int32, ndl int32, ndh int32) [][][]float32 {
+	// allocate a float 3tensor with range t[nrl..nrh][ncl..nch][ndl..ndh]
 	var i int32
 	var j int32
 	var nrow int32 = nrh - nrl + 1
 	var ncol int32 = nch - ncl + 1
 	var ndep int32 = ndh - ndl + 1
 	var t [][][]float32
-	// allocate a float 3tensor with range t[nrl..nrh][ncl..nch][ndl..ndh]
 	// allocate pointers to pointers to rows
-	t = make([][][]float32, uint((uint32(nrow+1)*8))*uint(1)/8)
+	t = make([][][]float32, uint32(uint32(nrow+1)*uint32(1)))
 	if t == nil {
 		NRerror([]byte("allocation failure 1 in f3tensor()\x00"))
 	}
 	t = t[0+1:]
-	t = (*(*[1000000000][][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[0])) - (uintptr)(nrl)*unsafe.Sizeof(t[0]))))[:]
+	t = c4goPointerArithFloat32SliceSliceSlice(t, int(-nrl))
 	// allocate pointers to rows and set pointers to them
-	t[nrl] = make([][]float32, uint((uint32(nrow*ncol+1)*8))*uint(1)/8)
+	t[nrl] = make([][]float32, uint32(uint32(nrow*ncol+1)*uint32(1)))
 	if t[nrl] == nil {
 		NRerror([]byte("allocation failure 2 in f3tensor()\x00"))
 	}
 	t[nrl] = (t[nrl])[0+1:]
-	t[nrl] = (*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][0])) - (uintptr)(ncl)*unsafe.Sizeof(t[nrl][0]))))[:]
+	t[nrl] = c4goPointerArithFloat32SliceSlice(t[nrl], int(-ncl))
 	// allocate rows and set pointers to them
-	t[nrl][ncl] = make([]float32, uint((uint32(nrow*ncol*ndep+1)*4))*uint(1)/4)
+	t[nrl][ncl] = make([]float32, uint32(uint32(nrow*ncol*ndep+1)*uint32(1)))
 	if t[nrl][ncl] == nil {
 		NRerror([]byte("allocation failure 3 in f3tensor()\x00"))
 	}
 	t[nrl][ncl] = (t[nrl][ncl])[0+1:]
-	t[nrl][ncl] = (*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][ncl][0])) - (uintptr)(ndl)*unsafe.Sizeof(t[nrl][ncl][0]))))[:]
+	t[nrl][ncl] = c4goPointerArithFloat32Slice(t[nrl][ncl], int(-ndl))
 	for j = ncl + 1; j <= nch; j++ {
-		t[nrl][j] = (*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[nrl][j-1][0])) + (uintptr)(ndep)*unsafe.Sizeof(t[nrl][j-1][0]))))[:]
+		t[nrl][j] = c4goPointerArithFloat32Slice(t[nrl][j-1], int(ndep))
 	}
 	for i = nrl + 1; i <= nrh; i++ {
-		t[i] = (*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[i-1][0])) + (uintptr)(ncol)*unsafe.Sizeof(t[i-1][0]))))[:]
-		t[i][ncl] = (*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[i-1][ncl][0])) + (uintptr)(ncol*ndep)*unsafe.Sizeof(t[i-1][ncl][0]))))[:]
+		t[i] = c4goPointerArithFloat32SliceSlice(t[i-1], int(ncol))
+		t[i][ncl] = c4goPointerArithFloat32Slice(t[i-1][ncl], int(ncol*ndep))
 		for j = ncl + 1; j <= nch; j++ {
-			t[i][j] = (*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[i][j-1][0])) + (uintptr)(ndep)*unsafe.Sizeof(t[i][j-1][0]))))[:]
+			t[i][j] = c4goPointerArithFloat32Slice(t[i][j-1], int(ndep))
 		}
 	}
 	// return pointer to array of pointers to rows
 	return t
 }
 
-// free_vector - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:234
+// free_vector - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:229
 func free_vector(v []float32, nl int32, nh int32) {
-	_ = ((*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0+nl:][0])) - (uintptr)(1)*unsafe.Sizeof(v[0+nl:][0]))))[:])
+	_ = c4goPointerArithFloat32Slice(v[0+nl:], int(-1))
 	// free a float vector allocated with vector()
 }
 
-// free_ivector - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:240
+// free_ivector - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:235
 func free_ivector(v []int32, nl int32, nh int32) {
-	_ = ((*(*[1000000000]int32)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0+nl:][0])) - (uintptr)(1)*unsafe.Sizeof(v[0+nl:][0]))))[:])
+	_ = c4goPointerArithInt32Slice(v[0+nl:], int(-1))
 	// free an int vector allocated with ivector()
 }
 
-// free_cvector - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:246
+// free_cvector - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:241
 func free_cvector(v []uint8, nl int32, nh int32) {
-	_ = ((*(*[1000000000]uint8)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0+nl:][0])) - (uintptr)(1)*unsafe.Sizeof(v[0+nl:][0]))))[:])
+	_ = c4goPointerArithUint8Slice(v[0+nl:], int(-1))
 	// free an unsigned char vector allocated with cvector()
 }
 
-// free_lvector - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:252
+// free_lvector - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:247
 func free_lvector(v []uint32, nl int32, nh int32) {
-	_ = ((*(*[1000000000]uint32)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0+nl:][0])) - (uintptr)(1)*unsafe.Sizeof(v[0+nl:][0]))))[:])
+	_ = c4goPointerArithUint32Slice(v[0+nl:], int(-1))
 	// free an unsigned long vector allocated with lvector()
 }
 
-// free_dvector - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:258
+// free_dvector - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:253
 func free_dvector(v []float64, nl int32, nh int32) {
-	_ = ((*(*[1000000000]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0+nl:][0])) - (uintptr)(1)*unsafe.Sizeof(v[0+nl:][0]))))[:])
+	_ = c4goPointerArithFloat64Slice(v[0+nl:], int(-1))
 	// free a double vector allocated with dvector()
 }
 
-// free_matrix - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:264
+// free_matrix - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:259
 func free_matrix(m [][]float32, nrl int32, nrh int32, ncl int32, nch int32) {
-	_ = ((*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(m[nrl])[0+ncl:][0])) - (uintptr)(1)*unsafe.Sizeof((m[nrl])[0+ncl:][0]))))[:])
+	_ = c4goPointerArithFloat32Slice((m[nrl])[0+ncl:], int(-1))
 	// free a float matrix allocated by matrix()
-	_ = ((*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0+nrl:][0])) - (uintptr)(1)*unsafe.Sizeof(m[0+nrl:][0]))))[:])
+	_ = c4goPointerArithFloat32SliceSlice(m[0+nrl:], int(-1))
 }
 
-// free_dmatrix - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:271
+// free_dmatrix - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:266
 func free_dmatrix(m [][]float64, nrl int32, nrh int32, ncl int32, nch int32) {
-	_ = ((*(*[1000000000]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&(m[nrl])[0+ncl:][0])) - (uintptr)(1)*unsafe.Sizeof((m[nrl])[0+ncl:][0]))))[:])
+	_ = c4goPointerArithFloat64Slice((m[nrl])[0+ncl:], int(-1))
 	// free a double matrix allocated by dmatrix()
-	_ = ((*(*[1000000000][]float64)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0+nrl:][0])) - (uintptr)(1)*unsafe.Sizeof(m[0+nrl:][0]))))[:])
+	_ = c4goPointerArithFloat64SliceSlice(m[0+nrl:], int(-1))
 }
 
-// free_imatrix - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:278
+// free_imatrix - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:273
 func free_imatrix(m [][]int32, nrl int32, nrh int32, ncl int32, nch int32) {
-	_ = ((*(*[1000000000]int32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(m[nrl])[0+ncl:][0])) - (uintptr)(1)*unsafe.Sizeof((m[nrl])[0+ncl:][0]))))[:])
+	_ = c4goPointerArithInt32Slice((m[nrl])[0+ncl:], int(-1))
 	// free an int matrix allocated by imatrix()
-	_ = ((*(*[1000000000][]int32)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0+nrl:][0])) - (uintptr)(1)*unsafe.Sizeof(m[0+nrl:][0]))))[:])
+	_ = c4goPointerArithInt32SliceSlice(m[0+nrl:], int(-1))
 }
 
-// free_subMatrix - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:285
+// free_subMatrix - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:280
 func free_subMatrix(b [][]float32, nrl int32, nrh int32, ncl int32, nch int32) {
-	_ = ((*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&b[0+nrl:][0])) - (uintptr)(1)*unsafe.Sizeof(b[0+nrl:][0]))))[:])
+	_ = c4goPointerArithFloat32SliceSlice(b[0+nrl:], int(-1))
 	// free a subMatrix allocated by subMatrix()
 }
 
-// free_convert_matrix - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:291
+// free_convert_matrix - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:286
 func free_convert_matrix(b [][]float32, nrl int32, nrh int32, ncl int32, nch int32) {
-	_ = ((*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&b[0+nrl:][0])) - (uintptr)(1)*unsafe.Sizeof(b[0+nrl:][0]))))[:])
+	_ = c4goPointerArithFloat32SliceSlice(b[0+nrl:], int(-1))
 	// free a matrix allocated by convert_matrix()
 }
 
-// free_f3tensor - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:297
+// free_f3tensor - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:292
 func free_f3tensor(t [][][]float32, nrl int32, nrh int32, ncl int32, nch int32, ndl int32, ndh int32) {
-	_ = ((*(*[1000000000]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(t[nrl][ncl])[0+ndl:][0])) - (uintptr)(1)*unsafe.Sizeof((t[nrl][ncl])[0+ndl:][0]))))[:])
+	_ = c4goPointerArithFloat32Slice((t[nrl][ncl])[0+ndl:], int(-1))
 	// free a float f3tensor allocated by f3tensor()
-	_ = ((*(*[1000000000][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&(t[nrl])[0+ncl:][0])) - (uintptr)(1)*unsafe.Sizeof((t[nrl])[0+ncl:][0]))))[:])
-	_ = ((*(*[1000000000][][]float32)(unsafe.Pointer(uintptr(unsafe.Pointer(&t[0+nrl:][0])) - (uintptr)(1)*unsafe.Sizeof(t[0+nrl:][0]))))[:])
+	_ = c4goPointerArithFloat32SliceSlice((t[nrl])[0+ncl:], int(-1))
+	_ = c4goPointerArithFloat32SliceSliceSlice(t[0+nrl:], int(-1))
 }
 
-// Cvector - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:305
+// Cvector - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:300
 func Cvector(nl int32, nh int32) []fcomplex {
-	var v []fcomplex
 	// allocate storage for a complex vector
-	v = make([]fcomplex, uint32((nh-nl+1))*8*1/8)
+	var v []fcomplex
+	v = make([]fcomplex, uint32(nh-nl+1)*uint32(1))
 	if v == nil {
 		NRerror([]byte("allocation failure in Cvector()\x00"))
 	}
-	return (*(*[1000000000]fcomplex)(unsafe.Pointer(uintptr(unsafe.Pointer(&v[0])) - (uintptr)(nl)*unsafe.Sizeof(v[0]))))[:]
+	var position int32 = int32(-nl)
+	slice := v
+	if position < 0 {
+		position = -position
+		var hdr reflect.SliceHeader
+		sliceLen := len(slice)
+		hdr.Data = uintptr(unsafe.Pointer(&slice[0])) - (uintptr(position))*unsafe.Sizeof(slice[0])
+		runtime.KeepAlive(&slice[0])
+		hdr.Len = sliceLen + int(position)
+		hdr.Cap = hdr.Len
+		slice = *((*[]fcomplex)(unsafe.Pointer(&hdr)))
+		return slice
+	}
+	return slice[position:]
 }
 
-// Cmatrix - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:316
+// Cmatrix - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:311
 func Cmatrix(nrl int32, nrh int32, ncl int32, nch int32) [][]fcomplex {
+	// allocate storage for a Complex matrix
 	var i int32
 	var m [][]fcomplex
-	// allocate storage for a Complex matrix
-	m = make([][]fcomplex, uint32((nrh-nrl+1))*8*1/8)
+	m = make([][]fcomplex, uint32(nrh-nrl+1)*uint32(1))
 	if m == nil {
 		NRerror([]byte("allocation failure 1 in Cmatrix()\x00"))
 	}
-	m = (*(*[1000000000][]fcomplex)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[0])) - (uintptr)(nrl)*unsafe.Sizeof(m[0]))))[:]
+	m = func() [][]fcomplex {
+		var position int32 = int32(-nrl)
+		slice := m
+		if position < 0 {
+			position = -position
+			var hdr reflect.SliceHeader
+			sliceLen := len(slice)
+			hdr.Data = uintptr(unsafe.Pointer(&slice[0])) - (uintptr(position))*unsafe.Sizeof(slice[0])
+			runtime.KeepAlive(&slice[0])
+			hdr.Len = sliceLen + int(position)
+			hdr.Cap = hdr.Len
+			slice = *((*[][]fcomplex)(unsafe.Pointer(&hdr)))
+			return slice
+		}
+		return slice[position:]
+	}()
 	for i = nrl; i <= nrh; i++ {
-		m[i] = make([]fcomplex, uint32((nch-ncl+1))*8*1/8)
+		m[i] = make([]fcomplex, uint32(nch-ncl+1)*uint32(1))
 		if m[i] == nil {
 			NRerror([]byte("allocation failure 2 in Cmatrix()\x00"))
 		}
-		m[i] = (*(*[1000000000]fcomplex)(unsafe.Pointer(uintptr(unsafe.Pointer(&m[i][0])) - (uintptr)(ncl)*unsafe.Sizeof(m[i][0]))))[:]
+		m[i] = func() []fcomplex {
+			var position int32 = int32(-ncl)
+			slice := m[i]
+			if position < 0 {
+				position = -position
+				var hdr reflect.SliceHeader
+				sliceLen := len(slice)
+				hdr.Data = uintptr(unsafe.Pointer(&slice[0])) - (uintptr(position))*unsafe.Sizeof(slice[0])
+				runtime.KeepAlive(&slice[0])
+				hdr.Len = sliceLen + int(position)
+				hdr.Cap = hdr.Len
+				slice = *((*[]fcomplex)(unsafe.Pointer(&hdr)))
+				return slice
+			}
+			return slice[position:]
+		}()
 	}
 	return m
 }
 
-// D3matrix - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:334
+// D3matrix - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:329
 func D3matrix(nrl int32, nrh int32, ncl int32, nch int32, nzl int32, nzh int32) [][][]float32 {
+	// storage for a 3-D matrix
 	var i int32
 	var j int32
 	var m [][][]float32
-	// storage for a 3-D matrix
-	m = make([][][]float32, uint32((nrh+1))*8*1/8)
-	for i = 0; i <= nrh; i++ {
-		m[i] = make([][]float32, uint32((nch+1))*8*1/8)
-		for j = 0; j <= nch; j++ {
-			m[i][j] = make([]float32, uint32((nzh+1))*8*1/4)
+	m = (*[1000000][][]float32)(unsafe.Pointer(uintptr(func() int64 {
+		c4go_temp_name := make([][]float32, uint32(nrh-nrl+1)*uint32(1))
+		return int64(uintptr(unsafe.Pointer(*(**byte)(unsafe.Pointer(&c4go_temp_name)))))
+	}())))[:]
+	if m == nil {
+		NRerror([]byte("alloc failure 1 in 3Dmatrix()\x00"))
+	}
+	m = c4goPointerArithFloat32SliceSliceSlice(m, int(-nrl))
+	for i = nrl; i <= nrh; i++ {
+		m[i] = make([][]float32, uint32(nch-ncl+1)*uint32(1))
+		if m[i] == nil {
+			NRerror([]byte("alloc failure 2 in 3Dmatrix()\x00"))
+		}
+		m[i] = c4goPointerArithFloat32SliceSlice(m[i], int(-ncl))
+		for j = ncl; j <= nch; j++ {
+			m[i][j] = make([]float32, uint32(nzh-nzl+1)*uint32(1))
+			if m[i][j] == nil {
+				NRerror([]byte("alloc failure 3 in 3Dmatrix()\x00"))
+			}
+			m[i][j] = c4goPointerArithFloat32Slice(m[i][j], int(-nzl))
 		}
 	}
-	//
-	// m=(float ***) malloc((unsigned) (nrh-nrl+1)*sizeof(float*));
-	// if (!m) NRerror("alloc failure 1 in 3Dmatrix()");
-	// m -= nrl;
-	// for (i=nrl;i<=nrh;i++) {
-	//  m[i]=(float **) malloc((unsigned) (nch-ncl+1)*sizeof(float*));
-	//  if (!m[i]) NRerror("alloc failure 2 in 3Dmatrix()");
-	//  m[i] -= ncl;
-	//  for (j=ncl;j<=nch;j++) {
-	//   m[i][j]=(float *)
-	//    malloc((unsigned) (nzh-nzl+1)*sizeof(float));
-	//   if (!m[i][j]) NRerror("alloc failure 3 in 3Dmatrix()");
-	//   m[i][j] -= nzl;
-	//  }
-	// }
-	//
 	return m
 }
 
-// D3dmatrix - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:367
+// D3dmatrix - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:352
 func D3dmatrix(nrl int32, nrh int32, ncl int32, nch int32, nzl int32, nzh int32) [][][]float64 {
+	// storage for a 3-D matrix
 	var i int32
 	var j int32
 	var m [][][]float64
-	// storage for a 3-D matrix
-	m = make([][][]float64, uint32((nrh+1))*8*1/8)
-	for i = 0; i <= nrh; i++ {
-		m[i] = make([][]float64, uint32((nch+1))*8*1/8)
-		for j = 0; j <= nch; j++ {
-			m[i][j] = make([]float64, uint32((nzh+1))*8*1/8)
+	m = (*[1000000][][]float64)(unsafe.Pointer(uintptr(func() int64 {
+		c4go_temp_name := make([][]float64, uint32(nrh-nrl+1)*uint32(1))
+		return int64(uintptr(unsafe.Pointer(*(**byte)(unsafe.Pointer(&c4go_temp_name)))))
+	}())))[:]
+	if m == nil {
+		NRerror([]byte("alloc failure 1 in 3Ddmatrix()\x00"))
+	}
+	m = c4goPointerArithFloat64SliceSliceSlice(m, int(-nrl))
+	for i = nrl; i <= nrh; i++ {
+		m[i] = make([][]float64, uint32(nch-ncl+1)*uint32(1))
+		if m[i] == nil {
+			NRerror([]byte("alloc failure 2 in 3Dmatrix()\x00"))
+		}
+		m[i] = c4goPointerArithFloat64SliceSlice(m[i], int(-ncl))
+		for j = ncl; j <= nch; j++ {
+			m[i][j] = make([]float64, uint32(nzh-nzl+1)*uint32(1))
+			if m[i][j] == nil {
+				NRerror([]byte("alloc failure 3 in 3Ddmatrix()\x00"))
+			}
+			m[i][j] = c4goPointerArithFloat64Slice(m[i][j], int(-nzl))
 		}
 	}
-	//
-	// m=(double ***) malloc((unsigned) (nrh-nrl+1)*sizeof(double*));
-	// if (!m) NRerror("alloc failure 1 in 3Ddmatrix()");
-	// m -= nrl;
-	// for (i=nrl;i<=nrh;i++) {
-	//  m[i]=(double **) malloc((unsigned) (nch-ncl+1)*sizeof(double*));
-	//  if (!m[i]) NRerror("alloc failure 2 in 3Dmatrix()");
-	//  m[i] -= ncl;
-	//  for (j=ncl;j<=nch;j++) {
-	//   m[i][j]=(double *)
-	//    malloc((unsigned) (nzh-nzl+1)*sizeof(double));
-	//   if (!m[i][j]) NRerror("alloc failure 3 in 3Ddmatrix()");
-	//   m[i][j] -= nzl;
-	//  }
-	// }
-	//
 	return m
 }
 
-// free_Cvector - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:401
+// free_Cvector - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:377
 func free_Cvector(v []fcomplex, nl int32, nh int32) {
+	_ = v[0+nl:]
+	//(char*)
 }
 
-// free_Cmatrix - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:406
+// free_Cmatrix - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:382
 func free_Cmatrix(m [][]fcomplex, nrl int32, nrh int32, ncl int32, nch int32) {
-	// free((void*)#<{(|(char*)|)}># (v+nl));
+	var i int32
 	{
+		//(char*)
+		for i = nrh; i >= nrl; i-- {
+			_ = (m[i])[0+ncl:]
+		}
 	}
+	_ = m[0+nrl:]
+	//(char*)
 }
 
-// free_D3matrix - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:414
+// free_D3matrix - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:390
 func free_D3matrix(m [][][]float32, nrl int32, nrh int32, ncl int32, nch int32, nzl int32, nzh int32) {
-	// int i;
-	//
-	// for(i=nrh;i>=nrl;i--) free((void*)#<{(|(char*)|)}># (m[i]+ncl));
-	// free((void*)#<{(|(char*)|)}># (m+nrl));
-	{
+	var i int32
+	var j int32
+	for i = nrh; i >= nrl; i-- {
+		for j = nch; j >= ncl; j-- {
+			_ = (m[i][j])[0+nzl:]
+			//(char*)
+		}
 	}
 }
 
-// free_D3dmatrix - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:425
+// free_D3dmatrix - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:401
 func free_D3dmatrix(m [][][]float64, nrl int32, nrh int32, ncl int32, nch int32, nzl int32, nzh int32) {
-	// int     i,j;
-	//
-	// for(i=nrh;i>=nrl;i--) {
-	//  for(j=nch;j>=ncl;j--) {
-	//   free((void*)#<{(|(char*)|)}># (m[i][j]+nzl));
-	//  }
-	// }
-	{
+	var i int32
+	var j int32
+	for i = nrh; i >= nrl; i-- {
+		for j = nch; j >= ncl; j-- {
+			_ = (m[i][j])[0+nzl:]
+			//(char*)
+		}
 	}
 }
 
-// show_vector - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:768
+// show_vector - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:744
 func show_vector(A []float32, n int32) {
+	//
+	// * SHOW_VECTOR  -  display a vector of dimension [1..n]
+	//
 	var j int32
-	{
-		// int     i,j;
-		//
-		// for(i=nrh;i>=nrl;i--) {
-		//  for(j=nch;j>=ncl;j--) {
-		//   free((void*)#<{(|(char*)|)}># (m[i][j]+nzl));
-		//  }
-		// }
-		//
-		// * SHOW_VECTOR  -  display a vector of dimension [1..n]
-		//
-		for j = 1; j <= n; j++ {
-			if A[j] != 0 {
-				noarch.Fprintf(noarch.Stdout, []byte("%14.6e\x00"), float64(A[j]))
-			} else {
-				noarch.Fprintf(noarch.Stdout, []byte("   0       \x00"))
-			}
+	for j = 1; j <= n; j++ {
+		if A[j] != 0 {
+			noarch.Fprintf(noarch.Stdout, []byte("%14.6e\x00"), float64(A[j]))
+		} else {
+			noarch.Fprintf(noarch.Stdout, []byte("   0       \x00"))
 		}
 	}
 	noarch.Fprintf(noarch.Stdout, []byte(" ]';\n\n\x00"))
 }
 
-// show_dvector - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:783
+// show_dvector - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:759
 func show_dvector(A []float64, n int32) {
+	//
+	// * SHOW_DVECTOR  -  display a vector of dimension [1..n]
+	//
 	var j int32
-	{
-		//
-		// * SHOW_DVECTOR  -  display a vector of dimension [1..n]
-		//
-		for j = 1; j <= n; j++ {
-			if math.Abs(A[j]) >= 1e-99 {
-				noarch.Fprintf(noarch.Stdout, []byte("%14.6e\x00"), A[j])
-			} else {
-				noarch.Fprintf(noarch.Stdout, []byte("   0       \x00"))
-			}
+	for j = 1; j <= n; j++ {
+		if math.Abs(A[j]) >= 1e-99 {
+			noarch.Fprintf(noarch.Stdout, []byte("%14.6e\x00"), A[j])
+		} else {
+			noarch.Fprintf(noarch.Stdout, []byte("   0       \x00"))
 		}
 	}
 	noarch.Fprintf(noarch.Stdout, []byte(" ]';\n\n\x00"))
 }
 
-// show_ivector - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:799
+// show_ivector - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:775
 func show_ivector(A []int32, n int32) {
+	//
+	// * SHOW_IVECTOR  -  display a vector of integers of dimension [1..n]
+	//
 	var j int32
-	{
-		//
-		// * SHOW_IVECTOR  -  display a vector of integers of dimension [1..n]
-		//
-		for j = 1; j <= n; j++ {
-			if A[j] != 0 {
-				noarch.Fprintf(noarch.Stdout, []byte("%11d\x00"), A[j])
-			} else {
-				noarch.Fprintf(noarch.Stdout, []byte("   0       \x00"))
-			}
+	for j = 1; j <= n; j++ {
+		if A[j] != 0 {
+			noarch.Fprintf(noarch.Stdout, []byte("%11d\x00"), A[j])
+		} else {
+			noarch.Fprintf(noarch.Stdout, []byte("   0       \x00"))
 		}
 	}
 	noarch.Fprintf(noarch.Stdout, []byte(" ]';\n\n\x00"))
 }
 
-// show_matrix - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:815
+// show_matrix - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:791
 func show_matrix(A [][]float32, m int32, n int32) {
+	//
+	// * SHOW_MATRIX  -  display a matrix of dimension [1..m][1..n]
+	//
 	var i int32
 	var j int32
-	{
-		//
-		// * SHOW_MATRIX  -  display a matrix of dimension [1..m][1..n]
-		//
-		for i = 1; i <= m; i++ {
-			for j = 1; j <= n; j++ {
-				if A[i][j] != 0 {
-					noarch.Fprintf(noarch.Stdout, []byte("%14.6e\x00"), float64(A[i][j]))
-				} else {
-					noarch.Fprintf(noarch.Stdout, []byte("   0       \x00"))
-				}
-			}
-			if i == m {
-				noarch.Fprintf(noarch.Stdout, []byte(" ];\n\n\x00"))
+	for i = 1; i <= m; i++ {
+		for j = 1; j <= n; j++ {
+			if A[i][j] != 0 {
+				noarch.Fprintf(noarch.Stdout, []byte("%14.6e\x00"), float64(A[i][j]))
 			} else {
-				noarch.Fprintf(noarch.Stdout, []byte(" \n\x00"))
+				noarch.Fprintf(noarch.Stdout, []byte("   0       \x00"))
 			}
+		}
+		if i == m {
+			noarch.Fprintf(noarch.Stdout, []byte(" ];\n\n\x00"))
+		} else {
+			noarch.Fprintf(noarch.Stdout, []byte(" \n\x00"))
 		}
 	}
 }
 
-// show_dmatrix - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:833
+// show_dmatrix - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:809
 func show_dmatrix(A [][]float64, m int32, n int32) {
+	//
+	// * SHOW_DMATRIX  - display a matrix of dimension [1..m][1..n]
+	//
 	var i int32
 	var j int32
-	{
-		//
-		// * SHOW_DMATRIX  - display a matrix of dimension [1..m][1..n]
-		//
-		for i = 1; i <= m; i++ {
-			for j = 1; j <= n; j++ {
-				if math.Abs(A[i][j]) > 1e-99 {
-					noarch.Fprintf(noarch.Stdout, []byte("%11.3e\x00"), A[i][j])
-				} else {
-					noarch.Fprintf(noarch.Stdout, []byte("   0       \x00"))
-				}
-			}
-			if i == m {
-				noarch.Fprintf(noarch.Stdout, []byte(" ];\n\n\x00"))
+	for i = 1; i <= m; i++ {
+		for j = 1; j <= n; j++ {
+			if math.Abs(A[i][j]) > 1e-99 {
+				noarch.Fprintf(noarch.Stdout, []byte("%11.3e\x00"), A[i][j])
 			} else {
-				noarch.Fprintf(noarch.Stdout, []byte(" \n\x00"))
+				noarch.Fprintf(noarch.Stdout, []byte("   0       \x00"))
 			}
+		}
+		if i == m {
+			noarch.Fprintf(noarch.Stdout, []byte(" ];\n\n\x00"))
+		} else {
+			noarch.Fprintf(noarch.Stdout, []byte(" \n\x00"))
 		}
 	}
 }
 
-// save_vector - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:852
+// save_vector - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:828
 func save_vector(filename []byte, V []float32, nl int32, nh int32, mode []byte) {
+	//
+	// * SAVE_VECTOR  -  save a vector of dimension [1..n] to the named file
+	//
 	var fp_v *noarch.File
-	var i int32
+	var i int32 // now - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:833
 	var now noarch.TimeT
 	if (func() *noarch.File {
 		fp_v = noarch.Fopen(filename, mode)
 		return fp_v
 	}()) == nil {
-		//
-		// * SAVE_VECTOR  -  save a vector of dimension [1..n] to the named file
-		//
 		noarch.Printf([]byte(" error: cannot open file: '%s' \n\x00"), filename)
 		noarch.Exit(1011)
 	}
-	_ = noarch.Time((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:])
-	noarch.Fprintf(fp_v, []byte("%% filename: %s - %s\x00"), filename, noarch.Ctime((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:]))
+	_ = noarch.Time((*[1000000]noarch.TimeT)(unsafe.Pointer(&now))[:])
+	noarch.Fprintf(fp_v, []byte("%% filename: %s - %s\x00"), filename, noarch.Ctime((*[1000000]noarch.TimeT)(unsafe.Pointer(&now))[:]))
 	noarch.Fprintf(fp_v, []byte("%% type: vector\n\x00"))
 	noarch.Fprintf(fp_v, []byte("%% rows: %d\n\x00"), 1)
 	noarch.Fprintf(fp_v, []byte("%% columns: %d\n\x00"), nh-nl+1)
@@ -10352,23 +10606,23 @@ func save_vector(filename []byte, V []float32, nl int32, nh int32, mode []byte) 
 	noarch.Fclose(fp_v)
 }
 
-// save_dvector - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:880
+// save_dvector - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:856
 func save_dvector(filename []byte, V []float64, nl int32, nh int32, mode []byte) {
+	//
+	// * SAVE_DVECTOR  -  save a vector of dimension [1..n] to the named file
+	//
 	var fp_v *noarch.File
-	var i int32
+	var i int32 // now - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:861
 	var now noarch.TimeT
 	if (func() *noarch.File {
 		fp_v = noarch.Fopen(filename, mode)
 		return fp_v
 	}()) == nil {
-		//
-		// * SAVE_DVECTOR  -  save a vector of dimension [1..n] to the named file
-		//
 		noarch.Printf([]byte(" error: cannot open file: '%s' \n\x00"), filename)
 		noarch.Exit(1011)
 	}
-	_ = noarch.Time((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:])
-	noarch.Fprintf(fp_v, []byte("%% filename: %s - %s\x00"), filename, noarch.Ctime((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:]))
+	_ = noarch.Time((*[1000000]noarch.TimeT)(unsafe.Pointer(&now))[:])
+	noarch.Fprintf(fp_v, []byte("%% filename: %s - %s\x00"), filename, noarch.Ctime((*[1000000]noarch.TimeT)(unsafe.Pointer(&now))[:]))
 	noarch.Fprintf(fp_v, []byte("%% type: vector\n\x00"))
 	noarch.Fprintf(fp_v, []byte("%% rows: %d\n\x00"), 1)
 	noarch.Fprintf(fp_v, []byte("%% columns: %d\n\x00"), nh-nl+1)
@@ -10383,23 +10637,23 @@ func save_dvector(filename []byte, V []float64, nl int32, nh int32, mode []byte)
 	noarch.Fclose(fp_v)
 }
 
-// save_ivector - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:908
+// save_ivector - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:884
 func save_ivector(filename []byte, V []int32, nl int32, nh int32, mode []byte) {
+	//
+	// * SAVE_IVECTOR  -  save an integer vector of dimension [1..n] to the named file
+	//
 	var fp_v *noarch.File
-	var i int32
+	var i int32 // now - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:889
 	var now noarch.TimeT
 	if (func() *noarch.File {
 		fp_v = noarch.Fopen(filename, mode)
 		return fp_v
 	}()) == nil {
-		//
-		// * SAVE_IVECTOR  -  save an integer vector of dimension [1..n] to the named file
-		//
 		noarch.Printf([]byte(" error: cannot open file: '%s' \n\x00"), filename)
 		noarch.Exit(1012)
 	}
-	_ = noarch.Time((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:])
-	noarch.Fprintf(fp_v, []byte("%% filename: %s - %s\x00"), filename, noarch.Ctime((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:]))
+	_ = noarch.Time((*[1000000]noarch.TimeT)(unsafe.Pointer(&now))[:])
+	noarch.Fprintf(fp_v, []byte("%% filename: %s - %s\x00"), filename, noarch.Ctime((*[1000000]noarch.TimeT)(unsafe.Pointer(&now))[:]))
 	noarch.Fprintf(fp_v, []byte("%% type: vector\n\x00"))
 	noarch.Fprintf(fp_v, []byte("%% rows: %d\n\x00"), 1)
 	noarch.Fprintf(fp_v, []byte("%% columns: %d\n\x00"), nh-nl+1)
@@ -10414,18 +10668,18 @@ func save_ivector(filename []byte, V []int32, nl int32, nh int32, mode []byte) {
 	noarch.Fclose(fp_v)
 }
 
-// save_matrix - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:936
+// save_matrix - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:912
 func save_matrix(filename []byte, A [][]float32, ml int32, mh int32, nl int32, nh int32, transpose int32, mode []byte) {
+	//
+	// * SAVE_MATRIX  -  save a matrix of dimension [ml..mh][nl..nh] to the named file
+	//
 	var fp_m *noarch.File
 	var i int32
 	var j int32
 	var rows int32
-	var cols int32
+	var cols int32 // now - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:917
 	var now noarch.TimeT
 	if transpose != 0 {
-		//
-		// * SAVE_MATRIX  -  save a matrix of dimension [ml..mh][nl..nh] to the named file
-		//
 		rows = nh - nl + 1
 	} else {
 		rows = mh - ml + 1
@@ -10442,8 +10696,8 @@ func save_matrix(filename []byte, A [][]float32, ml int32, mh int32, nl int32, n
 		noarch.Printf([]byte(" error: cannot open file: %s \n\x00"), filename)
 		noarch.Exit(1013)
 	}
-	_ = noarch.Time((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:])
-	noarch.Fprintf(fp_m, []byte("%% filename: %s - %s\x00"), filename, noarch.Ctime((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:]))
+	_ = noarch.Time((*[1000000]noarch.TimeT)(unsafe.Pointer(&now))[:])
+	noarch.Fprintf(fp_m, []byte("%% filename: %s - %s\x00"), filename, noarch.Ctime((*[1000000]noarch.TimeT)(unsafe.Pointer(&now))[:]))
 	noarch.Fprintf(fp_m, []byte("%% type: matrix \n\x00"))
 	noarch.Fprintf(fp_m, []byte("%% rows: %d\n\x00"), rows)
 	noarch.Fprintf(fp_m, []byte("%% columns: %d\n\x00"), cols)
@@ -10473,18 +10727,18 @@ func save_matrix(filename []byte, A [][]float32, ml int32, mh int32, nl int32, n
 	noarch.Fclose(fp_m)
 }
 
-// save_dmatrix - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:979
+// save_dmatrix - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:955
 func save_dmatrix(filename []byte, A [][]float64, ml int32, mh int32, nl int32, nh int32, transpose int32, mode []byte) {
+	//
+	// * SAVE_DMATRIX  - save a matrix of dimension [ml..mh][nl..nh] to the named file
+	//
 	var fp_m *noarch.File
 	var i int32
 	var j int32
 	var rows int32
-	var cols int32
+	var cols int32 // now - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:960
 	var now noarch.TimeT
 	if transpose != 0 {
-		//
-		// * SAVE_DMATRIX  - save a matrix of dimension [ml..mh][nl..nh] to the named file
-		//
 		rows = nh - nl + 1
 	} else {
 		rows = mh - ml + 1
@@ -10501,8 +10755,8 @@ func save_dmatrix(filename []byte, A [][]float64, ml int32, mh int32, nl int32, 
 		noarch.Printf([]byte(" error: cannot open file: %s \n\x00"), filename)
 		noarch.Exit(1014)
 	}
-	_ = noarch.Time((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:])
-	noarch.Fprintf(fp_m, []byte("%% filename: %s - %s\x00"), filename, noarch.Ctime((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:]))
+	_ = noarch.Time((*[1000000]noarch.TimeT)(unsafe.Pointer(&now))[:])
+	noarch.Fprintf(fp_m, []byte("%% filename: %s - %s\x00"), filename, noarch.Ctime((*[1000000]noarch.TimeT)(unsafe.Pointer(&now))[:]))
 	noarch.Fprintf(fp_m, []byte("%% type: matrix \n\x00"))
 	noarch.Fprintf(fp_m, []byte("%% rows: %d\n\x00"), rows)
 	noarch.Fprintf(fp_m, []byte("%% columns: %d\n\x00"), cols)
@@ -10532,26 +10786,26 @@ func save_dmatrix(filename []byte, A [][]float64, ml int32, mh int32, nl int32, 
 	noarch.Fclose(fp_m)
 }
 
-// save_ut_matrix - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:1024
+// save_ut_matrix - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:1000
 func save_ut_matrix(filename []byte, A [][]float32, n int32, mode []byte) {
+	//
+	// * SAVE_UT_MATRIX  -            23apr01
+	// * save a symmetric matrix of dimension [1..n][1..n] to the named file
+	// *  use only upper-triangular part
+	//
 	var fp_m *noarch.File
 	var i int32
-	var j int32
+	var j int32 // now - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:1005
 	var now noarch.TimeT
 	if (func() *noarch.File {
 		fp_m = noarch.Fopen(filename, mode)
 		return fp_m
 	}()) == nil {
-		//
-		// * SAVE_UT_MATRIX  -            23apr01
-		// * save a symmetric matrix of dimension [1..n][1..n] to the named file
-		// *  use only upper-triangular part
-		//
 		noarch.Printf([]byte(" error: cannot open file: %s \n\x00"), filename)
 		noarch.Exit(1015)
 	}
-	_ = noarch.Time((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:])
-	noarch.Fprintf(fp_m, []byte("%% filename: %s - %s\x00"), filename, noarch.Ctime((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:]))
+	_ = noarch.Time((*[1000000]noarch.TimeT)(unsafe.Pointer(&now))[:])
+	noarch.Fprintf(fp_m, []byte("%% filename: %s - %s\x00"), filename, noarch.Ctime((*[1000000]noarch.TimeT)(unsafe.Pointer(&now))[:]))
 	noarch.Fprintf(fp_m, []byte("%% type: matrix \n\x00"))
 	noarch.Fprintf(fp_m, []byte("%% rows: %d\n\x00"), n)
 	noarch.Fprintf(fp_m, []byte("%% columns: %d\n\x00"), n)
@@ -10576,26 +10830,26 @@ func save_ut_matrix(filename []byte, A [][]float32, n int32, mode []byte) {
 	noarch.Fclose(fp_m)
 }
 
-// save_ut_dmatrix - transpiled function from  GOPATH/src/github.com/Konstantin8105/History_frame3DD/src/NRutil.c:1061
+// save_ut_dmatrix - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:1037
 func save_ut_dmatrix(filename []byte, A [][]float64, n int32, mode []byte) {
+	//
+	// * SAVE_UT_DMATRIX  -       23apr01
+	// * save a symetric matrix of dimension [1..n][1..n] to the named file
+	// * use only upper-triangular part
+	//
 	var fp_m *noarch.File
 	var i int32
-	var j int32
+	var j int32 // now - transpiled function from  GOPATH/History_frame3DD/src/NRutil.c:1042
 	var now noarch.TimeT
 	if (func() *noarch.File {
 		fp_m = noarch.Fopen(filename, mode)
 		return fp_m
 	}()) == nil {
-		//
-		// * SAVE_UT_DMATRIX  -       23apr01
-		// * save a symetric matrix of dimension [1..n][1..n] to the named file
-		// * use only upper-triangular part
-		//
 		noarch.Printf([]byte(" error: cannot open file: %s \n\x00"), filename)
 		noarch.Exit(1016)
 	}
-	_ = noarch.Time((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:])
-	noarch.Fprintf(fp_m, []byte("%% filename: %s - %s\n\x00"), filename, noarch.Ctime((*[100000000]noarch.TimeT)(unsafe.Pointer(&now))[:]))
+	_ = noarch.Time((*[1000000]noarch.TimeT)(unsafe.Pointer(&now))[:])
+	noarch.Fprintf(fp_m, []byte("%% filename: %s - %s\n\x00"), filename, noarch.Ctime((*[1000000]noarch.TimeT)(unsafe.Pointer(&now))[:]))
 	noarch.Fprintf(fp_m, []byte("%% type: matrix \n\x00"))
 	noarch.Fprintf(fp_m, []byte("%% rows: %d\n\x00"), n)
 	noarch.Fprintf(fp_m, []byte("%% columns: %d\n\x00"), n)
@@ -10620,6 +10874,32 @@ func save_ut_dmatrix(filename []byte, A [][]float64, n int32, mode []byte) {
 	noarch.Fclose(fp_m)
 }
 
+// c4goUnsafeConvert_float32 : created by c4go
+func c4goUnsafeConvert_float32(c4go_name *float32) []float32 {
+	return (*[1000000]float32)(unsafe.Pointer(c4go_name))[:]
+}
+
+// c4goUnsafeConvert_float64 : created by c4go
+func c4goUnsafeConvert_float64(c4go_name *float64) []float64 {
+	return (*[1000000]float64)(unsafe.Pointer(c4go_name))[:]
+}
+
+// c4goUnsafeConvert_int32 : created by c4go
+func c4goUnsafeConvert_int32(c4go_name *int32) []int32 {
+	return (*[1000000]int32)(unsafe.Pointer(c4go_name))[:]
+}
+
+//
+//	Vector difference/subtraction.
+//	@return the vector (A - B)
+//
+//
+//	Calculate the angle between two vectors, in radians.
+//
+//
+//	Calculate the angle between two vectors, in radians. Also return
+//	the cross-product of the two vectors, useful with vec3_rotate.
+//
 //
 //static float sqrarg;
 //#define SQR(a) ((sqrarg=(a)) == 0.0 ? 0.0 : sqrarg*sqrarg)
@@ -10665,14 +10945,249 @@ func save_ut_dmatrix(filename []byte, A [][]float64, n int32, mode []byte) {
 // removed strcat -- it's in <string.h> in the standard C library
 // removed strcpy -- it's in <string.h> in the standard C library
 // dots moved to frame3dd_io.c
-//
-//	Vector difference/subtraction.
-//	@return the vector (A - B)
-//
-//
-//	Calculate the angle between two vectors, in radians.
-//
-//
-//	Calculate the angle between two vectors, in radians. Also return
-//	the cross-product of the two vectors, useful with vec3_rotate.
-//
+
+// __assert_fail from assert.h
+// c function : bool __assert_fail(const char*, const char*, unsigned int, const char*)
+// dep pkg    : fmt os github.com/Konstantin8105/c4go/noarch
+// dep func   :
+func __assert_fail(
+	expression, filePath []byte,
+	lineNumber uint32,
+	functionName []byte,
+) bool {
+	fmt.Fprintf(
+		os.Stderr,
+		"a.out: %s:%d: %s: Assertion %s%s' failed.\n",
+		noarch.CStringToString(filePath),
+		lineNumber,
+		noarch.CStringToString(functionName),
+		string(byte(96)),
+		noarch.CStringToString(expression),
+	)
+	os.Exit(134)
+
+	return true
+}
+
+// tolower from ctype.h
+// c function : int tolower(int)
+// dep pkg    : unicode
+// dep func   :
+func tolower(_c int32) int32 {
+	return int32(unicode.ToLower(rune(_c)))
+}
+
+// getopt - add c-binding for implemention function
+func getopt(arg0 int32, arg1 [][]byte, arg2 []byte) int32 {
+	return int32(C.getopt(C.int(arg0), unsafe.Pointer(&arg1), (*C.char)(unsafe.Pointer(&arg2[0]))))
+}
+
+// c4goPointerArithFloat64Slice - function of pointer arithmetic. generated by c4go
+func c4goPointerArithFloat64Slice(slice []float64, position int) []float64 {
+	if position < 0 {
+		// invert sign
+		position = -position
+
+		// Example from: go101.org/article/unsafe.html
+		// repair size of slice
+		var hdr reflect.SliceHeader
+		sliceLen := len(slice)
+		hdr.Data = uintptr(unsafe.Pointer(&slice[0])) - (uintptr(position))*unsafe.Sizeof(slice[0])
+		runtime.KeepAlive(&slice[0]) // needed!
+		hdr.Len = sliceLen + int(position)
+		hdr.Cap = hdr.Len
+		slice = *((*[]float64)(unsafe.Pointer(&hdr)))
+		return slice
+	}
+	// position >= 0:
+	return slice[position:]
+}
+
+// c4goPointerArithFloat32SliceSlice - function of pointer arithmetic. generated by c4go
+func c4goPointerArithFloat32SliceSlice(slice [][]float32, position int) [][]float32 {
+	if position < 0 {
+		// invert sign
+		position = -position
+
+		// Example from: go101.org/article/unsafe.html
+		// repair size of slice
+		var hdr reflect.SliceHeader
+		sliceLen := len(slice)
+		hdr.Data = uintptr(unsafe.Pointer(&slice[0])) - (uintptr(position))*unsafe.Sizeof(slice[0])
+		runtime.KeepAlive(&slice[0]) // needed!
+		hdr.Len = sliceLen + int(position)
+		hdr.Cap = hdr.Len
+		slice = *((*[][]float32)(unsafe.Pointer(&hdr)))
+		return slice
+	}
+	// position >= 0:
+	return slice[position:]
+}
+
+// c4goPointerArithFloat64SliceSlice - function of pointer arithmetic. generated by c4go
+func c4goPointerArithFloat64SliceSlice(slice [][]float64, position int) [][]float64 {
+	if position < 0 {
+		// invert sign
+		position = -position
+
+		// Example from: go101.org/article/unsafe.html
+		// repair size of slice
+		var hdr reflect.SliceHeader
+		sliceLen := len(slice)
+		hdr.Data = uintptr(unsafe.Pointer(&slice[0])) - (uintptr(position))*unsafe.Sizeof(slice[0])
+		runtime.KeepAlive(&slice[0]) // needed!
+		hdr.Len = sliceLen + int(position)
+		hdr.Cap = hdr.Len
+		slice = *((*[][]float64)(unsafe.Pointer(&hdr)))
+		return slice
+	}
+	// position >= 0:
+	return slice[position:]
+}
+
+// c4goPointerArithFloat32SliceSliceSlice - function of pointer arithmetic. generated by c4go
+func c4goPointerArithFloat32SliceSliceSlice(slice [][][]float32, position int) [][][]float32 {
+	if position < 0 {
+		// invert sign
+		position = -position
+
+		// Example from: go101.org/article/unsafe.html
+		// repair size of slice
+		var hdr reflect.SliceHeader
+		sliceLen := len(slice)
+		hdr.Data = uintptr(unsafe.Pointer(&slice[0])) - (uintptr(position))*unsafe.Sizeof(slice[0])
+		runtime.KeepAlive(&slice[0]) // needed!
+		hdr.Len = sliceLen + int(position)
+		hdr.Cap = hdr.Len
+		slice = *((*[][][]float32)(unsafe.Pointer(&hdr)))
+		return slice
+	}
+	// position >= 0:
+	return slice[position:]
+}
+
+// c4goPointerArithInt32Slice - function of pointer arithmetic. generated by c4go
+func c4goPointerArithInt32Slice(slice []int32, position int) []int32 {
+	if position < 0 {
+		// invert sign
+		position = -position
+
+		// Example from: go101.org/article/unsafe.html
+		// repair size of slice
+		var hdr reflect.SliceHeader
+		sliceLen := len(slice)
+		hdr.Data = uintptr(unsafe.Pointer(&slice[0])) - (uintptr(position))*unsafe.Sizeof(slice[0])
+		runtime.KeepAlive(&slice[0]) // needed!
+		hdr.Len = sliceLen + int(position)
+		hdr.Cap = hdr.Len
+		slice = *((*[]int32)(unsafe.Pointer(&hdr)))
+		return slice
+	}
+	// position >= 0:
+	return slice[position:]
+}
+
+// c4goPointerArithUint8Slice - function of pointer arithmetic. generated by c4go
+func c4goPointerArithUint8Slice(slice []uint8, position int) []uint8 {
+	if position < 0 {
+		// invert sign
+		position = -position
+
+		// Example from: go101.org/article/unsafe.html
+		// repair size of slice
+		var hdr reflect.SliceHeader
+		sliceLen := len(slice)
+		hdr.Data = uintptr(unsafe.Pointer(&slice[0])) - (uintptr(position))*unsafe.Sizeof(slice[0])
+		runtime.KeepAlive(&slice[0]) // needed!
+		hdr.Len = sliceLen + int(position)
+		hdr.Cap = hdr.Len
+		slice = *((*[]uint8)(unsafe.Pointer(&hdr)))
+		return slice
+	}
+	// position >= 0:
+	return slice[position:]
+}
+
+// c4goPointerArithUint32Slice - function of pointer arithmetic. generated by c4go
+func c4goPointerArithUint32Slice(slice []uint32, position int) []uint32 {
+	if position < 0 {
+		// invert sign
+		position = -position
+
+		// Example from: go101.org/article/unsafe.html
+		// repair size of slice
+		var hdr reflect.SliceHeader
+		sliceLen := len(slice)
+		hdr.Data = uintptr(unsafe.Pointer(&slice[0])) - (uintptr(position))*unsafe.Sizeof(slice[0])
+		runtime.KeepAlive(&slice[0]) // needed!
+		hdr.Len = sliceLen + int(position)
+		hdr.Cap = hdr.Len
+		slice = *((*[]uint32)(unsafe.Pointer(&hdr)))
+		return slice
+	}
+	// position >= 0:
+	return slice[position:]
+}
+
+// c4goPointerArithInt32SliceSlice - function of pointer arithmetic. generated by c4go
+func c4goPointerArithInt32SliceSlice(slice [][]int32, position int) [][]int32 {
+	if position < 0 {
+		// invert sign
+		position = -position
+
+		// Example from: go101.org/article/unsafe.html
+		// repair size of slice
+		var hdr reflect.SliceHeader
+		sliceLen := len(slice)
+		hdr.Data = uintptr(unsafe.Pointer(&slice[0])) - (uintptr(position))*unsafe.Sizeof(slice[0])
+		runtime.KeepAlive(&slice[0]) // needed!
+		hdr.Len = sliceLen + int(position)
+		hdr.Cap = hdr.Len
+		slice = *((*[][]int32)(unsafe.Pointer(&hdr)))
+		return slice
+	}
+	// position >= 0:
+	return slice[position:]
+}
+
+// c4goPointerArithFloat64SliceSliceSlice - function of pointer arithmetic. generated by c4go
+func c4goPointerArithFloat64SliceSliceSlice(slice [][][]float64, position int) [][][]float64 {
+	if position < 0 {
+		// invert sign
+		position = -position
+
+		// Example from: go101.org/article/unsafe.html
+		// repair size of slice
+		var hdr reflect.SliceHeader
+		sliceLen := len(slice)
+		hdr.Data = uintptr(unsafe.Pointer(&slice[0])) - (uintptr(position))*unsafe.Sizeof(slice[0])
+		runtime.KeepAlive(&slice[0]) // needed!
+		hdr.Len = sliceLen + int(position)
+		hdr.Cap = hdr.Len
+		slice = *((*[][][]float64)(unsafe.Pointer(&hdr)))
+		return slice
+	}
+	// position >= 0:
+	return slice[position:]
+}
+
+// c4goPointerArithFloat32Slice - function of pointer arithmetic. generated by c4go
+func c4goPointerArithFloat32Slice(slice []float32, position int) []float32 {
+	if position < 0 {
+		// invert sign
+		position = -position
+
+		// Example from: go101.org/article/unsafe.html
+		// repair size of slice
+		var hdr reflect.SliceHeader
+		sliceLen := len(slice)
+		hdr.Data = uintptr(unsafe.Pointer(&slice[0])) - (uintptr(position))*unsafe.Sizeof(slice[0])
+		runtime.KeepAlive(&slice[0]) // needed!
+		hdr.Len = sliceLen + int(position)
+		hdr.Cap = hdr.Len
+		slice = *((*[]float32)(unsafe.Pointer(&hdr)))
+		return slice
+	}
+	// position >= 0:
+	return slice[position:]
+}

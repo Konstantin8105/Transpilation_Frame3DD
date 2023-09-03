@@ -1,15 +1,15 @@
 
 Amount lines into file main.go: 
-10678
+11193
 Amount lines into file go_build_result.txt: 
-0
+1
 Amount lines into file govet.txt: 
-0
+3
 Amount lines into file golint.txt: 
-86
+0
 Amount lines into file deadcode.txt: 
-44
+1
 Amount lines into file gosimple.txt: 
-19
+1
 Amount lines into file warning.txt: 
-2
+0

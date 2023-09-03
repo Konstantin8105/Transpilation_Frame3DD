@@ -15,7 +15,7 @@ rm Kd
 rm Ks
 rm Md
 
-CODE_PATH="$GOPATH/src/github.com/Konstantin8105/History_frame3DD/src"
+CODE_PATH="../History_frame3DD/src"
 RESULT="result.txt"
 
 # Remove all text in result file
